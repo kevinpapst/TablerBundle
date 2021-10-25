@@ -26,7 +26,7 @@
     "require-dev": {
         "phpspec/prophecy": "^1.6",
         "symfony/framework-bundle" : ">4.3",
-        "friendsofphp/php-cs-fixer": "^2.10",
+        "friendsofphp/php-cs-fixer": "^3.0",
         "phpunit/phpunit": "^7.3",
         "phpstan/phpstan": "^0.12",
         "knplabs/knp-menu-bundle": "^2.2",

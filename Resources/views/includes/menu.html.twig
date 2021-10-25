@@ -1,0 +1,39 @@
+{% if menu is not defined %}
+    {% set menu = tabler_menu(app.request) %}
+{% endif %}
+{% if menu is defined and menu is not null %}
+<ul class="navbar-nav">
+    {% for item in menu %}
+        <li id="{{ item.identifier }}" class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.hasChildren? 'dropdown' : '' }}">
+            <a {% if item.hasChildren -%}
+                class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" role="button" aria-expanded="false"
+                {%- else -%}
+                class="nav-link" href="{{ '/' in item.route ? item.route : path(item.route|tabler_route, item.routeArgs) }}"
+                {%- endif -%}>
+                <span class="nav-link-icon d-md-none d-lg-inline-block text-center">
+                    {% if item.icon %}
+                        {{ tabler_icon(item.icon) }}
+                    {% endif %}
+                </span>
+                <span class="nav-link-title">{{ item.label|trans }}</span>
+            </a>
+
+            {% if item.hasChildren %}
+                <div class="dropdown-menu">
+                    {% for child in item.children %}
+                        {% if child.divider %}
+                            {% if not loop.last -%}
+                                <hr class="dropdown-divider">
+                            {%- endif %}
+                        {% else %}
+                        <a class="dropdown-item {{ child.isActive ? 'active':'' }}" href="{{ '/' in child.route ? child.route : path(child.route|tabler_route, child.routeArgs) }}">
+                            {{ child.label|trans }}
+                        </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+{% endif %}

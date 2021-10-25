@@ -1,0 +1,7 @@
+{% macro avatar_image(user) %}
+    {% if user.avatar is not empty %}
+        <img src="{{ asset(user.avatar) }}" alt="{{ user.name }}" />
+    {% else %}
+        <i class="fa-2x far fa-user"></i>
+    {% endif %}
+{% endmacro %}

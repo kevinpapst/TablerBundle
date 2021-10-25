@@ -1,0 +1,44 @@
+{% macro action_cardtoolbutton(icon, attrs) %}
+    {% import '@Tabler/components/button.html.twig' as macro %}
+    {{ macro.button(icon, attrs|merge({class: 'btn-outline-secondary ' ~ (attrs.class|default(''))})) }}
+{% endmacro %}
+
+{% macro action_collapsebutton(label, target) %}
+    {{ _self.action_cardtoolbutton('collapse', {collapse: target, title: label|default('')}) }}
+{% endmacro %}
+
+{# TODO test me #}
+{% macro link_toolbutton(icon, href, label, attrs) %}
+    {% set attrs = attrs|default({})|merge({class: 'me-2 ' ~ (attrs.class|default(''))}) %}
+    <a href="{{ href }}" {% for name, value in attrs|default({}) %} {{ name }}="{{ value }}"{% endfor %}>
+        {{ tabler_icon(icon) }}{% if label is not null %} {{ label }}{% endif %}
+    </a>
+{% endmacro %}
+
+{# TODO test me #}
+{% macro link_button(label, href, icon, type, size) %}
+    {% set _size = size|default(tabler_bundle.button.size) %}
+    {% set _type = type|default(tabler_bundle.button.type) %}
+    <a href="{{ href|default('#') }}" class="btn btn-{{ _type }}{% if _size %} btn-{{ _size }}{% endif %}">
+        {% if icon %}
+            {{ tabler_icon(icon) }}
+        {% endif %}
+        {% if label %}
+            <span>{{ label }}</span>
+        {% endif %}
+    </a>
+{% endmacro %}
+
+{# TODO test me #}
+{% macro action_button(label, action, icon, type, size) %}
+    {% set _size = size|default(tabler_bundle.button.size) %}
+    {% set _type = type|default(tabler_bundle.button.type) %}
+    <button data-action="{{ action }}" class="btn btn-{{ _type }}{% if _size %} btn-{{ _size }}{% endif %}">
+        {% if icon %}
+            {{ tabler_icon(icon) }}
+        {% endif %}
+        {% if label %}
+            <span>{{ label }}</span>
+        {% endif %}
+    </button>
+{% endmacro %}

@@ -1,0 +1,24 @@
+services:
+
+    KevinPapst\TablerBundle\Twig\RuntimeExtension:
+        class: KevinPapst\TablerBundle\Twig\RuntimeExtension
+        arguments:
+            - '@event_dispatcher'
+            - '@tabler_bundle.context_helper'
+            - '%tabler_bundle.routes%'
+            - '%tabler_bundle.icons%'
+        tags:
+            - { name: twig.runtime }
+
+    KevinPapst\TablerBundle\Twig\TablerExtension:
+        class: KevinPapst\TablerBundle\Twig\TablerExtension
+        tags:
+            - { name: twig.extension }
+
+    tabler_bundle.context_helper:
+        class: KevinPapst\TablerBundle\Helper\ContextHelper
+        arguments:
+            - '%tabler_bundle.options%'
+
+    KevinPapst\TablerBundle\Helper\ContextHelper:
+        alias: tabler_bundle.context_helper

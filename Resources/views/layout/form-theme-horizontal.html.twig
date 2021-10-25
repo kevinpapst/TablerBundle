@@ -1,0 +1,112 @@
+{% use 'bootstrap_5_horizontal_layout.html.twig' %}
+
+{# ATTENTION: changes must be applied to form-theme.html.twig as well #}
+
+{% block date_widget %}
+    {% if widget == 'single_text' %}
+        <div class="input-group">
+            <div class="input-group-text">
+                <i class="far fa-calendar-alt"></i>
+            </div>
+
+            {% if type is not defined or type != 'date' %}
+                {% if attr.class is defined %}
+                    {% set class = attr.class ~ ' timepicker' %}
+                {% else %}
+                    {% set class = ' timepicker' %}
+                {% endif %}
+                {% set attr = attr|merge({'class' : class, 'data-datepickerenable':'on'}) %}
+            {% endif %}
+
+            {{ block('form_widget_simple') }}
+        </div>
+    {% else %}
+        {% set date_pattern = '<div class="row">' ~ date_pattern ~ '</div>'|raw %}
+        {{ date_pattern|replace({
+            '{{ year }}' : '<div class="col-xs-4">{{ year }}</div>',
+            '{{ month }}' : '<div class="col-xs-4">{{ month }}</div>',
+            '{{ day }}' : '<div class="col-xs-4">{{ day }}</div>',
+        })|raw|replace({
+            '{{ year }}':  form_widget(form.year),
+            '{{ month }}': form_widget(form.month),
+            '{{ day }}':   form_widget(form.day),
+        })|raw }}
+
+    {% endif %}
+{% endblock %}
+
+{% block time_widget %}
+    {% if widget == 'single_text' %}
+        <div class="bootstrap-timepicker">
+            <div class="input-group">
+                <div class="input-group-text add-on">
+                    <i class="far fa-clock"></i>
+                </div>
+                {% if type is not defined or type != 'time' %}
+                    {% if attr.class is defined %}
+                        {% set class = attr.class ~ ' timepicker' %}
+                    {% else %}
+                        {% set class = ' timepicker' %}
+                    {% endif %}
+                    {% set attr = attr|merge({'class' : class, 'data-timepicker':'on'}) %}
+                {% endif %}
+                {{ block('form_widget_simple') }}
+            </div>
+        </div>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block datetime_widget -%}
+    {%- if widget == 'single_text' -%}
+        <div class="input-group">
+            <div class="input-group-text">
+                <i class="fa fa-calendar-alt"></i>
+            </div>
+            {{- parent() -}}
+        </div>
+    {%- else -%}
+        {{- parent() -}}
+    {%- endif -%}
+{%- endblock datetime_widget %}
+
+{% block tel_widget -%}
+    <div class="input-group">
+        <div class="input-group-text">
+            {% set icon = 'phone' %}
+            {% if 'icon' in attr|keys %}
+                {% set icon = attr.icon %}
+            {% endif %}
+            <i class="fas fa-{{ icon }}"></i>
+        </div>
+        {{- parent() -}}
+    </div>
+{%- endblock tel_widget %}
+
+{% block url_widget -%}
+    <div class="input-group">
+        <div class="input-group-text">
+            <i class="fas fa-home"></i>
+        </div>
+        {{- parent() -}}
+    </div>
+{%- endblock url_widget %}
+
+{% block email_widget -%}
+    <div class="input-group">
+        <div class="input-group-text">
+            <i class="fa fa-at"></i>
+        </div>
+        {{- parent() -}}
+    </div>
+{%- endblock email_widget %}
+
+{% block password_widget -%}
+    <div class="input-group">
+        <div class="input-group-text">
+            <i class="fas fa-key"></i>
+        </div>
+        {{- parent() -}}
+    </div>
+{%- endblock password_widget %}

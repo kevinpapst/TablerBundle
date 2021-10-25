@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" datatype="plaintext" original="TablerBundle.en.xliff">
+        <body>
+            <trans-unit id="Toggle navigation">
+                <source>Toggle navigation</source>
+                <target>Ansicht der Seitenleiste umschalten</target>
+            </trans-unit>
+            <trans-unit id="Toggle visibility">
+                <source>Toggle visibility</source>
+                <target>Sichtbarkeit umschalten</target>
+            </trans-unit>
+            <trans-unit id="Remember Me">
+                <source>Remember Me</source>
+                <target>Dauerhaft anmelden</target>
+            </trans-unit>
+            <trans-unit id="Sign in to start your session">
+                <source>Sign in to start your session</source>
+                <target>Anmelden</target>
+            </trans-unit>
+            <trans-unit id="Sign In">
+                <source>Sign In</source>
+                <target>Anmelden</target>
+            </trans-unit>
+            <trans-unit id="Sign out">
+                <source>Sign out</source>
+                <target>Abmelden</target>
+            </trans-unit>
+            <trans-unit id="Register">
+                <source>Register</source>
+                <target>Registrieren</target>
+            </trans-unit>
+            <trans-unit id="Profile">
+                <source>Profile</source>
+                <target>Dein Profil</target>
+            </trans-unit>
+            <trans-unit id="Member since %date%">
+                <source>Member since %date%</source>
+                <target>Mitglied seit %date%</target>
+            </trans-unit>
+            <trans-unit id="Username">
+                <source>Username</source>
+                <target>Benutzername</target>
+            </trans-unit>
+            <trans-unit id="Username or email address">
+                <source>Username or email address</source>
+                <target>Benutzername oder E-Mail-Adresse</target>
+            </trans-unit>
+            <trans-unit id="Password">
+                <source>Password</source>
+                <target>Passwort</target>
+            </trans-unit>
+            <trans-unit id="Show homepage">
+                <source>Show homepage</source>
+                <target>Zur Startseite</target>
+            </trans-unit>
+            <trans-unit id="Back to login">
+                <source>Back to login</source>
+                <target>Zurück zur Anmeldung</target>
+            </trans-unit>
+            <trans-unit id="Reset your password">
+                <source>Reset your password</source>
+                <target>Passwort zurücksetzen</target>
+            </trans-unit>
+            <trans-unit id="I forgot my password">
+                <source>I forgot my password</source>
+                <target>Passwort vergessen</target>
+            </trans-unit>
+            <trans-unit id="Register a new account">
+                <source>Register a new account</source>
+                <target>Neuen Benutzer registrieren</target>
+            </trans-unit>
+            <trans-unit id="View all">
+                <source>View all</source>
+                <target>Alle anzeigen</target>
+            </trans-unit>
+            <trans-unit id="or">
+                <source>or</source>
+                <target>oder</target>
+            </trans-unit>
+            <trans-unit id="You have %count% notifications">
+                <source>You have %count% notifications</source>
+                <target>Du hast 1 Benachrichtigung|Du hast %count% Benachrichtigungen</target>
+            </trans-unit>
+            <trans-unit id="You have %count% messages">
+                <source>You have %count% messages</source>
+                <target>Du hast 1 Nachricht|Du hast %count% Nachrichten</target>
+            </trans-unit>
+            <trans-unit id="You have %count% tasks">
+                <source>You have %count% tasks</source>
+                <target>Du hast 1 Aufgabe|Du hast %count% Aufgaben</target>
+            </trans-unit>
+            <trans-unit id="%progress%% Complete">
+                <source>%progress%% Complete</source>
+                <target>%progress%% erledigt</target>
+            </trans-unit>
+            <trans-unit id="This is a mandatory field">
+                <source>This is a mandatory field</source>
+                <target>Dies ist ein Pflichtfeld</target>
+            </trans-unit>
+            <trans-unit id="registration.confirmed">
+                <source>registration.confirmed</source>
+                <target>Glückwunsch %username%, Ihr Benutzerkonto ist jetzt bestätigt.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

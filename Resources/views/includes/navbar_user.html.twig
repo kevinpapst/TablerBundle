@@ -1,0 +1,33 @@
+{% set user = null %}
+{% set links = null %}
+{% set userdetails = tabler_user() %}
+{% if userdetails is not null %}
+    {% set user = userdetails.user %}
+    {% set links = userdetails.links %}
+    {% set showLogoutLink = userdetails.showLogoutLink %}
+{% endif %}
+{% if user is not null %}
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+            {% import "@Tabler/components/avatar.html.twig" as macro %}
+            {{ macro.avatar(user, 'sm') }}
+            {% if not tabler_bundle.isCondensedUserMenu() %}
+            <div class="d-none d-xl-block ps-2">
+                <div>{{ user.name }}</div>
+                {% if user.title is not empty %}
+                    <div class="mt-1 small text-muted">{{ user.title }}</div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </a>
+        <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+            {% for link in links %}
+                <a href="{{ path(link.route|tabler_route, link.routeArgs) }}" class="dropdown-item">{{ link.label|trans }}</a>
+            {% endfor %}
+            {% if showLogoutLink %}
+                <div class="dropdown-divider"></div>
+                <a href="{{ logout_path() }}" class="dropdown-item">{{ 'Sign out'|trans({}, 'AdminLTEBundle') }}</a>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
