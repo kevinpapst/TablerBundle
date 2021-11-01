@@ -29,7 +29,7 @@
         "friendsofphp/php-cs-fixer": "^3.0",
         "phpunit/phpunit": "^8.0",
         "phpstan/phpstan": "^0.12",
-        "knplabs/knp-menu-bundle": "^2.2",
+        "knplabs/knp-menu-bundle": "^3.0",
         "phpstan/phpstan-phpunit": "^0.12"
     },
     "suggest" : {
