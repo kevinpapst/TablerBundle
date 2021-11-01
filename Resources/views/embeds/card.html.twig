@@ -8,27 +8,33 @@
 {% set _boxtype     = boxtype|default(null) %}
 {% set _id          = id|default('collapse_' ~ random()) %}
 {% set _title       = block('box_title') is defined ? block('box_title') : null %}
+{% set _tools       = block('box_tools') is defined ? block('box_tools') : null %}
+{% set _header      = block('box_header') is defined ? block('box_header') : null %}
 
 <div class="card mb-3{% if block('box_class') is defined %} {{ block('box_class') }}{% endif %}"{% if block('box_attributes') is defined %} {{ block('box_attributes') }}{% endif %}>
     {% if _boxtype is not null %}
     <div class="card-status-top bg-{{ _boxtype }}"></div>
     {% endif %}
-    {% if _title is not null or _collapsible %}
+    {% if _title is not null or _collapsible or _tools is not null or _header is not null %}
     <div class="card-header">
-        {% if _title is not null %}<h3 class="card-title">{{ _title|raw }}</h3>{% endif %}
-        <div class="card-actions box-tools"{% if block('box_tools_attributes') is defined %} {{ block('box_tools_attributes') }}{% endif %}>
-            {# Buttons, labels, and many other things can be placed here! #}
-            {% if block('box_tools') is defined %}{{ block('box_tools') }}{% endif %}
-            {% if _collapsible %}
-                {{ button.action_collapsebutton(
-                    collapsible_title|default('Toggle visibility'|trans({}, 'TablerBundle')),
-                    '#' ~ _id
-                ) }}
-            {% endif %}
-        </div>
+        {% if _header is not null %}
+            {{ _header|raw }}
+        {% else %}
+            {% if _title is not null %}<h3 class="card-title">{{ _title|raw }}</h3>{% endif %}
+            <div class="card-actions"{% if block('box_tools_attributes') is defined %} {{ block('box_tools_attributes') }}{% endif %}>
+                {# Buttons, labels, and many other things can be placed here! #}
+                {% if _tools is not null %}{{ _tools|raw }}{% endif %}
+                {% if _collapsible %}
+                    {{ button.action_collapsebutton(
+                        collapsible_title|default('Toggle visibility'|trans({}, 'TablerBundle')),
+                        '#' ~ _id
+                    ) }}
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
     {% endif %}
-    <div {% if _collapsible %}id="{{ _id }}" {% endif %}class="collapse{% if not _collapsed %} show{% endif %} card-body{% if block('box_body_class') is defined %} {{ block('box_body_class') }}{% endif %}{% if _fullsize %}p-0{% endif %}">{{ block('box_body') }}</div>
+    <div {% if _collapsible %}id="{{ _id }}" {% endif %}class="{% if _collapsible %}{% if _collapsed %}collapse{% else %} show{% endif %}{% endif %} card-body{% if block('box_body_class') is defined %} {{ block('box_body_class') }}{% endif %}{% if _fullsize %}p-0{% endif %}">{{ block('box_body') }}</div>
     {% if _footer and block('box_footer') is defined %}
         {# 
             If there is a form in the block_footer, it will be rendered when checking "is not empty". 

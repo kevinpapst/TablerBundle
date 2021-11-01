@@ -8,7 +8,7 @@
             <span class="badge bg-red"></span>
         </a>
         <div class="dropdown-menu dropdown-menu-end dropdown-menu-card">
-            <div class="card-header text-nowrap">{{ 'You have %count% notifications'|trans({'%count%': total}, 'AdminLTEBundle') }}</div>
+            <div class="card-header text-nowrap">{{ 'You have %count% notifications'|trans({'%count%': total}, 'TablerBundle') }}</div>
             {% for notice in notifications|slice(0, 9) %}
                 <a class="dropdown-item" href="{% if notice.url is null %}#{% else %}{{ notice.url }}{% endif %}">
                     <span class="badge bg-{{ notice.type }} me-1"></span>

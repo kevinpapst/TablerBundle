@@ -102,6 +102,10 @@
                 <source>registration.confirmed</source>
                 <target>Glückwunsch %username%, Ihr Benutzerkonto ist jetzt bestätigt.</target>
             </trans-unit>
+            <trans-unit id="Close modal">
+                <source>Close modal</source>
+                <target>Schließen</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
