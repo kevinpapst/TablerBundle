@@ -14,21 +14,18 @@ use KevinPapst\TablerBundle\Helper\Constants;
 use KevinPapst\TablerBundle\Model\NotificationModel;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \KevinPapst\TablerBundle\Event\NotificationEvent
+ */
 class NotificationEventTest extends TestCase
 {
-    /**
-     * @test
-     */
-    public function total_should_be_zero_and_max_null_when_there_are_no_notification()
+    public function testDefaults()
     {
         $event = new NotificationEvent();
         $this->assertEquals(0, $event->getTotal());
     }
 
-    /**
-     * @test
-     */
-    public function total_should_be_equal_the_number_of_notifications_if_max_is_greater_then_the_number_of_notifications()
+    public function testTotalsAndReceiveLimitedSet()
     {
         $event = new NotificationEvent();
         $notifications = $this->generateNbNotifications(7);
@@ -39,69 +36,6 @@ class NotificationEventTest extends TestCase
 
         $this->assertEquals(7, $event->getTotal());
         $this->assertEquals(7, \count($event->getNotifications()));
-    }
-
-    /**
-     * @test
-     */
-    public function total_should_equal_the_number_of_notifications_and_count_notifications_should_equal_max_when_max_is_lower_then_the_number_of_notifications()
-    {
-        $event = new NotificationEvent();
-        $notifications = $this->generateNbNotifications(7);
-
-        foreach ($notifications as $notification) {
-            $event->addNotification($notification);
-        }
-
-        $this->assertEquals(7, $event->getTotal());
-        $this->assertEquals(5, \count($event->getNotifications(5)));
-    }
-
-    /**
-     * @test
-     */
-    public function total_equal_the_number_of_notifications_when_max_is_null()
-    {
-        $event = new NotificationEvent();
-        $notifications = $this->generateNbNotifications(7);
-
-        foreach ($notifications as $notification) {
-            $event->addNotification($notification);
-        }
-
-        $this->assertEquals(7, $event->getTotal());
-        $this->assertEquals(7, \count($event->getNotifications()));
-    }
-
-    /**
-     * @test
-     */
-    public function you_can_set_total_to_be_different_from_the_number_of_notifications()
-    {
-        $event = new NotificationEvent();
-        $notifications = $this->generateNbNotifications(7);
-
-        foreach ($notifications as $notification) {
-            $event->addNotification($notification);
-        }
-
-        $this->assertEquals(7, $event->getTotal());
-        $this->assertEquals(7, \count($event->getNotifications()));
-    }
-
-    /**
-     * @test
-     */
-    public function you_can_set_total_to_be_different_from_the_number_of_notifications_and_set_max_to_another_value()
-    {
-        $event = new NotificationEvent();
-        $notifications = $this->generateNbNotifications(7);
-
-        foreach ($notifications as $notification) {
-            $event->addNotification($notification);
-        }
-
-        $this->assertEquals(7, $event->getTotal());
         $this->assertEquals(3, \count($event->getNotifications(3)));
     }
 

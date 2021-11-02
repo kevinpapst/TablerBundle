@@ -21,16 +21,17 @@
         "symfony/security-core": ">4.3",
         "symfony/translation": ">4.3",
         "symfony/twig-bridge": ">4.3",
-        "twig/twig": ">2.0"
+        "twig/twig": ">2.0",
+        "phpstan/phpstan-symfony": "^1.0"
     },
     "require-dev": {
         "phpspec/prophecy": "^1.6",
         "symfony/framework-bundle" : ">4.3",
         "friendsofphp/php-cs-fixer": "^3.0",
         "phpunit/phpunit": "^8.0",
-        "phpstan/phpstan": "^0.12",
-        "knplabs/knp-menu-bundle": "^3.0",
-        "phpstan/phpstan-phpunit": "^0.12"
+        "phpstan/phpstan": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "knplabs/knp-menu-bundle": "^3.0"
     },
     "suggest" : {
         "knplabs/knp-menu-bundle" : "Allows easy menu integration"
