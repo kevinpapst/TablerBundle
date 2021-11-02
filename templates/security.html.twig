@@ -1,0 +1,112 @@
+<!doctype html{% block html_start %}{% endblock %}>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    {% endblock %}
+    <title>{% block title %}Log in{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
+    {% endblock %}
+</head>
+<body{% block body_start %}{% endblock %} class="antialiased border-top-wide border-primary d-flex flex-column {% block body_class %}{% endblock %}">
+{% block after_body_start %}{% endblock %}
+<div class="page page-center">
+    <div class="container-tight py-4">
+        <div class="text-center mb-4">
+            <h1>{% block logo_login %}Tabler{% endblock %}</h1>
+        </div>
+
+        <div class="card card-md">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">{% block login_box_msg %}{% endblock %}</h2>
+                {% block login_box_error %}
+                    {% if error|default(false) %}
+                        <div class="alert alert-important alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                {% endblock %}
+                {% block login_form %}
+                    <form action="{{ path('tabler_login_check'|tabler_route) }}" method="post" autocomplete="off" class="login-box-body">
+                    {% block login_form_start %}{% endblock %}
+                        <div class="mb-3">
+                            <label class="form-label">{{ 'Username'|trans({}, 'TablerBundle') }}</label>
+                            <input type="text" name="_username" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">
+                                {{ 'Password'|trans({}, 'TablerBundle') }}
+                                {% block password_forgotten %}
+                                    {% if 'tabler_password_reset'|tabler_route != 'adminlte_password_reset' %}
+                                        <span class="form-label-description">
+                                            <a href="{{ path('tabler_password_reset'|tabler_route) }}">{{ 'I forgot my password'|trans({}, 'TablerBundle') }}</a>
+                                        </span>
+                                    {% endif %}
+                                {% endblock %}
+                            </label>
+                            <div class="input-group input-group-flat">
+                                <input name="_password" type="password" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}">
+                                {#
+                                <span class="input-group-text">
+                                  <a href="#" class="link-secondary" title="Show password" data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="2" /><path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" /></svg>
+                                  </a>
+                                </span>
+                                #}
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-check">
+                                <input id="remember_me" name="_remember_me" type="checkbox" class="form-check-input">
+                                <span class="form-check-label">{{ 'Remember Me'|trans({}, 'TablerBundle') }}</span>
+                            </label>
+                        </div>
+                        <div class="form-footer">
+                            <button type="submit" class="btn btn-primary w-100">{{ 'Sign In'|trans({}, 'TablerBundle') }}</button>
+                        </div>
+                        {% if csrf_token %}
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                        {% endif %}
+                        {% block login_form_end %}{% endblock %}
+                    </form>
+                {% endblock %}
+            </div>
+        {% block login_social_auth %}
+            <div class="hr-text">{{ 'or'|trans({}, 'TablerBundle') }}</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="btn btn-white w-100">
+                            <i class="icon fab fa-github text-github"></i> Github
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="btn btn-white w-100">
+                            <i class="icon fab fa-twitter text-twitter"></i> Twitter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        </div>
+
+        {% block login_actions %}
+            {% block registration %}
+                {% if 'tabler_registration'|tabler_route != 'adminlte_registration' %}
+                    <div class="text-center text-muted mt-3">
+                        <a href="{{ path('tabler_registration'|tabler_route) }}">
+                            {{ 'Register a new account'|trans({}, 'TablerBundle') }}
+                        </a>
+                    </div>
+                {% endif %}
+            {% endblock %}
+        {% endblock %}
+    </div>
+</div>
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/tabler/tabler.js') }}"></script>
+{% endblock %}
+</body>
+</html>

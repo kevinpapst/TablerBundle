@@ -1,0 +1,64 @@
+#
+# Configuration file for the Tabler bundle
+#
+# For more information about the bundle settings visit:
+# https://github.com/kevinpapst/TablerBundle/blob/master/docs/configurations.md
+#
+tabler:
+    options:
+        # true = dark mode (light colors on dark background), false = normal mode (dark colors on light background)
+        dark_mode: true
+        # condensed = one nav-bar, false = two nav-bars
+        navbar_condensed: true
+        # true = boxed layout, false = full-screen
+        boxed_layout: false
+        # false = left to right, true = right to left
+        rtl_mode: false
+        # true = only avatar, false = show username and title as well
+        user_menu_condensed: true
+        # url to your company logo (if not with a protocol, the asset() helper will be used to create the url
+        logo_url: ~
+
+    knp_menu:
+        enable: false
+        main_menu: tabler_main
+        breadcrumb_menu: false
+
+    routes:
+        tabler_welcome: home
+        tabler_login: login
+        tabler_logout: logout
+        tabler_login_check: login_check
+        tabler_registration: registration
+        tabler_registration_register: registration_register
+        tabler_password_reset: resetting_request
+        tabler_password_reset_sent: resetting_send_email
+
+    icons:
+        # used for the action_collapsebutton components
+        collapse: fas fa-chevron-down
+        # used for the password-reset template
+        mail: far fa-envelope
+        # the following are only ideas to be used in your own templates
+        about: fas fa-info-circle
+        admin: fas fa-wrench
+        back: fas fa-long-arrow-alt-left
+        bookmark: far fa-star
+        calendar: far fa-calendar-alt
+        comment: far fa-comment
+        copy: far fa-copy
+        create: far fa-plus-square
+        dashboard: fas fa-tachometer-alt
+        delete: far fa-trash-alt
+        download: fas fa-download
+        edit: far fa-edit
+        export: fas fa-file-export
+        filter: fas fa-filter
+        help: far fa-question-circle
+        print: fas fa-print
+        search: fas fa-search
+        settings: fas fa-cog
+        start: fas fa-play
+        stop: fas fa-stop
+        upload: fas fa-upload
+        user: fas fa-user

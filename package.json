@@ -3,6 +3,7 @@
         "webpack-notifier": "^1.13.0"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.4",
         "@popperjs/core": "^2.10.2",
         "@symfony/webpack-encore": "^1.6.1",
         "@tabler/core": "^1.0.0-beta2",

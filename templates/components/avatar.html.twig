@@ -1,0 +1,6 @@
+{% macro avatar(user, size) %}
+    {% import "@Tabler/components/avatar_image.html.twig" as macro %}
+    <span class="avatar avatar-{{ size }}">
+        {{ macro.avatar_image(user) }}
+    </span>
+{% endmacro %}

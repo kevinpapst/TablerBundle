@@ -1,0 +1,4 @@
+{% macro callout(type, description, title, icon) %}
+    {% import '@Tabler/components/alert.html.twig' as macro %}
+    {{ macro.alert(type|default('danger'), description, title, icon, false, true) }}
+{% endmacro %}
