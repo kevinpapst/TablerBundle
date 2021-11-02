@@ -1,6 +1,8 @@
 # Tabler Bundle for Symfony
 
-This repository contains a Symfony bundle, integrating the fantastic [Tabler.io](https://tabler.io) HTML Template to your project.
+This repository contains a Symfony bundle, integrating the fantastic [Tabler.io](https://tabler.io) HTML Template into your Symfony project.
+
+It ships with many twig helper (functions, filter, embeds. macros and includes) to speed up your development and simplify future upgrades!
 
 ## Introduction
 
@@ -28,20 +30,40 @@ Technical details:
 
 ## Installation
 
-```bash
+### Applications that use Symfony Flex
+
+Open a command console, enter your project directory and execute:
+
+```console
 composer require kevinpapst/tabler-bundle
 ```
 
-Afterwards copy the default config to your `config/packages/` directory:
+### Applications that don't use Symfony Flex
+
+#### Step 1: Download the Bundle
+
+Open a command console, enter your project directory and execute the
+following command to download the latest stable version of this bundle:
+
+```console
+composer require kevinpapst/tabler-bundle
+```
+
+#### Step 2: Configure the Bundle
+
+Copy the default config to your `config/packages/` directory:
 
 ```bash
 cp vendor/kevinpapst/tabler-bundle/config/packages/tabler.yaml config/packages/
 ```
 
-Then, enable the bundle by adding it to the list of registered bundles in the `config/bundles.php` file of your project:
+#### Step 3: Enable the Bundle
+
+Then, enable the bundle by adding it to the list of registered bundles
+in the `config/bundles.php` file of your project:
 
 ```php
-<?php
+// config/bundles.php
 
 return [
     // ...

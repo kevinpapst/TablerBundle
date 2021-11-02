@@ -7,5 +7,5 @@ A clear and concise description of what this pull request adds or changes.
 - [ ] Breaking change (fix or feature that would cause existing functionality to change)
 
 ## Checklist
-- [ ] I updated the documentation (see [here](https://github.com/kevinpapst/TablerBundle/tree/master/Resources/docs))
+- [ ] I updated the documentation (see [here](https://github.com/kevinpapst/TablerBundle/tree/master/docs))
 - [ ] I agree that this code will be published under the [MIT license](https://github.com/kevinpapst/TablerBundle/blob/master/LICENSE)

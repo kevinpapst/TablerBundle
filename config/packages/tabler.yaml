@@ -2,7 +2,7 @@
 # Configuration file for the Tabler bundle
 #
 # For more information about the bundle settings visit:
-# https://github.com/kevinpapst/TablerBundle/blob/master/Resources/docs/configurations.md
+# https://github.com/kevinpapst/TablerBundle/blob/master/docs/configurations.md
 #
 tabler:
     options:

@@ -162,12 +162,6 @@ $fixer
                 __DIR__ . '/tests/',
             ])
             ->name('*.php')
-            ->exclude([
-                '.github/',
-                'node_modules/',
-                'Resources/',
-                'vendor/',
-            ])
     )
     ->setFormat('checkstyle')
 ;
