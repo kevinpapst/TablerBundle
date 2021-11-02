@@ -33,7 +33,6 @@ tabler:
         tabler_registration_register: registration_register
         tabler_password_reset: resetting_request
         tabler_password_reset_sent: resetting_send_email
-        tabler_user_profile: profile
 
     icons:
         # used for the action_collapsebutton components

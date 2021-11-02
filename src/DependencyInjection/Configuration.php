@@ -86,10 +86,6 @@ class Configuration implements ConfigurationInterface
                     ->defaultNull()
                     ->info('name of the sent forgot-password email form route')
                 ->end()
-                ->scalarNode('tabler_user_profile')
-                    ->defaultValue('profile')
-                    ->info('name of the route to the users profile')
-                ->end()
             ->end()
         ->end();
 

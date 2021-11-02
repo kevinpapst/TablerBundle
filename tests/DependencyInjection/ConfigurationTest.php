@@ -70,7 +70,6 @@ class ConfigurationTest extends TestCase
                     'tabler_registration_register' => null,
                     'tabler_password_reset' => null,
                     'tabler_password_reset_sent' => null,
-                    'tabler_user_profile' => 'profile',
                 ],
                 'icons' => [],
             ]
