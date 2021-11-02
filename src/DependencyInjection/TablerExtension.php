@@ -30,11 +30,11 @@ class TablerExtension extends Extension implements PrependExtensionInterface
             $container->setParameter('tabler_bundle.options', $options);
         }
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../config'));
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
         $loader->load('services.yml');
 
         if ($options['knp_menu']['enable'] === true) {
-            $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../config/container'));
+            $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../../config/container'));
             $loader->load('knp-menu.yml');
         }
     }
