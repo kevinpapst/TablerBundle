@@ -21,8 +21,7 @@
         "symfony/security-core": ">4.3",
         "symfony/translation": ">4.3",
         "symfony/twig-bridge": ">4.3",
-        "twig/twig": ">2.0",
-        "phpstan/phpstan-symfony": "^1.0"
+        "twig/twig": ">2.0"
     },
     "require-dev": {
         "phpspec/prophecy": "^1.6",
@@ -31,6 +30,7 @@
         "phpunit/phpunit": "^8.0",
         "phpstan/phpstan": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
+        "phpstan/phpstan-symfony": "^1.0",
         "knplabs/knp-menu-bundle": "^3.0"
     },
     "suggest" : {
