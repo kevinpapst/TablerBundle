@@ -2,7 +2,7 @@ var Encore = require('@symfony/webpack-encore');
 
 Encore
 // the project directory where compiled assets will be stored
-    .setOutputPath('Resources/public/')
+    .setOutputPath('public/')
 
     // the public path used by the web server to access the previous directory
     .setPublicPath('/bundles/tabler/')
@@ -19,7 +19,7 @@ Encore
     // uncomment to create hashed filenames (e.g. app.abc123.css)
     .enableVersioning(Encore.isProduction())
 
-    .addEntry('tabler', './Resources/assets/tabler.js')
+    .addEntry('tabler', './assets/tabler.js')
 
 //    .copyFiles({ from: './node_modules/@tabler/core/dist/css', to: 'css/[path][name].[ext]' })
 //    .copyFiles({ from: './node_modules/@tabler/core/dist/js', to: 'js/[path][name].[ext]' })

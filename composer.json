@@ -37,13 +37,20 @@
         "knplabs/knp-menu-bundle" : "Allows easy menu integration"
     },
     "autoload": {
-        "psr-4": { "KevinPapst\\TablerBundle\\": "" }
+        "psr-4": {
+            "KevinPapst\\TablerBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KevinPapst\\TablerBundle\\Tests\\": "tests/"
+        }
     },
     "scripts": {
-        "tests": "vendor/bin/phpunit Tests/",
+        "tests": "vendor/bin/phpunit tests/",
         "phpstan": [
-            "vendor/bin/phpstan analyse . --level=5",
-            "vendor/bin/phpstan analyse -c Tests/phpstan.neon Tests --level=5"
+            "vendor/bin/phpstan analyse src/ --level=5",
+            "vendor/bin/phpstan analyse -c Tests/phpstan.neon tests/ --level=5"
         ],
         "codestyle": "vendor/bin/php-cs-fixer fix --dry-run --verbose --show-progress=none",
         "codestyle-fix": "vendor/bin/php-cs-fixer fix"
