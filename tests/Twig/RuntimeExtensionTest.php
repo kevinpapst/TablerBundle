@@ -46,15 +46,8 @@ class RuntimeExtensionTest extends TestCase
         $sut = $this->getSut();
         $this->assertEquals('bar', $sut->getRouteByAlias('foo'));
         $this->assertEquals('hello', $sut->getRouteByAlias('hello'));
-    }
-
-    public function testGetRouteByAliasThrowsForNotExistingRoute()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('Unknown route alias: test1');
-
-        $sut = $this->getSut();
-        $this->assertEquals('test1', $sut->getRouteByAlias('test1'));
+        // unknown routes will be returned as given
+        $this->assertEquals('unknown-route', $sut->getRouteByAlias('unknown-route'));
     }
 
     public function testBodyClass()

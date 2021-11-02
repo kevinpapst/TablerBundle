@@ -47,10 +47,7 @@ final class RuntimeExtension implements RuntimeExtensionInterface
 
     public function getRouteByAlias(string $routeName): string
     {
-        if (!\array_key_exists($routeName, $this->routes)) {
-            throw new \InvalidArgumentException('Unknown route alias: ' . $routeName);
-        }
-
+        // this does not throw an exception on unknown routes, because those could be injected via events!
         return $this->routes[$routeName] ?? $routeName;
     }
 
