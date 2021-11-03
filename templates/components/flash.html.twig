@@ -1,0 +1,22 @@
+{% macro flash(type, message, close, use_raw, class, domain) %}
+    <div class="alert{{ type ? ' alert-'~type : '' }} fade in {{ class|default('') }} {% if close|default(false) %}alert-dismissible{% endif %}">
+        {% if close|default(false) %}
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {% endif %}
+        {% if use_raw|default(false) %}
+            {{ message|trans({}, domain|default('TablerBundle'))|raw }}
+        {% else %}
+            {{ message|trans({}, domain|default('TablerBundle')) }}
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro session_flash(close, use_raw, class, domain) %}
+    {% if app.session.flashbag.peekAll|length > 0 %}
+        {% for type, messages in app.session.flashbag.all %}
+            {% for message in messages %}
+                {{ _self.flash(type, message, close, use_raw, class, domain) }}
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+{% endmacro %}

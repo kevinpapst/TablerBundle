@@ -1,0 +1,25 @@
+{% extends '@Tabler/security.html.twig' %}
+
+{% block login_social_auth %}{% endblock %}
+
+{% block login_box_msg %}
+    {{ 'Register a new account'|trans({}, 'TablerBundle') }}
+{% endblock %}
+
+{% block login_form %}
+    {% form_theme form '@Tabler/layout/form-theme-security.html.twig' %}
+    {{ form_start(form, {'method': 'post', 'action': path('tabler_registration_register'|tabler_route), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    {{ form_widget(form) }}
+    <div class="form-footer">
+        <button type="submit" class="btn btn-primary w-100">{{ 'Register'|trans({}, 'TablerBundle') }}</button>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block login_actions %}
+    <div class="text-center text-muted mt-3">
+        <a href="{{ path('tabler_login'|tabler_route) }}">
+            {{ 'Back to login'|trans({}, 'TablerBundle') }}
+        </a>
+    </div>
+{% endblock %}

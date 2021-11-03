@@ -2,7 +2,7 @@
 # Configuration file for the Tabler bundle
 #
 # For more information about the bundle settings visit:
-# https://github.com/kevinpapst/TablerBundle/blob/master/Resources/docs/configurations.md
+# https://github.com/kevinpapst/TablerBundle/blob/master/docs/configurations.md
 #
 tabler:
     options:
@@ -25,7 +25,7 @@ tabler:
         breadcrumb_menu: false
 
     routes:
-        tabler_welcome: home
+        tabler_welcome: app_homepage
         tabler_login: login
         tabler_logout: logout
         tabler_login_check: login_check

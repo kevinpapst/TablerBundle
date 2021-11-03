@@ -1,0 +1,16 @@
+{% extends '@Tabler/security.html.twig' %}
+
+{% block login_social_auth %}{% endblock %}
+
+{% block login_form %}
+    {% block fos_user_content %}
+        <p>{{ 'registration.confirmed'|trans({'%username%': user.username}, 'TablerBundle') }}</p>
+    {% endblock fos_user_content %}
+{% endblock %}
+
+{% block login_actions %}
+    <br>
+    <a href="{{ path('tabler_welcome'|tabler_route) }}">
+        {{ 'Show homepage'|trans({}, 'TablerBundle') }}
+    </a>
+{% endblock %}

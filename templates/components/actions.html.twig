@@ -1,0 +1,58 @@
+{% macro actions(actions, options) %}
+    {% import '@Tabler/components/button.html.twig' as macro %}
+    {% if actions|length >= 1 %}
+        {% set class = 'btn-sm' %}
+        {% set translationDomain = 'messages' %}
+        {% if options.translationDomain is defined %}
+            {% set translationDomain = options.translationDomain %}
+        {% endif %}
+        {% if options.class is defined %}
+            {% set class = options.class %}
+        {% endif %}
+        {% set trash = null %}
+        {% set divider = false %}
+        <div class="dropdown">
+            <a href="#" class="link-secondary btn-sm {% if tabler_bundle.isDarkMode() %}btn-dark{% endif%} {{ class }}" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-ellipsis-h"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" data-popper-placement="bottom-end">
+                {%- apply spaceless -%}
+                    {%- for icon,values in actions  %}
+                        {%- if 'divider' in icon and values is null %}
+                            {% if not loop.last and divider is same as (false) %}
+                                <hr class="dropdown-divider" />
+                            {% endif %}
+                            {% set divider = true %}
+                        {% else %}
+                            {% if values is iterable %}
+                                {% if values['title'] is not defined %}
+                                    {% set values = values|merge({'title': icon|trans({}, translationDomain)}) %}
+                                {% endif %}
+                            {% else %}
+                                {% set values = {'url': values, 'title': icon|trans({}, translationDomain)} %}
+                            {% endif %}
+                            {% if icon == 'trash' %}
+                                {% set trash = values %}
+                            {% else %}
+                                {% set divider = false %}
+                                {% if values.children is defined %}
+                                    {%- for childIcon, childValues in values.children %}
+                                        {{ macro.button(childIcon, childValues|merge({class: childValues.class is defined ? childValues.class ~ ' dropdown-item' : 'dropdown-item'}), false) }}
+                                    {% endfor %}
+                                {% else %}
+                                    {{ macro.button(icon, values|merge({class: values.class is defined ? values.class ~ ' dropdown-item' : 'dropdown-item'}), false) }}
+                                {% endif %}
+                            {% endif %}
+                        {% endif -%}
+                    {% endfor -%}
+                    {%- if trash is not null %}
+                        {%- if actions|length > 1 and divider is same as (false) -%}
+                            <hr class="dropdown-divider" />
+                        {% endif %}
+                            {{ macro.button('trash', trash|merge({class: trash.class is defined ? trash.class ~ ' text-danger dropdown-item' : 'dropdown-item'}), false) }}
+                    {% endif -%}
+                {% endapply %}
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}
