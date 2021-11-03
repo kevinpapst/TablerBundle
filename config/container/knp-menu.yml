@@ -1,0 +1,9 @@
+services:
+
+    KevinPapst\TablerBundle\Menu\MenuBuilder:
+        class: KevinPapst\TablerBundle\Menu\MenuBuilder
+        arguments:
+            - "@knp_menu.factory"
+            - "@event_dispatcher"
+        tags:
+            - { name: knp_menu.menu_builder, method: createMainMenu, alias: adminlte_main }
