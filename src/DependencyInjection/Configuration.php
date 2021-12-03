@@ -128,6 +128,11 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->addDefaultsIfNotSet()
             ->children()
+                ->enumNode('layout')
+                    ->values(['horizontal', 'vertical'])
+                    ->defaultValue('horizontal')
+                    ->isRequired()
+                ->end()
                 ->booleanNode('dark_mode')
                     ->defaultFalse()
                 ->end()

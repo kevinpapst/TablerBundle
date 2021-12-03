@@ -1,0 +1,53 @@
+<header class="navbar navbar-expand-md navbar-light d-print-none">
+    <div class="{{ ''|tabler_container }}">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        {% block app_logo %}
+            <h1 class="navbar-brand {# navbar-brand-autodark #} d-none-navbar-horizontal pe-0 pe-md-3">
+                <a href="{{ path('tabler_welcome'|tabler_route) }}">
+                    {% if tabler_bundle.getLogoUrl() is not empty %}
+                        <img src="{% if '://' in tabler_bundle.getLogoUrl() %}{{ tabler_bundle.getLogoUrl() }}{% else %}{{ asset(tabler_bundle.getLogoUrl()) }}{% endif %}" width="110" height="32" alt="Logo" class="navbar-brand-image">
+                    {% else %}
+                        <i class="far fa-smile" style="font-size: 32px"></i>
+                    {% endif %}
+                </a>
+            </h1>
+        {% endblock %}
+        <div class="navbar-nav flex-row order-md-last">
+            {% block navbar_start %}{% endblock %}
+            {% block navbar_notifications %}
+                {% include '@Tabler/includes/navbar_notifications.html.twig' %}
+            {% endblock %}
+            {% block navbar_user %}
+                {% include '@Tabler/includes/navbar_user.html.twig' %}
+            {% endblock %}
+            {% block navbar_end %}{% endblock %}
+        </div>
+        {% if tabler_bundle.isCondensedNavbar() %}
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
+                    {% block navbar_menu_condensed %}
+                        {% include '@Tabler/includes/menu.html.twig' %}
+                    {% endblock %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</header>
+{% if not tabler_bundle.isCondensedNavbar() %}
+    <div class="navbar-expand-md">
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <div class="navbar navbar-light">
+                <div class="{{ ''|tabler_container }}">
+                    {% block navbar_menu %}
+                        {% include '@Tabler/includes/menu.html.twig' %}
+                    {% endblock %}
+                    {% block navbar_search %}
+                        {% include '@Tabler/includes/navbar_search.html.twig' %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
