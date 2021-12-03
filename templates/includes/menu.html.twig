@@ -2,7 +2,7 @@
     {% set menu = tabler_menu(app.request) %}
 {% endif %}
 {% if menu is defined and menu is not null %}
-<ul class="navbar-nav">
+<ul class="navbar-nav {{ navbar_class | default('') }}">
     {% for item in menu %}
         <li id="{{ item.identifier }}" class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.hasChildren? 'dropdown' : '' }}">
             <a {% if item.hasChildren -%}
