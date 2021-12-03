@@ -71,7 +71,7 @@ class ContextHelper extends \ArrayObject
         $this->setOption('layout', $layout);
     }
 
-    public function getLayout(): string
+    private function getLayout(): string
     {
         return (string) $this->getOption('layout');
     }
