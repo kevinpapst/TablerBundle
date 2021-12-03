@@ -78,7 +78,7 @@ class ContextHelper extends \ArrayObject
 
     public function isLayoutHorizontal(): bool
     {
-        return $this->getOption('layout') === "horizontal";
+        return $this->getLayout() === 'horizontal';
     }
 
     public function isLayoutVertical(): bool
