@@ -32,7 +32,7 @@
                     {% block login_form_start %}{% endblock %}
                         <div class="mb-3">
                             <label class="form-label">{{ 'Username'|trans({}, 'TablerBundle') }}</label>
-                            <input type="text" name="_username" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}">
+                            <input type="text" name="_username" tabindex="10" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">
@@ -40,13 +40,13 @@
                                 {% block password_forgotten %}
                                     {% if 'tabler_password_reset'|tabler_route != 'adminlte_password_reset' %}
                                         <span class="form-label-description">
-                                            <a href="{{ path('tabler_password_reset'|tabler_route) }}">{{ 'I forgot my password'|trans({}, 'TablerBundle') }}</a>
+                                            <a href="{{ path('tabler_password_reset'|tabler_route) }}" tabindex="100">{{ 'I forgot my password'|trans({}, 'TablerBundle') }}</a>
                                         </span>
                                     {% endif %}
                                 {% endblock %}
                             </label>
                             <div class="input-group input-group-flat">
-                                <input name="_password" type="password" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}">
+                                <input name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}">
                                 {#
                                 <span class="input-group-text">
                                   <a href="#" class="link-secondary" title="Show password" data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
@@ -58,12 +58,12 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-check">
-                                <input id="remember_me" name="_remember_me" type="checkbox" class="form-check-input">
+                                <input id="remember_me" tabindex="30" name="_remember_me" type="checkbox" class="form-check-input">
                                 <span class="form-check-label">{{ 'Remember Me'|trans({}, 'TablerBundle') }}</span>
                             </label>
                         </div>
                         <div class="form-footer">
-                            <button type="submit" class="btn btn-primary w-100">{{ 'Sign In'|trans({}, 'TablerBundle') }}</button>
+                            <button type="submit" tabindex="40" class="btn btn-primary w-100">{{ 'Sign In'|trans({}, 'TablerBundle') }}</button>
                         </div>
                         {% if csrf_token %}
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
