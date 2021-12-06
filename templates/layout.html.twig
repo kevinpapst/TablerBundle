@@ -24,9 +24,11 @@ Enjoy your theme!
 <div class="wrapper">
 
     {% if tabler_bundle.isLayoutHorizontal() %}
-        {% include '@Tabler/includes/layout_horizontal.html.twig' %}
+        {% use '@Tabler/includes/layout_horizontal.html.twig' %}
+        {% block layout_horizontal %}{{ parent() }}{% endblock %}
     {% elseif tabler_bundle.isLayoutVertical() %}
-        {% include '@Tabler/includes/layout_vertical.html.twig' %}
+        {% use '@Tabler/includes/layout_vertical.html.twig' %}
+        {% block layout_vertical %}{{ parent() }}{% endblock %}
     {% endif %}
 
 
