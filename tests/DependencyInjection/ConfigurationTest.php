@@ -58,7 +58,7 @@ class ConfigurationTest extends TestCase
                 ],
                 'knp_menu' => [
                     'enable' => false,
-                    'main_menu' => 'adminlte_main',
+                    'main_menu' => 'tabler_main',
                     'breadcrumb_menu' => false,
                 ],
                 'routes' => [
