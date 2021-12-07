@@ -65,9 +65,9 @@
                         <div class="form-footer">
                             <button type="submit" class="btn btn-primary w-100">{{ 'Sign In'|trans({}, 'TablerBundle') }}</button>
                         </div>
-                        {% if csrf_token %}
+                        {% block csrf_token %}
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
-                        {% endif %}
+                        {% endblock %}
                         {% block login_form_end %}{% endblock %}
                     </form>
                 {% endblock %}
