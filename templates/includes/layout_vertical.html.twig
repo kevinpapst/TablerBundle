@@ -1,5 +1,7 @@
 {% block layout_vertical %}
-<aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
+
+{% block sidebar %}
+<aside id="{% block sidebar_id %}{% endblock %}" class="navbar navbar-vertical navbar-expand-lg navbar-dark">
     <div class="{{ ''|tabler_container }}">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
             <span class="navbar-toggler-icon"></span>
@@ -25,8 +27,12 @@
         </div>
     </div>
 </aside>
+{% endblock %}
+
 {% if not tabler_bundle.isCondensedNavbar() %}
-    <header class="navbar navbar-expand-md navbar-light d-none d-lg-flex d-print-none">
+
+{% block header %}
+    <header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md navbar-light d-none d-lg-flex d-print-none">
         <div class="{{ ''|tabler_container }}">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                 <span class="navbar-toggler-icon"></span>
@@ -43,5 +49,7 @@
             </div>
         </div>
     </header>
+{% endblock %}
+
 {% endif %}
 {% endblock %}

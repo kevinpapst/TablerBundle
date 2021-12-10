@@ -1,5 +1,7 @@
 {% block layout_horizontal %}
-<header class="navbar navbar-expand-md navbar-light d-print-none">
+
+{% block header %}
+<header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md navbar-light d-print-none">
     <div class="{{ ''|tabler_container }}">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
             <span class="navbar-toggler-icon"></span>
@@ -36,8 +38,12 @@
         {% endif %}
     </div>
 </header>
+{% endblock %}
+
 {% if not tabler_bundle.isCondensedNavbar() %}
-    <div class="navbar-expand-md">
+
+{% block navbar %}
+    <div id="{% block navbar_id %}{% endblock %}" class="navbar-expand-md">
         <div class="collapse navbar-collapse" id="navbar-menu">
             <div class="navbar navbar-light">
                 <div class="{{ ''|tabler_container }}">
@@ -51,5 +57,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
 {% endif %}
 {% endblock %}

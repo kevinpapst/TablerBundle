@@ -32,10 +32,10 @@ Enjoy your theme!
     {% endif %}
 
 
-    <div class="page-wrapper">
+    <div id="{% block page_wrapper_id %}{% endblock %}" class="page-wrapper">
         <div class="{{ ''|tabler_container }}">
             <!-- Page title -->
-            <div class="page-header d-print-none">
+            <div id="{% block page_header_id %}{% endblock %}" class="page-header d-print-none">
                 <div class="row align-items-center">
                     <div class="col">
                         <div class="page-pretitle">
@@ -65,12 +65,14 @@ Enjoy your theme!
                 </div>
             </div>
         </div>
+
+
         <div class="page-body">
             <div class="{{ ''|tabler_container }}">
                 <div class="row row-cards">
                     {% block page_content_before %}{% endblock %}
 
-                    <section class="{% block page_content_class %}content{% endblock %}">
+                    <section id="{% block page_content_id %}{% endblock %}" class="{% block page_content_class %}content{% endblock %}">
                         {% block page_content_start %}{{ include('@Tabler/includes/flash_messages.html.twig') }}{% endblock %}
                         {% block page_content %}{% endblock %}
                         {% block page_content_end %}{% endblock %}
@@ -80,8 +82,10 @@ Enjoy your theme!
                 </div>
             </div>
         </div>
+
+
         {% block footer %}
-        <footer class="footer footer-transparent d-print-none">
+        <footer id="{% block footer_id %}{% endblock %}" class="footer footer-transparent d-print-none">
             <div class="container">
                 {% include '@Tabler/includes/footer.html.twig' %}
             </div>
