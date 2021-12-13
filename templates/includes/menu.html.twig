@@ -6,7 +6,7 @@
     {% for item in menu %}
         <li id="{{ item.identifier }}" class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.hasChildren? 'dropdown' : '' }}">
             <a {% if item.hasChildren -%}
-                class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" role="button" aria-expanded="false"
+                class="nav-link dropdown-toggle {{ item.hasActiveChildren? 'show' : '' }}" href="#navbar-base" data-bs-toggle="dropdown" role="button" aria-expanded="{{ item.hasActiveChildren? 'true' : 'false' }}"
                 {%- else -%}
                 class="nav-link" href="{{ '/' in item.route ? item.route : path(item.route|tabler_route, item.routeArgs) }}"
                 {%- endif -%}>
@@ -19,7 +19,7 @@
             </a>
 
             {% if item.hasChildren %}
-                <div class="dropdown-menu">
+                <div class="dropdown-menu {{ item.hasActiveChildren? 'show' : '' }}">
                     {% for child in item.children %}
                         {% if child.divider %}
                             {% if not loop.last -%}
