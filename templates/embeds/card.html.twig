@@ -15,6 +15,7 @@
     {% if _boxtype is not null %}
     <div class="card-status-top bg-{{ _boxtype }}"></div>
     {% endif %}
+    {% if block('box_header_before') is defined %}{{ block('box_header_before') }}{% endif %}
     {% if _title is not null or _collapsible or _tools is not null or _header is not null %}
     <div class="card-header">
         {% if _header is not null %}
@@ -34,7 +35,9 @@
         {% endif %}
     </div>
     {% endif %}
+    {% if block('box_header_after') is defined %}{{ block('box_header_after') }}{% endif %}
     <div {% if _collapsible %}id="{{ _id }}" {% endif %}class="{% if _collapsible %}{% if _collapsed %}collapse{% else %} show{% endif %}{% endif %} card-body{% if block('box_body_class') is defined %} {{ block('box_body_class') }}{% endif %}{% if _fullsize %}p-0{% endif %}">{{ block('box_body') }}</div>
+    {% if block('box_footer_before') is defined %}{{ block('box_footer_before') }}{% endif %}
     {% if _footer and block('box_footer') is defined %}
         {# 
             If there is a form in the block_footer, it will be rendered when checking "is not empty". 
@@ -45,5 +48,6 @@
             <div class="card-footer">{{ boxFooter|raw }}</div>
         {% endif %}
     {% endif %}
+    {% if block('box_footer_after') is defined %}{{ block('box_footer_after') }}{% endif %}
 </div>
 {% if block('box_after') is defined %}{{ block('box_after') }}{% endif %}
