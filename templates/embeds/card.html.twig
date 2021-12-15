@@ -36,7 +36,7 @@
     </div>
     {% endif %}
     {% if block('box_header_after') is defined %}{{ block('box_header_after') }}{% endif %}
-    <div {% if _collapsible %}id="{{ _id }}" {% endif %}class="{% if _collapsible %}{% if _collapsed %}collapse{% else %} show{% endif %}{% endif %} card-body{% if block('box_body_class') is defined %} {{ block('box_body_class') }}{% endif %}{% if _fullsize %}p-0{% endif %}">{{ block('box_body') }}</div>
+    <div {% if _collapsible %}id="{{ _id }}" {% endif %}class="{% if _collapsible %}{% if _collapsed %} collapse{% else %} show{% endif %}{% endif %} card-body{% if block('box_body_class') is defined %} {{ block('box_body_class') }}{% endif %}{% if _fullsize %} p-0{% endif %}">{{ block('box_body') }}</div>
     {% if block('box_footer_before') is defined %}{{ block('box_footer_before') }}{% endif %}
     {% if _footer and block('box_footer') is defined %}
         {# 
