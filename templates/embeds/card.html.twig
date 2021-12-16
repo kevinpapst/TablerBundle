@@ -6,7 +6,7 @@
 {% set _collapsible_class   = 'collapse_' ~ random() %}
 {% set _fullsize            = fullsize is defined ? fullsize : false %}
 {% set _footer              = use_footer|default(false) or block('box_footer') is defined %}
-{% set _footer_collapsible  = footer_collapsible is defined ? footer_collapsible : false %}
+{% set _footer_collapsible  = footer_collapsible is defined ? footer_collapsible : true %}
 {% set _boxtype             = boxtype|default(null) %}
 {% set _id                  = id|default(null) %}
 {% set _title               = block('box_title') is defined ? block('box_title') : null %}
