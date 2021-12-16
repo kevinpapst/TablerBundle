@@ -10,11 +10,11 @@
                 {%- else -%}
                 class="nav-link" href="{{ '/' in item.route ? item.route : path(item.route|tabler_route, item.routeArgs) }}"
                 {%- endif -%}>
-                <span class="nav-link-icon d-md-none d-lg-inline-block text-center">
                     {% if item.icon %}
-                        {{ tabler_icon(item.icon) }}
+                        <span class="nav-link-icon d-md-none d-lg-inline-block text-center">
+                            {{ tabler_icon(item.icon, null, false) }}
+                        </span>
                     {% endif %}
-                </span>
                 <span class="nav-link-title">{{ item.label|trans }}</span>
             </a>
 
@@ -27,6 +27,11 @@
                             {%- endif %}
                         {% else %}
                         <a class="dropdown-item {{ child.isActive ? 'active':'' }}" href="{{ '/' in child.route ? child.route : path(child.route|tabler_route, child.routeArgs) }}">
+                            {% if child.icon %}
+                                <span class="nav-link-icon d-md-none d-lg-inline-block text-center">
+                                    {{ tabler_icon(child.icon, null, false) }}
+                                </span>
+                            {% endif %}
                             {{ child.label|trans }}
                         </a>
                         {% endif %}
