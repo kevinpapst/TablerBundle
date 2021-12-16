@@ -13,7 +13,7 @@
 {% set _tools               = block('box_tools') is defined ? block('box_tools') : null %}
 {% set _header              = block('box_header') is defined ? block('box_header') : null %}
 
-<div class="card mb-3{% if block('box_class') is defined %} {{ block('box_class') }}{% endif %}"{% if block('box_attributes') is defined %} {{ block('box_attributes') }}{% endif %}>
+<div {% if _id is not null %}id="{{ _id }}"{% endif %} class="card mb-3{% if block('box_class') is defined %} {{ block('box_class') }}{% endif %}"{% if block('box_attributes') is defined %} {{ block('box_attributes') }}{% endif %}>
     {% if _boxtype is not null %}
     <div class="card-status-top bg-{{ _boxtype }}"></div>
     {% endif %}
@@ -38,7 +38,7 @@
     </div>
     {% endif %}
     {% if block('box_header_after') is defined %}{{ block('box_header_after') }}{% endif %}
-    <div {% if _id is not null %}id="{{ _id }}"{% endif %} class="{% if _collapsible %} {{ _collapsible_class }}{% if _collapsed %} collapse{% else %} show{% endif %}{% endif %} card-body{% if block('box_body_class') is defined %} {{ block('box_body_class') }}{% endif %}{% if _fullsize %} p-0{% endif %}">{{ block('box_body') }}</div>
+    <div class="{% if _collapsible %} {{ _collapsible_class }}{% if _collapsed %} collapse{% else %} show{% endif %}{% endif %} card-body{% if block('box_body_class') is defined %} {{ block('box_body_class') }}{% endif %}{% if _fullsize %} p-0{% endif %}">{{ block('box_body') }}</div>
     {% if block('box_footer_before') is defined %}{{ block('box_footer_before') }}{% endif %}
     {% if _footer and block('box_footer') is defined %}
         {# 
