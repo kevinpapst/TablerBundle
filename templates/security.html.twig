@@ -38,7 +38,7 @@
                             <label class="form-label">
                                 {{ 'Password'|trans({}, 'TablerBundle') }}
                                 {% block password_forgotten %}
-                                    {% if 'tabler_password_reset'|tabler_route != 'adminlte_password_reset' %}
+                                    {% if 'tabler_password_reset'|tabler_route != 'tabler_password_reset' %}
                                         <span class="form-label-description">
                                             <a href="{{ path('tabler_password_reset'|tabler_route) }}">{{ 'I forgot my password'|trans({}, 'TablerBundle') }}</a>
                                         </span>
@@ -65,9 +65,9 @@
                         <div class="form-footer">
                             <button type="submit" class="btn btn-primary w-100">{{ 'Sign In'|trans({}, 'TablerBundle') }}</button>
                         </div>
-                        {% if csrf_token %}
+                        {% block csrf_token %}
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
-                        {% endif %}
+                        {% endblock %}
                         {% block login_form_end %}{% endblock %}
                     </form>
                 {% endblock %}
@@ -93,7 +93,7 @@
 
         {% block login_actions %}
             {% block registration %}
-                {% if 'tabler_registration'|tabler_route != 'adminlte_registration' %}
+                {% if 'tabler_registration'|tabler_route != 'tabler_registration' %}
                     <div class="text-center text-muted mt-3">
                         <a href="{{ path('tabler_registration'|tabler_route) }}">
                             {{ 'Register a new account'|trans({}, 'TablerBundle') }}

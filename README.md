@@ -6,12 +6,14 @@ It ships with many twig helper (functions, filter, embeds. macros and includes) 
 
 ## Introduction
 
-WORK IN PROGRESS 
+See documentation at [docs/](docs/index.md).
+
+!!! WORK IN PROGRESS !!!
 
 ### Minimum requirements
 
 - Symfony >= 4.4
-- PHP >= 7.3
+- PHP >= 7.4
 
 ## Features
 
