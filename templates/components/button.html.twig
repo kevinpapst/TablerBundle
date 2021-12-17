@@ -1,8 +1,6 @@
 {% macro button(icon, values, type) %}
     {%- apply spaceless -%}
-        {% if type is same as (false) %}
-            {% set class = "" %}
-        {% elseif type is null %}
+        {% if type is null or type is same as (false) %}
             {% set class = "btn " %}
         {% else %}
             {% set class = "btn btn-" ~ type ~ " " %}
@@ -22,9 +20,10 @@
         {% set attr = values.attr ?? {} %}
         {% set forceTitle = values.combined ?? false %}
         {% set label = values.label ?? null %}
+        {% set label_color = values.labelColor ?? 'yellow' %}
         {% set translation_domain = values.translation_domain ?? 'messages' %}
 
-        {% if type != 'link' and not forceTitle and type is not same as (false) and label is null %}
+        {% if type != 'link' and icon is not same as (false) and (not forceTitle and label is null) %}
             {% set class = class ~ ' btn-icon' %}
         {% endif %}
 
@@ -40,22 +39,20 @@
                 {%- if collapse is not empty %} data-bs-toggle="collapse" data-bs-target="{{ collapse }}"{% endif %}
                 {%- if onclick is not empty %} onclick="{{ onclick }}"{% endif %}
                 {%- if target is not empty %} target="{{ target }}"{% endif %}
-                {%- if not forceTitle and title is not null and type is not same as (false) %} data-toggle="tooltip" data-bs-placement="top" title="{{ title|trans({}, translation_domain) }}"{% endif %}
+                {%- if not forceTitle and title is not null and icon is not same as (false) %} data-toggle="tooltip" data-bs-placement="top" title="{{ title|trans({}, translation_domain) }}"{% endif %}
                 {%- if attr is not empty %}
                     {% for name, value in attr %}
                     {{ ' ' ~ name }}={% if '"' in value %}'{{ value|raw }}'{% else %}"{{ value|raw }}"{% endif %}
                     {% endfor %}
                 {% endif %}>
-            {%- if not forceTitle and (title is not null and type is same as (false)) -%}
-                {{ title|trans({}, translation_domain) }}
-            {% else %}
+            {%- if icon is not same as (false) -%}
                 {{ tabler_icon(icon) }}
             {% endif %}
-            {%- if forceTitle -%}
+            {%- if (forceTitle or icon is same as (false)) and title is not null -%}
                 {{ title|trans({}, translation_domain) }}
             {% endif %}
             {%- if label is not null -%}
-                <span class="badge bg-yellow">{{ label }}</span>
+                <span class="badge bg-{{ label_color }}">{{ label }}</span>
             {%- endif -%}
         </a>
     {% endapply %}
