@@ -15,7 +15,7 @@ use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * This is the class that validates and merges the AdminLTEBundle configuration
+ * This is the class that validates and merges the TablerBundle configuration
  *
  * @see http://symfony.com/doc/current/cookbook/bundles/extension.html#cookbook-bundles-extension-config-class
  */
@@ -106,7 +106,7 @@ class Configuration implements ConfigurationInterface
                     ->info('')
                 ->end()
                 ->scalarNode('main_menu')
-                    ->defaultValue('adminlte_main')
+                    ->defaultValue('tabler_main')
                     ->info('your builder alias')
                 ->end()
                 ->scalarNode('breadcrumb_menu')
