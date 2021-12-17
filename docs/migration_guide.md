@@ -8,16 +8,42 @@ for `adminlte` and check what needs to be done there.
 
 - PHP >= 8
 - Symfony >= 5.0
+- Twig >= 3.0
 - Bootstrap 5
 
 ## Replace composer package
 
 First you want to start-off with changing the composer package:
 
-```
-composer require kevinpapst/adminlte-bundle
+```bash
+rm config/packages/admint_lte.yaml
+composer remove kevinpapst/adminlte-bundle
 composer require kevinpapst/tabler-bundle
-``` 
+cp vendor/kevinpapst/tabler-bundle/config/packages/tabler.yaml config/packages/
+bin/console assets:install
+```
+
+Search and replace
+```
+{% extends '@AdminLTE/layout/default-layout.html.twig' %}
+```
+with
+```
+{% extends '@Tabler/layout.html.twig' %}
+```
+
+Search and replace:
+```yaml
+framework:
+    assets:
+        json_manifest_path: '%kernel.project_dir%/public/bundles/adminlte/manifest.json'
+```
+with
+```yaml
+framework:
+    assets:
+        json_manifest_path: '%kernel.project_dir%/public/bundles/tabler/manifest.json'
+```
 
 The bundle in your `config/bundles.php` should be auto-replaced, it changes from:
 ```
@@ -36,6 +62,12 @@ return [
 ];
 ```
 
+Refresh your cache and fix errors ;-)
+```bash
+bin/console cache:clear
+bin/console cache:warmup
+```
+
 ## Changed bundle name
 
 Due to the changes in the bundle, you have to replace all class and view references.
@@ -46,19 +78,63 @@ Replace `use KevinPapst\AdminLTEBundle\` with `use KevinPapst\TablerBundle\`.
 
 ### Template references
 
-Replace `@AdminLTE/` with `@Tabler`, as example before
+Replace `@AdminLTE/` with `@Tabler`.
+
+Replace
 ```
-{% include('@AdminLTE/layout.html.twig') %}
+{% extends '@AdminLTE/layout/default-layout.html.twig' %}
 ```
-and afterwards
+with
 ```
-{% include('@Tabler/layout.html.twig') %}
+{% extends '@Tabler/layout.html.twig' %}
 ```
-## File changes
+
+The file:
+```
+{% import "@AdminLTE/Macros/default.html.twig" as macro %}
+```
+was split into many small components, eg.
+```
+{% import '@Tabler/components/flash.html.twig' as flash_macro %}
+```
+
+Replace
+```
+{% form_theme form '@AdminLTE/layout/form-theme-horizontal.html.twig' %}
+```
+with
+```
+{% form_theme form '@Tabler/layout/form-theme-horizontal.html.twig' %}
+```
+
+Replace
+```
+{% embed '@AdminLTE/Widgets/box-widget.html.twig' %}
+```
+with
+```
+{% embed '@Tabler/embeds/card.html.twig' %}
+```
+
+Replace
+```
+{% import '@AdminLTE/Macros/buttons.html.twig' as button %}
+```
+with
+```
+{% import '@Tabler/components/buttons.html.twig' as button %}
+```
+
+## PHP changes
 
 A lot of files were renamed/moved to a new directory:
 
-- TODO explain changes
+- Class `SidebarMenuEvent` renamed to `MenuEvent`
+- Class `BreadcrumbMenuEvent` removed
+- Class `NavbarUserEvent` replaced with `UserDetailsEvent`
+- Class `SidebarUserEvent` removed
+- Class `NotificationListEvent` replaced with `NotificationEvent`
+- Multiple classes remove their fluent interface (eg. `MenuEvent`)
 
 ## Changed configuration
 
@@ -72,6 +148,7 @@ The configuration is now in the file `tabler.yaml` with the main key `tabler`, w
 
 ## Removed components
 
+- No more support for FOSUserBundle
 - TODO explain changes
 
 ## Template changes
