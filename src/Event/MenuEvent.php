@@ -19,7 +19,7 @@ use Symfony\Component\HttpFoundation\Request;
 class MenuEvent extends ThemeEvent
 {
     /**
-     * @var array
+     * @var MenuItemInterface[]
      */
     private $menuRootItems = [];
     /**
@@ -27,15 +27,12 @@ class MenuEvent extends ThemeEvent
      */
     private $request;
 
-    public function __construct(Request $request = null)
+    public function __construct(Request $request)
     {
         $this->request = $request;
     }
 
-    /**
-     * @return Request
-     */
-    public function getRequest(): ?Request
+    public function getRequest(): Request
     {
         return $this->request;
     }
@@ -48,11 +45,7 @@ class MenuEvent extends ThemeEvent
         return $this->menuRootItems;
     }
 
-    /**
-     * @param MenuItemInterface $item
-     * @return MenuEvent
-     */
-    public function addItem($item)
+    public function addItem(MenuItemInterface $item): MenuEvent
     {
         $this->menuRootItems[$item->getIdentifier()] = $item;
 
@@ -65,28 +58,21 @@ class MenuEvent extends ThemeEvent
      */
     public function removeItem($item): MenuEvent
     {
-        if ($item instanceof MenuItemInterface && isset($this->menuRootItems[$item->getIdentifier()])) {
-            unset($this->menuRootItems[$item->getIdentifier()]);
-        } elseif (\is_string($item) && isset($this->menuRootItems[$item])) {
-            unset($this->menuRootItems[$item]);
+        $id = $item instanceof MenuItemInterface ? $item->getIdentifier() : (\is_string($item) ? $item : null);
+
+        if (array_key_exists($id, $this->menuRootItems)) {
+            unset($this->menuRootItems[$id]);
         }
 
         return $this;
     }
 
-    /**
-     * @param string $id
-     * @return MenuItemInterface|MenuItem|null
-     */
-    public function getRootItem($id)
+    public function getRootItem(string $id): ?MenuItemInterface
     {
         return $this->menuRootItems[$id] ?? null;
     }
 
-    /**
-     * @return MenuItemInterface|MenuItem|null
-     */
-    public function getActive()
+    public function getActive(): ?MenuItemInterface
     {
         foreach ($this->getItems() as $item) {
             if ($item->isActive()) {

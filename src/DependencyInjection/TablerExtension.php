@@ -20,7 +20,7 @@ class TablerExtension extends Extension implements PrependExtensionInterface
     /**
      * {@inheritdoc}
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
@@ -53,7 +53,7 @@ class TablerExtension extends Extension implements PrependExtensionInterface
         return $contextOptions;
     }
 
-    public function prepend(ContainerBuilder $container)
+    public function prepend(ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $configs = $container->getExtensionConfig($this->getAlias());
