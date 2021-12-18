@@ -57,6 +57,7 @@ class MenuEvent extends ThemeEvent
      */
     public function removeItem($item): MenuEvent
     {
+        /** @phpstan-ignore-next-line */
         $id = $item instanceof MenuItemInterface ? $item->getIdentifier() : (\is_string($item) ? $item : null);
 
         if (\array_key_exists($id, $this->menuRootItems)) {
