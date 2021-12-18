@@ -10,7 +10,6 @@
 namespace KevinPapst\TablerBundle\Event;
 
 use KevinPapst\TablerBundle\Model\MenuItemInterface;
-use Knp\Menu\MenuItem;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -60,7 +59,7 @@ class MenuEvent extends ThemeEvent
     {
         $id = $item instanceof MenuItemInterface ? $item->getIdentifier() : (\is_string($item) ? $item : null);
 
-        if (array_key_exists($id, $this->menuRootItems)) {
+        if (\array_key_exists($id, $this->menuRootItems)) {
             unset($this->menuRootItems[$id]);
         }
 
