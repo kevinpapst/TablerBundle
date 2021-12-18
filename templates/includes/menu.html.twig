@@ -16,6 +16,9 @@
                         </span>
                     {% endif %}
                 <span class="nav-link-title">{{ item.label|trans }}</span>
+                {% if item.badge is not null or item.badgeColor is not null %}
+                    <span class="badge bg-{{ item.badgeColor|default('blue') }}">{{ item.badge }}</span>
+                {% endif %}
             </a>
 
             {% if item.hasChildren %}
