@@ -132,4 +132,10 @@ final class RuntimeExtension implements RuntimeExtensionInterface
     {
         return ($isIcon ? 'icon ' : '') . ($this->icons[str_replace('-', '_', $name)] ?? ($default ?? $name));
     }
+
+    public function createBadge(?string $value, string $class = null): string
+    {
+        return sprintf('<span class="%s">%s</span>', $class, $value);
+    }
+
 }

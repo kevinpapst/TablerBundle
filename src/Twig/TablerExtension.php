@@ -38,6 +38,7 @@ class TablerExtension extends AbstractExtension
             new TwigFunction('tabler_notifications', [RuntimeExtension::class, 'getNotifications']),
             new TwigFunction('tabler_user', [RuntimeExtension::class, 'getUserDetails']),
             new TwigFunction('tabler_icon', [RuntimeExtension::class, 'createIcon'], ['is_safe' => ['html']]),
+            new TwigFunction('tabler_badge', [RuntimeExtension::class, 'createBadge'], ['is_safe' => ['html']]),
         ];
     }
 }

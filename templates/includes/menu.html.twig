@@ -16,6 +16,9 @@
                         </span>
                     {% endif %}
                 <span class="nav-link-title">{{ item.label|trans }}</span>
+                {% if item.badge %}
+                    {{ tabler_badge(item.badge, item.badgeClass) }}
+                {% endif %}
             </a>
 
             {% if item.hasChildren %}

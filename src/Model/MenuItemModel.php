@@ -49,8 +49,31 @@ class MenuItemModel implements MenuItemInterface
     private $badge;
     /**
      * @var string|null
+     * @deprecated
      */
     private $badgeColor;
+
+    /**
+     * @var string|null
+     */
+    private $badgeClass;
+
+    /**
+     * @return string|null
+     */
+    public function getBadgeClass(): ?string
+    {
+        return $this->badgeClass;
+    }
+
+    /**
+     * @param string|null $badgeClass
+     */
+    public function setBadgeClass(?string $badgeClass): void
+    {
+        $this->badgeClass = $badgeClass;
+    }
+
     /**
      * @var bool
      */
