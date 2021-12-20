@@ -19,11 +19,11 @@
         {% set class = class ~ ( values.class | default("")) %}
         {% set attr = values.attr ?? {} %}
         {% set forceTitle = values.combined ?? false %}
-        {% set label = values.label ?? null %}
-        {% set label_color = values.labelColor ?? 'yellow' %}
+        {% set badge = values.badge ?? (values.label ?? null) %}
+        {% set badge_color = values.badgeColor ?? (values.labelColor ?? 'yellow') %}
         {% set translation_domain = values.translation_domain ?? 'messages' %}
 
-        {% if type != 'link' and icon is not same as (false) and (not forceTitle and label is null) %}
+        {% if type != 'link' and icon is not same as (false) and (not forceTitle and badge is null) %}
             {% set class = class ~ ' btn-icon' %}
         {% endif %}
 
@@ -51,8 +51,8 @@
             {%- if (forceTitle or icon is same as (false)) and title is not null -%}
                 {{ title|trans({}, translation_domain) }}
             {% endif %}
-            {%- if label is not null -%}
-                <span class="badge bg-{{ label_color }} {% if forceTitle and title is not null %}ms-1{% endif %}">{{ label }}</span>
+            {%- if badge is not null -%}
+                <span class="badge bg-{{ badge_color }} {% if forceTitle and title is not null %}ms-1{% endif %}">{{ badge }}</span>
             {%- endif -%}
         </a>
     {% endapply %}
