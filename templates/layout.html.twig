@@ -30,9 +30,10 @@ Enjoy your theme!
         {% use '@Tabler/includes/layout_vertical.html.twig' %}
         {% block layout_vertical %}{{ parent() }}{% endblock %}
     {% endif %}
-
+    
 
     <div id="{% block page_wrapper_id %}{% endblock %}" class="page-wrapper">
+        {% block page_header %}
         <div class="{{ ''|tabler_container }}">
             <!-- Page title -->
             <div id="{% block page_header_id %}{% endblock %}" class="page-header d-print-none">
@@ -64,9 +65,11 @@ Enjoy your theme!
                     </div>
                 </div>
             </div>
-        </div>
-
-
+        </div>        
+        {% endblock %}
+        
+        
+        
         <div class="page-body">
             <div class="{{ ''|tabler_container }}">
                 <div class="row row-cards">

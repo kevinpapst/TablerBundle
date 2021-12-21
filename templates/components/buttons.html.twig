@@ -15,10 +15,9 @@
     </a>
 {% endmacro %}
 
-{# TODO test me #}
 {% macro link_button(label, href, icon, type, size) %}
-    {% set _size = size|default(tabler_bundle.button.size) %}
-    {% set _type = type|default(tabler_bundle.button.type) %}
+    {% set _size = size|default(null) %}
+    {% set _type = type|default('primary') %}
     <a href="{{ href|default('#') }}" class="btn btn-{{ _type }}{% if _size %} btn-{{ _size }}{% endif %}">
         {% if icon %}
             {{ tabler_icon(icon) }}
@@ -29,10 +28,9 @@
     </a>
 {% endmacro %}
 
-{# TODO test me #}
 {% macro action_button(label, action, icon, type, size) %}
-    {% set _size = size|default(tabler_bundle.button.size) %}
-    {% set _type = type|default(tabler_bundle.button.type) %}
+    {% set _size = size|default(null) %}
+    {% set _type = type|default('primary') %}
     <button data-action="{{ action }}" class="btn btn-{{ _type }}{% if _size %} btn-{{ _size }}{% endif %}">
         {% if icon %}
             {{ tabler_icon(icon) }}

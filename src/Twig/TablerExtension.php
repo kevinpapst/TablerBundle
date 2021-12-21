@@ -18,7 +18,7 @@ class TablerExtension extends AbstractExtension
     /**
      * @return TwigFilter[]
      */
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
             new TwigFilter('tabler_container', [RuntimeExtension::class, 'containerClass']),
@@ -28,7 +28,10 @@ class TablerExtension extends AbstractExtension
         ];
     }
 
-    public function getFunctions()
+    /**
+     * @return TwigFunction[]
+     */
+    public function getFunctions(): array
     {
         return [
             new TwigFunction('tabler_menu', [RuntimeExtension::class, 'getMenu']),
