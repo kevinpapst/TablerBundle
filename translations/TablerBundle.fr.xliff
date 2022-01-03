@@ -94,6 +94,18 @@
                 <source>registration.confirmed</source>
                 <target>Félicitations %username%, votre compte est maintenant activé.</target>
             </trans-unit>
+            <trans-unit id="Oops… You just found an error page">
+                <source>Oops… You just found an error page</source>
+                <target>Oups… Vous avez trouvé une page d'erreur</target>
+            </trans-unit>
+            <trans-unit id="We are sorry but the page you are looking for was not found">
+                <source>We are sorry but the page you are looking for was not found</source>
+                <target>Nous sommes désolé, mais la page que vous cherchez n'a pas été trouvée</target>
+            </trans-unit>
+            <trans-unit id="Take me home">
+                <source>Take me home</source>
+                <target>Retourner au début</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

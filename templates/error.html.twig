@@ -1,0 +1,31 @@
+{#
+Use this as your error template page,
+use it by adding this code to your own error twig override:
+(e.g: https://symfony.com/doc/current/controller/error_pages.html)
+
+{% extends '@Tabler/error.html.twig' %}
+#}
+
+{% extends '@Tabler/extends/layout_fullpage.html.twig' %}
+
+{% block page_content %}
+    <div class="container-tight py-4">
+        <div class="empty">
+            <div class="empty-header">{% block error_code %}500{% endblock %}</div>
+            <p class="empty-title">{% block error_title %}{{ 'Oops… You just found an error page'|trans({}, 'TablerBundle') }}{% endblock %}</p>
+            <p class="empty-subtitle text-muted">
+                {% block error_subtitle %}
+                    {{ 'We are sorry but the page you are looking for was not found'|trans({}, 'TablerBundle') }}
+                {% endblock %}
+            </p>
+            <div class="empty-action">
+                {% block error_actions %}
+                    <a href="/" class="btn btn-primary">
+                        {{ tabler_icon('back') }}
+                        {{ 'Take me home'|trans({}, 'TablerBundle') }}
+                    </a>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

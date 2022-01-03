@@ -39,10 +39,11 @@ tabler:
         collapse: fas fa-chevron-down
         # used for the password-reset template
         mail: far fa-envelope
+        # used for the 404/500/... error page
+        back: fas fa-long-arrow-alt-left
         # the following are only ideas to be used in your own templates
         about: fas fa-info-circle
         admin: fas fa-wrench
-        back: fas fa-long-arrow-alt-left
         bookmark: far fa-star
         calendar: far fa-calendar-alt
         comment: far fa-comment
