@@ -6,7 +6,10 @@
     {% for item in menu %}
         <li id="{{ item.identifier }}" class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.hasChildren? 'dropdown' : '' }}">
             <a {% if item.hasChildren -%}
-                class="nav-link dropdown-toggle {{ tabler_bundle.isLayoutVertical() and item.hasActiveChildren? 'show' : '' }}" href="#navbar-base" data-bs-toggle="dropdown" role="button" aria-expanded="{{ tabler_bundle.isLayoutVertical() and item.hasActiveChildren? 'true' : 'false' }}"
+                class="nav-link dropdown-toggle" href="#navbar-base" role="button"
+                data-bs-toggle="dropdown"
+                {% if tabler_bundle.isLayoutVertical() and item.hasActiveChildren %}data-bs-auto-close="false"{% endif %}
+                aria-expanded="{{ tabler_bundle.isLayoutVertical() and item.hasActiveChildren? 'true' : 'false' }}"
                 {%- else -%}
                 class="nav-link" href="{{ '/' in item.route ? item.route : path(item.route|tabler_route, item.routeArgs) }}"
                 {%- endif -%}>
