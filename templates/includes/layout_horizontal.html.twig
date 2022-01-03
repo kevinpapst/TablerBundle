@@ -1,7 +1,7 @@
 {% block layout_horizontal %}
 
 {% block header %}
-<header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md navbar-light d-print-none">
+<header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md {{ tabler_bundle.isHeaderDark() ? 'navbar-dark' : 'navbar-light' }} d-print-none">
     <div class="{{ ''|tabler_container }}">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
             <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
 {% block navbar %}
     <div id="{% block navbar_id %}{% endblock %}" class="navbar-expand-md">
         <div class="collapse navbar-collapse" id="navbar-menu">
-            <div class="navbar navbar-light">
+            <div class="navbar {{ tabler_bundle.isNavbarDark() ? 'navbar-dark' : 'navbar-light' }}">
                 <div class="{{ ''|tabler_container }}">
                     {% block navbar_menu %}
                         {% include '@Tabler/includes/menu.html.twig' %}

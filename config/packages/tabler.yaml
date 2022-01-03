@@ -12,6 +12,10 @@ tabler:
         dark_mode: true
         # condensed = one nav-bar, false = two nav-bars
         navbar_condensed: true
+        # true = dark mode, false = light mode (on header)
+        header_dark: false
+        # true = dark mode, false = light mode (on menu)
+        navbar_dark: false
         # true = boxed layout, false = full-screen
         boxed_layout: false
         # false = left to right, true = right to left
