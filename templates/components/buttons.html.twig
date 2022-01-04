@@ -40,3 +40,20 @@
         {% endif %}
     </button>
 {% endmacro %}
+
+{% macro submit_button(icon, user_values, type) %}
+    {% import '@Tabler/components/button.html.twig' as macro %}
+
+    {% set default_values = {
+        combined : true,
+        attr : {type: 'submit'},
+        disabled : false,
+        isHtmlButton : true,
+    } %}
+
+    {% set values_attr = default_values.attr | merge(user_values.attr|default({})) %}
+    {% set values = default_values | merge(user_values|default({})) %}
+    {% set values = values | merge({'attr' : values_attr}) %}
+
+    {{ macro.button(icon, values, type) }}
+{% endmacro %}

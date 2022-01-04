@@ -23,6 +23,7 @@
         {% set forceTitle = values.combined ?? false %}
         {% set label = values.label ?? null %}
         {% set translation_domain = values.translation_domain ?? 'messages' %}
+        {% set isHtmlButton = values.isHtmlButton ?? false %}
 
         {% if type != 'link' and not forceTitle and type is not same as (false) and label is null %}
             {% set class = class ~ ' btn-icon' %}
@@ -32,7 +33,7 @@
             {% set class = class ~ " disabled"  %}
         {% endif %}
 
-        <a class="{{ class | trim }}" href="{{ url }}"
+        <{% if isHtmlButton %}button{% else %}a{% endif %} class="{{ class | trim }}" {% if not isHtmlButton %}href="{{ url }}"{% endif %}
                 {%- if disabled is same as (true) %} disabled="disabled"{% endif %}
                 {%- if id is not empty %} id="{{ id }}"{% endif %}
                 {%- if toggle is not empty %} data-bs-toggle="{{ toggle }}"{% endif %}
@@ -57,6 +58,6 @@
             {%- if label is not null -%}
                 <span class="badge bg-yellow">{{ label }}</span>
             {%- endif -%}
-        </a>
+        </{% if isHtmlButton %}button{% else %}a{% endif %}>
     {% endapply %}
 {% endmacro %}
