@@ -23,7 +23,7 @@
         {% set forceTitle = values.combined ?? false %}
         {% set label = values.label ?? null %}
         {% set translation_domain = values.translation_domain ?? 'messages' %}
-        {% set buttonType = values.buttonType == 'button' or values.buttonType == 'submit' ? 'button' : 'a' %}
+        {% set buttonType = values.buttonType is defined and (values.buttonType == 'button' or values.buttonType == 'submit') ? 'button' : 'a' %}
 
         {% if type != 'link' and not forceTitle and type is not same as (false) and label is null %}
             {% set class = class ~ ' btn-icon' %}
@@ -33,7 +33,7 @@
             {% set class = class ~ " disabled"  %}
         {% endif %}
 
-        <{{ buttonType|raw }} class="{{ class | trim }}" {% if buttonType not same as ("button") %}href="{{ url }}"{% endif %}
+        <{{ buttonType|raw }} class="{{ class | trim }}" {% if buttonType is not same as ("button") %}href="{{ url }}"{% endif %}
                 {%- if disabled is same as (true) %} disabled="disabled"{% endif %}
                 {%- if id is not empty %} id="{{ id }}"{% endif %}
                 {%- if toggle is not empty %} data-bs-toggle="{{ toggle }}"{% endif %}
