@@ -82,9 +82,11 @@ Enjoy your theme!
             <div class="page-header d-print-none">
                 <div class="row align-items-center">
                     <div class="col">
+                        {% block breadcrumb %}
                         <div class="page-pretitle">
-                            {% block page_pretitle %}{% block breadcrumb %}Overview{% endblock %}{% endblock %}
+                            {% block page_pretitle %}Overview{% endblock %}
                         </div>
+                        {% endblock %}
                         <h2 class="page-title">
                             {% block page_title %}Dashboard{% endblock %}
                         </h2>
