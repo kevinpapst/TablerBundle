@@ -48,7 +48,7 @@
         combined : true,
         attr : {type: 'submit'},
         disabled : false,
-        isHtmlButton : true,
+        buttonType : 'submit',
     } %}
 
     {% set values_attr = default_values.attr | merge(user_values.attr|default({})) %}
