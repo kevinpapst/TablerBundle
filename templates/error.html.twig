@@ -4,17 +4,17 @@
 
 {% block page_content %}
     {% set errorTitleKey = "http_error_#{status_code}.title" %}
-    {% set errorTitleTrans = errorTitleKey|trans({ '%status_code%': status_code }, 'exceptions') %}
+    {% set errorTitleTrans = errorTitleKey|trans({ '%status_code%': status_code }, 'TablerBundle') %}
     {% if errorTitleKey == errorTitleTrans %}
         {% set errorTitleKey = 'http_error.title' %}
-        {% set errorTitleTrans = errorTitleKey|trans({ '%status_code%': status_code }, 'exceptions') %}
+        {% set errorTitleTrans = errorTitleKey|trans({ '%status_code%': status_code }, 'TablerBundle') %}
     {% endif %}
 
     {% set errorMessageKey = "http_error_#{status_code}.description" %}
-    {% set errorMessageTrans = errorMessageKey|trans({ '%status_code%': status_code }, 'exceptions') %}
+    {% set errorMessageTrans = errorMessageKey|trans({ '%status_code%': status_code }, 'TablerBundle') %}
     {% if errorMessageKey == errorMessageTrans %}
         {% set errorMessageKey = 'http_error.description' %}
-        {% set errorMessageTrans = errorMessageKey|trans({ '%status_code%': status_code }, 'exceptions') %}
+        {% set errorMessageTrans = errorMessageKey|trans({ '%status_code%': status_code }, 'TablerBundle') %}
     {% endif %}
 
     <div class="container-tight py-4">
