@@ -1,21 +1,39 @@
-{#
-Use this as your error template page,
-use it by adding this code to your own error twig override:
-(e.g: https://symfony.com/doc/current/controller/error_pages.html)
+{% extends '@Tabler/fullpage.html.twig' %}
 
-{% extends '@Tabler/error.html.twig' %}
-#}
-
-{% extends '@Tabler/extends/layout_fullpage.html.twig' %}
+{% block title %}{{ status_text|trans({}, 'TablerBundle') }}{% endblock %}
 
 {% block page_content %}
+    {% set errorTitleKey = "http_error_#{status_code}.title" %}
+    {% set errorTitleTrans = errorTitleKey|trans({ '%status_code%': status_code }, 'exceptions') %}
+    {% if errorTitleKey == errorTitleTrans %}
+        {% set errorTitleKey = 'http_error.title' %}
+        {% set errorTitleTrans = errorTitleKey|trans({ '%status_code%': status_code }, 'exceptions') %}
+    {% endif %}
+
+    {% set errorMessageKey = "http_error_#{status_code}.description" %}
+    {% set errorMessageTrans = errorMessageKey|trans({ '%status_code%': status_code }, 'exceptions') %}
+    {% if errorMessageKey == errorMessageTrans %}
+        {% set errorMessageKey = 'http_error.description' %}
+        {% set errorMessageTrans = errorMessageKey|trans({ '%status_code%': status_code }, 'exceptions') %}
+    {% endif %}
+
     <div class="container-tight py-4">
         <div class="empty">
-            <div class="empty-header">{% block error_code %}500{% endblock %}</div>
-            <p class="empty-title">{% block error_title %}{{ 'Oops… You just found an error page'|trans({}, 'TablerBundle') }}{% endblock %}</p>
+            <div class="empty-header">{% block error_code %}{{ status_code }}{% endblock %}</div>
+            <p class="empty-title">
+                {% block error_title %}
+                    {% if errorTitleKey != errorTitleTrans %}
+                        {{ errorTitleTrans }}
+                    {% else %}
+                        {{ status_text }}
+                    {% endif %}
+                {% endblock %}
+            </p>
             <p class="empty-subtitle text-muted">
                 {% block error_subtitle %}
-                    {{ 'We are sorry but the page you are looking for was not found'|trans({}, 'TablerBundle') }}
+                    {% if errorMessageKey != errorMessageTrans %}
+                        {{ errorMessageTrans }}
+                    {% endif %}
                 {% endblock %}
             </p>
             <div class="empty-action">

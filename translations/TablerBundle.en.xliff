@@ -106,13 +106,13 @@
                 <source>Close modal</source>
                 <target>Close modal</target>
             </trans-unit>
-            <trans-unit id="Oops… You just found an error page">
-                <source>Oops… You just found an error page</source>
-                <target>Oops… You just found an error page</target>
+            <trans-unit resname="http_error.title" id="Oops… You just found an error">
+                <source>Oops… You just found an error</source>
+                <target>Oops… You just found an error</target>
             </trans-unit>
-            <trans-unit id="We are sorry but the page you are looking for was not found">
-                <source>We are sorry but the page you are looking for was not found</source>
-                <target>We are sorry but the page you are looking for was not found</target>
+            <trans-unit resname="http_error.description" id="We are sorry but something went wrong">
+                <source>We are sorry but something went wrong</source>
+                <target>We are sorry but something went wrong</target>
             </trans-unit>
             <trans-unit id="Take me home">
                 <source>Take me home</source>

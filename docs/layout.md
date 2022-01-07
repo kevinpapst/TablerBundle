@@ -11,16 +11,30 @@ This bundle ships with two main template files which you can extend in your them
 
 **For all your admin pages**
 
-The default `layout.html.twig` can be used with:   
+The default `layout.html.twig` file can be used with:   
 ```
 {% extends '@Tabler/layout.html.twig' %}
 ```
 
 **For your security screens**
 
-The `security.html.twig` for login, register ... can be used with:   
+The `security.html.twig` file for login, register ... can be used with:   
 ```
 {% extends '@Tabler/security.html.twig' %}
+```
+
+**For your error pages**
+
+The `error.html.twig` for all of your [error pages](error_pages.md):   
+```
+{% extends '@Tabler/error.html.twig' %}
+```
+
+**For full width pages**
+
+The `fullpage.html.twig` file without header, menu, footer:   
+```
+{% extends '@Tabler/fullpage.html.twig' %}
 ```
 
 ## Twig Context-Helper
