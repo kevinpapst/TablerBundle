@@ -1,8 +1,6 @@
 {% macro button(icon, values, type) %}
     {%- apply spaceless -%}
-        {% if type is same as (false) %}
-            {% set class = "" %}
-        {% elseif type is null %}
+        {% if type is null or type is same as (false) %}
             {% set class = "btn " %}
         {% else %}
             {% set class = "btn btn-" ~ type ~ " " %}
@@ -21,10 +19,12 @@
         {% set class = class ~ ( values.class | default("")) %}
         {% set attr = values.attr ?? {} %}
         {% set forceTitle = values.combined ?? false %}
-        {% set label = values.label ?? null %}
+        {% set badge = values.badge ?? (values.label ?? null) %}
+        {% set badge_color = values.badgeColor ?? (values.labelColor ?? 'yellow') %}
         {% set translation_domain = values.translation_domain ?? 'messages' %}
+        {% set buttonType = values.buttonType is defined and (values.buttonType == 'button' or values.buttonType == 'submit') ? 'button' : 'a' %}
 
-        {% if type != 'link' and not forceTitle and type is not same as (false) and label is null %}
+        {% if type != 'link' and icon is not same as (false) and (not forceTitle and badge is null) %}
             {% set class = class ~ ' btn-icon' %}
         {% endif %}
 
@@ -32,31 +32,29 @@
             {% set class = class ~ " disabled"  %}
         {% endif %}
 
-        <a class="{{ class | trim }}" href="{{ url }}"
+        <{{ buttonType|raw }} class="{{ class | trim }}" {% if buttonType is not same as ("button") %}href="{{ url }}"{% endif %}
                 {%- if disabled is same as (true) %} disabled="disabled"{% endif %}
                 {%- if id is not empty %} id="{{ id }}"{% endif %}
                 {%- if toggle is not empty %} data-bs-toggle="{{ toggle }}"{% endif %}
                 {%- if modal is not empty %} data-bs-toggle="modal" data-bs-target="{{ modal }}"{% endif %}
                 {%- if collapse is not empty %} data-bs-toggle="collapse" data-bs-target="{{ collapse }}"{% endif %}
-                {%- if onclick is not empty %} onclick="{{ onclick }}"{% endif %}
-                {%- if target is not empty %} target="{{ target }}"{% endif %}
+                {%- if onclick is not empty %} onclick="{{ onclick }}"{% endif %}      
+                {%- if target is not empty %} {% if values.buttonType == 'submit' %}formtarget{% else %}target{% endif %}="{{ target }}"{% endif %}
                 {%- if not forceTitle and title is not null and type is not same as (false) %} data-toggle="tooltip" data-bs-placement="top" title="{{ title|trans({}, translation_domain) }}"{% endif %}
                 {%- if attr is not empty %}
                     {% for name, value in attr %}
                     {{ ' ' ~ name }}={% if '"' in value %}'{{ value|raw }}'{% else %}"{{ value|raw }}"{% endif %}
                     {% endfor %}
                 {% endif %}>
-            {%- if not forceTitle and (title is not null and type is same as (false)) -%}
-                {{ title|trans({}, translation_domain) }}
-            {% else %}
+            {%- if icon is not same as (false) -%}
                 {{ tabler_icon(icon) }}
             {% endif %}
-            {%- if forceTitle -%}
+            {%- if (forceTitle or icon is same as (false)) and title is not null -%}
                 {{ title|trans({}, translation_domain) }}
             {% endif %}
-            {%- if label is not null -%}
-                <span class="badge bg-yellow">{{ label }}</span>
+            {%- if badge is not null -%}
+                <span class="badge bg-{{ badge_color }} {% if forceTitle and title is not null %}ms-1{% endif %}">{{ badge }}</span>
             {%- endif -%}
-        </a>
+        </{{ buttonType|raw }}>
     {% endapply %}
 {% endmacro %}
