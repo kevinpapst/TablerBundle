@@ -6,12 +6,14 @@ It ships with many twig helper (functions, filter, embeds. macros and includes) 
 
 ## Introduction
 
-WORK IN PROGRESS 
+See documentation at [docs/](docs/index.md).
+
+!!! WORK IN PROGRESS !!!
 
 ### Minimum requirements
 
 - Symfony >= 4.4
-- PHP >= 7.3
+- PHP >= 7.4
 
 ## Features
 
@@ -30,17 +32,7 @@ Technical details:
 
 ## Installation
 
-### Applications that use Symfony Flex
-
-Open a command console, enter your project directory and execute:
-
-```console
-composer require kevinpapst/tabler-bundle
-```
-
-### Applications that don't use Symfony Flex
-
-#### Step 1: Download the Bundle
+### Step 1: Download the Bundle
 
 Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
@@ -49,7 +41,7 @@ following command to download the latest stable version of this bundle:
 composer require kevinpapst/tabler-bundle
 ```
 
-#### Step 2: Configure the Bundle
+### Step 2: Configure the Bundle
 
 Copy the default config to your `config/packages/` directory:
 
@@ -57,9 +49,9 @@ Copy the default config to your `config/packages/` directory:
 cp vendor/kevinpapst/tabler-bundle/config/packages/tabler.yaml config/packages/
 ```
 
-#### Step 3: Enable the Bundle
+### Step 3: Enable the Bundle
 
-Then, enable the bundle by adding it to the list of registered bundles
+Enable the bundle by adding it to the list of registered bundles
 in the `config/bundles.php` file of your project:
 
 ```php
@@ -70,6 +62,10 @@ return [
     KevinPapst\TablerBundle\TablerBundle::class => ['all' => true],
 ];
 ```
+
+### Step 4: Documentation
+
+Now read what you should do in order to use the theme at [docs/](docs/index.md).
 
 ## License and contributors
 
