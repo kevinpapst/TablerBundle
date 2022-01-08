@@ -128,7 +128,6 @@ class Configuration implements ConfigurationInterface
                 ->enumNode('layout')
                     ->values(['horizontal', 'vertical'])
                     ->defaultValue('horizontal')
-                    ->isRequired()
                 ->end()
                 ->booleanNode('dark_mode')
                     ->defaultFalse()
