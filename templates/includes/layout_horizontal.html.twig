@@ -31,9 +31,8 @@
 </header>
 {% endblock %}
 
-{% if not tabler_bundle.isCondensedNavbar() %}
-
 {% block navbar %}
+{% if not tabler_bundle.isCondensedNavbar() %}
     <div id="{% block navbar_id %}{% endblock %}" class="navbar-expand-md">
         <div class="collapse navbar-collapse" id="navbar-menu">
             <div class="navbar {{ tabler_bundle.isNavbarDark() ? 'navbar-dark' : 'navbar-light' }}">
@@ -48,6 +47,5 @@
             </div>
         </div>
     </div>
-{% endblock %}
-
 {% endif %}
+{% endblock %}
