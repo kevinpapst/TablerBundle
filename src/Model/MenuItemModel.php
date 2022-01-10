@@ -189,7 +189,7 @@ class MenuItemModel implements MenuItemInterface
         return null;
     }
 
-    public function hasActiveChildren(): bool
+    public function hasActiveChild(): bool
     {
         return null !== $this->getActiveChild();
     }
