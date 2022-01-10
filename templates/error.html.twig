@@ -1,0 +1,49 @@
+{% extends '@Tabler/fullpage.html.twig' %}
+
+{% block title %}{{ status_text|trans({}, 'TablerBundle') }}{% endblock %}
+
+{% block page_content %}
+    {% set errorTitleKey = "http_error_#{status_code}.title" %}
+    {% set errorTitleTrans = errorTitleKey|trans({ '%status_code%': status_code }, 'TablerBundle') %}
+    {% if errorTitleKey == errorTitleTrans %}
+        {% set errorTitleKey = 'http_error.title' %}
+        {% set errorTitleTrans = errorTitleKey|trans({ '%status_code%': status_code }, 'TablerBundle') %}
+    {% endif %}
+
+    {% set errorMessageKey = "http_error_#{status_code}.description" %}
+    {% set errorMessageTrans = errorMessageKey|trans({ '%status_code%': status_code }, 'TablerBundle') %}
+    {% if errorMessageKey == errorMessageTrans %}
+        {% set errorMessageKey = 'http_error.description' %}
+        {% set errorMessageTrans = errorMessageKey|trans({ '%status_code%': status_code }, 'TablerBundle') %}
+    {% endif %}
+
+    <div class="container-tight py-4">
+        <div class="empty">
+            <div class="empty-header">{% block error_code %}{{ status_code }}{% endblock %}</div>
+            <p class="empty-title">
+                {% block error_title %}
+                    {% if errorTitleKey != errorTitleTrans %}
+                        {{ errorTitleTrans }}
+                    {% else %}
+                        {{ status_text }}
+                    {% endif %}
+                {% endblock %}
+            </p>
+            <p class="empty-subtitle text-muted">
+                {% block error_subtitle %}
+                    {% if errorMessageKey != errorMessageTrans %}
+                        {{ errorMessageTrans }}
+                    {% endif %}
+                {% endblock %}
+            </p>
+            <div class="empty-action">
+                {% block error_actions %}
+                    <a href="/" class="btn btn-primary">
+                        {{ tabler_icon('back') }}
+                        {{ 'Take me home'|trans({}, 'TablerBundle') }}
+                    </a>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

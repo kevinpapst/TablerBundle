@@ -106,6 +106,18 @@
                 <source>Close modal</source>
                 <target>Close modal</target>
             </trans-unit>
+            <trans-unit resname="http_error.title" id="Oops… You just found an error">
+                <source>Oops… You just found an error</source>
+                <target>Oops… You just found an error</target>
+            </trans-unit>
+            <trans-unit resname="http_error.description" id="We are sorry but something went wrong">
+                <source>We are sorry but something went wrong</source>
+                <target>We are sorry but something went wrong</target>
+            </trans-unit>
+            <trans-unit id="Take me home">
+                <source>Take me home</source>
+                <target>Take me home</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

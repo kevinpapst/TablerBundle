@@ -3,6 +3,7 @@
 If you cannot find the needed information in this list of topics, please create an [issue](https://github.com/kevinpapst/TablerBundle/issues):
 
 * [Using the layout](layout.md)
+* [Error pages](error_pages.md)
 * [Customizing the menu](menu.md)
 * [Displaying notifications](notifications.md)
 
