@@ -18,14 +18,7 @@
             </h1>
         {% endblock %}
         <div class="navbar-nav flex-row order-md-last">
-            {% block navbar_start %}{% endblock %}
-            {% block navbar_notifications %}
-                {% include '@Tabler/includes/navbar_notifications.html.twig' %}
-            {% endblock %}
-            {% block navbar_user %}
-                {% include '@Tabler/includes/navbar_user.html.twig' %}
-            {% endblock %}
-            {% block navbar_end %}{% endblock %}
+            {% embed '@Tabler/embeds/navbar.html.twig' %}{% endembed %}
         </div>
         {% if tabler_bundle.isCondensedNavbar() %}
             <div class="collapse navbar-collapse" id="navbar-menu">
