@@ -4,6 +4,12 @@ If you cannot find the needed information in this list of topics, please create 
 
 * [Using the layout](layout.md)
 * [Error pages](error_pages.md)
+* [Customizing the menu](menu.md)
+* [Displaying notifications](notifications.md)
+
+Components (Twig macros):
+
+* [Buttons](components-buttons.md)
 
 For the users migrating from the [AdminLTEBundle](https://github.com/kevinpapst/AdminLTEBundle):
 
