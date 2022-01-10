@@ -1,0 +1,21 @@
+{% extends '@Tabler/security.html.twig' %}
+
+{% block login_social_auth %}{% endblock %}
+
+{% block login_box_msg %}
+    {{ 'Reset your password'|trans({}, 'TablerBundle') }}
+{% endblock %}
+
+
+{% block login_form %}
+    {{ form_start(resetForm) }}
+    {{ form_row(resetForm.plainPassword) }}
+
+    <div class="form-footer">
+        <button type="submit" class="btn btn-primary w-100">
+            {{ 'Reset password'|trans({}, 'TablerBundle') }}
+        </button>
+    </div>
+
+    {{ form_end(resetForm) }}
+{% endblock %}
