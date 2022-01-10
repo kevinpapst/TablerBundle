@@ -38,7 +38,7 @@
             </p>
             <div class="empty-action">
                 {% block error_actions %}
-                    <a href="/" class="btn btn-primary">
+                    <a href="{{ path('tabler_welcome'|tabler_route) }}" class="btn btn-primary">
                         {{ tabler_icon('back') }}
                         {{ 'Take me home'|trans({}, 'TablerBundle') }}
                     </a>
