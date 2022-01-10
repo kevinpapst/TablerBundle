@@ -1,5 +1,3 @@
-{% block layout_vertical %}
-
 {% block navbar %}
 <aside id="{% block sidebar_id %}{% endblock %}" class="navbar navbar-vertical navbar-expand-lg {{ tabler_bundle.isNavbarDark() ? 'navbar-dark' : 'navbar-light' }}">
     <div class="{{ ''|tabler_container }}">
@@ -49,6 +47,4 @@
         </div>
     </header>
 {% endif %}
-{% endblock %}
-
 {% endblock %}
