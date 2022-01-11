@@ -7,6 +7,7 @@ If you cannot find the needed information in this list of topics, please create 
 * [Customizing the menu](menu.md)
 * [Displaying notifications](notifications.md)
 * [Override theme](theme/override_theme.md)
+* [Access bundle configuration](twig-context.md)
 
 Components (Twig macros):
 
