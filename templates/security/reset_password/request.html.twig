@@ -11,26 +11,26 @@
 {% endblock %}
 
 {% block login_form %}
-        {% for flashError in app.flashes('reset_password_error') %}
-            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-        {% endfor %}
+    {% for flashError in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
 
-        {% block request_help %}
-            <p class="text-muted mb-4">{{ 'Enter your email address and your password will be reset and emailed to you.'|trans({}, 'TablerBundle') }}</p>
-        {% endblock %}
+    {% block request_help %}
+        <p class="text-muted mb-4">{{ 'Enter your email address and your password will be reset and emailed to you.'|trans({}, 'TablerBundle') }}</p>
+    {% endblock %}
 
-        {{ form_start(requestForm) }}
+    {{ form_start(requestForm) }}
 
-        {{ form_row(requestForm.email) }}
+    {{ form_row(requestForm.email) }}
 
-        <div class="form-footer">
-            <button type="submit" class="btn btn-primary w-100">
-                {{ tabler_icon('mail') }}
-                {{ 'Reset your password'|trans({}, 'TablerBundle') }}
-            </button>
-        </div>
+    <div class="form-footer">
+        <button type="submit" class="btn btn-primary w-100">
+            {{ tabler_icon('mail') }}
+            {{ 'Reset your password'|trans({}, 'TablerBundle') }}
+        </button>
+    </div>
 
-        {{ form_end(requestForm) }}
+    {{ form_end(requestForm) }}
 {% endblock %}
 
 {% block login_actions %}
