@@ -6,6 +6,7 @@ If you cannot find the needed information in this list of topics, please create 
 * [Error pages](error_pages.md)
 * [Customizing the menu](menu.md)
 * [Displaying notifications](notifications.md)
+* [Override theme](theme/override_theme.md)
 
 Components (Twig macros):
 

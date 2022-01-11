@@ -1,0 +1,279 @@
+$primary-color--light: #153e86;
+$primary-color: #14397d;
+$primary-color--dark: #11316b;
+
+$secondary-color--light: #7ebfe5;
+$secondary-color: #77b5d9;
+$secondary-color--dark: #71abcc;
+
+$tertiary-color--light: #e0f4fd;
+$tertiary-color: #d7eaf3;
+$tertiary-color--dark: #ccdee7;
+
+$success-color: #2ecc71;
+$success-color--dark: #27ae60;
+
+$warning-color: #e67e22;
+$warning-color--dark: #d35400;
+
+$danger-color: #e74c3c;
+$danger-color--dark: #c0392b;
+
+$info-color: #3498db;
+$info-color--dark: #2980b9;
+
+$white-color--light: #fff;
+$white-color: #f8f8f8;
+$white-color--dark: #e1e1e1;
+$white-color--border: #cb4d4d; // Tabler default: #206bc4
+
+$font-color--white: #fff;
+$font-color--black: #000;
+
+/* === Font: Hind === */
+@font-face {
+  font-family: 'Hind';
+  font-weight: normal;
+  src: url('../fonts/Hind/Hind-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Hind';
+  font-weight: bold;
+  src: url('../fonts/Hind/Hind-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Hind';
+  font-weight: 300;
+  src: url('../fonts/Hind/Hind-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Hind';
+  font-weight: 600;
+  src: url('../fonts/Hind/Hind-SemiBold.ttf') format('truetype');
+}
+
+
+/* === Font: MontSerrat === */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  src: url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  src: url('../fonts/Montserrat/Montserrat-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  src: url('../fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  src: url('../fonts/Montserrat/Montserrat-Italic.ttf') format('truetype');
+}
+
+/**
+ * Convert "Sass color" into "RBG Tabler variable"
+ * @param $color [Sass::Script::Value::Color]
+ */
+@function hexToTablerRGB($color) {
+  @return red($color), green($color), blue($color);
+}
+
+:root {
+  --tblr-font-sans-serif: Hind, Arial, sans-serif; // font sans-serif global
+
+  --tblr-primary-rgb: #{hexToTablerRGB($primary-color)};
+  --tblr-secondary-rgb: #{hexToTablerRGB($secondary-color)};
+  --tblr-success-rgb: #{hexToTablerRGB($success-color)};
+  --tblr-warning-rgb: #{hexToTablerRGB($warning-color)};
+  --tblr-danger-rgb: #{hexToTablerRGB($danger-color)};
+  --tblr-info-rgb: #{hexToTablerRGB($info-color)};
+  //--tblr--rgb: #{hexToTablerRGB($-color)};
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Montserrat, var(--tblr-font-sans-serif); // font only for titles
+}
+
+.form-check-input:checked {
+  background-color: $primary-color;
+}
+
+
+/* ==== NavBar colors ==== */
+.navbar-light {
+  background: $white-color--light;
+
+  .nav-item.active .nav-link{
+    background-color: $white-color--light;
+  }
+
+  // Only available for navbar-light
+  .nav-item.active::after, .nav-item.active::after {
+    border-color: $white-color--border !important;
+  }
+
+  .dropdown-item.active, .dropdown-item:active {
+    background-color: transparentize($white-color--border,0.95);
+    color: $white-color--border;
+  }
+}
+
+
+.navbar-dark {
+  background: $primary-color;
+
+  .nav-item.active .nav-link{
+    background-color: $primary-color--light;
+  }
+
+  .dropdown-item.active, .dropdown-item:active {
+    background-color: $primary-color--dark;
+    color: $secondary-color;
+  }
+}
+/* ======================= */
+
+
+
+.bg-primary {
+  color: $font-color--white;
+}
+
+.bg-secondary {
+  color: $font-color--white;
+}
+
+.bg-success {
+  //color: $font-color--white; // any color
+}
+
+.bg-warning {
+  //color: $font-color--white; // any color
+}
+
+.bg-danger {
+  //color: $font-color--white; // any color
+}
+
+.bg-info {
+  //color: $font-color--white; // any color
+}
+
+.bg-dark {
+  //color: $font-color--white; // any color
+}
+
+
+
+.alert-success {
+  --tblr-alert-color: #{$success-color};
+}
+
+.alert-warning {
+  --tblr-alert-color: #{$warning-color};
+}
+
+.alert-danger {
+  --tblr-alert-color: #{$danger-color};
+}
+
+.alert-info {
+  --tblr-alert-color: #{$info-color};
+}
+
+
+
+.btn-primary, .btn-outline-primary, .btn-ghost-primary {
+  --tblr-btn-color: #{$primary-color};
+  --tblr-btn-color-interactive: #{$primary-color--dark};
+}
+
+.btn-secondary, .btn-outline-secondary, .btn-ghost-secondary {
+  --tblr-btn-color: #{$secondary-color};
+  --tblr-btn-color-interactive: #{$secondary-color--dark};
+  //--tblr-btn-color-text: #f8fafc; // any color
+}
+
+.btn-default, .btn-outline-default, .btn-ghost-default {
+  --tblr-btn-color: #{$tertiary-color};
+  --tblr-btn-color-interactive: #{$tertiary-color--dark};
+  //--tblr-btn-color-text: #f8fafc; // any color
+}
+
+.btn-success, .btn-outline-success, .btn-ghost-success {
+  --tblr-btn-color: #{$success-color};
+  --tblr-btn-color-interactive: #{$success-color--dark};
+  //--tblr-btn-color-text: #f8fafc; // any color
+}
+
+.btn-warning, .btn-outline-warning, .btn-ghost-warning {
+  --tblr-btn-color: #{$warning-color};
+  --tblr-btn-color-interactive: #{$warning-color--dark};
+  //--tblr-btn-color-text: #f8fafc; // any color
+}
+
+.btn-danger, .btn-outline-danger, .btn-ghost-danger {
+  --tblr-btn-color: #{$danger-color};
+  --tblr-btn-color-interactive: #{$danger-color--dark};
+  //--tblr-btn-color-text: #f8fafc; // any color
+}
+
+.btn-info, .btn-outline-info, .btn-ghost-info {
+  --tblr-btn-color: #{$info-color};
+  --tblr-btn-color-interactive: #{$info-color--dark};
+  //--tblr-btn-color-text: #f8fafc; // any color
+}
+
+.badge {
+  --tblr-bg-opacity: 1;
+
+  &.badge-primary {
+    color: $font-color--white;
+    background-color: rgba(var(--tblr-primary-rgb), var(--tblr-bg-opacity)) !important;
+  }
+
+  &.badge-secondary {
+    color: $font-color--white;
+    background-color: rgba(var(--tblr-secondary-rgb), var(--tblr-bg-opacity)) !important;
+  }
+
+  &.badge-success {
+    //color: $font-color--white; // any color
+    background-color: rgba(var(--tblr-success-rgb), var(--tblr-bg-opacity)) !important;
+  }
+
+  &.badge-warning {
+    //color: $font-color--white; // any color
+    background-color: rgba(var(--tblr-warning-rgb), var(--tblr-bg-opacity)) !important;
+  }
+
+  &.badge-danger {
+    //color: $font-color--white; // any color
+    background-color: rgba(var(--tblr-danger-rgb), var(--tblr-bg-opacity)) !important;
+  }
+
+  &.badge-info {
+    //color: $font-color--white; // any color
+    background-color: rgba(var(--tblr-info-rgb), var(--tblr-bg-opacity)) !important;
+  }
+}
+
+
+
