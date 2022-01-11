@@ -40,21 +40,7 @@ The `fullpage.html.twig` file without header, menu, footer:
 ## Twig Context-Helper
 
 Instead of fully relying on blocks and includes, you are provided with a twig global named `tabler_bundle`.
-
-To see all available settings, simply dump it in one of your templates:
-
-```twig
-{{ dump(tabler_bundle) }}
-```
-
-You can use it to retrieve theme related settings, but you can also use it as parameter bag
-to carry values from your backend to any place in your template with the method:
-
-- `setOption(string $name, $value): void`
-- `hasOption(string $name): bool`
-- `getOption(string $name, $default = null): mixed`
-- `getOptions(): array` - will return yours and also all Tabler bundler related settings
-
+Read the [Access bundle configuration](twig-context.md) chapter.
 
 ## Partials
 
