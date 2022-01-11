@@ -2,6 +2,10 @@
 
 {% block login_social_auth %}{% endblock %}
 
+{% block title %}
+    {{ 'I forgot my password'|trans({}, 'TablerBundle') }}
+{% endblock %}
+
 {% block login_box_msg %}
     {{ 'I forgot my password'|trans({}, 'TablerBundle') }}
 {% endblock %}
