@@ -1,0 +1,9 @@
+{% extends '@Tabler/security.html.twig' %}
+
+{% block login_social_auth %}{% endblock %}
+
+{% block login_box_error %}
+    {% for flashError in app.flashes('reset_password_error') %}
+        <div class="alert alert-important alert-danger">{{ flashError }}</div>
+    {% endfor %}
+{% endblock %}

@@ -1,6 +1,4 @@
-{% extends '@Tabler/security.html.twig' %}
-
-{% block login_social_auth %}{% endblock %}
+{% extends '@Tabler/security/reset_password/base.html.twig' %}
 
 {% block title %}
     {{ 'I forgot my password'|trans({}, 'TablerBundle') }}
@@ -11,10 +9,6 @@
 {% endblock %}
 
 {% block login_form %}
-    {% for flashError in app.flashes('reset_password_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
-
     {% block request_help %}
         <p class="text-muted mb-4">{{ 'Enter your email address and your password will be reset and emailed to you.'|trans({}, 'TablerBundle') }}</p>
     {% endblock %}

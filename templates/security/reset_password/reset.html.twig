@@ -1,6 +1,4 @@
-{% extends '@Tabler/security.html.twig' %}
-
-{% block login_social_auth %}{% endblock %}
+{% extends '@Tabler/security/reset_password/base.html.twig' %}
 
 {% block title %}
     {{ 'Reset your password'|trans({}, 'TablerBundle') }}
@@ -9,7 +7,6 @@
 {% block login_box_msg %}
     {{ 'Reset your password'|trans({}, 'TablerBundle') }}
 {% endblock %}
-
 
 {% block login_form %}
     {{ form_start(resetForm) }}
