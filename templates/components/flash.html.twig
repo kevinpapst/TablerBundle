@@ -1,12 +1,17 @@
 {% macro flash(type, message, close, use_raw, class, domain) %}
-    <div class="alert{{ type ? ' alert-'~type : '' }} fade in {{ class|default('') }} {% if close|default(false) %}alert-dismissible{% endif %}">
+    <div class="alert{{ type ? ' alert-'~type : '' }} {{ class|default('') }} {% if close|default(false) %}alert-dismissible{% endif %}">
+        <div>
+            <h4 class="alert-title">
+                {% if use_raw|default(false) %}
+                    {{ message|trans({}, domain|default('TablerBundle'))|raw }}
+                {% else %}
+                    {{ message|trans({}, domain|default('TablerBundle')) }}
+                {% endif %}
+            </h4>
+        </div>
+
         {% if close|default(false) %}
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        {% endif %}
-        {% if use_raw|default(false) %}
-            {{ message|trans({}, domain|default('TablerBundle'))|raw }}
-        {% else %}
-            {{ message|trans({}, domain|default('TablerBundle')) }}
+            <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>
         {% endif %}
     </div>
 {% endmacro %}
