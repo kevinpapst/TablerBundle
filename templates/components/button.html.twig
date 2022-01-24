@@ -18,7 +18,7 @@
         {% set title = values.title ?? null %}
         {% set class = class ~ ( values.class | default("")) %}
         {% set attr = values.attr ?? {} %}
-        {% set forceTitle = values.combined ?? false %}
+        {% set forceTitle = icon is same as (false) or (values.combined ?? false) %}
         {% set badge = values.badge ?? (values.label ?? null) %}
         {% set badge_color = values.badgeColor ?? (values.labelColor ?? 'yellow') %}
         {% set translation_domain = values.translation_domain ?? 'messages' %}
