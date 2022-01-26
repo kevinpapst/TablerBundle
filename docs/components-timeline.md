@@ -12,7 +12,7 @@ Timeline has been implemented to simplify the use of the Tabler Timeline compone
 | Parameter | Description                    |   Type    | Default |
 |:---------:|:-------------------------------|:---------:|:-------:|
 |   items   | Array of [Item](#Item)         |  `array`  |  `[]`   |
-| isSimple  | Set if simple timeline is used | `boolean` | `false` |
+|  values   | [Values](#Item) object         | `object`  |  `{}`   |
 
 #### Item
 | Parameter | Description                                                               |   Type    |  Default  |
@@ -24,6 +24,10 @@ Timeline has been implemented to simplify the use of the Tabler Timeline compone
 |   text    | Text of the item, override `textHtml`                                     | `string`  |  `null`   |
 | textHtml  | If `text` is not defined, allows to put RAW HTML into item text container | `string`  |  `null`   |
 
+#### Values
+| Parameter | Description                          |   Type    | Default |
+|:---------:|--------------------------------------|:---------:|:-------:|
+|  simple   | Set if simple timeline is used       | `boolean` | `false` |                                        
 ### Usage
 
 ```twig
