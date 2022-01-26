@@ -11,6 +11,7 @@ If you cannot find the needed information in this list of topics, please create 
 Components (Twig macros):
 
 * [Buttons](components-buttons.md)
+* [Timeline](components-timeline.md)
 
 For the users migrating from the [AdminLTEBundle](https://github.com/kevinpapst/AdminLTEBundle):
 
