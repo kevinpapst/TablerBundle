@@ -15,14 +15,14 @@ Timeline has been implemented to simplify the use of the Tabler Timeline compone
 | isSimple  | Set if simple timeline is used | `boolean` | `false` |
 
 #### Item
-| Parameter | Description                                                                    |   Type    |  Default  |
-|:---------:|--------------------------------------------------------------------------------|:---------:|:---------:|
-|   icon    | Tabler icon name                                                               | `string`  |  `null`   |
-| iconColor | Color of the icon background                                                   | `string`  |  `null`   |
-|   time    | Time to display                                                                | `string`  |  `null`   |
-|   title   | Title of the item                                                              | `string`  |  `null`   |
-|   text    | Text of the item, override `text_html`                                         | `string`  |  `null`   |
-| text_html | If `text` is not defined, <br/>allows to put RAW HTML into item text container | `string`  |  `null`   |
+| Parameter | Description                                                               |   Type    |  Default  |
+|:---------:|---------------------------------------------------------------------------|:---------:|:---------:|
+|   icon    | Tabler icon name                                                          | `string`  |  `null`   |
+| iconColor | Color of the icon background                                              | `string`  |  `null`   |
+|   time    | Time to display                                                           | `string`  |  `null`   |
+|   title   | Title of the item                                                         | `string`  |  `null`   |
+|   text    | Text of the item, override `text_html`                                    | `string`  |  `null`   |
+| text_html | If `text` is not defined, allows to put RAW HTML into item text container | `string`  |  `null`   |
 
 ### Usage
 
