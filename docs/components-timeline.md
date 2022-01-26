@@ -21,8 +21,8 @@ Timeline has been implemented to simplify the use of the Tabler Timeline compone
 | iconColor | Color of the icon background                                              | `string`  |  `null`   |
 |   time    | Time to display                                                           | `string`  |  `null`   |
 |   title   | Title of the item                                                         | `string`  |  `null`   |
-|   text    | Text of the item, override `text_html`                                    | `string`  |  `null`   |
-| text_html | If `text` is not defined, allows to put RAW HTML into item text container | `string`  |  `null`   |
+|   text    | Text of the item, override `textHtml`                                     | `string`  |  `null`   |
+| textHtml  | If `text` is not defined, allows to put RAW HTML into item text container | `string`  |  `null`   |
 
 ### Usage
 
@@ -37,7 +37,7 @@ Timeline has been implemented to simplify the use of the Tabler Timeline compone
         icon: 'users',
         time: '13 hours ago',
         title: '+3 Friend Requests',
-        text_html:
+        textHtml:
         '<div class="avatar-list mt-3">
           <span class="avatar">
             <span class="badge bg-success"></span>FC</span>

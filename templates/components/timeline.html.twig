@@ -1,5 +1,5 @@
-{% macro timeline(items, isSimple) %}
-    {% set _isSimple = isSimple ?? false %}
+{% macro timeline(items, values) %}
+    {% set _isSimple = values.simple ?? false %}
 
     <ul class="list list-timeline {% if _isSimple %}list-timeline-simple{% endif %}">
         {% for item in items %}
@@ -19,8 +19,8 @@
                         {% endif %}
                         {% if item.text is defined %}
                             <p class="text-muted">{{ item.text|raw }}</p>
-                        {% elseif item.text_html is defined %}
-                            {{ item.text_html|raw }}
+                        {% elseif item.textHtml is defined %}
+                            {{ item.textHtml|raw }}
                         {% endif %}
                     </div>
                 {% endif %}
