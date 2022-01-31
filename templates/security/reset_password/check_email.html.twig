@@ -9,9 +9,9 @@
 {% endblock %}
 
 {% block login_form %}
+    {% set token = resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') %}
     <p>
-        If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.
-        This link will expire in {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+        {{ 'If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %token%.' | trans({'%token%' : token}, 'TablerBundle') }}
     </p>
-    <p>If you don't receive an email please check your spam folder or <a href="{{ path('tabler_password_reset'|tabler_route) }}">try again</a>.</p>
+    <p>{{ "If you don't receive an email please check your spam folder or"|trans({}, 'TablerBundle') }} <a href="{{ path('tabler_password_reset'|tabler_route) }}">{{ 'Try again'|trans({}, 'TablerBundle') }}</a>.</p>
 {% endblock %}
