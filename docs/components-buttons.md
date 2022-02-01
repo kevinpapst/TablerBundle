@@ -97,9 +97,9 @@ TODO
 {{ dropdown_button(
     {icon: 'plus', title : 'Actions'},
     [
-        {icon: 'plus',      title : 'Add more'},
-        {                   title : 'Help needed'},
-        {icon: 'delete',    title : 'Delete'}
+        {icon: 'plus',      title : 'Add more',     url : '/add'},
+        {                   title : 'Help needed',  url : '/help'},
+        {icon: 'delete',    title : 'Delete',       url : '/delete'}
     ]
 ) }}
 
