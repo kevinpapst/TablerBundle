@@ -2,10 +2,10 @@
   "entrypoints": {
     "tabler": {
       "js": [
-        "/bundles/tabler/tabler.js?cf63895eb741faf40197"
+        "/bundles/tabler/tabler.js?125fb04b9f3f5819112c"
       ],
       "css": [
-        "/bundles/tabler/tabler.css?eae5d178cb9e7831160c"
+        "/bundles/tabler/tabler.css?2990c7cc0f56660a6eec"
       ]
     }
   }
