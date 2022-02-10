@@ -1,6 +1,9 @@
 {% macro button(icon, values, type) %}
     {%- apply spaceless -%}
-        {% if type is null or type is same as (false) %}
+        {% if type is same as (false) %}
+            {# when using in dropdown actions for example, which might not have a "btn" class #}
+            {% set class = "" %}
+        {% elseif type is null %}
             {% set class = "btn " %}
         {% else %}
             {% set class = "btn btn-" ~ type ~ " " %}
@@ -24,7 +27,7 @@
         {% set translation_domain = values.translation_domain ?? 'messages' %}
         {% set buttonType = values.buttonType is defined and (values.buttonType == 'button' or values.buttonType == 'submit') ? 'button' : 'a' %}
 
-        {% if type != 'link' and icon is not same as (false) and (not forceTitle and badge is null) %}
+        {% if type != 'link' and icon is not same as (false) and (not forceTitle and badge is null) and (type is not same as (false)) %}
             {% set class = class ~ ' btn-icon' %}
         {% endif %}
 
@@ -33,19 +36,19 @@
         {% endif %}
 
         <{{ buttonType|raw }} class="{{ class | trim }}" {% if buttonType is not same as ("button") %}href="{{ url }}"{% endif %}
-                {%- if disabled is same as (true) %} disabled="disabled"{% endif %}
-                {%- if id is not empty %} id="{{ id }}"{% endif %}
-                {%- if toggle is not empty %} data-bs-toggle="{{ toggle }}"{% endif %}
-                {%- if modal is not empty %} data-bs-toggle="modal" data-bs-target="{{ modal }}"{% endif %}
-                {%- if collapse is not empty %} data-bs-toggle="collapse" data-bs-target="{{ collapse }}"{% endif %}
-                {%- if onclick is not empty %} onclick="{{ onclick }}"{% endif %}      
-                {%- if target is not empty %} {% if values.buttonType == 'submit' %}formtarget{% else %}target{% endif %}="{{ target }}"{% endif %}
-                {%- if not forceTitle and title is not null and type is not same as (false) %} {{ values.tooltip_attr ?? 'data-bs-toggle' }}="tooltip" data-bs-placement="top" title="{{ title|trans({}, translation_domain) }}"{% endif %}
-                {%- if attr is not empty %}
-                    {% for name, value in attr %}
+            {%- if disabled is same as (true) %} disabled="disabled"{% endif %}
+            {%- if id is not empty %} id="{{ id }}"{% endif %}
+            {%- if toggle is not empty %} data-bs-toggle="{{ toggle }}"{% endif %}
+            {%- if modal is not empty %} data-bs-toggle="modal" data-bs-target="{{ modal }}"{% endif %}
+            {%- if collapse is not empty %} data-bs-toggle="collapse" data-bs-target="{{ collapse }}"{% endif %}
+            {%- if onclick is not empty %} onclick="{{ onclick }}"{% endif %}
+            {%- if target is not empty %} {% if buttonType == 'submit' %}formtarget{% else %}target{% endif %}="{{ target }}"{% endif %}
+            {%- if not forceTitle and title is not null and type is not same as (false) %} {{ values.tooltip_attr ?? 'data-bs-toggle' }}="tooltip" data-bs-placement="top" title="{{ title|trans({}, translation_domain) }}"{% endif %}
+            {%- if attr is not empty %}
+                {% for name, value in attr %}
                     {{ ' ' ~ name }}={% if '"' in value %}'{{ value|raw }}'{% else %}"{{ value|raw }}"{% endif %}
-                    {% endfor %}
-                {% endif %}>
+                {% endfor %}
+            {% endif %}>
             {%- if icon is not same as (false) -%}
                 {{ tabler_icon(icon) }}
             {% endif %}
