@@ -51,7 +51,7 @@ Enjoy your theme!
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
                             {% block navbar_menu_condensed %}
-                                {% include '@Tabler/includes/menu.html.twig' %}
+                                {% include '@Tabler/includes/menu.html.twig' with {tabler_layoutType} %}
                             {% endblock %}
                         </div>
                     </div>
@@ -67,7 +67,7 @@ Enjoy your theme!
                     <div class="navbar {{ tabler_bundle.isNavbarDark() ? 'navbar-dark' : 'navbar-light' }}">
                         <div class="{{ ''|tabler_container }}">
                             {% block navbar_menu %}
-                                {% include '@Tabler/includes/menu.html.twig' %}
+                                {% include '@Tabler/includes/menu.html.twig' with {tabler_layoutType} %}
                             {% endblock %}
                             {% block navbar_search %}
                                 {% include '@Tabler/includes/navbar_search.html.twig' %}

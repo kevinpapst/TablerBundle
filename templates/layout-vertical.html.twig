@@ -49,7 +49,7 @@ Enjoy your theme!
                 </div>
                 <div id="navbar-menu" class="collapse navbar-collapse">
                     {% block navbar_menu_start %}{% endblock %}
-                    {% include '@Tabler/includes/menu.html.twig' with {navbar_class : 'pt-lg-3'} %}
+                    {% include '@Tabler/includes/menu.html.twig' with {tabler_layoutType, navbar_class : 'pt-lg-3'} %}
                     {% block navbar_menu_end %}{% endblock %}
                 </div>
             </div>

@@ -20,7 +20,7 @@
                     {{ _self.item_badge(item) }}
                 </a>
 
-                {{ _self.item_childs(item) }}
+                {{ _self.item_childs(item, tabler_layoutType) }}
 
             </li>
         {% endfor %}
@@ -29,7 +29,7 @@
 
 
 
-{% macro item_childs(item) %}
+{% macro item_childs(item, tabler_layoutType) %}
     {% if item.hasChildren %}
         <div class="dropdown-menu {{ tabler_layoutType is same as "vertical" and item.isActive ? 'show':'' }}" data-bs-popper="none">
             <div class="dropdown-menu-columns">
@@ -48,7 +48,7 @@
                                     {{ _self.item_badge(child) }}
                                 </a>
 
-                                {{ _self.item_childs(child) }}
+                                {{ _self.item_childs(child, tabler_layoutType) }}
 
                             </div>
                         {% else %}
