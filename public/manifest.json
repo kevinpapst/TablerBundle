@@ -1,6 +1,6 @@
 {
-  "bundles/tabler/tabler.js": "/bundles/tabler/tabler.js?cf63895eb741faf40197",
-  "bundles/tabler/tabler.css": "/bundles/tabler/tabler.css?eae5d178cb9e7831160c",
+  "bundles/tabler/tabler.js": "/bundles/tabler/tabler.js?1254847aef86188c1647",
+  "bundles/tabler/tabler.css": "/bundles/tabler/tabler.css?2f7ce9ba2b4220f3ad3e",
   "bundles/tabler/images/fa-solid-900.svg": "/bundles/tabler/images/fa-solid-900.svg?7a8b4f13",
   "bundles/tabler/images/fa-brands-400.svg": "/bundles/tabler/images/fa-brands-400.svg?2f517e09",
   "bundles/tabler/fonts/fa-solid-900.eot": "/bundles/tabler/fonts/fa-solid-900.eot?9bbb245e",
@@ -12,8 +12,18 @@
   "bundles/tabler/fonts/fa-brands-400.woff": "/bundles/tabler/fonts/fa-brands-400.woff?2285773e",
   "bundles/tabler/fonts/fa-solid-900.woff2": "/bundles/tabler/fonts/fa-solid-900.woff2?1551f4f6",
   "bundles/tabler/fonts/fa-brands-400.woff2": "/bundles/tabler/fonts/fa-brands-400.woff2?d878b0a6",
+  "bundles/tabler/fonts/inter-v7-latin-ext_latin-700.woff": "/bundles/tabler/fonts/inter-v7-latin-ext_latin-700.woff?320bab86",
+  "bundles/tabler/fonts/inter-v7-latin-ext_latin-600.woff": "/bundles/tabler/fonts/inter-v7-latin-ext_latin-600.woff?0714af33",
+  "bundles/tabler/fonts/inter-v7-latin-ext_latin-500.woff": "/bundles/tabler/fonts/inter-v7-latin-ext_latin-500.woff?1cdda7dc",
+  "bundles/tabler/fonts/inter-v7-latin-ext_latin-300.woff": "/bundles/tabler/fonts/inter-v7-latin-ext_latin-300.woff?0208ae3e",
+  "bundles/tabler/fonts/inter-v7-latin-ext_latin-regular.woff": "/bundles/tabler/fonts/inter-v7-latin-ext_latin-regular.woff?53f0bff9",
+  "bundles/tabler/fonts/inter-v7-latin-ext_latin-700.woff2": "/bundles/tabler/fonts/inter-v7-latin-ext_latin-700.woff2?b5b5afc7",
+  "bundles/tabler/fonts/inter-v7-latin-ext_latin-600.woff2": "/bundles/tabler/fonts/inter-v7-latin-ext_latin-600.woff2?a4ee8c51",
+  "bundles/tabler/fonts/inter-v7-latin-ext_latin-500.woff2": "/bundles/tabler/fonts/inter-v7-latin-ext_latin-500.woff2?8badf2f5",
+  "bundles/tabler/fonts/inter-v7-latin-ext_latin-300.woff2": "/bundles/tabler/fonts/inter-v7-latin-ext_latin-300.woff2?63d88e98",
   "bundles/tabler/fonts/fa-regular-400.eot": "/bundles/tabler/fonts/fa-regular-400.eot?77206a6b",
   "bundles/tabler/fonts/fa-regular-400.ttf": "/bundles/tabler/fonts/fa-regular-400.ttf?491974d1",
+  "bundles/tabler/fonts/inter-v7-latin-ext_latin-regular.woff2": "/bundles/tabler/fonts/inter-v7-latin-ext_latin-regular.woff2?bad5b1e6",
   "bundles/tabler/fonts/fa-regular-400.woff": "/bundles/tabler/fonts/fa-regular-400.woff?bb58e57c",
   "bundles/tabler/fonts/fa-regular-400.woff2": "/bundles/tabler/fonts/fa-regular-400.woff2?7a333762"
 }

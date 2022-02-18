@@ -56,12 +56,14 @@
                                 #}
                             </div>
                         </div>
+                        {% block remember_me %}
                         <div class="mb-3">
                             <label class="form-check">
                                 <input id="remember_me" tabindex="30" name="_remember_me" type="checkbox" class="form-check-input">
                                 <span class="form-check-label">{{ 'Remember Me'|trans({}, 'TablerBundle') }}</span>
                             </label>
                         </div>
+                        {% endblock %}
                         <div class="form-footer">
                             <button type="submit" tabindex="40" class="btn btn-primary w-100">{{ 'Sign In'|trans({}, 'TablerBundle') }}</button>
                         </div>
