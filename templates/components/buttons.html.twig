@@ -1,6 +1,6 @@
 {% macro action_cardtoolbutton(icon, attrs) %}
     {% import '@Tabler/components/button.html.twig' as macro %}
-    {{ macro.button(icon, attrs|merge({class: 'btn-outline-secondary ' ~ (attrs.class|default(''))})) }}
+    {{ macro.button(icon, attrs) }}
 {% endmacro %}
 
 {% macro action_collapsebutton(label, target) %}
