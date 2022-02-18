@@ -2,10 +2,13 @@
 Use this as your new starter template page, use it to start your new project,
 by adding this code to your own base template:
 
-{% extends '@Tabler/layout_horizontal.html.twig' %}
+{% extends '@Tabler/layout-horizontal.html.twig' %}
 
 Enjoy your theme!
 #}
+
+{% set tabler_layoutType = "horizontal" %}
+
 <!doctype html{% block html_start %}{% endblock %}>
 <html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %}>
 <head>

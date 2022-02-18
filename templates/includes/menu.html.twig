@@ -9,8 +9,8 @@
                 <a
                         {% if item.hasChildren %}
                             class="nav-link dropdown-toggle" role="button"
-                            data-bs-toggle="dropdown" data-bs-auto-close="{{ tabler_bundle.isLayoutVertical() ? 'false' : 'outside' }}"
-                            aria-expanded="{{ tabler_bundle.isLayoutVertical() }}"
+                            data-bs-toggle="dropdown" data-bs-auto-close="{{ tabler_layoutType is same as "vertical" ? 'false' : 'outside' }}"
+                            aria-expanded="{{ tabler_layoutType is same as "vertical" }}"
                         {% else %}
                             class="nav-link" href="{{ '/' in item.route ? item.route : path(item.route|tabler_route, item.routeArgs) }}"
                         {% endif %}
@@ -31,7 +31,7 @@
 
 {% macro item_childs(item) %}
     {% if item.hasChildren %}
-        <div class="dropdown-menu {{ tabler_bundle.isLayoutVertical() and item.isActive ? 'show':'' }}" data-bs-popper="none">
+        <div class="dropdown-menu {{ tabler_layoutType is same as "vertical" and item.isActive ? 'show':'' }}" data-bs-popper="none">
             <div class="dropdown-menu-columns">
                 <div class="dropdown-menu-column">
 
@@ -40,8 +40,8 @@
                         {% if child.hasChildren %}
                             <div class="dropend">
                                 <a class="dropdown-item dropdown-toggle" role="button"
-                                   data-bs-toggle="dropdown" data-bs-auto-close="{{ tabler_bundle.isLayoutVertical() ? 'false' : 'outside' }}"
-                                   aria-expanded="{{ tabler_bundle.isLayoutVertical() }}"
+                                   data-bs-toggle="dropdown" data-bs-auto-close="{{ tabler_layoutType is same as "vertical" ? 'false' : 'outside' }}"
+                                   aria-expanded="{{ tabler_layoutType is same as "vertical" }}"
                                 >
                                     {{ _self.item_icon(child) }}
                                     {{ child.label|trans }}

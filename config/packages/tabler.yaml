@@ -6,8 +6,6 @@
 #
 tabler:
     options:
-        # horizontal | vertical
-        layout: horizontal
         # true = dark mode (light colors on dark background), false = normal mode (dark colors on light background)
         dark_mode: true
         # condensed = one nav-bar, false = two nav-bars

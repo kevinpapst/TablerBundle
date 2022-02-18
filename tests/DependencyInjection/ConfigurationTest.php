@@ -49,7 +49,6 @@ class ConfigurationTest extends TestCase
         return [
             'tabler' => [
                 'options' => [
-                    'layout' => 'horizontal',
                     'boxed_layout' => true,
                     'dark_mode' => false,
                     'navbar_condensed' => false,

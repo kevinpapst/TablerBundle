@@ -86,26 +86,6 @@ class ContextHelper extends \ArrayObject
         return (bool) $this->getOption('boxed_layout');
     }
 
-    public function setLayout(string $layout): void
-    {
-        $this->setOption('layout', $layout);
-    }
-
-    private function getLayout(): string
-    {
-        return (string) $this->getOption('layout');
-    }
-
-    public function isLayoutHorizontal(): bool
-    {
-        return $this->getLayout() === 'horizontal';
-    }
-
-    public function isLayoutVertical(): bool
-    {
-        return !$this->isLayoutHorizontal();
-    }
-
     public function setIsBoxedLayout(bool $boxed): void
     {
         $this->setOption('boxed_layout', $boxed);
