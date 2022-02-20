@@ -79,7 +79,7 @@
         {{ macro.button(
             button.icon ?? false,
             (values|merge({class: values.class ~ ' dropdown-toggle'})),
-        button.type ?? null
+            button.type ?? null
         ) }}
 
         {% if actions is iterable and actions|length > 0 %}
