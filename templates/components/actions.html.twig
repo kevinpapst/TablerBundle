@@ -12,8 +12,8 @@
         {% set trash = null %}
         {% set divider = false %}
         <div class="dropdown">
-            <a href="#" class="link-secondary btn-sm {% if tabler_bundle.isDarkMode() %}btn-dark{% endif%} {{ class }}" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-ellipsis-h"></i>
+            <a href="#" class="link-secondary {% if tabler_bundle.isDarkMode() %}btn-dark{% endif%} {{ class }}" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="{{ options.icon|default('fas fa-ellipsis-h') }}"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-end" data-popper-placement="bottom-end">
                 {%- apply spaceless -%}
@@ -37,10 +37,10 @@
                                 {% set divider = false %}
                                 {% if values.children is defined %}
                                     {%- for childIcon, childValues in values.children %}
-                                        {{ macro.button(childIcon, childValues|merge({class: childValues.class is defined ? childValues.class ~ ' dropdown-item' : 'dropdown-item'}), false) }}
+                                        {{ macro.button(false, childValues|merge({icon: false, class: childValues.class is defined ? childValues.class ~ ' dropdown-item' : 'dropdown-item'}), false) }}
                                     {% endfor %}
                                 {% else %}
-                                    {{ macro.button(icon, values|merge({class: values.class is defined ? values.class ~ ' dropdown-item' : 'dropdown-item'}), false) }}
+                                    {{ macro.button(false, values|merge({icon: false, class: values.class is defined ? values.class ~ ' dropdown-item' : 'dropdown-item'}), false) }}
                                 {% endif %}
                             {% endif %}
                         {% endif -%}
@@ -49,7 +49,7 @@
                         {%- if actions|length > 1 and divider is same as (false) -%}
                             <hr class="dropdown-divider" />
                         {% endif %}
-                            {{ macro.button('trash', trash|merge({class: trash.class is defined ? trash.class ~ ' text-danger dropdown-item' : 'dropdown-item'}), false) }}
+                        {{ macro.button(false, trash|merge({class: trash.class is defined ? trash.class ~ ' text-danger dropdown-item' : 'dropdown-item'}), false) }}
                     {% endif -%}
                 {% endapply %}
             </div>
