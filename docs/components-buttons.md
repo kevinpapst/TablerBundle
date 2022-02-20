@@ -8,7 +8,7 @@ There is one main button macro that has a bunch of possible options that you can
 
 Please check the source code to see all available options, here are some demos:
 
-```
+```twig
 {% from '@Tabler/components/button.html.twig' import button %}
 
 {{ button('save', {title : 'Save'|trans}) }}
@@ -28,7 +28,7 @@ There are some other button components for specialized situations (like a submit
 
 ### Submit buttons
 
-```
+```twig
 {% from '@Tabler/components/buttons.html.twig' import submit_button %}
 
 {{ submit_button('save') }}
@@ -38,7 +38,7 @@ There are some other button components for specialized situations (like a submit
 
 TODO 
 
-```
+```twig
 {% from '@Tabler/components/buttons.html.twig' import action_button %}
 
 {% macro action_button(label, action, icon, type, size) %}
@@ -48,7 +48,7 @@ TODO
 
 TODO
 
-```
+```twig
 {% from '@Tabler/components/buttons.html.twig' import link_button %}
 
 {% macro link_button(label, href, icon, type, size) %}
@@ -58,7 +58,7 @@ TODO
 
 TODO
 
-```
+```twig
 {% from '@Tabler/components/buttons.html.twig' import action_collapsebutton %}
 
 {% macro action_collapsebutton(label, target) %}
@@ -68,12 +68,59 @@ TODO
 
 TODO
 
-```
+```twig
 {% from '@Tabler/components/buttons.html.twig' import action_cardtoolbutton %}
 
 {% macro action_cardtoolbutton(icon, attrs) %}
 ```
 
+### Dropdown button
+
+#### Parameters
+| Parameter | Description              |   Type    | Default |
+|:---------:|:-------------------------|:---------:|:-------:|
+|  values   | [Button](#Button) object | `object`  |  `{}`   |
+|   items   | Array of [Item](#Item)   |  `array`  |  `[]`   |
+|  options  | Options object           | `object`  |  `{}`   |
+
+#### Item
+| Parameter | Description       |   Type    | Default |
+|:---------:|-------------------|:---------:|:-------:|
+|   icon    | Tabler icon name  | `boolean` | `false` |
+|   title   | Title of the item |  `html`   | `null`  |
+|    url    | Url of the item   | `string`  |   `#`   |
+
+
+```twig
+{% from '@Tabler/components/buttons.html.twig' import dropdown_button %}
+
+{{ dropdown_button(
+    {icon: 'plus', title : 'Actions'},
+    [
+        {icon: 'plus',      title : 'Add more',     url : '/add'},
+        {                   title : 'Help needed',  url : '/help'},
+        {icon: 'delete',    title : 'Delete',       url : '/delete'}
+    ]
+) }}
+
+{{ dropdown_button(
+    {icon: 'plus'},
+    [
+        {title : 'Add more'},
+        {title : 'Help needed'},
+        {title : 'Delete'}
+    ]
+) }}
+
+{{ dropdown_button(
+    {title : 'Actions'},
+    [
+        {title : 'Add more'},
+        {title : 'Help needed'},
+        {title : 'Delete'}
+    ]
+) }}
+```
 
 
 ## Next steps
