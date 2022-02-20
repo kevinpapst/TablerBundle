@@ -10,6 +10,8 @@ tabler:
         dark_mode: true
         # condensed = one nav-bar, false = two nav-bars
         navbar_condensed: true
+        # overlap = https://preview.tabler.io/layout-navbar-overlap.html
+        navbar_overlap: false
         # true = boxed layout, false = full-screen
         boxed_layout: false
         # false = left to right, true = right to left
