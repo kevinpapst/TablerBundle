@@ -58,20 +58,19 @@
     {{ macro.button(icon, values, type) }}
 {% endmacro %}
 
-
 {% macro dropdown_button(button, actions, options) %}
     {% import '@Tabler/components/button.html.twig' as macro %}
 
     {% set button_default = {
         buttonType : 'button',
-        class : 'dropdown-toggle',
+        class: '',
         combined : true,
-        tooltip : false,
         attr : {
             'data-bs-toggle' : 'dropdown'
         },
     } %}
 
+    {% set options = (options|default({})) | merge({icon_class: 'me-2 text-center'}) %}
     {% set values_attr = button_default.attr | merge(button.attr|default({})) %}
     {% set values = button_default | merge(button|default({})) %}
     {% set values = values | merge({'attr' : values_attr}) %}
@@ -79,8 +78,8 @@
     <div class="dropdown">
         {{ macro.button(
             button.icon ?? false,
-            values,
-            button.type ?? null
+            (values|merge({class: values.class ~ ' dropdown-toggle'})),
+        button.type ?? null
         ) }}
 
         {% if actions is iterable and actions|length > 0 %}
@@ -92,7 +91,7 @@
 
                     <a class="dropdown-item" href="{{ _url }}">
                         {%- if _icon is not same as (false) -%}
-                            {{ tabler_icon(_icon) }}
+                            <span class="{{ options.icon_class }}">{{ tabler_icon(_icon) }}</span>
                         {% endif %}
                         {%- if _title is not null -%}
                             {{ _title|raw }}
