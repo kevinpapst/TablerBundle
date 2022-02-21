@@ -29,6 +29,9 @@
 
 
 
+
+
+
 {% macro item_childs(item, tabler_layoutType) %}
     {% if item.hasChildren %}
         <div class="dropdown-menu {{ tabler_layoutType is same as "vertical" and item.isActive ? 'show':'' }}" data-bs-popper="none">
@@ -72,10 +75,9 @@
                 class="dropdown-item {{ child.isActive ? 'active':'' }}"
                 {% if not child.hasChildren %}href="{{ '/' in child.route ? child.route : path(child.route|tabler_route, child.routeArgs) }}"{% endif %}
         >
-            {% if child.icon %}
-                <span class="nav-link-icon d-md-none d-lg-inline-block text-center">{{ tabler_icon(child.icon, null, false) }}</span>
-            {% endif %}
+            {{ _self.item_icon(child) }}
             {{ child.label|trans }}
+            {{ _self.item_badge(child) }}
         </a>
     {% endif %}
 {% endmacro %}
