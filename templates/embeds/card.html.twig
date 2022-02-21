@@ -20,7 +20,7 @@
     {% endif %}
     {% if block('box_header_before') is defined %}{{ block('box_header_before') }}{% endif %}
     {% if _title is not null or _collapsible or _tools is not null or _header is not null %}
-    <div class="card-header">
+    <div class="card-header{% if block('box_header_class') is defined %} {{ block('box_header_class') }}{% endif %}">
         {% if _header is not null %}
             {{ _header|raw }}
         {% else %}
