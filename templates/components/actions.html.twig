@@ -34,12 +34,18 @@
                             {% if icon == 'trash' %}
                                 {% set trash = values %}
                             {% else %}
-                                {% set divider = false %}
                                 {% if values.children is defined %}
+                                    {% if not divider %}<hr class="dropdown-divider" />{% endif %}
+                                    {% if values.title is defined and values.title is not empty %}
+                                        <h6 class="dropdown-header">{{ values.title|trans }}</h6>
+                                    {% endif %}
                                     {%- for childIcon, childValues in values.children %}
                                         {{ macro.button(false, childValues|merge({icon: false, class: childValues.class is defined ? childValues.class ~ ' dropdown-item' : 'dropdown-item'}), false) }}
                                     {% endfor %}
+                                    <hr class="dropdown-divider" />
+                                    {% set divider = true %}
                                 {% else %}
+                                    {% set divider = false %}
                                     {{ macro.button(false, values|merge({icon: false, class: values.class is defined ? values.class ~ ' dropdown-item' : 'dropdown-item'}), false) }}
                                 {% endif %}
                             {% endif %}
