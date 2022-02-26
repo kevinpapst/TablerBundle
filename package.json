@@ -6,7 +6,7 @@
         "@fortawesome/fontawesome-free": "^5.15.4",
         "@popperjs/core": "^2.10.2",
         "@symfony/webpack-encore": "^1.6.1",
-        "@tabler/core": "^1.0.0-beta8",
+        "@tabler/core": "^1.0.0-beta9",
         "bootstrap": "^5.1.3",
         "file-loader": "^6.2.0",
         "node-sass": "^7.0",
