@@ -123,13 +123,13 @@ final class RuntimeExtension implements RuntimeExtensionInterface
         return $userEvent;
     }
 
-    public function createIcon(string $name, string $default = null, bool $isIcon = true): string
+    public function createIcon(string $name, bool $isButton = true, string $default = null): string
     {
-        return '<i class="' . $this->icon($name, $default, $isIcon) . '"></i>';
+        return '<i class="' . $this->icon($name, $isButton, $default) . '"></i>';
     }
 
-    public function icon(string $name, string $default = null, bool $isIcon = true): string
+    public function icon(string $name, bool $isButton = true, string $default = null): string
     {
-        return ($isIcon ? 'icon ' : '') . ($this->icons[str_replace('-', '_', $name)] ?? ($default ?? $name));
+        return ($isButton ? 'icon ' : '') . ($this->icons[str_replace('-', '_', $name)] ?? ($default ?? $name));
     }
 }
