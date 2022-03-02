@@ -1,19 +1,26 @@
-{% macro alert(type, description, title, icon, dismissible, background) %}
-    {% set dismissible = dismissible is same as (false) ? false : true %}
-    {% set background = background is same as (true) ? true : false %}
+{% macro alert(type, description, title, icon, dismissible) %}
+    {% set dismissible = dismissible is same as (true) ? true : false %}
+    {% set background = title is empty or description is empty ? true : false %}
     <div class="alert alert-{{ type|default('danger') }}{% if dismissible %} alert-dismissible{% endif %}{% if background %} alert-important{% endif %}" role="alert">
         <div class="d-flex">
             {% if icon %}
                 <div>
-                    <i class="alert-icon {{ icon|icon(icon) }}"></i>
+                    <i class="{% if background %}icon{% else %}alert-icon{% endif%} {{ icon|tabler_icon(false, icon) }}"></i>
                 </div>
             {% endif %}
-            <div>
-                {% if title is not empty %}
+            {% if icon or not background %}<div>{% endif %}
+                {% if background %}
+                    {{ title|trans }}
+                    {{ description|trans }}
+                {% elseif title is not empty and description is not empty %}
                     <h4 class="alert-title">{{ title|trans }}</h4>
+                    <div class="text-muted">{{ description|trans }}</div>
+                {% elseif title is not empty %}
+                    <h4 class="alert-title">{{ title|trans }}</h4>
+                {% elseif description is not empty %}
+                    {{ description|trans }}
                 {% endif %}
-                <div{% if title %} class="text-muted"{% endif %}>{{ description|trans }}</div>
-            </div>
+            {% if icon or not background %}</div>{% endif %}
         </div>
         {% if dismissible %}<a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>{% endif %}
     </div>
