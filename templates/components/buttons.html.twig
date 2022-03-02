@@ -7,20 +7,12 @@
     {{ _self.action_cardtoolbutton('collapse', {collapse: target, title: label|default('')}) }}
 {% endmacro %}
 
-{# TODO test me #}
-{% macro link_toolbutton(icon, href, label, attrs) %}
-    {% set attrs = attrs|default({})|merge({class: 'me-2 ' ~ (attrs.class|default(''))}) %}
-    <a href="{{ href }}" {% for name, value in attrs|default({}) %} {{ name }}="{{ value }}"{% endfor %}>
-        {{ tabler_icon(icon) }}{% if label is not null %} {{ label }}{% endif %}
-    </a>
-{% endmacro %}
-
 {% macro link_button(label, href, icon, type, size) %}
     {% set _size = size|default(null) %}
     {% set _type = type|default('primary') %}
     <a href="{{ href|default('#') }}" class="btn btn-{{ _type }}{% if _size %} btn-{{ _size }}{% endif %}">
         {% if icon %}
-            {{ tabler_icon(icon) }}
+            {{ tabler_icon(icon, true) }}
         {% endif %}
         {% if label %}
             <span>{{ label }}</span>
@@ -33,7 +25,7 @@
     {% set _type = type|default('primary') %}
     <button data-action="{{ action }}" class="btn btn-{{ _type }}{% if _size %} btn-{{ _size }}{% endif %}">
         {% if icon %}
-            {{ tabler_icon(icon) }}
+            {{ tabler_icon(icon, true) }}
         {% endif %}
         {% if label %}
             <span>{{ label }}</span>

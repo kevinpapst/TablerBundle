@@ -38,10 +38,8 @@
             </p>
             <div class="empty-action">
                 {% block error_actions %}
-                    <a href="{{ path('tabler_welcome'|tabler_route) }}" class="btn btn-primary">
-                        {{ tabler_icon('back') }}
-                        {{ 'Take me home'|trans({}, 'TablerBundle') }}
-                    </a>
+                    {% from '@Tabler/components/buttons.html.twig' import link_button %}
+                    {{ link_button(('Take me home'|trans({}, 'TablerBundle')), (path('tabler_welcome'|tabler_route)), 'back') }}
                 {% endblock %}
             </div>
         </div>
