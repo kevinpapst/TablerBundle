@@ -1,47 +1,95 @@
 {% if menu is not defined %}
     {% set menu = tabler_menu(app.request) %}
 {% endif %}
-{% if menu is defined and menu is not null %}
-<ul class="navbar-nav">
-    {% for item in menu %}
-        <li id="{{ item.identifier }}" class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.hasChildren? 'dropdown' : '' }}">
-            <a {% if item.hasChildren -%}
-                class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" role="button" aria-expanded="false"
-                {%- else -%}
-                class="nav-link" href="{{ '/' in item.route ? item.route : path(item.route|tabler_route, item.routeArgs) }}"
-                {%- endif -%}>
-                    {% if item.icon %}
-                        <span class="nav-link-icon d-md-none d-lg-inline-block text-center">
-                            {{ tabler_icon(item.icon, false, item.icon) }}
-                        </span>
-                    {% endif %}
-                <span class="nav-link-title">{{ item.label|trans }}</span>
-                {% if item.badge is not null or item.badgeColor is not null %}
-                    <span class="badge bg-{{ item.badgeColor|default('blue') }}">{{ item.badge }}</span>
-                {% endif %}
-            </a>
 
-            {% if item.hasChildren %}
-                <div class="dropdown-menu">
-                    {% for child in item.children %}
-                        {% if child.divider %}
-                            {% if not loop.last -%}
-                                <hr class="dropdown-divider">
-                            {%- endif %}
+{% if menu is defined and menu is not null %}
+    <ul class="navbar-nav {{ navbar_class | default('') }}">
+        {% for item in menu %}
+            <li id="{{ item.identifier }}" class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.hasChildren? 'dropdown' : '' }}">
+                <a
+                        {% if item.hasChildren %}
+                            class="nav-link dropdown-toggle" role="button"
+                            data-bs-toggle="dropdown" data-bs-auto-close="{{ tabler_layoutType is same as "vertical" ? 'false' : 'outside' }}"
+                            aria-expanded="{{ tabler_layoutType is same as "vertical" }}"
                         {% else %}
-                        <a class="dropdown-item {{ child.isActive ? 'active':'' }}" href="{{ '/' in child.route ? child.route : path(child.route|tabler_route, child.routeArgs) }}">
-                            {% if child.icon %}
-                                <span class="nav-link-icon d-md-none d-lg-inline-block text-center">
-                                    {{ tabler_icon(child.icon, false, child.icon) }}
-                                </span>
-                            {% endif %}
-                            {{ child.label|trans }}
-                        </a>
+                            class="nav-link" href="{{ '/' in item.route ? item.route : path(item.route|tabler_route, item.routeArgs) }}"
                         {% endif %}
+                >
+                    {{ _self.item_icon(item) }}
+                    <span class="nav-link-title">{{ item.label|trans }}</span>
+                    {{ _self.item_badge(item) }}
+                </a>
+
+                {{ _self.item_childs(item, tabler_layoutType) }}
+
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+
+
+
+
+{% macro item_childs(item, tabler_layoutType) %}
+    {% if item.hasChildren %}
+        <div class="dropdown-menu {{ tabler_layoutType is same as "vertical" and item.isActive ? 'show':'' }}" data-bs-popper="none">
+            <div class="dropdown-menu-columns">
+                <div class="dropdown-menu-column">
+
+                    {% for child in item.children %}
+
+                        {% if child.hasChildren %}
+                            <div class="dropend">
+                                <a class="dropdown-item dropdown-toggle" role="button"
+                                   data-bs-toggle="dropdown" data-bs-auto-close="{{ tabler_layoutType is same as "vertical" ? 'false' : 'outside' }}"
+                                   aria-expanded="{{ tabler_layoutType is same as "vertical" }}"
+                                >
+                                    {{ _self.item_icon(child) }}
+                                    {{ child.label|trans }}
+                                    {{ _self.item_badge(child) }}
+                                </a>
+
+                                {{ _self.item_childs(child, tabler_layoutType) }}
+
+                            </div>
+                        {% else %}
+                            {{ _self.child_item(child) }}
+                        {% endif %}
+
                     {% endfor %}
                 </div>
-            {% endif %}
-        </li>
-    {% endfor %}
-</ul>
-{% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro child_item(child) %}
+    {% if child.divider %}
+        {% if not loop.last -%}
+            <hr class="dropdown-divider">
+        {%- endif %}
+    {% else %}
+        <a
+                class="dropdown-item {{ child.isActive ? 'active':'' }}"
+                {% if not child.hasChildren %}href="{{ '/' in child.route ? child.route : path(child.route|tabler_route, child.routeArgs) }}"{% endif %}
+        >
+            {{ _self.item_icon(child) }}
+            {{ child.label|trans }}
+            {{ _self.item_badge(child) }}
+        </a>
+    {% endif %}
+{% endmacro %}
+
+{% macro item_icon(item) %}
+    {% if item.icon %}
+        <span class="nav-link-icon d-md-none d-lg-inline-block text-center">{{ tabler_icon(item.icon, false, item.icon) }}</span>
+    {% endif %}
+{% endmacro %}
+
+{% macro item_badge(item) %}
+    {% if item.badge is not null or item.badgeColor is not null %}
+        <span class="badge bg-{{ item.badgeColor|default('blue') }}">{{ item.badge }}</span>
+    {% endif %}
+{% endmacro %}
