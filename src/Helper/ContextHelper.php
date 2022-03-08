@@ -41,6 +41,16 @@ class ContextHelper extends \ArrayObject
         $this->setOption('user_menu_condensed', $condensed);
     }
 
+    public function isNavbarOverlapping(): bool
+    {
+        return (bool) $this->getOption('navbar_overlap');
+    }
+
+    public function setIsNavbarOverlapping(bool $overlapping): void
+    {
+        $this->setOption('navbar_overlap', $overlapping);
+    }
+
     public function isRightToLeft(): bool
     {
         return (bool) $this->getOption('rtl_mode');
