@@ -30,10 +30,10 @@ class TablerExtensionTest extends TestCase
     public function testGetFunctions()
     {
         $sut = new TablerExtension();
-        $this->assertEquals(4, \count($sut->getFunctions()));
+        $this->assertEquals(5, \count($sut->getFunctions()));
         $result = array_map(function ($function) {
             return $function->getName();
         }, $sut->getFunctions());
-        $this->assertEquals(['tabler_menu', 'tabler_notifications', 'tabler_user', 'tabler_icon'], $result);
+        $this->assertEquals(['tabler_menu', 'tabler_notifications', 'tabler_user', 'tabler_icon', 'tabler_badge'], $result);
     }
 }
