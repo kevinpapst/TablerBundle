@@ -12,12 +12,12 @@
                 {%- endif -%}>
                     {% if item.icon %}
                         <span class="nav-link-icon d-md-none d-lg-inline-block text-center">
-                            {{ tabler_icon(item.icon, null, false) }}
+                            {{ tabler_icon(item.icon, false, item.icon) }}
                         </span>
                     {% endif %}
                 <span class="nav-link-title">{{ item.label|trans }}</span>
-                {% if item.badge %}
-                    {{ tabler_badge(item.badge, item.badgeClass) }}
+                {% if item.badge is not null or item.badgeColor is not null %}
+                    <span class="badge bg-{{ item.badgeColor|default('blue') }}">{{ item.badge }}</span>
                 {% endif %}
             </a>
 
@@ -32,7 +32,7 @@
                         <a class="dropdown-item {{ child.isActive ? 'active':'' }}" href="{{ '/' in child.route ? child.route : path(child.route|tabler_route, child.routeArgs) }}">
                             {% if child.icon %}
                                 <span class="nav-link-icon d-md-none d-lg-inline-block text-center">
-                                    {{ tabler_icon(child.icon, null, false) }}
+                                    {{ tabler_icon(child.icon, false, child.icon) }}
                                 </span>
                             {% endif %}
                             {{ child.label|trans }}

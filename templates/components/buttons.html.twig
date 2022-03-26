@@ -1,18 +1,10 @@
 {% macro action_cardtoolbutton(icon, attrs) %}
     {% import '@Tabler/components/button.html.twig' as macro %}
-    {{ macro.button(icon, attrs|merge({class: 'btn-outline-secondary ' ~ (attrs.class|default(''))})) }}
+    {{ macro.button(icon, attrs) }}
 {% endmacro %}
 
 {% macro action_collapsebutton(label, target) %}
     {{ _self.action_cardtoolbutton('collapse', {collapse: target, title: label|default('')}) }}
-{% endmacro %}
-
-{# TODO test me #}
-{% macro link_toolbutton(icon, href, label, attrs) %}
-    {% set attrs = attrs|default({})|merge({class: 'me-2 ' ~ (attrs.class|default(''))}) %}
-    <a href="{{ href }}" {% for name, value in attrs|default({}) %} {{ name }}="{{ value }}"{% endfor %}>
-        {{ tabler_icon(icon) }}{% if label is not null %} {{ label }}{% endif %}
-    </a>
 {% endmacro %}
 
 {% macro link_button(label, href, icon, type, size) %}
@@ -20,7 +12,7 @@
     {% set _type = type|default('primary') %}
     <a href="{{ href|default('#') }}" class="btn btn-{{ _type }}{% if _size %} btn-{{ _size }}{% endif %}">
         {% if icon %}
-            {{ tabler_icon(icon) }}
+            {{ tabler_icon(icon, true) }}
         {% endif %}
         {% if label %}
             <span>{{ label }}</span>
@@ -33,10 +25,72 @@
     {% set _type = type|default('primary') %}
     <button data-action="{{ action }}" class="btn btn-{{ _type }}{% if _size %} btn-{{ _size }}{% endif %}">
         {% if icon %}
-            {{ tabler_icon(icon) }}
+            {{ tabler_icon(icon, true) }}
         {% endif %}
         {% if label %}
             <span>{{ label }}</span>
         {% endif %}
     </button>
+{% endmacro %}
+
+{% macro submit_button(icon, user_values, type) %}
+    {% import '@Tabler/components/button.html.twig' as macro %}
+
+    {% set default_values = {
+        combined : true,
+        attr : {type: 'submit'},
+        disabled : false,
+        buttonType : 'submit',
+    } %}
+
+    {% set values_attr = default_values.attr | merge(user_values.attr|default({})) %}
+    {% set values = default_values | merge(user_values|default({})) %}
+    {% set values = values | merge({'attr' : values_attr}) %}
+
+    {{ macro.button(icon, values, type) }}
+{% endmacro %}
+
+{% macro dropdown_button(button, actions, options) %}
+    {% import '@Tabler/components/button.html.twig' as macro %}
+
+    {% set button_default = {
+        buttonType : 'button',
+        class: '',
+        combined : true,
+        attr : {
+            'data-bs-toggle' : 'dropdown'
+        },
+    } %}
+
+    {% set options = (options|default({})) | merge({icon_class: 'me-2 text-center'}) %}
+    {% set values_attr = button_default.attr | merge(button.attr|default({})) %}
+    {% set values = button_default | merge(button|default({})) %}
+    {% set values = values | merge({'attr' : values_attr}) %}
+
+    <div class="dropdown">
+        {{ macro.button(
+            button.icon ?? false,
+            (values|merge({class: values.class ~ ' dropdown-toggle'})),
+            button.type ?? null
+        ) }}
+
+        {% if actions is iterable and actions|length > 0 %}
+            <div class="dropdown-menu">
+                {% for action in actions %}
+                    {% set _title   = action.title ?? null %}
+                    {% set _url     = action.url ?? '#' %}
+                    {% set _icon    = action.icon ?? false %}
+
+                    <a class="dropdown-item" href="{{ _url }}">
+                        {%- if _icon is not same as (false) -%}
+                            <span class="{{ options.icon_class }}">{{ tabler_icon(_icon, false) }}</span>
+                        {% endif %}
+                        {%- if _title is not null -%}
+                            {{ _title|raw }}
+                        {% endif %}
+                    </a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 {% endmacro %}

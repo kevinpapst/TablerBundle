@@ -123,14 +123,14 @@ final class RuntimeExtension implements RuntimeExtensionInterface
         return $userEvent;
     }
 
-    public function createIcon(string $name, string $default = null, bool $isIcon = true): string
+    public function createIcon(string $name, bool $withIconClass = false, string $default = null): string
     {
-        return '<i class="' . $this->icon($name, $default, $isIcon) . '"></i>';
+        return '<i class="' . $this->icon($name, $withIconClass, $default) . '"></i>';
     }
 
-    public function icon(string $name, string $default = null, bool $isIcon = true): string
+    public function icon(string $name, bool $withIconClass = false, string $default = null): string
     {
-        return ($isIcon ? 'icon ' : '') . ($this->icons[str_replace('-', '_', $name)] ?? ($default ?? $name));
+        return ($withIconClass ? 'icon ' : '') . ($this->icons[str_replace('-', '_', $name)] ?? ($default ?? $name));
     }
 
     public function createBadge(?string $value, string $class = null): string

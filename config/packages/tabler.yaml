@@ -10,6 +10,8 @@ tabler:
         dark_mode: true
         # condensed = one nav-bar, false = two nav-bars
         navbar_condensed: true
+        # overlap = https://preview.tabler.io/layout-navbar-overlap.html
+        navbar_overlap: false
         # true = boxed layout, false = full-screen
         boxed_layout: false
         # false = left to right, true = right to left
@@ -39,10 +41,11 @@ tabler:
         collapse: fas fa-chevron-down
         # used for the password-reset template
         mail: far fa-envelope
+        # used for the 404/500/... error page
+        back: fas fa-long-arrow-alt-left
         # the following are only ideas to be used in your own templates
         about: fas fa-info-circle
         admin: fas fa-wrench
-        back: fas fa-long-arrow-alt-left
         bookmark: far fa-star
         calendar: far fa-calendar-alt
         comment: far fa-comment
