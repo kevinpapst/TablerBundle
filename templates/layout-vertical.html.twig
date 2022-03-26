@@ -153,7 +153,7 @@ Enjoy your theme!
 </html>
 
 {% macro navbar(navbar_start, navbar_notifications, navbar_user, navbar_end) %}
-    {% block navbar_start %}{{ navbar_start ?? '' | raw }}{% endblock %}
+    {% block navbar_start %}{{ (navbar_start ?? '') | raw }}{% endblock %}
     {% block navbar_notifications %}
         {% if navbar_notifications is defined %}
             {{ navbar_notifications|raw }}
@@ -168,5 +168,5 @@ Enjoy your theme!
             {% include '@Tabler/includes/navbar_user.html.twig' %}
         {% endif %}
     {% endblock %}
-    {% block navbar_end %}{{ navbar_end ?? '' | raw }}{% endblock %}
+    {% block navbar_end %}{{ (navbar_end ?? '') | raw }}{% endblock %}
 {% endmacro %}
