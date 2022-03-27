@@ -27,7 +27,7 @@
         "phpspec/prophecy": "^1.6",
         "symfony/framework-bundle" : ">=4.4",
         "friendsofphp/php-cs-fixer": "^3.0",
-        "phpunit/phpunit": "^8.0",
+        "phpunit/phpunit": "^9.0",
         "phpstan/phpstan": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
         "phpstan/phpstan-symfony": "^1.0",
