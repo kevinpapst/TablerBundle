@@ -13,6 +13,7 @@ Components (Twig macros):
 
 * [Buttons](components-buttons.md)
 * [Timeline](components-timeline.md)
+* [Breadcrumb](components-breadcrumb.md)
 
 For the users migrating from the [AdminLTEBundle](https://github.com/kevinpapst/AdminLTEBundle):
 

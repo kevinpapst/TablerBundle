@@ -20,7 +20,7 @@
     {% endif %}
     {% if block('box_header_before') is defined %}{{ block('box_header_before') }}{% endif %}
     {% if _title is not null or _collapsible or _tools is not null or _header is not null %}
-    <div class="card-header">
+    <div class="card-header{% if block('box_header_class') is defined %} {{ block('box_header_class') }}{% endif %}">
         {% if _header is not null %}
             {{ _header|raw }}
         {% else %}
@@ -39,7 +39,7 @@
     </div>
     {% endif %}
     {% if block('box_header_after') is defined %}{{ block('box_header_after') }}{% endif %}
-    <div class="{% if _collapsible %} {{ _collapsible_class }}{% if _collapsed %} collapse{% else %} show{% endif %}{% endif %} card-body{% if block('box_body_class') is defined %} {{ block('box_body_class') }}{% endif %}{% if _fullsize %} p-0{% endif %}">{{ block('box_body') }}</div>
+    <div class="{% if _collapsible %}{{ _collapsible_class }} {% if _collapsed %}collapse {% else %}show {% endif %}{% endif %}card-body {% if block('box_body_class') is defined %}{{ block('box_body_class') }} {% endif %}{% if _fullsize %}p-0 {% endif %}">{{ block('box_body') }}</div>
     {% if block('box_footer_before') is defined %}{{ block('box_footer_before') }}{% endif %}
     {% if _footer and block('box_footer') is defined %}
         {# 

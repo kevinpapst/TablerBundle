@@ -1,0 +1,9 @@
+{# @see https://preview.tabler.io/docs/breadcrumb.html #}
+{% macro breadcrumb(breadcrumbs, type) %}
+    {% set type = type|default('bullets') %}
+    <ol class="breadcrumb breadcrumb-{{ type }}" aria-label="breadcrumbs">
+        {% for name, url in breadcrumbs %}
+            <li class="breadcrumb-item{% if loop.last %} active" aria-current="page{% endif %}"><a href="{{ url }}">{{ name }}</a></li>
+        {% endfor %}
+    </ol>
+{% endmacro %}

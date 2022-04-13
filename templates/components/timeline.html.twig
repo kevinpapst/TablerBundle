@@ -6,7 +6,7 @@
             <li>
                 {% if item.icon is defined %}
                     <div class="list-timeline-icon {% if item.iconColor is defined %}bg-{{ item.iconColor }}{% endif %}">
-                        {{ tabler_icon(item.icon) }}
+                        {{ tabler_icon(item.icon, false) }}
                     </div>
                 {% endif %}
                 {% if true %}
