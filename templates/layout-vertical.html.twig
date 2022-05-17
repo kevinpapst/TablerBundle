@@ -5,7 +5,8 @@ by adding this code to your own base template:
 {% extends '@Tabler/layout-vertical.html.twig' %}
 
 Enjoy your theme!
-#}<!doctype html{% block html_start %}{% endblock %}>
+#}
+<!doctype html{% block html_start %}{% endblock %}>
 <html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %}>
 <head>
     {% block head %}
