@@ -5,11 +5,7 @@ by adding this code to your own base template:
 {% extends '@Tabler/layout-vertical.html.twig' %}
 
 Enjoy your theme!
-#}
-
-{% set tabler_layoutType = "vertical" %}
-
-<!doctype html{% block html_start %}{% endblock %}>
+#}<!doctype html{% block html_start %}{% endblock %}>
 <html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %}>
 <head>
     {% block head %}
@@ -49,7 +45,7 @@ Enjoy your theme!
                 </div>
                 <div id="navbar-menu" class="collapse navbar-collapse">
                     {% block navbar_menu_start %}{% endblock %}
-                    {% include '@Tabler/includes/menu.html.twig' with {tabler_layoutType, navbar_class : 'pt-lg-3'} %}
+                    {% include '@Tabler/includes/menu.html.twig' with {layout_type: 'vertical', navbar_class : 'pt-lg-3'} %}
                     {% block navbar_menu_end %}{% endblock %}
                 </div>
             </div>
@@ -117,8 +113,6 @@ Enjoy your theme!
             </div>
         {% endblock %}
 
-
-
         <div class="page-body">
             <div class="{{ ''|tabler_container }}">
                 <div class="row row-cards">
@@ -134,7 +128,6 @@ Enjoy your theme!
                 </div>
             </div>
         </div>
-
 
         {% block footer %}
             <footer id="{% block footer_id %}{% endblock %}" class="footer footer-transparent d-print-none">

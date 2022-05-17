@@ -3,61 +3,51 @@
 {% endif %}
 
 {% if menu is defined and menu is not null %}
+    {% if layout_type is not defined %}
+        {% set layout_type = 'horizontal' %}
+    {% endif %}
     <ul class="navbar-nav {{ navbar_class | default('') }}">
         {% for item in menu %}
             <li id="{{ item.identifier }}" class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.hasChildren? 'dropdown' : '' }}">
-                <a
-                        {% if item.hasChildren %}
-                            class="nav-link dropdown-toggle" role="button"
-                            data-bs-toggle="dropdown" data-bs-auto-close="{{ tabler_layoutType is same as "vertical" ? 'false' : 'outside' }}"
-                            aria-expanded="{{ tabler_layoutType is same as "vertical" }}"
-                        {% else %}
-                            class="nav-link" href="{{ '/' in item.route ? item.route : path(item.route|tabler_route, item.routeArgs) }}"
-                        {% endif %}
-                >
+                <a {% if item.hasChildren %}
+                        class="nav-link dropdown-toggle" role="button"
+                        data-bs-toggle="dropdown" data-bs-auto-close="{{ layout_type is same as "vertical" ? 'false' : 'outside' }}"
+                        aria-expanded="{{ layout_type is same as "vertical" }}"
+                    {% else %}
+                        class="nav-link" href="{{ '/' in item.route ? item.route : path(item.route|tabler_route, item.routeArgs) }}"
+                    {% endif %}>
                     {{ _self.item_icon(item) }}
                     <span class="nav-link-title">{{ item.label|trans }}</span>
-                    {{ _self.item_badge(item) }}
+                    {% if layout_type is same as 'horizontal' %}
+                        {{ _self.item_badge(item) }}
+                    {% endif %}
                 </a>
-
-                {{ _self.item_childs(item, tabler_layoutType) }}
-
+                {{ _self.item_childs(item, layout_type) }}
             </li>
         {% endfor %}
     </ul>
 {% endif %}
 
-
-
-
-
-
-{% macro item_childs(item, tabler_layoutType) %}
+{% macro item_childs(item, layout_type) %}
     {% if item.hasChildren %}
-        <div class="dropdown-menu {{ tabler_layoutType is same as "vertical" and item.isActive ? 'show':'' }}" data-bs-popper="none">
+        <div class="dropdown-menu {{ layout_type is same as "vertical" and item.isActive ? 'show':'' }}" data-bs-popper="none">
             <div class="dropdown-menu-columns">
                 <div class="dropdown-menu-column">
-
                     {% for child in item.children %}
-
                         {% if child.hasChildren %}
                             <div class="dropend">
                                 <a class="dropdown-item dropdown-toggle" role="button"
-                                   data-bs-toggle="dropdown" data-bs-auto-close="{{ tabler_layoutType is same as "vertical" ? 'false' : 'outside' }}"
-                                   aria-expanded="{{ tabler_layoutType is same as "vertical" }}"
-                                >
+                                   data-bs-toggle="dropdown" data-bs-auto-close="{{ layout_type is same as "vertical" ? 'false' : 'outside' }}"
+                                   aria-expanded="{{ layout_type is same as "vertical" }}">
                                     {{ _self.item_icon(child) }}
                                     {{ child.label|trans }}
                                     {{ _self.item_badge(child) }}
                                 </a>
-
-                                {{ _self.item_childs(child, tabler_layoutType) }}
-
+                                {{ _self.item_childs(child, layout_type) }}
                             </div>
                         {% else %}
                             {{ _self.child_item(child) }}
                         {% endif %}
-
                     {% endfor %}
                 </div>
             </div>
@@ -71,10 +61,8 @@
             <hr class="dropdown-divider">
         {%- endif %}
     {% else %}
-        <a
-                class="dropdown-item {{ child.isActive ? 'active':'' }}"
-                {% if not child.hasChildren %}href="{{ '/' in child.route ? child.route : path(child.route|tabler_route, child.routeArgs) }}"{% endif %}
-        >
+        <a class="dropdown-item {{ child.isActive ? 'active':'' }}"
+                {%- if not child.hasChildren %} href="{{ '/' in child.route ? child.route : path(child.route|tabler_route, child.routeArgs) }}"{% endif %}>
             {{ _self.item_icon(child) }}
             {{ child.label|trans }}
             {{ _self.item_badge(child) }}
@@ -90,6 +78,6 @@
 
 {% macro item_badge(item) %}
     {% if item.badge is not null or item.badgeColor is not null %}
-        <span class="badge bg-{{ item.badgeColor|default('blue') }}">{{ item.badge }}</span>
+        <span class="badge badge-sm bg-{{ item.badgeColor|default('blue') }} text-uppercase ms-2">{{ item.badge }}</span>
     {% endif %}
 {% endmacro %}
