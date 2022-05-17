@@ -19,13 +19,13 @@ Enjoy your theme!
         <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
     {% endblock %}
 </head>
-<body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }}">
+<body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }}" {% block body_class %}{% endblock %}>
 {% block after_body_start %}{% endblock %}
 <div class="page">
 
     {# *** Layout type changes *** #}
     {% block header %}
-        <header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md {% if tabler_bundle.isNavbarOverlapping() %}navbar-dark navbar-overlap{% else %}{{ tabler_bundle.isHeaderDark() ? 'navbar-dark' : 'navbar-light' }}{% endif %} d-print-none">
+        <header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md{% block header_class %} {% if tabler_bundle.isNavbarOverlapping() %}navbar-dark navbar-overlap{% else %}{{ tabler_bundle.isHeaderDark() ? 'navbar-dark' : 'navbar-light' }}{% endif %}{% endblock %} d-print-none">
             <div class="{{ ''|tabler_container }}">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                     <span class="navbar-toggler-icon"></span>
@@ -105,7 +105,7 @@ Enjoy your theme!
                                 </div>
                             {% endblock %}
                         </div>
-                        <div class="col-auto ms-auto d-print-none">
+                        <div class="col-12 col-md-auto ms-auto d-print-none">
                             {% block page_actions %}
                                 <div class="btn-list">
                                     <a href="#" class="btn btn-white">
