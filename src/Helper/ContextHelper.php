@@ -71,6 +71,26 @@ class ContextHelper extends \ArrayObject
         $this->setOption('dark_mode', $isDarkMode);
     }
 
+    public function isHeaderDark(): bool
+    {
+        return (bool) $this->getOption('header_dark');
+    }
+
+    public function setIsHeaderDark(bool $isHeaderDark): void
+    {
+        $this->setOption('header_dark', $isHeaderDark);
+    }
+
+    public function isNavbarDark(): bool
+    {
+        return (bool) $this->getOption('navbar_dark');
+    }
+
+    public function setIsNavbarDark(bool $isNavbarDark): void
+    {
+        $this->setOption('navbar_dark', $isNavbarDark);
+    }
+
     public function isBoxedLayout(): bool
     {
         return (bool) $this->getOption('boxed_layout');

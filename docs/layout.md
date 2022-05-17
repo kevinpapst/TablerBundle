@@ -1,8 +1,15 @@
 # Using the layout
 
-In order to use the layout, your views should extend from the provided `layout`
+In order to use the layout, your views should extend from the provided `layouts`
+
 ```twig
-{% extends '@Tabler/layout.html.twig' %}
+{% extends '@Tabler/layout-horizontal.html.twig' %}
+```
+
+OR
+
+```twig
+{% extends '@Tabler/layout-vertical.html.twig' %}
 ```
 
 ## Layout files
@@ -11,9 +18,9 @@ This bundle ships with two main template files which you can extend in your them
 
 **For all your admin pages**
 
-The default `layout.html.twig` file can be used with:   
+The default `layout-horizontal.html.twig` can be used with:
 ```
-{% extends '@Tabler/layout.html.twig' %}
+{% extends '@Tabler/layout-horizontal.html.twig' %}
 ```
 
 **For your security screens**

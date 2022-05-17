@@ -29,7 +29,7 @@ Search and replace
 ```
 with
 ```
-{% extends '@Tabler/layout.html.twig' %}
+{% extends '@Tabler/layout-horizontal.html.twig' %}
 ```
 
 Search and replace:
@@ -86,7 +86,7 @@ Replace
 ```
 with
 ```
-{% extends '@Tabler/layout.html.twig' %}
+{% extends '@Tabler/layout-horizontal.html.twig' %}
 ```
 
 The file:

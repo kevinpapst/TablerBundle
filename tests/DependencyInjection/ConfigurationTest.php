@@ -52,6 +52,8 @@ class ConfigurationTest extends TestCase
                     'boxed_layout' => true,
                     'dark_mode' => false,
                     'navbar_condensed' => true,
+                    'header_dark' => false,
+                    'navbar_dark' => false,
                     'rtl_mode' => false,
                     'user_menu_condensed' => false,
                     'logo_url' => null,
