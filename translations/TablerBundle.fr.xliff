@@ -108,11 +108,11 @@
             </trans-unit>
             <trans-unit id="Password Reset Email Sent">
                 <source>Password Reset Email Sent</source>
-                <target>Email réinitialisation de mot de passe envoyé</target>
+                <target>E-mail de réinitialisation du mot de passe a été envoyé</target>
             </trans-unit>
             <trans-unit id="Enter your email address and your password will be reset and emailed to you">
                 <source>Enter your email address and your password will be reset and emailed to you</source>
-                <target>Saisissez votre adresse email et votre mot de passe sera réinitialisé par mail</target>
+                <target>Saisissez votre adresse e-mail et la procédure de réinitialisation de votre mot de passe vous sera envoyée par mail</target>
             </trans-unit>
             <trans-unit id="If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %token%.">
                 <source>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %token%.</source>
