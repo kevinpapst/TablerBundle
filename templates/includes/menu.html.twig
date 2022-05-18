@@ -46,7 +46,7 @@
                                 {{ _self.item_childs(child, layout_type) }}
                             </div>
                         {% else %}
-                            {{ _self.child_item(child) }}
+                            {{ _self.child_item(child, loop.last) }}
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -55,9 +55,9 @@
     {% endif %}
 {% endmacro %}
 
-{% macro child_item(child) %}
+{% macro child_item(child, isLast) %}
     {% if child.divider %}
-        {% if not loop.last -%}
+        {% if not isLast -%}
             <hr class="dropdown-divider">
         {%- endif %}
     {% else %}
