@@ -1,7 +1,7 @@
 var Encore = require('@symfony/webpack-encore');
 
 Encore
-// the project directory where compiled assets will be stored
+    // the project directory where compiled assets will be stored
     .setOutputPath('public/')
 
     // the public path used by the web server to access the previous directory
@@ -20,11 +20,7 @@ Encore
     .enableVersioning(Encore.isProduction())
 
     .addEntry('tabler', './assets/tabler.js')
-
-//    .copyFiles({ from: './node_modules/@tabler/core/dist/css', to: 'css/[path][name].[ext]' })
-//    .copyFiles({ from: './node_modules/@tabler/core/dist/js', to: 'js/[path][name].[ext]' })
-//    .copyFiles({ from: './node_modules/@tabler/core/dist/libs', to: 'libs/[path][name].[ext]' })
-//    .copyFiles({ from: './node_modules/@tabler/core/', to: 'libs/[path][name].[ext]' })
+    .addEntry('tabler-rtl', './assets/tabler-rtl.js')
 
     // show OS notifications when builds finish/fail
     .enableBuildNotifications()
