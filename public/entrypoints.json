@@ -7,6 +7,14 @@
       "css": [
         "/bundles/tabler/tabler.css?76dc03e4666127fefb47"
       ]
+    },
+    "tabler-rtl": {
+      "js": [
+        "/bundles/tabler/tabler-rtl.js?0e78a1661dd973ff97f7"
+      ],
+      "css": [
+        "/bundles/tabler/tabler-rtl.css?6068367a820a13ab207e"
+      ]
     }
   }
 }
