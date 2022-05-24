@@ -1,0 +1,35 @@
+{% macro steps(steps, options) %}
+
+    {% set _tooltip = options.tooltip ?? false %}
+    {% set _color = options.color ?? 'primary' %}
+    {% set _counter = options.counter ?? false %}
+    {% set _attr = options.attr ?? '' %}
+
+    <div class="steps {{ _counter ? 'steps-counter' : '' }} {{ 'steps-'~_color }}" {{ _attr|raw }}>
+
+        {% set activeStepProcessed = false %}
+
+        {% for step in steps %}
+            {% set _type = (step.clickable ?? not activeStepProcessed) ? 'a' : 'span' %}
+            {% set _title = step.title ?? '' %}
+            {% set _description = step.description ?? _title %}
+            {% set _active = step.active ?? false %}
+            {% set _attr = step.attr ?? '' %}
+
+            <{{ _type|raw }}
+                class="step-item {{ _active ? 'active' : '' }}"
+                href="{{ step.href ?? '#' }}"
+                {%- if _tooltip -%} data-bs-toggle="tooltip" {%- endif -%}
+                title="{{ _description }}"
+                {{ _attr|raw }}
+            >
+                {{ _title }}
+            </{{ _type|raw }}>
+
+            {% if _active %}
+                {% set activeStepProcessed = true %}
+            {% endif %}
+
+        {% endfor %}
+    </div>
+{% endmacro %}
