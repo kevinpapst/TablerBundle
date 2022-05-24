@@ -13,11 +13,11 @@ Status indicator has been implemented to simplify the use of the Tabler [Status 
 |  options  | [Options](#Options) object | `object`  |  `{}`   |
 
 #### Options
-| Parameter  | Description                                                               |   Type    |    Default     |
-|:----------:|---------------------------------------------------------------------------|:---------:|:--------------:|
-|   color    | Color of the indicator                                                    | `string`  |    `green`     |
-|  animated  | Set if the indicator is animated                                          | `boolean` |     `true`     |
-| extraClass | Allow to add extra classes                                                | `string`  | _empty string_ |
+| Parameter  | Description                      |   Type    |    Default     |
+|:----------:|----------------------------------|:---------:|:--------------:|
+|   color    | Color of the indicator           | `string`  |    `green`     |
+|  animated  | Set if the indicator is animated | `boolean` |     `true`     |
+| extraClass | Allow to add extra classes       | `string`  | _empty string_ |
                             
 ### Usage
 
