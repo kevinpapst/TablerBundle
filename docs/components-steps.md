@@ -4,7 +4,7 @@ This theme ships some components (as twig macros) that hide the complexity of re
 
 ## Steps
 
-Steps has been implemented to simplify the use of the Tabler Steps component.
+Steps has been implemented to simplify the use of the Tabler [Steps component](https://preview.tabler.io/docs/steps.html).
 
 ### Parameters
 `steps()` macro, waits for 2 parameters:
