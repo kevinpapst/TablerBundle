@@ -1,0 +1,13 @@
+{% macro status_indicator(options) %}
+
+    {% set _color = options.color ?? 'green' %}
+    {% set _animated = options.animated ?? true %}
+    {% set _extraClass = options.extraClass ?? '' %}
+
+    <span class="status-indicator {{ _animated ? 'status-indicator-animated' : '' }} {{ 'status-'~_color }} {{ _extraClass }}">
+      <span class="status-indicator-circle"></span>
+      <span class="status-indicator-circle"></span>
+      <span class="status-indicator-circle"></span>
+    </span>
+
+{% endmacro %}
