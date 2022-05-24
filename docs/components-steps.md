@@ -26,12 +26,13 @@ Steps has been implemented to simplify the use of the Tabler Steps component.
 | extraClass  | Add extra classes on step                  | `string`  |  _empty string_   |
 
 #### Options
-| Parameter | Description                                          |   Type    |  Default  |
-|:---------:|------------------------------------------------------|:---------:|:---------:|
-|  tooltip  | Set if bootstrap tooltip will be shown at step hover | `boolean` |  `false`  |                                        
-|   color   | Color of the steps                                   | `string`  | `primary` |                                        
-|  counter  | Enable step counter on each item                     | `boolean` |  `false`  | 
-|   attr    | Allow custom attributes on steps container           | `object`  |   `{}`    |         
+| Parameter  | Description                                          |   Type    |    Default     |
+|:----------:|------------------------------------------------------|:---------:|:--------------:|
+|  tooltip   | Set if bootstrap tooltip will be shown at step hover | `boolean` |    `false`     |                                        
+|   color    | Color of the steps                                   | `string`  |   `primary`    |                                        
+|  counter   | Enable step counter on each item                     | `boolean` |    `false`     | 
+|    attr    | Allow custom attributes on steps container           | `object`  |      `{}`      |   
+| extraClass | Add extra classes on steps container                 | `string`  | _empty string_ |      
 
 ### Usage
 
