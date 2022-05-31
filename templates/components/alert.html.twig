@@ -9,8 +9,7 @@
         {% set _icon = options.icon ?? null %}
         {% set _dismissible = (options.dismissible ?? false) is same as (true) %}
         {% set _important = (options.important ?? false) is same as (true) %}
-
-        {% set _background = _title is empty or _description is empty or _important %}
+        {% set _raw = (options.raw ?? false) is same as (true) %}
     {% else %}
         {% deprecated "Passing multiple parameters to 'alert()' Tabler macro is deprecated, use options object syntax." %}
 
@@ -19,9 +18,11 @@
         {% set _description = description is defined ? description|trans : null %}
         {% set _icon = icon ?? null %}
         {% set _dismissible = (dismissible ?? false) is same as (true) %}
-
-        {% set _background = _title is empty or _description is empty %}
+        {% set _important = false %}
+        {% set _raw = false %}
     {% endif %}
+
+    {% set _background = _title is empty or _description is empty or _important %}
 
     <div
             class="alert alert-{{ _type }} {% if _dismissible %}alert-dismissible{% endif %} {% if _background %}alert-important{% endif %}"
@@ -37,10 +38,10 @@
             {% if _title is not empty or _description is not empty %}
                 <div>
                     {% if _title is not empty %}
-                        <h3 class="{{ _description is not empty ? 'mb-1' : 'mb-0' }}">{{ _title|raw }}</h3>
+                        <h3 class="{{ _description is not empty ? 'mb-1' : 'mb-0' }}">{{ _raw ? _title|raw : _title }}</h3>
                     {% endif %}
                     {% if _description is not empty %}
-                        <p class="m-0">{{ _description|raw }}</p>
+                        <p class="m-0">{{ _raw ? _description|raw : _description }}</p>
                     {% endif %}
                 </div>
             {% endif %}
