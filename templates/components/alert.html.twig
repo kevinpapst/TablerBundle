@@ -38,10 +38,18 @@
             {% if _title is not empty or _description is not empty %}
                 <div>
                     {% if _title is not empty %}
-                        <h3 class="{{ _description is not empty ? 'mb-1' : 'mb-0' }}">{{ _raw ? _title|raw : _title }}</h3>
+                        {% if _background %}
+                            <h4 class="{{ _description is not empty ? 'mb-1' : 'mb-0' }}">{{ _raw ? _title|raw : _title }}</h4>
+                        {% else %}
+                            <h4 class="alert-title">{{ _raw ? _title|raw : _title }}</h4>
+                        {% endif %}
                     {% endif %}
                     {% if _description is not empty %}
-                        <p class="m-0">{{ _raw ? _description|raw : _description }}</p>
+                        {% if _background %}
+                            <p class="m-0">{{ _raw ? _description|raw : _description }}</p>
+                        {% else %}
+                            <div class="text-muted">{{ _raw ? _description|raw : _description }}</div>
+                        {% endif %}
                     {% endif %}
                 </div>
             {% endif %}
