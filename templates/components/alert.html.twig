@@ -39,7 +39,7 @@
                 <div>
                     {% if _title is not empty %}
                         {% if _background %}
-                            <h3 class="{{ _description is not empty ? 'mb-1' : 'mb-0' }}">{{ _raw ? _title|raw : _title }}</h3>
+                            <h4 class="{{ _description is not empty ? 'mb-1' : 'mb-0' }}">{{ _raw ? _title|raw : _title }}</h4>
                         {% else %}
                             <h4 class="alert-title">{{ _raw ? _title|raw : _title }}</h4>
                         {% endif %}
