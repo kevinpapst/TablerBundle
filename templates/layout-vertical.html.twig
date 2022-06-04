@@ -101,7 +101,7 @@ Enjoy your theme!
                                 </div>
                             {% endblock %}
                         </div>
-                        <div class="col-12 col-md-auto ms-auto d-print-none">
+                        <div class="{% block page_actions_class %}col-12 col-md-auto ms-auto d-print-none{% endblock %}">
                             {% block page_actions %}
                                 <div class="btn-list">
                                     <a href="#" class="btn btn-white">
