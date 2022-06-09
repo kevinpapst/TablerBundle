@@ -94,6 +94,10 @@
                 <source>registration.confirmed</source>
                 <target>Félicitations %username%, votre compte est maintenant activé.</target>
             </trans-unit>
+            <trans-unit id="Close">
+                <source>Close</source>
+                <target>Fermer</target>
+            </trans-unit>
             <trans-unit resname="http_error.title" id="Oops… You just found an error">
                 <source>Oops… You just found an error</source>
                 <target>Oups… Vous avez trouvé une page d'erreur</target>

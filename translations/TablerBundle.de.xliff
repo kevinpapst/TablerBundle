@@ -102,8 +102,8 @@
                 <source>registration.confirmed</source>
                 <target>Glückwunsch %username%, Ihr Benutzerkonto ist jetzt bestätigt.</target>
             </trans-unit>
-            <trans-unit id="Close modal">
-                <source>Close modal</source>
+            <trans-unit id="Close">
+                <source>Close</source>
                 <target>Schließen</target>
             </trans-unit>
             <trans-unit resname="http_error.title" id="Oops… You just found an error">

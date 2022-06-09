@@ -17,7 +17,7 @@
                 <h2 class="offcanvas-title">{{ _title }}</h2>
                 <button
                         type="button" class="btn-close text-reset"
-                        data-bs-dismiss="offcanvas" aria-label="Close"
+                        data-bs-dismiss="offcanvas" aria-label="{{ 'Close'|trans({}, 'TablerBundle') }}"
                 ></button>
             {% endblock %}
         </div>
@@ -27,7 +27,7 @@
         <div class="offcanvas-body">
             {% block offcanvas_body %}
                 <button class="btn" type="button" data-bs-dismiss="offcanvas">
-                    Close
+                    {{ 'Close'|trans({}, 'TablerBundle') }}
                 </button>
             {% endblock %}
         </div>

@@ -102,9 +102,9 @@
                 <source>registration.confirmed</source>
                 <target>Congratulations %username%, your account is now activated.</target>
             </trans-unit>
-            <trans-unit id="Close modal">
-                <source>Close modal</source>
-                <target>Close modal</target>
+            <trans-unit id="Close">
+                <source>Close</source>
+                <target>Close</target>
             </trans-unit>
             <trans-unit resname="http_error.title" id="Oops… You just found an error">
                 <source>Oops… You just found an error</source>
