@@ -18,6 +18,10 @@ Components (Twig macros):
 * [Steps](components-steps.md)
 * [Callout](components-callout.md)
 
+Components (Twig Embeds):
+* [Modal](embeds-modal.md)
+* [Offcanvas](embeds-offcanvas.md)
+
 For the users migrating from the [AdminLTEBundle](https://github.com/kevinpapst/AdminLTEBundle):
 
 * [Migrating from AdminLTEBundle](migration_guide.md)

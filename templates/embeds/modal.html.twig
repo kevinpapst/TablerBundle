@@ -1,9 +1,11 @@
-<div {% block modal_attributes %}{% endblock %} class="modal modal-blur fade {% block modal_class %}{% endblock %}" id="{{ block('modal_id') }}" tabindex="-1" role="dialog" aria-labelledby="{{ block('modal_id') }}_label">
+{% set _id = if id is defined ? id : (block('modal_id') is defined ? block('modal_id') : ('modal-' ~ random())) %}
+
+<div {% block modal_attributes %}{% endblock %} class="modal modal-blur fade {% block modal_class %}{% endblock %}" id="{{ _id }}" tabindex="-1" role="dialog" aria-labelledby="{{ _id }}_label">
     <div class="modal-dialog {% block modal_size %}modal-lg{% endblock %}" role="document">
         <div class="modal-content">
             {% block modal_before %}{% endblock %}
             <div {% block modal_header_attributes %}{% endblock %} class="modal-header">
-                <h5 class="modal-title" id="{{ block('modal_id') }}_label">{% block modal_title %}{% endblock %}</h5>
+                <h5 class="modal-title" id="{{ _id }}_label">{% block modal_title %}{% endblock %}</h5>
                 <button type="button" class="btn-close{% if tabler_bundle.isDarkMode() %} btn-close-white{% endif %}" data-bs-dismiss="modal" aria-label="{{ 'Close'|trans({}, 'TablerBundle') }}"></button>
             </div>
             <div {% block modal_body_attributes %}{% endblock %} class="modal-body">
