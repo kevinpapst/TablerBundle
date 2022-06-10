@@ -1,4 +1,4 @@
-{% set _id = id ?? 'offcanvas-' ~ random() %}
+{% set _id = id ?? ('offcanvas-' ~ random()) %}
 {% set _position = position ?? 'end' %}
 {% set _title = block('offcanvas_title') is defined ? block('offcanvas_title') : '' %}
 {% set _hidden = (hidden ?? true) is same as true %}
