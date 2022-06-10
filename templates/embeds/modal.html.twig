@@ -1,13 +1,19 @@
 {% set _id = id ?? (block('modal_id') is defined ? block('modal_id') : ('modal-' ~ random())) %}
+{% set _close = (close ?? true) is same as true %}
+{% set _header = (header ?? true) is same as true %}
+{% set _status = status ?? null %}
 
-<div {% block modal_attributes %}{% endblock %} class="modal modal-blur fade {% block modal_class %}{% endblock %}" id="{{ _id }}" tabindex="-1" role="dialog" aria-labelledby="{{ _id }}_label">
+<div {% block modal_attributes %}{% endblock %} class="modal modal-blur fade {% block modal_class %}{% endblock %}" id="{{ _id }}" tabindex="-1" role="dialog"{% if _header  %} aria-labelledby="{{ _id }}_label"{% endif %}>
     <div class="modal-dialog {% block modal_size %}modal-lg{% endblock %}" role="document">
         <div class="modal-content">
             {% block modal_before %}{% endblock %}
-            <div {% block modal_header_attributes %}{% endblock %} class="modal-header">
-                <h5 class="modal-title" id="{{ _id }}_label">{% block modal_title %}{% endblock %}</h5>
-                <button type="button" class="btn-close{% if tabler_bundle.isDarkMode() %} btn-close-white{% endif %}" data-bs-dismiss="modal" aria-label="{{ 'Close'|trans({}, 'TablerBundle') }}"></button>
-            </div>
+            {% if _status is not null %}<div class="modal-status bg-{{ _status }}"></div>{% endif %}
+            {% if _header %}
+                <div {% block modal_header_attributes %}{% endblock %} class="modal-header">
+                    <h5 class="modal-title" id="{{ _id }}_label">{% block modal_title %}{% endblock %}</h5>
+                    {% if _close %}<button type="button" class="btn-close{% if tabler_bundle.isDarkMode() %} btn-close-white{% endif %}" data-bs-dismiss="modal" aria-label="{{ 'Close'|trans({}, 'TablerBundle') }}"></button>{% endif %}
+                </div>
+            {% endif %}
             <div {% block modal_body_attributes %}{% endblock %} class="modal-body">
                 {% block modal_body %}{% endblock %}
             </div>
