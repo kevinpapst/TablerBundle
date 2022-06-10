@@ -4,7 +4,7 @@
             {% block modal_before %}{% endblock %}
             <div {% block modal_header_attributes %}{% endblock %} class="modal-header">
                 <h5 class="modal-title" id="{{ block('modal_id') }}_label">{% block modal_title %}{% endblock %}</h5>
-                <button type="button" class="btn-close{% if tabler_bundle.isDarkMode() %} btn-close-white{% endif %}" data-bs-dismiss="modal" aria-label="{{ 'Close modal'|trans({}, 'TablerBundle') }}"></button>
+                <button type="button" class="btn-close{% if tabler_bundle.isDarkMode() %} btn-close-white{% endif %}" data-bs-dismiss="modal" aria-label="{{ 'Close'|trans({}, 'TablerBundle') }}"></button>
             </div>
             <div {% block modal_body_attributes %}{% endblock %} class="modal-body">
                 {% block modal_body %}{% endblock %}
