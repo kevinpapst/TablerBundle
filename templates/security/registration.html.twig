@@ -8,7 +8,7 @@
 
 {% block login_form %}
     {% form_theme form '@Tabler/layout/form-theme-security.html.twig' %}
-    {{ form_start(form, {'method': 'post', 'action': path('tabler_registration_register'|tabler_route), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    {{ form_start(form, {'method': 'post', 'action': path('tabler_registration_register'|tabler_route), 'attr': {'class': 'security-registration'}}) }}
     {{ form_widget(form) }}
     <div class="form-footer">
         <button type="submit" class="btn btn-primary w-100">{{ 'Register'|trans({}, 'TablerBundle') }}</button>
