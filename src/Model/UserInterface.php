@@ -34,10 +34,10 @@ interface UserInterface
     public function getTitle(): ?string;
 
     /**
-     * UReturns the URL to the user avatar or null if none is available.
+     * Returns the URL to the user avatar or null if none is available.
      *
-     * You can change the avatar behaviour and return any other string,
-     * you just need to overwrite the avatar component at templates/components/avatar_image.html.twig
+     * You can change the avatar behaviour and return any other string, you just need
+     * to overwrite the avatar component at templates/components/avatar_image.html.twig.
      *
      * @return string|null
      */
