@@ -79,10 +79,6 @@ class Configuration implements ConfigurationInterface
                     ->defaultNull()
                     ->info('name of the forgot-password form route')
                 ->end()
-                ->scalarNode('tabler_password_reset_sent')
-                    ->defaultNull()
-                    ->info('name of the sent forgot-password email form route')
-                ->end()
             ->end()
         ->end();
 
