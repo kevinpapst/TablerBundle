@@ -36,7 +36,7 @@
                     {% for child in item.children %}
                         {% if child.hasChildren %}
                             <div class="dropend">
-                                <a class="dropdown-item dropdown-toggle" role="button"
+                                <a class="dropdown-item dropdown-toggle {{ item.isActive ? 'active' : '' }}" role="button"
                                    data-bs-toggle="dropdown" data-bs-auto-close="{{ layout_type is same as "vertical" ? 'false' : 'outside' }}"
                                    aria-expanded="{{ layout_type is same as "vertical" }}">
                                     {{ _self.item_icon(child) }}
