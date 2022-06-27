@@ -52,6 +52,7 @@ tabler:
         admin: fas fa-wrench
         bookmark: far fa-star
         calendar: far fa-calendar-alt
+        clock: far fa-clock
         comment: far fa-comment
         copy: far fa-copy
         create: far fa-plus-square
@@ -59,9 +60,13 @@ tabler:
         delete: far fa-trash-alt
         download: fas fa-download
         edit: far fa-edit
+        email: fa fa-at
         export: fas fa-file-export
         filter: fas fa-filter
         help: far fa-question-circle
+        home: fas fa-home
+        password: fas fa-key
+        phone: fas fa-phone
         print: fas fa-print
         search: fas fa-search
         settings: fas fa-cog

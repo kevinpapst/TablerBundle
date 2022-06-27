@@ -8,6 +8,7 @@ If you cannot find the needed information in this list of topics, please create 
 * [Displaying notifications](notifications.md)
 * [Override theme](override_theme.md)
 * [Access bundle configuration](twig-context.md)
+* [Customizing forms](form_theme.md)
 
 Components (Twig macros):
 
