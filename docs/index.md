@@ -15,6 +15,7 @@ Components (Twig macros):
 * [Buttons](components-buttons.md)
 * [Timeline](components-timeline.md)
 * [Breadcrumb](components-breadcrumb.md)
+* [Status](components-status.md)
 * [Status indicator](components-status-indicator.md)
 * [Steps](components-steps.md)
 * [Callout](components-callout.md)
