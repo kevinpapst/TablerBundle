@@ -2,7 +2,7 @@
 
 This theme ships some components (as twig macros) that hide the complexity of rendering the same elements over and over again with the correct HTML.
 
-## Status indicator
+## Status
 
 Status has been implemented to simplify the use of the Tabler [Status component](https://preview.tabler.io/docs/statuses.html) 
 ### Parameters
