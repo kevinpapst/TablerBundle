@@ -1,4 +1,7 @@
 {% macro flash(type, message, close, use_raw, class, domain) %}
+    {% if type == 'error' %}
+        {% set type = 'danger' %}
+    {% endif %}
     <div class="alert{{ type ? ' alert-'~type : '' }} {{ class|default('') }} {% if close|default(false) %}alert-dismissible{% endif %}">
         <div>
             <h4 class="alert-title">
