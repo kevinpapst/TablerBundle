@@ -1,0 +1,7 @@
+{% macro status_dot(options) %}
+    {% set _color = options.color ?? 'green' %}
+    {% set _animated = options.animated ?? true %}
+    {% set _extraClass = options.extraClass ?? '' %}
+
+    <span class="status-dot status-{{ _color }} {% if _animated %}status-dot-animated{% endif %}"></span>
+{% endmacro %}
