@@ -10,6 +10,7 @@
         {% set _dismissible = (options.dismissible ?? false) is same as (true) %}
         {% set _important = (options.important ?? false) is same as (true) %}
         {% set _raw = (options.raw ?? false) is same as (true) %}
+        {% set _class = options.class is defined ? ' ' ~ options.class : '' %}
     {% else %}
         {% deprecated "Passing multiple parameters to 'alert()' Tabler macro is deprecated, use options object syntax." %}
 
@@ -20,14 +21,12 @@
         {% set _dismissible = (dismissible ?? false) is same as (true) %}
         {% set _important = false %}
         {% set _raw = false %}
+        {% set _class = '' %}
     {% endif %}
 
     {% set _background = _title is empty or _description is empty or _important %}
 
-    <div
-            class="alert alert-{{ _type }} {% if _dismissible %}alert-dismissible{% endif %} {% if _background %}alert-important{% endif %}"
-            role="alert"
-    >
+    <div class="alert alert-{{ _type }}{% if _dismissible %} alert-dismissible{% endif %}{% if _background %} alert-important{% endif %}{{ _class }}" role="alert">
         <div class="d-flex">
             {% if _icon %}
                 <div class="alert-icon">
