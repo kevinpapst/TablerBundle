@@ -82,8 +82,9 @@
                     {% set _url     = action.url ?? '#' %}
                     {% set _icon    = action.icon ?? false %}
                     {% set _attr    = action.attr ?? {} %}
+                    {% set _class   = 'dropdown-item ' ~ (action.class ?? '') %}
 
-                    <a class="dropdown-item" href="{{ _url }}" {{ utils.attr_to_html(_attr) }}>
+                    <a class="{{ _class }}" href="{{ _url }}" {{ utils.attr_to_html(_attr) }}>
                         {%- if _icon is not same as (false) -%}
                             <span class="{{ options.icon_class }}">{{ tabler_icon(_icon, false) }}</span>
                         {% endif %}
