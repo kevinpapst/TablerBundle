@@ -52,6 +52,7 @@
 
 {% macro dropdown_button(button, actions, options) %}
     {% import '@Tabler/components/button.html.twig' as macro %}
+    {% import '@Tabler/includes/utils.html.twig' as utils %}
 
     {% set button_default = {
         buttonType : 'button',
@@ -80,8 +81,10 @@
                     {% set _title   = action.title ?? null %}
                     {% set _url     = action.url ?? '#' %}
                     {% set _icon    = action.icon ?? false %}
+                    {% set _attr    = action.attr ?? {} %}
+                    {% set _class   = 'dropdown-item ' ~ (action.class ?? '') %}
 
-                    <a class="dropdown-item" href="{{ _url }}">
+                    <a class="{{ _class }}" href="{{ _url }}" {{ utils.attr_to_html(_attr) }}>
                         {%- if _icon is not same as (false) -%}
                             <span class="{{ options.icon_class }}">{{ tabler_icon(_icon, false) }}</span>
                         {% endif %}
