@@ -26,6 +26,10 @@ Enjoy your theme!
 <body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }}" {% block body_class %}{% endblock %}>
 {% block after_body_start %}{% endblock %}
 <div class="page">
+    {% set navbarStartContent = block('navbar_start') %}
+    {% set navbarNotificationsContent = block('navbar_notifications') %}
+    {% set navbarUserContent = block('navbar_user') %}
+    {% set navbarEndContent = block('navbar_end') %}
 
     {# *** Layout type changes *** #}
     {% block navbar %}
@@ -46,7 +50,7 @@ Enjoy your theme!
                     </h1>
                 {% endblock %}
                 <div class="navbar-nav flex-row d-lg-none">
-                    {{ _self.navbar(block('navbar_start'), block('navbar_notifications'), block('navbar_user'), block('navbar_end')) }}
+                    {{ _self.navbar(navbarStartContent, navbarNotificationsContent, navbarUserContent, navbarEndContent) }}
                 </div>
                 <div id="navbar-menu" class="collapse navbar-collapse">
                     {% block navbar_menu_start %}{% endblock %}
@@ -66,7 +70,7 @@ Enjoy your theme!
                     </button>
 
                     <div class="navbar-nav flex-row order-md-last">
-                        {{ _self.navbar(block('navbar_start'), block('navbar_notifications'), block('navbar_user'), block('navbar_end')) }}
+                        {{ _self.navbar(navbarStartContent, navbarNotificationsContent, navbarUserContent, navbarEndContent) }}
                     </div>
 
                     <div class="collapse navbar-collapse" id="navbar-menu">
