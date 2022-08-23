@@ -6,6 +6,34 @@ See Tabler documentation at https://preview.tabler.io/accordion.html
 
 ## Accordion
 
+### Parameters
+`accordion()` macro, waits for 2 parameters:
+
+| Parameter | Description                |   Type    | Default |
+|:---------:|:---------------------------|:---------:|:-------:|
+|   items   | Array of [Item](#Step)     |  `array`  |  `[]`   |
+|  options  | [Options](#Options) object | `object`  |  `{}`   |
+
+#### Item
+|  Parameter  | Description                                |   Type    |      Default      |
+|:-----------:|--------------------------------------------|:---------:|:-----------------:|
+|    title     | Url href for the step when clicked         | `string`  |        `#`        |
+|    body    | Title of the step                          | `string`  |  _empty string_   |
+| options | Customize the item  | `object`  |   `{}`   |
+| options.title_extraClass |Add extra class to the title | `string`  |   _empty string_   |
+| options.body_extraClass |Add extra class to the body  | `string`  |   _empty string_   |
+
+#### Options
+| Parameter  | Description                                          |   Type    |    Default     |
+|:----------:|------------------------------------------------------|:---------:|:--------------:|
+|  id   | Set custom `id` to accordion | `mixed` |    `rand(number)`     |                                        
+|   raw    | Use raw output for `title` and `body`                             | `boolean`  |   `true`    |                                        
+|  flush   | Remove padding. See tabler.                     | `boolean` |    `false`     | 
+|    always_open    | Do not close previous items on click.          | `boolean`  |      `false`      |   
+| extraClass | Add extra classes on accordion container                 | `string`  | _empty string_ |      
+
+### Usage
+
 ```twig
 {% from '@Tabler/components/accordion.html.twig' import accordion %}
 
