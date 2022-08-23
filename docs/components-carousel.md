@@ -4,7 +4,42 @@ This theme ships some components (as twig macros) that hide the complexity of re
 
 See Tabler documentation at https://preview.tabler.io/carousel.html
 
-## Breadcrumb
+## Carousel
+
+### Parameters
+`carousel()` macro, waits for 2 parameters:
+
+| Parameter | Description                |   Type    | Default |
+|:---------:|:---------------------------|:---------:|:-------:|
+|   items   | Array of [Item](#Step)     |  `array`  |  `[]`   |
+|  options  | [Options](#Options) object | `object`  |  `{}`   |
+
+#### Item
+|  Parameter  | Description                                |   Type    |      Default      |
+|:-----------:|--------------------------------------------|:---------:|:-----------------:|
+| image | Path to an image | `string` | |
+| custom_content | Custom html content. overrides `image` if set. | `html (raw)` | `null` |
+| title | Item title. | `string` | `null` |
+| description | Item description. | `string` | `null` |
+
+#### Options
+| Parameter  | Description                                          |   Type    |    Default     |
+|:----------:|------------------------------------------------------|:---------:|:--------------:|
+|  id   | Custom `id` to apply to the carousel | `mixed` |    `rand(Number)`     |                                           
+| extraClass | Add extra classes on steps container                 | `string`  | _empty string_ |
+| interval | Interval to change the slides | `int`  | 5000 |  
+| touch | Support touch input. See: https://getbootstrap.com/docs/5.2/components/carousel/#options | `boolean`  | `true` |
+| pause | Auto stop sliding. See: https://getbootstrap.com/docs/5.2/components/carousel/#options | `mixed` | `false` |
+| wrap | Restart again. See: https://getbootstrap.com/docs/5.2/components/carousel/#options | `boolean` | `true` |
+| controls | Show controls | `boolean` | `false` |
+| caption_custom_class | Apply custom class to caption | `string` | `d-none d-md-block` |
+| caption_background | Show caption background | `boolean` | `true` |
+| indicators | Show indicators | `boolean` | `true` |
+| indicators_type | Set indicators type: `dots`, `thumbs` | `string` | _empty string_ |
+| indicators_ratio | Set indicators ratio. See docs tabler | `string` | _empty string_ |
+| indicators_orientation | Set indicators orientation. See docs tabler | `string` | `horizontal` |
+
+### Usage
 
 ```twig
 {% from '@Tabler/components/carousel.html.twig' import carousel %}
