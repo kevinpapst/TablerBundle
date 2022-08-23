@@ -84,13 +84,12 @@ TODO
 |  options  | Options object           | `object`  |  `{}`   |
 
 #### Item
-| Parameter | Description       |   Type    | Default |
-|:---------:|-------------------|:---------:|:-------:|
-|   icon    | Tabler icon name  | `boolean` | `false` |
-|   title   | Title of the item |  `html`   | `null`  |
-|    url    | Url of the item   | `string`  |   `#`   |
-|   class   | Custom class for dropdown item. results in class like `dropdown-item class`   | `string`  | `null`    |
-
+| Parameter | Description                                                                   |   Type    | Default |
+|:---------:|-------------------------------------------------------------------------------|:---------:|:-------:|
+|   icon    | Tabler icon name                                                              | `boolean` | `false` |
+|   title   | Title of the item                                                             |  `html`   | `null`  |
+|    url    | Url of the item                                                               | `string`  |   `#`   |
+|   class   | Custom class for dropdown item. Results in class like `dropdown-item class`   | `string`  | `null`  |
 
 ```twig
 {% from '@Tabler/components/buttons.html.twig' import dropdown_button %}
