@@ -37,14 +37,11 @@ See Tabler documentation at https://preview.tabler.io/accordion.html
 ```twig
 {% from '@Tabler/components/accordion.html.twig' import accordion %}
 
-{% set items =
-    {
-        'key1':
+{% set items = [
         {
           'title': 'Title 1',
           'body': 'Body 1',
         },
-        'key2':
         {
           'title': 'Title 1',
           'body': 'Body 2',
@@ -54,7 +51,6 @@ See Tabler documentation at https://preview.tabler.io/accordion.html
             'body_extraClass': 'bg-danger pt-3',
           },
         },
-        'key3':
         {
           'title': 'Title 3',
           'body': 'Body 3',
@@ -63,12 +59,11 @@ See Tabler documentation at https://preview.tabler.io/accordion.html
             'extraClass': 'bg-danger-lt'
           }
         },
-        'key4':
         {
           'title': '<div>Title 4 <strong>with HTML</strong></div>',
           'body': '<div>Body 4 <strong>with HTML</strong></div',
         },
-    } %}
+    ] %}
 
 {% set options = {
     'id': 'example-accordion',
