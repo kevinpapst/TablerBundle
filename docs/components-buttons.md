@@ -89,6 +89,7 @@ TODO
 |   icon    | Tabler icon name  | `boolean` | `false` |
 |   title   | Title of the item |  `html`   | `null`  |
 |    url    | Url of the item   | `string`  |   `#`   |
+|   class   | Custom class for dropdown item. results in class like `dropdown-item class`   | `string`  | `null`    |
 
 
 ```twig
@@ -99,7 +100,7 @@ TODO
     [
         {icon: 'plus',      title : 'Add more',     url : '/add'},
         {                   title : 'Help needed',  url : '/help'},
-        {icon: 'delete',    title : 'Delete',       url : '/delete'}
+        {icon: 'delete',    title : 'Delete',       url : '/delete', class : 'my-class' }
     ]
 ) }}
 
