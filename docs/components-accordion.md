@@ -11,7 +11,7 @@ See Tabler documentation at https://preview.tabler.io/accordion.html
 
 | Parameter | Description                |   Type    | Default |
 |:---------:|:---------------------------|:---------:|:-------:|
-|   items   | Array of [Item](#Step)     |  `array`  |  `[]`   |
+|   items   | Array of [Item](#Item)     |  `array`  |  `[]`   |
 |  options  | [Options](#Options) object | `object`  |  `{}`   |
 
 #### Item
