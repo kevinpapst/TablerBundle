@@ -22,7 +22,7 @@
                 <div id="{{ _id_collapse }}" {% if _always_open == false %}data-bs-parent="#{{ _id }}"{% endif %}
                      class="accordion-collapse collapse {% if loop.first %}show{% endif %} {{ _item_body_extraClass }}">
                     <div class="accordion-body pt-0">
-                        {% if _raw == true %}{{ item.body | raw }}{% else %}{{ item.body }}{% endif %}
+                        {% if _raw %}{{ item.body | raw }}{% else %}{{ item.body }}{% endif %}
                     </div>
                 </div>
             </div>
