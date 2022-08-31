@@ -2,15 +2,15 @@
     {% set _id = options.id ?? ('accordion-' ~ random(0, 999)) %}
     {% set _raw = options.raw ?? true %}
     {% set _flush = options.flush ?? false %}
-    {% set _always_open = options.always_open ?? false %}
+    {% set _always_open = options.alwaysOpen ?? false %}
     {% set _extraClass = options.extraClass ?? '' %}
 
     <div id="{{ _id }}" class="accordion {% if _flush == true %}accordion-flush{% endif %} {{ _extraClass }}">
         {% for item in items %}
             {% set _id_collapse = _id ~ '-collapse-' ~ loop.index %}
             {% set _item_extraClass = item.options.extraClass ?? '' %}
-            {% set _item_title_extraClass = item.options.title_extraClass ?? '' %}
-            {% set _item_body_extraClass = item.options.body_extraClass ?? '' %}
+            {% set _item_title_extraClass = item.options.titleExtraClass ?? '' %}
+            {% set _item_body_extraClass = item.options.bodyExtraClass ?? '' %}
             <div class="accordion-item {{ _item_extraClass }}">
                 <div class="accordion-header {{ _item_title_extraClass }}" id="{{ _id }}-heading-{{ loop.index }}">
                     <button class="accordion-button {% if loop.first == false %}collapsed{% endif %}"
