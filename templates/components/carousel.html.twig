@@ -9,13 +9,13 @@
 
     {% set _show_controls = options.controls ?? false %}
 
-    {% set _caption_class = options.caption_custom_class ?? 'd-none d-md-block' %}
-    {% set _show_caption_background = options.caption_background ?? true %}
+    {% set _caption_class = options.captionCustomClass ?? 'd-none d-md-block' %}
+    {% set _show_caption_background = options.captionBackground ?? true %}
 
     {% set _show_indicators = options.indicators ?? true %}
-    {% set _indicators_type = options.indicators_type ?? '' %}
-    {% set _indicators_ratio = options.indicators_ratio ?? '' %}
-    {% set _indicators_orientation = options.indicators_orientation ?? 'horizontal' %}
+    {% set _indicators_type = options.indicatorsType ?? '' %}
+    {% set _indicators_ratio = options.indicatorsRatio ?? '' %}
+    {% set _indicators_orientation = options.indicatorsOrientation ?? 'horizontal' %}
 
     <div id="{{ _id }}" class="carousel slide {{ _extraClass }}" data-bs-ride="carousel"
          data-bs-interval="{{ _interval == false ? 'false' : _interval }}"
@@ -34,30 +34,28 @@
         {% endif %}
         <div class="carousel-inner">
             {% for item in items %}
-                {% set _has_custom = item.custom_content is defined %}
+                {% set _has_custom = item.customContent is defined %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
                 {% if _has_custom %}
                     {# This is useless: breaks contents and no additional value as making everything same size is cumbersome #}
-                    <div class="carousel-item">
-                        {{ item.custom_content | raw }}
-                    </div>
+                    {{ item.customContent | raw }}
                 {% else %}
-                    <div class="carousel-item {% if loop.first %}active{% endif %}">
-                        <img src="{{ item.image }}" class="d-block w-100">
-                        {% if item.title is defined or item.description is defined %}
-                            {% if _show_caption_background %}
-                                <div class="carousel-caption-background {{ _caption_class }}"></div>
-                            {% endif %}
-                            <div class="carousel-caption {{ _caption_class }}">
-                                {% if item.title %}
-                                    <h3>{{ item.title }}</h3>
-                                {% endif %}
-                                {% if item.description %}
-                                    {{ item.description }}
-                                {% endif %}
-                            </div>
+                    <img src="{{ item.image }}" class="d-block w-100" alt="{% if item.title is defined %}{{ item.title }}{% endif %}">
+                    {% if item.title is defined or item.description is defined %}
+                        {% if _show_caption_background %}
+                            <div class="carousel-caption-background {{ _caption_class }}"></div>
                         {% endif %}
-                    </div>
+                        <div class="carousel-caption {{ _caption_class }}">
+                            {% if item.title %}
+                                <h3>{{ item.title }}</h3>
+                            {% endif %}
+                            {% if item.description %}
+                                {{ item.description }}
+                            {% endif %}
+                        </div>
+                    {% endif %}
                 {% endif %}
+                </div>
             {% endfor %}
         </div>
     </div>
