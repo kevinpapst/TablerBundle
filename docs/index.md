@@ -12,14 +12,15 @@ If you cannot find the needed information in this list of topics, please create 
 
 Components (Twig macros):
 
-* [Buttons](components-buttons.md)
-* [Timeline](components-timeline.md)
 * [Breadcrumb](components-breadcrumb.md)
+* [Buttons](components-buttons.md)
+* [Callout](components-callout.md)
+* [Carousel](components-carousel.md)
 * [Status](components-status.md)
-* [Status Dot](components-status-dot.md)
+* [Status dot](components-status-dot.md)
 * [Status indicator](components-status-indicator.md)
 * [Steps](components-steps.md)
-* [Callout](components-callout.md)
+* [Timeline](components-timeline.md)
 
 Components (Twig Embeds):
 * [Modal](embeds-modal.md)
