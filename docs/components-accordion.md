@@ -34,7 +34,7 @@ See Tabler documentation at https://preview.tabler.io/accordion.html
 |     id      | Set custom `id` to accordion                                                                                              |  `mixed`  | `'accordion-'` + `rand(0, 999)` |                                        
 |     raw     | Use raw output for `title` and `body`                                                                                     | `boolean` |             `true`              |                                        
 |    flush    | Remove certains styles (see [Boostrap docs](https://getbootstrap.com/docs/5.0/components/accordion/#flush))               | `boolean` |             `false`             | 
-| always_open | Make accordion items stay open (see [Bootstrap Doc](https://getbootstrap.com/docs/5.0/components/accordion/#always-open)) | `boolean` |             `false`             |   
+| alwaysOpen  | Make accordion items stay open (see [Bootstrap Doc](https://getbootstrap.com/docs/5.0/components/accordion/#always-open)) | `boolean` |             `false`             |   
 | extraClass  | Add extra classes on accordion container                                                                                  | `string`  |         _empty string_          |      
 
 ### Usage
