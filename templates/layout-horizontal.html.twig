@@ -146,7 +146,7 @@ Enjoy your theme!
 
         {% block footer %}
             <footer id="{% block footer_id %}{% endblock %}" class="footer footer-transparent d-print-none">
-                <div class="container">
+                <div class="{{ ''|tabler_container }}">
                     {% include '@Tabler/includes/footer.html.twig' %}
                 </div>
             </footer>
