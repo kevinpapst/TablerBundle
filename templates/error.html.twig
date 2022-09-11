@@ -17,6 +17,18 @@
         {% set errorMessageTrans = errorMessageKey|trans({ '%status_code%': status_code }, 'TablerBundle') %}
     {% endif %}
 
+    {% set errorSuggestionKey = "http_error_#{status_code}.suggestion" %}
+    {% set errorSuggestionTrans = errorSuggestionKey|trans({ '%status_code%': status_code }, 'TablerBundle') %}
+    {% if errorSuggestionKey == errorSuggestionTrans %}
+        {% set errorSuggestionKey = 'http_error.suggestion' %}
+        {% set errorSuggestionTrans = errorSuggestionKey|trans({ '%status_code%': status_code }, 'TablerBundle') %}
+    {% endif %}
+
+    {% if errorSuggestionKey != errorSuggestionTrans and errorMessageKey != errorMessageTrans %}
+        {% set errorTitleTrans = errorMessageTrans %}
+        {% set errorMessageTrans = errorSuggestionTrans %}
+    {% endif %}
+
     <div class="container-tight py-4">
         <div class="empty">
             <div class="empty-header">{% block error_code %}{{ status_code }}{% endblock %}</div>
@@ -31,9 +43,7 @@
             </p>
             <p class="empty-subtitle text-muted">
                 {% block error_subtitle %}
-                    {% if errorMessageKey != errorMessageTrans %}
-                        {{ errorMessageTrans }}
-                    {% endif %}
+                    {{ errorMessageTrans }}
                 {% endblock %}
             </p>
             <div class="empty-action">
