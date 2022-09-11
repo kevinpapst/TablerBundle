@@ -1,132 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" target-language="ar" datatype="plaintext" original="TablerBundle.en.xliff">
-        <body>
-            <trans-unit id="Toggle navigation">
-                <source>Toggle navigation</source>
-                <target>تبديل التنقل</target>
-            </trans-unit>
-            <trans-unit id="Remember Me">
-                <source>Remember Me</source>
-                <target>تذكرنى</target>
-            </trans-unit>
-            <trans-unit id="Sign in to start your session">
-                <source>Sign in to start your session</source>
-                <target>تسجيل الدخول</target>
-            </trans-unit>
-            <trans-unit id="Sign In">
-                <source>Sign In</source>
-                <target>تسجيل الدخول</target>
-            </trans-unit>
-            <trans-unit id="Sign out">
-                <source>Sign out</source>
-                <target>الخروج</target>
-            </trans-unit>
-            <trans-unit id="Register">
-                <source>Register</source>
-                <target>تسجيل</target>
-            </trans-unit>
-            <trans-unit id="Profile">
-                <source>Profile</source>
-                <target>ملفك الشخصي</target>
-            </trans-unit>
-            <trans-unit id="Member since %date%">
-                <source>Member since %date%</source>
-                <target>عضو منذ %date%</target>
-            </trans-unit>
-            <trans-unit id="Username">
-                <source>Username</source>
-                <target>اسم المستخدم</target>
-            </trans-unit>
-            <trans-unit id="Username or email address">
-                <source>Username or email address</source>
-                <target>إسم المستخدم او البريد الالكتروني</target>
-            </trans-unit>
-            <trans-unit id="Password">
-                <source>Password</source>
-                <target>اسم المستخدم</target>
-            </trans-unit>
-            <trans-unit id="Show homepage">
-                <source>Show homepage</source>
-                <target>عرض الصفحة الرئيسية</target>
-            </trans-unit>
-            <trans-unit id="Back to login">
-                <source>Back to login</source>
-                <target>العودة إلى تسجيل الدخول</target>
-            </trans-unit>
-            <trans-unit id="Reset your password">
-                <source>Reset your password</source>
-                <target>اعد ضبط كلمه السر</target>
-            </trans-unit>
-            <trans-unit id="I forgot my password">
-                <source>I forgot my password</source>
-                <target>لقد نسيت كلمة المرور</target>
-            </trans-unit>
-            <trans-unit id="Register a new account">
-                <source>Register a new account</source>
-                <target>تسجيل حساب جديد</target>
-            </trans-unit>
-            <trans-unit id="View all">
-                <source>View all</source>
-                <target>عرض الكل</target>
-            </trans-unit>
-            <trans-unit id="You have %count% notifications">
-                <source>You have %count% notifications</source>
-                <target>لديك %count% إشعارات</target>
-            </trans-unit>
-            <trans-unit id="You have %count% messages">
-                <source>You have %count% messages</source>
-                <target>لديك %count% رسائل</target>
-            </trans-unit>
-            <trans-unit id="You have %count% tasks">
-                <source>You have %count% tasks</source>
-                <target>لديك %count% مهام</target>
-            </trans-unit>
-            <trans-unit id="%progress%% Complete">
-                <source>%progress%% Complete</source>
-                <target>%progress%% منجز</target>
-            </trans-unit>
-            <trans-unit id="registration.confirmed">
-                <source>registration.confirmed</source>
-                <target>تهانينا %username%، لقد تم تفعيل حسابك.</target>
-            </trans-unit>
-            <trans-unit id="rtYKRSj" resname="http_error.title">
-                <source>http_error.title</source>
-                <target>خطأ</target>
-            </trans-unit>
-            <trans-unit id="e3w.2Rf" resname="http_error.description">
-                <source>http_error.description</source>
-                <target>حدث خطأ</target>
-            </trans-unit>
-            <trans-unit id="ru5FEGk" resname="http_error.suggestion">
-                <source>http_error.suggestion</source>
-                <target>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="ar" datatype="plaintext" original="TablerBundle.en.xliff">
+    <body>
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation">
+        <source>Toggle navigation</source>
+        <target>تبديل التنقل</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me">
+        <source>Remember Me</source>
+        <target>تذكرنى</target>
+      </trans-unit>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session">
+        <source>Sign in to start your session</source>
+        <target>تسجيل الدخول</target>
+      </trans-unit>
+      <trans-unit id="vMC8yRQ" resname="Sign In">
+        <source>Sign In</source>
+        <target>تسجيل الدخول</target>
+      </trans-unit>
+      <trans-unit id="SPDT05f" resname="Sign out">
+        <source>Sign out</source>
+        <target>الخروج</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>تسجيل</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile">
+        <source>Profile</source>
+        <target>ملفك الشخصي</target>
+      </trans-unit>
+      <trans-unit id="DX2c6C2" resname="Member since %date%">
+        <source>Member since %date%</source>
+        <target>عضو منذ %date%</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username">
+        <source>Username</source>
+        <target>اسم المستخدم</target>
+      </trans-unit>
+      <trans-unit id="6.zSWXT" resname="Username or email address">
+        <source>Username or email address</source>
+        <target>إسم المستخدم او البريد الالكتروني</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>اسم المستخدم</target>
+      </trans-unit>
+      <trans-unit id="nQDUTyy" resname="Show homepage">
+        <source>Show homepage</source>
+        <target>عرض الصفحة الرئيسية</target>
+      </trans-unit>
+      <trans-unit id="PjgG.xc" resname="Back to login">
+        <source>Back to login</source>
+        <target>العودة إلى تسجيل الدخول</target>
+      </trans-unit>
+      <trans-unit id="WfpDeb4" resname="Reset your password">
+        <source>Reset your password</source>
+        <target>اعد ضبط كلمه السر</target>
+      </trans-unit>
+      <trans-unit id="YOlNDxu" resname="I forgot my password">
+        <source>I forgot my password</source>
+        <target>لقد نسيت كلمة المرور</target>
+      </trans-unit>
+      <trans-unit id="D3_ygfb" resname="Register a new account">
+        <source>Register a new account</source>
+        <target>تسجيل حساب جديد</target>
+      </trans-unit>
+      <trans-unit id="MKZCFur" resname="View all">
+        <source>View all</source>
+        <target>عرض الكل</target>
+      </trans-unit>
+      <trans-unit id="hSzABam" resname="You have %count% notifications">
+        <source>You have %count% notifications</source>
+        <target>لديك %count% إشعارات</target>
+      </trans-unit>
+      <trans-unit id="WNPKqNj" resname="You have %count% messages">
+        <source>You have %count% messages</source>
+        <target>لديك %count% رسائل</target>
+      </trans-unit>
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks">
+        <source>You have %count% tasks</source>
+        <target>لديك %count% مهام</target>
+      </trans-unit>
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete">
+        <source>%progress%% Complete</source>
+        <target>%progress%% منجز</target>
+      </trans-unit>
+      <trans-unit id="B.ZozIs" resname="registration.confirmed">
+        <source>registration.confirmed</source>
+        <target>تهانينا %username%، لقد تم تفعيل حسابك.</target>
+      </trans-unit>
+      <trans-unit id="rtYKRSj" resname="http_error.title">
+        <source>http_error.title</source>
+        <target>خطأ</target>
+      </trans-unit>
+      <trans-unit id="e3w.2Rf" resname="http_error.description">
+        <source>http_error.description</source>
+        <target>حدث خطأ</target>
+      </trans-unit>
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+        <source>http_error.suggestion</source>
+        <target>
                     حدث خطأ غير متوقع ، يرجى المحاولة مرة أخرى.
                     ربما تكون قد عثرت على ثغرة ، لذا يرجى الاتصال بالمسؤول إذا لم تختف المشكلة بعد تجربتها مرة أخرى.
                 </target>
-            </trans-unit>
-            <trans-unit id="_W1eNz2" resname="http_error_404.description">
-                <source>http_error_404.description</source>
-                <target>الصفحة غير موجودة</target>
-            </trans-unit>
-            <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
-                <source>http_error_404.suggestion</source>
-                <target>
+      </trans-unit>
+      <trans-unit id="_W1eNz2" resname="http_error_404.description">
+        <source>http_error_404.description</source>
+        <target>الصفحة غير موجودة</target>
+      </trans-unit>
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+        <source>http_error_404.suggestion</source>
+        <target>
                     لم نتمكن من العثور على الصفحة التي كنت تبحث عنها.
                     في هذه الأثناء ، قد تعود إلى لوحة التحكم وتبدأ من جديد.
                 </target>
-            </trans-unit>
-            <trans-unit id="Qn5rwdU" resname="http_error_403.description">
-                <source>http_error_403.description</source>
-                <target>هذه الصفحة مقيدة</target>
-            </trans-unit>
-            <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
-                <source>http_error_403.suggestion</source>
-                <target>
+      </trans-unit>
+      <trans-unit id="Qn5rwdU" resname="http_error_403.description">
+        <source>http_error_403.description</source>
+        <target>هذه الصفحة مقيدة</target>
+      </trans-unit>
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+        <source>http_error_403.suggestion</source>
+        <target>
                     عذرًا ، ولكن ليس لديك أذونات كافية لرؤية هذه الصفحة.
                     يرجى التحدث إلى المسؤول إذا كنت تعتقد أن هذا خطأ.
                 </target>
-            </trans-unit>
-        </body>
-    </file>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>

@@ -1,127 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" target-language="pt" datatype="plaintext" original="TablerBundle.en.xliff">
-        <body>
-            <trans-unit id="Toggle navigation">
-                <source>Toggle navigation</source>
-                <target>Fechar menu</target>
-            </trans-unit>
-            <trans-unit id="Remember Me">
-                <source>Remember Me</source>
-                <target>Lembrar de mim</target>
-            </trans-unit>
-            <trans-unit id="Sign in to start your session">
-                <source>Sign in to start your session</source>
-                <target>Login</target>
-            </trans-unit>
-            <trans-unit id="Sign In">
-                <source>Sign In</source>
-                <target>Entrar</target>
-            </trans-unit>
-            <trans-unit id="Sign out">
-                <source>Sign out</source>
-                <target>Sair</target>
-            </trans-unit>
-            <trans-unit id="Register">
-                <source>Register</source>
-                <target>Registrar</target>
-            </trans-unit>
-            <trans-unit id="Profile">
-                <source>Profile</source>
-                <target>Meu perfil</target>
-            </trans-unit>
-            <trans-unit id="Member since %date%">
-                <source>Member since %date%</source>
-                <target>Membro desde %date%</target>
-            </trans-unit>
-            <trans-unit id="Username">
-                <source>Username</source>
-                <target>Usuário</target>
-            </trans-unit>
-            <trans-unit id="Username or email address">
-                <source>Username or email address</source>
-                <target>Usuário ou email</target>
-            </trans-unit>
-            <trans-unit id="Password">
-                <source>Password</source>
-                <target>Senha</target>
-            </trans-unit>
-            <trans-unit id="Show homepage">
-                <source>Show homepage</source>
-                <target>Mostrar homepage</target>
-            </trans-unit>
-            <trans-unit id="Back to login">
-                <source>Back to login</source>
-                <target>Voltar para o login</target>
-            </trans-unit>
-            <trans-unit id="Reset your password">
-                <source>Reset your password</source>
-                <target>Resetar sua senha</target>
-            </trans-unit>
-            <trans-unit id="I forgot my password">
-                <source>I forgot my password</source>
-                <target>Esqueci minha senha</target>
-            </trans-unit>
-            <trans-unit id="Register a new account">
-                <source>Register a new account</source>
-                <target>Cadastrar</target>
-            </trans-unit>
-            <trans-unit id="View all">
-                <source>View all</source>
-                <target>Ver todos</target>
-            </trans-unit>
-            <trans-unit id="You have %count% notifications">
-                <source>You have %count% notifications</source>
-                <target>Você tem 1 notificação|Você tem %count% notificações</target>
-            </trans-unit>
-            <trans-unit id="You have %count% messages">
-                <source>You have %count% messages</source>
-                <target>Você tem 1 mensagem|Você tem %count% mensagens</target>
-            </trans-unit>
-            <trans-unit id="You have %count% tasks">
-                <source>You have %count% tasks</source>
-                <target>Você tem 1 tarefa|Você tem %count% tarefas</target>
-            </trans-unit>
-            <trans-unit id="%progress%% Complete">
-                <source>%progress%% Complete</source>
-                <target>%progress%% completo</target>
-            </trans-unit>
-            <trans-unit id="This is a mandatory field">
-                <source>This is a mandatory field</source>
-                <target>Este é um campo obrigatório</target>
-            </trans-unit>
-            <trans-unit id="registration.confirmed">
-                <source>registration.confirmed</source>
-                <target>Parabéns, %username%. A sua conta foi ativada.</target>
-            </trans-unit>
-            <trans-unit id="rtYKRSj" resname="http_error.title">
-                <source>http_error.title</source>
-                <target>Erro</target>
-            </trans-unit>
-            <trans-unit id="e3w.2Rf" resname="http_error.description">
-                <source>http_error.description</source>
-                <target>Um erro ocorreu</target>
-            </trans-unit>
-            <trans-unit id="ru5FEGk" resname="http_error.suggestion">
-                <source>http_error.suggestion</source>
-                <target>Um erro inesperado aconteceu, favor tente novamente. Se deparou com um bug, favor contatar o administrador caso o problema se repita novamente.</target>
-            </trans-unit>
-            <trans-unit id="_W1eNz2" resname="http_error_404.description">
-                <source>http_error_404.description</source>
-                <target>Página não encontrada</target>
-            </trans-unit>
-            <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
-                <source>http_error_404.suggestion</source>
-                <target>Não conseguimos encontrar a página que está a procurar. Por favor retorne ao dashboard e começe novamente.</target>
-            </trans-unit>
-            <trans-unit id="Qn5rwdU" resname="http_error_403.description">
-                <source>http_error_403.description</source>
-                <target>Esta página é restrita</target>
-            </trans-unit>
-            <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
-                <source>http_error_403.suggestion</source>
-                <target>Desculpe, não tem permissões suficientes para ver esta página. Por favor, fale com o seu administrador se acha que isso é um erro.</target>
-            </trans-unit>
-        </body>
-    </file>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="pt" datatype="plaintext" original="TablerBundle.en.xliff">
+    <body>
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation">
+        <source>Toggle navigation</source>
+        <target>Fechar menu</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me">
+        <source>Remember Me</source>
+        <target>Lembrar de mim</target>
+      </trans-unit>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session">
+        <source>Sign in to start your session</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="vMC8yRQ" resname="Sign In">
+        <source>Sign In</source>
+        <target>Entrar</target>
+      </trans-unit>
+      <trans-unit id="SPDT05f" resname="Sign out">
+        <source>Sign out</source>
+        <target>Sair</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Registrar</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile">
+        <source>Profile</source>
+        <target>Meu perfil</target>
+      </trans-unit>
+      <trans-unit id="DX2c6C2" resname="Member since %date%">
+        <source>Member since %date%</source>
+        <target>Membro desde %date%</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username">
+        <source>Username</source>
+        <target>Usuário</target>
+      </trans-unit>
+      <trans-unit id="6.zSWXT" resname="Username or email address">
+        <source>Username or email address</source>
+        <target>Usuário ou email</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Senha</target>
+      </trans-unit>
+      <trans-unit id="nQDUTyy" resname="Show homepage">
+        <source>Show homepage</source>
+        <target>Mostrar homepage</target>
+      </trans-unit>
+      <trans-unit id="PjgG.xc" resname="Back to login">
+        <source>Back to login</source>
+        <target>Voltar para o login</target>
+      </trans-unit>
+      <trans-unit id="WfpDeb4" resname="Reset your password">
+        <source>Reset your password</source>
+        <target>Resetar sua senha</target>
+      </trans-unit>
+      <trans-unit id="YOlNDxu" resname="I forgot my password">
+        <source>I forgot my password</source>
+        <target>Esqueci minha senha</target>
+      </trans-unit>
+      <trans-unit id="D3_ygfb" resname="Register a new account">
+        <source>Register a new account</source>
+        <target>Cadastrar</target>
+      </trans-unit>
+      <trans-unit id="MKZCFur" resname="View all">
+        <source>View all</source>
+        <target>Ver todos</target>
+      </trans-unit>
+      <trans-unit id="hSzABam" resname="You have %count% notifications">
+        <source>You have %count% notifications</source>
+        <target>Você tem 1 notificação|Você tem %count% notificações</target>
+      </trans-unit>
+      <trans-unit id="WNPKqNj" resname="You have %count% messages">
+        <source>You have %count% messages</source>
+        <target>Você tem 1 mensagem|Você tem %count% mensagens</target>
+      </trans-unit>
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks">
+        <source>You have %count% tasks</source>
+        <target>Você tem 1 tarefa|Você tem %count% tarefas</target>
+      </trans-unit>
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete">
+        <source>%progress%% Complete</source>
+        <target>%progress%% completo</target>
+      </trans-unit>
+      <trans-unit id="KLIuHvt" resname="This is a mandatory field">
+        <source>This is a mandatory field</source>
+        <target>Este é um campo obrigatório</target>
+      </trans-unit>
+      <trans-unit id="B.ZozIs" resname="registration.confirmed">
+        <source>registration.confirmed</source>
+        <target>Parabéns, %username%. A sua conta foi ativada.</target>
+      </trans-unit>
+      <trans-unit id="rtYKRSj" resname="http_error.title">
+        <source>http_error.title</source>
+        <target>Erro</target>
+      </trans-unit>
+      <trans-unit id="e3w.2Rf" resname="http_error.description">
+        <source>http_error.description</source>
+        <target>Um erro ocorreu</target>
+      </trans-unit>
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+        <source>http_error.suggestion</source>
+        <target>Um erro inesperado aconteceu, favor tente novamente. Se deparou com um bug, favor contatar o administrador caso o problema se repita novamente.</target>
+      </trans-unit>
+      <trans-unit id="_W1eNz2" resname="http_error_404.description">
+        <source>http_error_404.description</source>
+        <target>Página não encontrada</target>
+      </trans-unit>
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+        <source>http_error_404.suggestion</source>
+        <target>Não conseguimos encontrar a página que está a procurar. Por favor retorne ao dashboard e começe novamente.</target>
+      </trans-unit>
+      <trans-unit id="Qn5rwdU" resname="http_error_403.description">
+        <source>http_error_403.description</source>
+        <target>Esta página é restrita</target>
+      </trans-unit>
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+        <source>http_error_403.suggestion</source>
+        <target>Desculpe, não tem permissões suficientes para ver esta página. Por favor, fale com o seu administrador se acha que isso é um erro.</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>
