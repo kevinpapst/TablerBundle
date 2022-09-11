@@ -94,6 +94,43 @@
                 <source>registration.confirmed</source>
                 <target>Gratulujeme, %username%, Váš účet je nyní aktivní.</target>
             </trans-unit>
+            <trans-unit id="rtYKRSj" resname="http_error.title">
+                <source>http_error.title</source>
+                <target>Chyba</target>
+            </trans-unit>
+            <trans-unit id="e3w.2Rf" resname="http_error.description">
+                <source>http_error.description</source>
+                <target>Vyskytla se chyba</target>
+            </trans-unit>
+            <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+                <source>http_error.suggestion</source>
+                <target>
+                    Došlo k neočekávané chybě, zkuste to znovu.
+                    Pokud se chyba vyskytuje opakovaně, kontaktujte svého správce.
+                </target>
+            </trans-unit>
+            <trans-unit id="_W1eNz2" resname="http_error_404.description">
+                <source>http_error_404.description</source>
+                <target>Stránka neexistuje</target>
+            </trans-unit>
+            <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+                <source>http_error_404.suggestion</source>
+                <target>
+                    Nenašli jsme stránku, kterou jste hledali.
+                    Můžete se vrátit na Nástěnku a začít znovu.
+                </target>
+            </trans-unit>
+            <trans-unit id="Qn5rwdU" resname="http_error_403.description">
+                <source>http_error_403.description</source>
+                <target>Stránka s omezeným přístupem</target>
+            </trans-unit>
+            <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+                <source>http_error_403.suggestion</source>
+                <target>
+                    Litujeme, nemáte dostatečná oprávnění k zobrazení této stránky.
+                    Pokud se jedná o chybu, kontaktujte svého správce.
+                </target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
