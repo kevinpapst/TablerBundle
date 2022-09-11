@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="TablerBundle.en.xliff">
+    <body>
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation">
+        <source>Toggle navigation</source>
+        <target>Changer le mode de navigation</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me">
+        <source>Remember Me</source>
+        <target>Se souvenir de moi</target>
+      </trans-unit>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session">
+        <source>Sign in to start your session</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="vMC8yRQ" resname="Sign In">
+        <source>Sign In</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="SPDT05f" resname="Sign out">
+        <source>Sign out</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile">
+        <source>Profile</source>
+        <target>Mon profil</target>
+      </trans-unit>
+      <trans-unit id="DX2c6C2" resname="Member since %date%">
+        <source>Member since %date%</source>
+        <target>Membre depuis %date%</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username">
+        <source>Username</source>
+        <target>Identifiant</target>
+      </trans-unit>
+      <trans-unit id="6.zSWXT" resname="Username or email address">
+        <source>Username or email address</source>
+        <target>Nom d'utilisateur ou adresse e-mail</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="nQDUTyy" resname="Show homepage">
+        <source>Show homepage</source>
+        <target>Page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="PjgG.xc" resname="Back to login">
+        <source>Back to login</source>
+        <target>Retour à la page de connexion</target>
+      </trans-unit>
+      <trans-unit id="WfpDeb4" resname="Reset your password">
+        <source>Reset your password</source>
+        <target>Réinitialiser mon mot de passe</target>
+      </trans-unit>
+      <trans-unit id="YOlNDxu" resname="I forgot my password">
+        <source>I forgot my password</source>
+        <target>J'ai oublié mon mot de passe</target>
+      </trans-unit>
+      <trans-unit id="D3_ygfb" resname="Register a new account">
+        <source>Register a new account</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="MKZCFur" resname="View all">
+        <source>View all</source>
+        <target>Voir tout</target>
+      </trans-unit>
+      <trans-unit id="hSzABam" resname="You have %count% notifications">
+        <source>You have %count% notifications</source>
+        <target>Vous avez une notification|Vous avez %count% notifications</target>
+      </trans-unit>
+      <trans-unit id="WNPKqNj" resname="You have %count% messages">
+        <source>You have %count% messages</source>
+        <target>Vous avez un message|Vous avez %count% messages</target>
+      </trans-unit>
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks">
+        <source>You have %count% tasks</source>
+        <target>Vous avez une tâche|Vous avez %count% tâches</target>
+      </trans-unit>
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete">
+        <source>%progress%% Complete</source>
+        <target>%progress%% réussi</target>
+      </trans-unit>
+      <trans-unit id="KLIuHvt" resname="This is a mandatory field">
+        <source>This is a mandatory field</source>
+        <target>Ce champ est obligatoire</target>
+      </trans-unit>
+      <trans-unit id="B.ZozIs" resname="registration.confirmed">
+        <source>registration.confirmed</source>
+        <target>Félicitations %username%, votre compte est maintenant activé.</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close">
+        <source>Close</source>
+        <target>Fermer</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home">
+        <source>Take me home</source>
+        <target>Retourner au début</target>
+      </trans-unit>
+      <trans-unit id="rtYKRSj" resname="http_error.title">
+        <source>http_error.title</source>
+        <target>Erreur</target>
+      </trans-unit>
+      <trans-unit id="e3w.2Rf" resname="http_error.description">
+        <source>http_error.description</source>
+        <target>Une erreur s'est produite</target>
+      </trans-unit>
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+        <source>http_error.suggestion</source>
+        <target>Une erreur inattendue s'est produite, veuillez réessayer. Vous avez peut-être rencontré sur un problème logiciel, merci de contacter votre administrateur si le problème persiste.</target>
+      </trans-unit>
+      <trans-unit id="_W1eNz2" resname="http_error_404.description">
+        <source>http_error_404.description</source>
+        <target>Page introuvable</target>
+      </trans-unit>
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+        <source>http_error_404.suggestion</source>
+        <target>Nous n'avons pas trouvé la page que vous cherchiez. En attendant, vous pouvez retourner à votre tableau de bord et reprendre.</target>
+      </trans-unit>
+      <trans-unit id="Qn5rwdU" resname="http_error_403.description">
+        <source>http_error_403.description</source>
+        <target>L'accès à cette page est restreint</target>
+      </trans-unit>
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+        <source>http_error_403.suggestion</source>
+        <target>Désolé, mais vous n'avez pas les autorisations suffisantes pour voir cette page. Si vous pensez qu'il s'agit d'une anomalie, veuillez contacter votre administrateur.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="TablerBundle.en.xliff">
+    <body>
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation">
+        <source>Toggle navigation</source>
+        <target>ナビゲーションを切り替える</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me">
+        <source>Remember Me</source>
+        <target>ログインを記憶する</target>
+      </trans-unit>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session">
+        <source>Sign in to start your session</source>
+        <target>ログイン</target>
+      </trans-unit>
+      <trans-unit id="vMC8yRQ" resname="Sign In">
+        <source>Sign In</source>
+        <target>ログインする</target>
+      </trans-unit>
+      <trans-unit id="SPDT05f" resname="Sign out">
+        <source>Sign out</source>
+        <target>ログアウトする</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>登録</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile">
+        <source>Profile</source>
+        <target>あなたのプロフィール</target>
+      </trans-unit>
+      <trans-unit id="DX2c6C2" resname="Member since %date%">
+        <source>Member since %date%</source>
+        <target>%date% からのメンバーです</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username">
+        <source>Username</source>
+        <target>ユーザー名</target>
+      </trans-unit>
+      <trans-unit id="6.zSWXT" resname="Username or email address">
+        <source>Username or email address</source>
+        <target>ユーザー名またはメールアドレス</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>パスワード</target>
+      </trans-unit>
+      <trans-unit id="nQDUTyy" resname="Show homepage">
+        <source>Show homepage</source>
+        <target>ホームページを表示する</target>
+      </trans-unit>
+      <trans-unit id="PjgG.xc" resname="Back to login">
+        <source>Back to login</source>
+        <target>ログイン画面に戻る</target>
+      </trans-unit>
+      <trans-unit id="WfpDeb4" resname="Reset your password">
+        <source>Reset your password</source>
+        <target>パスワードをリセットする</target>
+      </trans-unit>
+      <trans-unit id="YOlNDxu" resname="I forgot my password">
+        <source>I forgot my password</source>
+        <target>パスワードを忘れた場合</target>
+      </trans-unit>
+      <trans-unit id="D3_ygfb" resname="Register a new account">
+        <source>Register a new account</source>
+        <target>新しいアカウントを登録する</target>
+      </trans-unit>
+      <trans-unit id="MKZCFur" resname="View all">
+        <source>View all</source>
+        <target>すべて見る</target>
+      </trans-unit>
+      <trans-unit id="hSzABam" resname="You have %count% notifications">
+        <source>You have %count% notifications</source>
+        <target>通知が 1 件あります|通知が %count% 件あります</target>
+      </trans-unit>
+      <trans-unit id="WNPKqNj" resname="You have %count% messages">
+        <source>You have %count% messages</source>
+        <target>メッセージが 1 件あります|メッセージが %count% 件あります</target>
+      </trans-unit>
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks">
+        <source>You have %count% tasks</source>
+        <target>タスクが 1 個あります|タスクが %count% 個あります</target>
+      </trans-unit>
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete">
+        <source>%progress%% Complete</source>
+        <target>%progress%% 完了</target>
+      </trans-unit>
+      <trans-unit id="KLIuHvt" resname="This is a mandatory field">
+        <source>This is a mandatory field</source>
+        <target>これは必須項目です</target>
+      </trans-unit>
+      <trans-unit id="B.ZozIs" resname="registration.confirmed">
+        <source>registration.confirmed</source>
+        <target>%username% さんのアカウントの確認が完了しました。</target>
+      </trans-unit>
+      <trans-unit id="rtYKRSj" resname="http_error.title">
+        <source>http_error.title</source>
+        <target>エラー</target>
+      </trans-unit>
+      <trans-unit id="e3w.2Rf" resname="http_error.description">
+        <source>http_error.description</source>
+        <target>エラーが発生しました。</target>
+      </trans-unit>
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+        <source>http_error.suggestion</source>
+        <target>
+                    予期せぬエラーが発生しました。再試行してください。
+                    バグが存在する可能性があります。
+                    もし再試行しても問題が残るようでしたら、サーバーの管理者に連絡してください。
+                </target>
+      </trans-unit>
+      <trans-unit id="_W1eNz2" resname="http_error_404.description">
+        <source>http_error_404.description</source>
+        <target>ページが見付かりませんでした。</target>
+      </trans-unit>
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+        <source>http_error_404.suggestion</source>
+        <target>
+                    お探しのページを見付けることができませんでした。
+                    しばらくしてから、ダッシュボードからやり直してください。
+                </target>
+      </trans-unit>
+      <trans-unit id="Qn5rwdU" resname="http_error_403.description">
+        <source>http_error_403.description</source>
+        <target>このページへのアクセスは制限されています。</target>
+      </trans-unit>
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+        <source>http_error_403.suggestion</source>
+        <target>
+                    残念ながら、あなたはこのページを表示するのに十分な権限をお持ちではありません。
+                    もしもエラーの可能性があるようでしたら、サーバーの管理者に連絡してください。
+                </target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
