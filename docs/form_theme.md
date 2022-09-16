@@ -1,9 +1,9 @@
 # Form theme
 
 This bundle does ship three form-themes:
-- [templates/layout/form-theme.html.twig](templates/layout/form-theme.html.twig)
-- [templates/layout/form-theme-horizontal.html.twig](templates/layout/form-theme-horizontal.html.twig)
-- [templates/layout/form-theme-security.html.twig](templates/layout/form-theme-security.html.twig)
+- [templates/layout/form-theme.html.twig](/templates/layout/form-theme.html.twig)
+- [templates/layout/form-theme-horizontal.html.twig](/templates/layout/form-theme-horizontal.html.twig)
+- [templates/layout/form-theme-security.html.twig](/templates/layout/form-theme-security.html.twig)
 
 None of these themes is automatically loaded, you have to use it manually.
 
