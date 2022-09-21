@@ -12,6 +12,7 @@ If you cannot find the needed information in this list of topics, please create 
 
 Components (Twig macros):
 
+* [Accordion](components-accordion.md)
 * [Breadcrumb](components-breadcrumb.md)
 * [Buttons](components-buttons.md)
 * [Callout](components-callout.md)
