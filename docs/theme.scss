@@ -111,10 +111,29 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Montserrat, var(--tblr-font-sans-serif); // font only for titles
 }
 
+*:not([class*="sf-"]):not(.disabled):not(.active) > a:not(.nav-link):not(.dropdown-item):not(.btn):not(.card) {
+  color: $font-color--black;
+
+  &:not(.page-link) {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+.btn-link {
+  color: $font-color--black;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
 .form-check-input:checked {
   background-color: $primary-color;
 }
-
 
 /* ==== NavBar colors ==== */
 .navbar-light {
@@ -153,31 +172,102 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .bg-primary {
-  color: $font-color--white;
+  background: $primary-color !important;
+  color: $font-color--white !important;
+}
+
+.bg-primary-lt {
+  background: $primary-color--light !important;
+  color: $font-color--white !important;
 }
 
 .bg-secondary {
-  color: $font-color--white;
+  background: $secondary-color !important;
+  color: $font-color--white !important;
+}
+
+.bg-secondary-lt {
+  background: $secondary-color--light !important;
+  color: $font-color--white !important;
+}
+
+.bg-tertiary {
+  background: $tertiary-color !important;
+  color: $font-color--black;
 }
 
 .bg-success {
-  //color: $font-color--white; // any color
+  background: $success-color !important;
+  //color: $font-color--white !important; // any color
+}
+
+.bg-success-lt {
+  background: $success-color--light !important;
+  //color: $font-color--white !important; // any color
 }
 
 .bg-warning {
-  //color: $font-color--white; // any color
+  background: $warning-color !important;
+  //color: $font-color--white !important; // any color
+}
+
+.bg-warning-lt {
+  background: $warning-color--light !important;
+  //color: $font-color--white !important; // any color
 }
 
 .bg-danger {
-  //color: $font-color--white; // any color
+  background: $danger-color !important;
+  //color: $font-color--white !important; // any color
+}
+
+.bg-danger-lt {
+  background: $danger-color--light !important;
+  //color: $font-color--white !important; // any color
 }
 
 .bg-info {
-  //color: $font-color--white; // any color
+  background: $info-color !important;
+  //color: $font-color--white !important; // any color
+}
+
+.bg-info-lt {
+  background: $info-color--light !important;
+  //color: $font-color--white !important; // any color
 }
 
 .bg-dark {
-  //color: $font-color--white; // any color
+  //color: $font-color--white !important; // any color
+}
+
+.bg-grey {
+  background: $white-color--dark !important;
+  color: $font-color--black;
+}
+
+
+.border-primary {
+  border-color: $primary-color !important;
+}
+
+.border-secondary {
+  border-color: $secondary-color !important;
+}
+
+.border-success {
+  border-color: $success-color !important;
+}
+
+.border-warning {
+  border-color: $warning-color !important;
+}
+
+.border-danger {
+  border-color: $danger-color !important;
+}
+
+.border-info {
+  border-color: $info-color !important;
 }
 
 
@@ -196,6 +286,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .alert-info {
   --tblr-alert-color: #{$info-color};
+}
+
+
+.text-success {
+  color: #{$success-color} !important;
+}
+
+.text-warning {
+  color: #{$warning-color} !important;
+}
+
+.text-danger {
+  color: #{$danger-color} !important;
+}
+
+.text-info {
+ color: #{$info-color} !important;
 }
 
 
@@ -276,4 +383,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
+.pagination .page-item.active .page-link {
+  color: $font-color--white;
+  background-color: $primary-color;
+  border-color: $primary-color;
+  text-decoration: none;
+}
