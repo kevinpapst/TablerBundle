@@ -1,0 +1,47 @@
+{% extends '@Tabler/fullpage.html.twig' %}
+
+{% block page_content %}
+
+    <div
+            class="container {% block container_size %}container-narrow{% endblock %} {% block container_class %}py-4{% endblock %}"
+            {% block container_attr %}{% endblock %}
+    >
+        {% block wizzard_before %}{% endblock %}
+
+        {% block wizzard_logo %}
+            <div class="text-center mb-4">
+                <h1 class="navbar-brand navbar-brand-autodark mb-4">
+                    <a href="{{ path('tabler_welcome'|tabler_route) }}">
+                        {% if tabler_bundle.getLogoUrl() is not empty %}
+                            <img src="{% if '://' in tabler_bundle.getLogoUrl() %}{{ tabler_bundle.getLogoUrl() }}{% else %}{{ asset(tabler_bundle.getLogoUrl()) }}{% endif %}"
+                                 width="110" height="32" alt="Logo" class="navbar-brand-image">
+                        {% else %}
+                            <i class="far fa-smile" style="font-size: 32px"></i>
+                        {% endif %}
+                    </a>
+                </h1>
+            </div>
+        {% endblock %}
+
+        {% block wizzard_header_before %}{% endblock %}
+        {% block wizzard_header %}{% endblock %}
+        {% block wizzard_header_after %}{% endblock %}
+
+        <div
+                class="card {% block card_class %}card-md{% endblock %}"
+                {% block card_attr %}{% endblock %}
+        >
+            {% block wizzard_content_before %}{% endblock %}
+            {% block wizzard_content %}{% endblock %}
+            {% block wizzard_content_after %}{% endblock %}
+        </div>
+
+        {% block wizzard_footer_before %}{% endblock %}
+        {% block wizzard_footer %}{% endblock %}
+        {% block wizzard_footer_after %}{% endblock %}
+
+        {% block wizzard_after %}{% endblock %}
+    </div>
+
+{% endblock %}
+
