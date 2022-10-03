@@ -24,7 +24,7 @@ Progress Bar has been implemented to simplify the use of the Tabler Progress Bar
 | indeterminate | Progress bar will be animated as 'loading' animation       | `boolean` |                      `false`                      |
 |    striped    | Add stripped Boostrap background on the progress bar color | `boolean` |                      `false`                      |
 |   animated    | Animate the stripped background                            | `boolean` |                      `false`                      |
-|   autoLabel   | Define the progress label automaticaly                     | `boolean` |                      `false`                      |
+|   autoLabel   | Define the progress label automatically                    | `boolean` |                      `false`                      |
 |     label     | Label on the progress bar                                  | `string`  | `empty string` / if `autoLabel` -> `{{percent}}%` |
 | labelVisible  | Define if the label should be visible                      | `boolean` |                      `false`                      |
 |     color     | Color of the progress bar                                  | `string`  |                  *empty string*                   |                                  
