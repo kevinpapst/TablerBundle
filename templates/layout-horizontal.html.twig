@@ -35,15 +35,9 @@ Enjoy your theme!
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% block app_logo %}
-                    <h1 class="navbar-brand d-none-navbar-horizontal pe-0 pe-md-3{% block navbar_brand_class %} navbar-brand-autodark{% endblock %}">
-                        <a href="{{ path('tabler_welcome'|tabler_route) }}">
-                            {% if tabler_bundle.getLogoUrl() is not empty %}
-                                <img src="{% if '://' in tabler_bundle.getLogoUrl() %}{{ tabler_bundle.getLogoUrl() }}{% else %}{{ asset(tabler_bundle.getLogoUrl()) }}{% endif %}" width="110" height="32" alt="Logo" class="navbar-brand-image">
-                            {% else %}
-                                <i class="far fa-smile" style="font-size: 32px"></i>
-                            {% endif %}
-                        </a>
-                    </h1>
+                    {% embed '@Tabler/embeds/logo.html.twig' %}
+                        {% block navbar_brand_classes %}navbar-brand d-none-navbar-horizontal pe-0 pe-md-3 {% block navbar_brand_class %}navbar-brand-autodark{% endblock %}{% endblock %}
+                    {% endembed %}
                 {% endblock %}
                 <div class="navbar-nav flex-row order-md-last">
                     {% block navbar_start %}{% endblock %}

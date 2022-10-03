@@ -10,16 +10,7 @@
 
         {% block wizard_logo %}
             <div class="text-center mb-4">
-                <h1 class="navbar-brand navbar-brand-autodark mb-4">
-                    <a href="{{ path('tabler_welcome'|tabler_route) }}">
-                        {% if tabler_bundle.getLogoUrl() is not empty %}
-                            <img src="{% if '://' in tabler_bundle.getLogoUrl() %}{{ tabler_bundle.getLogoUrl() }}{% else %}{{ asset(tabler_bundle.getLogoUrl()) }}{% endif %}"
-                                 width="110" height="32" alt="Logo" class="navbar-brand-image">
-                        {% else %}
-                            <i class="far fa-smile" style="font-size: 32px"></i>
-                        {% endif %}
-                    </a>
-                </h1>
+                {% include '@Tabler/embeds/logo.html.twig' %}
             </div>
         {% endblock %}
 
