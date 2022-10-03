@@ -6,9 +6,9 @@
             class="container {% block container_size %}container-narrow{% endblock %} {% block container_class %}py-4{% endblock %}"
             {% block container_attr %}{% endblock %}
     >
-        {% block wizzard_before %}{% endblock %}
+        {% block wizard_before %}{% endblock %}
 
-        {% block wizzard_logo %}
+        {% block wizard_logo %}
             <div class="text-center mb-4">
                 <h1 class="navbar-brand navbar-brand-autodark mb-4">
                     <a href="{{ path('tabler_welcome'|tabler_route) }}">
@@ -23,24 +23,24 @@
             </div>
         {% endblock %}
 
-        {% block wizzard_header_before %}{% endblock %}
-        {% block wizzard_header %}{% endblock %}
-        {% block wizzard_header_after %}{% endblock %}
+        {% block wizard_header_before %}{% endblock %}
+        {% block wizard_header %}{% endblock %}
+        {% block wizard_header_after %}{% endblock %}
 
         <div
                 class="card {% block card_class %}card-md{% endblock %}"
                 {% block card_attr %}{% endblock %}
         >
-            {% block wizzard_content_before %}{% endblock %}
-            {% block wizzard_content %}{% endblock %}
-            {% block wizzard_content_after %}{% endblock %}
+            {% block wizard_content_before %}{% endblock %}
+            {% block wizard_content %}{% endblock %}
+            {% block wizard_content_after %}{% endblock %}
         </div>
 
-        {% block wizzard_footer_before %}{% endblock %}
-        {% block wizzard_footer %}{% endblock %}
-        {% block wizzard_footer_after %}{% endblock %}
+        {% block wizard_footer_before %}{% endblock %}
+        {% block wizard_footer %}{% endblock %}
+        {% block wizard_footer_after %}{% endblock %}
 
-        {% block wizzard_after %}{% endblock %}
+        {% block wizard_after %}{% endblock %}
     </div>
 
 {% endblock %}
