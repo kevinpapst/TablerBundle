@@ -2,13 +2,13 @@
 
 This theme ships some components (as twig macros) that hide the complexity of rendering the same elements over and over again with the correct HTML.
 
-## ProgressBar (single)
+## Progress Bar (single)
 
 Progress Bar has been implemented to simplify the use of the Tabler Progress Bar component.
-`ProgressBar()` is a Shortcut of `ProgressBars()` with an array of ONE item.
+`progress_bar()` is a Shortcut of `progress_bars()` with an array of ONE item.
 
 ### Parameters
-`progressBar()` macro, waits for 2 parameters:
+`progress_bar()` macro, waits for 2 parameters:
 
 | Parameter | Description               |   Type   | Default |
 |:---------:|:--------------------------|:--------:|:-------:|
@@ -33,42 +33,42 @@ Progress Bar has been implemented to simplify the use of the Tabler Progress Bar
 #### Option
 |    Parameter    | Description                                    |   Type   |    Default     |
 |:---------------:|------------------------------------------------|:--------:|:--------------:|
-|  progressSize   | Size of the progressBar                        | `string` | *empty string* |                                        
+|  progressSize   | Size of the progress bar                       | `string` | *empty string* |                                        
 | backgroundColor | background color of the progress bar container | `string` | *empty string* |                                        
 |      style      | Style to add to the progress bar container     | `string` | *empty string* | 
 
 ### Usage
 
 ```twig
-{% from '@Tabler/components/progress-bar.html.twig' import progressBar %}
+{% from '@Tabler/components/progress-bar.html.twig' import progress_bar %}
 
-{{ progressBar() }}
+{{ progress_bar() }}
 
-{{ progressBar({current : 1}) }}
+{{ progress_bar({current : 1}) }}
 
-{{ progressBar({current : 2, max : 3, min : -1}) }}
+{{ progress_bar({current : 2, max : 3, min : -1}) }}
 
-{{ progressBar({current : 2, max : 3}) }}
+{{ progress_bar({current : 2, max : 3}) }}
 
-{{ progressBar({current : 2, max : 3, color : 'bg-red'}, {backgroundColor : 'bg-grey'}) }}
+{{ progress_bar({current : 2, max : 3, color : 'bg-red'}, {backgroundColor : 'bg-grey'}) }}
 
-{{ progressBar({current : 2, max : 3, color : 'bg-green'}, {progressSize : 'progress-sm'}) }}
+{{ progress_bar({current : 2, max : 3, color : 'bg-green'}, {progressSize : 'progress-sm'}) }}
 
-{{ progressBar({current : 2, max : 3, color : 'bg-orange'}, {style : 'height: 20px;'}) }}
+{{ progress_bar({current : 2, max : 3, color : 'bg-orange'}, {style : 'height: 20px;'}) }}
 
-{{ progressBar({color : 'bg-red'}, {backgroundColor : 'bg-grey'}) }}
+{{ progress_bar({color : 'bg-red'}, {backgroundColor : 'bg-grey'}) }}
 
-{{ progressBar({current :2, max: 5, color : 'bg-red', striped : true}) }}
+{{ progress_bar({current :2, max: 5, color : 'bg-red', striped : true}) }}
 
-{{ progressBar({current :2, max: 5, striped : true, animated: true}) }}
+{{ progress_bar({current :2, max: 5, striped : true, animated: true}) }}
 ```
 
-## ProgressBars (multiple)
+## Progress Bars (multiple)
 
-ProgressBars has been implemented to simplify the use of the Progress Bar, with multiple progress bars in it.
+Progress Bars has been implemented to simplify the use of the Progress Bar, with multiple progress bars in it.
 
 ### Parameters
-`progressBars()` macro, waits for 2 parameters:
+`progress_bars()` macro, waits for 2 parameters:
 
 | Parameter | Description                   |   Type   | Default |
 |:---------:|:------------------------------|:--------:|:-------:|
@@ -78,9 +78,9 @@ ProgressBars has been implemented to simplify the use of the Progress Bar, with 
 ### Usage
 
 ```twig
-{% from '@Tabler/components/progress-bar.html.twig' import progressBars %}
+{% from '@Tabler/components/progress-bar.html.twig' import progress_bars %}
 
-{{ progressBars([
+{{ progress_bars([
     {current :15, max: 100},
     {current :30, max: 100, color: 'bg-success'},
     {current :20, max: 100, color: 'bg-danger'},

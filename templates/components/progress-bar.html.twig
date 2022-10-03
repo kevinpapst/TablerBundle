@@ -1,4 +1,4 @@
-{% macro progressBars(items, options) %}
+{% macro progress_bars(items, options) %}
 
     {% set _progressSize = options.progressSize ?? '' %}
     {% set _backgroundColor = options.backgroundColor ?? '' %}
@@ -46,6 +46,6 @@
 {% endmacro %}
 
 
-{% macro progressBar(item, options) %}
-    {{ _self.progressBars([item], options ?? {}) }}
+{% macro progress_bar(item, options) %}
+    {{ _self.progress_bars([item], options ?? {}) }}
 {% endmacro %}
