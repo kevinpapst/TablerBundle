@@ -10,7 +10,9 @@
 
         {% block wizard_logo %}
             <div class="text-center mb-4">
-                {% include '@Tabler/embeds/logo.html.twig' %}
+                <h1 class="{% block navbar_brand_classes %}navbar-brand {% block navbar_brand_class %}navbar-brand-autodark{% endblock %}{% endblock %}">
+                    {% include '@Tabler/includes/logo.html.twig' %}
+                </h1>
             </div>
         {% endblock %}
 

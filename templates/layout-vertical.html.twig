@@ -39,7 +39,9 @@ Enjoy your theme!
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% block app_logo %}
-                    {% include '@Tabler/embeds/logo.html.twig' %}
+                    <h1 class="{% block navbar_brand_classes %}navbar-brand {% block navbar_brand_class %}navbar-brand-autodark{% endblock %}{% endblock %}">
+                        {% include '@Tabler/includes/logo.html.twig' %}
+                    </h1>
                 {% endblock %}
                 <div class="navbar-nav flex-row d-lg-none">
                     {{ _self.navbar(navbarStartContent, navbarNotificationsContent, navbarUserContent, navbarEndContent) }}
