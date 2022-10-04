@@ -40,7 +40,7 @@ Progress Bar has been implemented to simplify the use of the Tabler Progress Bar
 ### Usage
 
 ```twig
-{% from '@Tabler/components/progress-bar.html.twig' import progress_bar %}
+{% from '@Tabler/components/progress_bar.html.twig' import progress_bar %}
 
 {{ progress_bar() }}
 
@@ -78,7 +78,7 @@ Progress Bars has been implemented to simplify the use of the Progress Bar, with
 ### Usage
 
 ```twig
-{% from '@Tabler/components/progress-bar.html.twig' import progress_bars %}
+{% from '@Tabler/components/progress_bar.html.twig' import progress_bars %}
 
 {{ progress_bars([
     {current :15, max: 100},
