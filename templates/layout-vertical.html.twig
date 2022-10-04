@@ -23,7 +23,7 @@ Enjoy your theme!
         {% endif %}
     {% endblock %}
 </head>
-<body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }}" {% block body_class %}{% endblock %}>
+<body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }} {% block body_class %}{% endblock %}">
 {% block after_body_start %}{% endblock %}
 <div class="page">
     {% set navbarStartContent = block('navbar_start') %}
