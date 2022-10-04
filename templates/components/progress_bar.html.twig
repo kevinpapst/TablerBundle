@@ -1,0 +1,51 @@
+{% macro progress_bars(items, options) %}
+
+    {% set _progressSize = options.progressSize ?? '' %}
+    {% set _backgroundColor = options.backgroundColor ?? '' %}
+    {% set _style = options.style ?? '' %}
+
+    {% set _items = items ?? [] %}
+
+    <div class="progress {{ _backgroundColor }} {{ _progressSize }}" style="{{ _style }}">
+        {% for item in _items %}
+
+            {% set _value = item.current ?? 0 %}
+            {% set _max = item.max ?? 0 %}
+            {% set _min = item.min ?? 0 %}
+            {% set _indeterminate = item.indeterminate ?? _value == _max and _min == _max %}
+            {% set percent = _indeterminate or (_max - _min) == 0 ? 0 : ((_value - _min) * 100) / (_max - _min) %}
+
+            {% set _striped = item.striped ?? false %}
+            {% set _animated = item.animated ?? false %}
+
+            {% set _autoLabel = item.autoLabel ?? false %}
+            {% set _label = item.label ?? _autoLabel and not _indeterminate ? percent ~ '%' : '' %}
+            {% set _labelVisible = _label != '' and (item.labelVisible ?? true) %}
+
+            {% set _color = item.color ?? '' %}
+            {% set _style = item.style ?? '' %}
+
+            <div class="progress-bar {% if not _indeterminate and _striped %}progress-bar-striped{% endif %} {% if _animated %}progress-bar-animated{% endif %} {{ _color }} {% if _indeterminate %}progress-bar-indeterminate{% endif %}"
+                 role="progressbar"
+                 style="{% if not _indeterminate %}width: {{ percent }}%;{% endif %} {{ _style }}"
+
+                    {% if not _indeterminate %}
+                        aria-valuenow="{{ _value }}"
+                        aria-valuemin="{{ _min }}"
+                        aria-valuemax="{{ _max }}"
+                    {% endif %}
+
+                    {% if _label != '' %}
+                        aria-label="{{ _label }}"
+                    {% endif %}
+            >
+                <span class="{% if not _labelVisible %}visually-hidden{% endif %}">{{ _label }}</span>
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+
+{% macro progress_bar(item, options) %}
+    {{ _self.progress_bars([item], options ?? {}) }}
+{% endmacro %}
