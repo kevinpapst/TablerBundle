@@ -2,9 +2,7 @@
 <html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %}>
 <head>
     {% block head %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        {% include '@Tabler/includes/html_head.html.twig' %}
     {% endblock %}
     <title>{% block title %}Log in{% endblock %}</title>
     {% block stylesheets %}
