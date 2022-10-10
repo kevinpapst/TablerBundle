@@ -3,7 +3,7 @@
 {% set keyActive = null %}
 
 {% set _items = [] %}
-{% for key, item in items %}
+{% for key, item in items ?? [] %}
     {% if item.active ?? false %}
         {% set keyActive = key %}
     {% endif %}
