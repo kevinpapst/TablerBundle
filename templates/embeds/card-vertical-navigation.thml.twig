@@ -1,18 +1,12 @@
-{% set keyActive = null %}
-
 {% set _items = [] %}
 {% for key, item in items ?? [] %}
-    {% if item.active ?? false %}
-        {% set keyActive = key %}
-    {% endif %}
-
     {% if item.id is not defined %}
+        {# Generate id of item for "Boostrap tab" #}
         {% set item = item|merge({id : random(999999)}) %}
     {% endif %}
+
     {% set _items = _items|merge({ (key) : item }) %}
 {% endfor %}
-
-{% set autoActive = keyActive is null %}
 
 {% block card_before %}{% endblock %}
 <div class="card {% block card_class %}mb-3{% endblock %}">
@@ -30,7 +24,7 @@
                             {% set url = item.url ?? ("#tabs-" ~ item.id) %}
                             <a
                                     href="{{ url }}"
-                                    class="list-group-item list-group-item-action d-flex align-items-center {% if (autoActive and loop.first) or keyActive is same as key %}active{% endif %}"
+                                    class="list-group-item list-group-item-action d-flex align-items-center {% if item.active %}active{% endif %}"
                                     {% if item.url is not defined and not block('content') is defined %}data-bs-toggle="tab"{% endif %}
                             >
                                 {% if item.raw ?? false %}
@@ -56,7 +50,7 @@
                     <div class="tab-content">
                         {% for key, item in _items %}
                             {% if item.content is defined and not item.header ?? false %}
-                                <div class="tab-pane {% if (autoActive and loop.first) or keyActive is same as key %}active show{% endif %}"
+                                <div class="tab-pane {% if item.active %}active show{% endif %}"
                                      id="tabs-{{ item.id }}"
                                      {% if item.url is not defined %}role="tabpanel"{% endif %}
                                 >
