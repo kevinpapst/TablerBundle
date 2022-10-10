@@ -1,5 +1,3 @@
-{# {% extends "@Tabler/embeds/card.html.twig" %} #}
-
 {% set keyActive = null %}
 
 {% set _items = [] %}
@@ -22,7 +20,7 @@
 
         {# Nav items #}
         {% block nav_before %}{% endblock %}
-        <div class="{% block nav_size %}col-3{% endblock %} border-end {% block nav_display %}d-none d-md-block{% endblock %}">
+        <div class="{% block nav_size %}col-3{% endblock %} {% block nav_border %}border-end{% endblock %} {% block nav_display %}d-none d-md-block{% endblock %}">
             <div class="card-body">
                 <div class="list-group {% block nav_list_class %}list-group-transparent{% endblock %}">
                     {% for key, item in _items %}
