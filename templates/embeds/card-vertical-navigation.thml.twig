@@ -1,8 +1,10 @@
+{% from '@Tabler/includes/utils.html.twig' import uniqueId %}
+
 {% set _items = [] %}
 {% for key, item in items ?? [] %}
     {% if item.id is not defined %}
         {# Generate id of item for "Boostrap tab" #}
-        {% set item = item|merge({id : random(999999)}) %}
+        {% set item = item|merge({id : uniqueId()}) %}
     {% endif %}
 
     {% set _items = _items|merge({ (key) : item }) %}
