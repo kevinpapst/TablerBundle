@@ -37,18 +37,18 @@
         {% block wizard_footer %}
             <div class="row align-items-center mt-3">
                 <div class="col-4">
-                    {% block progress_bar %}
-                        {{ progress_bar({current : 1, max : 3}) }}
+                    {% block wizard_progress_bar %}
+                        {{ progress_bar() }}
                     {% endblock %}
                 </div>
                 <div class="col">
                     <div class="btn-list justify-content-end">
-                        {% block back_button %}
-                            {{ button(false, { title : 'Close'|trans({}, 'TablerBundle'), combined: true, url : '#' }, 'link') }}
+                        {% block wizard_previous_button %}
+                            {{ button(false, { title : 'Previous'|trans({}, 'TablerBundle'), combined: true, url : '#' }, 'link') }}
                         {% endblock %}
 
-                        {% block next_button %}
-                            {{ submit_button(false, { title : 'Show homepage'|trans({}, 'TablerBundle'), combined: true }, 'primary') }}
+                        {% block wizard_next_button %}
+                            {{ submit_button(false, { title : 'Next'|trans({}, 'TablerBundle'), combined: true }, 'primary') }}
                         {% endblock %}
                     </div>
                 </div>

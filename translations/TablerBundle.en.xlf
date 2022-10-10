@@ -138,6 +138,14 @@
         <source>http_error_403.suggestion</source>
         <target>Sorry, but you don't have sufficient permissions to see this page. Please talk to your administrator if you think this is an error.</target>
       </trans-unit>
+      <trans-unit id="F35zef" resname="Previous">
+        <source>Previous</source>
+        <target>Previous</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next">
+        <source>Next</source>
+        <target>Next</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
