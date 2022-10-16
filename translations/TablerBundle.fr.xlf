@@ -130,6 +130,14 @@
         <source>http_error_403.suggestion</source>
         <target>Désolé, mais vous n'avez pas les autorisations suffisantes pour voir cette page. Si vous pensez qu'il s'agit d'une anomalie, veuillez contacter votre administrateur.</target>
       </trans-unit>
+      <trans-unit id="F35zef" resname="Previous">
+        <source>Previous</source>
+        <target>Précédent</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next">
+        <source>Next</source>
+        <target>Suivant</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
