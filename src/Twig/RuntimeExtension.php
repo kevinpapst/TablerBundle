@@ -133,7 +133,7 @@ final class RuntimeExtension implements RuntimeExtensionInterface
         return ($withIconClass ? 'icon ' : '') . ($this->icons[str_replace('-', '_', $name)] ?? ($default ?? $name));
     }
 
-    public function uniqueId(string $prefix = "", bool $more_entropy = false): string
+    public function uniqueId(string $prefix = '', bool $more_entropy = false): string
     {
         return uniqid($prefix, $more_entropy);
     }
