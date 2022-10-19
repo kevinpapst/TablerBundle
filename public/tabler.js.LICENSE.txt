@@ -1,12 +1,12 @@
 /*!
-	  * Bootstrap v5.2.0 (https://getbootstrap.com/)
+	  * Bootstrap v5.2.2 (https://getbootstrap.com/)
 	  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
 	  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
 	  */
 
 /*!
-* Tabler v1.0.0-beta11 (https://tabler.io)
-* @version 1.0.0-beta11
+* Tabler v1.0.0-beta13 (https://tabler.io)
+* @version 1.0.0-beta13
 * @link https://tabler.io
 * Copyright 2018-2022 The Tabler Authors
 * Copyright 2018-2022 codecalm.net Paweł Kuna
