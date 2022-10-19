@@ -30,7 +30,7 @@
         {% set isSubmit = values.buttonType is defined and values.buttonType == 'submit' %}
         {% set buttonType = values.buttonType is defined and (values.buttonType == 'button' or values.buttonType == 'submit') ? 'button' : 'a' %}
         {% set tooltip = values.tooltip ?? true %}
-        {% set accesskey = values.accesskey ?? true %}
+        {% set accesskey = values.accesskey is defined ? values.accesskey : null %}
 
         {% if type != 'link' and icon is not same as (false) and (not forceTitle and badge is null) and (type is not same as (false)) %}
             {% set class = class ~ ' btn-icon' %}
