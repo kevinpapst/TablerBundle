@@ -1,34 +1,36 @@
-$primary-color--light: #153e86;
-$primary-color: #14397d;
-$primary-color--dark: #11316b;
+$primary-color: #2c3e50;
+$primary-color--lighten: #273848;
+$primary-color--darken: #273848;
 
-$secondary-color--light: #7ebfe5;
-$secondary-color: #77b5d9;
-$secondary-color--dark: #71abcc;
+$secondary-color: #009e94;
+$secondary-color--lighten: #008f86;
+$secondary-color--darken: #008f86;
 
-$tertiary-color--light: #e0f4fd;
-$tertiary-color: #d7eaf3;
-$tertiary-color--dark: #ccdee7;
+$tertiary-color: #273d41;
+$tertiary-color--lighten: #1f3134;
+$tertiary-color--darken: #1f3134;
 
-$success-color: #2ecc71;
-$success-color--dark: #27ae60;
+$success-color: #2fb344;
+$success-color--darken: #2aa13d;
 
-$warning-color: #e67e22;
-$warning-color--dark: #d35400;
+$warning-color: #f76707;
+$warning-color--darken: #de5d06;
 
-$danger-color: #e74c3c;
-$danger-color--dark: #c0392b;
+$danger-color: #d63939;
+$danger-color--darken: #c13333;
 
-$info-color: #3498db;
-$info-color--dark: #2980b9;
+$info-color: #4299e1;
+$info-color--darken: #3b8acb;
 
-$white-color--light: #fff;
-$white-color: #f8f8f8;
-$white-color--dark: #e1e1e1;
-$white-color--border: #cb4d4d; // Tabler default: #206bc4
+$body-background-color: #f1f5f9;
 
+$font-color: #1d273b;
 $font-color--white: #fff;
 $font-color--black: #000;
+
+$white-color: #f8f8f8;
+$white-color--darken: #e1e1e1;
+$white-color--border: #009e94; // Tabler default: #206bc4
 
 /* === Font: Hind === */
 @font-face {
@@ -87,23 +89,68 @@ $font-color--black: #000;
 }
 
 /**
- * Convert "Sass color" into "RBG Tabler variable"
+ * Convert HEX "Sass color" into String "RBG Tabler variable"
  * @param $color [Sass::Script::Value::Color]
  */
 @function hexToTablerRGB($color) {
   @return red($color), green($color), blue($color);
 }
 
-:root {
-  --tblr-font-sans-serif: Hind, Arial, sans-serif; // font sans-serif global
+:root, :host {
+  /* Fonts */
+  --tblr-font-sans-serif: Hind, Arial, sans-serif;
+  // --tblr-font-monospace: WhatYouWant
 
+  
+  /* Dark Theme colors */
+  --tblr-dark: #1d273b;
+
+  .navbar-dark {
+    /** To be changed if you don't want to be the primary color as color **/
+    --tblr-navbar-border-color: #{$primary-color--lighten};
+    --tblr-navbar-bg: #{$primary-color};
+    --tblr-navbar-active-bg: rgba(hexToTablerRGB($primary-color), 0.06);
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Common Bootstrap colors */
+  --tblr-primary: #{$primary-color};
+  --tblr-primary-darken: #{$primary-color--darken};
   --tblr-primary-rgb: #{hexToTablerRGB($primary-color)};
+
+  --tblr-secondary: #{$secondary-color};
+  --tblr-secondary-darken: #{$secondary-color--darken};
   --tblr-secondary-rgb: #{hexToTablerRGB($secondary-color)};
+
+  --tblr-success: #{$success-color};
+  --tblr-success-darken: #{$success-color--darken};
   --tblr-success-rgb: #{hexToTablerRGB($success-color)};
-  --tblr-warning-rgb: #{hexToTablerRGB($warning-color)};
-  --tblr-danger-rgb: #{hexToTablerRGB($danger-color)};
+
+  --tblr-info: #{$info-color};
+  --tblr-info-darken: #{$info-color--darken};
   --tblr-info-rgb: #{hexToTablerRGB($info-color)};
-  //--tblr--rgb: #{hexToTablerRGB($-color)};
+
+  --tblr-warning: #{$warning-color};
+  --tblr-warning-darken: #{$warning-color--darken};
+  --tblr-warning-rgb: #{hexToTablerRGB($warning-color)};
+
+  --tblr-danger: #{$danger-color};
+  --tblr-danger-dark: #{$danger-color--darken};
+  --tblr-danger-rgb: #{hexToTablerRGB($danger-color)};
+
+  /* Font color */
+  --tblr-body-color: #{$font-color};
+  --tblr-body-color-rgb: #{hexToTablerRGB($font-color)};
+
+  /* Body Background color */
+  --tblr-body-bg: #{$body-background-color};
+  --tblr-body-bg-rgb: #{hexToTablerRGB($body-background-color)};
+
+  /* Others */
+  --tblr-border-color: #e6e7e9;
+  --tblr-highlight-bg: #fdeccc;
+
+  --tblr-link-color: #{$secondary-color}; // Tabler default is '--tblr-primary'
 }
 
 
@@ -123,154 +170,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.btn-link {
-  color: $font-color--black;
-
-  &:hover {
-    color: $secondary-color;
-  }
+.alert-primary {
+  --tblr-alert-color: #{$primary-color};
 }
 
-.form-check-input:checked {
-  background-color: $primary-color;
+.alert-secondary {
+  --tblr-alert-color: #{$secondary-color};
 }
-
-/* ==== NavBar colors ==== */
-.navbar-light {
-  background: $white-color--light;
-
-  .nav-item.active .nav-link{
-    background-color: $white-color--light;
-  }
-
-  // Only available for navbar-light
-  .nav-item.active::after, .nav-item.active::after {
-    border-color: $white-color--border !important;
-  }
-
-  .dropdown-item.active, .dropdown-item:active {
-    background-color: transparentize($white-color--border,0.95);
-    color: $white-color--border;
-  }
-}
-
-
-.navbar-dark {
-  background: $primary-color;
-
-  .nav-item.active .nav-link{
-    background-color: $primary-color--light;
-  }
-
-  .dropdown-item.active, .dropdown-item:active {
-    background-color: $primary-color--dark;
-    color: $secondary-color;
-  }
-}
-/* ======================= */
-
-
-
-.bg-primary {
-  background: $primary-color !important;
-  color: $font-color--white !important;
-}
-
-.bg-primary-lt {
-  background: $primary-color--light !important;
-  color: $font-color--white !important;
-}
-
-.bg-secondary {
-  background: $secondary-color !important;
-  color: $font-color--white !important;
-}
-
-.bg-secondary-lt {
-  background: $secondary-color--light !important;
-  color: $font-color--white !important;
-}
-
-.bg-tertiary {
-  background: $tertiary-color !important;
-  color: $font-color--black;
-}
-
-.bg-success {
-  background: $success-color !important;
-  //color: $font-color--white !important; // any color
-}
-
-.bg-success-lt {
-  background: $success-color--light !important;
-  //color: $font-color--white !important; // any color
-}
-
-.bg-warning {
-  background: $warning-color !important;
-  //color: $font-color--white !important; // any color
-}
-
-.bg-warning-lt {
-  background: $warning-color--light !important;
-  //color: $font-color--white !important; // any color
-}
-
-.bg-danger {
-  background: $danger-color !important;
-  //color: $font-color--white !important; // any color
-}
-
-.bg-danger-lt {
-  background: $danger-color--light !important;
-  //color: $font-color--white !important; // any color
-}
-
-.bg-info {
-  background: $info-color !important;
-  //color: $font-color--white !important; // any color
-}
-
-.bg-info-lt {
-  background: $info-color--light !important;
-  //color: $font-color--white !important; // any color
-}
-
-.bg-dark {
-  //color: $font-color--white !important; // any color
-}
-
-.bg-grey {
-  background: $white-color--dark !important;
-  color: $font-color--black;
-}
-
-
-.border-primary {
-  border-color: $primary-color !important;
-}
-
-.border-secondary {
-  border-color: $secondary-color !important;
-}
-
-.border-success {
-  border-color: $success-color !important;
-}
-
-.border-warning {
-  border-color: $warning-color !important;
-}
-
-.border-danger {
-  border-color: $danger-color !important;
-}
-
-.border-info {
-  border-color: $info-color !important;
-}
-
-
 
 .alert-success {
   --tblr-alert-color: #{$success-color};
@@ -286,106 +192,4 @@ h1, h2, h3, h4, h5, h6 {
 
 .alert-info {
   --tblr-alert-color: #{$info-color};
-}
-
-
-.text-success {
-  color: #{$success-color} !important;
-}
-
-.text-warning {
-  color: #{$warning-color} !important;
-}
-
-.text-danger {
-  color: #{$danger-color} !important;
-}
-
-.text-info {
- color: #{$info-color} !important;
-}
-
-
-
-.btn-primary, .btn-outline-primary, .btn-ghost-primary {
-  --tblr-btn-color: #{$primary-color};
-  --tblr-btn-color-interactive: #{$primary-color--dark};
-}
-
-.btn-secondary, .btn-outline-secondary, .btn-ghost-secondary {
-  --tblr-btn-color: #{$secondary-color};
-  --tblr-btn-color-interactive: #{$secondary-color--dark};
-  //--tblr-btn-color-text: #f8fafc; // any color
-}
-
-.btn-default, .btn-outline-default, .btn-ghost-default {
-  --tblr-btn-color: #{$tertiary-color};
-  --tblr-btn-color-interactive: #{$tertiary-color--dark};
-  //--tblr-btn-color-text: #f8fafc; // any color
-}
-
-.btn-success, .btn-outline-success, .btn-ghost-success {
-  --tblr-btn-color: #{$success-color};
-  --tblr-btn-color-interactive: #{$success-color--dark};
-  //--tblr-btn-color-text: #f8fafc; // any color
-}
-
-.btn-warning, .btn-outline-warning, .btn-ghost-warning {
-  --tblr-btn-color: #{$warning-color};
-  --tblr-btn-color-interactive: #{$warning-color--dark};
-  //--tblr-btn-color-text: #f8fafc; // any color
-}
-
-.btn-danger, .btn-outline-danger, .btn-ghost-danger {
-  --tblr-btn-color: #{$danger-color};
-  --tblr-btn-color-interactive: #{$danger-color--dark};
-  //--tblr-btn-color-text: #f8fafc; // any color
-}
-
-.btn-info, .btn-outline-info, .btn-ghost-info {
-  --tblr-btn-color: #{$info-color};
-  --tblr-btn-color-interactive: #{$info-color--dark};
-  //--tblr-btn-color-text: #f8fafc; // any color
-}
-
-.badge {
-  --tblr-bg-opacity: 1;
-
-  &.badge-primary {
-    color: $font-color--white;
-    background-color: rgba(var(--tblr-primary-rgb), var(--tblr-bg-opacity)) !important;
-  }
-
-  &.badge-secondary {
-    color: $font-color--white;
-    background-color: rgba(var(--tblr-secondary-rgb), var(--tblr-bg-opacity)) !important;
-  }
-
-  &.badge-success {
-    //color: $font-color--white; // any color
-    background-color: rgba(var(--tblr-success-rgb), var(--tblr-bg-opacity)) !important;
-  }
-
-  &.badge-warning {
-    //color: $font-color--white; // any color
-    background-color: rgba(var(--tblr-warning-rgb), var(--tblr-bg-opacity)) !important;
-  }
-
-  &.badge-danger {
-    //color: $font-color--white; // any color
-    background-color: rgba(var(--tblr-danger-rgb), var(--tblr-bg-opacity)) !important;
-  }
-
-  &.badge-info {
-    //color: $font-color--white; // any color
-    background-color: rgba(var(--tblr-info-rgb), var(--tblr-bg-opacity)) !important;
-  }
-}
-
-
-.pagination .page-item.active .page-link {
-  color: $font-color--white;
-  background-color: $primary-color;
-  border-color: $primary-color;
-  text-decoration: none;
 }
