@@ -157,39 +157,3 @@ $white-color--border: #009e94; // Tabler default: #206bc4
 h1, h2, h3, h4, h5, h6 {
   font-family: Montserrat, var(--tblr-font-sans-serif); // font only for titles
 }
-
-*:not([class*="sf-"]):not(.disabled):not(.active) > a:not(.nav-link):not(.dropdown-item):not(.btn):not(.card) {
-  color: $font-color--black;
-
-  &:not(.page-link) {
-    text-decoration: underline;
-  }
-
-  &:hover {
-    color: $secondary-color;
-  }
-}
-
-.alert-primary {
-  --tblr-alert-color: #{$primary-color};
-}
-
-.alert-secondary {
-  --tblr-alert-color: #{$secondary-color};
-}
-
-.alert-success {
-  --tblr-alert-color: #{$success-color};
-}
-
-.alert-warning {
-  --tblr-alert-color: #{$warning-color};
-}
-
-.alert-danger {
-  --tblr-alert-color: #{$danger-color};
-}
-
-.alert-info {
-  --tblr-alert-color: #{$info-color};
-}
