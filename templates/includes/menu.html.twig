@@ -8,7 +8,7 @@
     {% endif %}
     <ul class="navbar-nav {{ navbar_class | default('') }}">
         {% for item in menu %}
-            <li id="{{ item.identifier }}" class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.hasChildren? 'dropdown' : '' }}">
+            <li id="{{ item.identifier }}" class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.hasChildren ? 'dropdown' : '' }}">
                 <a {% if item.hasChildren %}
                         class="nav-link dropdown-toggle" role="button"
                         data-bs-toggle="dropdown" data-bs-auto-close="{{ layout_type is same as "vertical" ? 'false' : 'outside' }}"
@@ -30,7 +30,7 @@
 
 {% macro item_childs(item, layout_type) %}
     {% if item.hasChildren %}
-        <div class="dropdown-menu {{ layout_type is same as "vertical" and item.isActive ? 'show':'' }}" data-bs-popper="none">
+        <div class="dropdown-menu {{ layout_type is same as "vertical" and (item.isActive or item.isExpanded) ? 'show':'' }}" data-bs-popper="none">
             <div class="dropdown-menu-columns">
                 <div class="dropdown-menu-column">
                     {% for child in item.children %}

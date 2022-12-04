@@ -11,6 +11,8 @@ namespace KevinPapst\TablerBundle\Model;
 
 interface MenuItemInterface
 {
+    public function isExpanded(): bool;
+
     public function getIdentifier(): string;
 
     public function getLabel(): ?string;
