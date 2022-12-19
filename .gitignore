@@ -1,9 +1,9 @@
 .idea
 node_modules
 vendor
-composer.lock
-yarn.lock
 .php_cs
 .php_cs.cache
 .php-cs-fixer.cache
 .phpunit.result.cache
+yarn.lock
+composer.lock

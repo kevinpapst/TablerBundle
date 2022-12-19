@@ -1,0 +1,86 @@
+{% macro carousel(items, options) %}
+    {% set _id = options.id ?? ('carousel-' ~ random(0, 999)) %}
+    {% set _extraClass = options.extraClass ?? '' %}
+
+    {% set _interval = options.interval ?? 5000 %}
+    {% set _touch_enabled = options.touch ?? true %}
+    {% set _pause = options.pause ?? false %}
+    {% set _wrap = options.wrap ?? true %}
+
+    {% set _show_controls = options.controls ?? false %}
+
+    {% set _caption_class = options.captionCustomClass ?? 'd-none d-md-block' %}
+    {% set _show_caption_background = options.captionBackground ?? true %}
+
+    {% set _show_indicators = options.indicators ?? true %}
+    {% set _indicators_type = options.indicatorsType ?? '' %}
+    {% set _indicators_ratio = options.indicatorsRatio ?? '' %}
+    {% set _indicators_orientation = options.indicatorsOrientation ?? 'horizontal' %}
+
+    <div id="{{ _id }}" class="carousel slide {{ _extraClass }}" data-bs-ride="carousel"
+         data-bs-interval="{{ _interval == false ? 'false' : _interval }}"
+         data-bs-touch="{{ _touch_enabled ? 'true' : 'false' }}"
+         data-bs-pause="{{ _pause == true ? 'true' : 'hover' }}" data-bs-wrap="{{ _wrap ? 'true' : 'false' }}">
+        {% if _show_indicators %}
+            {{ _self.carousel_indicators(items, _id, _indicators_type, _indicators_orientation, _indicators_ratio) }}
+        {% endif %}
+        {% if _show_controls %}
+            <button class="carousel-control-prev" type="button" data-bs-target="#{{ _id }}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#{{ _id }}" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        {% endif %}
+        <div class="carousel-inner">
+            {% for item in items %}
+                {% set _has_custom = item.customContent is defined %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                {% if _has_custom %}
+                    {# This is useless: breaks contents and no additional value as making everything same size is cumbersome #}
+                    {{ item.customContent | raw }}
+                {% else %}
+                    <img src="{{ item.image }}" class="d-block w-100" alt="{% if item.title is defined %}{{ item.title }}{% endif %}">
+                    {% if item.title is defined or item.description is defined %}
+                        {% if _show_caption_background %}
+                            <div class="carousel-caption-background {{ _caption_class }}"></div>
+                        {% endif %}
+                        <div class="carousel-caption {{ _caption_class }}">
+                            {% if item.title %}
+                                <h3>{{ item.title }}</h3>
+                            {% endif %}
+                            {% if item.description %}
+                                {{ item.description }}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro carousel_indicators(items, id, type, orientation, ratio) %}
+    {% set _typeClass = '' %}
+    {% if type == 'dots' %}{% set _typeClass = 'carousel-indicators-dot' %}{% endif %}
+    {% if type == 'thumbs' %}{% set _typeClass = 'carousel-indicators-thumb' %}{% endif %}
+
+    {% set _orientationClass = '' %}
+    {% if orientation == 'vertical' %}{% set _orientationClass = 'carousel-indicators-vertical' %}{% endif %}
+    {% set _ratio = 'ratio ' ~ (ratio == '' ? 'ratio-1x1' : ratio) %}
+
+    <div class="carousel-indicators {{ _typeClass }} {{ _orientationClass }}">
+        {% for item in items %}
+            {% set _item_class = loop.first ? 'active' : '' %}
+            {% set _item_style = '' %}
+            {% if type == 'thumbs' %}
+                {% set _item_image = item.image ?? '' %}
+                {% set _item_class = _item_class ~ ' ' ~ _ratio %}
+                {% set _item_style = 'background-image: url(\'' ~ _item_image ~ '\');' %}
+            {% endif %}
+            <button type="button" data-bs-target="#{{ id }}" data-bs-slide-to="{{ loop.index - 1 }}"
+                    class="{{ _item_class }}" style="{{ _item_style }}"></button>
+        {% endfor %}
+    </div>
+{% endmacro %}

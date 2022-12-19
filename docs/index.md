@@ -8,12 +8,25 @@ If you cannot find the needed information in this list of topics, please create 
 * [Displaying notifications](notifications.md)
 * [Override theme](override_theme.md)
 * [Access bundle configuration](twig-context.md)
+* [Customizing forms](form_theme.md)
 
 Components (Twig macros):
 
-* [Buttons](components-buttons.md)
-* [Timeline](components-timeline.md)
+* [Accordion](components-accordion.md)
 * [Breadcrumb](components-breadcrumb.md)
+* [Buttons](components-buttons.md)
+* [Callout](components-callout.md)
+* [Carousel](components-carousel.md)
+* [Progress Bar](components-progress-bar.md)
+* [Status](components-status.md)
+* [Status dot](components-status-dot.md)
+* [Status indicator](components-status-indicator.md)
+* [Steps](components-steps.md)
+* [Timeline](components-timeline.md)
+
+Components (Twig Embeds):
+* [Modal](embeds-modal.md)
+* [Offcanvas](embeds-offcanvas.md)
 
 For the users migrating from the [AdminLTEBundle](https://github.com/kevinpapst/AdminLTEBundle):
 

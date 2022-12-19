@@ -1,15 +1,23 @@
-<div {% block modal_attributes %}{% endblock %} class="modal modal-blur fade {% block modal_class %}{% endblock %}" id="{{ block('modal_id') }}" tabindex="-1" role="dialog" aria-labelledby="{{ block('modal_id') }}_label">
+{% set _id = id ?? (block('modal_id') is defined ? block('modal_id') : ('modal-' ~ random())) %}
+{% set _close = (close ?? true) is same as true %}
+{% set _header = (header ?? true) is same as true %}
+{% set _status = status ?? null %}
+
+<div {% block modal_attributes %}{% endblock %} class="modal modal-blur fade {% block modal_class %}{% endblock %}" id="{{ _id }}" tabindex="-1" role="dialog"{% if _header  %} aria-labelledby="{{ _id }}_label"{% endif %}>
     <div class="modal-dialog {% block modal_size %}modal-lg{% endblock %}" role="document">
-        <div class="modal-content">
+        <div class="modal-content {% block modal_content_class %}{% endblock %}">
             {% block modal_before %}{% endblock %}
-            <div {% block modal_header_attributes %}{% endblock %} class="modal-header">
-                <h5 class="modal-title" id="{{ block('modal_id') }}_label">{% block modal_title %}{% endblock %}</h5>
-                <button type="button" class="btn-close{% if tabler_bundle.isDarkMode() %} btn-close-white{% endif %}" data-bs-dismiss="modal" aria-label="{{ 'Close modal'|trans({}, 'TablerBundle') }}"></button>
-            </div>
-            <div {% block modal_body_attributes %}{% endblock %} class="modal-body">
+            {% if _status is not null %}<div class="modal-status bg-{{ _status }}"></div>{% endif %}
+            {% if _header %}
+                <div {% block modal_header_attributes %}{% endblock %} class="modal-header {% block modal_header_class %}{% endblock %}">
+                    <h5 class="modal-title {% block modal_title_class %}{% endblock %}" id="{{ _id }}_label">{% block modal_title %}{% endblock %}</h5>
+                    {% if _close %}<button type="button" class="btn-close{% if tabler_bundle.isDarkMode() %} btn-close-white{% endif %}" data-bs-dismiss="modal" aria-label="{{ 'Close'|trans({}, 'TablerBundle') }}"></button>{% endif %}
+                </div>
+            {% endif %}
+            <div {% block modal_body_attributes %}{% endblock %} class="modal-body {% block modal_body_class %}{% endblock %}">
                 {% block modal_body %}{% endblock %}
             </div>
-            <div {% block modal_footer_attributes %}{% endblock %} class="modal-footer">
+            <div {% block modal_footer_attributes %}{% endblock %} class="modal-footer {% block modal_footer_class %}{% endblock %}">
                 {% block modal_footer %}{% endblock %}
             </div>
             {% block modal_end %}{% endblock %}

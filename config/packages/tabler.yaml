@@ -10,6 +10,10 @@ tabler:
         dark_mode: true
         # condensed = one nav-bar, false = two nav-bars
         navbar_condensed: true
+        # true = dark mode, false = light mode (on header)
+        header_dark: false
+        # true = dark mode, false = light mode (on menu)
+        navbar_dark: false
         # overlap = https://preview.tabler.io/layout-navbar-overlap.html
         navbar_overlap: false
         # true = boxed layout, false = full-screen
@@ -47,6 +51,7 @@ tabler:
         admin: fas fa-wrench
         bookmark: far fa-star
         calendar: far fa-calendar-alt
+        clock: far fa-clock
         comment: far fa-comment
         copy: far fa-copy
         create: far fa-plus-square
@@ -54,9 +59,13 @@ tabler:
         delete: far fa-trash-alt
         download: fas fa-download
         edit: far fa-edit
+        email: fa fa-at
         export: fas fa-file-export
         filter: fas fa-filter
         help: far fa-question-circle
+        home: fas fa-home
+        password: fas fa-key
+        phone: fas fa-phone
         print: fas fa-print
         search: fas fa-search
         settings: fas fa-cog

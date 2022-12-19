@@ -1,0 +1,9 @@
+{# Twig used as macros holder only #}
+
+{% macro attr_to_html(attr) %}
+    {%- if attr is not empty %}
+        {% for name, value in attr %}
+            {{ name }}="{{ value|e('html_attr') }}"
+        {% endfor %}
+    {% endif %}
+{% endmacro %}

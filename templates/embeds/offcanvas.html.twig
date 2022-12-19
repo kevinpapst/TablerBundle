@@ -1,0 +1,37 @@
+{% set _id = id ?? ('offcanvas-' ~ random()) %}
+{% set _position = position ?? 'end' %}
+{% set _title = block('offcanvas_title') is defined ? block('offcanvas_title') : '' %}
+{% set _hidden = (hidden ?? true) is same as true %}
+
+<div
+        id="{{ _id }}"
+        class="offcanvas offcanvas-{{ _position }} {{ not _hidden ? "show" : "" }}"
+        tabindex="-1" aria-modal="true" role="dialog"
+        {% block offcanvas_attributes %}{% endblock %}
+>
+    {% block offcanvas_before %}{% endblock %}
+
+    {% block header %}
+        <div class="offcanvas-header">
+            {% block offcanvas_header %}
+                <h2 class="offcanvas-title">{{ _title }}</h2>
+                <button
+                        type="button" class="btn-close text-reset"
+                        data-bs-dismiss="offcanvas" aria-label="{{ 'Close'|trans({}, 'TablerBundle') }}"
+                ></button>
+            {% endblock %}
+        </div>
+    {% endblock %}
+
+    {% block body %}
+        <div class="offcanvas-body">
+            {% block offcanvas_body %}
+                <button class="btn" type="button" data-bs-dismiss="offcanvas">
+                    {{ 'Close'|trans({}, 'TablerBundle') }}
+                </button>
+            {% endblock %}
+        </div>
+    {% endblock %}
+
+    {% block offcanvas_after %}{% endblock %}
+</div>

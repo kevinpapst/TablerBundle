@@ -1,27 +1,59 @@
 {% macro alert(type, description, title, icon, dismissible) %}
-    {% set dismissible = dismissible is same as (true) ? true : false %}
-    {% set background = title is empty or description is empty ? true : false %}
-    <div class="alert alert-{{ type|default('danger') }}{% if dismissible %} alert-dismissible{% endif %}{% if background %} alert-important{% endif %}" role="alert">
+
+    {% if type is iterable %}
+        {% set options = type %}
+
+        {% set _type = options.type ?? 'danger' %}
+        {% set _title = options.title ?? null %}
+        {% set _description = options.description ?? null %}
+        {% set _icon = options.icon ?? null %}
+        {% set _dismissible = (options.dismissible ?? false) is same as (true) %}
+        {% set _important = (options.important ?? false) is same as (true) %}
+        {% set _raw = (options.raw ?? false) is same as (true) %}
+        {% set _class = options.class is defined ? ' ' ~ options.class : '' %}
+    {% else %}
+        {% deprecated "Passing multiple parameters to 'alert()' Tabler macro is deprecated, use options object syntax." %}
+
+        {% set _type = type ?? 'danger' %}
+        {% set _title = title is defined ? title|trans : null %}
+        {% set _description = description is defined ? description|trans : null %}
+        {% set _icon = icon ?? null %}
+        {% set _dismissible = (dismissible ?? false) is same as (true) %}
+        {% set _important = false %}
+        {% set _raw = false %}
+        {% set _class = '' %}
+    {% endif %}
+
+    {% set _background = _title is empty or _description is empty or _important %}
+
+    <div class="alert alert-{{ _type }}{% if _dismissible %} alert-dismissible{% endif %}{% if _background %} alert-important{% endif %}{{ _class }}" role="alert">
         <div class="d-flex">
-            {% if icon %}
-                <div>
-                    <i class="{% if background %}icon{% else %}alert-icon{% endif%} {{ icon|tabler_icon(false, icon) }}"></i>
+            {% if _icon %}
+                <div class="alert-icon">
+                    {{ tabler_icon(_icon, true) }}
                 </div>
             {% endif %}
-            {% if icon or not background %}<div>{% endif %}
-                {% if background %}
-                    {{ title|trans }}
-                    {{ description|trans }}
-                {% elseif title is not empty and description is not empty %}
-                    <h4 class="alert-title">{{ title|trans }}</h4>
-                    <div class="text-muted">{{ description|trans }}</div>
-                {% elseif title is not empty %}
-                    <h4 class="alert-title">{{ title|trans }}</h4>
-                {% elseif description is not empty %}
-                    {{ description|trans }}
-                {% endif %}
-            {% if icon or not background %}</div>{% endif %}
+
+            {% if _title is not empty or _description is not empty %}
+                <div>
+                    {% if _title is not empty %}
+                        {% if _background %}
+                            <h4 class="{{ _description is not empty ? 'mb-1' : 'mb-0' }}">{{ _raw ? _title|raw : _title }}</h4>
+                        {% else %}
+                            <h4 class="alert-title">{{ _raw ? _title|raw : _title }}</h4>
+                        {% endif %}
+                    {% endif %}
+                    {% if _description is not empty %}
+                        {% if _background %}
+                            <p class="m-0">{{ _raw ? _description|raw : _description }}</p>
+                        {% else %}
+                            <div class="text-muted">{{ _raw ? _description|raw : _description }}</div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endif %}
         </div>
-        {% if dismissible %}<a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>{% endif %}
+
+        {% if _dismissible %}<a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a>{% endif %}
     </div>
 {% endmacro %}

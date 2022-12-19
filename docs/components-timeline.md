@@ -63,6 +63,12 @@ Timeline has been implemented to simplify the use of the Tabler Timeline compone
     { text: 'Element has been created.' },
 ]) }}
 ```
+### Preview
+
+| Parameter |         |        |
+|:---------:|:-------:|:------:|
+|  simple   | `false` | `true` |  
+|           | ![image](https://user-images.githubusercontent.com/25293190/169993117-200f77e8-fa05-4ffc-8eb2-a9b2b412f5e2.png) | ![image](https://user-images.githubusercontent.com/25293190/169993433-81d8bbb9-c1ef-452e-8fb4-cf2386e91664.png) |  
 
 
 ## Next steps

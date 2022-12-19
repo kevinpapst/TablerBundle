@@ -15,6 +15,7 @@ interface UserInterface
      * The user identifier for generating links.
      *
      * @return string
+     * @deprecated will be renamed to getUserIdentifier() once we raise the minimum SF version to 5
      */
     public function getIdentifier(): string;
 
@@ -33,8 +34,11 @@ interface UserInterface
     public function getTitle(): ?string;
 
     /**
-     * URL to the user avatar.
-     * Can be something else if you overwrite the avatar component.
+     * Returns the URL to the user avatar or null if none is available.
+     *
+     * You can change the avatar behaviour and return any other string, you just need
+     * to overwrite the avatar component at templates/components/avatar_image.html.twig.
+     *
      * @return string|null
      */
     public function getAvatar(): ?string;

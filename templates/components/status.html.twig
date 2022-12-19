@@ -1,0 +1,16 @@
+{% macro status(text, options) %}
+    {% set _color = options.color ?? 'green' %}
+    {% set _animated = options.animated ?? true %}
+    {% set _lite = options.lite is defined ? options.lite  : false %}
+    {% set _with_dot = options.with_dot is defined ? options.with_dot  : false %}
+    {% set _extraClass = options.extraClass ?? '' %}
+
+    {%- apply spaceless -%}
+        <span class="status status-{{ _color }} {{ _lite ? 'status-lite' : '' }} {{ _extraClass }}">
+        {% if _with_dot %}
+            <span class="status-dot {{ _animated ? 'status-dot-animated' : '' }}"></span>
+        {% endif %}
+            {{ text }}
+        </span>
+    {%- endapply -%}
+{% endmacro %}

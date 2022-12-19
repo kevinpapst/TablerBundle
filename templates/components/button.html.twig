@@ -1,4 +1,6 @@
 {% macro button(icon, values, type) %}
+    {% import '@Tabler/includes/utils.html.twig' as macros %}
+
     {%- apply spaceless -%}
         {% if type is same as (false) %}
             {# when using in dropdown actions for example, which might not have a "btn" class #}
@@ -28,6 +30,7 @@
         {% set isSubmit = values.buttonType is defined and values.buttonType == 'submit' %}
         {% set buttonType = values.buttonType is defined and (values.buttonType == 'button' or values.buttonType == 'submit') ? 'button' : 'a' %}
         {% set tooltip = values.tooltip ?? true %}
+        {% set accesskey = values.accesskey is defined ? values.accesskey : null %}
 
         {% if type != 'link' and icon is not same as (false) and (not forceTitle and badge is null) and (type is not same as (false)) %}
             {% set class = class ~ ' btn-icon' %}
@@ -46,11 +49,9 @@
         {%- if onclick is not empty %} onclick="{{ onclick }}"{% endif %}
         {%- if target is not empty %} {% if isSubmit %}formtarget{% else %}target{% endif %}="{{ target }}"{% endif %}
         {%- if tooltip and not forceTitle and title is not null and type is not same as (false) %} {{ values.tooltip_attr ?? 'data-bs-toggle' }}="tooltip" data-bs-placement="top" title="{{ title|trans({}, translation_domain) }}"{% endif %}
-        {%- if attr is not empty %}
-            {% for name, value in attr %}
-                {{ ' ' ~ name }}={% if '"' in value %}'{{ value|raw }}'{% else %}"{{ value|raw }}"{% endif %}
-            {% endfor %}
-        {% endif %}>
+        {%- if accesskey is not empty %} accesskey="{{ accesskey }}"{% endif %}
+        {{ macros.attr_to_html(attr) }}
+        >
         {%- if icon is not same as (false) -%}
             {{ tabler_icon(icon, true, icon) }}
         {% endif %}

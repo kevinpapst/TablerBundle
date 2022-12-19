@@ -20,7 +20,7 @@ class TablerExtensionTest extends TestCase
     public function testGetFilters()
     {
         $sut = new TablerExtension();
-        $this->assertEquals(4, \count($sut->getFilters()));
+        $this->assertCount(4, $sut->getFilters());
         $result = array_map(function ($filter) {
             return $filter->getName();
         }, $sut->getFilters());
@@ -30,10 +30,10 @@ class TablerExtensionTest extends TestCase
     public function testGetFunctions()
     {
         $sut = new TablerExtension();
-        $this->assertEquals(4, \count($sut->getFunctions()));
+        $this->assertCount(5, $sut->getFunctions());
         $result = array_map(function ($function) {
             return $function->getName();
         }, $sut->getFunctions());
-        $this->assertEquals(['tabler_menu', 'tabler_notifications', 'tabler_user', 'tabler_icon'], $result);
+        $this->assertEquals(['tabler_menu', 'tabler_notifications', 'tabler_user', 'tabler_icon', 'tabler_unique_id'], $result);
     }
 }

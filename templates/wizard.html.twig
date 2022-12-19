@@ -1,0 +1,63 @@
+{% extends '@Tabler/fullpage.html.twig' %}
+
+{% from '@Tabler/components/progress_bar.html.twig' import progress_bar %}
+{% from '@Tabler/components/button.html.twig' import button %}
+{% from '@Tabler/components/buttons.html.twig' import submit_button %}
+
+{% block page_content %}
+
+    <div
+            class="container {% block container_size %}container-narrow{% endblock %} {% block container_class %}py-4{% endblock %}"
+            {% block container_attr %}{% endblock %}
+    >
+        {% block wizard_before %}{% endblock %}
+
+        {% block wizard_logo %}
+            <div class="text-center mb-4">
+                <h1 class="{% block navbar_brand_classes %}navbar-brand {% block navbar_brand_class %}navbar-brand-autodark{% endblock %}{% endblock %}">
+                    {% include '@Tabler/includes/logo.html.twig' %}
+                </h1>
+            </div>
+        {% endblock %}
+
+        {% block wizard_header_before %}{% endblock %}
+        {% block wizard_header %}{% endblock %}
+        {% block wizard_header_after %}{% endblock %}
+
+        <div
+                class="card {% block card_class %}card-md{% endblock %}"
+                {% block card_attr %}{% endblock %}
+        >
+            {% block wizard_content_before %}{% endblock %}
+            {% block wizard_content %}{% endblock %}
+            {% block wizard_content_after %}{% endblock %}
+        </div>
+
+        {% block wizard_footer_before %}{% endblock %}
+        {% block wizard_footer %}
+            <div class="row align-items-center mt-3">
+                <div class="col-4">
+                    {% block wizard_progress_bar %}
+                        {{ progress_bar() }}
+                    {% endblock %}
+                </div>
+                <div class="col">
+                    <div class="btn-list justify-content-end">
+                        {% block wizard_previous_button %}
+                            {{ button(false, { title : 'Previous'|trans({}, 'TablerBundle'), combined: true, url : '#' }, 'link') }}
+                        {% endblock %}
+
+                        {% block wizard_next_button %}
+                            {{ submit_button(false, { title : 'Next'|trans({}, 'TablerBundle'), combined: true }, 'primary') }}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        {% block wizard_footer_after %}{% endblock %}
+
+        {% block wizard_after %}{% endblock %}
+    </div>
+
+{% endblock %}
+

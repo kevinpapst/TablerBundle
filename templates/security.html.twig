@@ -1,14 +1,16 @@
 <!doctype html{% block html_start %}{% endblock %}>
-<html lang="en">
+<html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %}>
 <head>
     {% block head %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        {% include '@Tabler/includes/html_head.html.twig' %}
     {% endblock %}
     <title>{% block title %}Log in{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
+        {% if tabler_bundle.isRightToLeft() %}
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}">
+        {% else %}
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
+        {% endif %}
     {% endblock %}
 </head>
 <body{% block body_start %}{% endblock %} class="antialiased border-top-wide border-primary d-flex flex-column {% block body_class %}{% endblock %}">
@@ -20,6 +22,7 @@
         </div>
 
         <div class="card card-md">
+            {% block login_box %}
             <div class="card-body">
                 <h2 class="card-title text-center mb-4">{% block login_box_msg %}{% endblock %}</h2>
                 {% block login_box_error %}
@@ -28,7 +31,7 @@
                     {% endif %}
                 {% endblock %}
                 {% block login_form %}
-                    <form action="{{ path('tabler_login_check'|tabler_route) }}" method="post" autocomplete="off" class="login-box-body">
+                    <form action="{{ path('tabler_login_check'|tabler_route) }}" method="post" autocomplete="off" class="login-box-body security-login">
                     {% block login_form_start %}{% endblock %}
                         <div class="mb-3">
                             <label class="form-label">{{ 'Username'|trans({}, 'TablerBundle') }}</label>
@@ -47,13 +50,6 @@
                             </label>
                             <div class="input-group input-group-flat">
                                 <input name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}">
-                                {#
-                                <span class="input-group-text">
-                                  <a href="#" class="link-secondary" title="Show password" data-bs-toggle="tooltip"><!-- Download SVG icon from http://tabler-icons.io/i/eye -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="2" /><path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" /></svg>
-                                  </a>
-                                </span>
-                                #}
                             </div>
                         </div>
                         {% block remember_me %}
@@ -74,7 +70,8 @@
                     </form>
                 {% endblock %}
             </div>
-        {% block login_social_auth %}
+            {% endblock %}
+            {% block login_social_auth %}
             <div class="hr-text">{{ 'or'|trans({}, 'TablerBundle') }}</div>
             <div class="card-body">
                 <div class="row">
@@ -90,7 +87,7 @@
                     </div>
                 </div>
             </div>
-        {% endblock %}
+            {% endblock %}
         </div>
 
         {% block login_actions %}

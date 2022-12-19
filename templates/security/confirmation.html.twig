@@ -3,9 +3,7 @@
 {% block login_social_auth %}{% endblock %}
 
 {% block login_form %}
-    {% block fos_user_content %}
-        <p>{{ 'registration.confirmed'|trans({'%username%': user.username}, 'TablerBundle') }}</p>
-    {% endblock fos_user_content %}
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}, 'TablerBundle') }}</p>
 {% endblock %}
 
 {% block login_actions %}

@@ -1,5 +1,5 @@
 <!doctype html{% block html_start %}{% endblock %}>
-<html lang="{{ app.request.locale }}">
+<html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %}>
 <head>
     {% block head %}
         <meta charset="utf-8"/>
@@ -8,10 +8,14 @@
     {% endblock %}
     <title>{% block title %}{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
+        {% if tabler_bundle.isRightToLeft() %}
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}">
+        {% else %}
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
+        {% endif %}
     {% endblock %}
 </head>
-<body{% block body_start %}{% endblock %} class="d-flex flex-column {{ 'border-top-wide border-primary theme-light'|tabler_body }}">
+<body{% block body_start %}{% endblock %} class="d-flex flex-column {{ 'border-top-wide border-primary theme-light'|tabler_body }} {% block body_class %}{% endblock %}">
 {% block after_body_start %}{% endblock %}
 
 <div class="page page-center">

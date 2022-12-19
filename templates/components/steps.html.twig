@@ -1,0 +1,42 @@
+
+{% macro steps(steps, options) %}
+    {% import '@Tabler/includes/utils.html.twig' as macros %}
+
+    {% set _tooltip = options.tooltip ?? false %}
+    {% set _color = options.color ?? 'primary' %}
+    {% set _counter = options.counter ?? false %}
+    {% set _attr = options.attr ?? {} %}
+    {% set _extraClass = options.extraClass ?? '' %}
+
+    <div
+            class="steps {{ _counter ? 'steps-counter' : '' }} {{ 'steps-'~_color }} {{ _extraClass }}"
+            {{ macros.attr_to_html(_attr) }}
+    >
+
+        {% set activeStepProcessed = false %}
+
+        {% for step in steps %}
+            {% set _type = (step.clickable ?? not activeStepProcessed) ? 'a' : 'span' %}
+            {% set _title = step.title ?? '' %}
+            {% set _description = step.description ?? _title %}
+            {% set _active = step.active ?? false %}
+            {% set _attr = step.attr ?? {} %}
+            {% set _extraClass = step.extraClass ?? '' %}
+
+            <{{ _type|raw }}
+                class="step-item {{ _active ? 'active' : '' }} {{ _extraClass }}"
+                href="{{ step.href ?? '#' }}"
+                {%- if _tooltip -%} data-bs-toggle="tooltip" {%- endif -%}
+                title="{{ _description }}"
+                {{ macros.attr_to_html(_attr) }}
+            >
+                {{ _title }}
+            </{{ _type|raw }}>
+
+            {% if _active %}
+                {% set activeStepProcessed = true %}
+            {% endif %}
+
+        {% endfor %}
+    </div>
+{% endmacro %}

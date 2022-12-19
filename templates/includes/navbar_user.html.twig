@@ -22,7 +22,11 @@
         </a>
         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
             {% for link in links %}
-                <a href="{{ path(link.route|tabler_route, link.routeArgs) }}" class="dropdown-item">{{ link.label|trans }}</a>
+                {% if link.route is not null %}
+                    <a href="{{ path(link.route|tabler_route, link.routeArgs) }}" class="dropdown-item">{{ link.label|trans }}</a>
+                {% else %}
+                    <a href="#" class="dropdown-item">{{ link.label|trans }}</a>
+                {% endif %}
             {% endfor %}
             {% if showLogoutLink %}
                 <div class="dropdown-divider"></div>

@@ -8,6 +8,7 @@
 {% set _footer              = use_footer|default(false) or block('box_footer') is defined %}
 {% set _footer_collapsible  = footer_collapsible is defined ? footer_collapsible : true %}
 {% set _boxtype             = boxtype|default(null) %}
+{% set _status_position     = status_position|default('top') %}
 {% set _id                  = id|default(null) %}
 {% set _title               = block('box_title') is defined ? block('box_title') : null %}
 {% set _tools               = block('box_tools') is defined ? block('box_tools') : null %}
@@ -16,7 +17,7 @@
 
 <div {% if _id is not null %}id="{{ _id }}"{% endif %} class="card mb-{{ _margin_bottom }}{% if block('box_class') is defined %} {{ block('box_class') }}{% endif %}"{% if block('box_attributes') is defined %} {{ block('box_attributes') }}{% endif %}>
     {% if _boxtype is not null %}
-    <div class="card-status-top bg-{{ _boxtype }}"></div>
+    <div class="card-status-{{ _status_position }} bg-{{ _boxtype }}"></div>
     {% endif %}
     {% if block('box_header_before') is defined %}{{ block('box_header_before') }}{% endif %}
     {% if _title is not null or _collapsible or _tools is not null or _header is not null %}

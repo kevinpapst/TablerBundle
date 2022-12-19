@@ -11,59 +11,28 @@ namespace KevinPapst\TablerBundle\Model;
 
 class MenuItemModel implements MenuItemInterface
 {
-    /**
-     * @var string
-     */
-    private $identifier;
-    /**
-     * @var string
-     */
-    private $label;
-    /**
-     * @var string|null
-     */
-    private $route;
-    /**
-     * @var array|null
-     */
-    private $routeArgs;
-    /**
-     * @var bool
-     */
-    private $isActive = false;
-    /**
-     * @var array<MenuItemInterface>
-     */
-    private $children = [];
-    /**
-     * @var string|null
-     */
-    private $icon;
-    /**
-     * @var MenuItemInterface
-     */
-    private $parent = null;
-    /**
-     * @var string|null
-     */
-    private $badge;
-    /**
-     * @var string|null
-     */
-    private $badgeColor;
-    /**
-     * @var bool
-     */
-    private $divider = false;
+    private string $identifier;
+    private string $label;
+    private ?string $route;
+    private array $routeArgs;
+    private ?string $icon;
+    /** @var array<MenuItemInterface> */
+    private array $children = [];
+    private ?MenuItemInterface $parent = null;
+    private ?string $badge = null;
+    private ?string $badgeColor = null;
+    private bool $isActive = false;
+    private bool $divider = false;
+    private bool $expanded = false;
 
     public function __construct(
-        string $id,
+        string $identifier,
         string $label,
         ?string $route = null,
         array $routeArgs = [],
         ?string $icon = null
     ) {
-        $this->identifier = $id;
+        $this->identifier = $identifier;
         $this->label = $label;
         $this->route = $route;
         $this->routeArgs = $routeArgs;
@@ -189,6 +158,11 @@ class MenuItemModel implements MenuItemInterface
         return null;
     }
 
+    public function hasActiveChild(): bool
+    {
+        return null !== $this->getActiveChild();
+    }
+
     public function isActive(): bool
     {
         return $this->isActive;
@@ -222,5 +196,21 @@ class MenuItemModel implements MenuItemInterface
     public function setDivider(bool $divider): void
     {
         $this->divider = $divider;
+    }
+
+    public function isExpanded(): bool
+    {
+        return $this->expanded;
+    }
+
+    /**
+     * Allows to manually expand menus in vertical navigation.
+     *
+     * @param bool $expanded
+     * @return void
+     */
+    public function setExpanded(bool $expanded): void
+    {
+        $this->expanded = $expanded;
     }
 }
