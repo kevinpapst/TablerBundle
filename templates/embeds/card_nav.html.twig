@@ -1,0 +1,83 @@
+{# Options #}
+{% set _tabs = tabs ?? false %}
+{% set _bottom = _tabs and (bottom ?? false) %}
+{% set _pills = pills ?? false %}
+
+{# Header Blocks #}
+{% set card_nav_before = block('card_nav_before') is defined ? block('card_nav_before') : '' %}
+{% set card_header_class = block('card_header_class') is defined ? block('card_header_class') : '' %}
+{% set card_nav_after = block('card_nav_after') is defined ? block('card_nav_after') : '' %}
+{% set _manualContent = block('card_content') is defined %}
+
+{# *** Internal : do not mind *** #}
+{% set _items = [] %}
+{% for key, item in items ?? [] %}
+    {% if item.id is not defined %}
+        {# Generate id of item for "Boostrap tab" #}
+        {% set item = item|merge({id : tabler_unique_id()}) %}
+    {% endif %}
+
+    {% set _items = _items|merge({ (key) : item }) %}
+{% endfor %}
+
+{% set _navType = _pills and not _tabs ? 'pills' : 'tabs' %}
+{# ****************************** #}
+
+{% block card_before %}{% endblock %}
+<div class="{% if _tabs %}card-tabs{% else %}card{% endif %} {% block card_class %}mb-3{% endblock %}">
+
+    {% if not _bottom %}
+        {% embed 'bundles/TablerBundle/embeds/card_nav_header.html.twig' with {tabs : _tabs, navType : _navType, bottom : _bottom, manualContent : _manualContent} %}
+            {% block card_nav_before %}{{ card_nav_before|raw }}{% endblock %}
+            {% block card_header_class %}{{ card_header_class }}{% endblock %}
+            {% block card_nav_after %}{{ card_nav_after|raw }}{% endblock %}
+        {% endembed %}
+    {% endif %}
+
+    {# Content #}
+    {% block card_content_before %}{% endblock %}
+    <div class="{% block card_content_class %}{% endblock %}">
+        {% if block('card_content') is defined %}
+            {{ block('card_content') }}
+        {% else %}
+            <div class="tab-content">
+                {% for key, item in _items %}
+
+                    {# Item #}
+                    {% set _id = item.id %}
+                    {% set _content = item.content ?? '' %}
+
+                    {# Item Options #}
+                    {% set _active = item.active ?? false %}
+                    {% set _raw = item.raw ?? false %}
+
+                    {% if item.content is defined %}
+                        <div class="{% if _tabs %}card{% endif %} tab-pane {% if _active %}active show{% endif %}"
+                             id="tabs-{{ _id }}"
+                             {% if item.url is not defined %}role="tabpanel"{% endif %}
+                        >
+                            {% if not _raw %}
+                                <div class="card-body">
+                                    {{ _content }}
+                                </div>
+                            {% else %}
+                                {{ _content|raw }}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    {% block card_content_after %}{% endblock %}
+
+    {% if _bottom %}
+        {% embed 'bundles/TablerBundle/embeds/card_nav_header.html.twig' with {tabs : _tabs, navType : _navType, bottom : _bottom, manualContent : _manualContent} %}
+            {% block card_nav_before %}{{ card_nav_before|raw }}{% endblock %}
+            {% block card_header_class %}{{ card_header_class }}{% endblock %}
+            {% block card_nav_after %}{{ card_nav_after|raw }}{% endblock %}
+            {% block card_content %}{{ card_content }}{% endblock %}
+        {% endembed %}
+    {% endif %}
+</div>
+{% block card_after %}{% endblock %}
