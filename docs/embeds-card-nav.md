@@ -4,31 +4,33 @@ This theme ships some embeds that hide the complexity of rendering the same elem
 
 ## Card navigation
 
-Card navigation has been implemented.
+Card nav has been implemented.
+
+![image](https://user-images.githubusercontent.com/25293190/209343709-59998ee6-2358-4fc5-b256-727b68af3054.png)
 
 ### Parameters
-`Card navigation` embed, can be used with 1 parameter:
+`Card navigation` embed, can be used with 3 parameters:
 
-| Parameter | Description                          |  Type   | Default |
-|:---------:|--------------------------------------|:-------:|:-------:|
-|   items   | Array of [Item](#Item)               | `array` |  `[]`   |
-|   tabs    | Use card tabs instead on single card | `bool`  | `false` |
-|   pills   | Use pills as tab style               | `bool`  | `false` |
+| Parameter | Description                                             |  Type   | Default |
+|:---------:|---------------------------------------------------------|:-------:|:-------:|
+|   items   | Array of [Item](#Item)                                  | `array` |  `[]`   |
+|   tabs    | Use `card` for each tab content instead one single card | `bool`  | `false` |
+|   pills   | Use `pills` as tab style                                | `bool`  | `false` |
 
 #### Item
 
 Note: If `url` parameter is not specified, Boostrap tab navigation will be used to navigate trough elements.
 If `url` is specified, click on tab will simply redirect to the URL.
 
-| Parameter | Description                         |   Type    |             Default             |
-|:---------:|-------------------------------------|:---------:|:-------------------------------:|
-|    id     | Id of item (used for bootstrap tab) | `string`  |      `tabler_unique_id()`       |
-|   name    | Name of the item                    | `string`  |         _empty string_          |
-|  content  | Content of the item                 | `string`  |         _empty string_          |
-|  active   | Set the item as currently active    | `boolean` |             `false`             |
-| disabled  | Set the item as disabled            | `boolean` |             `false`             |
-|    url    | Href of the `a` link in the menu    | `string`  | `#tabs-` + `tabler_unique_id()` |
-|    raw    | Render item name as RAW HTML        | `boolean` |             `false`             |
+| Parameter | Description                              |   Type    |             Default             |
+|:---------:|------------------------------------------|:---------:|:-------------------------------:|
+|    id     | Id of item (used for bootstrap tab)      | `string`  |      `tabler_unique_id()`       |
+|   name    | Name of the item                         | `string`  |         _empty string_          |
+|  content  | Content of the item                      | `string`  |         _empty string_          |
+|  active   | Set the item as currently active         | `boolean` |             `false`             |
+| disabled  | Set the item as disabled                 | `boolean` |             `false`             |
+|    url    | Href of the `a` link in the menu         | `string`  | `#tabs-` + `tabler_unique_id()` |
+|    raw    | Render item name AND content as RAW HTML | `boolean` |             `false`             |
 
 ### Content
 `Card navigation` embed, has 1 common block:
@@ -40,7 +42,7 @@ If `url` is specified, click on tab will simply redirect to the URL.
 See twig file for more blocks, which allow customization of HTML tags, CSS classes and more.
 
 ### Usage
-#### Full boostrap tabs navigation
+#### Full boostrap tabs
 All content tab must be rendered
 
 ```twig
@@ -84,7 +86,7 @@ All content tab must be rendered
 ```
 
 
-#### Url single content navigation
+#### Url single content
 
 Only one tab content is completed, rest is only for navigation between urls
 
