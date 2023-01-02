@@ -11,16 +11,18 @@ Card nav has been implemented.
 ### Parameters
 `Card navigation` embed, can be used with 3 parameters:
 
-| Parameter | Description                                             |  Type   | Default |
-|:---------:|---------------------------------------------------------|:-------:|:-------:|
-|   items   | Array of [Item](#Item)                                  | `array` |  `[]`   |
-|   tabs    | Use `card` for each tab content instead one single card | `bool`  | `false` |
-|   pills   | Use `pills` as tab style                                | `bool`  | `false` |
+| Parameter | Description                                                            |   Type    | Default |
+|:---------:|------------------------------------------------------------------------|:---------:|:-------:|
+|   items   | Array of [Item](#Item)                                                 |  `array`  |  `[]`   |
+|   tabs    | Use `card` for each tab content instead one single card                |  `bool`   | `false` |
+|  bottom   | _Only if `tabs` is `true`_ <br/>Set the tabs navigations at the bottom | `boolean` | `false` |
+|   pills   | Use `pills` as tab style                                               |  `bool`   | `false` |
 
 #### Item
 
-Note: If `url` parameter is not specified, Boostrap tab navigation will be used to navigate trough elements.
-If `url` is specified, click on tab will simply redirect to the URL.
+> Note:   
+> If `url` parameter is not specified, Boostrap tab navigation will be used to navigate trough elements.   
+> If `url` is specified, click on tab will simply redirect to the URL.   
 
 | Parameter | Description                              |   Type    |             Default             |
 |:---------:|------------------------------------------|:---------:|:-------------------------------:|
