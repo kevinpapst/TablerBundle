@@ -9,7 +9,7 @@ Card nav has been implemented.
 ![image](https://user-images.githubusercontent.com/25293190/209343709-59998ee6-2358-4fc5-b256-727b68af3054.png)
 
 ### Parameters
-`Card navigation` embed, can be used with 3 parameters:
+`Card navigation` embed, can be used with 4 parameters:
 
 | Parameter | Description                                                            |   Type    | Default |
 |:---------:|------------------------------------------------------------------------|:---------:|:-------:|
