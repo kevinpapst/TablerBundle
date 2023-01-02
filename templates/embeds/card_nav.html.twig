@@ -27,7 +27,7 @@
 <div class="{% if _tabs %}card-tabs{% else %}card{% endif %} {% block card_class %}mb-3{% endblock %}">
 
     {% if not _bottom %}
-        {% embed 'bundles/TablerBundle/embeds/card_nav_header.html.twig' with {tabs : _tabs, navType : _navType, bottom : _bottom, manualContent : _manualContent} %}
+        {% embed '@Tabler/embeds/card_nav_header.html.twig' with {tabs : _tabs, navType : _navType, bottom : _bottom, manualContent : _manualContent} %}
             {% block card_nav_before %}{{ card_nav_before|raw }}{% endblock %}
             {% block card_header_class %}{{ card_header_class }}{% endblock %}
             {% block card_nav_after %}{{ card_nav_after|raw }}{% endblock %}
@@ -72,7 +72,7 @@
     {% block card_content_after %}{% endblock %}
 
     {% if _bottom %}
-        {% embed 'bundles/TablerBundle/embeds/card_nav_header.html.twig' with {tabs : _tabs, navType : _navType, bottom : _bottom, manualContent : _manualContent} %}
+        {% embed '@Tabler/embeds/card_nav_header.html.twig' with {tabs : _tabs, navType : _navType, bottom : _bottom, manualContent : _manualContent} %}
             {% block card_nav_before %}{{ card_nav_before|raw }}{% endblock %}
             {% block card_header_class %}{{ card_header_class }}{% endblock %}
             {% block card_nav_after %}{{ card_nav_after|raw }}{% endblock %}
