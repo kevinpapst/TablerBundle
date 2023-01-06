@@ -34,7 +34,8 @@
         "knplabs/knp-menu-bundle": "^3.0"
     },
     "suggest" : {
-        "knplabs/knp-menu-bundle" : "Allows easy menu integration"
+        "knplabs/knp-menu-bundle" : "Allows easy menu integration",
+        "symfonycasts/reset-password-bundle" : "Includes all Symfony logic to reset user password"
     },
     "autoload": {
         "psr-4": {
