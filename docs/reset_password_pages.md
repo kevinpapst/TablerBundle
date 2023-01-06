@@ -29,7 +29,7 @@ Here's an example for the reset request form with the email input.
 
 ### Extra
 
-You shouldn't directly extend `@Tabler\security\reset_password\base.html.twig`, 
+You shouldn't directly extend `@Tabler\security\reset_password\_layout.html.twig`, 
 it's only there to emptying the `login_social_auth` block, and add the flash errors.
 
 If you want to make your own template with that base, you can.
