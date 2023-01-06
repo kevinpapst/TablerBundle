@@ -12,7 +12,7 @@ You can of course override everything if needed.
 
 In order to use the layouts, 
 you should extend the one you want from `@Tabler/security/reset_password/`:
-- check_email.html.twig
+- check-email.html.twig
 - request.html.twig
 - reset.html.twig
 
