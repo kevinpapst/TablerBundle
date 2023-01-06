@@ -3,7 +3,7 @@
 This repository contains a Symfony bundle, integrating the fantastic [Tabler.io](https://tabler.io) HTML Template into your Symfony project.
 It ships with many twig helper (functions, filter, embeds, macros and includes) to speed up your development and simplify future upgrades!
 
-It has minimal requirements of Symfony >= 4.4 and PHP >= 7.4 :rocket: Read the [documentation](docs/index.md) to find out more :thumbs:
+It has minimal requirements of Symfony >= 4.4 and PHP >= 7.4 :rocket: Read the [documentation](docs/index.md) to find out more :+1:
 
 ## Preview
 

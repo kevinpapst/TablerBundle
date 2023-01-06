@@ -1,0 +1,51 @@
+{# Options #}
+{% set _tabs = tabs ?? false %}
+{% set _bottom = _tabs and (bottom ?? false) %}
+{% set _manualContent = manualContent ?? false %}
+{% set _navType = navType ?? 'tabs' %}
+
+{# Header #}
+<div class="{% if not _tabs %}card-header{% endif %} {% block card_header_class %}{% endblock %}">
+    <ul
+            class="nav nav-{{ _navType }} {% if _bottom %}nav-tabs-bottom{% endif%} {% if not _tabs %}card-header-{{ _navType }}{% endif %}"
+            {% if _tabs %}role="tablist"{% endif %}
+    >
+        {% block card_nav_before %}{% endblock %}
+        {% for key, item in _items %}
+
+            {# Item #}
+            {% set _id = item.id %}
+            {% set _name = item.name ?? '' %}
+
+            {# Item Options #}
+            {% set _active = item.active ?? false %}
+            {% set _disabled = item.disabled ?? false %}
+            {% set _url = item.url ?? ("#tabs-" ~ item.id) %}
+            {% set _raw = item.raw ?? false %}
+
+            <li
+                    class="nav-item"
+                    {% if _tabs %}role="presentation"{% endif %}
+            >
+                <a
+                        class="nav-link {% if _active %}active{% endif %} {% if _disabled %}disabled{% endif %}"
+                        href="{{ _url }}"
+                        {% if _disabled %}tabindex="-1" aria-disabled="true"{% endif %}
+                        {% if _tabs %}
+                            {% if _active %}aria-selected="true"{% endif %}
+                            role="tab"
+                        {% endif %}
+                        {% if item.url is not defined and not _manualContent %}data-bs-toggle="tab"{% endif %}
+                >
+                    {% if _raw %}
+                        {{ _name | raw }}
+                    {% else %}
+                        {{ _name }}
+                    {% endif %}
+                </a>
+            </li>
+        {% endfor %}
+        {% block card_nav_after %}{% endblock %}
+    </ul>
+</div>
+

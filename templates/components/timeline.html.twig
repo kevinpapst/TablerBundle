@@ -9,17 +9,17 @@
                         {{ tabler_icon(item.icon, false) }}
                     </div>
                 {% endif %}
-                {% if true %}
+                {% if _isSimple or (item.time is defined and item.time is not null) %}
                     <div class="list-timeline-content">
-                        {% if item.time is defined %}
-                            <div class="list-timeline-time">{{ item.time }}</div>
+                        {% item.time is defined and item.time is not null %}
+                        <div class="list-timeline-time">{{ item.time }}</div>
                         {% endif %}
-                        {% if item.title is defined %}
+                        {% if item.title is defined and item.title is not null %}
                             <p class="list-timeline-title">{{ item.title }}</p>
                         {% endif %}
-                        {% if item.text is defined %}
-                            <p class="text-muted">{{ item.text|raw }}</p>
-                        {% elseif item.textHtml is defined %}
+                        {% if item.text is defined and item.text is not null %}
+                            <p class="text-muted">{{ item.text }}</p>
+                        {% elseif item.textHtml is defined and item.textHtml is not null %}
                             {{ item.textHtml|raw }}
                         {% endif %}
                     </div>
