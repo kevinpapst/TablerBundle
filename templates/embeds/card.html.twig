@@ -1,5 +1,5 @@
 {# Options #}
-{% set _id                  = id ?? uniqueId('box_') %}
+{% set _id                  = id ?? tabler_unique_id('box_') %}
 {% set _boxtype             = boxtype ?? null %}
 {% set _fullsize            = fullsize ?? false %}
 {% set _margin_bottom       = margin_bottom ?? 3 %}
@@ -10,7 +10,7 @@
 {% set _footer_collapsible  = footer_collapsible ?? true %}
 
 {# *** Internal : do not mind *** #}
-{% set _collapsible_class   = uniqueId('collapse_') %}
+{% set _collapsible_class   = tabler_unique_id('collapse_') %}
 
 {% set _hasTitle            = block('box_title') is defined and block('box_title') is not empty %}
 {% set _hasTools            = block('box_tools') is defined and block('box_tools') is not empty %}
