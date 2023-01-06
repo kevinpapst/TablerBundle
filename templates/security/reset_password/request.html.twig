@@ -11,7 +11,7 @@
 
 {% block login_form %}
     {% block request_help %}
-        <p class="text-muted mb-4">{{ 'Enter your email address and your password will be reset and emailed to you'|trans({}, 'TablerBundle') }}</p>
+        <p class="text-muted mb-4">{{ 'Enter your email address and you will be emailed a link that allows to reset your password'|trans({}, 'TablerBundle') }}</p>
     {% endblock %}
 
     {{ form_start(requestForm) }}

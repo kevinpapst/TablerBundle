@@ -150,8 +150,8 @@
                 <source>Password Reset Email Sent</source>
                 <target>E-Mail für die Zurücksetzung des Passwort wurde gesendet</target>
             </trans-unit>
-            <trans-unit id="5FE896d" resname="Enter your email address and your password will be reset and emailed to you">
-                <source>Enter your email address and your password will be reset and emailed to you</source>
+            <trans-unit id="5FE896d" resname="Enter your email address and you will be emailed a link that allows to reset your password">
+                <source>Enter your email address and you will be emailed a link that allows to reset your password</source>
                 <target>Geben Sie Ihre E-Mail Adresse an und Sie bekommen eine Nachricht um Ihr Passwort zurückzusetzen</target>
             </trans-unit>
             <trans-unit id="RG984sg" resname="If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %token%.">
