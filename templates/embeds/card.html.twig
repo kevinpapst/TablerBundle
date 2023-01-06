@@ -35,7 +35,7 @@
 {% set _hasTools            = tools is not empty %}
 {% set _hasHeader           = header is not empty %}
 {% set _hasBody             = body is not empty %}
-{% set _hasFooter           = _use_footer or (block('box_footer') is defined and block('box_footer') is not empty) %}
+{% set _hasFooter           = _use_footer or footer is not empty %}
 
 {% import '@Tabler/components/buttons.html.twig' as button %}
 {# ****************************** #}
