@@ -26,11 +26,9 @@
 {% set _hasFooter           = _use_footer or footer is not empty %}
 
 <div id="{{ _id }}" class="card mb-{{ _margin_bottom }} {% block box_class %}{% endblock %}" {% block box_attributes %}{% endblock %}>
-
     {% if _boxtype is not null %}
         <div class="card-status-{{ _status_position }} bg-{{ _boxtype }}"></div>
     {% endif %}
-
     {% block box_header_before %}{% endblock %}
     {% if _hasTitle or _collapsible or _hasTools or _hasHeader %}
         <div class="card-header {% block box_header_class %}{% endblock %}">
@@ -52,13 +50,11 @@
         </div>
     {% endif %}
     {% block box_header_after %}{% endblock %}
-
     {% block box_body_before %}{% endblock %}
     <div class="card-body {% if _fullsize %}p-0{% endif %} {% if _collapsible %} {{ _collapsible_class ~ (_collapsed ? ' collapse' : ' show') }} {% endif %} {% block box_body_class %}{% endblock %}">
         {{ body|raw }}
     </div>
     {% block box_body_after %}{% endblock %}
-
     {% block box_footer_before %}{% endblock %}
     {% if _hasFooter %}
         <div class="card-footer {% if _footer_collapsible %} {{ _collapsible_class ~ (_collapsed ? ' collapse' : ' show') }} {% endif %} {% block box_footer_class %}{% endblock %}">
@@ -66,6 +62,5 @@
         </div>
     {% endif %}
     {% block box_footer_after %}{% endblock %}
-
 </div>
 {% block box_after %}{% endblock %}
