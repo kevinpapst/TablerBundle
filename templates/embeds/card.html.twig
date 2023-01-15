@@ -1,16 +1,16 @@
 {% import '@Tabler/components/buttons.html.twig' as button %}
 {% block box_before %}{% endblock %}
 
-{# Options #}
-{% set _id                  = id ?? tabler_unique_id('box_') %}
-{% set _boxtype             = boxtype ?? null %}
-{% set _fullsize            = fullsize ?? false %}
-{% set _margin_bottom       = margin_bottom ?? 3 %}
-{% set _status_position     = status_position ?? 'top' %}
 {% set _collapsed           = collapsed ?? false %}
 {% set _collapsible         = collapsible ?? _collapsed %}
+{% set _collapsible_class   = tabler_unique_id('collapse_') %}
+{% set _fullsize            = fullsize ?? false %}
 {% set _use_footer          = use_footer ?? false %}
 {% set _footer_collapsible  = footer_collapsible ?? true %}
+{% set _boxtype             = boxtype ?? null %}
+{% set _status_position     = status_position ?? 'top' %}
+{% set _id                  = id ?? tabler_unique_id('box_') %}
+{% set _margin_bottom       = margin_bottom ?? 3 %}
 
 {# Common blocks : Used that way to prevent form field error `has already been rendered` #}
 {% set header %}{% block box_header %}{% endblock %}{% endset %}
@@ -18,7 +18,6 @@
 {% set body %}{% block box_body %}{% endblock %}{% endset %}
 {% set footer %}{% block box_footer %}{% endblock %}{% endset %}
 
-{% set _collapsible_class   = tabler_unique_id('collapse_') %}
 {% set _hasTitle            = block('box_title') is defined and block('box_title') is not empty %}
 {% set _hasTools            = tools is not empty %}
 {% set _hasHeader           = header is not empty %}
