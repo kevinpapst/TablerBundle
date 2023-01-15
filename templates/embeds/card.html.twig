@@ -1,3 +1,6 @@
+{% import '@Tabler/components/buttons.html.twig' as button %}
+{% block box_before %}{% endblock %}
+
 {# Options #}
 {% set _id                  = id ?? tabler_unique_id('box_') %}
 {% set _boxtype             = boxtype ?? null %}
@@ -37,10 +40,6 @@
 {% set _hasBody             = body is not empty %}
 {% set _hasFooter           = _use_footer or footer is not empty %}
 
-{% import '@Tabler/components/buttons.html.twig' as button %}
-{# ****************************** #}
-
-{% block box_before %}{% endblock %}
 {# Card #}
 <div id="{{ _id }}" class="card mb-{{ _margin_bottom }} {% block box_class %}{% endblock %}" {% block box_attributes %}{% endblock %}>
 
