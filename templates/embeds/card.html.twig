@@ -9,7 +9,7 @@
 {% set _footer_collapsible  = footer_collapsible ?? true %}
 {% set _boxtype             = boxtype ?? null %}
 {% set _status_position     = status_position ?? 'top' %}
-{% set _id                  = id ?? tabler_unique_id('box_') %}
+{% set _id                  = id|default(null) %}
 {% set _margin_bottom       = margin_bottom ?? 3 %}
 
 {# Common blocks : Used that way to prevent form field error `has already been rendered` #}
@@ -17,14 +17,15 @@
 {% set tools %}{% block box_tools %}{% endblock %}{% endset %}
 {% set body %}{% block box_body %}{% endblock %}{% endset %}
 {% set footer %}{% block box_footer %}{% endblock %}{% endset %}
+{% set title %}{% block box_title %}{% endblock %}{% endset %}
 
-{% set _hasTitle            = block('box_title') is defined and block('box_title') is not empty %}
+{% set _hasTitle            = title is not empty %}
 {% set _hasTools            = tools is not empty %}
 {% set _hasHeader           = header is not empty %}
 {% set _hasBody             = body is not empty %}
 {% set _hasFooter           = _use_footer or footer is not empty %}
 
-<div id="{{ _id }}" class="card mb-{{ _margin_bottom }} {% block box_class %}{% endblock %}" {% block box_attributes %}{% endblock %}>
+<div{% if _id is not null %} id="{{ _id }}"{% endif %} class="card {% block box_class %}{% endblock %} mb-{{ _margin_bottom }}" {% block box_attributes %}{% endblock %}>
     {% if _boxtype is not null %}
         <div class="card-status-{{ _status_position }} bg-{{ _boxtype }}"></div>
     {% endif %}
@@ -34,7 +35,7 @@
             {% if _hasHeader %}
                 {{ header|raw }}
             {% else %}
-                {% if _hasTitle %}<h3 class="card-title">{% block box_title %}{% endblock %}</h3>{% endif %}
+                {% if _hasTitle %}<h3 class="card-title">{{ title }}</h3>{% endif %}
                 <div class="card-actions" {% block box_tools_attributes %}{% endblock %}>
                     {# Buttons, labels, and many other things can be placed here! #}
                     {{ tools|raw }}
@@ -50,7 +51,7 @@
     {% endif %}
     {% block box_header_after %}{% endblock %}
     {% block box_body_before %}{% endblock %}
-    <div class="card-body {% if _fullsize %}p-0{% endif %} {% if _collapsible %} {{ _collapsible_class ~ (_collapsed ? ' collapse' : ' show') }} {% endif %} {% block box_body_class %}{% endblock %}">
+    <div class="card-body {% block box_body_class %}{% endblock %} {% if _fullsize %}p-0{% endif %} {% if _collapsible %} {{ _collapsible_class ~ (_collapsed ? ' collapse' : ' show') }} {% endif %}">
         {{ body|raw }}
     </div>
     {% block box_body_after %}{% endblock %}
