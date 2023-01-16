@@ -118,9 +118,9 @@
         <source>Enter your email address and you will be emailed a link that allows to reset your password</source>
         <target>Enter your email address and you will be emailed a link that allows to reset your password</target>
       </trans-unit>
-      <trans-unit id="RG984sg" resname="If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %token%.">
-        <source>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %token%.</source>
-        <target>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %token%.</target>
+      <trans-unit id="RG984sg" resname="If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %expirationMessage%.">
+        <source>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %expirationMessage%.</source>
+        <target>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %expirationMessage%.</target>
       </trans-unit>
       <trans-unit id="498fEsz" resname="If you don't receive an email please check your spam folder or">
         <source>If you don't receive an email please check your spam folder or</source>
