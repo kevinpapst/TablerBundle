@@ -1,7 +1,7 @@
 {% macro accordion(items, options) %}
 
     {# Options #}
-    {% set _id = options.id ?? ('accordion-' ~ random(0, 999)) %}
+    {% set _id = options.id ?? tabler_unique_id('accordion_') %}
     {% set _raw = options.raw ?? true %}
     {% set _flush = options.flush ?? false %}
     {% set _always_open = options.alwaysOpen ?? false %}
@@ -11,7 +11,7 @@
         {% for item in items %}
 
             {# Item #}
-            {% set _id_collapse = _id ~ '-collapse-' ~ loop.index %}
+            {% set _id_collapse = _id ~ '_collapse_' ~ loop.index %}
             {% set _item_title = item.title ?? '' %}
             {% set _item_body = item.body ?? '' %}
 
