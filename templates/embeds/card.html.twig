@@ -1,34 +1,40 @@
-{% import '@Tabler/components/buttons.html.twig' as button %}
-{% block box_before %}{% endblock %}
-
-{% set _collapsed           = collapsed ?? false %}
-{% set _collapsible         = collapsible ?? _collapsed %}
-{% set _collapsible_class   = tabler_unique_id('collapse_') %}
-{% set _fullsize            = fullsize ?? false %}
-{% set _use_footer          = use_footer ?? false %}
-{% set _footer_collapsible  = footer_collapsible ?? true %}
+{# Options #}
+{% set _id                  = id|default(null) %}
 {% set _boxtype             = boxtype ?? null %}
 {% set _status_position     = status_position ?? 'top' %}
-{% set _id                  = id|default(null) %}
+{% set _fullsize            = fullsize ?? false %}
 {% set _margin_bottom       = margin_bottom ?? 3 %}
+{% set _collapsed           = collapsed ?? false %}
+{% set _collapsible         = collapsible ?? _collapsed %}
+{% set _footer_collapsible  = footer_collapsible ?? true %}
+{% set _use_footer          = use_footer ?? false %}
 
-{# Common blocks : Used that way to prevent form field error `has already been rendered` #}
+{# Common blocks : Declared this way to use `is not empty` and prevent the `has already been rendered` form field twig error #}
 {% set header %}{% block box_header %}{% endblock %}{% endset %}
 {% set tools %}{% block box_tools %}{% endblock %}{% endset %}
 {% set body %}{% block box_body %}{% endblock %}{% endset %}
 {% set footer %}{% block box_footer %}{% endblock %}{% endset %}
 {% set title %}{% block box_title %}{% endblock %}{% endset %}
 
+{% set _collapsible_class   = tabler_unique_id('collapse_') %}
 {% set _hasTitle            = title is not empty %}
 {% set _hasTools            = tools is not empty %}
 {% set _hasHeader           = header is not empty %}
 {% set _hasBody             = body is not empty %}
 {% set _hasFooter           = _use_footer or footer is not empty %}
 
-<div{% if _id is not null %} id="{{ _id }}"{% endif %} class="card {% block box_class %}{% endblock %} mb-{{ _margin_bottom }}" {% block box_attributes %}{% endblock %}>
+{% import '@Tabler/components/buttons.html.twig' as button %}
+
+{% block box_before %}{% endblock %}
+{# Card #}
+<div {% if _id is not null %}id="{{ _id }}"{% endif %} class="card {% block box_class %}{% endblock %} mb-{{ _margin_bottom }}" {% block box_attributes %}{% endblock %}>
+
+    {# Card Status #}
     {% if _boxtype is not null %}
         <div class="card-status-{{ _status_position }} bg-{{ _boxtype }}"></div>
     {% endif %}
+
+    {# Header #}
     {% block box_header_before %}{% endblock %}
     {% if _hasTitle or _collapsible or _hasTools or _hasHeader %}
         <div class="card-header {% block box_header_class %}{% endblock %}">
@@ -50,11 +56,15 @@
         </div>
     {% endif %}
     {% block box_header_after %}{% endblock %}
+
+    {# Body #}
     {% block box_body_before %}{% endblock %}
     <div class="card-body {% block box_body_class %}{% endblock %} {% if _fullsize %}p-0{% endif %} {% if _collapsible %} {{ _collapsible_class ~ (_collapsed ? ' collapse' : ' show') }} {% endif %}">
         {{ body|raw }}
     </div>
     {% block box_body_after %}{% endblock %}
+
+    {# Footer #}
     {% block box_footer_before %}{% endblock %}
     {% if _hasFooter %}
         <div class="card-footer {% if _footer_collapsible %} {{ _collapsible_class ~ (_collapsed ? ' collapse' : ' show') }} {% endif %} {% block box_footer_class %}{% endblock %}">
@@ -62,5 +72,6 @@
         </div>
     {% endif %}
     {% block box_footer_after %}{% endblock %}
+
 </div>
 {% block box_after %}{% endblock %}
