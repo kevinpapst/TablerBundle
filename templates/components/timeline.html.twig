@@ -11,7 +11,7 @@
                 {% endif %}
                 {% if _isSimple or (item.time is defined and item.time is not null) %}
                     <div class="list-timeline-content">
-                        {% item.time is defined and item.time is not null %}
+                        {% if item.time is defined and item.time is not null %}
                         <div class="list-timeline-time">{{ item.time }}</div>
                         {% endif %}
                         {% if item.title is defined and item.title is not null %}
