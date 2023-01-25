@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="he" datatype="plaintext" original="none">
     <body>
@@ -62,9 +62,9 @@
         <source>I forgot my password</source>
         <target>שכחתי סיסמה</target>
       </trans-unit>
-      <trans-unit id="D3_ygfb" resname="Register a new account">
+      <trans-unit id="D3_ygfb" resname="Register a new account" xml:space="preserve" approved="no">
         <source>Register a new account</source>
-        <target>הירשם למערכת</target>
+        <target state="translated">הרשמה למערכת</target>
       </trans-unit>
       <trans-unit id="MKZCFur" resname="View all">
         <source>View all</source>
@@ -130,6 +130,10 @@
                     מצטערים, אך אין לך מספיק הרשאות כדי לצפות בדף.
                     אנא פנה למנהל המערכת שלך אם לדעתך זו שגיאה.
                 </target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
+        <source>Toggle visibility</source>
+        <target state="translated">החלפת הופעה</target>
       </trans-unit>
     </body>
   </file>

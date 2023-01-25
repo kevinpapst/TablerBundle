@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="tr" datatype="plaintext" original="TablerBundle.en.xliff">
     <body>
@@ -46,9 +46,9 @@
         <source>Password</source>
         <target>Şifre</target>
       </trans-unit>
-      <trans-unit id="nQDUTyy" resname="Show homepage">
+      <trans-unit id="nQDUTyy" resname="Show homepage" xml:space="preserve" approved="no">
         <source>Show homepage</source>
-        <target>Anasayfayı göster</target>
+        <target state="translated">Ana sayfayı göster</target>
       </trans-unit>
       <trans-unit id="PjgG.xc" resname="Back to login">
         <source>Back to login</source>
@@ -128,6 +128,34 @@
       <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
         <source>http_error_403.suggestion</source>
         <target state="translated">Üzgünüz, ancak bu sayfayı görmek için yeterli izniniz yok. Bunun bir hata olduğunu düşünüyorsanız lütfen yöneticinizle görüşün.</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="none" source-language="en" target-language="tr" datatype="plaintext">
+    <body>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
+        <source>or</source>
+        <target state="translated">veya</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve" approved="no">
+        <source>Close</source>
+        <target state="translated">Kapat</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
+        <source>Toggle visibility</source>
+        <target state="translated">Görünürlüğü değiştir</target>
+      </trans-unit>
+      <trans-unit id="F35zef" resname="Previous" xml:space="preserve" approved="no">
+        <source>Previous</source>
+        <target state="translated">Önceki</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
+        <source>Next</source>
+        <target state="translated">Sonraki</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve" approved="no">
+        <source>Take me home</source>
+        <target state="translated">Beni ana sayfaya götür</target>
       </trans-unit>
     </body>
   </file>
