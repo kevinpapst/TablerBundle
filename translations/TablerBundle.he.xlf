@@ -82,9 +82,9 @@
         <source>You have %count% tasks</source>
         <target>יש לך משימה 1|יש לך %count% משימות</target>
       </trans-unit>
-      <trans-unit id="1bPaXpN" resname="%progress%% Complete">
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete" xml:space="preserve" approved="no">
         <source>%progress%% Complete</source>
-        <target>%progress%% הושלם</target>
+        <target state="translated">%progress%% הושלמו</target>
       </trans-unit>
       <trans-unit id="KLIuHvt" resname="This is a mandatory field">
         <source>This is a mandatory field</source>
@@ -134,6 +134,14 @@
       <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
         <source>Toggle visibility</source>
         <target state="translated">החלפת הופעה</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
+        <source>or</source>
+        <target state="translated">או</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve" approved="no">
+        <source>Close</source>
+        <target state="translated">סגירה</target>
       </trans-unit>
     </body>
   </file>
