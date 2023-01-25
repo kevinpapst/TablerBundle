@@ -46,3 +46,6 @@ jobs:
             -   run: composer create-project symfony/skeleton:"${{ matrix.symfony }}.*" .
             -   run: composer require webapp
             -   run: composer install --no-progress
+            -   uses: actions/checkout@v3
+                with:
+                    path: 'vendor/kevinpapst/tabler-bundle/'
