@@ -1,0 +1,35 @@
+name-template: '$RESOLVED_VERSION'
+tag-template: '$RESOLVED_VERSION'
+categories:
+    - title: 'Enhancements'
+      labels:
+          - 'Feature'
+          - 'Documentation'
+          - 'Translation'
+    - title: 'Fixed bugs'
+      labels:
+          - 'Bug'
+exclude-labels:
+    - 'Duplicate'
+    - 'Invalid'
+    - 'Wontfix'
+    - 'Question'
+exclude-contributors:
+    - 'dependabot'
+change-template: '- $TITLE (#$NUMBER)'
+change-title-escapes: '\<*_&`#@'
+version-resolver:
+    minor:
+        labels:
+            - 'Feature'
+    patch:
+        labels:
+            - 'Bug'
+            - 'Translation'
+    default: patch
+template: |
+    **Compatible with Symfony 4.4, 5.5 or 6.x with PHP >= 7.4**
+    
+    $CHANGES
+    
+    Involved in this release: $CONTRIBUTORS - thank you!
