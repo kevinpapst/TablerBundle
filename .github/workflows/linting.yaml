@@ -38,7 +38,7 @@ jobs:
                     php-version: ${{ matrix.php }}
                     coverage: none
                     extensions: intl
-            -   run: composer create-project symfony/skeleton:"{{ matrix.symfony }}.*" tabler
+            -   run: composer create-project symfony/skeleton:"${{ matrix.symfony }}.*" tabler
             -   run: cd tabler
             -   run: composer require webapp
             -   run: composer install --no-progress
