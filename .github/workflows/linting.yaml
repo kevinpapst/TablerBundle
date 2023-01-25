@@ -30,8 +30,21 @@ jobs:
             matrix:
                 php: ['7.4', '8.0', '8.1']
                 symfony: ['4.4', '5.4', '6.2']
+                exclude:
+                    - php: '7.4'
+                      symfony: '5.4'
+                    - php: '7.4'
+                      symfony: '6.4'
+                    - php: '8.0'
+                      symfony: '4.4'
+                    - php: '8.0'
+                      symfony: '6.4'
+                    - php: '8.1'
+                      symfony: '4.4'
+                    - php: '8.1'
+                      symfony: '5.4'
 
-        name: Application - PHP ${{ matrix.php }}
+        name: Bundle - SF ${{ matrix.symfony }} - PHP ${{ matrix.php }}
         steps:
             -   uses: shivammathur/setup-php@v2
                 with:
