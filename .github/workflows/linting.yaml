@@ -10,7 +10,6 @@ jobs:
         strategy:
             matrix:
                 php: ['7.4', '8.0', '8.1']
-                symfony: ['4.4', '5.4', '6.2']
 
         name: Linting - PHP ${{ matrix.php }}
         steps:
@@ -26,9 +25,14 @@ jobs:
             -   run: composer tests
 
     bundle:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                php: ['7.4', '8.0', '8.1']
+                symfony: ['4.4', '5.4', '6.2']
+
         name: Application - PHP ${{ matrix.php }}
         steps:
-            -   uses: actions/checkout@v3
             -   uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php }}
