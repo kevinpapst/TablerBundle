@@ -72,3 +72,6 @@ Now read what you should do in order to use the theme at [docs/](docs/index.md).
 ## License and contributors
 
 Published under the MIT, read the [LICENSE](LICENSE) file for more information.
+
+Translations managed with the fantastic [Weblate project](https://hosted.weblate.org/projects/kimai/theme/).
+
