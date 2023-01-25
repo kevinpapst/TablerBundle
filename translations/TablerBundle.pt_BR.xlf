@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="pt-BR" datatype="plaintext" original="TablerBundle.en.xliff">
+  <file source-language="en" target-language="pt-BR" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
       <trans-unit id="38Hm0Wu" resname="Toggle navigation">
         <source>Toggle navigation</source>
@@ -122,10 +122,6 @@
         <source>http_error_403.suggestion</source>
         <target>Desculpe, mas você não tem permissões suficientes para ver esta página. Por favor, fale com seu administrador se achar que isso é um erro.</target>
       </trans-unit>
-    </body>
-  </file>
-  <file original="none" source-language="en" target-language="pt-BR" datatype="plaintext">
-    <body>
       <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve" approved="no">
         <source>Close</source>
         <target state="translated">Encerrar</target>
