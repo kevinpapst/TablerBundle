@@ -28,19 +28,11 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                php: ['7.4', '8.0', '8.1']
-                symfony: ['4.4', '5.4', '6.2']
+                php: ['8.0', '8.1']
+                symfony: ['5.4', '6.2']
                 exclude:
-                    - php: '7.4'
-                      symfony: '5.4'
-                    - php: '7.4'
-                      symfony: '6.2'
-                    - php: '8.0'
-                      symfony: '4.4'
                     - php: '8.0'
                       symfony: '6.2'
-                    - php: '8.1'
-                      symfony: '4.4'
                     - php: '8.1'
                       symfony: '5.4'
 
