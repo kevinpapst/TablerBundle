@@ -10,10 +10,11 @@ jobs:
         strategy:
             matrix:
                 php: ['7.4', '8.0', '8.1']
+                symfony: ['4.4', '5.4', '6.2']
 
         name: Linting - PHP ${{ matrix.php }}
         steps:
-            -   uses: actions/checkout@v2
+            -   uses: actions/checkout@v3
             -   uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php }}
@@ -23,3 +24,17 @@ jobs:
             -   run: composer codestyle
             -   run: composer phpstan
             -   run: composer tests
+
+    bundle:
+        name: Application - PHP ${{ matrix.php }}
+        steps:
+            -   uses: actions/checkout@v3
+            -   uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php }}
+                    coverage: none
+                    extensions: intl
+            -   run: composer create-project symfony/skeleton:"{{ matrix.symfony }}.*" tabler
+            -   run: cd tabler
+            -   run: composer require webapp
+            -   run: composer install --no-progress
