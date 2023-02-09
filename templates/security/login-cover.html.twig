@@ -1,0 +1,97 @@
+<!doctype html{% block html_start %}{% endblock %}>
+<html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %}>
+<head>
+    {% block head %}
+        {% include '@Tabler/includes/html_head.html.twig' %}
+    {% endblock %}
+    <title>{% block title %}Log in{% endblock %}</title>
+    {% block stylesheets %}
+        {% if tabler_bundle.isRightToLeft() %}
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}">
+        {% else %}
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
+        {% endif %}
+    {% endblock %}
+</head>
+<body{% block body_start %}{% endblock %} class="{% block body_classes %}d-flex flex-column {% block body_class %}bg-white theme-light{% endblock %}{% endblock %}">
+{% block after_body_start %}{% endblock %}
+<div class="row g-0 flex-fill">
+    <div class="col-12 col-lg-6 col-xl-4 {% block login_border %}border-top-wide border-primary{% endblock %} d-flex flex-column justify-content-center">
+        <div class="container container-tight my-5 px-lg-5">
+            <div class="text-center mb-4">
+                <h1>{% block logo_login %}Tabler{% endblock %}</h1>
+            </div>
+            <h2 class="h3 text-center mb-3">
+                {% block login_box_msg %}{% endblock %}
+            </h2>
+            {% block login_box_error %}
+                {% if error|default(false) %}
+                    <div class="alert alert-important alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+            {% endblock %}
+            {% block login_form %}
+                <form action="{{ path('tabler_login_check'|tabler_route) }}" method="post" autocomplete="off" class="login-box-body security-login">
+                    {% block login_form_start %}{% endblock %}
+                    <div class="mb-3">
+                        <label class="form-label">{{ 'Username'|trans({}, 'TablerBundle') }}</label>
+                        <input type="text" name="_username" tabindex="10" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">
+                            {{ 'Password'|trans({}, 'TablerBundle') }}
+                            {% block password_forgotten %}
+                                {% if 'tabler_password_reset'|tabler_route != 'tabler_password_reset' %}
+                                    <span class="form-label-description">
+                                            <a href="{{ path('tabler_password_reset'|tabler_route) }}" tabindex="100">{{ 'I forgot my password'|trans({}, 'TablerBundle') }}</a>
+                                        </span>
+                                {% endif %}
+                            {% endblock %}
+                        </label>
+                        <div class="input-group input-group-flat">
+                            <input name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}">
+                        </div>
+                    </div>
+                    {% block remember_me %}
+                        <div class="mb-3">
+                            <label class="form-check">
+                                <input id="remember_me" tabindex="30" name="_remember_me" type="checkbox" class="form-check-input">
+                                <span class="form-check-label">{{ 'Remember Me'|trans({}, 'TablerBundle') }}</span>
+                            </label>
+                        </div>
+                    {% endblock %}
+                    <div class="form-footer">
+                        <button type="submit" tabindex="40" class="btn btn-primary w-100">{{ 'Sign In'|trans({}, 'TablerBundle') }}</button>
+                    </div>
+                    {% block csrf_token %}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                    {% endblock %}
+                    {% block login_form_end %}{% endblock %}
+                </form>
+            {% endblock %}
+
+            {% block login_actions %}
+                {% block registration %}
+                    {% if 'tabler_registration'|tabler_route != 'tabler_registration' %}
+                        <div class="text-center text-muted mt-3">
+                            <a href="{{ path('tabler_registration'|tabler_route) }}">
+                                {{ 'Register a new account'|trans({}, 'TablerBundle') }}
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endblock %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-6 col-xl-8 d-none d-lg-block">
+        {% block before_cover %}{% endblock %}
+        <div class="{% block cover_classes %}bg-cover h-100 min-vh-100{% endblock %}" style="{% block cover_style %}background-image: url(https://placehold.co/1000){% endblock %}"></div>
+        {% block after_cover %}{% endblock %}
+    </div>
+</div>
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/tabler/tabler.js') }}"></script>
+{% endblock %}
+</body>
+</html>
