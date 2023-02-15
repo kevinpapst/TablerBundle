@@ -34,11 +34,11 @@
                     <form action="{{ path('tabler_login_check'|tabler_route) }}" method="post" autocomplete="off" class="login-box-body security-login">
                     {% block login_form_start %}{% endblock %}
                         <div class="mb-3">
-                            <label class="form-label">{{ 'Username'|trans({}, 'TablerBundle') }}</label>
-                            <input type="text" name="_username" tabindex="10" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}">
+                            <label for="username" class="form-label">{{ 'Username'|trans({}, 'TablerBundle') }}</label>
+                            <input type="text" id="username" name="_username" tabindex="10" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">
+                            <label for="password" class="form-label">
                                 {{ 'Password'|trans({}, 'TablerBundle') }}
                                 {% block password_forgotten %}
                                     {% if 'tabler_password_reset'|tabler_route != 'tabler_password_reset' %}
@@ -49,7 +49,7 @@
                                 {% endblock %}
                             </label>
                             <div class="input-group input-group-flat">
-                                <input name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}">
+                                <input id="password" name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}">
                             </div>
                         </div>
                         {% block remember_me %}
