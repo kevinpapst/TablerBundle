@@ -58,6 +58,7 @@ class ConfigurationTest extends TestCase
                     'user_menu_condensed' => false,
                     'logo_url' => null,
                     'navbar_overlap' => false,
+                    'security_cover_url' => 'https://placehold.co/1000',
                 ],
                 'knp_menu' => [
                     'enable' => false,

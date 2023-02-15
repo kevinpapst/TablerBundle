@@ -101,6 +101,16 @@ class ContextHelper extends \ArrayObject
         $this->setOption('boxed_layout', $boxed);
     }
 
+    public function getSecurityCoverUrl(): string
+    {
+        return (string) $this->getOption('security_cover_url');
+    }
+
+    public function setSecurityCoverUrl(string $url): void
+    {
+        $this->setOption('security_cover_url', $url);
+    }
+
     public function getOptions(): array
     {
         return $this->getArrayCopy();

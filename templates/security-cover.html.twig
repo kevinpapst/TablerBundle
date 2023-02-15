@@ -100,7 +100,7 @@
 
     <div class="col-12 col-lg-6 col-xl-8 d-none d-lg-block">
         {% block before_cover %}{% endblock %}
-        <div class="{% block cover_classes %}bg-cover h-100 min-vh-100{% endblock %}" style="{% block cover_style %}background-image: url({% block cover_url %}https://placehold.co/1000{% endblock %}){% endblock %}"></div>
+        <div class="{% block cover_classes %}bg-cover h-100 min-vh-100{% endblock %}" style="{% block cover_style %}background-image: url({% block cover_url %}{{ tabler_bundle.getSecurityCoverUrl() }}{% endblock %}){% endblock %}"></div>
         {% block after_cover %}{% endblock %}
     </div>
 </div>
