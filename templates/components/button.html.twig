@@ -53,7 +53,7 @@
         {{ macros.attr_to_html(attr) }}
         >
         {%- if icon is not same as (false) -%}
-            {{ tabler_icon(icon, true, icon) }}
+            {{ tabler_icon(icon, ("btn-sm" not in class), icon) }}
         {% endif %}
         {%- if (forceTitle or icon is same as (false)) and title is not null -%}
             {{ title|trans({}, translation_domain) }}
