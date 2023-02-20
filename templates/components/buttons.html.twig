@@ -8,19 +8,6 @@
 {% endmacro %}
 
 {% macro link_button(label, href, icon, type, size) %}
-    {% set _size = size|default(null) %}
-    {% set _type = type|default('primary') %}
-    <a href="{{ href|default('#') }}" class="btn btn-{{ _type }}{% if _size %} btn-{{ _size }}{% endif %}">
-        {% if icon %}
-            {{ tabler_icon(icon, true) }}
-        {% endif %}
-        {% if label %}
-            <span>{{ label }}</span>
-        {% endif %}
-    </a>
-{% endmacro %}
-
-{% macro link_button(label, href, icon, type, size) %}
     {% import '@Tabler/components/button.html.twig' as macro %}
     
     {% set _href = href ?? '#' %}
