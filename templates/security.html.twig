@@ -15,13 +15,15 @@
 </head>
 <body{% block body_start %}{% endblock %} class="antialiased border-top-wide border-primary d-flex flex-column {% block body_class %}{% endblock %}">
 {% block after_body_start %}{% endblock %}
-<div class="page page-center">
-    <div class="container-tight py-4">
+{% block page_before %}{% endblock %}
+<div class="{% block page_classes %}page page-center{% endblock %}">
+    {% block container_before %}{% endblock %}
+    <div class="{% block container_classes %}container-tight py-4{% endblock %}">
         <div class="text-center mb-4">
             <h1>{% block logo_login %}Tabler{% endblock %}</h1>
         </div>
 
-        <div class="card card-md">
+        <div class="{% block card_classes %}card card-md{% endblock %}">
             {% block login_box %}
             <div class="card-body">
                 <h2 class="card-title text-center mb-4">{% block login_box_msg %}{% endblock %}</h2>
@@ -71,6 +73,7 @@
                 {% endblock %}
             </div>
             {% endblock %}
+
             {% block login_social_auth %}
             <div class="hr-text">{{ 'or'|trans({}, 'TablerBundle') }}</div>
             <div class="card-body">
@@ -102,6 +105,7 @@
             {% endblock %}
         {% endblock %}
     </div>
+    {% block container_after %}{% endblock %}
 </div>
 
 {% block javascripts %}
