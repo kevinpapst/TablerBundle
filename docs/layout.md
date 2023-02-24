@@ -34,7 +34,7 @@ See example at [https://preview.tabler.io/sign-in.html](https://preview.tabler.i
 
 **For your security screens (with huge cover image)**
 
-The `security-cover.html.twig` file for login, register ... can be used with:   
+The `security-cover.html.twig` file (for login, register, ...) can be used with:   
 ```
 {% extends '@Tabler/security-cover.html.twig' %}
 ```
