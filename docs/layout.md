@@ -30,6 +30,19 @@ The `security.html.twig` file for login, register ... can be used with:
 {% extends '@Tabler/security.html.twig' %}
 ```
 
+See example at [https://preview.tabler.io/sign-in.html](https://preview.tabler.io/sign-in.html)
+
+**For your security screens (with huge cover image)**
+
+The `security-cover.html.twig` file (for login, register, ...) can be used with:   
+```
+{% extends '@Tabler/security-cover.html.twig' %}
+```
+
+The cover image is configurable at `tabler.options.security_cover_url` or via `ConextHelper::setSecurityCoverUrl()`.
+
+See example at [https://preview.tabler.io/sign-in-cover.html](https://preview.tabler.io/sign-in-cover.html)
+
 **For your error pages**
 
 The `error.html.twig` for all of your [error pages](error_pages.md):   
