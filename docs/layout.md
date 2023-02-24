@@ -32,7 +32,7 @@ The `security.html.twig` file for login, register ... can be used with:
 
 See example at [https://preview.tabler.io/sign-in.html](https://preview.tabler.io/sign-in.html)
 
-**For your security screens (with huge cover image**
+**For your security screens (with huge cover image)**
 
 The `security-cover.html.twig` file for login, register ... can be used with:   
 ```
