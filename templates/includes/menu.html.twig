@@ -17,7 +17,7 @@
                         class="nav-link" href="{{ '/' in item.route ? item.route : (item.route is null ? '#' : path(item.route|tabler_route, item.routeArgs)) }}"
                     {% endif %}>
                     {{ _self.item_icon(item) }}
-                    <span class="nav-link-title">{{ item.label|trans }}</span>
+                    <span class="nav-link-title">{{ item.label|trans({}, item.translationDomain) }}</span>
                     {% if layout_type is same as 'horizontal' %}
                         {{ _self.item_badge(item) }}
                     {% endif %}
@@ -40,7 +40,7 @@
                                    data-bs-toggle="dropdown" data-bs-auto-close="{{ layout_type is same as "vertical" ? 'false' : 'outside' }}"
                                    aria-expanded="{{ layout_type is same as "vertical" }}">
                                     {{ _self.item_icon(child) }}
-                                    {{ child.label|trans }}
+                                    {{ child.label|trans({}, child.translationDomain) }}
                                     {{ _self.item_badge(child) }}
                                 </a>
                                 {{ _self.item_childs(child, layout_type) }}
@@ -64,7 +64,7 @@
         <a class="dropdown-item {{ child.isActive ? 'active':'' }}"
                 {%- if not child.hasChildren %} href="{{ '/' in child.route ? child.route : (child.route is null ? '#' : path(child.route|tabler_route, child.routeArgs)) }}"{% endif %}>
             {{ _self.item_icon(child) }}
-            {{ child.label|trans }}
+            {{ child.label|trans({}, child.translationDomain) }}
             {{ _self.item_badge(child) }}
         </a>
     {% endif %}

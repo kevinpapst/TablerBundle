@@ -17,6 +17,8 @@ interface MenuItemInterface
 
     public function getLabel(): ?string;
 
+    public function getTranslationDomain(): string;
+
     public function getRoute(): ?string;
 
     public function getRouteArgs(): array;
