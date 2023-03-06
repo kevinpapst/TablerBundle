@@ -114,12 +114,9 @@
         <source>http_error_404.description</source>
         <target state="translated">Sayfa bulunamadı</target>
       </trans-unit>
-      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion" xml:space="preserve">
         <source>http_error_404.suggestion</source>
-        <target state="translated">
-                    Erişmeye çalıştığınız sayfayı bulamadık.
-                    Bu arada, kontrol panelinize geri dönüp tekrar başlayabilirsiniz.
-                </target>
+        <target state="translated">Aradığınız sayfayı bulamadık. Lütfen denetim panelinize geri dönün ve baştan başlayın.</target>
       </trans-unit>
       <trans-unit id="Qn5rwdU" resname="http_error_403.description">
         <source>http_error_403.description</source>
