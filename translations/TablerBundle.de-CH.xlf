@@ -2,6 +2,150 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="de-CH" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
-      </body>
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation" xml:space="preserve" approved="no">
+        <source>Toggle navigation</source>
+        <target state="translated">Navigation umschalten</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
+        <source>Toggle visibility</source>
+        <target state="translated">Sichtbarkeit umschalten</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me" xml:space="preserve" approved="no">
+        <source>Remember Me</source>
+        <target state="translated">Mich erinnern</target>
+      </trans-unit>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
+        <source>Login</source>
+        <target state="translated">Anmeldung</target>
+      </trans-unit>
+      <trans-unit id="vMC8yRQ" resname="Sign In" xml:space="preserve" approved="no">
+        <source>Log in</source>
+        <target state="translated">Anmelden</target>
+      </trans-unit>
+      <trans-unit id="SPDT05f" resname="Sign out" xml:space="preserve" approved="no">
+        <source>Log out</source>
+        <target state="translated">Abmelden</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register" xml:space="preserve" approved="no">
+        <source>Register</source>
+        <target state="translated">Registrieren</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile" xml:space="preserve" approved="no">
+        <source>Profile</source>
+        <target state="translated">Ihr Profil</target>
+      </trans-unit>
+      <trans-unit id="DX2c6C2" resname="Member since %date%" xml:space="preserve" approved="no">
+        <source>Member since %date%</source>
+        <target state="translated">Mitglied seit %date%</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username" xml:space="preserve" approved="no">
+        <source>Username</source>
+        <target state="translated">Nutzername</target>
+      </trans-unit>
+      <trans-unit id="6.zSWXT" resname="Username or email address" xml:space="preserve" approved="no">
+        <source>Username or email address</source>
+        <target state="translated">Benutzername oder E-Mail Adresse</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password" xml:space="preserve" approved="no">
+        <source>Password</source>
+        <target state="translated">Passwort</target>
+      </trans-unit>
+      <trans-unit id="nQDUTyy" resname="Show homepage" xml:space="preserve" approved="no">
+        <source>Show homepage</source>
+        <target state="translated">Startseite anzeigen</target>
+      </trans-unit>
+      <trans-unit id="WfpDeb4" resname="Reset your password" xml:space="preserve" approved="no">
+        <source>Reset your password</source>
+        <target state="translated">Passwort zurücksetzen</target>
+      </trans-unit>
+      <trans-unit id="D3_ygfb" resname="Register a new account" xml:space="preserve" approved="no">
+        <source>Register a new account</source>
+        <target state="translated">Neues Konto eröffnen</target>
+      </trans-unit>
+      <trans-unit id="MKZCFur" resname="View all" xml:space="preserve" approved="no">
+        <source>View all</source>
+        <target state="translated">Alle ansehen</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
+        <source>or</source>
+        <target state="translated">oder</target>
+      </trans-unit>
+      <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve" approved="no">
+        <source>You have %count% notifications</source>
+        <target state="translated">Sie haben 1 Benachrichtigung|Sie haben %count% Benachrichtigungen</target>
+      </trans-unit>
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve" approved="no">
+        <source>You have %count% tasks</source>
+        <target state="translated">Sie haben 1 Aufgabe|Sie haben %count% Aufgaben</target>
+      </trans-unit>
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete" xml:space="preserve" approved="no">
+        <source>%progress%% Complete</source>
+        <target state="translated">%progress%% abgeschlossen</target>
+      </trans-unit>
+      <trans-unit id="KLIuHvt" resname="This is a mandatory field" xml:space="preserve" approved="no">
+        <source>This is a mandatory field</source>
+        <target state="translated">Dies ist ein Pflichtfeld</target>
+      </trans-unit>
+      <trans-unit id="B.ZozIs" resname="registration.confirmed" xml:space="preserve" approved="no">
+        <source>registration.confirmed</source>
+        <target state="translated">Herzlichen Glückwunsch %username%, Ihr Konto ist jetzt aktiviert.</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve" approved="no">
+        <source>Close</source>
+        <target state="translated">Schließen</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve" approved="no">
+        <source>Take me home</source>
+        <target state="translated">Zurück zur Startseite</target>
+      </trans-unit>
+      <trans-unit id="rtYKRSj" resname="http_error.title" xml:space="preserve" approved="no">
+        <source>http_error.title</source>
+        <target state="translated">Fehler</target>
+      </trans-unit>
+      <trans-unit id="e3w.2Rf" resname="http_error.description" xml:space="preserve" approved="no">
+        <source>http_error.description</source>
+        <target state="translated">Irgendwas stimmt nicht</target>
+      </trans-unit>
+      <trans-unit id="_W1eNz2" resname="http_error_404.description" xml:space="preserve" approved="no">
+        <source>http_error_404.description</source>
+        <target state="translated">Seite nicht gefunden</target>
+      </trans-unit>
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion" xml:space="preserve" approved="no">
+        <source>http_error_404.suggestion</source>
+        <target state="translated">Wir konnten die von Ihnen gesuchte Seite nicht finden. Bitte kehren Sie zu Ihrem Dashboard zurück und beginnen Sie von vorne.</target>
+      </trans-unit>
+      <trans-unit id="Qn5rwdU" resname="http_error_403.description" xml:space="preserve" approved="no">
+        <source>http_error_403.description</source>
+        <target state="translated">Seite ist eingeschränkt</target>
+      </trans-unit>
+      <trans-unit id="F35zef" resname="Previous" xml:space="preserve" approved="no">
+        <source>Previous</source>
+        <target state="translated">Vorherige</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
+        <source>Next</source>
+        <target state="translated">Nächste</target>
+      </trans-unit>
+      <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve" approved="no">
+        <source>You have %count% messages</source>
+        <target state="translated">Sie haben 1 Nachricht|Sie haben %count% Nachrichten</target>
+      </trans-unit>
+      <trans-unit id="PjgG.xc" resname="Back to login" xml:space="preserve" approved="no">
+        <source>Back to login</source>
+        <target state="translated">Zurück zur Anmeldung</target>
+      </trans-unit>
+      <trans-unit id="YOlNDxu" resname="I forgot my password" xml:space="preserve" approved="no">
+        <source>I forgot my password</source>
+        <target state="translated">Ich habe mein Passwort vergessen</target>
+      </trans-unit>
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion" xml:space="preserve" approved="no">
+        <source>http_error.suggestion</source>
+        <target state="translated">Ein kritischer Fehler ist aufgetreten, bitte versuchen Sie es erneut. Möglicherweise haben Sie ein Softwareproblem gefunden. Wenden Sie sich bitte an Ihren Administrator, wenn das Problem weiterhin besteht.</target>
+      </trans-unit>
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion" xml:space="preserve" approved="no">
+        <source>http_error_403.suggestion</source>
+        <target state="translated">Entschuldigung, aber Sie haben nicht die erforderlichen Berechtigungen, um diese Seite anzuzeigen. Bitte wenden Sie sich an Ihren Administrator, wenn Sie der Meinung sind, dass dies ein Fehler ist.</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
