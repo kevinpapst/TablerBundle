@@ -37,7 +37,7 @@
                     {% block login_form_start %}{% endblock %}
                         <div class="mb-3">
                             <label for="username" class="form-label">{{ 'Username'|trans({}, 'TablerBundle') }}</label>
-                            <input type="text" id="username" name="_username" tabindex="10" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}">
+                            <input type="text" id="username" name="_username" tabindex="10" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}" required="required">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">
@@ -51,7 +51,7 @@
                                 {% endblock %}
                             </label>
                             <div class="input-group input-group-flat">
-                                <input id="password" name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}">
+                                <input id="password" name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}" required="required">
                             </div>
                         </div>
                         {% block remember_me %}
