@@ -8,7 +8,7 @@
 {% set _collapsible         = collapsible ?? _collapsed %}
 {% set _footer_collapsible  = footer_collapsible ?? true %}
 {% set _use_footer          = use_footer ?? false %}
-{% set _use_body          = use_body ?? true %}
+{% set _use_body            = use_body ?? true %}
 
 {# Common blocks : Declared this way to use `is not empty` and prevent the `has already been rendered` form field twig error #}
 {% set header %}{% block box_header %}{% endblock %}{% endset %}
