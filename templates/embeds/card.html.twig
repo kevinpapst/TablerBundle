@@ -21,7 +21,7 @@
 {% set _hasTitle            = title is not empty %}
 {% set _hasTools            = tools is not empty %}
 {% set _hasHeader           = header is not empty %}
-{% set _hasBody             = body is not empty or _force_body %}
+{% set _hasBody             = _use_body or body is not empty %}
 {% set _hasFooter           = _use_footer or footer is not empty %}
 
 {% import '@Tabler/components/buttons.html.twig' as button %}
