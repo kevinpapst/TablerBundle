@@ -61,9 +61,9 @@
     {# Body #}
     {% block box_body_before %}{% endblock %}
     {% if _hasBody %}
-    <div class="{% block box_type_class %}card-body {% endblock %}{% block box_body_class %}{% endblock %} {% if _fullsize %}p-0{% endif %} {% if _collapsible %} {{ _collapsible_class ~ (_collapsed ? ' collapse' : ' show') }} {% endif %}">
-        {{ body|raw }}
-    </div>
+        <div class="{% block box_body_classes %}card-body {% block box_body_class %}{% endblock %}{% endblock %} {% if _fullsize %}p-0{% endif %} {% if _collapsible %} {{ _collapsible_class ~ (_collapsed ? ' collapse' : ' show') }} {% endif %}">
+            {{ body|raw }}
+        </div>
     {% endif %}
     {% block box_body_after %}{% endblock %}
 
