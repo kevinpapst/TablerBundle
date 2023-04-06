@@ -8,6 +8,7 @@
 {% set _collapsible         = collapsible ?? _collapsed %}
 {% set _footer_collapsible  = footer_collapsible ?? true %}
 {% set _use_footer          = use_footer ?? false %}
+{% set _use_body            = use_body ?? true %}
 
 {# Common blocks : Declared this way to use `is not empty` and prevent the `has already been rendered` form field twig error #}
 {% set header %}{% block box_header %}{% endblock %}{% endset %}
@@ -20,7 +21,7 @@
 {% set _hasTitle            = title is not empty %}
 {% set _hasTools            = tools is not empty %}
 {% set _hasHeader           = header is not empty %}
-{% set _hasBody             = body is not empty %}
+{% set _hasBody             = _use_body or body is not empty %}
 {% set _hasFooter           = _use_footer or footer is not empty %}
 
 {% import '@Tabler/components/buttons.html.twig' as button %}
@@ -59,9 +60,11 @@
 
     {# Body #}
     {% block box_body_before %}{% endblock %}
-    <div class="{% block box_type_class %}card-body {% endblock %}{% block box_body_class %}{% endblock %} {% if _fullsize %}p-0{% endif %} {% if _collapsible %} {{ _collapsible_class ~ (_collapsed ? ' collapse' : ' show') }} {% endif %}">
-        {{ body|raw }}
-    </div>
+    {% if _hasBody %}
+        <div class="{% block box_body_classes %}card-body {% block box_body_class %}{% endblock %}{% endblock %} {% if _fullsize %}p-0{% endif %} {% if _collapsible %} {{ _collapsible_class ~ (_collapsed ? ' collapse' : ' show') }} {% endif %}">
+            {{ body|raw }}
+        </div>
+    {% endif %}
     {% block box_body_after %}{% endblock %}
 
     {# Footer #}
