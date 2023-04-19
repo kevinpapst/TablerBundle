@@ -1,16 +1,23 @@
 {% macro alert(type, description, title, icon, dismissible) %}
+    {% import '@Tabler/includes/utils.html.twig' as macros %}
 
     {% if type is iterable %}
         {% set options = type %}
 
-        {% set _type = options.type ?? 'danger' %}
+        {# Content #}
         {% set _title = options.title ?? null %}
         {% set _description = options.description ?? null %}
         {% set _icon = options.icon ?? null %}
+
+        {# Configuration #}
+        {% set _type = options.type ?? 'danger' %}
         {% set _dismissible = (options.dismissible ?? false) is same as (true) %}
         {% set _important = (options.important ?? false) is same as (true) %}
+
+        {% set _id = options.id ?? null %}
+        {% set _attr = options.attr ?? {} %}
+        {% set _class = options.class ?? '' %}
         {% set _raw = (options.raw ?? false) is same as (true) %}
-        {% set _class = options.class is defined ? ' ' ~ options.class : '' %}
     {% else %}
         {% deprecated "Passing multiple parameters to 'alert()' Tabler macro is deprecated, use options object syntax." %}
 
@@ -26,7 +33,12 @@
 
     {% set _background = _title is empty or _description is empty or _important %}
 
-    <div class="alert alert-{{ _type }}{% if _dismissible %} alert-dismissible{% endif %}{% if _background %} alert-important{% endif %}{{ _class }}" role="alert">
+    <div
+            {% if _id %}id="{{ _id }}"{% endif %}
+            class="alert alert-{{ _type }} {% if _dismissible %}alert-dismissible{% endif %} {% if _background %}alert-important{% endif %} {{ _class }}"
+            role="alert"
+            {{ macros.attr_to_html(_attr) }}
+    >
         <div class="d-flex">
             {% if _icon %}
                 <div class="alert-icon">
