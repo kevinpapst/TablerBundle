@@ -19,7 +19,7 @@
     {% set _background = _title is empty or _description is empty or _important %}
 
     <div
-            {% if _id -%}id="{{ _id }}"{%- endif %}
+            {%- if _id %}id="{{ _id }}"{% endif -%}
             class="alert alert-{{ _type }} {% if _dismissible %}alert-dismissible{% endif %} {% if _background %}alert-important{% endif %} {{ _class }}"
             role="alert"
             {{- macros.attr_to_html(_attr) -}}
