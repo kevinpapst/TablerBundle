@@ -1,43 +1,28 @@
-{% macro alert(type, description, title, icon, dismissible) %}
+{% macro alert(options) %}
     {% import '@Tabler/includes/utils.html.twig' as macros %}
 
-    {% if type is iterable %}
-        {% set options = type %}
+    {# Content #}
+    {% set _title = options.title ?? null %}
+    {% set _description = options.description ?? null %}
+    {% set _icon = options.icon ?? null %}
 
-        {# Content #}
-        {% set _title = options.title ?? null %}
-        {% set _description = options.description ?? null %}
-        {% set _icon = options.icon ?? null %}
+    {# Configuration #}
+    {% set _type = options.type ?? 'danger' %}
+    {% set _dismissible = (options.dismissible ?? false) is same as (true) %}
+    {% set _important = (options.important ?? false) is same as (true) %}
 
-        {# Configuration #}
-        {% set _type = options.type ?? 'danger' %}
-        {% set _dismissible = (options.dismissible ?? false) is same as (true) %}
-        {% set _important = (options.important ?? false) is same as (true) %}
-
-        {% set _id = options.id ?? null %}
-        {% set _attr = options.attr ?? {} %}
-        {% set _class = options.class ?? '' %}
-        {% set _raw = (options.raw ?? false) is same as (true) %}
-    {% else %}
-        {% deprecated "Passing multiple parameters to 'alert()' Tabler macro is deprecated, use options object syntax." %}
-
-        {% set _type = type ?? 'danger' %}
-        {% set _title = title is defined ? title|trans : null %}
-        {% set _description = description is defined ? description|trans : null %}
-        {% set _icon = icon ?? null %}
-        {% set _dismissible = (dismissible ?? false) is same as (true) %}
-        {% set _important = false %}
-        {% set _raw = false %}
-        {% set _class = '' %}
-    {% endif %}
+    {% set _id = options.id ?? null %}
+    {% set _attr = options.attr ?? {} %}
+    {% set _class = options.class ?? '' %}
+    {% set _raw = (options.raw ?? false) is same as (true) %}
 
     {% set _background = _title is empty or _description is empty or _important %}
 
     <div
-            {% if _id %}id="{{ _id }}"{% endif %}
+            {% if _id -%}id="{{ _id }}"{%- endif %}
             class="alert alert-{{ _type }} {% if _dismissible %}alert-dismissible{% endif %} {% if _background %}alert-important{% endif %} {{ _class }}"
             role="alert"
-            {{ macros.attr_to_html(_attr) }}
+            {{- macros.attr_to_html(_attr) -}}
     >
         <div class="d-flex">
             {% if _icon %}
