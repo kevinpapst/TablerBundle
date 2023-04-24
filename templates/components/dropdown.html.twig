@@ -2,6 +2,7 @@
     {% import '@Tabler/includes/utils.html.twig' as macros %}
     {% from '@Tabler/components/badge.html.twig' import badge as badgeMacro %}
 
+    {# Options #}
     {% set _menuArrow = options.menuArrow ?? false %}
     {% set _menuArrowEnd = options.menuArrowEnd ?? false %}
     {% set _extraClass = options.extraClass ?? '' %}
@@ -17,7 +18,7 @@
             {% set _html = item.html ?? false %}
             {% set _href = item.href ?? '#' %}
             {% set _badge = item.badge ?? {} %}
-            {# State #}
+            {# States #}
             {% set _active = item.active ?? false %}
             {% set _disabled = item.disabled ?? false %}
             {# Other #}
