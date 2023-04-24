@@ -43,8 +43,8 @@
                     </div>
                 {% endif %}
             {% else %}
+                {% set classes = 'dropdown-item ' ~ (_disabled ? 'disabled ' : '') ~ (_active ? 'active ' : '') %}
                 {% if _type is same as 'link' %}
-                    {% set classes = 'dropdown-item ' ~ (_disabled ? 'disabled ' : '') ~ (_active ? 'active ' : '') %}
                     <a class="{{ classes }}" href="{{ _href }}" {{ macros.attr_to_html(_attr) }}>
                         {% if _icon %}
                             <span class="dropdown-item-icon">
