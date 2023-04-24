@@ -77,7 +77,19 @@ See Tabler documentation at https://preview.tabler.io/dropdowns.html
     {
         type: 'checkbox',
         title: 'Checkbox input',
-        html: '<input class="form-check-input m-0 me-2" type="checkbox">'
+        html: '<input class="form-check-input m-0 me-2" type="checkbox">',
+    },
+    {
+        type: 'checkbox',
+        title: 'Checkbox input',
+        html: '<input class="form-check-input m-0 me-2" type="checkbox">',
+        disabled: true,
+    },
+    {
+        type: 'checkbox',
+        title: 'Checkbox input',
+        html: '<input class="form-check-input m-0 me-2" type="checkbox">',
+        active: true,
     },
     {
         type: 'switch',
@@ -106,11 +118,11 @@ See Tabler documentation at https://preview.tabler.io/dropdowns.html
     },
     {
         title: 'Kevin Papst',
-        html: '<span class="avatar avatar-xs rounded me-2">KP</span>'
+        html: '<span class="avatar avatar-xs rounded me-2" style="background-image: url(https://avatars.githubusercontent.com/u/533162)"></span>'
     },
     {
         title: 'Florian Cavasin',
-        html: '<span class="avatar avatar-xs rounded me-2">FC</span>'
+        html: '<span class="avatar avatar-xs rounded me-2" style="background-image: url(https://avatars.githubusercontent.com/u/25293190)"></span>'
     },
     {
         title: 'Firstname Lastname',
