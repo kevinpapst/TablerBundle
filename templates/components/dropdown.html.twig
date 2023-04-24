@@ -22,6 +22,7 @@
             {% set _active = item.active ?? false %}
             {% set _disabled = item.disabled ?? false %}
             {# Other #}
+            {% set _extraClass = item.extraClass ?? '' %}
             {% set _attr = item.attr ?? {} %}
 
             {% if _badge.text is defined or _badge.class is defined %}
@@ -32,18 +33,18 @@
 
             {% if _type in ['html', 'divider', 'header'] %}
                 {% if _type is same as 'divider' %}
-                    <div class="dropdown-divider" {{ macros.attr_to_html(_attr) }}></div>
+                    <div class="dropdown-divider {{ _extraClass }}" {{ macros.attr_to_html(_attr) }}></div>
                 {% elseif _type is same as 'header' %}
-                    <h6 class="dropdown-header" {{ macros.attr_to_html(_attr) }}>
+                    <h6 class="dropdown-header {{ _extraClass }}" {{ macros.attr_to_html(_attr) }}>
                         {{ _title }}
                     </h6>
                 {% else %}
-                    <div class="dropdown-item" {{ macros.attr_to_html(_attr) }}>
+                    <div class="dropdown-item {{ _extraClass }}" {{ macros.attr_to_html(_attr) }}>
                         {{ _html | raw }}
                     </div>
                 {% endif %}
             {% else %}
-                {% set classes = 'dropdown-item ' ~ (_disabled ? 'disabled ' : '') ~ (_active ? 'active ' : '') %}
+                {% set classes = 'dropdown-item ' ~ (_disabled ? 'disabled ' : '') ~ (_active ? 'active ' : '') ~ _extraClass %}
                 {% if _type is same as 'link' %}
                     <a class="{{ classes }}" href="{{ _href }}" {{ macros.attr_to_html(_attr) }}>
                         {% if _icon %}
