@@ -15,17 +15,18 @@ See Tabler documentation at https://preview.tabler.io/dropdowns.html
 |  options  | [Options](#Options) object | `object` |  `{}`   |
 
 #### Item
-| Parameter | Description                                                                         |        Type        |    Default     |
-|:---------:|-------------------------------------------------------------------------------------|:------------------:|:--------------:|
-|   type    | Type of item. Can be: `html`,`divider`,`header`,`link`,`radio`,`checkbox`,`switch`  |      `string`      |     `link`     |
-|   title   | Title of the item                                                                   |      `string`      | _empty string_ |
-|   icon    | Icon tabler as prefix                                                               | `string / boolean` |    `false`     |
-|   html    | Content `HTML`                                                                      | `string / boolean` |    `false`     |
-|   href    | Url of the item                                                                     |      `string`      |      `#`       |
-|   badge   | Object to define badge option                                                       |      `Object`      |      `{}`      |
-|  active   | Add `active` class                                                                  |     `boolean`      |    `false`     |
-| disabled  | Add `disabled` class                                                                |     `boolean`      |    `false`     |
-|   attr    | Custom HTML attributes to add to the item                                           |      `Object`      |      `{}`      |
+| Parameter  | Description                                                                        |        Type        |    Default     |
+|:----------:|------------------------------------------------------------------------------------|:------------------:|:--------------:|
+|    type    | Type of item. Can be: `html`,`divider`,`header`,`link`,`radio`,`checkbox`,`switch` |      `string`      |     `link`     |
+|   title    | Title of the item                                                                  |      `string`      | _empty string_ |
+|    icon    | Icon tabler as prefix                                                              | `string / boolean` |    `false`     |
+|    html    | Content `HTML`                                                                     | `string / boolean` |    `false`     |
+|    href    | Url of the item                                                                    |      `string`      |      `#`       |
+|   badge    | Object to define badge option                                                      |      `Object`      |      `{}`      |
+|   active   | Add `active` class                                                                 |     `boolean`      |    `false`     |
+|  disabled  | Add `disabled` class                                                               |     `boolean`      |    `false`     |
+| extraClass | Add custom class to the item                                                       |      `string`      | _empty string_ |
+|    attr    | Custom HTML attributes to add to the item                                          |      `Object`      |      `{}`      |
 
 ##### Item Options
 |    Parameter    | Description                      |   Type    |    Default     |
