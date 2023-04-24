@@ -17,7 +17,7 @@ See Tabler documentation at https://preview.tabler.io/dropdowns.html
 #### Item
 | Parameter | Description                                                                         |        Type        |    Default     |
 |:---------:|-------------------------------------------------------------------------------------|:------------------:|:--------------:|
-|   type    | Type of item, can be : `html`,`divider`,`header`,`link`,`radio`,`checkbox`,`switch` |      `string`      |     `link`     |
+|   type    | Type of item. Can be: `html`,`divider`,`header`,`link`,`radio`,`checkbox`,`switch`  |      `string`      |     `link`     |
 |   title   | Title of the item                                                                   |      `string`      | _empty string_ |
 |   icon    | Icon tabler as prefix                                                               | `string / boolean` |    `false`     |
 |   html    | Content `HTML`                                                                      | `string / boolean` |    `false`     |
@@ -123,7 +123,7 @@ See Tabler documentation at https://preview.tabler.io/dropdowns.html
         title: 'Logout',
         icon: 'back',
     },
-], {extraClass : 'dropdown-menu-demo'}) }}
+], {extraClass : 'bg-dark text-white', menuArrow: true, menuArrowEnd: true}) }}
 ```
 
 ## Next steps
