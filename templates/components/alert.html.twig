@@ -1,5 +1,5 @@
 {% macro alert(options) %}
-    {% import '@Tabler/includes/utils.html.twig' as macros %}
+    {% import '@Tabler/includes/utils.html.twig' as utils %}
 
     {# Content #}
     {% set _title = options.title ?? null %}
@@ -16,13 +16,16 @@
     {% set _class = options.class ?? '' %}
     {% set _raw = (options.raw ?? false) is same as (true) %}
 
-    {% set _background = _title is empty or _description is empty or _important %}
+    {% if (_title is empty or _description is empty) and options.important is not defined %}
+        {% deprecated "Using important alert without setting the 'important' option is deprecated, set option to true instead." %}
+        {% set _important = true %}
+    {% endif %}
 
     <div
-            {%- if _id %}id="{{ _id }}"{% endif -%}
-            class="alert alert-{{ _type }} {% if _dismissible %}alert-dismissible{% endif %} {% if _background %}alert-important{% endif %} {{ _class }}"
+            {% if _id %}id="{{ _id }}"{% endif %}
+            class="alert alert-{{ _type }} {% if _dismissible %}alert-dismissible{% endif %} {% if _important %}alert-important{% endif %} {{ _class }}"
             role="alert"
-            {{- macros.attr_to_html(_attr) -}}
+            {{ utils.attr_to_html(_attr) }}
     >
         <div class="d-flex">
             {% if _icon %}
@@ -34,14 +37,10 @@
             {% if _title is not empty or _description is not empty %}
                 <div>
                     {% if _title is not empty %}
-                        {% if _background %}
-                            <h4 class="{{ _description is not empty ? 'mb-1' : 'mb-0' }}">{{ _raw ? _title|raw : _title }}</h4>
-                        {% else %}
-                            <h4 class="alert-title">{{ _raw ? _title|raw : _title }}</h4>
-                        {% endif %}
+                        <h4 class="{% if not _important %}alert-title{% endif %} {{ _description is not empty ? 'mb-1' : 'mb-0' }}">{{ _raw ? _title|raw : _title }}</h4>
                     {% endif %}
                     {% if _description is not empty %}
-                        {% if _background %}
+                        {% if _important %}
                             <p class="m-0">{{ _raw ? _description|raw : _description }}</p>
                         {% else %}
                             <div class="text-muted">{{ _raw ? _description|raw : _description }}</div>
