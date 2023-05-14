@@ -7,9 +7,9 @@
     <title>{% block title %}Log in{% endblock %}</title>
     {% block stylesheets %}
         {% if tabler_bundle.isRightToLeft() %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}?{{ tabler_asset_version() }}">
         {% else %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}?{{ tabler_asset_version() }}">
         {% endif %}
     {% endblock %}
 </head>
@@ -109,7 +109,7 @@
 </div>
 
 {% block javascripts %}
-    <script src="{{ asset('bundles/tabler/tabler.js') }}"></script>
+    <script src="{{ asset('bundles/tabler/tabler.js') }}?{{ tabler_asset_version() }}"></script>
 {% endblock %}
 </body>
 </html>

@@ -71,6 +71,16 @@ class ContextHelper extends \ArrayObject
         $this->setOption('dark_mode', $isDarkMode);
     }
 
+    public function getAssetVersion(): string
+    {
+        return (string) $this->getOption('asset_version');
+    }
+
+    public function setAssetVersion(string $assetVersion): void
+    {
+        $this->setOption('asset_version', $assetVersion);
+    }
+
     public function isHeaderDark(): bool
     {
         return (bool) $this->getOption('header_dark');

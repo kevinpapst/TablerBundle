@@ -67,4 +67,10 @@ class RuntimeExtensionTest extends TestCase
         $sut = $this->getSut(['dark_mode' => true]);
         $this->assertEquals('dark', $sut->theme());
     }
+
+    public function testAssetVersion()
+    {
+        $sut = $this->getSut(['asset_version' => '1234.56789']);
+        $this->assertEquals('1234.56789', $sut->assetVersion());
+    }
 }
