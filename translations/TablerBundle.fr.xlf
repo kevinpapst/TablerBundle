@@ -142,6 +142,10 @@
         <source>Toggle visibility</source>
         <target state="translated">Changer la visibilité</target>
       </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
+        <source>or</source>
+        <target state="translated">ou</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
