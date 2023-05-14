@@ -62,6 +62,15 @@ final class RuntimeExtension implements RuntimeExtensionInterface
         return implode(' ', array_values($classList));
     }
 
+    public function theme(): string
+    {
+        if ($this->helper->isDarkMode()) {
+            return 'dark';
+        }
+
+        return 'light';
+    }
+
     public function containerClass(string $class = ''): string
     {
         $classList = explode(' ', $class);
