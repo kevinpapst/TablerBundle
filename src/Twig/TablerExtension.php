@@ -23,6 +23,7 @@ class TablerExtension extends AbstractExtension
         return [
             new TwigFilter('tabler_container', [RuntimeExtension::class, 'containerClass']),
             new TwigFilter('tabler_body', [RuntimeExtension::class, 'bodyClass']),
+            new TwigFilter('tabler_theme', [RuntimeExtension::class, 'theme']),
             new TwigFilter('tabler_route', [RuntimeExtension::class, 'getRouteByAlias']),
             new TwigFilter('tabler_icon', [RuntimeExtension::class, 'icon']),
         ];
