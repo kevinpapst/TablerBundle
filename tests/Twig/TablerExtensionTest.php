@@ -19,7 +19,7 @@ class TablerExtensionTest extends TestCase
 {
     public function testGetFilters()
     {
-        $expected = ['tabler_container', 'tabler_body', 'tabler_theme', 'tabler_route', 'tabler_icon'];
+        $expected = ['tabler_container', 'tabler_body', 'tabler_route', 'tabler_icon'];
         $sut = new TablerExtension();
         $this->assertCount(\count($expected), $sut->getFilters());
         $result = array_map(function ($filter) {
@@ -30,7 +30,7 @@ class TablerExtensionTest extends TestCase
 
     public function testGetFunctions()
     {
-        $expected = ['tabler_menu', 'tabler_notifications', 'tabler_user', 'tabler_icon', 'tabler_unique_id'];
+        $expected = ['tabler_icon', 'tabler_menu', 'tabler_notifications', 'tabler_theme', 'tabler_unique_id', 'tabler_user'];
         $sut = new TablerExtension();
         $this->assertCount(\count($expected), $sut->getFunctions());
         $result = array_map(function ($function) {
