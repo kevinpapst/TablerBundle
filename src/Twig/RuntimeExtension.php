@@ -71,6 +71,11 @@ final class RuntimeExtension implements RuntimeExtensionInterface
         return 'light';
     }
 
+    public function assetVersion(): string
+    {
+        return $this->helper->getAssetVersion();
+    }
+
     public function containerClass(string $class = ''): string
     {
         $classList = explode(' ', $class);

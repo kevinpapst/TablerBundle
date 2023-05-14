@@ -34,6 +34,7 @@ class TablerExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
+            new TwigFunction('tabler_asset_version', [RuntimeExtension::class, 'assetVersion']),
             new TwigFunction('tabler_icon', [RuntimeExtension::class, 'createIcon'], ['is_safe' => ['html']]),
             new TwigFunction('tabler_menu', [RuntimeExtension::class, 'getMenu']),
             new TwigFunction('tabler_notifications', [RuntimeExtension::class, 'getNotifications']),
