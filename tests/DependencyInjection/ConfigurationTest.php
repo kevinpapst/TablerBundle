@@ -24,7 +24,7 @@ class ConfigurationTest extends TestCase
         $processor = new Processor();
         $node = $configuration->getConfigTreeBuilder()->buildTree();
 
-        $config = ['tabler' => []];
+        $config = ['tabler' => ['options' => ['asset_version' => '1234']]];
         $processedConfig = $processor->process($node, $config);
 
         $expected = $this->getDefaultConfig()['tabler'];
@@ -59,6 +59,7 @@ class ConfigurationTest extends TestCase
                     'logo_url' => null,
                     'navbar_overlap' => false,
                     'security_cover_url' => 'https://placehold.co/1000',
+                    'asset_version' => '1234',
                 ],
                 'knp_menu' => [
                     'enable' => false,
