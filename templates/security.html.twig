@@ -96,7 +96,7 @@
         {% block login_actions %}
             {% block registration %}
                 {% if 'tabler_registration'|tabler_route != 'tabler_registration' %}
-                    <div class="text-center text-muted mt-3">
+                    <div class="text-center text-body-secondary mt-3">
                         <a href="{{ path('tabler_registration'|tabler_route) }}">
                             {{ 'Register a new account'|trans({}, 'TablerBundle') }}
                         </a>
