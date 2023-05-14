@@ -58,4 +58,13 @@ class RuntimeExtensionTest extends TestCase
         $sut = $this->getSut(['dark_mode' => true]);
         $this->assertEquals('test theme-dark', $sut->bodyClass('test'));
     }
+
+    public function testTheme()
+    {
+        $sut = $this->getSut([]);
+        $this->assertEquals('light', $sut->theme());
+
+        $sut = $this->getSut(['dark_mode' => true]);
+        $this->assertEquals('dark', $sut->theme());
+    }
 }
