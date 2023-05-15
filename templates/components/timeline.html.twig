@@ -18,7 +18,7 @@
                             <p class="list-timeline-title">{{ item.title }}</p>
                         {% endif %}
                         {% if item.text is defined and item.text is not null %}
-                            <p class="text-muted">{{ item.text }}</p>
+                            <p class="text-body-secondary">{{ item.text }}</p>
                         {% elseif item.textHtml is defined and item.textHtml is not null %}
                             {{ item.textHtml|raw }}
                         {% endif %}
