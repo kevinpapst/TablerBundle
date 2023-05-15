@@ -31,7 +31,7 @@ Enjoy your theme!
 
     {# *** Layout type changes *** #}
     {% block navbar %}
-        <aside id="{% block sidebar_id %}{% endblock %}" class="navbar navbar-vertical navbar-expand-lg {{ tabler_bundle.isNavbarDark() ? 'navbar-dark' : 'navbar-light' }}">
+        <aside id="{% block sidebar_id %}{% endblock %}" class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="{{ tabler_bundle.isNavbarDark() ? 'dark' : 'light' }}">
             <div class="{{ ''|tabler_container }}">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                     <span class="navbar-toggler-icon"></span>
@@ -55,7 +55,7 @@ Enjoy your theme!
 
     {% block header %}
         {% if not tabler_bundle.isCondensedNavbar() %}
-            <header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md {{ tabler_bundle.isHeaderDark() ? 'navbar-dark' : 'navbar-light' }} d-none d-lg-flex d-print-none">
+            <header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md d-none d-lg-flex d-print-none" data-bs-theme="{{ tabler_bundle.isHeaderDark() ? 'dark' : 'light' }}">
                 <div class="{{ ''|tabler_container }}">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                         <span class="navbar-toggler-icon"></span>
@@ -93,7 +93,7 @@ Enjoy your theme!
                                 {% block page_title %}Dashboard{% endblock %}
                             </h2>
                             {% block page_subtitle %}
-                                <div class="text-muted mt-1">
+                                <div class="text-body-secondary mt-1">
                                     1-10 of 100
                                 </div>
                             {% endblock %}
