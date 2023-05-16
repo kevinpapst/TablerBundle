@@ -53,13 +53,7 @@ final class RuntimeExtension implements RuntimeExtensionInterface
 
     public function bodyClass(string $class = ''): string
     {
-        $classList = explode(' ', $class);
-
-        if ($this->helper->isDarkMode()) {
-            $classList[] = 'theme-dark';
-        }
-
-        return implode(' ', array_values($classList));
+        return $class;
     }
 
     public function theme(): string
