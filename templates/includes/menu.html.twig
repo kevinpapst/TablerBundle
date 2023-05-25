@@ -8,9 +8,9 @@
     {% endif %}
     <ul class="navbar-nav {{ navbar_class | default('') }}">
         {% for item in menu %}
-            <li id="{{ item.identifier }}" class="nav-item {{ item.isActive ? 'active' : '' }} {{ item.hasChildren ? 'dropdown' : '' }}">
+            <li id="{{ item.identifier }}" class="nav-item{{ item.isActive ? ' active' : '' }}{{ item.hasChildren ? ' dropdown' : '' }}">
                 <a {% if item.hasChildren %}
-                        class="nav-link dropdown-toggle" role="button"
+                        class="nav-link dropdown-toggle navbar-menu-{{ item.identifier }}" role="button"
                         data-bs-toggle="dropdown" data-bs-auto-close="{{ layout_type is same as "vertical" ? 'false' : 'outside' }}"
                         aria-expanded="{{ layout_type is same as "vertical" }}"
                     {% else %}
@@ -36,7 +36,7 @@
                     {% for child in item.children %}
                         {% if child.hasChildren %}
                             <div class="dropend">
-                                <a class="dropdown-item dropdown-toggle {{ child.isActive ? 'active' : '' }}" role="button"
+                                <a class="dropdown-item dropdown-toggle {{ child.isActive ? 'active' : '' }} navbar-menu-{{ child.identifier }}" role="button"
                                    data-bs-toggle="dropdown" data-bs-auto-close="{{ layout_type is same as "vertical" ? 'false' : 'outside' }}"
                                    aria-expanded="{{ layout_type is same as "vertical" }}">
                                     {{ _self.item_icon(child) }}
@@ -61,8 +61,8 @@
             <hr class="dropdown-divider">
         {%- endif %}
     {% else %}
-        <a class="dropdown-item {{ child.isActive ? 'active':'' }}"
-                {%- if not child.hasChildren %} href="{{ '/' in child.route ? child.route : (child.route is null ? '#' : path(child.route|tabler_route, child.routeArgs)) }}"{% endif %}>
+        <a class="dropdown-item {{ child.isActive ? 'active':'' }} navbar-menu-{{ child.identifier }}"
+            {%- if not child.hasChildren %} href="{{ '/' in child.route ? child.route : (child.route is null ? '#' : path(child.route|tabler_route, child.routeArgs)) }}"{% endif %}>
             {{ _self.item_icon(child) }}
             {{ child.label|trans({}, child.translationDomain) }}
             {{ _self.item_badge(child) }}
