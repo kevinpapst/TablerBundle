@@ -9,13 +9,13 @@
     <title>{% block title %}{% endblock %}</title>
     {% block stylesheets %}
         {% if tabler_bundle.isRightToLeft() %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}?{{ tabler_asset_version() }}">
         {% else %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}?{{ tabler_asset_version() }}">
         {% endif %}
     {% endblock %}
 </head>
-<body{% block body_start %}{% endblock %} class="d-flex flex-column {{ 'border-top-wide border-primary theme-light'|tabler_body }} {% block body_class %}{% endblock %}">
+<body{% block body_start %}{% endblock %} class="d-flex flex-column {{ 'border-top-wide border-primary theme-light'|tabler_body }} {% block body_class %}{% endblock %}" data-bs-theme="{{ tabler_theme() }}">
 {% block after_body_start %}{% endblock %}
 
 <div class="page page-center">
@@ -23,7 +23,7 @@
 </div>
 
 {% block javascripts %}
-    <script src="{{ asset('bundles/tabler/tabler.js') }}"></script>
+    <script src="{{ asset('bundles/tabler/tabler.js') }}?{{ tabler_asset_version() }}"></script>
 {% endblock %}
 </body>
 </html>

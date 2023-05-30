@@ -24,6 +24,7 @@ class MenuItemModel implements MenuItemInterface
     private bool $isActive = false;
     private bool $divider = false;
     private bool $expanded = false;
+    private string $translationDomain = 'messages';
 
     public function __construct(
         string $identifier,
@@ -212,5 +213,15 @@ class MenuItemModel implements MenuItemInterface
     public function setExpanded(bool $expanded): void
     {
         $this->expanded = $expanded;
+    }
+
+    public function getTranslationDomain(): string
+    {
+        return $this->translationDomain;
+    }
+
+    public function setTranslationDomain(string $translationDomain): void
+    {
+        $this->translationDomain = $translationDomain;
     }
 }

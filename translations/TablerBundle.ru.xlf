@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="ru" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
@@ -30,9 +30,9 @@
         <source>Profile</source>
         <target>Your profile</target>
       </trans-unit>
-      <trans-unit id="DX2c6C2" resname="Member since %date%">
+      <trans-unit id="DX2c6C2" resname="Member since %date%" xml:space="preserve" approved="no">
         <source>Member since %date%</source>
-        <target>Member since %date%</target>
+        <target state="translated">Участник с %date%</target>
       </trans-unit>
       <trans-unit id="47ienTP" resname="Username">
         <source>Username</source>

@@ -27,6 +27,7 @@
         {% set badge = values.badge ?? (values.label ?? null) %}
         {% set badge_color = values.badgeColor ?? (values.labelColor ?? 'yellow') %}
         {% set translation_domain = values.translation_domain ?? 'messages' %}
+        {% set translation_params = values.translation_params ?? {} %}
         {% set isSubmit = values.buttonType is defined and values.buttonType == 'submit' %}
         {% set buttonType = values.buttonType is defined and (values.buttonType == 'button' or values.buttonType == 'submit') ? 'button' : 'a' %}
         {% set tooltip = values.tooltip ?? true %}
@@ -48,16 +49,15 @@
         {%- if collapse is not empty %} data-bs-toggle="collapse" data-bs-target="{{ collapse }}"{% endif %}
         {%- if onclick is not empty %} onclick="{{ onclick }}"{% endif %}
         {%- if target is not empty %} {% if isSubmit %}formtarget{% else %}target{% endif %}="{{ target }}"{% endif %}
-        {%- if tooltip and not forceTitle and title is not null and type is not same as (false) %} {{ values.tooltip_attr ?? 'data-bs-toggle' }}="tooltip" data-bs-placement="top" title="{{ title|trans({}, translation_domain) }}"{% endif %}
+        {%- if tooltip and not forceTitle and title is not null and type is not same as (false) %} {{ values.tooltip_attr ?? 'data-bs-toggle' }}="tooltip" data-bs-placement="top" title="{{ title|trans(translation_params, translation_domain) }}"{% endif %}
         {%- if accesskey is not empty %} accesskey="{{ accesskey }}"{% endif %}
         {{ macros.attr_to_html(attr) }}
         >
         {%- if icon is not same as (false) -%}
-            {% set withIconClass = "btn-sm" not in class and "btn-lg" not in class %}
-            {{ tabler_icon(icon, withIconClass, icon) }}
+            {{ tabler_icon(icon, ("btn-sm" not in class and "btn-lg" not in class), icon) }}
         {% endif %}
         {%- if (forceTitle or icon is same as (false)) and title is not null -%}
-            {{ title|trans({}, translation_domain) }}
+            {{ title|trans(translation_params, translation_domain) }}
         {% endif %}
         {%- if badge is not null -%}
             <span class="badge bg-{{ badge_color }} {% if forceTitle and title is not null %}ms-1{% endif %}">{{ badge }}</span>

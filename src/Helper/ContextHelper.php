@@ -71,6 +71,16 @@ class ContextHelper extends \ArrayObject
         $this->setOption('dark_mode', $isDarkMode);
     }
 
+    public function getAssetVersion(): string
+    {
+        return (string) $this->getOption('asset_version');
+    }
+
+    public function setAssetVersion(string $assetVersion): void
+    {
+        $this->setOption('asset_version', $assetVersion);
+    }
+
     public function isHeaderDark(): bool
     {
         return (bool) $this->getOption('header_dark');
@@ -99,6 +109,16 @@ class ContextHelper extends \ArrayObject
     public function setIsBoxedLayout(bool $boxed): void
     {
         $this->setOption('boxed_layout', $boxed);
+    }
+
+    public function getSecurityCoverUrl(): string
+    {
+        return (string) $this->getOption('security_cover_url');
+    }
+
+    public function setSecurityCoverUrl(string $url): void
+    {
+        $this->setOption('security_cover_url', $url);
     }
 
     public function getOptions(): array

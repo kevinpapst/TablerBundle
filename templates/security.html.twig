@@ -7,21 +7,23 @@
     <title>{% block title %}Log in{% endblock %}</title>
     {% block stylesheets %}
         {% if tabler_bundle.isRightToLeft() %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}?{{ tabler_asset_version() }}">
         {% else %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}?{{ tabler_asset_version() }}">
         {% endif %}
     {% endblock %}
 </head>
-<body{% block body_start %}{% endblock %} class="antialiased border-top-wide border-primary d-flex flex-column {% block body_class %}{% endblock %}">
+<body{% block body_start %}{% endblock %} class="antialiased {% block body_login_border %}border-top-wide border-primary{% endblock %} d-flex flex-column {% block body_class %}{% endblock %}">
 {% block after_body_start %}{% endblock %}
-<div class="page page-center">
-    <div class="container-tight py-4">
+{% block page_before %}{% endblock %}
+<div class="{% block page_classes %}page page-center{% endblock %}">
+    {% block container_before %}{% endblock %}
+    <div class="{% block container_classes %}container container-tight py-4{% endblock %}">
         <div class="text-center mb-4">
             <h1>{% block logo_login %}Tabler{% endblock %}</h1>
         </div>
 
-        <div class="card card-md">
+        <div class="{% block card_classes %}card card-md{% endblock %}">
             {% block login_box %}
             <div class="card-body">
                 <h2 class="card-title text-center mb-4">{% block login_box_msg %}{% endblock %}</h2>
@@ -35,7 +37,7 @@
                     {% block login_form_start %}{% endblock %}
                         <div class="mb-3">
                             <label for="username" class="form-label">{{ 'Username'|trans({}, 'TablerBundle') }}</label>
-                            <input type="text" id="username" name="_username" tabindex="10" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}">
+                            <input type="text" id="username" name="_username" tabindex="10" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}" required="required">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">
@@ -49,7 +51,7 @@
                                 {% endblock %}
                             </label>
                             <div class="input-group input-group-flat">
-                                <input id="password" name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}">
+                                <input id="password" name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}" required="required">
                             </div>
                         </div>
                         {% block remember_me %}
@@ -71,6 +73,7 @@
                 {% endblock %}
             </div>
             {% endblock %}
+
             {% block login_social_auth %}
             <div class="hr-text">{{ 'or'|trans({}, 'TablerBundle') }}</div>
             <div class="card-body">
@@ -93,7 +96,7 @@
         {% block login_actions %}
             {% block registration %}
                 {% if 'tabler_registration'|tabler_route != 'tabler_registration' %}
-                    <div class="text-center text-muted mt-3">
+                    <div class="text-center text-body-secondary mt-3">
                         <a href="{{ path('tabler_registration'|tabler_route) }}">
                             {{ 'Register a new account'|trans({}, 'TablerBundle') }}
                         </a>
@@ -102,10 +105,11 @@
             {% endblock %}
         {% endblock %}
     </div>
+    {% block container_after %}{% endblock %}
 </div>
 
 {% block javascripts %}
-    <script src="{{ asset('bundles/tabler/tabler.js') }}"></script>
+    <script src="{{ asset('bundles/tabler/tabler.js') }}?{{ tabler_asset_version() }}"></script>
 {% endblock %}
 </body>
 </html>

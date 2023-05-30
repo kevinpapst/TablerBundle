@@ -5,9 +5,9 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
         "@symfony/webpack-encore": "^1.6.1",
-        "@tabler/core": "1.0.0-beta16",
+        "@tabler/core": "1.0.0-beta19",
         "file-loader": "^6.2.0",
-        "node-sass": "^8.0",
+        "sass": "^1.58.3",
         "sass-loader": "^11.0"
     },
     "license": "MIT",
