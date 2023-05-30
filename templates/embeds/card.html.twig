@@ -38,7 +38,7 @@
     {# Header #}
     {% block box_header_before %}{% endblock %}
     {% if _hasTitle or _collapsible or _hasTools or _hasHeader %}
-        <div class="card-header {% block box_header_class %}{% endblock %}">
+        <div class="card-header {% block box_header_class %}{% endblock %}"{% if _collapsible %} data-bs-toggle="collapse" data-bs-target=".{{ _collapsible_class }}" data-bs-placement="top" title="{{ collapsible_title|default('Toggle visibility'|trans({}, 'TablerBundle')) }}"{% endif %}>
             {% if _hasHeader %}
                 {{ header|raw }}
             {% else %}
