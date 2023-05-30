@@ -8,29 +8,34 @@
 {% endmacro %}
 
 {% macro link_button(label, href, icon, type, size) %}
-    {% set _size = size|default(null) %}
-    {% set _type = type|default('primary') %}
-    <a href="{{ href|default('#') }}" class="btn btn-{{ _type }}{% if _size %} btn-{{ _size }}{% endif %}">
-        {% if icon %}
-            {{ tabler_icon(icon, true) }}
-        {% endif %}
-        {% if label %}
-            <span>{{ label }}</span>
-        {% endif %}
-    </a>
+    {% import '@Tabler/components/button.html.twig' as macro %}
+    
+    {% set _href = href ?? '#' %}
+    {% set _icon = icon ?? false %}
+    {% set _type = type ?? 'primary' %}
+    {% set _size = size ?? null %}
+    
+    {{ macro.button(_icon, {
+        title: label,
+        combined: true,
+        url: _href,
+        class: _size ? 'btn-' ~ _size : ''
+    }, _type) }}
 {% endmacro %}
 
 {% macro action_button(label, action, icon, type, size) %}
-    {% set _size = size|default(null) %}
-    {% set _type = type|default('primary') %}
-    <button data-action="{{ action }}" class="btn btn-{{ _type }}{% if _size %} btn-{{ _size }}{% endif %}">
-        {% if icon %}
-            {{ tabler_icon(icon, true) }}
-        {% endif %}
-        {% if label %}
-            <span>{{ label }}</span>
-        {% endif %}
-    </button>
+    {% import '@Tabler/components/button.html.twig' as macro %}
+    
+    {% set _icon = icon ?? false %}
+    {% set _type = type ?? 'primary' %}
+    {% set _size = size ?? null %}
+    
+    {{ macro.button(_icon, {
+        title: label,
+        class: _size ? 'btn-' ~ _size : '',
+        buttonType: 'button',
+        attr: {'data-action': action} 
+    }, _type) }}
 {% endmacro %}
 
 {% macro submit_button(icon, user_values, type) %}
