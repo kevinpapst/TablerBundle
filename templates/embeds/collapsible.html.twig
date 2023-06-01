@@ -1,27 +1,19 @@
-{% extends '@Tabler/embeds/card.html.twig' %}
-{% set collapsed = false %}
 {% set fullsize = true %}
+{% extends '@Tabler/embeds/card.html.twig' %}
+{% from '@Tabler/components/accordion.html.twig' import accordion %}
+
+{% block box_class %}border-0{% endblock %}
 {% block box_title %}{% endblock %}
+
+{% set item = {
+    title: block('title') ?? '',
+    body: block('body') ?? '',
+    bodyClasses: '',
+    options: { open: open ?? false, bodyExtraClass: ((border ?? true) ? 'border-top pt-3' : '') }
+} | merge(item ?? {}) %}
+
+{% set options = {flush: flush ?? false} | merge(options ?? {}) %}
+
 {% block box_body %}
-    {% set _id = id ?? tabler_unique_id('collapsible_') %}
-    {% set _open = open ?? false %}
-    {% set _id_collapse = _id ~ '_item' %}
-
-    <div id="{{ _id }}" class="accordion accordion-flush{% block class %} {% endblock %}">
-        <div class="accordion-item {% block item_class %} {% endblock %}">
-            <div class="accordion-header" id="{{ _id }}_heading">
-                <button class="accordion-button {% if not _open %}collapsed{% endif %}"
-                        type="button" data-bs-toggle="collapse" data-bs-target="#{{ _id_collapse }}"
-                        aria-expanded="true">
-                    {% block title %}{% endblock %}
-                </button>
-            </div>
-
-            <div id="{{ _id_collapse }}" class="accordion-collapse collapse {% if _open %}show{% endif %}">
-                <div class="accordion-body {% block body_class %}pt-0{% endblock %}">
-                    {% block body %}{% endblock %}
-                </div>
-            </div>
-        </div>
-    </div>
+    {{ accordion([item], options) }}
 {% endblock %}
