@@ -18,7 +18,7 @@
 <body{% block body_start %}{% endblock %} class="d-flex flex-column {{ 'border-top-wide border-primary theme-light'|tabler_body }} {% block body_class %}{% endblock %}" data-bs-theme="{{ tabler_theme() }}">
 {% block after_body_start %}{% endblock %}
 
-<div class="page page-center">
+<div class="{% block page_classes %}page page-center{% endblock %}">
     {% block page_content %}{% endblock %}
 </div>
 
