@@ -1,132 +1,132 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="eu" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
-      <trans-unit id="38Hm0Wu" resname="Toggle navigation">
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation" xml:space="preserve" approved="no">
         <source>Toggle navigation</source>
-        <target>Nabigazioa aktibatu</target>
+        <target state="translated">Nabigazioa aktibatu</target>
       </trans-unit>
-      <trans-unit id="KpL2_.m" resname="Remember Me">
+      <trans-unit id="KpL2_.m" resname="Remember Me" xml:space="preserve" approved="no">
         <source>Remember Me</source>
-        <target>Gogora nazazu</target>
+        <target state="translated">Gogora nazazu</target>
       </trans-unit>
-      <trans-unit id="8FGIkAR" resname="Sign in to start your session">
-        <source>Sign in to start your session</source>
-        <target>Izena ta pasahitza sartu saioa hasteko</target>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
+        <source>Login</source>
+        <target state="translated">Izena ta pasahitza sartu saioa hasteko</target>
       </trans-unit>
-      <trans-unit id="vMC8yRQ" resname="Sign In">
-        <source>Sign In</source>
-        <target>Saioa hasi</target>
+      <trans-unit id="vMC8yRQ" resname="Sign In" xml:space="preserve" approved="no">
+        <source>Log in</source>
+        <target state="translated">Saioa hasi</target>
       </trans-unit>
-      <trans-unit id="SPDT05f" resname="Sign out">
-        <source>Sign out</source>
-        <target>Saioa itxi</target>
+      <trans-unit id="SPDT05f" resname="Sign out" xml:space="preserve" approved="no">
+        <source>Log out</source>
+        <target state="translated">Saioa itxi</target>
       </trans-unit>
-      <trans-unit id="u3I07BJ" resname="Register">
+      <trans-unit id="u3I07BJ" resname="Register" xml:space="preserve" approved="no">
         <source>Register</source>
-        <target>Izena eman</target>
+        <target state="translated">Izena eman</target>
       </trans-unit>
-      <trans-unit id="1pajW90" resname="Profile">
+      <trans-unit id="1pajW90" resname="Profile" xml:space="preserve" approved="no">
         <source>Profile</source>
-        <target>Nire kontua</target>
+        <target state="translated">Nire kontua</target>
       </trans-unit>
-      <trans-unit id="DX2c6C2" resname="Member since %date%">
+      <trans-unit id="DX2c6C2" resname="Member since %date%" xml:space="preserve" approved="no">
         <source>Member since %date%</source>
-        <target>%date%-tik erabiltzailea </target>
+        <target state="translated">%date%-tik erabiltzailea </target>
       </trans-unit>
-      <trans-unit id="47ienTP" resname="Username">
+      <trans-unit id="47ienTP" resname="Username" xml:space="preserve" approved="no">
         <source>Username</source>
-        <target>Erabiltzailea</target>
+        <target state="translated">Erabiltzailea</target>
       </trans-unit>
-      <trans-unit id="6.zSWXT" resname="Username or email address">
+      <trans-unit id="6.zSWXT" resname="Username or email address" xml:space="preserve" approved="no">
         <source>Username or email address</source>
-        <target>Erabiltzaile izena</target>
+        <target state="translated">Erabiltzaile izena</target>
       </trans-unit>
-      <trans-unit id="588_9PF" resname="Password">
+      <trans-unit id="588_9PF" resname="Password" xml:space="preserve" approved="no">
         <source>Password</source>
-        <target>Pasahitza</target>
+        <target state="translated">Pasahitza</target>
       </trans-unit>
-      <trans-unit id="nQDUTyy" resname="Show homepage">
+      <trans-unit id="nQDUTyy" resname="Show homepage" xml:space="preserve" approved="no">
         <source>Show homepage</source>
-        <target>Hasierako orria</target>
+        <target state="translated">Hasierako orria</target>
       </trans-unit>
-      <trans-unit id="PjgG.xc" resname="Back to login">
+      <trans-unit id="PjgG.xc" resname="Back to login" xml:space="preserve" approved="no">
         <source>Back to login</source>
-        <target>Saio hasierara itzuli</target>
+        <target state="translated">Saio hasierara itzuli</target>
       </trans-unit>
-      <trans-unit id="WfpDeb4" resname="Reset your password">
+      <trans-unit id="WfpDeb4" resname="Reset your password" xml:space="preserve" approved="no">
         <source>Reset your password</source>
-        <target>Pasahitza berrezarri</target>
+        <target state="translated">Pasahitza berrezarri</target>
       </trans-unit>
-      <trans-unit id="YOlNDxu" resname="I forgot my password">
+      <trans-unit id="YOlNDxu" resname="I forgot my password" xml:space="preserve" approved="no">
         <source>I forgot my password</source>
-        <target>Pasahitza ahaztu dut</target>
+        <target state="translated">Pasahitza ahaztu dut</target>
       </trans-unit>
-      <trans-unit id="D3_ygfb" resname="Register a new account">
+      <trans-unit id="D3_ygfb" resname="Register a new account" xml:space="preserve" approved="no">
         <source>Register a new account</source>
-        <target>Kontu berria sortu</target>
+        <target state="translated">Kontu berria sortu</target>
       </trans-unit>
-      <trans-unit id="MKZCFur" resname="View all">
+      <trans-unit id="MKZCFur" resname="View all" xml:space="preserve" approved="no">
         <source>View all</source>
-        <target>Dena ikusi</target>
+        <target state="translated">Dena ikusi</target>
       </trans-unit>
-      <trans-unit id="hSzABam" resname="You have %count% notifications">
+      <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve" approved="no">
         <source>You have %count% notifications</source>
-        <target>Jakinarazpen bat daukazu|%count% jakinarazpen dauzkazu</target>
+        <target state="translated">Jakinarazpen bat daukazu|%count% jakinarazpen dauzkazu</target>
       </trans-unit>
-      <trans-unit id="WNPKqNj" resname="You have %count% messages">
+      <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve" approved="no">
         <source>You have %count% messages</source>
-        <target>Mezu bat daukazu|%count% mezu dauzkazu</target>
+        <target state="translated">Mezu bat daukazu|%count% mezu dauzkazu</target>
       </trans-unit>
-      <trans-unit id="ZnUEpF." resname="You have %count% tasks">
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve" approved="no">
         <source>You have %count% tasks</source>
-        <target>Lan bat daukazu|%count% lan dauzkazu</target>
+        <target state="translated">Lan bat daukazu|%count% lan dauzkazu</target>
       </trans-unit>
-      <trans-unit id="1bPaXpN" resname="%progress%% Complete">
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete" xml:space="preserve" approved="no">
         <source>%progress%% Complete</source>
-        <target>%%progress% egina</target>
+        <target state="translated">%%progress% egina</target>
       </trans-unit>
-      <trans-unit id="KLIuHvt" resname="This is a mandatory field">
+      <trans-unit id="KLIuHvt" resname="This is a mandatory field" xml:space="preserve" approved="no">
         <source>This is a mandatory field</source>
-        <target>Derrigorezko sarrera</target>
+        <target state="translated">Derrigorezko sarrera</target>
       </trans-unit>
-      <trans-unit id="B.ZozIs" resname="registration.confirmed">
+      <trans-unit id="B.ZozIs" resname="registration.confirmed" xml:space="preserve" approved="no">
         <source>registration.confirmed</source>
-        <target>Zorionak %username%, zure kontua aktibatua dago.</target>
+        <target state="translated">Zorionak %username%, zure kontua aktibatua dago.</target>
       </trans-unit>
-      <trans-unit id="rtYKRSj" resname="http_error.title">
+      <trans-unit id="rtYKRSj" resname="http_error.title" xml:space="preserve" approved="no">
         <source>http_error.title</source>
-        <target>Arazoa</target>
+        <target state="translated">Arazoa</target>
       </trans-unit>
-      <trans-unit id="e3w.2Rf" resname="http_error.description">
+      <trans-unit id="e3w.2Rf" resname="http_error.description" xml:space="preserve" approved="no">
         <source>http_error.description</source>
-        <target>Zeozer txarto irten da</target>
+        <target state="translated">Zeozer txarto irten da</target>
       </trans-unit>
-      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion" xml:space="preserve" approved="no">
         <source>http_error.suggestion</source>
-        <target>
+        <target state="translated">
                     Ustegabeko arazo bat suertatu da. Berriro saiatu, mesedez.
                     Arazoak jarraituko balu, teknikari edo arduradun batekin harremantetan jarri, mesedez.
                 </target>
       </trans-unit>
-      <trans-unit id="_W1eNz2" resname="http_error_404.description">
+      <trans-unit id="_W1eNz2" resname="http_error_404.description" xml:space="preserve" approved="no">
         <source>http_error_404.description</source>
-        <target>Orria ez da aurkitu</target>
+        <target state="translated">Orria ez da aurkitu</target>
       </trans-unit>
-      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion" xml:space="preserve" approved="no">
         <source>http_error_404.suggestion</source>
-        <target>
+        <target state="translated">
                     Ez dugu bilatzen duzuna aurkitzen.
                     Orrialde nagusira itzuli eta berriro saiatu, mesedez.
                 </target>
       </trans-unit>
-      <trans-unit id="Qn5rwdU" resname="http_error_403.description">
+      <trans-unit id="Qn5rwdU" resname="http_error_403.description" xml:space="preserve" approved="no">
         <source>http_error_403.description</source>
-        <target>Sarrera mugatua</target>
+        <target state="translated">Sarrera mugatua</target>
       </trans-unit>
-      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion" xml:space="preserve" approved="no">
         <source>http_error_403.suggestion</source>
-        <target>
+        <target state="translated">
                     Orrialde hau ikusteko baimen nahikorik ez duzu.
                 </target>
       </trans-unit>

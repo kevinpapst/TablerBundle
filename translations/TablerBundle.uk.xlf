@@ -15,7 +15,7 @@
         <target state="translated">Перемикання видимості</target>
       </trans-unit>
       <trans-unit id="vMC8yRQ" resname="Sign In" xml:space="preserve" approved="no">
-        <source>Sign In</source>
+        <source>Log in</source>
         <target state="translated">Увійти</target>
       </trans-unit>
       <trans-unit id="D3_ygfb" resname="Register a new account" xml:space="preserve" approved="no">
@@ -39,11 +39,11 @@
         <target state="translated">Запам'ятати мене</target>
       </trans-unit>
       <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
-        <source>Sign in to start your session</source>
+        <source>Login</source>
         <target state="translated">Логін</target>
       </trans-unit>
       <trans-unit id="SPDT05f" resname="Sign out" xml:space="preserve" approved="no">
-        <source>Sign out</source>
+        <source>Log out</source>
         <target state="translated">Вийти</target>
       </trans-unit>
       <trans-unit id="1pajW90" resname="Profile" xml:space="preserve" approved="no">

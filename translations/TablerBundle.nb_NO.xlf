@@ -2,36 +2,36 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="nb-NO" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
-      <trans-unit id="rtYKRSj" resname="http_error.title">
+      <trans-unit id="rtYKRSj" resname="http_error.title" xml:space="preserve" approved="no">
         <source>http_error.title</source>
-        <target>Feil</target>
+        <target state="translated">Feil</target>
       </trans-unit>
-      <trans-unit id="e3w.2Rf" resname="http_error.description">
+      <trans-unit id="e3w.2Rf" resname="http_error.description" xml:space="preserve" approved="no">
         <source>http_error.description</source>
-        <target>Noe gikk galt</target>
+        <target state="translated">Noe gikk galt</target>
       </trans-unit>
-      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion" xml:space="preserve" approved="no">
         <source>http_error.suggestion</source>
         <target state="needs-translation">En kritisk feil oppstod. Prøv igjen. Det kan hende det er et programvareproblem. Kontakt din administrator hvis problemet vedvarer.</target>
       </trans-unit>
-      <trans-unit id="_W1eNz2" resname="http_error_404.description">
+      <trans-unit id="_W1eNz2" resname="http_error_404.description" xml:space="preserve" approved="no">
         <source>http_error_404.description</source>
-        <target>Fant ikke siden</target>
+        <target state="translated">Fant ikke siden</target>
       </trans-unit>
-      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion" xml:space="preserve" approved="no">
         <source>http_error_404.suggestion</source>
-        <target>Fant ikke siden du søker. Gå tilbake til oversikten og prøv igjen.</target>
+        <target state="translated">Fant ikke siden du søker. Gå tilbake til oversikten og prøv igjen.</target>
       </trans-unit>
-      <trans-unit id="Qn5rwdU" resname="http_error_403.description">
+      <trans-unit id="Qn5rwdU" resname="http_error_403.description" xml:space="preserve" approved="no">
         <source>http_error_403.description</source>
-        <target>Begrenset side</target>
+        <target state="translated">Begrenset side</target>
       </trans-unit>
-      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion" xml:space="preserve" approved="no">
         <source>http_error_403.suggestion</source>
         <target state="needs-translation">Du har ikke tilgang til siden. Ta det opp med din administrator hvis du tror dette er en feil.</target>
       </trans-unit>
       <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
-        <source>Log in</source>
+        <source>Login</source>
         <target state="needs-translation">Logg inn</target>
       </trans-unit>
       <trans-unit id="B.ZozIs" resname="registration.confirmed" xml:space="preserve" approved="no">

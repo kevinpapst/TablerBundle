@@ -10,9 +10,9 @@
         <source>Remember Me</source>
         <target state="translated">לזכור אותי</target>
       </trans-unit>
-      <trans-unit id="8FGIkAR" resname="Sign in to start your session">
-        <source>Sign in to start your session</source>
-        <target>כניסה</target>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
+        <source>Login</source>
+        <target state="translated">כניסה</target>
       </trans-unit>
       <trans-unit id="vMC8yRQ" resname="Sign In" xml:space="preserve" approved="no">
         <source>Log in</source>
@@ -26,41 +26,41 @@
         <source>Register</source>
         <target state="translated">הרשמה</target>
       </trans-unit>
-      <trans-unit id="1pajW90" resname="Profile">
+      <trans-unit id="1pajW90" resname="Profile" xml:space="preserve" approved="no">
         <source>Profile</source>
-        <target>הפרופיל שלך</target>
+        <target state="translated">הפרופיל שלך</target>
       </trans-unit>
       <trans-unit id="DX2c6C2" resname="Member since %date%" xml:space="preserve" approved="no">
         <source>Member since %date%</source>
         <target state="translated">חברות מאז %date%</target>
       </trans-unit>
-      <trans-unit id="47ienTP" resname="Username">
+      <trans-unit id="47ienTP" resname="Username" xml:space="preserve" approved="no">
         <source>Username</source>
-        <target>שם משתמש</target>
+        <target state="translated">שם משתמש</target>
       </trans-unit>
       <trans-unit id="6.zSWXT" resname="Username or email address" xml:space="preserve" approved="no">
         <source>Username or email address</source>
         <target state="translated">שם משתמש או דוא״ל</target>
       </trans-unit>
-      <trans-unit id="588_9PF" resname="Password">
+      <trans-unit id="588_9PF" resname="Password" xml:space="preserve" approved="no">
         <source>Password</source>
-        <target>סיסמה</target>
+        <target state="translated">סיסמה</target>
       </trans-unit>
       <trans-unit id="nQDUTyy" resname="Show homepage" xml:space="preserve" approved="no">
         <source>Show homepage</source>
         <target state="translated">הצגת דף הבית</target>
       </trans-unit>
-      <trans-unit id="PjgG.xc" resname="Back to login">
+      <trans-unit id="PjgG.xc" resname="Back to login" xml:space="preserve" approved="no">
         <source>Back to login</source>
-        <target>חזרה למסך הכניסה</target>
+        <target state="translated">חזרה למסך הכניסה</target>
       </trans-unit>
-      <trans-unit id="WfpDeb4" resname="Reset your password">
+      <trans-unit id="WfpDeb4" resname="Reset your password" xml:space="preserve" approved="no">
         <source>Reset your password</source>
-        <target>איפוס סיסמה</target>
+        <target state="translated">איפוס סיסמה</target>
       </trans-unit>
-      <trans-unit id="YOlNDxu" resname="I forgot my password">
+      <trans-unit id="YOlNDxu" resname="I forgot my password" xml:space="preserve" approved="no">
         <source>I forgot my password</source>
-        <target>שכחתי סיסמה</target>
+        <target state="translated">שכחתי סיסמה</target>
       </trans-unit>
       <trans-unit id="D3_ygfb" resname="Register a new account" xml:space="preserve" approved="no">
         <source>Register a new account</source>
@@ -86,17 +86,17 @@
         <source>%progress%% Complete</source>
         <target state="translated">%progress%% הושלמו</target>
       </trans-unit>
-      <trans-unit id="KLIuHvt" resname="This is a mandatory field">
+      <trans-unit id="KLIuHvt" resname="This is a mandatory field" xml:space="preserve" approved="no">
         <source>This is a mandatory field</source>
-        <target>זהו שדה חובה</target>
+        <target state="translated">זהו שדה חובה</target>
       </trans-unit>
       <trans-unit id="B.ZozIs" resname="registration.confirmed" xml:space="preserve" approved="no">
         <source>registration.confirmed</source>
         <target state="translated">ברוך בואך %username%, החשבון שלך הופעל.</target>
       </trans-unit>
-      <trans-unit id="rtYKRSj" resname="http_error.title">
+      <trans-unit id="rtYKRSj" resname="http_error.title" xml:space="preserve" approved="no">
         <source>http_error.title</source>
-        <target>שגיאה</target>
+        <target state="translated">שגיאה</target>
       </trans-unit>
       <trans-unit id="e3w.2Rf" resname="http_error.description" xml:space="preserve" approved="no">
         <source>http_error.description</source>

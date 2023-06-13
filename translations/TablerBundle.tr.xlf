@@ -2,107 +2,107 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="tr" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
-      <trans-unit id="38Hm0Wu" resname="Toggle navigation">
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation" xml:space="preserve" approved="no">
         <source>Toggle navigation</source>
-        <target>Menüyü Aç/Kapa</target>
+        <target state="translated">Menüyü Aç/Kapa</target>
       </trans-unit>
-      <trans-unit id="KpL2_.m" resname="Remember Me">
+      <trans-unit id="KpL2_.m" resname="Remember Me" xml:space="preserve" approved="no">
         <source>Remember Me</source>
-        <target>Beni Hatırla</target>
+        <target state="translated">Beni Hatırla</target>
       </trans-unit>
-      <trans-unit id="8FGIkAR" resname="Sign in to start your session">
-        <source>Sign in to start your session</source>
-        <target>Giriş</target>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
+        <source>Login</source>
+        <target state="translated">Giriş</target>
       </trans-unit>
-      <trans-unit id="vMC8yRQ" resname="Sign In">
-        <source>Sign In</source>
-        <target>Giriş</target>
+      <trans-unit id="vMC8yRQ" resname="Sign In" xml:space="preserve" approved="no">
+        <source>Log in</source>
+        <target state="translated">Giriş</target>
       </trans-unit>
-      <trans-unit id="SPDT05f" resname="Sign out">
-        <source>Sign out</source>
-        <target>Çıkış</target>
+      <trans-unit id="SPDT05f" resname="Sign out" xml:space="preserve" approved="no">
+        <source>Log out</source>
+        <target state="translated">Çıkış</target>
       </trans-unit>
-      <trans-unit id="u3I07BJ" resname="Register">
+      <trans-unit id="u3I07BJ" resname="Register" xml:space="preserve" approved="no">
         <source>Register</source>
-        <target>Kayıt ol</target>
+        <target state="translated">Kayıt ol</target>
       </trans-unit>
-      <trans-unit id="1pajW90" resname="Profile">
+      <trans-unit id="1pajW90" resname="Profile" xml:space="preserve" approved="no">
         <source>Profile</source>
-        <target>Profilim</target>
+        <target state="translated">Profilim</target>
       </trans-unit>
-      <trans-unit id="DX2c6C2" resname="Member since %date%">
+      <trans-unit id="DX2c6C2" resname="Member since %date%" xml:space="preserve" approved="no">
         <source>Member since %date%</source>
-        <target>%date% tarihinden beri üye</target>
+        <target state="translated">%date% tarihinden beri üye</target>
       </trans-unit>
-      <trans-unit id="47ienTP" resname="Username">
+      <trans-unit id="47ienTP" resname="Username" xml:space="preserve" approved="no">
         <source>Username</source>
-        <target>Kullanıcı adı</target>
+        <target state="translated">Kullanıcı adı</target>
       </trans-unit>
-      <trans-unit id="6.zSWXT" resname="Username or email address">
+      <trans-unit id="6.zSWXT" resname="Username or email address" xml:space="preserve" approved="no">
         <source>Username or email address</source>
-        <target>Kullanıcı adı ya da e-posta adresi</target>
+        <target state="translated">Kullanıcı adı ya da e-posta adresi</target>
       </trans-unit>
-      <trans-unit id="588_9PF" resname="Password">
+      <trans-unit id="588_9PF" resname="Password" xml:space="preserve" approved="no">
         <source>Password</source>
-        <target>Şifre</target>
+        <target state="translated">Şifre</target>
       </trans-unit>
       <trans-unit id="nQDUTyy" resname="Show homepage" xml:space="preserve" approved="no">
         <source>Show homepage</source>
         <target state="translated">Ana sayfayı göster</target>
       </trans-unit>
-      <trans-unit id="PjgG.xc" resname="Back to login">
+      <trans-unit id="PjgG.xc" resname="Back to login" xml:space="preserve" approved="no">
         <source>Back to login</source>
-        <target>Giriş sayfasına dön</target>
+        <target state="translated">Giriş sayfasına dön</target>
       </trans-unit>
-      <trans-unit id="WfpDeb4" resname="Reset your password">
+      <trans-unit id="WfpDeb4" resname="Reset your password" xml:space="preserve" approved="no">
         <source>Reset your password</source>
-        <target>Şifreyi sıfırla</target>
+        <target state="translated">Şifreyi sıfırla</target>
       </trans-unit>
-      <trans-unit id="YOlNDxu" resname="I forgot my password">
+      <trans-unit id="YOlNDxu" resname="I forgot my password" xml:space="preserve" approved="no">
         <source>I forgot my password</source>
-        <target>Şifremi unuttum</target>
+        <target state="translated">Şifremi unuttum</target>
       </trans-unit>
-      <trans-unit id="D3_ygfb" resname="Register a new account">
+      <trans-unit id="D3_ygfb" resname="Register a new account" xml:space="preserve" approved="no">
         <source>Register a new account</source>
-        <target>Yeni hesap aç</target>
+        <target state="translated">Yeni hesap aç</target>
       </trans-unit>
-      <trans-unit id="MKZCFur" resname="View all">
+      <trans-unit id="MKZCFur" resname="View all" xml:space="preserve" approved="no">
         <source>View all</source>
-        <target>Tümünü göster</target>
+        <target state="translated">Tümünü göster</target>
       </trans-unit>
-      <trans-unit id="hSzABam" resname="You have %count% notifications">
+      <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve" approved="no">
         <source>You have %count% notifications</source>
-        <target>1 yeni bildiriminiz var|%count% bildiriminiz var</target>
+        <target state="translated">1 yeni bildiriminiz var|%count% bildiriminiz var</target>
       </trans-unit>
-      <trans-unit id="WNPKqNj" resname="You have %count% messages">
+      <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve" approved="no">
         <source>You have %count% messages</source>
-        <target>1 yeni mesajınız var|%count% yeni mesajınız var</target>
+        <target state="translated">1 yeni mesajınız var|%count% yeni mesajınız var</target>
       </trans-unit>
-      <trans-unit id="ZnUEpF." resname="You have %count% tasks">
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve" approved="no">
         <source>You have %count% tasks</source>
-        <target>1 göreviniz var|%count% göreviniz var</target>
+        <target state="translated">1 göreviniz var|%count% göreviniz var</target>
       </trans-unit>
-      <trans-unit id="1bPaXpN" resname="%progress%% Complete">
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete" xml:space="preserve" approved="no">
         <source>%progress%% Complete</source>
-        <target>%progress%% tamamlandı</target>
+        <target state="translated">%progress%% tamamlandı</target>
       </trans-unit>
-      <trans-unit id="KLIuHvt" resname="This is a mandatory field">
+      <trans-unit id="KLIuHvt" resname="This is a mandatory field" xml:space="preserve" approved="no">
         <source>This is a mandatory field</source>
-        <target>Zorunlu alan</target>
+        <target state="translated">Zorunlu alan</target>
       </trans-unit>
-      <trans-unit id="B.ZozIs" resname="registration.confirmed">
+      <trans-unit id="B.ZozIs" resname="registration.confirmed" xml:space="preserve" approved="no">
         <source>registration.confirmed</source>
-        <target>Tebrikler %username%. Hesabınız şu anda aktifleştirildi.</target>
+        <target state="translated">Tebrikler %username%. Hesabınız şu anda aktifleştirildi.</target>
       </trans-unit>
-      <trans-unit id="rtYKRSj" resname="http_error.title">
+      <trans-unit id="rtYKRSj" resname="http_error.title" xml:space="preserve">
         <source>http_error.title</source>
         <target state="translated">Hata</target>
       </trans-unit>
-      <trans-unit id="e3w.2Rf" resname="http_error.description">
+      <trans-unit id="e3w.2Rf" resname="http_error.description" xml:space="preserve">
         <source>http_error.description</source>
         <target state="translated">Ups! Bir hata oluştu</target>
       </trans-unit>
-      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion" xml:space="preserve">
         <source>http_error.suggestion</source>
         <target state="translated">
                     Beklenmeyen bir hata oluştu, tekrar deneyin.
@@ -110,7 +110,7 @@
                     yöneticiyle iletişime geçiniz.
                 </target>
       </trans-unit>
-      <trans-unit id="_W1eNz2" resname="http_error_404.description">
+      <trans-unit id="_W1eNz2" resname="http_error_404.description" xml:space="preserve">
         <source>http_error_404.description</source>
         <target state="translated">Sayfa bulunamadı</target>
       </trans-unit>
@@ -118,11 +118,11 @@
         <source>http_error_404.suggestion</source>
         <target state="translated">Aradığınız sayfayı bulamadık. Lütfen denetim panelinize geri dönün ve baştan başlayın.</target>
       </trans-unit>
-      <trans-unit id="Qn5rwdU" resname="http_error_403.description">
+      <trans-unit id="Qn5rwdU" resname="http_error_403.description" xml:space="preserve">
         <source>http_error_403.description</source>
         <target state="translated">Bu sayfaya erişim kısıtlı</target>
       </trans-unit>
-      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion" xml:space="preserve">
         <source>http_error_403.suggestion</source>
         <target state="translated">Üzgünüz, ancak bu sayfayı görmek için yeterli izniniz yok. Bunun bir hata olduğunu düşünüyorsanız lütfen yöneticinizle görüşün.</target>
       </trans-unit>
