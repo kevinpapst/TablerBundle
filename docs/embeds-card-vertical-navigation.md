@@ -71,7 +71,7 @@ All content tab must be rendered
     }
 ] %}
 
-{% embed '@Tabler/embeds/card-vertical-navigation.thml.twig' with {items : items} %}{% endembed %}
+{% embed '@Tabler/embeds/card-vertical-navigation.html.twig' with {items : items} %}{% endembed %}
 ```
 
 ![card nav](https://user-images.githubusercontent.com/25293190/193552217-791b1294-811d-4cd8-8222-2cef684ef17c.gif)
@@ -101,7 +101,7 @@ Only one tab content is completed, rest is only for navigation between urls
     },
 ] %}
 
-{% embed '@Tabler/embeds/card-vertical-navigation.thml.twig' with {items : items} %}
+{% embed '@Tabler/embeds/card-vertical-navigation.html.twig' with {items : items} %}
     {% block content %}
         <h1>Notifications</h1>
 
@@ -138,7 +138,7 @@ Only one tab content is completed, rest is only for navigation between urls
 
 <div class="row">
     <div class="col-3">
-        {% embed '@Tabler/embeds/card-vertical-navigation.thml.twig' with {items : items} %}
+        {% embed '@Tabler/embeds/card-vertical-navigation.html.twig' with {items : items} %}
             {% block nav_size %}col{% endblock %}
             {% block nav_border %}{% endblock %}
             {% block content_display %}d-none{% endblock %}
