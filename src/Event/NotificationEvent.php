@@ -16,7 +16,7 @@ class NotificationEvent extends ThemeEvent
     /**
      * @var array<NotificationInterface>
      */
-    private $notifications = [];
+    private array $notifications = [];
 
     /**
      * @param int|null $max

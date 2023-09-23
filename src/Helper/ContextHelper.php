@@ -9,11 +9,19 @@
 
 namespace KevinPapst\TablerBundle\Helper;
 
+/**
+ * @extends \ArrayObject<string, mixed>
+ */
 class ContextHelper extends \ArrayObject
 {
     public function getLogoUrl(): ?string
     {
-        return $this->getOption('logo_url');
+        $logo = $this->getOption('logo_url');
+        if (\is_string($logo)) {
+            return $logo;
+        }
+
+        return null;
     }
 
     public function setLogoUrl(?string $logo): void
@@ -73,7 +81,12 @@ class ContextHelper extends \ArrayObject
 
     public function getAssetVersion(): string
     {
-        return (string) $this->getOption('asset_version');
+        $version = $this->getOption('asset_version');
+        if (\is_string($version)) {
+            return $version;
+        }
+
+        return '1.0';
     }
 
     public function setAssetVersion(string $assetVersion): void
@@ -113,7 +126,12 @@ class ContextHelper extends \ArrayObject
 
     public function getSecurityCoverUrl(): string
     {
-        return (string) $this->getOption('security_cover_url');
+        $cover = $this->getOption('security_cover_url');
+        if (\is_string($cover)) {
+            return $cover;
+        }
+
+        return '';
     }
 
     public function setSecurityCoverUrl(string $url): void
@@ -121,16 +139,15 @@ class ContextHelper extends \ArrayObject
         $this->setOption('security_cover_url', $url);
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getOptions(): array
     {
         return $this->getArrayCopy();
     }
 
-    /**
-     * @param string $name
-     * @param mixed|null $value
-     */
-    public function setOption(string $name, $value): void
+    public function setOption(string $name, mixed $value): void
     {
         $this->offsetSet($name, $value);
     }
@@ -140,12 +157,7 @@ class ContextHelper extends \ArrayObject
         return $this->offsetExists($name);
     }
 
-    /**
-     * @param string $name
-     * @param mixed $default
-     * @return mixed|null
-     */
-    public function getOption(string $name, $default = null)
+    public function getOption(string $name, mixed $default = null): mixed
     {
         return $this->offsetExists($name) ? $this->offsetGet($name) : $default;
     }

@@ -33,7 +33,7 @@ class TablerExtension extends Extension implements PrependExtensionInterface
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
         $loader->load('services.yml');
 
-        if ($options['knp_menu']['enable'] === true) {
+        if (\array_key_exists('knp_menu', $options) && \array_key_exists('enable', $options['knp_menu']) && $options['knp_menu']['enable'] === true) {
             $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../../config/container'));
             $loader->load('knp-menu.yml');
         }
@@ -42,13 +42,13 @@ class TablerExtension extends Extension implements PrependExtensionInterface
     /**
      * Merge available configuration options, so they are all available for the ContextHelper.
      *
-     * @param array $config
-     * @return array
+     * @param array<string, mixed> $config
+     * @return array<string, array<string, mixed>>
      */
-    protected function getContextOptions(array $config = []): array
+    private function getContextOptions(array $config): array
     {
         $contextOptions = (array) ($config['options'] ?? []);
-        $contextOptions['knp_menu'] = (array) $config['knp_menu'];
+        $contextOptions['knp_menu'] = (array) ($config['knp_menu'] ?? []);
 
         return $contextOptions;
     }

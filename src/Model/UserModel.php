@@ -11,27 +11,11 @@ namespace KevinPapst\TablerBundle\Model;
 
 final class UserModel implements UserInterface
 {
-    /**
-     * @var string
-     */
-    private $id;
-    /**
-     * @var string
-     */
-    private $name;
-    /**
-     * @var string|null
-     */
-    private $title;
-    /**
-     * @var string|null
-     */
-    private $avatar;
+    private ?string $title = null;
+    private ?string $avatar = null;
 
-    public function __construct(string $id, string $name)
+    public function __construct(private string $id, private string $name)
     {
-        $this->id = $id;
-        $this->name = $name;
     }
 
     public function getId(): string
@@ -74,7 +58,15 @@ final class UserModel implements UserInterface
         return $this->title;
     }
 
+    /**
+     * @deprecated use getUserIdentifier instead
+     */
     public function getIdentifier(): string
+    {
+        return $this->getUserIdentifier();
+    }
+
+    public function getUserIdentifier(): string
     {
         if (!empty($this->id)) {
             return $this->id;
