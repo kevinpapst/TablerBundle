@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
  */
 class UserModelTest extends TestCase
 {
-    public function testGetIdentifier()
+    public function testGetIdentifier(): void
     {
         $sut = new UserModel('foo', 'bar');
         $this->assertEquals('foo', $sut->getIdentifier());

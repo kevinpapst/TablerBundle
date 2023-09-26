@@ -18,7 +18,7 @@ use Symfony\Component\Config\Definition\Processor;
  */
 class ConfigurationTest extends TestCase
 {
-    public function testDefaultConfiguration()
+    public function testDefaultConfiguration(): void
     {
         $configuration = new Configuration();
         $processor = new Processor();
@@ -32,7 +32,7 @@ class ConfigurationTest extends TestCase
         $this->assertEquals($expected, $processedConfig);
     }
 
-    public function testFullConfiguration()
+    public function testFullConfiguration(): void
     {
         $configuration = new Configuration();
         $processor = new Processor();
@@ -44,7 +44,10 @@ class ConfigurationTest extends TestCase
         $this->assertEquals($config['tabler'], $processedConfig);
     }
 
-    protected function getDefaultConfig()
+    /**
+     * @return array<string, array<string, array<string, mixed>>>
+     */
+    protected function getDefaultConfig(): array
     {
         return [
             'tabler' => [

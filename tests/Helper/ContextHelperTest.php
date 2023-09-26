@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
  */
 class ContextHelperTest extends TestCase
 {
-    public function testOptions()
+    public function testOptions(): void
     {
         $input = [
             'foo' => 'bar',

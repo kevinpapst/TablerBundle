@@ -20,15 +20,10 @@ class MenuEvent extends ThemeEvent
     /**
      * @var MenuItemInterface[]
      */
-    private $menuRootItems = [];
-    /**
-     * @var Request
-     */
-    private $request;
+    private array $menuRootItems = [];
 
-    public function __construct(Request $request)
+    public function __construct(private Request $request)
     {
-        $this->request = $request;
     }
 
     public function getRequest(): Request
