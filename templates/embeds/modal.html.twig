@@ -1,6 +1,7 @@
 {% set _id = id ?? (block('modal_id') is defined ? block('modal_id') : ('modal-' ~ random())) %}
 {% set _close = (close ?? true) is same as true %}
 {% set _header = (header ?? true) is same as true %}
+{% set _footer = (footer ?? true) is same as true %}
 {% set _status = status ?? null %}
 
 <div {% block modal_attributes %}{% endblock %} class="modal modal-blur fade {% block modal_class %}{% endblock %}" id="{{ _id }}" tabindex="-1" role="dialog"{% if _header  %} aria-labelledby="{{ _id }}_label"{% endif %}>
@@ -17,9 +18,11 @@
             <div {% block modal_body_attributes %}{% endblock %} class="modal-body {% block modal_body_class %}{% endblock %}">
                 {% block modal_body %}{% endblock %}
             </div>
-            <div {% block modal_footer_attributes %}{% endblock %} class="modal-footer {% block modal_footer_class %}{% endblock %}">
-                {% block modal_footer %}{% endblock %}
-            </div>
+            {% if _footer %}
+                <div {% block modal_footer_attributes %}{% endblock %} class="modal-footer {% block modal_footer_class %}{% endblock %}">
+                    {% block modal_footer %}{% endblock %}
+                </div>
+            {% endif %}
             {% block modal_end %}{% endblock %}
         </div>
     </div>
