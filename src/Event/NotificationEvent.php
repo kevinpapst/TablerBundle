@@ -13,22 +13,37 @@ use KevinPapst\TablerBundle\Model\NotificationInterface;
 
 class NotificationEvent extends ThemeEvent
 {
-    /**
-     * @var array<NotificationInterface>
-     */
+    public ?string $title = null;
+
+    public ?string $emptyTitle = null;
+
+    public bool $withArrow = true;
+
+    public string $badgeColor = 'red';
+
+    public bool $showBadgeTotal = true;
+
     private array $notifications = [];
 
+    public int $maxDisplay = 10;
+
     /**
-     * @param int|null $max
-     * @return NotificationInterface[]
+     * @return array<int,NotificationInterface>
      */
     public function getNotifications(?int $max = 10): array
     {
-        if (null !== $max) {
-            return \array_slice($this->notifications, 0, $max);
+        $notifications = array_filter(
+            $this->notifications,
+            fn(NotificationInterface $notification) => $notification->isValid()
+        );
+
+        if ($max === null) {
+            return $notifications;
+        } elseif ($max !== 10) {
+            trigger_deprecation('kevinpapst/tabler-bundle', '1.1.0', 'Using $max is this function is deprecated. Set $maxDisplay inside the event instead!');
         }
 
-        return $this->notifications;
+        return \array_slice($notifications, 0, $this->maxDisplay);
     }
 
     public function addNotification(NotificationInterface $notificationInterface): void
@@ -38,6 +53,6 @@ class NotificationEvent extends ThemeEvent
 
     public function getTotal(): int
     {
-        return \count($this->notifications);
+        return \count($this->getNotifications(null));
     }
 }

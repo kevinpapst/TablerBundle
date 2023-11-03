@@ -91,10 +91,6 @@ final class RuntimeExtension implements RuntimeExtensionInterface
         /** @var NotificationEvent $listEvent */
         $listEvent = $this->eventDispatcher->dispatch(new NotificationEvent());
 
-        if ($listEvent->getTotal() === 0) {
-            return null;
-        }
-
         return $listEvent;
     }
 
