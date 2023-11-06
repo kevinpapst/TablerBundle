@@ -85,7 +85,7 @@ final class RuntimeExtension implements RuntimeExtensionInterface
     public function getNotifications(): ?NotificationEvent
     {
         if (!$this->eventDispatcher->hasListeners(NotificationEvent::class)) {
-            return null;
+            return new NotificationEvent();
         }
 
         /** @var NotificationEvent $listEvent */

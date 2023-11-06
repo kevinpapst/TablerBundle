@@ -38,6 +38,21 @@ class NotificationEventTest extends TestCase
         $this->assertCount(3, $event->getNotifications());
     }
 
+    public function testVisible(): void
+    {
+        $event = new NotificationEvent();
+        // Should be hidden by default
+        $this->assertFalse($event->isVisible());
+
+        $event->addNotification(new NotificationModel('visible', 'Message'));
+        // Even with a single valid item, should be visible
+        $this->assertTrue($event->isVisible());
+
+        $event = new NotificationEvent(true);
+        // Forced to always visible
+        $this->assertTrue($event->isVisible());
+    }
+
     /**
      * Generate an array NotificationModel
      *

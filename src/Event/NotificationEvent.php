@@ -35,7 +35,25 @@ class NotificationEvent extends ThemeEvent
         return \count($this->getNotifications(null));
     }
 
-    public function __construct() { }
+    public function isVisible(): bool
+    {
+        return $this->getTotal() > 0 || ($this->getTotal() === 0 && $this->showIfEmpty);
+    }
+
+    public function __construct(
+        private bool $showIfEmpty = false,
+    ) {
+    }
+
+    public function isShowIfEmpty(): bool
+    {
+        return $this->showIfEmpty;
+    }
+
+    public function setShowIfEmpty(bool $showIfEmpty): void
+    {
+        $this->showIfEmpty = $showIfEmpty;
+    }
 
     public function getTitle(): ?string
     {

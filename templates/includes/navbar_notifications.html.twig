@@ -1,7 +1,7 @@
 {# @var notificationEvent \KevinPapst\TablerBundle\Event\NotificationEvent #}
 {% set notificationEvent = tabler_notifications() %}
 
-{% if notificationEvent %}
+{% if notificationEvent.visible %}
     <div class="nav-item dropdown d-none d-md-flex me-3">
         {# Notification Icon #}
         <a class="nav-link px-0" href="#"
