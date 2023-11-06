@@ -69,7 +69,7 @@
 
                         {# "More.." part #}
                         {% if notificationEvent.total > notificationEvent.maxDisplay %}
-                            <li class="list-group-item disabled">{{ 'And %count% more...' | trans({'%count%' : notificationEvent.total - notificationEvent.maxDisplay}, 'TablerBundle') }}</li>
+                            <li class="list-group-item disabled">{{ 'And %count% more…' | trans({'%count%' : notificationEvent.total - notificationEvent.maxDisplay}, 'TablerBundle') }}</li>
                         {% endif %}
                     </div>
                 {% endif %}

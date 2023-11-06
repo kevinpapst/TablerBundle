@@ -154,9 +154,9 @@
           <source>You have no notification</source>
           <target>You have no notification</target>
       </trans-unit>
-      <trans-unit id="Pf48Zd" resname="And %count% more...">
-          <source>And %count% more...</source>
-          <target>And %count% more...</target>
+      <trans-unit id="Pf48Zd" resname="And %count% more…">
+          <source>And %count% more…</source>
+          <target>And %count% more…</target>
       </trans-unit>
     </body>
   </file>
