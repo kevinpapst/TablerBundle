@@ -11,27 +11,20 @@ namespace KevinPapst\TablerBundle\Model;
 
 use KevinPapst\TablerBundle\Helper\Constants;
 
-class NotificationModel implements NotificationInterface
+class NotificationModel implements NotificationNextGenInterface
 {
-    // Simple link
     private ?string $url           = null;
     private bool    $active        = false;
     private bool    $disabled      = false;
     private bool    $withBadge     = true;
     private bool    $badgeAnimated = true;
 
-    // Custom HTML
-    private ?string $html = null;
-
-    public function isValid(): bool
-    {
-        return $this->message || $this->html;
-    }
+    private bool $html = false;
 
     public function __construct(
         private readonly string $id,
-        private ?string $message = null,
-        private ?string $type = Constants::TYPE_INFO
+        private string $message,
+        private string $type = Constants::TYPE_INFO
     ) {
     }
 
@@ -40,24 +33,24 @@ class NotificationModel implements NotificationInterface
         return $this->id;
     }
 
-    public function getMessage(): ?string
+    public function getMessage(): string
     {
         return $this->message;
     }
 
-    public function setMessage(?string $message): self
+    public function setMessage(string $message): self
     {
         $this->message = $message;
 
         return $this;
     }
 
-    public function getType(): ?string
+    public function getType(): string
     {
         return $this->type;
     }
 
-    public function setType(?string $type): self
+    public function setType(string $type): self
     {
         $this->type = $type;
 
@@ -124,15 +117,13 @@ class NotificationModel implements NotificationInterface
         return $this;
     }
 
-    public function getHtml(): ?string
+    public function isHtml(): bool
     {
         return $this->html;
     }
 
-    public function setHtml(?string $html): self
+    public function setHtml(bool $html): void
     {
         $this->html = $html;
-
-        return $this;
     }
 }

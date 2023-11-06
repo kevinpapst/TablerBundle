@@ -18,7 +18,10 @@
             {%- endif %}
         </a>
 
-        <div class="dropdown-menu {% if notificationEvent.withArrow %}dropdown-menu-arrow{% endif %} dropdown-menu-end dropdown-menu-card">
+        {# Dropdown #}
+        <div
+            class="dropdown-menu {% if notificationEvent.withArrow %}dropdown-menu-arrow{% endif %} dropdown-menu-end dropdown-menu-card"
+        >
             <div class="card">
                 {# Header #}
                 {% if notificationEvent.titleHtml %}
@@ -39,28 +42,32 @@
                 {% if notificationEvent.total > 0 %}
                     <div class="list-group list-group-flush list-group-hoverable">
                         {% for notification in notificationEvent.notifications %}
-                            {% if notification.valid %}
-                                {% if notification.html is not null %}
-                                    {{ notification.html | raw }}
-                                {% else %}
-                                    <div class="list-group-item {% if notification.active %}active{% endif %} {% if notification.disabled %}disabled{% endif %}">
-                                        <div class="row align-items-center">
-                                            {% if notification.withBadge %}
-                                                <div class='col-auto'>
-                                                    <div class="col-auto">
-                                                        <span class="status-dot {% if notification.badgeAnimated %}status-dot-animated{% endif %} {% if notification.type is not null %}bg-{{ notification.type }}{% endif %} d-block"></span>
-                                                    </div>
+                            {% if notification.html %}
+                                {{ notification.message | raw }}
+                            {% else %}
+                                <div
+                                    class="list-group-item {% if notification.active %}active{% endif %} {% if notification.disabled %}disabled{% endif %}"
+                                >
+                                    <div class="row align-items-center">
+                                        {% if notification.withBadge %}
+                                            <div class='col-auto'>
+                                                <div class="col-auto">
+                                                    <span
+                                                        class="status-dot {% if notification.badgeAnimated %}status-dot-animated{% endif %} {% if notification.type is not null %}bg-{{ notification.type }}{% endif %} d-block"
+                                                    ></span>
                                                 </div>
-                                            {% endif %}
-                                            <div class="col text-truncate">
-                                                <a class='text-muted text-truncate'
-                                                   href="{{ notification.url ?? '#' }}">{{ notification.message }}</a>
                                             </div>
+                                        {% endif %}
+                                        <div class="col text-truncate">
+                                            <a class='text-muted text-truncate'
+                                               href="{{ notification.url ?? '#' }}">{{ notification.message }}</a>
                                         </div>
                                     </div>
-                                {% endif %}
+                                </div>
                             {% endif %}
                         {% endfor %}
+
+                        {# "More.." part #}
                         {% if notificationEvent.total > notificationEvent.maxDisplay %}
                             <li class="list-group-item disabled">{{ 'And %count% more...' | trans({'%count%' : notificationEvent.total - notificationEvent.maxDisplay}, 'TablerBundle') }}</li>
                         {% endif %}

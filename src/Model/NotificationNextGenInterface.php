@@ -9,10 +9,7 @@
 
 namespace KevinPapst\TablerBundle\Model;
 
-/**
- * @deprecated Use NotificationNextGenInterface::class instead!
- */
-interface NotificationInterface
+interface NotificationNextGenInterface
 {
     public function getIdentifier(): string;
 
@@ -21,4 +18,14 @@ interface NotificationInterface
     public function getType(): string;
 
     public function getUrl(): ?string;
+
+    public function isActive(): bool;
+
+    public function isDisabled(): bool;
+
+    public function isWithBadge(): bool;
+
+    public function isBadgeAnimated(): bool;
+
+    public function isHtml(): bool;
 }
