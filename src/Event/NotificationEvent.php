@@ -15,7 +15,9 @@ class NotificationEvent extends ThemeEvent
 {
     private ?string $title = null;
 
-    private ?string $emptyTitle = null;
+    private ?string $titleEmpty = null;
+
+    private ?string $titleHtml = null;
 
     private bool $withArrow = true;
 
@@ -65,14 +67,24 @@ class NotificationEvent extends ThemeEvent
         $this->title = $title;
     }
 
-    public function getEmptyTitle(): ?string
+    public function getTitleEmpty(): ?string
     {
-        return $this->emptyTitle;
+        return $this->titleEmpty;
     }
 
-    public function setEmptyTitle(?string $emptyTitle): void
+    public function setTitleEmpty(?string $titleEmpty): void
     {
-        $this->emptyTitle = $emptyTitle;
+        $this->titleEmpty = $titleEmpty;
+    }
+
+    public function getTitleHtml(): ?string
+    {
+        return $this->titleHtml;
+    }
+
+    public function setTitleHtml(?string $titleHtml): void
+    {
+        $this->titleHtml = $titleHtml;
     }
 
     public function isWithArrow(): bool

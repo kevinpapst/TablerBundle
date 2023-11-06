@@ -21,15 +21,19 @@
         <div class="dropdown-menu {% if notificationEvent.withArrow %}dropdown-menu-arrow{% endif %} dropdown-menu-end dropdown-menu-card">
             <div class="card">
                 {# Header #}
-                <div class="card-header">
-                    <div class="card-title text-truncate">
-                        {% if notificationEvent.total > 0 %}
-                            {{ notificationEvent.title ?? 'You have %count% notifications'|trans({'%count%': notificationEvent.total}, 'TablerBundle') }}
-                        {% else %}
-                            {{ notificationEvent.emptyTitle ?? 'You have no notification'|trans({}, 'TablerBundle') }}
-                        {% endif %}
+                {% if notificationEvent.titleHtml %}
+                    {{ notificationEvent.titleHtml | raw }}
+                {% else %}
+                    <div class="card-header">
+                        <div class="card-title text-truncate">
+                            {% if notificationEvent.total > 0 %}
+                                {{ notificationEvent.title ?? 'You have %count% notifications'|trans({'%count%': notificationEvent.total}, 'TablerBundle') }}
+                            {% else %}
+                                {{ notificationEvent.titleEmpty ?? 'You have no notification'|trans({}, 'TablerBundle') }}
+                            {% endif %}
+                        </div>
                     </div>
-                </div>
+                {% endif %}
 
                 {# Notifications #}
                 {% if notificationEvent.total > 0 %}
