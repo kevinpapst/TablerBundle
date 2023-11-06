@@ -13,19 +13,89 @@ use KevinPapst\TablerBundle\Model\NotificationInterface;
 
 class NotificationEvent extends ThemeEvent
 {
-    public ?string $title = null;
+    private ?string $title = null;
 
-    public ?string $emptyTitle = null;
+    private ?string $emptyTitle = null;
 
-    public bool $withArrow = true;
+    private bool $withArrow = true;
 
-    public string $badgeColor = 'red';
+    private string $badgeColor = 'red';
 
-    public bool $showBadgeTotal = true;
+    private bool $showBadgeTotal = true;
 
+    private int $maxDisplay = 10;
+
+    /**
+     * @var $notifications array<int,NotificationInterface>
+     */
     private array $notifications = [];
 
-    public int $maxDisplay = 10;
+    public function getTotal(): int
+    {
+        return \count($this->getNotifications(null));
+    }
+
+    public function __construct() { }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(?string $title): void
+    {
+        $this->title = $title;
+    }
+
+    public function getEmptyTitle(): ?string
+    {
+        return $this->emptyTitle;
+    }
+
+    public function setEmptyTitle(?string $emptyTitle): void
+    {
+        $this->emptyTitle = $emptyTitle;
+    }
+
+    public function isWithArrow(): bool
+    {
+        return $this->withArrow;
+    }
+
+    public function setWithArrow(bool $withArrow): void
+    {
+        $this->withArrow = $withArrow;
+    }
+
+    public function getBadgeColor(): string
+    {
+        return $this->badgeColor;
+    }
+
+    public function setBadgeColor(string $badgeColor): void
+    {
+        $this->badgeColor = $badgeColor;
+    }
+
+    public function isShowBadgeTotal(): bool
+    {
+        return $this->showBadgeTotal;
+    }
+
+    public function setShowBadgeTotal(bool $showBadgeTotal): void
+    {
+        $this->showBadgeTotal = $showBadgeTotal;
+    }
+
+    public function getMaxDisplay(): int
+    {
+        return $this->maxDisplay;
+    }
+
+    public function setMaxDisplay(int $maxDisplay): void
+    {
+        $this->maxDisplay = $maxDisplay;
+    }
 
     /**
      * @return array<int,NotificationInterface>
@@ -40,19 +110,21 @@ class NotificationEvent extends ThemeEvent
         if ($max === null) {
             return $notifications;
         } elseif ($max !== 10) {
-            trigger_deprecation('kevinpapst/tabler-bundle', '1.1.0', 'Using $max is this function is deprecated. Set $maxDisplay inside the event instead!');
+            trigger_deprecation('kevinpapst/tabler-bundle', '1.1.0', 'Setting `$max` parameter is deprecated. Use setMaxDisplay() instead!');
         }
 
         return \array_slice($notifications, 0, $this->maxDisplay);
     }
 
-    public function addNotification(NotificationInterface $notificationInterface): void
+    public function addNotification(NotificationInterface $notification): void
     {
-        $this->notifications[] = $notificationInterface;
+        $this->notifications[] = $notification;
     }
 
-    public function getTotal(): int
+    public function removeNotification(NotificationInterface $notification): void
     {
-        return \count($this->getNotifications(null));
+        if (($key = array_search($notification, $this->notifications)) !== false) {
+            unset($this->notifications[$key]);
+        }
     }
 }
