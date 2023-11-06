@@ -13,11 +13,7 @@ use KevinPapst\TablerBundle\Helper\Constants;
 
 class NotificationModel implements NotificationInterface
 {
-    private string $id;
-
     // Simple link
-    private ?string $message       = null;
-    private ?string $type          = null;
     private ?string $url           = null;
     private bool    $active        = false;
     private bool    $disabled      = false;
@@ -33,13 +29,10 @@ class NotificationModel implements NotificationInterface
     }
 
     public function __construct(
-        string $id,
-        ?string $message = null,
-        ?string $type = Constants::TYPE_INFO
+        private readonly string $id,
+        private ?string $message = null,
+        private ?string $type = Constants::TYPE_INFO
     ) {
-        $this->id      = $id;
-        $this->message = $message;
-        $this->type    = $type;
     }
 
     public function getIdentifier(): string
