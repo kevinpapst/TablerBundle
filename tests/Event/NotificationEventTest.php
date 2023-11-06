@@ -6,7 +6,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace KevinPapst\TablerBundle\Tests\Event;
 
 use KevinPapst\TablerBundle\Event\NotificationEvent;
@@ -28,33 +27,47 @@ class NotificationEventTest extends TestCase
     public function testTotalsAndReceiveLimitedSet(): void
     {
         $event = new NotificationEvent();
-        $notifications = $this->generateNbNotifications(7);
-
-        foreach ($notifications as $notification) {
+        foreach ($this->generateNbNotifications() as $notification) {
             $event->addNotification($notification);
         }
 
         $this->assertEquals(7, $event->getTotal());
-        $this->assertEquals(7, \count($event->getNotifications()));
-        $this->assertEquals(3, \count($event->getNotifications(3)));
+        $this->assertCount(7, $event->getNotifications());
+
+        $event->setMaxDisplay(3);
+        $this->assertCount(3, $event->getNotifications());
     }
 
     /**
-     * Generate an array of nb tasks
-     * @param int $number
-     * @param string $type
-     * @return array|NotificationModel[]
+     * Generate an array NotificationModel
+     *
+     * @return array<int, NotificationModel>
      */
-    private function generateNbNotifications($number, $type = Constants::TYPE_INFO): array
+    private function generateNbNotifications(): array
     {
-        $tasks = [];
-        for ($i = 0; $i < $number; $i++) {
-            $tasks[] = new NotificationModel(
+        $arr = [];
+        for ($i = 0; $i < 6; $i++) {
+            $arr[] = new NotificationModel(
+                $i,
                 'Message ' . $i,
-                $type
+                array_rand(
+                    [
+                        Constants::TYPE_INFO,
+                        Constants::TYPE_WARNING,
+                        Constants::TYPE_ERROR,
+                        Constants::TYPE_SUCCESS,
+                    ]
+                )
             );
         }
 
-        return $tasks;
+        $notificationInvalid = new NotificationModel(8);
+        $arr[]               = $notificationInvalid;
+
+        $notificationHTML = new NotificationModel(9);
+        $notificationHTML->setHtml('<h1>Test HMTML</h1>');
+        $arr[] = $notificationHTML;
+
+        return $arr;
     }
 }
