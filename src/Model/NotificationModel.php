@@ -33,40 +33,14 @@ class NotificationModel implements NotificationNextGenInterface
         return $this->id;
     }
 
-    public function getMessage(): string
-    {
-        return $this->message;
-    }
-
-    public function setMessage(string $message): self
-    {
-        $this->message = $message;
-
-        return $this;
-    }
-
-    public function getType(): string
-    {
-        return $this->type;
-    }
-
-    public function setType(string $type): self
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
     public function getUrl(): ?string
     {
         return $this->url;
     }
 
-    public function setUrl(?string $url): self
+    public function setUrl(?string $url): void
     {
         $this->url = $url;
-
-        return $this;
     }
 
     public function isActive(): bool
@@ -74,11 +48,9 @@ class NotificationModel implements NotificationNextGenInterface
         return $this->active;
     }
 
-    public function setActive(bool $active): self
+    public function setActive(bool $active): void
     {
         $this->active = $active;
-
-        return $this;
     }
 
     public function isDisabled(): bool
@@ -86,11 +58,9 @@ class NotificationModel implements NotificationNextGenInterface
         return $this->disabled;
     }
 
-    public function setDisabled(bool $disabled): self
+    public function setDisabled(bool $disabled): void
     {
         $this->disabled = $disabled;
-
-        return $this;
     }
 
     public function isWithBadge(): bool
@@ -98,11 +68,9 @@ class NotificationModel implements NotificationNextGenInterface
         return $this->withBadge;
     }
 
-    public function setWithBadge(bool $withBadge): self
+    public function setWithBadge(bool $withBadge): void
     {
         $this->withBadge = $withBadge;
-
-        return $this;
     }
 
     public function isBadgeAnimated(): bool
@@ -110,11 +78,9 @@ class NotificationModel implements NotificationNextGenInterface
         return $this->badgeAnimated;
     }
 
-    public function setBadgeAnimated(bool $badgeAnimated): self
+    public function setBadgeAnimated(bool $badgeAnimated): void
     {
         $this->badgeAnimated = $badgeAnimated;
-
-        return $this;
     }
 
     public function isHtml(): bool
@@ -125,5 +91,25 @@ class NotificationModel implements NotificationNextGenInterface
     public function setHtml(bool $html): void
     {
         $this->html = $html;
+    }
+
+    public function getMessage(): string
+    {
+        return $this->message;
+    }
+
+    public function setMessage(string $message): void
+    {
+        $this->message = $message;
+    }
+
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): void
+    {
+        $this->type = $type;
     }
 }
