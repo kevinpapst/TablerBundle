@@ -1,10 +1,15 @@
 {% macro status_indicator(options) %}
+    {% import '@Tabler/includes/utils.html.twig' as utils %}
 
     {% set _color = options.color ?? 'green' %}
-    {% set _animated = options.animated ?? true %}
+    {% set _animated = (options.animated ?? true) is same as true %}
     {% set _extraClass = options.extraClass ?? '' %}
+    {% set _attr = options.attr ?? {} %}
 
-    <span class="status-indicator {{ _animated ? 'status-indicator-animated' : '' }} {{ 'status-'~_color }} {{ _extraClass }}">
+    <span
+        class="status-indicator {% if _animated %}status-indicator-animated{% endif %} {{ 'status-'~_color }} {{ _extraClass }}"
+        {{ utils.attr_to_html(_attr) }}
+    >
       <span class="status-indicator-circle"></span>
       <span class="status-indicator-circle"></span>
       <span class="status-indicator-circle"></span>
