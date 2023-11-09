@@ -14,3 +14,19 @@
         </span>
     {%- endapply -%}
 {% endmacro %}
+
+{% macro status_dot(options) %}
+    {% import '@Tabler/includes/utils.html.twig' as utils %}
+
+    {% set _color = options.color ?? null %}
+    {% set _animated = (options.animated ?? true) is same as true %}
+    {% set _extraClass = options.extraClass ?? '' %}
+    {% set _attr = options.attr ?? {} %}
+
+    {%- apply spaceless -%}
+        <span
+            class="status-dot {% if _animated %}status-dot-animated{% endif %} {% if _color is not null %}status-{{ _color }}{% endif %} {{ _extraClass }}"
+            {{ utils.attr_to_html(_attr) }}
+        ></span>
+    {%- endapply -%}
+{% endmacro %}
