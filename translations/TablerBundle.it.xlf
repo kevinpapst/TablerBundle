@@ -58,9 +58,9 @@
         <source>Reset your password</source>
         <target state="translated">Reimposta la tua password</target>
       </trans-unit>
-      <trans-unit id="YOlNDxu" resname="I forgot my password">
+      <trans-unit id="YOlNDxu" resname="I forgot my password" xml:space="preserve" approved="no">
         <source>I forgot my password</source>
-        <target>Ho dimenticato la mia password</target>
+        <target state="translated">Ho dimenticato la password</target>
       </trans-unit>
       <trans-unit id="D3_ygfb" resname="Register a new account">
         <source>Register a new account</source>
@@ -144,7 +144,7 @@
       </trans-unit>
       <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
         <source>Next</source>
-        <target state="translated">Prossimo</target>
+        <target state="translated">Successivo</target>
       </trans-unit>
     </body>
   </file>
