@@ -9,8 +9,8 @@
 
 namespace KevinPapst\TablerBundle\Event;
 
+use KevinPapst\TablerBundle\Model\NotificationV2Interface;
 use KevinPapst\TablerBundle\Model\NotificationInterface;
-use KevinPapst\TablerBundle\Model\NotificationNextGenInterface;
 
 class NotificationEvent extends ThemeEvent implements NotificationEventInterface
 {
@@ -29,7 +29,7 @@ class NotificationEvent extends ThemeEvent implements NotificationEventInterface
     private int $maxDisplay = 10;
 
     /**
-     * @var $notifications array<int, NotificationNextGenInterface>
+     * @var $notifications array<int,NotificationInterface | NotificationV2Interface>
      */
     private array $notifications = [];
 
@@ -129,7 +129,7 @@ class NotificationEvent extends ThemeEvent implements NotificationEventInterface
     }
 
     /**
-     * @return array<int, NotificationNextGenInterface>
+     * @return array<int,NotificationInterface | NotificationV2Interface>
      */
     public function getNotifications(?int $max = 10): array
     {
@@ -142,11 +142,11 @@ class NotificationEvent extends ThemeEvent implements NotificationEventInterface
         return \array_slice($this->notifications, 0, $this->maxDisplay);
     }
 
-    public function addNotification(NotificationNextGenInterface|NotificationInterface $notification): void
+    public function addNotification(NotificationV2Interface|NotificationInterface $notification): void
     {
-        if ($notification instanceof NotificationInterface) {
-            trigger_deprecation('kevinpapst/tabler-bundle', '1.1.0', 'Notification should implement NotificationNextGenInterface::class!');
-        }
+//        if (($notification instanceof NotificationV2Interface) === false) {
+//            trigger_deprecation('kevinpapst/tabler-bundle', '1.2.0', 'Notification should implement NotificationV2Interface::class!');
+//        }
 
         $this->notifications[] = $notification;
     }

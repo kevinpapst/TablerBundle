@@ -9,16 +9,9 @@
 
 namespace KevinPapst\TablerBundle\Model;
 
-interface NotificationNextGenInterface
+// TODO : Implement these in NotificationInterface later
+interface NotificationV2Interface extends NotificationInterface
 {
-    public function getIdentifier(): string;
-
-    public function getMessage(): string;
-
-    public function getType(): string;
-
-    public function getUrl(): ?string;
-
     public function isActive(): bool;
 
     public function isDisabled(): bool;

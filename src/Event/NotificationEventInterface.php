@@ -3,7 +3,7 @@
 namespace KevinPapst\TablerBundle\Event;
 
 use KevinPapst\TablerBundle\Model\NotificationInterface;
-use KevinPapst\TablerBundle\Model\NotificationNextGenInterface;
+use KevinPapst\TablerBundle\Model\NotificationV2Interface;
 
 interface NotificationEventInterface
 {
@@ -28,7 +28,7 @@ interface NotificationEventInterface
     public function getMaxDisplay(): int;
 
     /**
-     * @return array<int,NotificationInterface | NotificationNextGenInterface>
+     * @return array<int,NotificationInterface | NotificationV2Interface>
      */
     public function getNotifications(?int $max = 10): array;
 }

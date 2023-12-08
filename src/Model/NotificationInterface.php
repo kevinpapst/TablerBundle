@@ -9,9 +9,6 @@
 
 namespace KevinPapst\TablerBundle\Model;
 
-/**
- * @deprecated Use NotificationNextGenInterface::class instead!
- */
 interface NotificationInterface
 {
     public function getIdentifier(): string;

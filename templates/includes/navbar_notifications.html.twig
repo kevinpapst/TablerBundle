@@ -42,18 +42,18 @@
                 {% if notificationEvent.total > 0 %}
                     <div class="list-group list-group-flush list-group-hoverable">
                         {% for notification in notificationEvent.notifications %}
-                            {% if notification.html %}
+                            {% if notification.html ?? false %}
                                 {{ notification.message | raw }}
                             {% else %}
                                 <div
-                                    class="list-group-item {% if notification.active %}active{% endif %} {% if notification.disabled %}disabled{% endif %}"
+                                    class="list-group-item {% if notification.active ?? false %}active{% endif %} {% if notification.disabled ?? false %}disabled{% endif %}"
                                 >
                                     <div class="row align-items-center">
-                                        {% if notification.withBadge %}
+                                        {% if notification.withBadge ?? true %}
                                             <div class='col-auto'>
                                                 <div class="col-auto">
                                                     <span
-                                                        class="status-dot {% if notification.badgeAnimated %}status-dot-animated{% endif %} {% if notification.type is not null %}bg-{{ notification.type }}{% endif %} d-block"
+                                                        class="status-dot {% if notification.badgeAnimated ?? false %}status-dot-animated{% endif %} {% if notification.type is not null %}bg-{{ notification.type }}{% endif %} d-block"
                                                     ></span>
                                                 </div>
                                             </div>
