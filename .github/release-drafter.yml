@@ -28,7 +28,7 @@ version-resolver:
             - 'Translation'
     default: patch
 template: |
-    **Compatible with Symfony > 4.4, > 5.4 or > 6.0. Requires PHP >= 7.4**
+    **Compatible with Symfony > 6.0. Requires PHP >= 8.1**
     
     $CHANGES
     

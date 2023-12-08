@@ -22,8 +22,8 @@ Encore
     .addEntry('tabler', './assets/tabler.js')
     .addEntry('tabler-rtl', './assets/tabler-rtl.js')
 
-    // show OS notifications when builds finish/fail
-    .enableBuildNotifications()
+    // disabled as ""webpack-notifier": "^1.13"" id currently not compatible with ARM systems
+    //.enableBuildNotifications()
 
     // don't use a runtime.js
     .disableSingleRuntimeChunk()

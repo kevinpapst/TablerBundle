@@ -108,7 +108,7 @@
       </trans-unit>
       <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve" approved="no">
         <source>Take me home</source>
-        <target state="translated">Назад додому</target>
+        <target state="translated">Повернутися додому</target>
       </trans-unit>
       <trans-unit id="rtYKRSj" resname="http_error.title" xml:space="preserve" approved="no">
         <source>http_error.title</source>
