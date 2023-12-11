@@ -1,5 +1,6 @@
 {% macro status(text, options) %}
     {% import '@Tabler/includes/utils.html.twig' as utils %}
+    {% import '@Tabler/components/status_dot.html.twig' as status_dot %}
 
     {% set _color = options.color ?? 'green' %}
     {% set _animated = (options.animated ?? true) is same as true %}
@@ -19,22 +20,8 @@
         {{ utils.attr_to_html(_attr) }}
     >
         {% if _withDot %}
-            {{ _self.status_dot({animated : _animated}) }}
+            {{ status_dot({animated : _animated}) }}
         {% endif %}
         {{ text }}
     </span>
-{% endmacro %}
-
-{% macro status_dot(options) %}
-    {% import '@Tabler/includes/utils.html.twig' as utils %}
-
-    {% set _color = options.color ?? null %}
-    {% set _animated = (options.animated ?? true) is same as true %}
-    {% set _extraClass = options.extraClass ?? '' %}
-    {% set _attr = options.attr ?? {} %}
-
-    <span
-        class="status-dot {% if _animated %}status-dot-animated{% endif %} {% if _color is not null %}status-{{ _color }}{% endif %} {{ _extraClass }}"
-        {{ utils.attr_to_html(_attr) }}
-    ></span>
 {% endmacro %}
