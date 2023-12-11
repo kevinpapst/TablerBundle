@@ -14,17 +14,15 @@
     {% set _extraClass = options.extraClass ?? '' %}
     {% set _attr = options.attr ?? {} %}
 
-    {%- apply spaceless -%}
-        <span
-            class="status status-{{ _color }} {% if _lite %}status-lite{% endif %} {{ _extraClass }}"
-            {{ utils.attr_to_html(_attr) }}
-        >
-            {% if _withDot %}
-                {{ _self.status_dot({animated : _animated}) }}
-            {% endif %}
-            {{ text }}
-        </span>
-    {%- endapply -%}
+    <span
+        class="status status-{{ _color }} {% if _lite %}status-lite{% endif %} {{ _extraClass }}"
+        {{ utils.attr_to_html(_attr) }}
+    >
+        {% if _withDot %}
+            {{ _self.status_dot({animated : _animated}) }}
+        {% endif %}
+        {{ text }}
+    </span>
 {% endmacro %}
 
 {% macro status_dot(options) %}
@@ -35,10 +33,8 @@
     {% set _extraClass = options.extraClass ?? '' %}
     {% set _attr = options.attr ?? {} %}
 
-    {%- apply spaceless -%}
-        <span
-            class="status-dot {% if _animated %}status-dot-animated{% endif %} {% if _color is not null %}status-{{ _color }}{% endif %} {{ _extraClass }}"
-            {{ utils.attr_to_html(_attr) }}
-        ></span>
-    {%- endapply -%}
+    <span
+        class="status-dot {% if _animated %}status-dot-animated{% endif %} {% if _color is not null %}status-{{ _color }}{% endif %} {{ _extraClass }}"
+        {{ utils.attr_to_html(_attr) }}
+    ></span>
 {% endmacro %}
