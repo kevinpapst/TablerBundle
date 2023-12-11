@@ -1,5 +1,4 @@
 {% macro status(text, options) %}
-    {% import '@Tabler/components/status.html.twig' as macro %}
     {% import '@Tabler/includes/utils.html.twig' as utils %}
 
     {% set _color = options.color ?? 'green' %}
@@ -21,7 +20,7 @@
             {{ utils.attr_to_html(_attr) }}
         >
             {% if _withDot %}
-                {{ macro.status_dot({animated : _animated}) }}
+                {{ _self.status_dot({animated : _animated}) }}
             {% endif %}
             {{ text }}
         </span>
