@@ -20,7 +20,7 @@
         {{ utils.attr_to_html(_attr) }}
     >
         {% if _withDot %}
-            {{ status_dot({animated : _animated}) }}
+            {{ status_dot({color: _color, animated : _animated}) }}
         {% endif %}
         {{ text }}
     </span>
