@@ -17,23 +17,25 @@ use PHPUnit\Framework\TestCase;
  */
 class TablerExtensionTest extends TestCase
 {
-    public function testGetFilters()
+    public function testGetFilters(): void
     {
+        $expected = ['tabler_container', 'tabler_body', 'tabler_route', 'tabler_icon'];
         $sut = new TablerExtension();
-        $this->assertCount(4, $sut->getFilters());
+        $this->assertCount(\count($expected), $sut->getFilters());
         $result = array_map(function ($filter) {
             return $filter->getName();
         }, $sut->getFilters());
-        $this->assertEquals(['tabler_container', 'tabler_body', 'tabler_route', 'tabler_icon'], $result);
+        $this->assertEquals($expected, $result);
     }
 
-    public function testGetFunctions()
+    public function testGetFunctions(): void
     {
+        $expected = ['tabler_asset_version', 'tabler_icon', 'tabler_menu', 'tabler_notifications', 'tabler_theme', 'tabler_unique_id', 'tabler_user'];
         $sut = new TablerExtension();
-        $this->assertCount(5, $sut->getFunctions());
+        $this->assertCount(\count($expected), $sut->getFunctions());
         $result = array_map(function ($function) {
             return $function->getName();
         }, $sut->getFunctions());
-        $this->assertEquals(['tabler_menu', 'tabler_notifications', 'tabler_user', 'tabler_icon', 'tabler_unique_id'], $result);
+        $this->assertEquals($expected, $result);
     }
 }

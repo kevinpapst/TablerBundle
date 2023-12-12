@@ -17,8 +17,13 @@ interface MenuItemInterface
 
     public function getLabel(): ?string;
 
+    public function getTranslationDomain(): string;
+
     public function getRoute(): ?string;
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getRouteArgs(): array;
 
     public function getIcon(): ?string;

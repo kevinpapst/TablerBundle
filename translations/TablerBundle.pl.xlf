@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="pl" datatype="plaintext" original="TablerBundle.en.xliff">
+  <file source-language="en" target-language="pl" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
       <trans-unit id="38Hm0Wu" resname="Toggle navigation">
         <source>Toggle navigation</source>
@@ -18,9 +18,9 @@
         <source>Sign In</source>
         <target>Login</target>
       </trans-unit>
-      <trans-unit id="SPDT05f" resname="Sign out">
+      <trans-unit id="SPDT05f" resname="Sign out" xml:space="preserve" approved="no">
         <source>Sign out</source>
-        <target>Logout</target>
+        <target state="translated">Wyloguj się</target>
       </trans-unit>
       <trans-unit id="u3I07BJ" resname="Register">
         <source>Register</source>
@@ -121,6 +121,30 @@
       <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
         <source>http_error_403.suggestion</source>
         <target state="translated">Przepraszamy, ale nie masz wystarczających uprawnień, aby wyświetlić tę stronę. Zwróć się do administratora, jeżeli sądzisz, że to błąd.</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
+        <source>or</source>
+        <target state="translated">lub</target>
+      </trans-unit>
+      <trans-unit id="F35zef" resname="Previous" xml:space="preserve" approved="no">
+        <source>Previous</source>
+        <target state="translated">Poprzednie</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
+        <source>Next</source>
+        <target state="translated">Następne</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
+        <source>Toggle visibility</source>
+        <target state="translated">Przełącz widoczność</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve" approved="no">
+        <source>Close</source>
+        <target state="translated">Zamknij</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve" approved="no">
+        <source>Take me home</source>
+        <target state="translated">Wróć do strony głównej</target>
       </trans-unit>
     </body>
   </file>

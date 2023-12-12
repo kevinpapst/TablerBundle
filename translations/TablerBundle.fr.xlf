@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="fr" datatype="plaintext" original="TablerBundle.en.xliff">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
       <trans-unit id="38Hm0Wu" resname="Toggle navigation">
         <source>Toggle navigation</source>
@@ -10,9 +10,9 @@
         <source>Remember Me</source>
         <target>Se souvenir de moi</target>
       </trans-unit>
-      <trans-unit id="8FGIkAR" resname="Sign in to start your session">
-        <source>Sign in to start your session</source>
-        <target>Connexion</target>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
+        <source>Login</source>
+        <target state="translated">Se connecter pour commencer votre sessions</target>
       </trans-unit>
       <trans-unit id="vMC8yRQ" resname="Sign In">
         <source>Sign In</source>
@@ -26,9 +26,9 @@
         <source>Register</source>
         <target>Créer un compte</target>
       </trans-unit>
-      <trans-unit id="1pajW90" resname="Profile">
+      <trans-unit id="1pajW90" resname="Profile" xml:space="preserve" approved="no">
         <source>Profile</source>
-        <target>Mon profil</target>
+        <target state="translated">Votre profil</target>
       </trans-unit>
       <trans-unit id="DX2c6C2" resname="Member since %date%">
         <source>Member since %date%</source>
@@ -130,9 +130,9 @@
         <source>http_error.description</source>
         <target>Une erreur s'est produite</target>
       </trans-unit>
-      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion" xml:space="preserve" approved="no">
         <source>http_error.suggestion</source>
-        <target>Une erreur inattendue s'est produite, veuillez réessayer. Vous avez peut-être rencontré sur un problème logiciel, merci de contacter votre administrateur si le problème persiste.</target>
+        <target state="translated">Une erreur inattendue s'est produite, veuillez réessayer. Vous avez peut-être rencontré un problème logiciel, merci de contacter votre administrateur si le problème persiste.</target>
       </trans-unit>
       <trans-unit id="_W1eNz2" resname="http_error_404.description">
         <source>http_error_404.description</source>
@@ -157,6 +157,14 @@
       <trans-unit id="68zefF" resname="Next">
         <source>Next</source>
         <target>Suivant</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
+        <source>Toggle visibility</source>
+        <target state="translated">Changer la visibilité</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
+        <source>or</source>
+        <target state="translated">ou</target>
       </trans-unit>
     </body>
   </file>

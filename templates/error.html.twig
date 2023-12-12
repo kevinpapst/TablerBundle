@@ -29,7 +29,7 @@
         {% set errorMessageTrans = errorSuggestionTrans %}
     {% endif %}
 
-    <div class="container-tight py-4">
+    <div class="container container-tight py-4">
         <div class="empty">
             <div class="empty-header">{% block error_code %}{{ status_code }}{% endblock %}</div>
             <p class="empty-title">
@@ -41,7 +41,7 @@
                     {% endif %}
                 {% endblock %}
             </p>
-            <p class="empty-subtitle text-muted">
+            <p class="empty-subtitle text-body-secondary">
                 {% block error_subtitle %}
                     {{ errorMessageTrans }}
                 {% endblock %}

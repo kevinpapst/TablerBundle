@@ -20,29 +20,12 @@ use Twig\Extension\RuntimeExtensionInterface;
 
 final class RuntimeExtension implements RuntimeExtensionInterface
 {
-    private $eventDispatcher;
-    private $helper;
     /**
-     * @var array<string, string|null>
-     */
-    private $routes;
-    /**
-     * @var array<string, string>
-     */
-    private $icons;
-
-    /**
-     * @param EventDispatcherInterface $dispatcher
-     * @param ContextHelper $helper
      * @param array<string, string|null> $routes
      * @param array<string, string> $icons
      */
-    public function __construct(EventDispatcherInterface $dispatcher, ContextHelper $helper, array $routes, array $icons)
+    public function __construct(private EventDispatcherInterface $eventDispatcher, private ContextHelper $helper, private array $routes, private array $icons)
     {
-        $this->eventDispatcher = $dispatcher;
-        $this->helper = $helper;
-        $this->routes = $routes;
-        $this->icons = $icons;
     }
 
     public function getRouteByAlias(string $routeName): string
@@ -53,13 +36,21 @@ final class RuntimeExtension implements RuntimeExtensionInterface
 
     public function bodyClass(string $class = ''): string
     {
-        $classList = explode(' ', $class);
+        return $class;
+    }
 
+    public function theme(): string
+    {
         if ($this->helper->isDarkMode()) {
-            $classList[] = 'theme-dark';
+            return 'dark';
         }
 
-        return implode(' ', array_values($classList));
+        return 'light';
+    }
+
+    public function assetVersion(): string
+    {
+        return $this->helper->getAssetVersion();
     }
 
     public function containerClass(string $class = ''): string

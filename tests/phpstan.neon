@@ -1,2 +1,5 @@
 includes:
     - ../vendor/phpstan/phpstan-phpunit/extension.neon
+
+parameters:
+    level: 9

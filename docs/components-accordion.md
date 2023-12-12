@@ -29,13 +29,13 @@ See Tabler documentation at https://preview.tabler.io/accordion.html
 | bodyExtraClass  | Add extra class to the body      | `string`  | _empty string_ |
 
 #### Options
-|  Parameter  | Description                                                                                                               |   Type    |             Default             |
-|:-----------:|---------------------------------------------------------------------------------------------------------------------------|:---------:|:-------------------------------:|
-|     id      | Set custom `id` to accordion                                                                                              |  `mixed`  | `'accordion-'` + `rand(0, 999)` |                                        
-|     raw     | Use raw output for `title` and `body`                                                                                     | `boolean` |             `true`              |                                        
-|    flush    | Remove certains styles (see [Boostrap docs](https://getbootstrap.com/docs/5.0/components/accordion/#flush))               | `boolean` |             `false`             | 
-| alwaysOpen  | Make accordion items stay open (see [Bootstrap Doc](https://getbootstrap.com/docs/5.0/components/accordion/#always-open)) | `boolean` |             `false`             |   
-| extraClass  | Add extra classes on accordion container                                                                                  | `string`  |         _empty string_          |      
+| Parameter  | Description                                                                                                                  |   Type    |             Default              |
+|:----------:|------------------------------------------------------------------------------------------------------------------------------|:---------:|:--------------------------------:|
+|     id     | Set custom `id` to accordion                                                                                                 | `string`  | `tabler_unique_id('accordion_')` |                                        
+|    raw     | Use raw output for `title` and `body`                                                                                        | `boolean` |              `true`              |                                        
+|   flush    | Remove certains styles (see [Boostrap docs](https://getbootstrap.com/docs/5.0/components/accordion/#flush))                  | `boolean` |             `false`              | 
+| alwaysOpen | Holds the accordion elements open (see [Bootstrap Doc](https://getbootstrap.com/docs/5.0/components/accordion/#always-open)) | `boolean` |             `false`              |   
+| extraClass | Add extra classes on accordion container                                                                                     | `string`  |          _empty string_          |      
 
 ### Usage
 

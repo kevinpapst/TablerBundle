@@ -1,0 +1,19 @@
+{% set fullsize = true %}
+{% extends '@Tabler/embeds/card.html.twig' %}
+{% from '@Tabler/components/accordion.html.twig' import accordion %}
+
+{% block box_class %}border-0{% endblock %}
+{% block box_title %}{% endblock %}
+
+{% set item = {
+    title: block('title') ?? '',
+    body: block('body') ?? '',
+    bodyClasses: '',
+    options: { open: open ?? false, bodyExtraClass: ((border ?? true) ? 'border-top pt-3' : '') }
+} | merge(item ?? {}) %}
+
+{% set options = {flush: flush ?? false} | merge(options ?? {}) %}
+
+{% block box_body %}
+    {{ accordion([item], options) }}
+{% endblock %}

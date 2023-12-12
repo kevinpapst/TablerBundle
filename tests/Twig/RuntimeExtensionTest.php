@@ -19,7 +19,11 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
  */
 class RuntimeExtensionTest extends TestCase
 {
-    private function getSut(array $options = []): RuntimeExtension
+    /**
+     * @param array<string, mixed> $options
+     * @return RuntimeExtension
+     */
+    private function getSut(array $options): RuntimeExtension
     {
         $contextHelper = new ContextHelper();
         foreach ($options as $key => $value) {
@@ -41,21 +45,36 @@ class RuntimeExtensionTest extends TestCase
         return new RuntimeExtension($dispatcher, $contextHelper, $routes, $icons);
     }
 
-    public function testGetRouteByAlias()
+    public function testGetRouteByAlias(): void
     {
-        $sut = $this->getSut();
+        $sut = $this->getSut([]);
         $this->assertEquals('bar', $sut->getRouteByAlias('foo'));
         $this->assertEquals('hello', $sut->getRouteByAlias('hello'));
         // unknown routes will be returned as given
         $this->assertEquals('unknown-route', $sut->getRouteByAlias('unknown-route'));
     }
 
-    public function testBodyClass()
+    public function testBodyClass(): void
     {
         $sut = $this->getSut([]);
         $this->assertEquals('test', $sut->bodyClass('test'));
 
         $sut = $this->getSut(['dark_mode' => true]);
-        $this->assertEquals('test theme-dark', $sut->bodyClass('test'));
+        $this->assertEquals('test', $sut->bodyClass('test'));
+    }
+
+    public function testTheme(): void
+    {
+        $sut = $this->getSut([]);
+        $this->assertEquals('light', $sut->theme());
+
+        $sut = $this->getSut(['dark_mode' => true]);
+        $this->assertEquals('dark', $sut->theme());
+    }
+
+    public function testAssetVersion(): void
+    {
+        $sut = $this->getSut(['asset_version' => '1234.56789']);
+        $this->assertEquals('1234.56789', $sut->assetVersion());
     }
 }

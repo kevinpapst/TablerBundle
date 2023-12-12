@@ -17,15 +17,12 @@ use KevinPapst\TablerBundle\Model\UserInterface;
  */
 class UserDetailsEvent extends ThemeEvent
 {
-    /**
-     * @var UserInterface
-     */
-    private $user;
+    private ?UserInterface $user = null;
     /**
      * @var MenuItemInterface[]
      */
-    private $links = [];
-    private $showLogoutLink = true;
+    private array $links = [];
+    private bool $showLogoutLink = true;
 
     public function setUser(UserInterface $user): void
     {

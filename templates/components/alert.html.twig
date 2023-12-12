@@ -1,32 +1,32 @@
-{% macro alert(type, description, title, icon, dismissible) %}
+{% macro alert(options) %}
+    {% import '@Tabler/includes/utils.html.twig' as utils %}
 
-    {% if type is iterable %}
-        {% set options = type %}
+    {# Content #}
+    {% set _title = options.title ?? null %}
+    {% set _description = options.description ?? null %}
+    {% set _icon = options.icon ?? null %}
 
-        {% set _type = options.type ?? 'danger' %}
-        {% set _title = options.title ?? null %}
-        {% set _description = options.description ?? null %}
-        {% set _icon = options.icon ?? null %}
-        {% set _dismissible = (options.dismissible ?? false) is same as (true) %}
-        {% set _important = (options.important ?? false) is same as (true) %}
-        {% set _raw = (options.raw ?? false) is same as (true) %}
-        {% set _class = options.class is defined ? ' ' ~ options.class : '' %}
-    {% else %}
-        {% deprecated "Passing multiple parameters to 'alert()' Tabler macro is deprecated, use options object syntax." %}
+    {# Configuration #}
+    {% set _type = options.type ?? 'danger' %}
+    {% set _dismissible = (options.dismissible ?? false) is same as (true) %}
+    {% set _important = (options.important ?? false) is same as (true) %}
 
-        {% set _type = type ?? 'danger' %}
-        {% set _title = title is defined ? title|trans : null %}
-        {% set _description = description is defined ? description|trans : null %}
-        {% set _icon = icon ?? null %}
-        {% set _dismissible = (dismissible ?? false) is same as (true) %}
-        {% set _important = false %}
-        {% set _raw = false %}
-        {% set _class = '' %}
+    {% set _id = options.id ?? null %}
+    {% set _attr = options.attr ?? {} %}
+    {% set _class = options.class ?? '' %}
+    {% set _raw = (options.raw ?? false) is same as (true) %}
+
+    {% if (_title is empty or _description is empty) and options.important is not defined %}
+        {% deprecated "Using important alert without setting the 'important' option is deprecated, set option to true instead." %}
+        {% set _important = true %}
     {% endif %}
 
-    {% set _background = _title is empty or _description is empty or _important %}
-
-    <div class="alert alert-{{ _type }}{% if _dismissible %} alert-dismissible{% endif %}{% if _background %} alert-important{% endif %}{{ _class }}" role="alert">
+    <div
+            {% if _id %}id="{{ _id }}"{% endif %}
+            class="alert alert-{{ _type }} {% if _dismissible %}alert-dismissible{% endif %} {% if _important %}alert-important{% endif %} {{ _class }}"
+            role="alert"
+            {{ utils.attr_to_html(_attr) }}
+    >
         <div class="d-flex">
             {% if _icon %}
                 <div class="alert-icon">
@@ -37,17 +37,13 @@
             {% if _title is not empty or _description is not empty %}
                 <div>
                     {% if _title is not empty %}
-                        {% if _background %}
-                            <h4 class="{{ _description is not empty ? 'mb-1' : 'mb-0' }}">{{ _raw ? _title|raw : _title }}</h4>
-                        {% else %}
-                            <h4 class="alert-title">{{ _raw ? _title|raw : _title }}</h4>
-                        {% endif %}
+                        <h4 class="{% if not _important %}alert-title{% endif %} {{ _description is not empty ? 'mb-1' : 'mb-0' }}">{{ _raw ? _title|raw : _title }}</h4>
                     {% endif %}
                     {% if _description is not empty %}
-                        {% if _background %}
+                        {% if _important %}
                             <p class="m-0">{{ _raw ? _description|raw : _description }}</p>
                         {% else %}
-                            <div class="text-muted">{{ _raw ? _description|raw : _description }}</div>
+                            <div class="text-body-secondary">{{ _raw ? _description|raw : _description }}</div>
                         {% endif %}
                     {% endif %}
                 </div>

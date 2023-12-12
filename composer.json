@@ -10,22 +10,21 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
-        "symfony/asset": "^4.4 || ^5.4 || ^6.0",
-        "symfony/config": "^4.4 || ^5.4 || ^6.0",
-        "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0",
-        "symfony/event-dispatcher": "^4.4 || ^5.4 || ^6.0",
-        "symfony/http-foundation": "^4.4 || ^5.4 || ^6.0",
-        "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0",
-        "symfony/options-resolver": "^4.4 || ^5.4 || ^6.0",
-        "symfony/security-core": "^4.4 || ^5.4 || ^6.0",
-        "symfony/translation": "^4.4 || ^5.4 || ^6.0",
-        "symfony/twig-bridge": "^4.4 || ^5.4 || ^6.0",
+        "php": "8.1.*||8.2.*",
+        "symfony/asset": "^6.0",
+        "symfony/config": "^6.0",
+        "symfony/dependency-injection": "^6.0",
+        "symfony/event-dispatcher": "^6.0",
+        "symfony/http-foundation": "^6.0",
+        "symfony/http-kernel": "^6.0",
+        "symfony/options-resolver": "^6.0",
+        "symfony/security-core": "^6.0",
+        "symfony/translation": "^6.0",
+        "symfony/twig-bridge": "^6.0",
         "twig/twig": "^3.0"
     },
     "require-dev": {
-        "phpspec/prophecy": "^1.6",
-        "symfony/framework-bundle" : "^4.4 || ^5.4 || ^6.0",
+        "symfony/framework-bundle" : "^6.0",
         "friendsofphp/php-cs-fixer": "^3.0",
         "phpunit/phpunit": "^9.0",
         "phpstan/phpstan": "^1.0",
@@ -50,8 +49,8 @@
     "scripts": {
         "tests": "vendor/bin/phpunit tests/",
         "phpstan": [
-            "vendor/bin/phpstan analyse src/ --level=5",
-            "vendor/bin/phpstan analyse -c tests/phpstan.neon tests/ --level=5"
+            "vendor/bin/phpstan analyse -c phpstan.neon src/",
+            "vendor/bin/phpstan analyse -c tests/phpstan.neon tests/"
         ],
         "codestyle": "vendor/bin/php-cs-fixer fix --dry-run --verbose --show-progress=none",
         "codestyle-fix": "vendor/bin/php-cs-fixer fix"

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="ro" datatype="plaintext" original="none">
+  <file source-language="en" target-language="ro" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
       <trans-unit id="38Hm0Wu" resname="Toggle navigation">
         <source>Toggle navigation</source>
@@ -130,6 +130,30 @@
                     Îmi pare rău, dar nu ai suficiente permisiuni ca să vezi această pagină.
                     Te rog să vorbești cu administratorul dacă crezi că e o greșeală.
                 </target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
+        <source>Toggle visibility</source>
+        <target state="translated">Comutați vizibilitatea</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
+        <source>or</source>
+        <target state="translated">sau</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve" approved="no">
+        <source>Close</source>
+        <target state="translated">Închideți</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve" approved="no">
+        <source>Take me home</source>
+        <target state="translated">Du-mă acasă</target>
+      </trans-unit>
+      <trans-unit id="F35zef" resname="Previous" xml:space="preserve" approved="no">
+        <source>Previous</source>
+        <target state="translated">Anterior</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
+        <source>Next</source>
+        <target state="translated">Următorul</target>
       </trans-unit>
     </body>
   </file>

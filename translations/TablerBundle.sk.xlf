@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="sk" datatype="plaintext" original="TablerBundle.en.xliff">
+  <file source-language="en" target-language="sk" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
       <trans-unit id="38Hm0Wu" resname="Toggle navigation">
         <source>Toggle navigation</source>
@@ -34,9 +34,9 @@
         <source>Member since %date%</source>
         <target>Členom od %date%</target>
       </trans-unit>
-      <trans-unit id="47ienTP" resname="Username">
+      <trans-unit id="47ienTP" resname="Username" xml:space="preserve" approved="no">
         <source>Username</source>
-        <target>Používateľ</target>
+        <target state="translated">Meno používateľa</target>
       </trans-unit>
       <trans-unit id="6.zSWXT" resname="Username or email address">
         <source>Username or email address</source>
@@ -131,6 +131,30 @@
                     Je nám ľúto, ale nemáte dostatočné povolenia na zobrazenie tejto stránky.
                     Ak si myslíte, že ide o chybu, obráťte sa na svojho správcu.
                 </target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
+        <source>Toggle visibility</source>
+        <target state="translated">Prepnúť viditeľnosť</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
+        <source>or</source>
+        <target state="translated">alebo</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve" approved="no">
+        <source>Close</source>
+        <target state="translated">Zatvoriť</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve" approved="no">
+        <source>Take me home</source>
+        <target state="translated">Vezmi ma domov</target>
+      </trans-unit>
+      <trans-unit id="F35zef" resname="Previous" xml:space="preserve" approved="no">
+        <source>Previous</source>
+        <target state="translated">Predošlý</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
+        <source>Next</source>
+        <target state="translated">Ďalší</target>
       </trans-unit>
     </body>
   </file>

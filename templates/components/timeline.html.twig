@@ -1,27 +1,29 @@
 {% macro timeline(items, values) %}
     {% set _isSimple = values.simple ?? false %}
 
-    <ul class="list list-timeline {% if _isSimple %}list-timeline-simple{% endif %}">
+    <ul class="timeline {% if _isSimple %}timeline-simple{% endif %}">
         {% for item in items %}
-            <li>
+            <li class="timeline-event">
                 {% if item.icon is defined %}
-                    <div class="list-timeline-icon {% if item.iconColor is defined %}bg-{{ item.iconColor }}{% endif %}">
+                    <div class="timeline-event-icon {% if item.iconColor is defined %}bg-{{ item.iconColor }}-lt{% endif %}">
                         {{ tabler_icon(item.icon, false) }}
                     </div>
                 {% endif %}
                 {% if _isSimple or (item.time is defined and item.time is not null) %}
-                    <div class="list-timeline-content">
-                        {% item.time is defined and item.time is not null %}
-                        <div class="list-timeline-time">{{ item.time }}</div>
-                        {% endif %}
-                        {% if item.title is defined and item.title is not null %}
-                            <p class="list-timeline-title">{{ item.title }}</p>
-                        {% endif %}
-                        {% if item.text is defined and item.text is not null %}
-                            <p class="text-muted">{{ item.text }}</p>
-                        {% elseif item.textHtml is defined and item.textHtml is not null %}
-                            {{ item.textHtml|raw }}
-                        {% endif %}
+                    <div class="card timeline-event-card">
+                        <div class="card-body">
+                            {% if item.time is defined and item.time is not null %}
+                            <div class="text-body-secondary float-end">{{ item.time }}</div>
+                            {% endif %}
+                            {% if item.title is defined and item.title is not null %}
+                                <h4>{{ item.title }}</h4>
+                            {% endif %}
+                            {% if item.text is defined and item.text is not null %}
+                                <p class="text-body-secondary">{{ item.text }}</p>
+                            {% elseif item.textHtml is defined and item.textHtml is not null %}
+                                {{ item.textHtml|raw }}
+                            {% endif %}
+                        </div>
                     </div>
                 {% endif %}
             </li>

@@ -15,19 +15,19 @@ Enjoy your theme!
     <title>{% block title %}{{ block('page_title') }}{% endblock %}</title>
     {% block stylesheets %}
         {% if tabler_bundle.isRightToLeft() %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}?{{ tabler_asset_version() }}">
         {% else %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}?{{ tabler_asset_version() }}">
         {% endif %}
     {% endblock %}
 </head>
-<body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }} {% block body_class %}{% endblock %}">
+<body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }} {% block body_class %}{% endblock %}" data-bs-theme="{{ tabler_theme() }}">
 {% block after_body_start %}{% endblock %}
 <div class="page">
 
     {# *** Layout type changes *** #}
     {% block header %}
-        <header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md{% block header_class %} {% if tabler_bundle.isNavbarOverlapping() %}navbar-dark navbar-overlap{% else %}{{ tabler_bundle.isHeaderDark() ? 'navbar-dark' : 'navbar-light' }}{% endif %}{% endblock %} d-print-none">
+        <header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md{% block header_class %} {% if tabler_bundle.isNavbarOverlapping() %}navbar-overlap{% endif %}{% endblock %} d-print-none" data-bs-theme="{{ tabler_bundle.isNavbarOverlapping() or tabler_bundle.isHeaderDark() or tabler_bundle.isDarkMode() ? 'dark' : 'light' }}">
             <div class="{{ ''|tabler_container }}">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                     <span class="navbar-toggler-icon"></span>
@@ -64,7 +64,7 @@ Enjoy your theme!
         {% if not tabler_bundle.isCondensedNavbar() %}
             <div id="{% block navbar_id %}{% endblock %}" class="navbar-expand-md">
                 <div class="collapse navbar-collapse" id="navbar-menu">
-                    <div class="navbar {{ tabler_bundle.isNavbarDark() ? 'navbar-dark' : 'navbar-light' }}">
+                    <div class="navbar" data-bs-theme="{{ tabler_bundle.isNavbarDark() or tabler_bundle.isDarkMode() ? 'dark' : 'light' }}">
                         <div class="{{ ''|tabler_container }}">
                             {% block navbar_menu %}
                                 {% include '@Tabler/includes/menu.html.twig' %}
@@ -87,21 +87,21 @@ Enjoy your theme!
                 <div id="{% block page_header_id %}{% endblock %}" class="page-header d-print-none">
                     <div class="row align-items-center">
                         <div class="col">
-                        {% block page_intro %}
-                            {% block breadcrumb %}
-                                <div class="page-pretitle">
-                                    {% block page_pretitle %}Overview{% endblock %}
-                                </div>
+                            {% block page_intro %}
+                                {% block breadcrumb %}
+                                    <div class="page-pretitle">
+                                        {% block page_pretitle %}Overview{% endblock %}
+                                    </div>
+                                {% endblock %}
+                                <h2 class="page-title{% if tabler_bundle.isNavbarOverlapping() %} text-white{% endif %}">
+                                    {% block page_title %}Dashboard{% endblock %}
+                                </h2>
+                                {% block page_subtitle %}
+                                    <div class="text-body-secondary mt-1">
+                                        1-10 of 100
+                                    </div>
+                                {% endblock %}
                             {% endblock %}
-                            <h2 class="page-title{% if tabler_bundle.isNavbarOverlapping() %} text-white{% endif %}">
-                                {% block page_title %}Dashboard{% endblock %}
-                            </h2>
-                            {% block page_subtitle %}
-                                <div class="text-muted mt-1">
-                                    1-10 of 100
-                                </div>
-                            {% endblock %}
-                        {% endblock %}
                         </div>
                         <div class="{% block page_actions_class %}col-12 col-md-auto ms-auto d-print-none{% endblock %}">
                             {% block page_actions %}
@@ -147,7 +147,7 @@ Enjoy your theme!
 </div>
 
 {% block javascripts %}
-    <script src="{{ asset('bundles/tabler/tabler.js') }}"></script>
+    <script src="{{ asset('bundles/tabler/tabler.js') }}?{{ tabler_asset_version() }}"></script>
 {% endblock %}
 </body>
 </html>

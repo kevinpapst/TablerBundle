@@ -19,13 +19,13 @@ use PHPUnit\Framework\TestCase;
  */
 class NotificationEventTest extends TestCase
 {
-    public function testDefaults()
+    public function testDefaults(): void
     {
         $event = new NotificationEvent();
         $this->assertEquals(0, $event->getTotal());
     }
 
-    public function testTotalsAndReceiveLimitedSet()
+    public function testTotalsAndReceiveLimitedSet(): void
     {
         $event = new NotificationEvent();
         $notifications = $this->generateNbNotifications(7);
@@ -45,7 +45,7 @@ class NotificationEventTest extends TestCase
      * @param string $type
      * @return array|NotificationModel[]
      */
-    private function generateNbNotifications($number, $type = Constants::TYPE_INFO)
+    private function generateNbNotifications($number, $type = Constants::TYPE_INFO): array
     {
         $tasks = [];
         for ($i = 0; $i < $number; $i++) {

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="it" datatype="plaintext" original="TablerBundle.en.xliff">
+  <file source-language="en" target-language="it" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
       <trans-unit id="38Hm0Wu" resname="Toggle navigation">
         <source>Toggle navigation</source>
@@ -54,13 +54,13 @@
         <source>Back to login</source>
         <target>Torna al login</target>
       </trans-unit>
-      <trans-unit id="WfpDeb4" resname="Reset your password">
+      <trans-unit id="WfpDeb4" resname="Reset your password" xml:space="preserve" approved="no">
         <source>Reset your password</source>
-        <target>Ripristina la password</target>
+        <target state="translated">Reimposta la tua password</target>
       </trans-unit>
-      <trans-unit id="YOlNDxu" resname="I forgot my password">
+      <trans-unit id="YOlNDxu" resname="I forgot my password" xml:space="preserve" approved="no">
         <source>I forgot my password</source>
-        <target>Ho dimenticato la mia password</target>
+        <target state="translated">Ho dimenticato la password</target>
       </trans-unit>
       <trans-unit id="D3_ygfb" resname="Register a new account">
         <source>Register a new account</source>
@@ -98,25 +98,53 @@
         <source>http_error.description</source>
         <target>Errore imprevisto</target>
       </trans-unit>
-      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion" xml:space="preserve" approved="no">
         <source>http_error.suggestion</source>
-        <target>Errore imprevisto, riprova per favore. Se il problema persiste, contatta per favore l'amministratore.</target>
+        <target state="translated">Si è verificato un errore critico. Per favore, riprova. Potresti aver riscontrato un problema software. Per favore, contatta il tuo amministratore se il problema persiste.</target>
       </trans-unit>
       <trans-unit id="_W1eNz2" resname="http_error_404.description">
         <source>http_error_404.description</source>
         <target>Pagina non trovata</target>
       </trans-unit>
-      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion" xml:space="preserve" approved="no">
         <source>http_error_404.suggestion</source>
-        <target>La pagina che cerchi non é stata trovata. Ricomincia dalla Dashboard.</target>
+        <target state="translated">Non siamo riusciti a trovare la pagina che stavi cercando. Per favore, ritorna al pannello di controllo e ricomincia.</target>
       </trans-unit>
       <trans-unit id="Qn5rwdU" resname="http_error_403.description">
         <source>http_error_403.description</source>
         <target>Pagina con restrizione all'accesso</target>
       </trans-unit>
-      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion" xml:space="preserve" approved="no">
         <source>http_error_403.suggestion</source>
-        <target>Non hai i permessi per vedere questa pagina. Contatta l'amministratore se pensi che questo sia un problema.</target>
+        <target state="translated">Siamo spiacenti, ma non disponi di autorizzazioni sufficienti per visualizzare questa pagina. Per favore, rivolgiti al tuo amministratore se ritieni che si tratti di un errore.</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
+        <source>Toggle visibility</source>
+        <target state="translated">Cambia visualizzazione</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
+        <source>or</source>
+        <target state="translated">oppure</target>
+      </trans-unit>
+      <trans-unit id="KLIuHvt" resname="This is a mandatory field" xml:space="preserve" approved="no">
+        <source>This is a mandatory field</source>
+        <target state="translated">Questo campo è obbligatorio</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve" approved="no">
+        <source>Take me home</source>
+        <target state="translated">Vai alla home</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve" approved="no">
+        <source>Close</source>
+        <target state="translated">Chiudi</target>
+      </trans-unit>
+      <trans-unit id="F35zef" resname="Previous" xml:space="preserve" approved="no">
+        <source>Previous</source>
+        <target state="translated">Precedente</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
+        <source>Next</source>
+        <target state="translated">Successivo</target>
       </trans-unit>
     </body>
   </file>

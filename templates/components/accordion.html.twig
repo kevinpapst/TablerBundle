@@ -1,7 +1,7 @@
 {% macro accordion(items, options) %}
 
     {# Options #}
-    {% set _id = options.id ?? ('accordion-' ~ random(0, 999)) %}
+    {% set _id = options.id ?? tabler_unique_id('accordion_') %}
     {% set _raw = options.raw ?? true %}
     {% set _flush = options.flush ?? false %}
     {% set _always_open = options.alwaysOpen ?? false %}
@@ -11,9 +11,12 @@
         {% for item in items %}
 
             {# Item #}
-            {% set _id_collapse = _id ~ '-collapse-' ~ loop.index %}
+            {% set _id_collapse = _id ~ '_collapse_' ~ loop.index %}
             {% set _item_title = item.title ?? '' %}
             {% set _item_body = item.body ?? '' %}
+            {% set _item_body_classes = item.bodyClasses ?? 'pt-0' %}
+            {% set _item_body_before = item.bodyBefore ?? '' %}
+            {% set _item_body_after = item.bodyAfter ?? '' %}
 
             {# Item Options #}
             {% set _item_open = item.options.open ?? false %}
@@ -32,9 +35,11 @@
 
                 <div id="{{ _id_collapse }}" {% if _always_open == false %}data-bs-parent="#{{ _id }}"{% endif %}
                      class="accordion-collapse collapse {% if _item_open %}show{% endif %} {{ _item_body_extraClass }}">
-                    <div class="accordion-body pt-0">
+                    {% if _raw %}{{ _item_body_before | raw }}{% else %}{{ _item_body_before }}{% endif %}
+                    <div class="accordion-body {{ _item_body_classes }}">
                         {% if _raw %}{{ _item_body | raw }}{% else %}{{ _item_body }}{% endif %}
                     </div>
+                    {% if _raw %}{{ _item_body_after | raw }}{% else %}{{ _item_body_after }}{% endif %}
                 </div>
             </div>
 

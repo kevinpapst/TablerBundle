@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
  */
 class NotificationModelTest extends TestCase
 {
-    public function testGetIdentifier()
+    public function testGetIdentifier(): void
     {
         $sut = new NotificationModel('foo', 'bar');
         $this->assertEquals('foo', $sut->getIdentifier());

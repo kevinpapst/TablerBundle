@@ -1,0 +1,70 @@
+{% macro dropdown(items, options) %}
+    {% import '@Tabler/includes/utils.html.twig' as macros %}
+    {% from '@Tabler/components/badge.html.twig' import badge as badgeMacro %}
+
+    {# Options #}
+    {% set _menuArrow = options.menuArrow ?? false %}
+    {% set _menuArrowEnd = options.menuArrowEnd ?? false %}
+    {% set _extraClass = options.extraClass ?? '' %}
+
+    <div class="dropdown-menu {% if _menuArrow %}dropdown-menu-arrow {% if _menuArrowEnd %}dropdown-menu-end{% endif %}{% endif %} {{ _extraClass }}">
+        {% for item in items %}
+
+            {# Item #}
+            {% set _type = item.type ?? 'link' %}
+            {# Content #}
+            {% set _title = item.title ?? '' %}
+            {% set _icon = item.icon ?? false %}
+            {% set _html = item.html ?? false %}
+            {% set _href = item.href ?? '#' %}
+            {% set _badge = item.badge ?? {} %}
+            {# States #}
+            {% set _active = item.active ?? false %}
+            {% set _disabled = item.disabled ?? false %}
+            {# Other #}
+            {% set _extraClass = item.extraClass ?? '' %}
+            {% set _attr = item.attr ?? {} %}
+
+            {% if _badge.text is defined or _badge.class is defined %}
+                {% set badge = badgeMacro(_badge.text ?? '', _badge.class ?? '' ~ ' ms-auto') %}
+            {% else %}
+                {% set badge = '' %}
+            {% endif %}
+
+            {% if _type in ['html', 'divider', 'header'] %}
+                {% if _type is same as 'divider' %}
+                    <div class="dropdown-divider {{ _extraClass }}" {{ macros.attr_to_html(_attr) }}></div>
+                {% elseif _type is same as 'header' %}
+                    <h6 class="dropdown-header {{ _extraClass }}" {{ macros.attr_to_html(_attr) }}>
+                        {{ _title }}
+                    </h6>
+                {% else %}
+                    <div class="dropdown-item {{ _extraClass }}" {{ macros.attr_to_html(_attr) }}>
+                        {{ _html | raw }}
+                    </div>
+                {% endif %}
+            {% else %}
+                {% set classes = 'dropdown-item ' ~ (_disabled ? 'disabled ' : '') ~ (_active ? 'active ' : '') ~ _extraClass %}
+                {% if _type is same as 'link' %}
+                    <a class="{{ classes }}" href="{{ _href }}" {{ macros.attr_to_html(_attr) }}>
+                        {% if _icon %}
+                            <span class="dropdown-item-icon">
+                                {{ tabler_icon(_icon, true) }}
+                            </span>
+                        {% elseif _html %}
+                            {{ _html | raw }}
+                        {% endif %}
+                        {{ _title }}
+                        {{ badge }}
+                    </a>
+                {% elseif _type in ['radio','checkbox','switch'] %}
+                    <label class="{{ classes }} {% if _type is same as 'switch' %}form-switch{% endif %}" {{ macros.attr_to_html(_attr) }}>
+                        {{ _html | raw }}
+                        {{ _title }}
+                    </label>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+
+{% endmacro %}

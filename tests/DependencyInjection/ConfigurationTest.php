@@ -18,13 +18,13 @@ use Symfony\Component\Config\Definition\Processor;
  */
 class ConfigurationTest extends TestCase
 {
-    public function testDefaultConfiguration()
+    public function testDefaultConfiguration(): void
     {
         $configuration = new Configuration();
         $processor = new Processor();
         $node = $configuration->getConfigTreeBuilder()->buildTree();
 
-        $config = ['tabler' => []];
+        $config = ['tabler' => ['options' => ['asset_version' => '1234']]];
         $processedConfig = $processor->process($node, $config);
 
         $expected = $this->getDefaultConfig()['tabler'];
@@ -32,7 +32,7 @@ class ConfigurationTest extends TestCase
         $this->assertEquals($expected, $processedConfig);
     }
 
-    public function testFullConfiguration()
+    public function testFullConfiguration(): void
     {
         $configuration = new Configuration();
         $processor = new Processor();
@@ -44,7 +44,10 @@ class ConfigurationTest extends TestCase
         $this->assertEquals($config['tabler'], $processedConfig);
     }
 
-    protected function getDefaultConfig()
+    /**
+     * @return array<string, array<string, array<string, mixed>>>
+     */
+    protected function getDefaultConfig(): array
     {
         return [
             'tabler' => [
@@ -58,6 +61,8 @@ class ConfigurationTest extends TestCase
                     'user_menu_condensed' => false,
                     'logo_url' => null,
                     'navbar_overlap' => false,
+                    'security_cover_url' => 'https://placehold.co/1000',
+                    'asset_version' => '1234',
                 ],
                 'knp_menu' => [
                     'enable' => false,

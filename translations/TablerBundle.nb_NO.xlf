@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="nb-NO" datatype="plaintext" original="TablerBundle.en.xliff">
+  <file source-language="en" target-language="nb-NO" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
       <trans-unit id="rtYKRSj" resname="http_error.title">
         <source>http_error.title</source>
@@ -29,6 +29,122 @@
       <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
         <source>http_error_403.suggestion</source>
         <target state="needs-translation">Du har ikke tilgang til siden. Ta det opp med din administrator hvis du tror dette er en feil.</target>
+      </trans-unit>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
+        <source>Log in</source>
+        <target state="needs-translation">Logg inn</target>
+      </trans-unit>
+      <trans-unit id="B.ZozIs" resname="registration.confirmed" xml:space="preserve" approved="no">
+        <source>registration.confirmed</source>
+        <target state="needs-translation">Gratulerer %username%, du kan nå bruke kontoen din.</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve" approved="no">
+        <source>Take me home</source>
+        <target state="needs-translation">Ta meg hjem</target>
+      </trans-unit>
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation" xml:space="preserve" approved="no">
+        <source>Toggle navigation</source>
+        <target state="translated">Veksle navigering</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
+        <source>Toggle visibility</source>
+        <target state="translated">Veksle synlighet</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me" xml:space="preserve" approved="no">
+        <source>Remember Me</source>
+        <target state="translated">Husk meg</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile" xml:space="preserve" approved="no">
+        <source>Profile</source>
+        <target state="translated">Din profil</target>
+      </trans-unit>
+      <trans-unit id="DX2c6C2" resname="Member since %date%" xml:space="preserve" approved="no">
+        <source>Member since %date%</source>
+        <target state="translated">Medlem siden %date%</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username" xml:space="preserve" approved="no">
+        <source>Username</source>
+        <target state="translated">Brukernavn</target>
+      </trans-unit>
+      <trans-unit id="6.zSWXT" resname="Username or email address" xml:space="preserve" approved="no">
+        <source>Username or email address</source>
+        <target state="needs-translation">Brukernavn eller e-postadresse</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password" xml:space="preserve" approved="no">
+        <source>Password</source>
+        <target state="translated">Passord</target>
+      </trans-unit>
+      <trans-unit id="nQDUTyy" resname="Show homepage" xml:space="preserve" approved="no">
+        <source>Show homepage</source>
+        <target state="translated">Vis hjemmeside</target>
+      </trans-unit>
+      <trans-unit id="PjgG.xc" resname="Back to login" xml:space="preserve" approved="no">
+        <source>Back to login</source>
+        <target state="translated">Tilbake til innlogging</target>
+      </trans-unit>
+      <trans-unit id="WfpDeb4" resname="Reset your password" xml:space="preserve" approved="no">
+        <source>Reset your password</source>
+        <target state="translated">Tilbakestill passordet ditt</target>
+      </trans-unit>
+      <trans-unit id="D3_ygfb" resname="Register a new account" xml:space="preserve" approved="no">
+        <source>Register a new account</source>
+        <target state="translated">Registrer ny konto</target>
+      </trans-unit>
+      <trans-unit id="YOlNDxu" resname="I forgot my password" xml:space="preserve" approved="no">
+        <source>I forgot my password</source>
+        <target state="translated">Glemt passord</target>
+      </trans-unit>
+      <trans-unit id="MKZCFur" resname="View all" xml:space="preserve" approved="no">
+        <source>View all</source>
+        <target state="translated">Vis alle</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
+        <source>or</source>
+        <target state="translated">eller</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register" xml:space="preserve" approved="no">
+        <source>Register</source>
+        <target state="translated">Registrer</target>
+      </trans-unit>
+      <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve" approved="no">
+        <source>You have %count% notifications</source>
+        <target state="translated">Du har én merknad|Du har %count% merknader</target>
+      </trans-unit>
+      <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve" approved="no">
+        <source>You have %count% messages</source>
+        <target state="translated">Du har én melding|Du har %count% meldinger</target>
+      </trans-unit>
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve" approved="no">
+        <source>You have %count% tasks</source>
+        <target state="translated">Du har ett gjøremål|Du har %count% gjøremål</target>
+      </trans-unit>
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete" xml:space="preserve" approved="no">
+        <source>%progress%% Complete</source>
+        <target state="translated">%progress%% fullført</target>
+      </trans-unit>
+      <trans-unit id="KLIuHvt" resname="This is a mandatory field" xml:space="preserve" approved="no">
+        <source>This is a mandatory field</source>
+        <target state="translated">Dette er et påkrevd felt</target>
+      </trans-unit>
+      <trans-unit id="SPDT05f" resname="Sign out" xml:space="preserve" approved="no">
+        <source>Log out</source>
+        <target state="needs-translation">Logg ut</target>
+      </trans-unit>
+      <trans-unit id="vMC8yRQ" resname="Sign In" xml:space="preserve" approved="no">
+        <source>Log in</source>
+        <target state="needs-translation">Logg inn</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve" approved="no">
+        <source>Close</source>
+        <target state="translated">Lukk</target>
+      </trans-unit>
+      <trans-unit id="F35zef" resname="Previous" xml:space="preserve" approved="no">
+        <source>Previous</source>
+        <target state="translated">Forrige</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
+        <source>Next</source>
+        <target state="translated">Neste</target>
       </trans-unit>
     </body>
   </file>

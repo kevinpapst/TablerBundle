@@ -14,6 +14,7 @@ class MenuItemModel implements MenuItemInterface
     private string $identifier;
     private string $label;
     private ?string $route;
+    /** @var array<string, mixed> */
     private array $routeArgs;
     private ?string $icon;
     /** @var array<MenuItemInterface> */
@@ -24,7 +25,11 @@ class MenuItemModel implements MenuItemInterface
     private bool $isActive = false;
     private bool $divider = false;
     private bool $expanded = false;
+    private string $translationDomain = 'messages';
 
+    /**
+     * @param array<string, mixed> $routeArgs
+     */
     public function __construct(
         string $identifier,
         string $label,
@@ -77,9 +82,7 @@ class MenuItemModel implements MenuItemInterface
 
     public function setIsActive(bool $isActive): void
     {
-        if ($this->hasParent()) {
-            $this->getParent()->setIsActive($isActive);
-        }
+        $this->parent?->setIsActive($isActive);
 
         $this->isActive = $isActive;
     }
@@ -124,6 +127,9 @@ class MenuItemModel implements MenuItemInterface
         return $this->routeArgs;
     }
 
+    /**
+     * @param array<string, mixed> $routeArgs
+     */
     public function setRouteArgs(array $routeArgs): void
     {
         $this->routeArgs = $routeArgs;
@@ -212,5 +218,15 @@ class MenuItemModel implements MenuItemInterface
     public function setExpanded(bool $expanded): void
     {
         $this->expanded = $expanded;
+    }
+
+    public function getTranslationDomain(): string
+    {
+        return $this->translationDomain;
+    }
+
+    public function setTranslationDomain(string $translationDomain): void
+    {
+        $this->translationDomain = $translationDomain;
     }
 }

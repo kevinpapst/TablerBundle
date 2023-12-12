@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="zh-CN" datatype="plaintext" original="TablerBundle.en.xliff">
+  <file source-language="en" target-language="zh-CN" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
       <trans-unit id="38Hm0Wu" resname="Toggle navigation">
         <source>Toggle navigation</source>
@@ -90,9 +90,9 @@
         <source>This is a mandatory field</source>
         <target>该处为必填项</target>
       </trans-unit>
-      <trans-unit id="B.ZozIs" resname="registration.confirmed">
+      <trans-unit id="B.ZozIs" resname="registration.confirmed" xml:space="preserve" approved="no">
         <source>registration.confirmed</source>
-        <target>%username%，恭喜你，你的帐户已启用！</target>
+        <target state="translated">恭喜 %username%，您的帐户现已激活。</target>
       </trans-unit>
       <trans-unit id="rtYKRSj" resname="http_error.title">
         <source>http_error.title</source>
@@ -121,6 +121,30 @@
       <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
         <source>http_error_403.suggestion</source>
         <target>抱歉您没有权限访问该页。如有疑问请联系管理员。</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
+        <source>Toggle visibility</source>
+        <target state="translated">切换可见性</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
+        <source>or</source>
+        <target state="translated">或</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve" approved="no">
+        <source>Close</source>
+        <target state="translated">关闭</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve" approved="no">
+        <source>Take me home</source>
+        <target state="translated">带我回家</target>
+      </trans-unit>
+      <trans-unit id="F35zef" resname="Previous" xml:space="preserve" approved="no">
+        <source>Previous</source>
+        <target state="translated">上一页</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
+        <source>Next</source>
+        <target state="translated">下一页</target>
       </trans-unit>
     </body>
   </file>

@@ -17,21 +17,29 @@ use PHPUnit\Framework\TestCase;
  */
 class ContextHelperTest extends TestCase
 {
-    public function testOptions()
+    public function testOptions(): void
     {
-        $context = new ContextHelper([
+        $input = [
             'foo' => 'bar',
-        ]);
+            'security_cover_url' => 'https://placehold.co/1000',
+        ];
+
+        $context = new ContextHelper($input);
 
         $this->assertFalse($context->hasOption('test'));
         $this->assertNull($context->getOption('test'));
 
         $this->assertTrue($context->hasOption('foo'));
         $this->assertEquals('bar', $context->getOption('foo'));
-        $this->assertEquals(['foo' => 'bar'], $context->getOptions());
+        $this->assertEquals($input, $context->getOptions());
 
         $context->setOption('test', 'bla');
         $this->assertTrue($context->hasOption('test'));
         $this->assertEquals('bla', $context->getOption('test'));
+
+        $this->assertEquals('https://placehold.co/1000', $context->getSecurityCoverUrl());
+        $this->assertEquals('https://placehold.co/1000', $context->getOption('security_cover_url'));
+        $context->setSecurityCoverUrl('https://placehold.co/1234');
+        $this->assertEquals('https://placehold.co/1234', $context->getSecurityCoverUrl());
     }
 }
