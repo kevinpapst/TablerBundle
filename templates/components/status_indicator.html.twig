@@ -7,7 +7,7 @@
     {% set _attr = options.attr ?? {} %}
 
     <span
-        class="status-indicator {% if _animated %}status-indicator-animated{% endif %} {{ 'status-'~_color }} {{ _extraClass }}"
+        class="status-indicator {% if _animated %}status-indicator-animated{% endif %} status-{{ _color }} {{ _extraClass }}"
         {{ utils.attr_to_html(_attr) }}
     >
       <span class="status-indicator-circle"></span>
