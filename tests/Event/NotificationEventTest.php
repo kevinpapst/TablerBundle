@@ -76,7 +76,7 @@ class NotificationEventTest extends TestCase
         $arr[] = $defaultNotification;
 
         // 3
-        $disabledNotification = new NotificationModel('disabled', 'My disabled Message', null);
+        $disabledNotification = new NotificationModel('disabled', 'My disabled Message');
         $disabledNotification->setDisabled(true);
         $disabledNotification->setBadgeAnimated(false);
         $arr[] = $disabledNotification;
