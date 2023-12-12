@@ -1,0 +1,17 @@
+{% extends '@Tabler/security/reset_password/_layout.html.twig' %}
+
+{% block title %}
+    {{ 'Password Reset Email Sent'|trans({}, 'TablerBundle') }}
+{% endblock %}
+
+{% block login_box_msg %}
+    {{ 'Password Reset Email Sent'|trans({}, 'TablerBundle') }}
+{% endblock %}
+
+{% block login_form %}
+    {% set expirationMessage = resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') %}
+    <p>
+        {{ 'If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %expirationMessage%.' | trans({'%expirationMessage%' : expirationMessage}, 'TablerBundle') }}
+    </p>
+    <p>{{ "If you don't receive an email please check your spam folder or"|trans({}, 'TablerBundle') }} <a href="{{ path('tabler_password_reset'|tabler_route) }}">{{ 'Try again'|trans({}, 'TablerBundle') }}</a>.</p>
+{% endblock %}

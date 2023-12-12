@@ -102,6 +102,26 @@
         <source>Take me home</source>
         <target>Retourner au début</target>
       </trans-unit>
+      <trans-unit id="948fezF"  resname="Password Reset Email Sent">
+        <source>Password Reset Email Sent</source>
+        <target>E-mail de réinitialisation du mot de passe a été envoyé</target>
+      </trans-unit>
+      <trans-unit id="5FE896d" resname="Enter your email address and you will be emailed a link that allows to reset your password">
+        <source>Enter your email address and you will be emailed a link that allows to reset your password</source>
+        <target>Saisissez votre adresse e-mail et la procédure de réinitialisation de votre mot de passe vous sera envoyée par mail</target>
+      </trans-unit>
+      <trans-unit id="RG984sg" resname="If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %expirationMessage%.">
+        <source>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %expirationMessage%.</source>
+        <target>Si un compte correspond à l'adresse renseignée, un email vient d'être envoyé contenant un lien afin de réinitialiser votre mot de passe. Ce lien expire dans %expirationMessage%.</target>
+      </trans-unit>
+      <trans-unit id="498fEsz" resname="If you don't receive an email please check your spam folder or">
+        <source>If you don't receive an email please check your spam folder or</source>
+        <target>Si vous n'avez pas reçu d'email, merci de vérifier vos spams ou</target>
+      </trans-unit>
+      <trans-unit id="EF54d5d" resname="Try again">
+        <source>Try again</source>
+        <target>Essayer à nouveau</target>
+      </trans-unit>
       <trans-unit id="rtYKRSj" resname="http_error.title">
         <source>http_error.title</source>
         <target>Erreur</target>

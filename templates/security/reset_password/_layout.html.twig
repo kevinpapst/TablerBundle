@@ -1,0 +1,10 @@
+{% extends '@Tabler/security.html.twig' %}
+
+{% block login_social_auth %}{% endblock %}
+
+{% block login_box_error %}
+    {% from '@Tabler/components/alert.html.twig' import alert %}
+    {% for flashError in app.flashes('reset_password_error') %}
+        {{ alert({important: true, description : flashError}) }}
+    {% endfor %}
+{% endblock %}

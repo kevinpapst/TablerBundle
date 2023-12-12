@@ -1,0 +1,38 @@
+{% extends '@Tabler/security/reset_password/_layout.html.twig' %}
+{% from '@Tabler/components/buttons.html.twig' import submit_button %}
+
+{% block title %}
+    {{ 'I forgot my password'|trans({}, 'TablerBundle') }}
+{% endblock %}
+
+{% block login_box_msg %}
+    {{ 'I forgot my password'|trans({}, 'TablerBundle') }}
+{% endblock %}
+
+{% block login_form %}
+    {% block request_help %}
+        <p class="text-muted mb-4">{{ 'Enter your email address and you will be emailed a link that allows to reset your password'|trans({}, 'TablerBundle') }}</p>
+    {% endblock %}
+
+    {{ form_start(requestForm) }}
+
+    {{ form_row(requestForm.email) }}
+
+    <div class="form-footer">
+        {{ submit_button('mail', {
+            title : 'Reset your password'|trans({}, 'TablerBundle'),
+            class : 'w-100',
+            combined : true,
+        }, 'primary') }}
+    </div>
+
+    {{ form_end(requestForm) }}
+{% endblock %}
+
+{% block login_actions %}
+    <div class="text-center text-muted mt-3">
+        <a href="{{ path('tabler_login'|tabler_route) }}">
+            {{ 'Back to login'|trans({}, 'TablerBundle') }}
+        </a>
+    </div>
+{% endblock %}

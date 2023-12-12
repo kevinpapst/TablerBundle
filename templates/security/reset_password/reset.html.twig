@@ -1,0 +1,26 @@
+{% extends '@Tabler/security/reset_password/_layout.html.twig' %}
+{% from '@Tabler/components/buttons.html.twig' import submit_button %}
+
+{% block title %}
+    {{ 'Reset your password'|trans({}, 'TablerBundle') }}
+{% endblock %}
+
+{% block login_box_msg %}
+    {{ 'Reset your password'|trans({}, 'TablerBundle') }}
+{% endblock %}
+
+{% block login_form %}
+    {{ form_start(resetForm) }}
+
+    {{ form_row(resetForm.plainPassword) }}
+
+    <div class="form-footer">
+        {{ submit_button(false, {
+            title : 'Reset your password'|trans({}, 'TablerBundle'),
+            class : 'w-100',
+            combined : true,
+        }, 'primary') }}
+    </div>
+
+    {{ form_end(resetForm) }}
+{% endblock %}

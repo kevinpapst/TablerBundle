@@ -9,6 +9,7 @@ If you cannot find the needed information in this list of topics, please create 
 * [Override theme](override_theme.md)
 * [Access bundle configuration](twig-context.md)
 * [Customizing forms](form_theme.md)
+* [Reset password templates](reset_password_pages.md)
 
 Components (Twig macros):
 

@@ -146,6 +146,26 @@
                 <source>Next</source>
                 <target>Weiter</target>
             </trans-unit>
+            <trans-unit id="948fezF"  resname="Password Reset Email Sent">
+                <source>Password Reset Email Sent</source>
+                <target>E-Mail für die Zurücksetzung des Passwort wurde gesendet</target>
+            </trans-unit>
+            <trans-unit id="5FE896d" resname="Enter your email address and you will be emailed a link that allows to reset your password">
+                <source>Enter your email address and you will be emailed a link that allows to reset your password</source>
+                <target>Geben Sie Ihre E-Mail Adresse an und Sie bekommen eine Nachricht um Ihr Passwort zurückzusetzen</target>
+            </trans-unit>
+            <trans-unit id="RG984sg" resname="If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %expirationMessage%.">
+                <source>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in %expirationMessage%.</source>
+                <target>Wenn ein Zugang mit Ihrer E-Mail existiert, wurde soeben eine E-Mail dorthin versendet, welche eine Link beinhaltet, mit dem Sie Ihr Passwort zurücksetzen können. Dieser Link wird ablaufen in %expirationMessage%.</target>
+            </trans-unit>
+            <trans-unit id="498fEsz" resname="If you don't receive an email please check your spam folder or">
+                <source>If you don't receive an email please check your spam folder or</source>
+                <target>Wenn Sie keine E-Mail erhalten, überprüfen Sie bitte Ihren Spam Ordner oder/target>
+            </trans-unit>
+            <trans-unit id="EF54d5d" resname="Try again">
+                <source>Try again</source>
+                <target>Versuchen Sie es erneut</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
