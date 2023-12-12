@@ -22,10 +22,14 @@ final class RuntimeExtension implements RuntimeExtensionInterface
 {
     /**
      * @param array<string, string|null> $routes
-     * @param array<string, string> $icons
+     * @param array<string, string>      $icons
      */
-    public function __construct(private EventDispatcherInterface $eventDispatcher, private ContextHelper $helper, private array $routes, private array $icons)
-    {
+    public function __construct(
+        private EventDispatcherInterface $eventDispatcher,
+        private ContextHelper $helper,
+        private array $routes,
+        private array $icons
+    ) {
     }
 
     public function getRouteByAlias(string $routeName): string
@@ -68,6 +72,7 @@ final class RuntimeExtension implements RuntimeExtensionInterface
 
     /**
      * @param Request $request
+     *
      * @return MenuItemInterface[]|null
      */
     public function getMenu(Request $request): ?array
@@ -82,10 +87,10 @@ final class RuntimeExtension implements RuntimeExtensionInterface
         return $event->getItems();
     }
 
-    public function getNotifications(): ?NotificationEvent
+    public function getNotifications(): NotificationEvent
     {
         if (!$this->eventDispatcher->hasListeners(NotificationEvent::class)) {
-            return new NotificationEvent();
+            return new NotificationEvent(false);
         }
 
         /** @var NotificationEvent $listEvent */
