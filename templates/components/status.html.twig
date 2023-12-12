@@ -1,16 +1,27 @@
 {% macro status(text, options) %}
-    {% set _color = options.color ?? 'green' %}
-    {% set _animated = options.animated ?? true %}
-    {% set _lite = options.lite is defined ? options.lite  : false %}
-    {% set _with_dot = options.with_dot is defined ? options.with_dot  : false %}
-    {% set _extraClass = options.extraClass ?? '' %}
+    {% import '@Tabler/includes/utils.html.twig' as utils %}
+    {% import '@Tabler/components/status_dot.html.twig' as status_dot %}
 
-    {%- apply spaceless -%}
-        <span class="status status-{{ _color }} {{ _lite ? 'status-lite' : '' }} {{ _extraClass }}">
-        {% if _with_dot %}
-            <span class="status-dot {{ _animated ? 'status-dot-animated' : '' }}"></span>
+    {% set _color = options.color ?? 'green' %}
+    {% set _animated = (options.animated ?? true) is same as true %}
+    {% set _lite = (options.lite ?? false) is same as true %}
+    {% if options.with_dot is defined %}
+        {% deprecated 'with_dot option is deprecated, use withDot option instead!' %}
+        {% set _withDot = options.with_dot is same as true %}
+    {% else %}
+        {% set _withDot = (options.withDot ?? false) is same as true %}
+    {% endif %}
+
+    {% set _extraClass = options.extraClass ?? '' %}
+    {% set _attr = options.attr ?? {} %}
+
+    <span
+        class="status status-{{ _color }} {% if _lite %}status-lite{% endif %} {{ _extraClass }}"
+        {{ utils.attr_to_html(_attr) }}
+    >
+        {% if _withDot %}
+            {{ status_dot({color: _color, animated : _animated}) }}
         {% endif %}
-            {{ text }}
-        </span>
-    {%- endapply -%}
+        {{ text }}
+    </span>
 {% endmacro %}
