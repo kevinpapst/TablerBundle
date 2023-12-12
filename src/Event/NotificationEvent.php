@@ -12,7 +12,7 @@ namespace KevinPapst\TablerBundle\Event;
 use KevinPapst\TablerBundle\Model\NotificationV2Interface;
 use KevinPapst\TablerBundle\Model\NotificationInterface;
 
-class NotificationEvent extends ThemeEvent implements NotificationEventInterface
+class NotificationEvent extends ThemeEvent
 {
     private ?string $title = null;
 
