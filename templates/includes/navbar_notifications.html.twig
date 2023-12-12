@@ -1,21 +1,78 @@
-{% set notifications = tabler_notifications() %}
-{% if notifications is not null %}
-    {% set total = notifications.total %}
-    {% set notifications = notifications.notifications %}
+{# @var notificationEvent \KevinPapst\TablerBundle\Event\NotificationEvent #}
+{% set notificationEvent = tabler_notifications() %}
+
+{% if notificationEvent.visible %}
     <div class="nav-item dropdown d-none d-md-flex me-3">
-        <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1" aria-label="{{ 'You have %count% notifications'|trans({'%count%': total}, 'TablerBundle') }}">
+        {# Notification Icon #}
+        <a class="nav-link px-0" href="#"
+           data-bs-toggle="dropdown" tabindex="-1"
+           aria-label="{{ 'Show notifications'|trans({}, 'TablerBundle') }}"
+        >
             <i class="icon far fa-bell"></i>
-            <span class="badge bg-red"></span>
+            {% if notificationEvent.total > 0 -%}
+                <span class="badge bg-{{ notificationEvent.badgeColor }}">
+                {%- if notificationEvent.showBadgeTotal -%}
+                    {{ notificationEvent.total }}
+                {%- endif -%}
+            </span>
+            {%- endif %}
         </a>
-        <div class="dropdown-menu dropdown-menu-end dropdown-menu-card">
+
+        {# Dropdown #}
+        <div
+            class="dropdown-menu {% if notificationEvent.withArrow %}dropdown-menu-arrow{% endif %} dropdown-menu-end dropdown-menu-card"
+        >
             <div class="card">
-                <div class="card-header text-nowrap">{{ 'You have %count% notifications'|trans({'%count%': total}, 'TablerBundle') }}</div>
-                {% for notice in notifications|slice(0, 9) %}
-                    <a class="dropdown-item" href="{% if notice.url is null %}#{% else %}{{ notice.url }}{% endif %}">
-                        <span class="badge bg-{{ notice.type }} me-1"></span>
-                        {{ notice.message }}
-                    </a>
-                {% endfor %}
+                {# Header #}
+                {% if notificationEvent.titleHtml %}
+                    {{ notificationEvent.titleHtml | raw }}
+                {% else %}
+                    <div class="card-header">
+                        <div class="card-title text-truncate">
+                            {% if notificationEvent.total > 0 %}
+                                {{ notificationEvent.title ?? 'You have %count% notifications'|trans({'%count%': notificationEvent.total}, 'TablerBundle') }}
+                            {% else %}
+                                {{ notificationEvent.titleEmpty ?? 'You have no notification'|trans({}, 'TablerBundle') }}
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                {# Notifications #}
+                {% if notificationEvent.total > 0 %}
+                    <div class="list-group list-group-flush list-group-hoverable">
+                        {% for notification in notificationEvent.notifications %}
+                            {% if notification.html ?? false %}
+                                {{ notification.message | raw }}
+                            {% else %}
+                                <div
+                                    class="list-group-item {% if notification.active ?? false %}active{% endif %} {% if notification.disabled ?? false %}disabled{% endif %}"
+                                >
+                                    <div class="row align-items-center">
+                                        {% if notification.withBadge ?? true %}
+                                            <div class='col-auto'>
+                                                <div class="col-auto">
+                                                    <span
+                                                        class="status-dot {% if notification.badgeAnimated ?? false %}status-dot-animated{% endif %} {% if notification.type is not null %}bg-{{ notification.type }}{% endif %} d-block"
+                                                    ></span>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        <div class="col text-truncate">
+                                            <a class='text-muted text-truncate'
+                                               href="{{ notification.url ?? '#' }}">{{ notification.message }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                        {# "More.." part #}
+                        {% if notificationEvent.total > notificationEvent.maxDisplay %}
+                            <li class="list-group-item disabled">{{ 'And %count% more…' | trans({'%count%' : notificationEvent.total - notificationEvent.maxDisplay}, 'TablerBundle') }}</li>
+                        {% endif %}
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>

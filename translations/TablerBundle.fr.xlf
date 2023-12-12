@@ -146,6 +146,18 @@
         <source>or</source>
         <target state="translated">ou</target>
       </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications">
+          <source>Show notifications</source>
+          <target>Afficher notifications</target>
+      </trans-unit>
+      <trans-unit id="F5Dfzd" resname="You have no notification">
+          <source>You have no notification</source>
+          <target>Vous avez aucune notification</target>
+      </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…">
+          <source>And %count% more…</source>
+          <target>Et %count% autres…</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

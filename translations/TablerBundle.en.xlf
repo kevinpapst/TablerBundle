@@ -146,6 +146,18 @@
         <source>Next</source>
         <target>Next</target>
       </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications">
+          <source>Show notifications</source>
+          <target>Show notifications</target>
+      </trans-unit>
+      <trans-unit id="F5Dfzd" resname="You have no notification">
+          <source>You have no notification</source>
+          <target>You have no notification</target>
+      </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…">
+          <source>And %count% more…</source>
+          <target>And %count% more…</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
