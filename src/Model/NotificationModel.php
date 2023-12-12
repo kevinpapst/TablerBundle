@@ -13,10 +13,10 @@ use KevinPapst\TablerBundle\Helper\Constants;
 
 class NotificationModel implements NotificationV2Interface
 {
-    private ?string $url           = null;
-    private bool    $active        = false;
-    private bool    $disabled      = false;
-    private bool    $withBadge     = true;
+    private ?string $url = null;
+    private bool    $active = false;
+    private bool    $disabled = false;
+    private bool    $withBadge = true;
     private bool    $badgeAnimated = true;
 
     private bool $html = false;

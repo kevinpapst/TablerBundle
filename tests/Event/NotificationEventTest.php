@@ -73,7 +73,7 @@ class NotificationEventTest extends TestCase
 
         // 2
         $defaultNotification = new NotificationModel('default', 'My default Message');
-        $arr[]               = $defaultNotification;
+        $arr[] = $defaultNotification;
 
         // 3
         $disabledNotification = new NotificationModel('disabled', 'My disabled Message', null);
@@ -136,11 +136,11 @@ class NotificationEventTest extends TestCase
         // 8
         $moreThanMaxNotification =
             new NotificationModel('max', 'Will not be displayed as max notification is set to 7');
-        $arr[]                   = $moreThanMaxNotification;
+        $arr[] = $moreThanMaxNotification;
 
         // 9
         $extraNotification = new NotificationModel('extra', 'One more not displayed');
-        $arr[]             = $extraNotification;
+        $arr[] = $extraNotification;
 
         return $arr;
     }

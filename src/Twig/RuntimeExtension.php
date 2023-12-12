@@ -22,7 +22,7 @@ final class RuntimeExtension implements RuntimeExtensionInterface
 {
     /**
      * @param array<string, string|null> $routes
-     * @param array<string, string>      $icons
+     * @param array<string, string> $icons
      */
     public function __construct(
         private EventDispatcherInterface $eventDispatcher,

@@ -9,8 +9,8 @@
 
 namespace KevinPapst\TablerBundle\Event;
 
-use KevinPapst\TablerBundle\Model\NotificationV2Interface;
 use KevinPapst\TablerBundle\Model\NotificationInterface;
+use KevinPapst\TablerBundle\Model\NotificationV2Interface;
 
 class NotificationEvent extends ThemeEvent
 {
@@ -29,7 +29,7 @@ class NotificationEvent extends ThemeEvent
     private int $maxDisplay = 10;
 
     /**
-     * @var $notifications array<int,NotificationInterface | NotificationV2Interface>
+     * @var array<int,NotificationInterface | NotificationV2Interface>
      */
     private array $notifications = [];
 
