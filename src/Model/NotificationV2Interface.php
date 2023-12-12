@@ -9,7 +9,11 @@
 
 namespace KevinPapst\TablerBundle\Model;
 
-// TODO : Implement these in NotificationInterface later
+/**
+ * TODO : Implement these in NotificationInterface later
+ * @internal THIS WILL BE REMOVED WITH THE NEXT MAJOR RELEASE, NO BC PROMISE GIVEN
+ * @deprecated
+ */
 interface NotificationV2Interface extends NotificationInterface
 {
     public function isActive(): bool;
