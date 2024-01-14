@@ -146,6 +146,18 @@
         <source>Next</source>
         <target state="translated">Próximo</target>
       </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve" approved="no">
+          <source>Show notifications</source>
+        <target state="translated">Mostrar notificações</target>
+      </trans-unit>
+      <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve" approved="no">
+          <source>You have no notification</source>
+        <target state="translated">Não tem nenhuma notificação</target>
+      </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve" approved="no">
+          <source>And %count% more…</source>
+        <target state="translated">E mais %count%…</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

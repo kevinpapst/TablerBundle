@@ -146,6 +146,18 @@
         <source>Next</source>
         <target state="translated">下一页</target>
       </trans-unit>
+      <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve" approved="no">
+          <source>You have no notification</source>
+        <target state="translated">您没有任何通知</target>
+      </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve" approved="no">
+          <source>Show notifications</source>
+        <target state="translated">显示通知</target>
+      </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve" approved="no">
+          <source>And %count% more…</source>
+        <target state="translated">还有 %count% 更多…</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
