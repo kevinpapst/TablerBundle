@@ -12,7 +12,7 @@
                 <a {% if item.hasChildren %}
                         class="nav-link dropdown-toggle navbar-menu-{{ item.identifier }}" role="button"
                         data-bs-toggle="dropdown" data-bs-auto-close="{{ layout_type is same as "vertical" ? 'false' : 'outside' }}"
-                        aria-expanded="{{ layout_type is same as "vertical" }}"
+                        aria-expanded="{{ layout_type is same as 'vertical' ? 'true' : 'false' }}"
                     {% else %}
                         class="nav-link" href="{{ '/' in item.route ? item.route : (item.route is null ? '#' : path(item.route|tabler_route, item.routeArgs)) }}"
                     {% endif %}>
@@ -38,7 +38,7 @@
                             <div class="dropend">
                                 <a class="dropdown-item dropdown-toggle {{ child.isActive ? 'active' : '' }} navbar-menu-{{ child.identifier }}" role="button"
                                    data-bs-toggle="dropdown" data-bs-auto-close="{{ layout_type is same as "vertical" ? 'false' : 'outside' }}"
-                                   aria-expanded="{{ layout_type is same as "vertical" }}">
+                                   aria-expanded="{{ layout_type is same as 'vertical' ? 'true' : 'false' }}">
                                     {{ _self.item_icon(child) }}
                                     {{ child.label|trans({}, child.translationDomain) }}
                                     {{ _self.item_badge(child) }}
