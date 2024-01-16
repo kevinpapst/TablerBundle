@@ -146,6 +146,18 @@
         <source>Previous</source>
         <target state="translated">Prethodna</target>
       </trans-unit>
+      <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve" approved="no">
+          <source>You have no notification</source>
+        <target state="translated">Nemaš obavijest</target>
+      </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve" approved="no">
+          <source>Show notifications</source>
+        <target state="translated">Pokaži obavijesti</target>
+      </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve" approved="no">
+          <source>And %count% more…</source>
+        <target state="translated">Dodaj još %count% …</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
