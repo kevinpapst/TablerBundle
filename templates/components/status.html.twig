@@ -1,6 +1,6 @@
 {% macro status(text, options) %}
     {% import '@Tabler/includes/utils.html.twig' as utils %}
-    {% import '@Tabler/components/status_dot.html.twig' as status_dot %}
+    {% from '@Tabler/components/status_dot.html.twig' import status_dot %}
 
     {% set _color = options.color ?? 'green' %}
     {% set _animated = (options.animated ?? true) is same as true %}
