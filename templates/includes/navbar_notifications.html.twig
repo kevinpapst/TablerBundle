@@ -4,10 +4,7 @@
 {% if notificationEvent.visible %}
     <div class="nav-item dropdown d-none d-md-flex me-3">
         {# Notification Icon #}
-        <a class="nav-link px-0" href="#"
-           data-bs-toggle="dropdown" tabindex="-1"
-           aria-label="{{ 'Show notifications'|trans({}, 'TablerBundle') }}"
-        >
+        <a class="nav-link px-0" href="#" data-bs-toggle="dropdown" tabindex="-1" title="{{ 'Show notifications'|trans({}, 'TablerBundle') }}">
             <i class="icon far fa-bell"></i>
             {% if notificationEvent.total > 0 -%}
                 <span class="badge bg-{{ notificationEvent.badgeColor }}">
@@ -19,9 +16,7 @@
         </a>
 
         {# Dropdown #}
-        <div
-            class="dropdown-menu {% if notificationEvent.withArrow %}dropdown-menu-arrow{% endif %} dropdown-menu-end dropdown-menu-card"
-        >
+        <div class="dropdown-menu {% if notificationEvent.withArrow %}dropdown-menu-arrow{% endif %} dropdown-menu-end dropdown-menu-card">
             <div class="card">
                 {# Header #}
                 {% if notificationEvent.titleHtml %}
