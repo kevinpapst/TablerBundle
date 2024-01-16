@@ -158,6 +158,14 @@
                 <source>And %count% more…</source>
                 <target>Und %count% weitere…</target>
             </trans-unit>
+            <trans-unit id=".4BZ3Gd" resname="Actions">
+                <source>Actions</source>
+                <target>Actions</target>
+            </trans-unit>
+            <trans-unit id="QD4LaO1" resname="Open personal menu">
+                <source>Open personal menu</source>
+                <target>Open personal menu</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

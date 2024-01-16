@@ -8,7 +8,7 @@
 {% endif %}
 {% if user is not null %}
     <div class="nav-item dropdown">
-        <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+        <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="{{ 'Open personal menu'|trans({}, 'TablerBundle') }}">
             {% import "@Tabler/components/avatar.html.twig" as macro %}
             {{ macro.avatar(user, 'sm') }}
             {% if not tabler_bundle.isCondensedUserMenu() %}
