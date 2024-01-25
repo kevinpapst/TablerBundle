@@ -4,7 +4,7 @@
 {% set _footer = (footer ?? true) is same as true %}
 {% set _status = status ?? null %}
 
-<div {% block modal_attributes %}{% endblock %} class="modal modal-blur fade {% block modal_class %}{% endblock %}" id="{{ _id }}" tabindex="-1" role="dialog"{% if _header  %} aria-labelledby="{{ _id }}_label"{% endif %}>
+<div {% block modal_attributes %}{% endblock %} class="modal {% block modal_effects %}modal-blur fade{% endblock %} {% block modal_class %}{% endblock %}" id="{{ _id }}" tabindex="-1" role="dialog"{% if _header  %} aria-labelledby="{{ _id }}_label"{% endif %}>
     <div class="modal-dialog {% block modal_size %}modal-lg{% endblock %}" role="document">
         <div class="modal-content {% block modal_content_class %}{% endblock %}">
             {% block modal_before %}{% endblock %}
