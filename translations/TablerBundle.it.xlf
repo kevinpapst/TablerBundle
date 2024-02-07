@@ -147,16 +147,24 @@
         <target state="final">Successivo</target>
       </trans-unit>
       <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve" approved="yes">
-          <source>You have no notification</source>
+        <source>You have no notification</source>
         <target state="final">Non hai alcuna notifica</target>
       </trans-unit>
       <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve" approved="yes">
-          <source>Show notifications</source>
+        <source>Show notifications</source>
         <target state="final">Mostra notifiche</target>
       </trans-unit>
       <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve" approved="yes">
-          <source>And %count% more…</source>
+        <source>And %count% more…</source>
         <target state="final">E %count% in più…</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve" approved="yes">
+        <source>Actions</source>
+        <target state="final">Azioni</target>
+      </trans-unit>
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve" approved="yes">
+        <source>Open personal menu</source>
+        <target state="final">Apri menu personale</target>
       </trans-unit>
     </body>
   </file>
