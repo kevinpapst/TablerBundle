@@ -2,11 +2,11 @@
 {% set notificationEvent = tabler_notifications() %}
 
 {% if notificationEvent.visible %}
-    <div class="nav-item dropdown d-none d-md-flex me-3">
+    <div class="{{ notificationEvent.containerClass }}">
         {# Notification Icon #}
-        <a class="nav-link px-0" href="#" data-bs-toggle="dropdown" tabindex="-1" title="{{ 'Show notifications'|trans({}, 'TablerBundle') }}">
-            <i class="icon far fa-bell"></i>
-            {% if notificationEvent.total > 0 -%}
+        <a class="{{ notificationEvent.buttonClass }}" href="#" data-bs-toggle="dropdown" tabindex="-1" title="{{ 'Show notifications'|trans({}, 'TablerBundle') }}">
+            <i class="{{ notificationEvent.icon|tabler_icon }} {{ notificationEvent.iconClass }}"></i>
+            {% if notificationEvent.showBadge and notificationEvent.total > 0 -%}
                 <span class="badge bg-{{ notificationEvent.badgeColor }}">
                 {%- if notificationEvent.showBadgeTotal -%}
                     {{ notificationEvent.total }}

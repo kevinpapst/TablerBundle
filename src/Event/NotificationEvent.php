@@ -15,23 +15,76 @@ use KevinPapst\TablerBundle\Model\NotificationV2Interface;
 class NotificationEvent extends ThemeEvent
 {
     private ?string $title = null;
-
     private ?string $titleEmpty = null;
-
     private ?string $titleHtml = null;
-
     private bool $withArrow = true;
-
     private string $badgeColor = 'red';
-
+    private string $icon = 'far fa-bell';
+    private string $buttonClass = 'nav-link px-0';
+    private string $iconClass = 'icon';
+    private string $containerClass = 'nav-item dropdown d-none d-md-flex me-3';
     private bool $showBadgeTotal = true;
-
+    private bool $showBadge = true;
     private int $maxDisplay = 10;
 
     /**
      * @var array<int,NotificationInterface | NotificationV2Interface>
      */
     private array $notifications = [];
+
+    public function __construct(private bool $showIfEmpty = false)
+    {
+    }
+
+    public function getContainerClass(): string
+    {
+        return $this->containerClass;
+    }
+
+    public function setContainerClass(string $containerClass): void
+    {
+        $this->containerClass = $containerClass;
+    }
+
+    public function getButtonClass(): string
+    {
+        return $this->buttonClass;
+    }
+
+    public function setButtonClass(string $buttonClass): void
+    {
+        $this->buttonClass = $buttonClass;
+    }
+
+    public function getIcon(): string
+    {
+        return $this->icon;
+    }
+
+    public function setIcon(string $icon): void
+    {
+        $this->icon = $icon;
+    }
+
+    public function getIconClass(): string
+    {
+        return $this->iconClass;
+    }
+
+    public function setIconClass(string $iconClass): void
+    {
+        $this->iconClass = $iconClass;
+    }
+
+    public function isShowBadge(): bool
+    {
+        return $this->showBadge;
+    }
+
+    public function setShowBadge(bool $showBadge): void
+    {
+        $this->showBadge = $showBadge;
+    }
 
     public function getTotal(): int
     {
@@ -41,11 +94,6 @@ class NotificationEvent extends ThemeEvent
     public function isVisible(): bool
     {
         return $this->getTotal() > 0 || ($this->getTotal() === 0 && $this->showIfEmpty);
-    }
-
-    public function __construct(
-        private bool $showIfEmpty = false,
-    ) {
     }
 
     public function isShowIfEmpty(): bool
