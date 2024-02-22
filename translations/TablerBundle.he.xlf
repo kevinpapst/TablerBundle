@@ -147,16 +147,24 @@
         <target state="translated">הבא</target>
       </trans-unit>
       <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve" approved="no">
-          <source>Show notifications</source>
+        <source>Show notifications</source>
         <target state="translated">הצגת התראות</target>
       </trans-unit>
       <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve" approved="no">
-          <source>You have no notification</source>
+        <source>You have no notification</source>
         <target state="translated">אין לך התראות</target>
       </trans-unit>
       <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve" approved="no">
-          <source>And %count% more…</source>
+        <source>And %count% more…</source>
         <target state="translated">ועוד %count%…</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve" approved="no">
+        <source>Actions</source>
+        <target state="translated">פעולות</target>
+      </trans-unit>
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve" approved="no">
+        <source>Open personal menu</source>
+        <target state="translated">פתיחת התפריט הראשי</target>
       </trans-unit>
     </body>
   </file>
