@@ -113,12 +113,9 @@
         <source>http_error_404.description</source>
         <target state="translated">Oj! Sidan hittades inte</target>
       </trans-unit>
-      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion" xml:space="preserve">
         <source>http_error_404.suggestion</source>
-        <target state="translated">
-                    Vi kunde inte hitta sidan du letade efter.
-                    Under tiden kan du återvända till din dashboard och börja om.
-                </target>
+        <target state="translated">Vi kunde inte hitta sidan du letade efter. Återgå till överblicksbilden och försök igen.</target>
       </trans-unit>
       <trans-unit id="Qn5rwdU" resname="http_error_403.description">
         <source>http_error_403.description</source>
@@ -153,6 +150,26 @@
       <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
         <source>Next</source>
         <target state="translated">Nästa</target>
+      </trans-unit>
+      <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve" approved="no">
+        <source>You have no notification</source>
+        <target state="translated">Du har inga aviseringar</target>
+      </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve" approved="no">
+        <source>Show notifications</source>
+        <target state="translated">Visa aviseringar</target>
+      </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve" approved="no">
+        <source>And %count% more…</source>
+        <target state="translated">Lägg till %count%…</target>
+      </trans-unit>
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve" approved="no">
+        <source>Open personal menu</source>
+        <target state="translated">Öppna din meny</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve" approved="no">
+        <source>Actions</source>
+        <target state="translated">Actions</target>
       </trans-unit>
     </body>
   </file>
