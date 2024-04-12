@@ -155,6 +155,26 @@
         <source>Next</source>
         <target state="translated">Далее</target>
       </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve" approved="no">
+        <source>Show notifications</source>
+        <target state="translated">Показывать уведомления</target>
+      </trans-unit>
+      <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve" approved="no">
+        <source>You have no notification</source>
+        <target state="translated">У Вас пока нет уведомлений</target>
+      </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve" approved="no">
+        <source>And %count% more…</source>
+        <target state="translated">И еще %count%…</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve" approved="no">
+        <source>Actions</source>
+        <target state="translated">Действия</target>
+      </trans-unit>
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve" approved="no">
+        <source>Open personal menu</source>
+        <target state="translated">Открыть личное меню</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
