@@ -51,7 +51,7 @@
         <target state="translated">使用者名稱</target>
       </trans-unit>
       <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve" approved="no">
-          <source>You have no notification</source>
+        <source>You have no notification</source>
         <target state="translated">您沒有任何通知</target>
       </trans-unit>
       <trans-unit id="D3_ygfb" resname="Register a new account" xml:space="preserve" approved="no">
@@ -99,7 +99,7 @@
         <target state="translated">登入</target>
       </trans-unit>
       <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve" approved="no">
-          <source>Show notifications</source>
+        <source>Show notifications</source>
         <target state="translated">顯示通知</target>
       </trans-unit>
       <trans-unit id="rtYKRSj" resname="http_error.title" xml:space="preserve" approved="no">
@@ -151,12 +151,20 @@
         <target state="translated">已完成 %progress%%</target>
       </trans-unit>
       <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve" approved="no">
-          <source>And %count% more…</source>
+        <source>And %count% more…</source>
         <target state="translated">還有 %count% 項……</target>
       </trans-unit>
       <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
         <source>Next</source>
         <target state="translated">下一頁</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve" approved="no">
+        <source>Actions</source>
+        <target state="translated">操作</target>
+      </trans-unit>
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve" approved="no">
+        <source>Open personal menu</source>
+        <target state="translated">開啟個人選單</target>
       </trans-unit>
     </body>
   </file>
