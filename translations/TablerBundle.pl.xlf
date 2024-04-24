@@ -146,6 +146,26 @@
         <source>Take me home</source>
         <target state="translated">Wróć do strony głównej</target>
       </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve" approved="no">
+        <source>Show notifications</source>
+        <target state="translated">Pokaż powiadomienia</target>
+      </trans-unit>
+      <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve" approved="no">
+        <source>You have no notification</source>
+        <target state="translated">Brak powiadomienia</target>
+      </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve" approved="no">
+        <source>And %count% more…</source>
+        <target state="translated">I %count% więcej…</target>
+      </trans-unit>
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve" approved="no">
+        <source>Open personal menu</source>
+        <target state="translated">Otwórz menu osobiste</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve" approved="no">
+        <source>Actions</source>
+        <target state="translated">Akcje</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
