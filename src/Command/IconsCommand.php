@@ -28,6 +28,9 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 #[AsCommand(name: 'tabler:icons', description: 'Downloads all configured icons to be used as SVG with Symfony UX icon')]
 final class IconsCommand extends Command
 {
+    /**
+     * @param array<string, string> $tablerBundleIcons
+     */
     public function __construct(
         private readonly string $projectDirectory,
         private readonly array $tablerBundleIcons
@@ -40,6 +43,9 @@ final class IconsCommand extends Command
         $this->addOption('overwrite', null, InputOption::VALUE_NONE, 'Overwrite existing icons');
     }
 
+    /**
+     * @return array<string, string>
+     */
     private function getPackageMappings(): array
     {
         return [
@@ -49,6 +55,9 @@ final class IconsCommand extends Command
         ];
     }
 
+    /**
+     * @return array<string, array<string, string>>
+     */
     private function getIconMapping(): array
     {
         $result = [];
@@ -69,6 +78,9 @@ final class IconsCommand extends Command
         return $result;
     }
 
+    /**
+     * @return array<string, string>
+     */
     private function getConvertedConfig(): array
     {
         $result = [];
@@ -93,7 +105,13 @@ final class IconsCommand extends Command
         $iconPath = $this->projectDirectory . '/assets/icons/';
 
         try {
-            $command = $this->getApplication()->find('ux:icons:import');
+            $app = $this->getApplication();
+            if ($app === null) {
+                $io->error('Could not load application');
+
+                return Command::FAILURE;
+            }
+            $command = $app->find('ux:icons:import');
             foreach ($this->getIconMapping() as $internalName => $packages) {
                 foreach ($packages as $package => $name) {
                     if (!$overwrite && file_exists($iconPath . $package . '/' . $name . '.svg')) {
