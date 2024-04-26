@@ -9,11 +9,11 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                php: ['8.1', '8.2']
+                php: ['8.1', '8.2', '8.3']
 
         name: Linting - PHP ${{ matrix.php }}
         steps:
-            -   uses: actions/checkout@v2
+            -   uses: actions/checkout@v4
             -   uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php }}
