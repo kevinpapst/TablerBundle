@@ -1,6 +1,7 @@
 @import '~@tabler/core/dist/css/tabler.css';
 @import '~@tabler/core/dist/css/tabler-vendors.css';
 
+// FIXME remove this with the next major update
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/regular';
