@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="hu" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
@@ -29,6 +29,38 @@
       <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
         <source>http_error_403.suggestion</source>
         <target>Elnézést, de nincs jogosultságod az oldal megtekintéséhez. Kérlek beszélj a rendszergazdával, ha szerinted ez egy hiba.</target>
+      </trans-unit>
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation" xml:space="preserve" approved="no">
+        <source>Toggle navigation</source>
+        <target state="translated">Navigáció váltása</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
+        <source>Toggle visibility</source>
+        <target state="translated">Láthatóság váltása</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me" xml:space="preserve" approved="no">
+        <source>Remember Me</source>
+        <target state="translated">Emlékezz rám</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register" xml:space="preserve" approved="no">
+        <source>Register</source>
+        <target state="translated">Regisztráció</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile" xml:space="preserve" approved="no">
+        <source>Profile</source>
+        <target state="translated">Profilod</target>
+      </trans-unit>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
+        <source>Login</source>
+        <target state="translated">Bejelentkezés</target>
+      </trans-unit>
+      <trans-unit id="vMC8yRQ" resname="Sign In" xml:space="preserve" approved="no">
+        <source>Log in</source>
+        <target state="translated">Belépés</target>
+      </trans-unit>
+      <trans-unit id="SPDT05f" resname="Sign out" xml:space="preserve" approved="no">
+        <source>Log out</source>
+        <target state="translated">Kilépés</target>
       </trans-unit>
     </body>
   </file>
