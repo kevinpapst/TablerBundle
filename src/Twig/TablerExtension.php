@@ -24,7 +24,7 @@ class TablerExtension extends AbstractExtension
             new TwigFilter('tabler_container', [RuntimeExtension::class, 'containerClass']),
             new TwigFilter('tabler_body', [RuntimeExtension::class, 'bodyClass']),
             new TwigFilter('tabler_route', [RuntimeExtension::class, 'getRouteByAlias']),
-            new TwigFilter('tabler_icon', [RuntimeExtension::class, 'icon']),
+            new TwigFilter('tabler_icon', [IconExtension::class, 'icon']),
         ];
     }
 
@@ -35,7 +35,7 @@ class TablerExtension extends AbstractExtension
     {
         return [
             new TwigFunction('tabler_asset_version', [RuntimeExtension::class, 'assetVersion']),
-            new TwigFunction('tabler_icon', [RuntimeExtension::class, 'createIcon'], ['is_safe' => ['html']]),
+            new TwigFunction('tabler_icon', [IconExtension::class, 'createIcon'], ['is_safe' => ['html']]),
             new TwigFunction('tabler_menu', [RuntimeExtension::class, 'getMenu']),
             new TwigFunction('tabler_notifications', [RuntimeExtension::class, 'getNotifications']),
             new TwigFunction('tabler_theme', [RuntimeExtension::class, 'theme']),

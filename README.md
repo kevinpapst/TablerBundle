@@ -33,7 +33,7 @@ You can check it out here at Github in the [TablerBundle-Demo](https://github.co
 - ContextHelper for dynamic layout changes (e.g. based on user preferences)
 - Translations for: english, german, italian, czech, spanish, russian, arabic, finnish, japanese, swedish, portuguese (brazilian), dutch, french, turkish, danish, chinese, slovakian, basque, polish, esperanto, hebrew, romanian ([please help translating it to more languages](https://hosted.weblate.org/projects/kimai/theme/))
 - Based on Bootstrap 5
-- Supports FontAwesome 5
+- Supports [Symfony UX icons](https://ux.symfony.com/icons)
 
 ## Installation
 
@@ -68,13 +68,15 @@ return [
 ];
 ```
 
+Now reload the cache and call `php bin/console tabler:icons`.
+
 ### Step 4: Documentation
 
-Now read what you should do in order to use the theme at [docs/](docs/index.md).
+Read how to use the theme at [docs/](docs/index.md).
 
 ## License and contributors
 
 Published under the MIT, read the [LICENSE](LICENSE) file for more information.
 
-Translations managed with the fantastic [Weblate project](https://hosted.weblate.org/projects/kimai/theme/).
+Translations managed with the fantastic [Weblate](https://hosted.weblate.org/projects/kimai/theme/) project.
 
