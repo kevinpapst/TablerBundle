@@ -10,9 +10,9 @@
         <source>Remember Me</source>
         <target>Zapamti me</target>
       </trans-unit>
-      <trans-unit id="8FGIkAR" resname="Sign in to start your session">
-        <source>Sign in to start your session</source>
-        <target>Prijavi se</target>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
+        <source>Login</source>
+        <target state="translated">Prijava</target>
       </trans-unit>
       <trans-unit id="vMC8yRQ" resname="Sign In">
         <source>Sign In</source>
@@ -136,7 +136,7 @@
       </trans-unit>
       <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
         <source>Next</source>
-        <target state="translated">Sljedeća</target>
+        <target state="translated">Dalje</target>
       </trans-unit>
       <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve" approved="no">
         <source>Take me home</source>
@@ -144,7 +144,7 @@
       </trans-unit>
       <trans-unit id="F35zef" resname="Previous" xml:space="preserve" approved="no">
         <source>Previous</source>
-        <target state="translated">Prethodna</target>
+        <target state="translated">Natrag</target>
       </trans-unit>
       <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve" approved="no">
         <source>You have no notification</source>
