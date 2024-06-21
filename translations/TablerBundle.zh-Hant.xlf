@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="MWNS5dg" resname="http_error_404.suggestion" xml:space="preserve" approved="yes">
         <source>http_error_404.suggestion</source>
-        <target state="final">無法找到該頁面。請回到控制主頁面並再試一次。</target>
+        <target state="final">無法找到此頁面。請回到控制主頁面並再試一次。</target>
       </trans-unit>
       <trans-unit id="e3w.2Rf" resname="http_error.description" xml:space="preserve" approved="yes">
         <source>http_error.description</source>
@@ -36,7 +36,7 @@
       </trans-unit>
       <trans-unit id="zDeeh7L" resname="http_error_403.suggestion" xml:space="preserve" approved="yes">
         <source>http_error_403.suggestion</source>
-        <target state="final">抱歉，您沒有可存取該頁面的權限。如有疑問請聯繫管理員。</target>
+        <target state="final">抱歉，您沒有可存取此頁面的權限。如有疑問請聯繫管理員。</target>
       </trans-unit>
       <trans-unit id="ru5FEGk" resname="http_error.suggestion" xml:space="preserve" approved="yes">
         <source>http_error.suggestion</source>
@@ -92,7 +92,7 @@
       </trans-unit>
       <trans-unit id="KLIuHvt" resname="This is a mandatory field" xml:space="preserve" approved="yes">
         <source>This is a mandatory field</source>
-        <target state="final">該欄位必填</target>
+        <target state="final">此欄位必填</target>
       </trans-unit>
       <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="yes">
         <source>Login</source>
@@ -132,7 +132,7 @@
       </trans-unit>
       <trans-unit id="_W1eNz2" resname="http_error_404.description" xml:space="preserve" approved="yes">
         <source>http_error_404.description</source>
-        <target state="final">無法找到該頁面</target>
+        <target state="final">無法找到此頁面</target>
       </trans-unit>
       <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve" approved="yes">
         <source>Take me home</source>
