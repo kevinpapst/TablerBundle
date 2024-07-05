@@ -72,6 +72,7 @@ class ConfigurationTest extends TestCase
                 'routes' => [
                     'tabler_welcome' => 'home',
                     'tabler_login' => 'login',
+                    'tabler_logout' => 'logout',
                     'tabler_login_check' => 'login_check',
                     'tabler_registration' => null,
                     'tabler_registration_register' => null,
