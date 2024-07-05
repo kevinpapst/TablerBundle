@@ -62,6 +62,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('tabler_logout')
                     ->defaultValue('logout')
                     ->info('name of the logout route')
+                    ->setDeprecated('kevinpapst/tabler-bundle', '1.5.0')
                 ->end()
                 ->scalarNode('tabler_login_check')
                     ->defaultValue('login_check')
