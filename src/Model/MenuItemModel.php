@@ -55,9 +55,10 @@ class MenuItemModel implements MenuItemInterface
     /**
      * @param array<MenuItemInterface> $children
      */
-    public function setChildren(array $children): void
+    public function setChildren(array $children): self
     {
         $this->children = $children;
+        return $this;
     }
 
     public function getIcon(): ?string
@@ -65,9 +66,10 @@ class MenuItemModel implements MenuItemInterface
         return $this->icon;
     }
 
-    public function setIcon(string $icon): void
+    public function setIcon(string $icon): self
     {
         $this->icon = $icon;
+        return $this;
     }
 
     public function getIdentifier(): string
@@ -80,11 +82,12 @@ class MenuItemModel implements MenuItemInterface
         return $this->isActive;
     }
 
-    public function setIsActive(bool $isActive): void
+    public function setIsActive(bool $isActive): self
     {
         $this->parent?->setIsActive($isActive);
 
         $this->isActive = $isActive;
+        return $this;
     }
 
     public function hasParent(): bool
@@ -97,9 +100,10 @@ class MenuItemModel implements MenuItemInterface
         return $this->parent;
     }
 
-    public function setParent(MenuItemInterface $parent): void
+    public function setParent(MenuItemInterface $parent): self
     {
         $this->parent = $parent;
+        return $this;
     }
 
     public function getLabel(): string
@@ -107,9 +111,10 @@ class MenuItemModel implements MenuItemInterface
         return $this->label;
     }
 
-    public function setLabel(string $label): void
+    public function setLabel(string $label): self
     {
         $this->label = $label;
+        return $this;
     }
 
     public function getRoute(): ?string
@@ -117,9 +122,10 @@ class MenuItemModel implements MenuItemInterface
         return $this->route;
     }
 
-    public function setRoute(?string $route): void
+    public function setRoute(?string $route): self
     {
         $this->route = $route;
+        return $this;
     }
 
     public function getRouteArgs(): array
@@ -130,9 +136,10 @@ class MenuItemModel implements MenuItemInterface
     /**
      * @param array<string, mixed> $routeArgs
      */
-    public function setRouteArgs(array $routeArgs): void
+    public function setRouteArgs(array $routeArgs): self
     {
         $this->routeArgs = $routeArgs;
+        return $this;
     }
 
     public function hasChildren(): bool
@@ -140,17 +147,19 @@ class MenuItemModel implements MenuItemInterface
         return \count($this->children) > 0;
     }
 
-    public function addChild(MenuItemInterface $child): void
+    public function addChild(MenuItemInterface $child): self
     {
         $child->setParent($this);
         $this->children[] = $child;
+        return $this;
     }
 
-    public function removeChild(MenuItemInterface $child): void
+    public function removeChild(MenuItemInterface $child): self
     {
         if (false !== ($key = array_search($child, $this->children))) {
             unset($this->children[$key]);
         }
+        return $this;
     }
 
     public function getActiveChild(): ?MenuItemInterface
@@ -174,14 +183,16 @@ class MenuItemModel implements MenuItemInterface
         return $this->isActive;
     }
 
-    public function setBadge(?string $badge): void
+    public function setBadge(?string $badge): self
     {
         $this->badge = $badge;
+        return $this;
     }
 
-    public function setBadgeColor(?string $badgeColor): void
+    public function setBadgeColor(?string $badgeColor): self
     {
         $this->badgeColor = $badgeColor;
+        return $this;
     }
 
     public function getBadge(): ?string
@@ -199,9 +210,10 @@ class MenuItemModel implements MenuItemInterface
         return $this->divider;
     }
 
-    public function setDivider(bool $divider): void
+    public function setDivider(bool $divider): self
     {
         $this->divider = $divider;
+        return $this;
     }
 
     public function isExpanded(): bool
@@ -213,11 +225,12 @@ class MenuItemModel implements MenuItemInterface
      * Allows to manually expand menus in vertical navigation.
      *
      * @param bool $expanded
-     * @return void
+     * @return self
      */
-    public function setExpanded(bool $expanded): void
+    public function setExpanded(bool $expanded): self
     {
         $this->expanded = $expanded;
+        return $this;
     }
 
     public function getTranslationDomain(): string
@@ -225,8 +238,9 @@ class MenuItemModel implements MenuItemInterface
         return $this->translationDomain;
     }
 
-    public function setTranslationDomain(string $translationDomain): void
+    public function setTranslationDomain(string $translationDomain): self
     {
         $this->translationDomain = $translationDomain;
+        return $this;
     }
 }

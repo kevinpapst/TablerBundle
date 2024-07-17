@@ -38,9 +38,10 @@ class NotificationModel implements NotificationV2Interface
         return $this->url;
     }
 
-    public function setUrl(?string $url): void
+    public function setUrl(?string $url): self
     {
         $this->url = $url;
+        return $this;
     }
 
     public function isActive(): bool
@@ -48,9 +49,10 @@ class NotificationModel implements NotificationV2Interface
         return $this->active;
     }
 
-    public function setActive(bool $active): void
+    public function setActive(bool $active): self
     {
         $this->active = $active;
+        return $this;
     }
 
     public function isDisabled(): bool
@@ -58,9 +60,10 @@ class NotificationModel implements NotificationV2Interface
         return $this->disabled;
     }
 
-    public function setDisabled(bool $disabled): void
+    public function setDisabled(bool $disabled): self
     {
         $this->disabled = $disabled;
+        return $this;
     }
 
     public function isWithBadge(): bool
@@ -68,9 +71,10 @@ class NotificationModel implements NotificationV2Interface
         return $this->withBadge;
     }
 
-    public function setWithBadge(bool $withBadge): void
+    public function setWithBadge(bool $withBadge): self
     {
         $this->withBadge = $withBadge;
+        return $this;
     }
 
     public function isBadgeAnimated(): bool
@@ -78,9 +82,10 @@ class NotificationModel implements NotificationV2Interface
         return $this->badgeAnimated;
     }
 
-    public function setBadgeAnimated(bool $badgeAnimated): void
+    public function setBadgeAnimated(bool $badgeAnimated): self
     {
         $this->badgeAnimated = $badgeAnimated;
+        return $this;
     }
 
     public function isHtml(): bool
@@ -88,9 +93,10 @@ class NotificationModel implements NotificationV2Interface
         return $this->html;
     }
 
-    public function setHtml(bool $html): void
+    public function setHtml(bool $html): self
     {
         $this->html = $html;
+        return $this;
     }
 
     public function getMessage(): string
@@ -98,9 +104,10 @@ class NotificationModel implements NotificationV2Interface
         return $this->message;
     }
 
-    public function setMessage(string $message): void
+    public function setMessage(string $message): self
     {
         $this->message = $message;
+        return $this;
     }
 
     public function getType(): string
@@ -108,8 +115,9 @@ class NotificationModel implements NotificationV2Interface
         return $this->type;
     }
 
-    public function setType(string $type): void
+    public function setType(string $type): self
     {
         $this->type = $type;
+        return $this;
     }
 }
