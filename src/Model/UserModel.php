@@ -23,14 +23,16 @@ final class UserModel implements UserInterface
         return $this->id;
     }
 
-    public function setId(string $id): void
+    public function setId(string $id): self
     {
         $this->id = $id;
+        return $this;
     }
 
-    public function setAvatar(string $avatar): void
+    public function setAvatar(string $avatar): self
     {
         $this->avatar = $avatar;
+        return $this;
     }
 
     public function getAvatar(): ?string
@@ -38,9 +40,10 @@ final class UserModel implements UserInterface
         return $this->avatar;
     }
 
-    public function setName(string $name): void
+    public function setName(string $name): self
     {
         $this->name = $name;
+        return $this;
     }
 
     public function getName(): string
@@ -48,9 +51,10 @@ final class UserModel implements UserInterface
         return $this->name;
     }
 
-    public function setTitle(string $title): void
+    public function setTitle(string $title): self
     {
         $this->title = $title;
+        return $this;
     }
 
     public function getTitle(): ?string
