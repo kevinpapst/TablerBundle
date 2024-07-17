@@ -58,7 +58,13 @@ class MenuBuilderSubscriber implements EventSubscriberInterface
         $blog->addChild(
             new MenuItemModel('ChildOneItemId', 'ChildOneDisplayName', 'child_1_route', [], 'fas fa-rss-square')
         )->addChild(
-            new MenuItemModel('ChildTwoItemId', 'ChildTwoDisplayName', 'child_2_route')
+            ## Use flkuence if u want to
+            (new MenuItemModel('ChildTwoItemId', 'ChildTwoDisplayName', 'child_2_route'))
+                ->setRouteArgs([
+                    'user' => $user
+                ])
+                ->setIsActive(true)
+                ->setIcon('assets/icon.gif')
         );
         
         $event->addItem($blog);
