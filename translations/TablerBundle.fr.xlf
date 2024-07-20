@@ -147,16 +147,24 @@
         <target state="translated">ou</target>
       </trans-unit>
       <trans-unit id="465zeJ" resname="Show notifications">
-          <source>Show notifications</source>
-          <target>Afficher notifications</target>
+        <source>Show notifications</source>
+        <target>Afficher notifications</target>
       </trans-unit>
       <trans-unit id="F5Dfzd" resname="You have no notification">
-          <source>You have no notification</source>
-          <target>Vous avez aucune notification</target>
+        <source>You have no notification</source>
+        <target>Vous avez aucune notification</target>
       </trans-unit>
       <trans-unit id="Pf48Zd" resname="And %count% more…">
-          <source>And %count% more…</source>
-          <target>Et %count% autres…</target>
+        <source>And %count% more…</source>
+        <target>Et %count% autres…</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve" approved="no">
+        <source>Actions</source>
+        <target state="translated">Actions</target>
+      </trans-unit>
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve" approved="no">
+        <source>Open personal menu</source>
+        <target state="translated">Ouvrir le menu personnel</target>
       </trans-unit>
     </body>
   </file>
