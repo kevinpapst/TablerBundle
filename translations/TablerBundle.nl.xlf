@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="nl" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
@@ -98,9 +98,9 @@
         <source>http_error.title</source>
         <target>Fout</target>
       </trans-unit>
-      <trans-unit id="e3w.2Rf" resname="http_error.description">
+      <trans-unit id="e3w.2Rf" resname="http_error.description" xml:space="preserve" approved="no">
         <source>http_error.description</source>
-        <target>Oeps! Er is iets fout gegaan.</target>
+        <target state="translated">Er is iets fout gegaan</target>
       </trans-unit>
       <trans-unit id="ru5FEGk" resname="http_error.suggestion">
         <source>http_error.suggestion</source>
@@ -109,9 +109,9 @@
                     Mogelijk vond u een software probleem. Neem contact op met uw administrator wanneer het probleem zich blijft voortdoen.
                 </target>
       </trans-unit>
-      <trans-unit id="_W1eNz2" resname="http_error_404.description">
+      <trans-unit id="_W1eNz2" resname="http_error_404.description" xml:space="preserve" approved="no">
         <source>http_error_404.description</source>
-        <target>Oeps! Webpagina niet gevonden.</target>
+        <target state="translated">Webpagina niet gevonden</target>
       </trans-unit>
       <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
         <source>http_error_404.suggestion</source>
@@ -130,6 +130,50 @@
                     Het spijt ons maar u heeft onvoldoende rechten om deze pagina te zien.
                     Spreek met uw beheerder als u denkt dat dit een vergissing is.
                 </target>
+      </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve" approved="no">
+        <source>Show notifications</source>
+        <target state="translated">Toon meldingen</target>
+      </trans-unit>
+      <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve" approved="no">
+        <source>You have no notification</source>
+        <target state="translated">Je hebt geen melding</target>
+      </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve" approved="no">
+        <source>And %count% more…</source>
+        <target state="translated">En %count% meer…</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve" approved="no">
+        <source>Actions</source>
+        <target state="translated">Acties</target>
+      </trans-unit>
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve" approved="no">
+        <source>Open personal menu</source>
+        <target state="translated">Persoonlijk menu openen</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve" approved="no">
+        <source>Close</source>
+        <target state="translated">Sluit</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
+        <source>Toggle visibility</source>
+        <target state="translated">Zichtbaarheid in- uitklappen</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
+        <source>or</source>
+        <target state="translated">of</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve" approved="no">
+        <source>Take me home</source>
+        <target state="translated">Ga naar de startpagina</target>
+      </trans-unit>
+      <trans-unit id="F35zef" resname="Previous" xml:space="preserve" approved="no">
+        <source>Previous</source>
+        <target state="translated">Vorige</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
+        <source>Next</source>
+        <target state="translated">Volgende</target>
       </trans-unit>
     </body>
   </file>
