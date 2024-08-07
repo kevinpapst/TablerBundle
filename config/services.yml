@@ -1,11 +1,25 @@
 services:
 
+    KevinPapst\TablerBundle\Command\IconsCommand:
+        arguments:
+            - '%kernel.project_dir%'
+            - '%tabler_bundle.icons%'
+        tags:
+            - { name: 'console.command' }
+
     KevinPapst\TablerBundle\Twig\RuntimeExtension:
         class: KevinPapst\TablerBundle\Twig\RuntimeExtension
         arguments:
             - '@event_dispatcher'
             - '@tabler_bundle.context_helper'
             - '%tabler_bundle.routes%'
+        tags:
+            - { name: twig.runtime }
+
+    KevinPapst\TablerBundle\Twig\IconExtension:
+        class: KevinPapst\TablerBundle\Twig\IconExtension
+        arguments:
+            - '@.ux_icons.icon_renderer'
             - '%tabler_bundle.icons%'
         tags:
             - { name: twig.runtime }

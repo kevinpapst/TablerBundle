@@ -43,35 +43,34 @@ tabler:
 
     icons:
         # used for the action_collapsebutton components
-        collapse: fas fa-chevron-down
+        collapse: "fa6-solid:chevron-down"
         # used for the password-reset template
-        mail: far fa-envelope
+        mail: "fa6-regular:envelope"
         # used for the 404/500/... error page
-        back: fas fa-long-arrow-alt-left
+        back: "fa6-solid:left-long"
         # the following are only ideas to be used in your own templates
-        about: fas fa-info-circle
-        admin: fas fa-wrench
-        bookmark: far fa-star
-        calendar: far fa-calendar-alt
-        clock: far fa-clock
-        comment: far fa-comment
-        copy: far fa-copy
-        create: far fa-plus-square
-        dashboard: fas fa-tachometer-alt
-        delete: far fa-trash-alt
-        download: fas fa-download
-        edit: far fa-edit
-        email: fa fa-at
-        export: fas fa-file-export
-        filter: fas fa-filter
-        help: far fa-question-circle
-        home: fas fa-home
-        password: fas fa-key
-        phone: fas fa-phone
-        print: fas fa-print
-        search: fas fa-search
-        settings: fas fa-cog
-        start: fas fa-play
-        stop: fas fa-stop
-        upload: fas fa-upload
-        user: fas fa-user
+        about: "fa6-solid:circle-info"
+        admin: "fa6-solid:wrench"
+        bookmark: "fa6-regular:star"
+        calendar: "fa6-regular:calendar-days"
+        clock: "fa6-regular:clock"
+        comment: "fa6-regular:comment"
+        copy: "fa6-regular:copy"
+        create: "fa6-regular:square-plus"
+        dashboard: "fa6-solid:gauge"
+        delete: "fa6-regular:trash-can"
+        download: "fa6-solid:download"
+        edit: "fa6-regular:pen-to-square"
+        export: "fa6-solid:file-export"
+        filter: "fa6-solid:filter"
+        help: "fa6-regular:circle-question"
+        home: "fa6-solid:house"
+        password: "fa6-solid:key"
+        phone: "fa6-solid:phone"
+        print: "fa6-solid:print"
+        search: "fa6-solid:magnifying-glass"
+        settings: "fa6-solid:gear"
+        start: "fa6-solid:play"
+        stop: "fa6-solid:stop"
+        upload: "fa6-solid:upload"
+        user: "fa6-solid:user"
