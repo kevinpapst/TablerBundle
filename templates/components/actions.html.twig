@@ -41,7 +41,7 @@
                                         </a>
                                         <div class="dropdown-menu">
                                             {%- for childIcon, childValues in values.children -%}
-                                                {{-- macro.button(false, childValues|merge({icon: false, class: childValues.class is defined ? childValues.class ~ ' dropdown-item' : 'dropdown-item'}), false) -}}
+                                                {{- macro.button(false, childValues|merge({icon: false, class: childValues.class is defined ? childValues.class ~ ' dropdown-item' : 'dropdown-item'}), false) -}}
                                             {%- endfor -%}
                                         </div>
                                     </div>
