@@ -1,12 +1,12 @@
 {
-  "bundles/tabler/tabler.js": "/bundles/tabler/tabler.js?0c24429e4ffb7abe35b1",
-  "bundles/tabler/tabler.css": "/bundles/tabler/tabler.css?00cefdb374eb1d1a803d",
-  "bundles/tabler/tabler-rtl.js": "/bundles/tabler/tabler-rtl.js?6ce4e19095949da1f375",
-  "bundles/tabler/tabler-rtl.css": "/bundles/tabler/tabler-rtl.css?ae2325f06f23c77cf332",
-  "bundles/tabler/fonts/fa-solid-900.ttf": "/bundles/tabler/fonts/fa-solid-900.ttf?bb5be820",
-  "bundles/tabler/fonts/fa-brands-400.ttf": "/bundles/tabler/fonts/fa-brands-400.ttf?4c05cd9b",
-  "bundles/tabler/fonts/fa-solid-900.woff2": "/bundles/tabler/fonts/fa-solid-900.woff2?4cbe3db2",
-  "bundles/tabler/fonts/fa-brands-400.woff2": "/bundles/tabler/fonts/fa-brands-400.woff2?498f4d22",
-  "bundles/tabler/fonts/fa-regular-400.ttf": "/bundles/tabler/fonts/fa-regular-400.ttf?96e19e1a",
-  "bundles/tabler/fonts/fa-regular-400.woff2": "/bundles/tabler/fonts/fa-regular-400.woff2?83824cd5"
+  "bundles/tabler/tabler.js": "/bundles/tabler/tabler.js?93a015f5fa936998e525",
+  "bundles/tabler/tabler.css": "/bundles/tabler/tabler.css?c89393dfd2f6ace3cb69",
+  "bundles/tabler/tabler-rtl.js": "/bundles/tabler/tabler-rtl.js?d0204fbdd29de36aaa14",
+  "bundles/tabler/tabler-rtl.css": "/bundles/tabler/tabler-rtl.css?0e8040795aef40dcf1fa",
+  "bundles/tabler/fonts/fa-solid-900.ttf": "/bundles/tabler/fonts/fa-solid-900.ttf?bacd5de6",
+  "bundles/tabler/fonts/fa-brands-400.ttf": "/bundles/tabler/fonts/fa-brands-400.ttf?60127e35",
+  "bundles/tabler/fonts/fa-solid-900.woff2": "/bundles/tabler/fonts/fa-solid-900.woff2?4d986b00",
+  "bundles/tabler/fonts/fa-brands-400.woff2": "/bundles/tabler/fonts/fa-brands-400.woff2?455ea818",
+  "bundles/tabler/fonts/fa-regular-400.ttf": "/bundles/tabler/fonts/fa-regular-400.ttf?eb91f7b9",
+  "bundles/tabler/fonts/fa-regular-400.woff2": "/bundles/tabler/fonts/fa-regular-400.woff2?21cb8f55"
 }
