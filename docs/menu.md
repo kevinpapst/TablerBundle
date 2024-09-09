@@ -55,11 +55,8 @@ class MenuBuilderSubscriber implements EventSubscriberInterface
     {
         $blog = new MenuItemModel('blogId', 'Blog', 'item_symfony_route', [], 'fas fa-tachometer-alt');
     
-        $blog->addChild(
-            new MenuItemModel('ChildOneItemId', 'ChildOneDisplayName', 'child_1_route', [], 'fas fa-rss-square')
-        )->addChild(
-            new MenuItemModel('ChildTwoItemId', 'ChildTwoDisplayName', 'child_2_route')
-        );
+        $blog->addChild(new MenuItemModel('ChildOneItemId', 'ChildOneDisplayName', 'child_1_route', [], 'fas fa-rss-square'));
+        $blog->addChild(new MenuItemModel('ChildTwoItemId', 'ChildTwoDisplayName', 'child_2_route'));
         
         $event->addItem($blog);
 
