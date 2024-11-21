@@ -19,7 +19,7 @@
             {% set _animated = item.animated ?? false %}
 
             {% set _autoLabel = item.autoLabel ?? false %}
-            {% set _label = item.label ?? _autoLabel and not _indeterminate ? percent ~ '%' : '' %}
+            {% set _label = item.label ?? (_autoLabel and not _indeterminate ? percent ~ '%' : '') %}
             {% set _labelVisible = _label != '' and (item.labelVisible ?? true) %}
 
             {% set _color = item.color ?? '' %}
