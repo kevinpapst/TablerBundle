@@ -39,8 +39,8 @@
         <target state="translated">Запам'ятати мене</target>
       </trans-unit>
       <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
-        <source>Sign in to start your session</source>
-        <target state="translated">Логін</target>
+        <source>Login</source>
+        <target state="translated">Вхід</target>
       </trans-unit>
       <trans-unit id="SPDT05f" resname="Sign out" xml:space="preserve" approved="no">
         <source>Sign out</source>
@@ -145,6 +145,26 @@
       <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
         <source>Next</source>
         <target state="translated">Далі</target>
+      </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve">
+        <source>Show notifications</source>
+        <target state="translated">Показувати сповіщення</target>
+      </trans-unit>
+      <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve">
+        <source>You have no notification</source>
+        <target state="translated">Сповіщень немає</target>
+      </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve">
+        <source>And %count% more…</source>
+        <target state="translated">Та ще %count%…</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve">
+        <source>Actions</source>
+        <target state="translated">Дії</target>
+      </trans-unit>
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve">
+        <source>Open personal menu</source>
+        <target state="translated">Відкрити особисте меню</target>
       </trans-unit>
     </body>
   </file>
