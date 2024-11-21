@@ -192,9 +192,9 @@ class NotificationEvent extends ThemeEvent
 
     public function addNotification(NotificationV2Interface|NotificationInterface $notification): void
     {
-//        if (($notification instanceof NotificationV2Interface) === false) {
-//            trigger_deprecation('kevinpapst/tabler-bundle', '1.2.0', 'Notification should implement NotificationV2Interface::class!');
-//        }
+        //        if (($notification instanceof NotificationV2Interface) === false) {
+        //            trigger_deprecation('kevinpapst/tabler-bundle', '1.2.0', 'Notification should implement NotificationV2Interface::class!');
+        //        }
 
         $this->notifications[] = $notification;
     }
