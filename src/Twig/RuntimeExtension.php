@@ -25,10 +25,10 @@ final class RuntimeExtension implements RuntimeExtensionInterface
      * @param array<string, string> $icons
      */
     public function __construct(
-        private EventDispatcherInterface $eventDispatcher,
-        private ContextHelper $helper,
-        private array $routes,
-        private array $icons
+        private readonly EventDispatcherInterface $eventDispatcher,
+        private readonly ContextHelper $helper,
+        private readonly array $routes,
+        private readonly array $icons
     ) {
     }
 
@@ -67,7 +67,7 @@ final class RuntimeExtension implements RuntimeExtensionInterface
             $classList[] = 'container-fluid';
         }
 
-        return trim(implode(' ', array_values($classList)));
+        return trim(implode(' ', $classList));
     }
 
     /**
@@ -115,12 +115,12 @@ final class RuntimeExtension implements RuntimeExtensionInterface
         return $userEvent;
     }
 
-    public function createIcon(string $name, bool $withIconClass = false, string $default = null): string
+    public function createIcon(string $name, bool $withIconClass = false, ?string $default = null): string
     {
         return '<i class="' . $this->icon($name, $withIconClass, $default) . '"></i>';
     }
 
-    public function icon(string $name, bool $withIconClass = false, string $default = null): string
+    public function icon(string $name, bool $withIconClass = false, ?string $default = null): string
     {
         return ($withIconClass ? 'icon ' : '') . ($this->icons[str_replace('-', '_', $name)] ?? ($default ?? $name));
     }

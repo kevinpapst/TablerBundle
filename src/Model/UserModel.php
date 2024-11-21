@@ -68,7 +68,7 @@ final class UserModel implements UserInterface
 
     public function getUserIdentifier(): string
     {
-        if (!empty($this->id)) {
+        if ($this->id !== '') {
             return $this->id;
         }
 

@@ -148,7 +148,7 @@ class MenuItemModel implements MenuItemInterface
 
     public function removeChild(MenuItemInterface $child): void
     {
-        if (false !== ($key = array_search($child, $this->children))) {
+        if (false !== ($key = array_search($child, $this->children, true))) {
             unset($this->children[$key]);
         }
     }

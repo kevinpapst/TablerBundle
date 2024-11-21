@@ -201,7 +201,7 @@ class NotificationEvent extends ThemeEvent
 
     public function removeNotification(NotificationInterface $notification): void
     {
-        if (($key = array_search($notification, $this->notifications)) !== false) {
+        if (($key = array_search($notification, $this->notifications, true)) !== false) {
             unset($this->notifications[$key]);
         }
     }
