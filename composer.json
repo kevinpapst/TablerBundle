@@ -27,9 +27,11 @@
         "symfony/framework-bundle" : "^6.0 || ^7.0",
         "friendsofphp/php-cs-fixer": "^3.0",
         "phpunit/phpunit": "^9.0",
-        "phpstan/phpstan": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
-        "phpstan/phpstan-symfony": "^1.0",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpstan/phpstan-symfony": "^2.0",
         "knplabs/knp-menu-bundle": "^3.0"
     },
     "suggest" : {
