@@ -26,7 +26,7 @@ class TablerExtension extends Extension implements PrependExtensionInterface
         $config = $this->processConfiguration($configuration, $configs);
         $options = $this->getContextOptions($config);
 
-        if (count($options) > 0) {
+        if (\count($options) > 0) {
             $container->setParameter('tabler_bundle.options', $options);
         }
 
