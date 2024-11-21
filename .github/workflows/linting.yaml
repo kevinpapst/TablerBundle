@@ -20,6 +20,6 @@ jobs:
                     coverage: none
                     extensions: intl
             -   run: composer install --no-progress
-            -   run: composer codestyle
+            -   run: PHP_CS_FIXER_IGNORE_ENV=1 composer codestyle
             -   run: composer phpstan
             -   run: composer tests
