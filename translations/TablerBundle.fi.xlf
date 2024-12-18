@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="fi" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
@@ -82,9 +82,9 @@
         <source>You have %count% tasks</source>
         <target state="translated">Sinulla on 1 tehtävä|Sinulla on %count% tehtävää</target>
       </trans-unit>
-      <trans-unit id="1bPaXpN" resname="%progress%% Complete">
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete" xml:space="preserve">
         <source>%progress%% Complete</source>
-        <target state="translated">%progress%% Suoritettu</target>
+        <target state="translated">%progress %% suoritettu</target>
       </trans-unit>
       <trans-unit id="KLIuHvt" resname="This is a mandatory field">
         <source>This is a mandatory field</source>
