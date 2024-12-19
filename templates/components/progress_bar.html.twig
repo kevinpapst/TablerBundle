@@ -12,7 +12,7 @@
             {% set _value = item.current ?? 0 %}
             {% set _max = item.max ?? 0 %}
             {% set _min = item.min ?? 0 %}
-            {% set _indeterminate = item.indeterminate ?? _value == _max and _min == _max %}
+            {% set _indeterminate = item.indeterminate ?? (_value == _max and _min == _max) %}
             {% set percent = _indeterminate or (_max - _min) == 0 ? 0 : ((_value - _min) * 100) / (_max - _min) %}
 
             {% set _striped = item.striped ?? false %}
