@@ -25,98 +25,98 @@
 
         <div class="{% block card_classes %}card card-md{% endblock %}">
             {% block login_box %}
-                <div class="card-body">
-                    <h2 class="card-title text-center mb-4">{% block login_box_msg %}{% endblock %}</h2>
-                    {% block login_box_error %}
-                        {% if error|default(false) %}
-                            <div class="alert alert-important alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                        {% endif %}
-                    {% endblock %}
-                    {% block login_form %}
-                        <form action="{{ path('tabler_login_check'|tabler_route) }}" method="post" autocomplete="off" class="login-box-body security-login">
-                            {% block login_form_start %}{% endblock %}
-                            <div class="mb-3">
-                                <label for="username" class="form-label">{{ 'Username'|trans({}, 'TablerBundle') }}</label>
-                                <input autocomplete="username" type="text" id="username" name="_username" tabindex="10" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}" required="required">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">
-                                    {{ 'Password'|trans({}, 'TablerBundle') }}
-                                    {% block password_forgotten %}
-                                        {% if 'tabler_password_reset'|tabler_route != 'tabler_password_reset' %}
-                                            <span class="form-label-description">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">{% block login_box_msg %}{% endblock %}</h2>
+                {% block login_box_error %}
+                    {% if error|default(false) %}
+                        <div class="alert alert-important alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                {% endblock %}
+                {% block login_form %}
+                    <form action="{{ path('tabler_login_check'|tabler_route) }}" method="post" autocomplete="off" class="login-box-body security-login">
+                    {% block login_form_start %}{% endblock %}
+                        <div class="mb-3">
+                            <label for="username" class="form-label">{{ 'Username'|trans({}, 'TablerBundle') }}</label>
+                            <input autocomplete="username" type="text" id="username" name="_username" tabindex="10" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}" required="required">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">
+                                {{ 'Password'|trans({}, 'TablerBundle') }}
+                                {% block password_forgotten %}
+                                    {% if 'tabler_password_reset'|tabler_route != 'tabler_password_reset' %}
+                                        <span class="form-label-description">
                                             <a href="{{ path('tabler_password_reset'|tabler_route) }}" tabindex="100">{{ 'I forgot my password'|trans({}, 'TablerBundle') }}</a>
                                         </span>
-                                        {% endif %}
-                                    {% endblock %}
-                                </label>
-                                <div class="input-group input-group-flat">
-                                    <input autocomplete="new-password" id="password" name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}" required="required">
-                                    {% block password_show %}
-                                        <span class="input-group-text">
-                                            <a
-                                                    href="#" class="link-secondary"
-                                                    data-bs-toggle="tooltip" title="{{ 'Show password'|trans({}, 'TablerBundle') }}"
-                                                    onclick='toggleShowPasswordInput()'
-                                            >
-                                                <div>
-                                                    <!-- Download SVG icon from http://tabler.io/icons/icon/eye -->
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
-                                                       <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                                                       <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
-                                                    </svg>
-                                                </div>
+                                    {% endif %}
+                                {% endblock %}
+                            </label>
+                            <div class="input-group input-group-flat">
+                                <input autocomplete="new-password" id="password" name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}" required="required">
+                                {% block password_show %}
+                                <span class="input-group-text">
+                                    <a
+                                            href="#" class="link-secondary"
+                                            data-bs-toggle="tooltip" title="{{ 'Show password'|trans({}, 'TablerBundle') }}"
+                                            onclick='toggleShowPasswordInput()'
+                                    >
+                                        <div>
+                                            <!-- Download SVG icon from http://tabler.io/icons/icon/eye -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
+                                               <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                                               <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
+                                            </svg>
+                                        </div>
 
-                                                <div hidden>
-                                                    <!-- Download SVG icon from http://tabler.io/icons/icon/eye-off -->
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye-off">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                        <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
-                                                        <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
-                                                        <path d="M3 3l18 18" />
-                                                    </svg>
-                                                </div>
-                                            </a>
-                                        </span>
-                                    {% endblock %}
-                                </div>
+                                        <div hidden>
+                                            <!-- Download SVG icon from http://tabler.io/icons/icon/eye-off -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye-off">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+                                                <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
+                                                <path d="M3 3l18 18" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </span>
+                                {% endblock %}
                             </div>
-                            {% block remember_me %}
-                                <div class="mb-3">
-                                    <label class="form-check">
-                                        <input id="remember_me" tabindex="30" name="_remember_me" type="checkbox" class="form-check-input">
-                                        <span class="form-check-label">{{ 'Remember Me'|trans({}, 'TablerBundle') }}</span>
-                                    </label>
-                                </div>
-                            {% endblock %}
-                            <div class="form-footer">
-                                <button type="submit" tabindex="40" class="btn btn-primary w-100">{{ 'Sign In'|trans({}, 'TablerBundle') }}</button>
-                            </div>
-                            {% block csrf_token %}
-                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
-                            {% endblock %}
-                            {% block login_form_end %}{% endblock %}
-                        </form>
-                    {% endblock %}
-                </div>
+                        </div>
+                        {% block remember_me %}
+                        <div class="mb-3">
+                            <label class="form-check">
+                                <input id="remember_me" tabindex="30" name="_remember_me" type="checkbox" class="form-check-input">
+                                <span class="form-check-label">{{ 'Remember Me'|trans({}, 'TablerBundle') }}</span>
+                            </label>
+                        </div>
+                        {% endblock %}
+                        <div class="form-footer">
+                            <button type="submit" tabindex="40" class="btn btn-primary w-100">{{ 'Sign In'|trans({}, 'TablerBundle') }}</button>
+                        </div>
+                        {% block csrf_token %}
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                        {% endblock %}
+                        {% block login_form_end %}{% endblock %}
+                    </form>
+                {% endblock %}
+            </div>
             {% endblock %}
 
             {% block login_social_auth %}
-                <div class="hr-text">{{ 'or'|trans({}, 'TablerBundle') }}</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <a href="#" class="btn btn-white w-100">
-                                <i class="icon fab fa-github text-github"></i> Github
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="#" class="btn btn-white w-100">
-                                <i class="icon fab fa-twitter text-twitter"></i> Twitter
-                            </a>
-                        </div>
+            <div class="hr-text">{{ 'or'|trans({}, 'TablerBundle') }}</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="btn btn-white w-100">
+                            <i class="icon fab fa-github text-github"></i> Github
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="btn btn-white w-100">
+                            <i class="icon fab fa-twitter text-twitter"></i> Twitter
+                        </a>
                     </div>
                 </div>
+            </div>
             {% endblock %}
         </div>
 
