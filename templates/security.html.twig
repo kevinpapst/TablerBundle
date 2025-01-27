@@ -140,18 +140,18 @@
 
     <script>
         function toggleShowPasswordInput() {
-            const input = document.querySelector('input[name="_password"]')
-            if (!input) return
+            const input = document.querySelector('input[name="_password"]');
+            if (!input) return;
 
-            const svgs = input.parentElement.querySelectorAll('.input-group-text svg')
+            const svgs = input.parentElement.querySelectorAll('.input-group-text svg');
             if (input.type === 'password') {
-                input.type = 'text'
-                svgs[0].parentElement.hidden = true
-                svgs[1].parentElement.hidden = false
+                input.type = 'text';
+                svgs[0].parentElement.hidden = true;
+                svgs[1].parentElement.hidden = false;
             } else {
-                input.type = 'password'
-                svgs[0].parentElement.hidden = false
-                svgs[1].parentElement.hidden = true
+                input.type = 'password';
+                svgs[0].parentElement.hidden = false;
+                svgs[1].parentElement.hidden = true;
             }
         }
     </script>
