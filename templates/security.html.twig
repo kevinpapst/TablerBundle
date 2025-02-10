@@ -54,11 +54,7 @@
                                 <input autocomplete="new-password" id="password" name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}" required="required">
                                 {% block password_show %}
                                 <span class="input-group-text">
-                                    <a
-                                            href="#" class="link-secondary"
-                                            data-bs-toggle="tooltip" title="{{ 'Show password'|trans({}, 'TablerBundle') }}"
-                                            onclick='toggleShowPasswordInput()'
-                                    >
+                                    <a href="#" class="link-secondary" data-bs-toggle="tooltip" title="{{ 'Show password'|trans({}, 'TablerBundle') }}" onclick="toggleShowPasswordInput()">
                                         <span>
                                             {# Download SVG icon from http://tabler.io/icons/icon/eye #}
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
@@ -78,6 +74,23 @@
                                         </span>
                                     </a>
                                 </span>
+                                <script>
+                                    function toggleShowPasswordInput() {
+                                        const input = document.querySelector('input[name="_password"]');
+                                        if (!input) return;
+
+                                        const svgs = input.parentElement.querySelectorAll('.input-group-text svg');
+                                        if (input.type === 'password') {
+                                            input.type = 'text';
+                                            svgs[0].parentElement.hidden = true;
+                                            svgs[1].parentElement.hidden = false;
+                                        } else {
+                                            input.type = 'password';
+                                            svgs[0].parentElement.hidden = false;
+                                            svgs[1].parentElement.hidden = true;
+                                        }
+                                    }
+                                </script>
                                 {% endblock %}
                             </div>
                         </div>
@@ -137,24 +150,6 @@
 
 {% block javascripts %}
     <script src="{{ asset('bundles/tabler/tabler.js') }}?{{ tabler_asset_version() }}"></script>
-
-    <script>
-        function toggleShowPasswordInput() {
-            const input = document.querySelector('input[name="_password"]');
-            if (!input) return;
-
-            const svgs = input.parentElement.querySelectorAll('.input-group-text svg');
-            if (input.type === 'password') {
-                input.type = 'text';
-                svgs[0].parentElement.hidden = true;
-                svgs[1].parentElement.hidden = false;
-            } else {
-                input.type = 'password';
-                svgs[0].parentElement.hidden = false;
-                svgs[1].parentElement.hidden = true;
-            }
-        }
-    </script>
 {% endblock %}
 </body>
 </html>
