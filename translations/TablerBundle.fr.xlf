@@ -166,6 +166,10 @@
         <source>Open personal menu</source>
         <target state="translated">Ouvrir le menu personnel</target>
       </trans-unit>
+      <trans-unitresname="Show password">
+        <source>Show password</source>
+        <target>Afficher mot de passe</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
