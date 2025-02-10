@@ -166,6 +166,10 @@
                 <source>Open personal menu</source>
                 <target>Open personal menu</target>
             </trans-unit>
+            <trans-unit resname="Show password">
+                <source>Show password</source>
+                <target>Show password</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
