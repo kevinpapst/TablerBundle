@@ -166,7 +166,7 @@
         <source>Open personal menu</source>
         <target state="translated">Ouvrir le menu personnel</target>
       </trans-unit>
-      <trans-unitresname="Show password">
+      <trans-unit resname="Show password">
         <source>Show password</source>
         <target>Afficher mot de passe</target>
       </trans-unit>
