@@ -1,160 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-    <file source-language="en" target-language="de" datatype="plaintext" original="TablerBundle.en.xlf">
-        <body>
-            <trans-unit id="38Hm0Wu" resname="Toggle navigation">
-                <source>Toggle navigation</source>
-                <target>Ansicht der Seitenleiste umschalten</target>
-            </trans-unit>
-            <trans-unit id="PboiWu0" resname="Toggle visibility">
-                <source>Toggle visibility</source>
-                <target>Sichtbarkeit umschalten</target>
-            </trans-unit>
-            <trans-unit id="KpL2_.m" resname="Remember Me">
-                <source>Remember Me</source>
-                <target>Dauerhaft anmelden</target>
-            </trans-unit>
-            <trans-unit id="8FGIkAR" resname="Sign in to start your session">
-                <source>Sign in to start your session</source>
-                <target>Anmelden</target>
-            </trans-unit>
-            <trans-unit id="vMC8yRQ" resname="Sign In">
-                <source>Sign In</source>
-                <target>Anmelden</target>
-            </trans-unit>
-            <trans-unit id="SPDT05f" resname="Sign out">
-                <source>Sign out</source>
-                <target>Abmelden</target>
-            </trans-unit>
-            <trans-unit id="u3I07BJ" resname="Register">
-                <source>Register</source>
-                <target>Registrieren</target>
-            </trans-unit>
-            <trans-unit id="1pajW90" resname="Profile">
-                <source>Profile</source>
-                <target>Dein Profil</target>
-            </trans-unit>
-            <trans-unit id="DX2c6C2" resname="Member since %date%">
-                <source>Member since %date%</source>
-                <target>Mitglied seit %date%</target>
-            </trans-unit>
-            <trans-unit id="47ienTP" resname="Username">
-                <source>Username</source>
-                <target>Benutzername</target>
-            </trans-unit>
-            <trans-unit id="6.zSWXT" resname="Username or email address">
-                <source>Username or email address</source>
-                <target>Benutzername oder E-Mail-Adresse</target>
-            </trans-unit>
-            <trans-unit id="588_9PF" resname="Password">
-                <source>Password</source>
-                <target>Passwort</target>
-            </trans-unit>
-            <trans-unit id="nQDUTyy" resname="Show homepage">
-                <source>Show homepage</source>
-                <target>Zur Startseite</target>
-            </trans-unit>
-            <trans-unit id="PjgG.xc" resname="Back to login">
-                <source>Back to login</source>
-                <target>Zurück zur Anmeldung</target>
-            </trans-unit>
-            <trans-unit id="WfpDeb4" resname="Reset your password">
-                <source>Reset your password</source>
-                <target>Passwort zurücksetzen</target>
-            </trans-unit>
-            <trans-unit id="YOlNDxu" resname="I forgot my password">
-                <source>I forgot my password</source>
-                <target>Passwort vergessen</target>
-            </trans-unit>
-            <trans-unit id="D3_ygfb" resname="Register a new account">
-                <source>Register a new account</source>
-                <target>Neuen Benutzer registrieren</target>
-            </trans-unit>
-            <trans-unit id="MKZCFur" resname="View all">
-                <source>View all</source>
-                <target>Alle anzeigen</target>
-            </trans-unit>
-            <trans-unit id="cXVRejc" resname="or">
-                <source>or</source>
-                <target>oder</target>
-            </trans-unit>
-            <trans-unit id="hSzABam" resname="You have %count% notifications">
-                <source>You have %count% notifications</source>
-                <target>Du hast 1 Benachrichtigung|Du hast %count% Benachrichtigungen</target>
-            </trans-unit>
-            <trans-unit id="WNPKqNj" resname="You have %count% messages">
-                <source>You have %count% messages</source>
-                <target>Du hast 1 Nachricht|Du hast %count% Nachrichten</target>
-            </trans-unit>
-            <trans-unit id="ZnUEpF." resname="You have %count% tasks">
-                <source>You have %count% tasks</source>
-                <target>Du hast 1 Aufgabe|Du hast %count% Aufgaben</target>
-            </trans-unit>
-            <trans-unit id="1bPaXpN" resname="%progress%% Complete">
-                <source>%progress%% Complete</source>
-                <target>%progress%% erledigt</target>
-            </trans-unit>
-            <trans-unit id="KLIuHvt" resname="This is a mandatory field">
-                <source>This is a mandatory field</source>
-                <target>Dies ist ein Pflichtfeld</target>
-            </trans-unit>
-            <trans-unit id="B.ZozIs" resname="registration.confirmed">
-                <source>registration.confirmed</source>
-                <target>Glückwunsch %username%, Ihr Benutzerkonto ist jetzt bestätigt.</target>
-            </trans-unit>
-            <trans-unit id="fZ63rLE" resname="Close">
-                <source>Close</source>
-                <target>Schließen</target>
-            </trans-unit>
-            <trans-unit id="7ECoiEP" resname="Take me home">
-                <source>Take me home</source>
-                <target>Zurück zum Anfang</target>
-            </trans-unit>
-            <trans-unit id="rtYKRSj" resname="http_error.title">
-                <source>http_error.title</source>
-                <target>Fehler</target>
-            </trans-unit>
-            <trans-unit id="e3w.2Rf" resname="http_error.description">
-                <source>http_error.description</source>
-                <target>Etwas läuft falsch</target>
-            </trans-unit>
-            <trans-unit id="ru5FEGk" resname="http_error.suggestion">
-                <source>http_error.suggestion</source>
-                <target>Ein kritischer Fehler ist aufgetreten. Möglicherweise haben Sie einen Fehler gefunden, kontaktieren Sie bitte ihren Administrator, falls der Fehler bestehen bleibt.</target>
-            </trans-unit>
-            <trans-unit id="_W1eNz2" resname="http_error_404.description">
-                <source>http_error_404.description</source>
-                <target>Seite wurde nicht gefunden</target>
-            </trans-unit>
-            <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
-                <source>http_error_404.suggestion</source>
-                <target>Wir konnten die angeforderte Seite leider nicht finden. Bitte wechseln Sie zu ihrem Dashboard und starten von vorne.</target>
-            </trans-unit>
-            <trans-unit id="Qn5rwdU" resname="http_error_403.description">
-                <source>http_error_403.description</source>
-                <target>Seite ist geschützt</target>
-            </trans-unit>
-            <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
-                <source>http_error_403.suggestion</source>
-                <target>Entschuldigung, Sie haben nicht genügend Berechtigungen, um diese Seite zu sehen. Bitte sprechen Sie mit ihrem Administrator wenn Sie dies für einen Fehler halten.</target>
-            </trans-unit>
-            <trans-unit id="F35zef" resname="Previous">
-                <source>Previous</source>
-                <target>Zurück</target>
-            </trans-unit>
-            <trans-unit id="68zefF" resname="Next">
-                <source>Next</source>
-                <target>Weiter</target>
-            </trans-unit>
-            <trans-unit id="465zeJ" resname="Show notifications">
-                <source>Show notifications</source>
-                <target>Zeige Benachrichtigungen</target>
-            </trans-unit>
-            <trans-unit id="F5Dfzd" resname="You have no notification">
-                <source>You have no notification</source>
-                <target>Es gibt keine Benachrichtigungen</target>
-            </trans-unit>
-            <trans-unit id="Pf48Zd" resname="And %count% more…">
+  <file source-language="en" target-language="de" datatype="plaintext" original="TablerBundle.en.xlf">
+    <body>
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation">
+        <source>Toggle navigation</source>
+        <target>Ansicht der Seitenleiste umschalten</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility">
+        <source>Toggle visibility</source>
+        <target>Sichtbarkeit umschalten</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me">
+        <source>Remember Me</source>
+        <target>Dauerhaft anmelden</target>
+      </trans-unit>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session">
+        <source>Sign in to start your session</source>
+        <target>Anmelden</target>
+      </trans-unit>
+      <trans-unit id="vMC8yRQ" resname="Sign In">
+        <source>Sign In</source>
+        <target>Anmelden</target>
+      </trans-unit>
+      <trans-unit id="SPDT05f" resname="Sign out">
+        <source>Sign out</source>
+        <target>Abmelden</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Registrieren</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile">
+        <source>Profile</source>
+        <target>Dein Profil</target>
+      </trans-unit>
+      <trans-unit id="DX2c6C2" resname="Member since %date%">
+        <source>Member since %date%</source>
+        <target>Mitglied seit %date%</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username">
+        <source>Username</source>
+        <target>Benutzername</target>
+      </trans-unit>
+      <trans-unit id="6.zSWXT" resname="Username or email address">
+        <source>Username or email address</source>
+        <target>Benutzername oder E-Mail-Adresse</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Passwort</target>
+      </trans-unit>
+      <trans-unit id="nQDUTyy" resname="Show homepage">
+        <source>Show homepage</source>
+        <target>Zur Startseite</target>
+      </trans-unit>
+      <trans-unit id="PjgG.xc" resname="Back to login">
+        <source>Back to login</source>
+        <target>Zurück zur Anmeldung</target>
+      </trans-unit>
+      <trans-unit id="WfpDeb4" resname="Reset your password">
+        <source>Reset your password</source>
+        <target>Passwort zurücksetzen</target>
+      </trans-unit>
+      <trans-unit id="YOlNDxu" resname="I forgot my password">
+        <source>I forgot my password</source>
+        <target>Passwort vergessen</target>
+      </trans-unit>
+      <trans-unit id="D3_ygfb" resname="Register a new account">
+        <source>Register a new account</source>
+        <target>Neuen Benutzer registrieren</target>
+      </trans-unit>
+      <trans-unit id="MKZCFur" resname="View all">
+        <source>View all</source>
+        <target>Alle anzeigen</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or">
+        <source>or</source>
+        <target>oder</target>
+      </trans-unit>
+      <trans-unit id="hSzABam" resname="You have %count% notifications">
+        <source>You have %count% notifications</source>
+        <target>Du hast 1 Benachrichtigung|Du hast %count% Benachrichtigungen</target>
+      </trans-unit>
+      <trans-unit id="WNPKqNj" resname="You have %count% messages">
+        <source>You have %count% messages</source>
+        <target>Du hast 1 Nachricht|Du hast %count% Nachrichten</target>
+      </trans-unit>
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks">
+        <source>You have %count% tasks</source>
+        <target>Du hast 1 Aufgabe|Du hast %count% Aufgaben</target>
+      </trans-unit>
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete">
+        <source>%progress%% Complete</source>
+        <target>%progress%% erledigt</target>
+      </trans-unit>
+      <trans-unit id="KLIuHvt" resname="This is a mandatory field">
+        <source>This is a mandatory field</source>
+        <target>Dies ist ein Pflichtfeld</target>
+      </trans-unit>
+      <trans-unit id="B.ZozIs" resname="registration.confirmed">
+        <source>registration.confirmed</source>
+        <target>Glückwunsch %username%, Ihr Benutzerkonto ist jetzt bestätigt.</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close">
+        <source>Close</source>
+        <target>Schließen</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home">
+        <source>Take me home</source>
+        <target>Zurück zum Anfang</target>
+      </trans-unit>
+      <trans-unit id="rtYKRSj" resname="http_error.title">
+        <source>http_error.title</source>
+        <target>Fehler</target>
+      </trans-unit>
+      <trans-unit id="e3w.2Rf" resname="http_error.description">
+        <source>http_error.description</source>
+        <target>Etwas läuft falsch</target>
+      </trans-unit>
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+        <source>http_error.suggestion</source>
+        <target>Ein kritischer Fehler ist aufgetreten. Möglicherweise haben Sie einen Fehler gefunden, kontaktieren Sie bitte ihren Administrator, falls der Fehler bestehen bleibt.</target>
+      </trans-unit>
+      <trans-unit id="_W1eNz2" resname="http_error_404.description">
+        <source>http_error_404.description</source>
+        <target>Seite wurde nicht gefunden</target>
+      </trans-unit>
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+        <source>http_error_404.suggestion</source>
+        <target>Wir konnten die angeforderte Seite leider nicht finden. Bitte wechseln Sie zu ihrem Dashboard und starten von vorne.</target>
+      </trans-unit>
+      <trans-unit id="Qn5rwdU" resname="http_error_403.description">
+        <source>http_error_403.description</source>
+        <target>Seite ist geschützt</target>
+      </trans-unit>
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+        <source>http_error_403.suggestion</source>
+        <target>Entschuldigung, Sie haben nicht genügend Berechtigungen, um diese Seite zu sehen. Bitte sprechen Sie mit ihrem Administrator wenn Sie dies für einen Fehler halten.</target>
+      </trans-unit>
+      <trans-unit id="F35zef" resname="Previous">
+        <source>Previous</source>
+        <target>Zurück</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next">
+        <source>Next</source>
+        <target>Weiter</target>
+      </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications">
+        <source>Show notifications</source>
+        <target>Zeige Benachrichtigungen</target>
+      </trans-unit>
+      <trans-unit id="F5Dfzd" resname="You have no notification">
+        <source>You have no notification</source>
+        <target>Es gibt keine Benachrichtigungen</target>
+      </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…">
         <source>And %count% more…</source>
         <target>Und %count% weitere…</target>
       </trans-unit>
@@ -169,6 +169,10 @@
       <trans-unit id="auqmpT0" resname="Show password">
         <source>Show password</source>
         <target>Passwort anzeigen</target>
+      </trans-unit>
+      <trans-unit id="pgpWxYS" resname="Hide password">
+        <source>Hide password</source>
+        <target>Passwort verstecken</target>
       </trans-unit>
     </body>
   </file>

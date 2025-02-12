@@ -15,17 +15,17 @@
         <target>Remember Me</target>
       </trans-unit>
       <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="yes">
-                <source>Login</source>
-                <target state="final">Login</target>
-            </trans-unit>
+        <source>Login</source>
+        <target state="final">Login</target>
+      </trans-unit>
       <trans-unit id="vMC8yRQ" resname="Sign In" xml:space="preserve" approved="no">
-                <source>Log in</source>
-                <target state="translated">Log in</target>
-            </trans-unit>
+        <source>Log in</source>
+        <target state="translated">Log in</target>
+      </trans-unit>
       <trans-unit id="SPDT05f" resname="Sign out" xml:space="preserve" approved="no">
-                <source>Log out</source>
-                <target state="translated">Log out</target>
-            </trans-unit>
+        <source>Log out</source>
+        <target state="translated">Log out</target>
+      </trans-unit>
       <trans-unit id="u3I07BJ" resname="Register">
         <source>Register</source>
         <target>Register</target>
@@ -138,23 +138,23 @@
         <source>http_error_403.suggestion</source>
         <target>Sorry, but you don't have sufficient permissions to see this page. Please talk to your administrator if you think this is an error.</target>
       </trans-unit>
-            <trans-unit id="F35zef" resname="Previous">
+      <trans-unit id="F35zef" resname="Previous">
         <source>Previous</source>
         <target>Previous</target>
       </trans-unit>
-            <trans-unit id="68zefF" resname="Next">
+      <trans-unit id="68zefF" resname="Next">
         <source>Next</source>
         <target>Next</target>
       </trans-unit>
-            <trans-unit id="465zeJ" resname="Show notifications">
+      <trans-unit id="465zeJ" resname="Show notifications">
         <source>Show notifications</source>
         <target>Show notifications</target>
       </trans-unit>
-            <trans-unit id="F5Dfzd" resname="You have no notification">
+      <trans-unit id="F5Dfzd" resname="You have no notification">
         <source>You have no notification</source>
         <target>You have no notification</target>
       </trans-unit>
-            <trans-unit id="Pf48Zd" resname="And %count% more…">
+      <trans-unit id="Pf48Zd" resname="And %count% more…">
         <source>And %count% more…</source>
         <target>And %count% more…</target>
       </trans-unit>
@@ -170,7 +170,7 @@
         <source>Show password</source>
         <target>Show password</target>
       </trans-unit>
-      <trans-unit resname="Hide password">
+      <trans-unit id="pgpWxYS" resname="Hide password">
         <source>Hide password</source>
         <target>Hide password</target>
       </trans-unit>
