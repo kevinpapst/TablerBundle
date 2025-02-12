@@ -170,6 +170,10 @@
         <source>Show password</source>
         <target>Afficher mot de passe</target>
       </trans-unit>
+      <trans-unit resname="Hide password">
+        <source>Hide password</source>
+        <target>Cacher mot de passe</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
