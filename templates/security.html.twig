@@ -83,34 +83,36 @@
                                 <script>
                                     function toggleShowPasswordInput() {
                                         const input = document.querySelector('input[name="_password"]');
-                                        if (!input) return;
+                                        if (!input) {
+                                            return;
+                                        }
 
                                         const a = input.parentElement.querySelector('.input-group-text a');
-                                        let tooltipEl;
+                                        let tooltipEl = null;
                                         if (a.hasAttribute('aria-describedBy')) {
                                             tooltipEl = document.getElementById(a.getAttribute('aria-describedBy'));
                                         }
                                         const svgs = input.parentElement.querySelectorAll('.input-group-text svg');
 
-                                        let title
+                                        let title = '';
                                         if (input.type === 'password') {
-                                            // eye-off
                                             title = a.getAttribute('data-hide-title');
                                             input.type = 'text';
                                             svgs[0].parentElement.hidden = true;
                                             svgs[1].parentElement.hidden = false;
                                         } else {
-                                            // eye
                                             title = a.getAttribute('data-show-title');
                                             input.type = 'password';
                                             svgs[0].parentElement.hidden = false;
                                             svgs[1].parentElement.hidden = true;
                                         }
 
-                                        // Tooltip
                                         a.ariaLabel = title;
+                                        a.title = title;
                                         a.setAttribute('data-bs-original-title', title);
-                                        if (tooltipEl) tooltipEl.querySelector('.tooltip-inner').innerText = title;
+                                        if (tooltipEl !== null) {
+                                            tooltipEl.querySelector('.tooltip-inner').innerText = title;
+                                        }
                                     }
                                 </script>
                                 {% endblock %}
