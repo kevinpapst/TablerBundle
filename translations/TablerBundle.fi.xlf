@@ -10,13 +10,13 @@
         <source>Remember Me</source>
         <target state="translated">Muista minut</target>
       </trans-unit>
-      <trans-unit id="8FGIkAR" resname="Sign in to start your session">
-        <source>Sign in to start your session</source>
-        <target state="translated">Kirjaudu sisään aloittaaksesi</target>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve">
+        <source>Login</source>
+        <target state="translated">Sisäänkirjautuminen</target>
       </trans-unit>
-      <trans-unit id="vMC8yRQ" resname="Sign In">
-        <source>Sign In</source>
-        <target state="translated">Kirjaudu</target>
+      <trans-unit id="vMC8yRQ" resname="Sign In" xml:space="preserve">
+        <source>Log in</source>
+        <target state="translated">Kirjaudu sisään</target>
       </trans-unit>
       <trans-unit id="SPDT05f" resname="Sign out">
         <source>Sign out</source>
@@ -84,7 +84,7 @@
       </trans-unit>
       <trans-unit id="1bPaXpN" resname="%progress%% Complete" xml:space="preserve">
         <source>%progress%% Complete</source>
-        <target state="translated">%progress %% suoritettu</target>
+        <target state="translated">%progress% % suoritettu</target>
       </trans-unit>
       <trans-unit id="KLIuHvt" resname="This is a mandatory field">
         <source>This is a mandatory field</source>

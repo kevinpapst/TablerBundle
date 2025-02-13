@@ -23,8 +23,8 @@
         <target state="translated">Зареєструвати новий обліковий запис</target>
       </trans-unit>
       <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve" approved="no">
-        <source>You have %count% notifications</source>
-        <target state="translated">У Вас 1 повідомлення|У Вас %count% сповіщення|У Вас %count% сповіщень</target>
+        <source>You have 1 notification|You have %count% notifications</source>
+        <target state="translated">У Вас 1 сповіщення|У Вас %count% сповіщень</target>
       </trans-unit>
       <trans-unit id="B.ZozIs" resname="registration.confirmed" xml:space="preserve" approved="no">
         <source>registration.confirmed</source>

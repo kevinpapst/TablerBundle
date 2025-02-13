@@ -88,7 +88,7 @@
       </trans-unit>
       <trans-unit id="B.ZozIs" resname="registration.confirmed" xml:space="preserve" approved="yes">
         <source>registration.confirmed</source>
-        <target state="final">Congratulazioni %nomeutente%, il tuo account è attivato.</target>
+        <target state="final">Congratulazioni %username%, il tuo account è attivato.</target>
       </trans-unit>
       <trans-unit id="rtYKRSj" resname="http_error.title" xml:space="preserve" approved="yes">
         <source>http_error.title</source>
