@@ -32,7 +32,7 @@
       </trans-unit>
       <trans-unit id="DX2c6C2" resname="Member since %date%">
         <source>Member since %date%</source>
-        <target>Konto utworzone  %date%</target>
+        <target>Konto utworzone %date%</target>
       </trans-unit>
       <trans-unit id="47ienTP" resname="Username">
         <source>Username</source>
@@ -70,17 +70,17 @@
         <source>View all</source>
         <target>Pokaż wszystko</target>
       </trans-unit>
-      <trans-unit id="hSzABam" resname="You have %count% notifications">
-        <source>You have %count% notifications</source>
-        <target>Masz 1 powiadomienie|Masz %count% powiadomień|Masz %count% powiadomień</target>
+      <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve">
+        <source>You have 1 notification|You have %count% notifications</source>
+        <target state="needs-translation">Masz 1 powiadomienie|Masz %count% powiadomień|Masz %count% powiadomień</target>
       </trans-unit>
-      <trans-unit id="WNPKqNj" resname="You have %count% messages">
+      <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve">
         <source>You have %count% messages</source>
-        <target>Masz  1 wiadomość|Masz %count% wiadomości|Masz %count% wiadomości</target>
+        <target state="needs-translation">Masz 1 wiadomość|Masz %count% wiadomości|Masz %count% wiadomości</target>
       </trans-unit>
-      <trans-unit id="ZnUEpF." resname="You have %count% tasks">
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve">
         <source>You have %count% tasks</source>
-        <target>Masz 1 zadanie|Masz %count% zadań|Masz %count% zadań</target>
+        <target state="needs-translation">Masz 1 zadanie|Masz %count% zadań|Masz %count% zadań</target>
       </trans-unit>
       <trans-unit id="1bPaXpN" resname="%progress%% Complete">
         <source>%progress%% Complete</source>
