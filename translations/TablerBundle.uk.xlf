@@ -88,11 +88,11 @@
       </trans-unit>
       <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve" approved="no">
         <source>You have %count% messages</source>
-        <target state="translated">У Вас 1 повідомлення|У Вас %count% повідомлення|У Вас %count% повідомлень</target>
+        <target state="translated">У вас 1 повідомлення|У вас %count% повідомлень</target>
       </trans-unit>
       <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve" approved="no">
         <source>You have %count% tasks</source>
-        <target state="translated">У Вас 1 завдання|У Вас %count% завдання|У Вас %count% завдань</target>
+        <target state="translated">У вас 1 завдання|У вас %count% завдань</target>
       </trans-unit>
       <trans-unit id="1bPaXpN" resname="%progress%% Complete" xml:space="preserve" approved="no">
         <source>%progress%% Complete</source>
@@ -165,6 +165,14 @@
       <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve">
         <source>Open personal menu</source>
         <target state="translated">Відкрити особисте меню</target>
+      </trans-unit>
+      <trans-unit id="auqmpT0" resname="Show password" xml:space="preserve">
+        <source>Show password</source>
+        <target state="translated">Показати пароль</target>
+      </trans-unit>
+      <trans-unit id="pgpWxYS" resname="Hide password" xml:space="preserve">
+        <source>Hide password</source>
+        <target state="translated">Приховати пароль</target>
       </trans-unit>
     </body>
   </file>
