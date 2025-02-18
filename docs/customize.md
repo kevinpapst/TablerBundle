@@ -33,7 +33,7 @@ $nav-link-color: $opal;
 
 Then, import it in the first position into your `app.scss` file:
 ```scss
-// assets/app.scss
+// assets/styles/app.scss
 @import url("./theme.scss");
 
 // [...]
