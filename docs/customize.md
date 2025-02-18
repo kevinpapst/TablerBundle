@@ -16,10 +16,10 @@ $info: $secondary;
 $warning: #e67e22;
 $danger: #e74c3c;
 
-$h1-font-size: 2rem !default;
-$h2-font-size: 1.5rem !default;
-$h3-font-size: 1.3rem !default;
-$h4-font-size: 1.2rem !default;
+$h1-font-size: 2rem;
+$h2-font-size: 1.5rem;
+$h3-font-size: 1.3rem;
+$h4-font-size: 1.2rem;
 
 $font-family-sans-serif: Ubuntu, sans-serif;
 $font-family-monospace: "Ubuntu Mono", Consolas, sans-serif;
