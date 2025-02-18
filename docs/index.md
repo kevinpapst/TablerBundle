@@ -6,7 +6,7 @@ If you cannot find the needed information in this list of topics, please create 
 * [Error pages](error_pages.md)
 * [Customizing the menu](menu.md)
 * [Displaying notifications](notifications.md)
-* [Override theme](override_theme.md)
+* [Customize](customize.md)
 * [Dynamic theme / bundle configuration](twig-context.md)
 * [Customizing forms](form_theme.md)
 
