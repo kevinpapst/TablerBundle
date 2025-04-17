@@ -70,17 +70,17 @@
         <source>View all</source>
         <target>Zobrazit vše</target>
       </trans-unit>
-      <trans-unit id="hSzABam" resname="You have %count% notifications">
-        <source>You have %count% notifications</source>
-        <target>{1} Máte 1 notifikaci|[2,4] Máte %count% notifikace|[5,Inf[ Máte %count% notifikací</target>
+      <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve">
+        <source>You have 1 notification|You have %count% notifications</source>
+        <target state="needs-translation">{1} Máte 1 notifikaci|[2,4] Máte %count% notifikace|[5,Inf[ Máte %count% notifikací</target>
       </trans-unit>
-      <trans-unit id="WNPKqNj" resname="You have %count% messages">
+      <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve">
         <source>You have %count% messages</source>
-        <target>{1} Máte 1 zprávu|[2,4] Máte %count% zprávy|[5,Inf[ Máte %count% zpráv</target>
+        <target state="needs-translation">{1} Máte 1 zprávu|[2,4] Máte %count% zprávy|[5,Inf[ Máte %count% zpráv</target>
       </trans-unit>
-      <trans-unit id="ZnUEpF." resname="You have %count% tasks">
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve">
         <source>You have %count% tasks</source>
-        <target>{1} Máte 1 úkol|[2,4] Máte %count% úkoly|[5,Inf[ Máte %count% úkolů</target>
+        <target state="needs-translation">{1} Máte 1 úkol|[2,4] Máte %count% úkoly|[5,Inf[ Máte %count% úkolů</target>
       </trans-unit>
       <trans-unit id="1bPaXpN" resname="%progress%% Complete">
         <source>%progress%% Complete</source>
@@ -165,6 +165,10 @@
       <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve">
         <source>Open personal menu</source>
         <target state="translated">Otevřít osobní menu</target>
+      </trans-unit>
+      <trans-unit id="pgpWxYS" resname="Hide password" xml:space="preserve">
+        <source>Hide password</source>
+        <target state="translated">Skryj heslo</target>
       </trans-unit>
     </body>
   </file>
