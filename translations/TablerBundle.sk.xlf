@@ -70,17 +70,17 @@
         <source>View all</source>
         <target>Zobraziť všetky</target>
       </trans-unit>
-      <trans-unit id="hSzABam" resname="You have %count% notifications">
-        <source>You have %count% notifications</source>
-        <target>Máte jednu notifikáciu|Máte %count% notifikácie|Máte %count% notifikácie</target>
+      <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve">
+        <source>You have 1 notification|You have %count% notifications</source>
+        <target state="needs-translation">Máte jednu notifikáciu|Máte %count% notifikácie|Máte %count% notifikácie</target>
       </trans-unit>
-      <trans-unit id="WNPKqNj" resname="You have %count% messages">
+      <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve">
         <source>You have %count% messages</source>
-        <target>Máte 1 správu|Máte %count% správ|Máte %count% správ</target>
+        <target state="needs-translation">Máte 1 správu|Máte %count% správ|Máte %count% správ</target>
       </trans-unit>
-      <trans-unit id="ZnUEpF." resname="You have %count% tasks">
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve">
         <source>You have %count% tasks</source>
-        <target>Máte 1 úlohu|Máte %count% úloh|Máte %count% úloh</target>
+        <target state="needs-translation">Máte 1 úlohu|Máte %count% úloh|Máte %count% úloh</target>
       </trans-unit>
       <trans-unit id="1bPaXpN" resname="%progress%% Complete">
         <source>%progress%% Complete</source>
@@ -104,11 +104,7 @@
       </trans-unit>
       <trans-unit id="ru5FEGk" resname="http_error.suggestion">
         <source>http_error.suggestion</source>
-        <target>
-                    Vyskytla sa neočakávaná chyba, skúste to znova.
-                    Možno ste našli chybu, preto v prípade problému kontaktujte správcu
-                    ak to nenaskočí, keď ste to znova vyskúšali.
-                </target>
+        <target>Vyskytla sa neočakávaná chyba, skúste to znova. Možno ste našli chybu, preto v prípade problému kontaktujte správcu ak to nenaskočí, keď ste to znova vyskúšali.</target>
       </trans-unit>
       <trans-unit id="_W1eNz2" resname="http_error_404.description">
         <source>http_error_404.description</source>
@@ -116,10 +112,7 @@
       </trans-unit>
       <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
         <source>http_error_404.suggestion</source>
-        <target>
-                    Nenašli sme stránku, ktorú ste hľadali.
-                    Medzitým sa môžete vrátiť na dashboard a začať znova.
-                </target>
+        <target>Nenašli sme stránku, ktorú ste hľadali. Medzitým sa môžete vrátiť na dashboard a začať znova.</target>
       </trans-unit>
       <trans-unit id="Qn5rwdU" resname="http_error_403.description">
         <source>http_error_403.description</source>
@@ -127,10 +120,7 @@
       </trans-unit>
       <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
         <source>http_error_403.suggestion</source>
-        <target>
-                    Je nám ľúto, ale nemáte dostatočné povolenia na zobrazenie tejto stránky.
-                    Ak si myslíte, že ide o chybu, obráťte sa na svojho správcu.
-                </target>
+        <target>Je nám ľúto, ale nemáte dostatočné povolenia na zobrazenie tejto stránky. Ak si myslíte, že ide o chybu, obráťte sa na svojho správcu.</target>
       </trans-unit>
       <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
         <source>Toggle visibility</source>
