@@ -26,7 +26,8 @@ See Tabler documentation at https://preview.tabler.io/accordion.html
 |:---------------:|----------------------------------|:---------:|:--------------:|
 |      open       | Item should be opened by default | `boolean` |    `false`     |
 | titleExtraClass | Add extra class to the title     | `string`  | _empty string_ |
-| bodyExtraClass  | Add extra class to the body      | `string`  | _empty string_ |
+| bodyExtraClass  | Add extra class to the body      | `string`  | _empty string_ | 
+|      attr       | Add extra attributes             | `object`  |     `{}`       |   
 
 #### Options
 | Parameter  | Description                                                                                                                  |   Type    |             Default              |
@@ -35,7 +36,8 @@ See Tabler documentation at https://preview.tabler.io/accordion.html
 |    raw     | Use raw output for `title` and `body`                                                                                        | `boolean` |              `true`              |                                        
 |   flush    | Remove certains styles (see [Boostrap docs](https://getbootstrap.com/docs/5.0/components/accordion/#flush))                  | `boolean` |             `false`              | 
 | alwaysOpen | Holds the accordion elements open (see [Bootstrap Doc](https://getbootstrap.com/docs/5.0/components/accordion/#always-open)) | `boolean` |             `false`              |   
-| extraClass | Add extra classes on accordion container                                                                                     | `string`  |          _empty string_          |      
+| extraClass | Add extra classes on accordion container                                                                                     | `string`  |          _empty string_          |     
+|    attr    | Add extra attributes on accordion container                                                                                  | `object`  |               `{}`               |   
 
 ### Usage
 
@@ -62,7 +64,10 @@ See Tabler documentation at https://preview.tabler.io/accordion.html
       'body': 'Body 3',
       'options':
       {
-        'extraClass': 'bg-danger-lt'
+        'extraClass': 'bg-danger-lt',
+        'attr': {
+         'data-sub-id': 1,
+        },
       }
     },
     {
@@ -76,6 +81,9 @@ See Tabler documentation at https://preview.tabler.io/accordion.html
     'raw': true,
     'alwaysOpen': false,
     'extraClass': 'mb-0',
+    'attr': {
+     'data-id': 1,
+    },
 } %}
 
 {{ accordion(items, options) }}
