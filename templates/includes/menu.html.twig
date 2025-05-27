@@ -10,11 +10,14 @@
         {% for item in menu %}
             <li id="{{ item.identifier }}" class="nav-item{{ item.isActive ? ' active' : '' }}{{ item.hasChildren ? ' dropdown' : '' }}">
                 <a {% if item.hasChildren %}
-                        class="nav-link dropdown-toggle navbar-menu-{{ item.identifier }}" role="button"
+                        class="nav-link dropdown-toggle navbar-menu-{{ item.identifier }} {{ item.disabled ? 'disabled' : '' }}" role="button"
                         data-bs-toggle="dropdown" data-bs-auto-close="{{ layout_type is same as "vertical" ? 'false' : 'outside' }}"
                         aria-expanded="{{ layout_type is same as 'vertical' ? 'true' : 'false' }}"
                     {% else %}
-                        class="nav-link" href="{{ '/' in item.route ? item.route : (item.route is null ? '#' : path(item.route|tabler_route, item.routeArgs)) }}"
+                        class="nav-link {{ item.disabled ? 'disabled' : '' }}"
+                        {%- if not item.disabled %}
+                            href="{{ '/' in item.route ? item.route : (item.route is null ? '#' : path(item.route|tabler_route, item.routeArgs)) }}"
+                        {% endif %}
                     {% endif %}>
                     {{ _self.item_icon(item) }}
                     <span class="nav-link-title">{{ item.label|trans({}, item.translationDomain) }}</span>
@@ -36,7 +39,7 @@
                     {% for child in item.children %}
                         {% if child.hasChildren %}
                             <div class="dropend">
-                                <a class="dropdown-item dropdown-toggle {{ child.isActive ? 'active' : '' }} navbar-menu-{{ child.identifier }}" role="button"
+                                <a class="dropdown-item dropdown-toggle {{ child.isActive ? 'active' : '' }} {{ child.disabled ? 'disabled' : '' }} navbar-menu-{{ child.identifier }}" role="button"
                                    data-bs-toggle="dropdown" data-bs-auto-close="{{ layout_type is same as "vertical" ? 'false' : 'outside' }}"
                                    aria-expanded="{{ layout_type is same as 'vertical' ? 'true' : 'false' }}">
                                     {{ _self.item_icon(child) }}
@@ -61,8 +64,8 @@
             <hr class="dropdown-divider">
         {%- endif %}
     {% else %}
-        <a class="dropdown-item {{ child.isActive ? 'active':'' }} navbar-menu-{{ child.identifier }}"
-            {%- if not child.hasChildren %} href="{{ '/' in child.route ? child.route : (child.route is null ? '#' : path(child.route|tabler_route, child.routeArgs)) }}"{% endif %}>
+        <a class="dropdown-item {{ child.isActive ? 'active':'' }} {{ child.disabled ? 'disabled' : '' }} navbar-menu-{{ child.identifier }}"
+            {%- if not child.hasChildren and not child.disabled %} href="{{ '/' in child.route ? child.route : (child.route is null ? '#' : path(child.route|tabler_route, child.routeArgs)) }}"{% endif %}>
             {{ _self.item_icon(child) }}
             {{ child.label|trans({}, child.translationDomain) }}
             {{ _self.item_badge(child) }}
