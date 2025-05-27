@@ -9,11 +9,7 @@
     {% set _extraClass = options.extraClass ?? '' %}
     {% set _attr = options.attr ?? {} %}
 
-    <div
-        id="{{ _id }}"
-        class="accordion {% if _flush == true %}accordion-flush{% endif %} {{ _extraClass }}"
-        {{ utils.attr_to_html(_attr) }}
-    >
+    <div id="{{ _id }}" class="accordion {% if _flush == true %}accordion-flush{% endif %} {{ _extraClass }}" {{ utils.attr_to_html(_attr) }}>
         {% for item in items %}
 
             {# Item #}
