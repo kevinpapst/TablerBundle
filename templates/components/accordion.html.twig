@@ -1,4 +1,5 @@
 {% macro accordion(items, options) %}
+    {% import '@Tabler/includes/utils.html.twig' as utils %}
 
     {# Options #}
     {% set _id = options.id ?? tabler_unique_id('accordion_') %}
@@ -6,8 +7,9 @@
     {% set _flush = options.flush ?? false %}
     {% set _always_open = options.alwaysOpen ?? false %}
     {% set _extraClass = options.extraClass ?? '' %}
+    {% set _attr = options.attr ?? {} %}
 
-    <div id="{{ _id }}" class="accordion {% if _flush == true %}accordion-flush{% endif %} {{ _extraClass }}">
+    <div id="{{ _id }}" class="accordion {% if _flush == true %}accordion-flush{% endif %} {{ _extraClass }}" {{ utils.attr_to_html(_attr) }}>
         {% for item in items %}
 
             {# Item #}
@@ -23,8 +25,9 @@
             {% set _item_extraClass = item.options.extraClass ?? '' %}
             {% set _item_title_extraClass = item.options.titleExtraClass ?? '' %}
             {% set _item_body_extraClass = item.options.bodyExtraClass ?? '' %}
+            {% set _item_attr = item.options.attr ?? {} %}
 
-            <div class="accordion-item {{ _item_extraClass }}">
+            <div class="accordion-item {{ _item_extraClass }}" {{ utils.attr_to_html(_item_attr) }}>
                 <div class="accordion-header {{ _item_title_extraClass }}" id="{{ _id }}-heading-{{ loop.index }}">
                     <button class="accordion-button {% if not _item_open %}collapsed{% endif %}"
                             type="button" data-bs-toggle="collapse" data-bs-target="#{{ _id_collapse }}"
