@@ -104,11 +104,7 @@
       </trans-unit>
       <trans-unit id="ru5FEGk" resname="http_error.suggestion">
         <source>http_error.suggestion</source>
-        <target state="translated">
-                    Beklenmeyen bir hata oluştu, tekrar deneyin.
-                    Bir hata bulmuş olabilirsiniz, tekrar denediğiniz hata devam ederse
-                    yöneticiyle iletişime geçiniz.
-                </target>
+        <target state="translated">Beklenmeyen bir hata oluştu, tekrar deneyin. Bir hata bulmuş olabilirsiniz, tekrar denediğiniz hata devam ederse yöneticiyle iletişime geçiniz.</target>
       </trans-unit>
       <trans-unit id="_W1eNz2" resname="http_error_404.description">
         <source>http_error_404.description</source>
@@ -169,6 +165,14 @@
       <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve" approved="no">
         <source>Open personal menu</source>
         <target state="translated">Kişisel menüyü aç</target>
+      </trans-unit>
+      <trans-unit id="auqmpT0" resname="Show password" xml:space="preserve">
+        <source>Show password</source>
+        <target state="translated">Şifreyi göster</target>
+      </trans-unit>
+      <trans-unit id="pgpWxYS" resname="Hide password" xml:space="preserve">
+        <source>Hide password</source>
+        <target state="translated">Şifreyi gizle</target>
       </trans-unit>
     </body>
   </file>

@@ -62,6 +62,86 @@
         <source>Log out</source>
         <target state="translated">Kilépés</target>
       </trans-unit>
+      <trans-unit id="DX2c6C2" resname="Member since %date%" xml:space="preserve">
+        <source>Member since %date%</source>
+        <target state="translated">Tag %date% óta</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username" xml:space="preserve">
+        <source>Username</source>
+        <target state="translated">Felhasználónév</target>
+      </trans-unit>
+      <trans-unit id="6.zSWXT" resname="Username or email address" xml:space="preserve">
+        <source>Username or email address</source>
+        <target state="translated">Felhasználónév vagy email cím</target>
+      </trans-unit>
+      <trans-unit id="nQDUTyy" resname="Show homepage" xml:space="preserve">
+        <source>Show homepage</source>
+        <target state="translated">Kezdőlap megjelenítése</target>
+      </trans-unit>
+      <trans-unit id="PjgG.xc" resname="Back to login" xml:space="preserve">
+        <source>Back to login</source>
+        <target state="translated">Vissza a bejelentkezéshez</target>
+      </trans-unit>
+      <trans-unit id="WfpDeb4" resname="Reset your password" xml:space="preserve">
+        <source>Reset your password</source>
+        <target state="translated">Jelszó visszaállítása</target>
+      </trans-unit>
+      <trans-unit id="YOlNDxu" resname="I forgot my password" xml:space="preserve">
+        <source>I forgot my password</source>
+        <target state="translated">Elfelejtettem a jelszavamat</target>
+      </trans-unit>
+      <trans-unit id="D3_ygfb" resname="Register a new account" xml:space="preserve">
+        <source>Register a new account</source>
+        <target state="translated">Új felhasználó rögzítése</target>
+      </trans-unit>
+      <trans-unit id="MKZCFur" resname="View all" xml:space="preserve">
+        <source>View all</source>
+        <target state="translated">Összes megtekintése</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve">
+        <source>or</source>
+        <target state="translated">vagy</target>
+      </trans-unit>
+      <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve" approved="no">
+        <source>You have 1 notification|You have %count% notifications</source>
+        <target state="translated">Önnek 1 értesítése van | Önnek %count% értesítése van</target>
+      </trans-unit>
+      <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve">
+        <source>You have %count% messages</source>
+        <target state="translated">Önnek 1 üzenete van | Önnek %count% üzenete van</target>
+      </trans-unit>
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve" approved="no">
+        <source>You have 1 task|You have %count% tasks</source>
+        <target state="translated">Önnek 1 feladata van | Önnek %count% feladata van</target>
+      </trans-unit>
+      <trans-unit id="KLIuHvt" resname="This is a mandatory field" xml:space="preserve">
+        <source>This is a mandatory field</source>
+        <target state="translated">Ez egy kötelező mező</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve">
+        <source>Take me home</source>
+        <target state="translated">Vigyen a kezdőlapra</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next" xml:space="preserve">
+        <source>Next</source>
+        <target state="translated">Következő</target>
+      </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve">
+        <source>Show notifications</source>
+        <target state="translated">Értesítések megjelenítése</target>
+      </trans-unit>
+      <trans-unit id="F35zef" resname="Previous" xml:space="preserve">
+        <source>Previous</source>
+        <target state="translated">Előző</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password" xml:space="preserve">
+        <source>Password</source>
+        <target state="translated">Jelszó</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve">
+        <source>Close</source>
+        <target state="translated">Zárva</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
