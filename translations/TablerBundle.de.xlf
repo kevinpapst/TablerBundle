@@ -158,13 +158,13 @@
         <source>And %count% more…</source>
         <target>Und %count% weitere…</target>
       </trans-unit>
-      <trans-unit id=".4BZ3Gd" resname="Actions">
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve">
         <source>Actions</source>
-        <target>Actions</target>
+        <target state="translated">Aktionen</target>
       </trans-unit>
-      <trans-unit id="QD4LaO1" resname="Open personal menu">
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve">
         <source>Open personal menu</source>
-        <target>Open personal menu</target>
+        <target state="translated">Persönliches Menü öffnen</target>
       </trans-unit>
       <trans-unit id="auqmpT0" resname="Show password">
         <source>Show password</source>
