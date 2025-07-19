@@ -56,4 +56,6 @@ interface MenuItemInterface
     public function getBadgeColor(): ?string;
 
     public function isDivider(): bool;
+
+    public function isDisabled(): bool;
 }

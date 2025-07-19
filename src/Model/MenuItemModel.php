@@ -24,6 +24,7 @@ class MenuItemModel implements MenuItemInterface
     private ?string $badgeColor = null;
     private bool $isActive = false;
     private bool $divider = false;
+    private bool $disabled = false;
     private bool $expanded = false;
     private string $translationDomain = 'messages';
 
@@ -228,5 +229,15 @@ class MenuItemModel implements MenuItemInterface
     public function setTranslationDomain(string $translationDomain): void
     {
         $this->translationDomain = $translationDomain;
+    }
+
+    public function isDisabled(): bool
+    {
+        return $this->disabled;
+    }
+
+    public function setDisabled(bool $disabled): void
+    {
+        $this->disabled = $disabled;
     }
 }
