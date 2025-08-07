@@ -80,70 +80,74 @@ Enjoy your theme!
     {% endblock %}
     {# *************************** #}
 
-    <div id="{% block page_wrapper_id %}{% endblock %}" class="page-wrapper">
-        {% block page_header %}
-            <div class="{{ ''|tabler_container }}">
-                {# Page title #}
-                <div id="{% block page_header_id %}{% endblock %}" class="page-header d-print-none">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            {% block page_intro %}
-                                {% block breadcrumb %}
-                                    <div class="page-pretitle">
-                                        {% block page_pretitle %}Overview{% endblock %}
+    {% block page_wrapper %}
+        <div id="{% block page_wrapper_id %}{% endblock %}" class="page-wrapper {% block page_wrapper_class %}{% endblock %}">
+            {% block page_header %}
+                <div class="{{ ''|tabler_container }}">
+                    {# Page title #}
+                    <div id="{% block page_header_id %}{% endblock %}" class="page-header d-print-none {% block page_header_class %}{% endblock %}">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                {% block page_intro %}
+                                    {% block breadcrumb %}
+                                        <div class="page-pretitle">
+                                            {% block page_pretitle %}Overview{% endblock %}
+                                        </div>
+                                    {% endblock %}
+                                    <h2 class="page-title{% if tabler_bundle.isNavbarOverlapping() %} text-white{% endif %}">
+                                        {% block page_title %}Dashboard{% endblock %}
+                                    </h2>
+                                    {% block page_subtitle %}
+                                        <div class="text-body-secondary mt-1">
+                                            1-10 of 100
+                                        </div>
+                                    {% endblock %}
+                                {% endblock %}
+                            </div>
+                            <div class="{% block page_actions_class %}col-auto ms-auto d-print-none{% endblock %}">
+                                {% block page_actions %}
+                                    <div class="btn-list">
+                                        <a href="#" class="btn btn-white">
+                                            New view
+                                        </a>
+                                        <a href="#" class="btn btn-primary d-none d-sm-inline-block">
+                                            Create new report
+                                        </a>
                                     </div>
                                 {% endblock %}
-                                <h2 class="page-title{% if tabler_bundle.isNavbarOverlapping() %} text-white{% endif %}">
-                                    {% block page_title %}Dashboard{% endblock %}
-                                </h2>
-                                {% block page_subtitle %}
-                                    <div class="text-body-secondary mt-1">
-                                        1-10 of 100
-                                    </div>
-                                {% endblock %}
-                            {% endblock %}
-                        </div>
-                        <div class="{% block page_actions_class %}col-auto ms-auto d-print-none{% endblock %}">
-                            {% block page_actions %}
-                                <div class="btn-list">
-                                    <a href="#" class="btn btn-white">
-                                        New view
-                                    </a>
-                                    <a href="#" class="btn btn-primary d-none d-sm-inline-block">
-                                        Create new report
-                                    </a>
-                                </div>
-                            {% endblock %}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        {% endblock %}
+            {% endblock %}
 
-        <div class="page-body">
-            <div class="{{ ''|tabler_container }}">
-                <div class="row row-cards">
-                    {% block page_content_before %}{% endblock %}
+            {% block page_body %}
+                <div class="page-body">
+                    <div class="{{ ''|tabler_container }}">
+                        <div class="row row-cards">
+                            {% block page_content_before %}{% endblock %}
 
-                    <section id="{% block page_content_id %}{% endblock %}" class="{% block page_content_class %}content{% endblock %}">
-                        {% block page_content_start %}{{ include('@Tabler/includes/flash_messages.html.twig') }}{% endblock %}
-                        {% block page_content %}{% endblock %}
-                        {% block page_content_end %}{% endblock %}
-                    </section>
+                            <section id="{% block page_content_id %}{% endblock %}" class="{% block page_content_class %}content{% endblock %}">
+                                {% block page_content_start %}{{ include('@Tabler/includes/flash_messages.html.twig') }}{% endblock %}
+                                {% block page_content %}{% endblock %}
+                                {% block page_content_end %}{% endblock %}
+                            </section>
 
-                    {% block page_content_after %}{% endblock %}
+                            {% block page_content_after %}{% endblock %}
+                        </div>
+                    </div>
                 </div>
-            </div>
+            {% endblock %}
+
+            {% block footer %}
+                <footer id="{% block footer_id %}{% endblock %}" class="footer footer-transparent d-print-none {% block footer_class %}{% endblock %}">
+                    <div class="{{ ''|tabler_container }}">
+                        {% include '@Tabler/includes/footer.html.twig' %}
+                    </div>
+                </footer>
+            {% endblock %}
         </div>
-
-        {% block footer %}
-            <footer id="{% block footer_id %}{% endblock %}" class="footer footer-transparent d-print-none">
-                <div class="{{ ''|tabler_container }}">
-                    {% include '@Tabler/includes/footer.html.twig' %}
-                </div>
-            </footer>
-        {% endblock %}
-    </div>
+    {% endblock %}
 </div>
 
 {% block javascripts %}
