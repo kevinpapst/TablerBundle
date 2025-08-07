@@ -154,6 +154,26 @@
         <source>Next</source>
         <target state="translated">Næste</target>
       </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve">
+        <source>And %count% more…</source>
+        <target state="translated">Til til %count% …</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve">
+        <source>Actions</source>
+        <target state="translated">Handlinger</target>
+      </trans-unit>
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve">
+        <source>Open personal menu</source>
+        <target state="translated">Åben personlig menu</target>
+      </trans-unit>
+      <trans-unit id="auqmpT0" resname="Show password" xml:space="preserve">
+        <source>Show password</source>
+        <target state="translated">Vis adgangskode</target>
+      </trans-unit>
+      <trans-unit id="pgpWxYS" resname="Hide password" xml:space="preserve">
+        <source>Hide password</source>
+        <target state="translated">Skjul adgangskode</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
