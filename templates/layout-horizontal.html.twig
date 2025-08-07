@@ -94,7 +94,7 @@ Enjoy your theme!
                                             {% block page_pretitle %}Overview{% endblock %}
                                         </div>
                                     {% endblock %}
-                                    <h2 class="page-title">
+                                    <h2 class="page-title{% if tabler_bundle.isNavbarOverlapping() %} text-white{% endif %}">
                                         {% block page_title %}Dashboard{% endblock %}
                                     </h2>
                                     {% block page_subtitle %}
