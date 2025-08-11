@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="bg" datatype="plaintext" original="TablerBundle.en.xlf">
+    <body>
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation" xml:space="preserve">
+        <source>Toggle navigation</source>
+        <target state="translated">Превключване на навигацията</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve">
+        <source>Toggle visibility</source>
+        <target state="translated">Превключване на видимостта</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me" xml:space="preserve">
+        <source>Remember Me</source>
+        <target state="translated">Запомни ме</target>
+      </trans-unit>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
+        <source>Login</source>
+        <target state="translated">Вход</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
