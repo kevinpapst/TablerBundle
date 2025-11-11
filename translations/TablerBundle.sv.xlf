@@ -156,11 +156,11 @@
       </trans-unit>
       <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve" approved="no">
         <source>And %count% more…</source>
-        <target state="translated">Lägg till %count%…</target>
+        <target state="translated">Och %count% mer…</target>
       </trans-unit>
       <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve" approved="no">
         <source>Open personal menu</source>
-        <target state="translated">Öppna din meny</target>
+        <target state="translated">Öppna privat meny</target>
       </trans-unit>
       <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve" approved="no">
         <source>Actions</source>

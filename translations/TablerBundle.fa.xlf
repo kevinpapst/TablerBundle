@@ -2,6 +2,178 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="fa" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
-      </body>
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation" xml:space="preserve">
+        <source>Toggle navigation</source>
+        <target state="translated">تغییر ناوبری</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve">
+        <source>Toggle visibility</source>
+        <target state="translated">قابلیت مشاهده</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me" xml:space="preserve">
+        <source>Remember Me</source>
+        <target state="translated">مرا به خاطر بسپار</target>
+      </trans-unit>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
+        <source>Login</source>
+        <target state="translated">وارد شوید</target>
+      </trans-unit>
+      <trans-unit id="vMC8yRQ" resname="Sign In" xml:space="preserve" approved="no">
+        <source>Log in</source>
+        <target state="translated">وارد شوید</target>
+      </trans-unit>
+      <trans-unit id="SPDT05f" resname="Sign out" xml:space="preserve" approved="no">
+        <source>Log out</source>
+        <target state="translated">خارج شدن</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register" xml:space="preserve">
+        <source>Register</source>
+        <target state="translated">ثبت نام</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile" xml:space="preserve">
+        <source>Profile</source>
+        <target state="translated">پروفایل شما</target>
+      </trans-unit>
+      <trans-unit id="DX2c6C2" resname="Member since %date%" xml:space="preserve">
+        <source>Member since %date%</source>
+        <target state="translated">عضو از %date%</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username" xml:space="preserve">
+        <source>Username</source>
+        <target state="translated">نام کاربری</target>
+      </trans-unit>
+      <trans-unit id="6.zSWXT" resname="Username or email address" xml:space="preserve">
+        <source>Username or email address</source>
+        <target state="translated">نام کاربری یا آدرس ایمیل</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password" xml:space="preserve">
+        <source>Password</source>
+        <target state="translated">کلمه عبور</target>
+      </trans-unit>
+      <trans-unit id="nQDUTyy" resname="Show homepage" xml:space="preserve">
+        <source>Show homepage</source>
+        <target state="translated">نمایش صفحه اصلی</target>
+      </trans-unit>
+      <trans-unit id="PjgG.xc" resname="Back to login" xml:space="preserve">
+        <source>Back to login</source>
+        <target state="translated">بازگشت به ورود</target>
+      </trans-unit>
+      <trans-unit id="WfpDeb4" resname="Reset your password" xml:space="preserve">
+        <source>Reset your password</source>
+        <target state="translated">بازنشانی رمز عبور</target>
+      </trans-unit>
+      <trans-unit id="YOlNDxu" resname="I forgot my password" xml:space="preserve">
+        <source>I forgot my password</source>
+        <target state="translated">‫رمز عبورم را فراموش کردم</target>
+      </trans-unit>
+      <trans-unit id="D3_ygfb" resname="Register a new account" xml:space="preserve">
+        <source>Register a new account</source>
+        <target state="translated">یک حساب کاربری جدید ثبت کنید</target>
+      </trans-unit>
+      <trans-unit id="MKZCFur" resname="View all" xml:space="preserve">
+        <source>View all</source>
+        <target state="translated">مشاهده همه</target>
+      </trans-unit>
+      <trans-unit id="cXVRejc" resname="or" xml:space="preserve">
+        <source>or</source>
+        <target state="translated">یا</target>
+      </trans-unit>
+      <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve" approved="no">
+        <source>You have 1 notification|You have %count% notifications</source>
+        <target state="translated">شما ۱ اعلان دارید|شما %count% اعلان دارید</target>
+      </trans-unit>
+      <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve">
+        <source>You have %count% messages</source>
+        <target state="translated">شما ۱ پیام دارید|شما %count% پیام دارید</target>
+      </trans-unit>
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve" approved="no">
+        <source>You have 1 task|You have %count% tasks</source>
+        <target state="translated">شما ۱ وظیفه دارید|شما %count% وظیفه دارید</target>
+      </trans-unit>
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete" xml:space="preserve">
+        <source>%progress%% Complete</source>
+        <target state="translated">%progress%% تکمیل شده</target>
+      </trans-unit>
+      <trans-unit id="KLIuHvt" resname="This is a mandatory field" xml:space="preserve">
+        <source>This is a mandatory field</source>
+        <target state="translated">این یک فیلد اجباری است</target>
+      </trans-unit>
+      <trans-unit id="B.ZozIs" resname="registration.confirmed" xml:space="preserve">
+        <source>registration.confirmed</source>
+        <target state="translated">تبریک %username%، حساب کاربری شما اکنون فعال شده است.</target>
+      </trans-unit>
+      <trans-unit id="fZ63rLE" resname="Close" xml:space="preserve">
+        <source>Close</source>
+        <target state="translated">بستن</target>
+      </trans-unit>
+      <trans-unit id="7ECoiEP" resname="Take me home" xml:space="preserve">
+        <source>Take me home</source>
+        <target state="translated">منو ببر خانه</target>
+      </trans-unit>
+      <trans-unit id="rtYKRSj" resname="http_error.title" xml:space="preserve">
+        <source>http_error.title</source>
+        <target state="translated">خطا</target>
+      </trans-unit>
+      <trans-unit id="e3w.2Rf" resname="http_error.description" xml:space="preserve">
+        <source>http_error.description</source>
+        <target state="translated">چیزی اشتباه است</target>
+      </trans-unit>
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion" xml:space="preserve">
+        <source>http_error.suggestion</source>
+        <target state="translated">یک خطای بحرانی رخ داده است، لطفاً دوباره امتحان کنید. ممکن است با یک مشکل نرم‌افزاری مواجه شده باشید، در صورت ادامه مشکل، لطفاً با مدیر خود تماس بگیرید.</target>
+      </trans-unit>
+      <trans-unit id="_W1eNz2" resname="http_error_404.description" xml:space="preserve">
+        <source>http_error_404.description</source>
+        <target state="translated">صفحه پیدا نشد</target>
+      </trans-unit>
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion" xml:space="preserve">
+        <source>http_error_404.suggestion</source>
+        <target state="translated">ما نتوانستیم صفحه مورد نظر شما را پیدا کنیم. لطفاً به داشبورد خود برگردید و دوباره شروع کنید.</target>
+      </trans-unit>
+      <trans-unit id="Qn5rwdU" resname="http_error_403.description" xml:space="preserve">
+        <source>http_error_403.description</source>
+        <target state="translated">صفحه محدود شده است</target>
+      </trans-unit>
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion" xml:space="preserve">
+        <source>http_error_403.suggestion</source>
+        <target state="translated">متاسفیم، اما شما مجوز کافی برای دیدن این صفحه را ندارید. اگر فکر می‌کنید این یک خطا است، لطفاً با مدیر خود صحبت کنید.</target>
+      </trans-unit>
+      <trans-unit id="F35zef" resname="Previous" xml:space="preserve">
+        <source>Previous</source>
+        <target state="translated">قبلی</target>
+      </trans-unit>
+      <trans-unit id="68zefF" resname="Next" xml:space="preserve">
+        <source>Next</source>
+        <target state="translated">بعدی</target>
+      </trans-unit>
+      <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve">
+        <source>Show notifications</source>
+        <target state="translated">نمایش اعلان ها</target>
+      </trans-unit>
+      <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve">
+        <source>You have no notification</source>
+        <target state="translated">هیچ اطلاعیه ای ندارید</target>
+      </trans-unit>
+      <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve">
+        <source>And %count% more…</source>
+        <target state="translated">و%count%بیشتر…</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve">
+        <source>Actions</source>
+        <target state="translated">اقدامات</target>
+      </trans-unit>
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve">
+        <source>Open personal menu</source>
+        <target state="translated">منوی شخصی را باز کنید</target>
+      </trans-unit>
+      <trans-unit id="auqmpT0" resname="Show password" xml:space="preserve">
+        <source>Show password</source>
+        <target state="translated">نمایش رمز عبور</target>
+      </trans-unit>
+      <trans-unit id="pgpWxYS" resname="Hide password" xml:space="preserve">
+        <source>Hide password</source>
+        <target state="translated">پنهان کردن رمز عبور</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>

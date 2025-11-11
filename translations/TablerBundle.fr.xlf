@@ -34,9 +34,9 @@
         <source>Member since %date%</source>
         <target>Membre depuis %date%</target>
       </trans-unit>
-      <trans-unit id="47ienTP" resname="Username">
+      <trans-unit id="47ienTP" resname="Username" xml:space="preserve">
         <source>Username</source>
-        <target>Identifiant</target>
+        <target state="translated">Nom d'utilisateur</target>
       </trans-unit>
       <trans-unit id="6.zSWXT" resname="Username or email address">
         <source>Username or email address</source>
