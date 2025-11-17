@@ -60,7 +60,7 @@
         {{ title|trans(translation_params, translation_domain) }}
     {%- endif -%}
     {%- if badge is not null -%}
-        <span class="badge bg-{{ badge_color }} {% if forceTitle and title is not null %}ms-1{% endif %}">{{ badge }}</span>
+        <span class="badge bg-{{ badge_color }} text-{{ badge_color }}-fg {% if forceTitle and title is not null %}ms-1{% endif %}">{{ badge }}</span>
     {%- endif -%}
     </{{ buttonType|raw }}>
 {% endmacro %}
