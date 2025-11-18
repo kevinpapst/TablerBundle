@@ -61,12 +61,14 @@ class ContextHelper extends \ArrayObject
 
     public function getThemeBase(): string
     {
-        return (string) $this->getOption('theme_base', 'slate');
+        $base = $this->getOption('theme_base', 'slate');
+
+        return \is_string($base) ? $base : 'slate';
     }
 
     public function setThemeBase(string $base): void
     {
-        if (!\in_array($base, ['slate', 'gray', 'zinc', 'neutral', 'stone'])) {
+        if (!\in_array($base, ['slate', 'gray', 'zinc', 'neutral', 'stone'], true)) {
             throw new \InvalidArgumentException('Not supported value for "theme_base" option.');
         }
         $this->setOption('theme_base', $base);
@@ -74,12 +76,14 @@ class ContextHelper extends \ArrayObject
 
     public function getThemePrimary(): string
     {
-        return (string) $this->getOption('theme_primary', 'blue');
+        $primary = $this->getOption('theme_primary', 'blue');
+
+        return \is_string($primary) ? $primary : 'blue';
     }
 
     public function setThemePrimary(string $primary): void
     {
-        if (!\in_array($primary, ['blue', 'azure', 'indigo', 'purple', 'pink', 'red', 'orange', 'yellow', 'lime', 'green', 'teal', 'cyan'])) {
+        if (!\in_array($primary, ['blue', 'azure', 'indigo', 'purple', 'pink', 'red', 'orange', 'yellow', 'lime', 'green', 'teal', 'cyan'], true)) {
             throw new \InvalidArgumentException('Not supported value for "theme_primary" option.');
         }
         $this->setOption('theme_primary', $primary);
@@ -87,7 +91,9 @@ class ContextHelper extends \ArrayObject
 
     public function getThemeRadius(): string
     {
-        return (string) $this->getOption('theme_radius', '0.5');
+        $radius = $this->getOption('theme_radius', '0.5');
+
+        return \is_string($radius) ? $radius : '0.5';
     }
 
     public function setThemeRadius(string $radius): void
@@ -120,7 +126,9 @@ class ContextHelper extends \ArrayObject
 
     public function getAssetVersion(): string
     {
-        return (string) $this->getOption('asset_version', '1.4');
+        $version = $this->getOption('asset_version', '1.4');
+
+        return \is_string($version) ? $version : '1.4';
     }
 
     public function setAssetVersion(string $assetVersion): void
