@@ -31,8 +31,11 @@
                 <div class="accordion-header {{ _item_title_extraClass }}" id="{{ _id }}-heading-{{ loop.index }}">
                     <button class="accordion-button {% if not _item_open %}collapsed{% endif %}"
                             type="button" data-bs-toggle="collapse" data-bs-target="#{{ _id_collapse }}"
-                            aria-expanded="true">
+                            aria-expanded="{% if _item_open %}true{% else %}false{% endif %}">
                         {% if _raw %}{{ _item_title | raw }}{% else %}{{ _item_title }}{% endif %}
+                        <div class="accordion-button-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" class="icon icon-1"><path d="M6 9l6 6l6 -6"></path></svg>
+                        </div>
                     </button>
                 </div>
 
