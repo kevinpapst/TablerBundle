@@ -59,6 +59,45 @@ class ContextHelper extends \ArrayObject
         $this->setOption('navbar_overlap', $overlapping);
     }
 
+    public function getThemeBase(): string
+    {
+        return (string) $this->getOption('theme_base', 'slate');
+    }
+
+    public function setThemeBase(string $base): void
+    {
+        if (!\in_array($base, ['slate', 'gray', 'zinc', 'neutral', 'stone'])) {
+            throw new \InvalidArgumentException('Not supported value for "theme_base" option.');
+        }
+        $this->setOption('theme_base', $base);
+    }
+
+    public function getThemePrimary(): string
+    {
+        return (string) $this->getOption('theme_primary', 'blue');
+    }
+
+    public function setThemePrimary(string $primary): void
+    {
+        if (!\in_array($primary, ['blue', 'azure', 'indigo', 'purple', 'pink', 'red', 'orange', 'yellow', 'lime', 'green', 'teal', 'cyan'])) {
+            throw new \InvalidArgumentException('Not supported value for "theme_primary" option.');
+        }
+        $this->setOption('theme_primary', $primary);
+    }
+
+    public function getThemeRadius(): string
+    {
+        return (string) $this->getOption('theme_radius', '0.5');
+    }
+
+    public function setThemeRadius(string $radius): void
+    {
+        if (!is_numeric($radius)) {
+            throw new \InvalidArgumentException('The "theme_radius" option must be a numeric value.');
+        }
+        $this->setOption('theme_radius', $radius);
+    }
+
     public function isRightToLeft(): bool
     {
         return (bool) $this->getOption('rtl_mode');

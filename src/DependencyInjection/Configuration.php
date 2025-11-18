@@ -163,10 +163,10 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue('slate')
                 ->end()
                 ->scalarNode('theme_radius')
-                    ->defaultValue('0')
+                    ->defaultValue('0.5')
                 ->end()
                 ->scalarNode('theme_primary')
-                    ->defaultValue('indigo')
+                    ->defaultValue('blue')
                 ->end()
             ->end()
         ->end();
