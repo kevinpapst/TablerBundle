@@ -2,7 +2,7 @@
     {% import '@Tabler/includes/utils.html.twig' as utils %}
     {% from '@Tabler/components/status_dot.html.twig' import status_dot %}
 
-    {% set _color = options.color ?? 'green' %}
+    {% set _color = options.color ?? 'primary' %}
     {% set _animated = (options.animated ?? true) is same as true %}
     {% set _lite = (options.lite ?? false) is same as true %}
     {% if options.with_dot is defined %}
@@ -16,7 +16,7 @@
     {% set _attr = options.attr ?? {} %}
 
     <span
-        class="status status-{{ _color }} {% if _lite %}status-lite{% endif %} {{ _extraClass }}"
+        class="status bg-{{ _color }} {% if not _lite %} text-{{ _color}}-fg{% endif %} {{ _extraClass }}"
         {{ utils.attr_to_html(_attr) }}
     >
         {% if _withDot %}
