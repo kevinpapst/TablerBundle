@@ -2,18 +2,18 @@
   "entrypoints": {
     "tabler": {
       "js": [
-        "/bundles/tabler/tabler.js?1e1f361ca1a3c33a67d9"
+        "/bundles/tabler/tabler.js?4ebf63b98296f7a8a434"
       ],
       "css": [
-        "/bundles/tabler/tabler.css?7e6c6ae6861c26e50d3c"
+        "/bundles/tabler/tabler.css?84afc488308bc6a3a8d3"
       ]
     },
     "tabler-rtl": {
       "js": [
-        "/bundles/tabler/tabler-rtl.js?8a7b0f0b31e5999a7484"
+        "/bundles/tabler/tabler-rtl.js?ec9cef4e87746c7cca78"
       ],
       "css": [
-        "/bundles/tabler/tabler-rtl.css?1ae1e2111dbbab31fbcb"
+        "/bundles/tabler/tabler-rtl.css?53472eea5fae80bc6987"
       ]
     }
   }
