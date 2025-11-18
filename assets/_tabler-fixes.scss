@@ -1,0 +1,19 @@
+@import '~@tabler/core/scss/config';
+
+/* Tabler fixes for bugs that exist at the time of writing in release 1.4 */
+
+// https://github.com/tabler/tabler/pull/2505/files
+.card-table {
+    tr {
+        td,
+        th {
+            &:first-child {
+                border-top-left-radius: var(--#{$prefix}card-border-radius);
+            }
+
+            &:last-child {
+                border-top-right-radius: var(--#{$prefix}card-border-radius);
+            }
+        }
+    }
+}
