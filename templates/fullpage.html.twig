@@ -1,5 +1,5 @@
 <!doctype html{% block html_start %}{% endblock %}>
-<html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %}>
+<html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %} data-bs-theme="{{ tabler_theme() }}" data-bs-theme-base="{{ tabler_bundle.getThemeBase() }}" data-bs-theme-radius="{{ tabler_bundle.getThemeRadius() }}" data-bs-theme-primary="{{ tabler_bundle.getThemePrimary() }}">
 <head>
     {% block head %}
         <meta charset="utf-8"/>
@@ -14,7 +14,7 @@
         {% endif %}
     {% endblock %}
 </head>
-<body{% block body_start %}{% endblock %} class="d-flex flex-column {{ 'border-top-wide border-primary theme-light'|tabler_body }} {% block body_class %}{% endblock %}" data-bs-theme="{{ tabler_theme() }}">
+<body{% block body_start %}{% endblock %} class="d-flex flex-column {{ 'border-top-wide border-primary theme-light'|tabler_body }} {% block body_class %}{% endblock %}">
 {% block after_body_start %}{% endblock %}
 
 <div class="{% block page_classes %}page page-center{% endblock %}">

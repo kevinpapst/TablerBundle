@@ -9,7 +9,7 @@ tabler:
         # true = dark mode (light colors on dark background), false = normal mode (dark colors on light background)
         dark_mode: true
         # for cache busting, can be dynamically changed woth the ContextHelper
-        asset_version: "beta19"
+        asset_version: "1.4"
         # condensed = one nav-bar, false = two nav-bars
         navbar_condensed: true
         # true = dark mode, false = light mode (on header)
@@ -26,6 +26,12 @@ tabler:
         user_menu_condensed: true
         # url to your company logo (if not with a protocol, the asset() helper will be used to create the url
         logo_url: ~
+        # slate, gray, zinc, neutral, stone
+        theme_base: "slate"
+        # possible values: 0, 0.5, 1, 1.5, 2 | radius in pixels * 4
+        theme_radius: "0.5"
+        # blue, azure, indigo, purple, pink, red, orange, yellow, lime, green, teal, cyan
+        theme_primary: "indigo"
 
     knp_menu:
         enable: false

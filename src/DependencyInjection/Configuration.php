@@ -159,6 +159,15 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('security_cover_url')
                     ->defaultValue('https://placehold.co/1000')
                 ->end()
+                ->scalarNode('theme_base')
+                    ->defaultValue('slate')
+                ->end()
+                ->scalarNode('theme_radius')
+                    ->defaultValue('0')
+                ->end()
+                ->scalarNode('theme_primary')
+                    ->defaultValue('indigo')
+                ->end()
             ->end()
         ->end();
 
