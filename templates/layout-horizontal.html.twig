@@ -15,9 +15,9 @@ Enjoy your theme!
     <title>{% block title %}{{ block('page_title') }}{% endblock %}</title>
     {% block stylesheets %}
         {% if tabler_bundle.isRightToLeft() %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}?{{ tabler_asset_version() }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}">
         {% else %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}?{{ tabler_asset_version() }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
         {% endif %}
     {% endblock %}
 </head>
@@ -151,7 +151,7 @@ Enjoy your theme!
 </div>
 
 {% block javascripts %}
-    <script src="{{ asset('bundles/tabler/tabler.js') }}?{{ tabler_asset_version() }}"></script>
+    <script src="{{ asset('bundles/tabler/tabler.js') }}"></script>
 {% endblock %}
 </body>
 </html>
