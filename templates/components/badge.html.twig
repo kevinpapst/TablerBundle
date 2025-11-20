@@ -1,3 +1,96 @@
-{% macro badge(text, class) %}
-    <span class="badge {{ class }}">{{ text }}</span>
+{% macro badge(options_or_text, class) %}
+{# TODO : Replace the macro signature with this one when 2.0 #}
+{# {% macro badge(options = {}) %} #}
+    {% import '@Tabler/includes/utils.html.twig' as utils %}
+
+    {# Backward compatibility: detect old signature #}
+    {% if options_or_text is iterable %}
+        {% set options = options_or_text %}
+    {% else %}
+        {% deprecated "Passing multiple parameters to 'badge()' Tabler macro is deprecated, use options object syntax." %}
+        {% set options = {
+            content: options_or_text,
+            extraClass: class
+        } %}
+    {% endif %}
+
+    {# Options #}
+    {% set _content = options.content ?? '' %}
+    {% set _color = options.color ?? '' %}
+    {% set _outline = options.outline|default(false) is same as true %}
+    {% set _pill = options.pill|default(false) is same as true %}
+    {% set _dot = options.dot|default(false) is same as true %}
+    {% set _notification = options.notification|default(false) is same as true %}
+    {% set _blink = options.blink|default(false) is same as true %}
+    {% set _size = options.size ?? '' %}
+    {% set _href = options.href ?? '' %}
+    {% set _iconOnly = options.iconOnly|default(false) is same as true %}
+    {% set _extraClass = options.extraClass ?? '' %}
+    {% set _raw = options.raw|default(false) is same as true %}
+    {% set _attr = options.attr ?? {} %}
+
+    {% set classes = ['badge'] %}
+
+    {# color #}
+    {% if _color is not empty %}
+        {% if _outline %}
+            {% set classes = classes|merge(['text-' ~  _color]) %}
+        {% else %}
+            {% if _content is not empty %}
+                {% set classes = classes|merge(['bg-' ~  _color, 'text-' ~  _color ~ '-fg']) %}
+            {% else %}
+                {% set classes = classes|merge(['bg-' ~  _color]) %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {# outline #}
+    {% if _outline %}
+        {% set classes = classes|merge(['badge-outline']) %}
+    {% endif %}
+
+    {# pill #}
+    {% if _pill %}
+        {% set classes = classes|merge(['badge-pill']) %}
+    {% endif %}
+
+    {# dot #}
+    {% if _dot %}
+        {% set classes = classes|merge(['badge-dot']) %}
+    {% endif %}
+
+    {# notification #}
+    {% if _notification %}
+        {% set classes = classes|merge(['badge-notification']) %}
+    {% endif %}
+
+    {# blink #}
+    {% if _blink %}
+        {% set classes = classes|merge(['badge-blink']) %}
+    {% endif %}
+
+    {# iconOnly #}
+    {% if _iconOnly %}
+        {% set classes = classes|merge(['badge-icononly']) %}
+    {% endif %}
+
+    {# size: sm, lg, etc. #}
+    {% if _size is not empty %}
+        {% set classes = classes|merge(['badge-' ~ _size]) %}
+    {% endif %}
+
+    {# extraClass #}
+    {% if _extraClass is not empty %}
+        {% set classes = classes|merge([_extraClass]) %}
+    {% endif %}
+
+    {% set classesStr = classes|join(' ') %}
+    {% set content = _raw ? _content|raw : _content %}
+
+    {# <a> VS <span> #}
+    {% if _href is not empty %}
+        <a href="{{ _href }}" class="{{ classesStr }}" {{ utils.attr_to_html(_attr) }}>{{ content }}</a>
+    {% else %}
+        <span class="{{ classesStr }}" {{ utils.attr_to_html(_attr) }}>{{ content }}</span>
+    {% endif %}
 {% endmacro %}
