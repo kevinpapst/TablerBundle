@@ -114,6 +114,16 @@ class ContextHelper extends \ArrayObject
         $this->setOption('rtl_mode', $rtl);
     }
 
+    public function isThemeAuto(): bool
+    {
+        return (bool) $this->getOption('theme_auto', false);
+    }
+
+    public function setThemeAuto(bool $themeAuto): void
+    {
+        $this->setOption('theme_auto', $themeAuto);
+    }
+
     public function isDarkMode(): bool
     {
         return (bool) $this->getOption('dark_mode', false);

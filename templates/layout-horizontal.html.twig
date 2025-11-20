@@ -20,6 +20,9 @@ Enjoy your theme!
             <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
         {% endif %}
     {% endblock %}
+    {% if tabler_bundle.isThemeAuto() %}
+        <script>if (window.matchMedia) { document.documentElement.setAttribute('data-bs-theme', (window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'dark': 'light'); }</script>
+    {% endif %}
 </head>
 <body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }} {% block body_class %}{% endblock %}">
 {% block after_body_start %}{% endblock %}
@@ -27,7 +30,7 @@ Enjoy your theme!
 
     {# *** Layout type changes *** #}
     {% block header %}
-        <header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md{% block header_class %} {% if tabler_bundle.isNavbarOverlapping() %}navbar-overlap{% endif %}{% endblock %} d-print-none" data-bs-theme="{{ tabler_bundle.isNavbarOverlapping() or tabler_bundle.isHeaderDark() or tabler_bundle.isDarkMode() ? 'dark' : 'light' }}">
+        <header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md{% block header_class %} {% if tabler_bundle.isNavbarOverlapping() %}navbar-overlap{% endif %}{% endblock %} d-print-none"{% if tabler_bundle.isNavbarOverlapping() or tabler_bundle.isHeaderDark() %} data-bs-theme="dark"{% endif %}>
             <div class="{{ ''|tabler_container }}">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                     <span class="navbar-toggler-icon"></span>
@@ -64,7 +67,7 @@ Enjoy your theme!
         {% if not tabler_bundle.isCondensedNavbar() %}
             <div id="{% block navbar_id %}{% endblock %}" class="navbar-expand-md">
                 <div class="collapse navbar-collapse" id="navbar-menu">
-                    <div class="navbar" data-bs-theme="{{ tabler_bundle.isNavbarDark() or tabler_bundle.isDarkMode() ? 'dark' : 'light' }}">
+                    <div class="navbar"{% if tabler_bundle.isNavbarDark() %} data-bs-theme="dark"{% endif %}>
                         <div class="{{ ''|tabler_container }}">
                             {% block navbar_menu %}
                                 {% include '@Tabler/includes/menu.html.twig' %}

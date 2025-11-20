@@ -20,6 +20,9 @@ Enjoy your theme!
             <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
         {% endif %}
     {% endblock %}
+    {% if tabler_bundle.isThemeAuto() %}
+        <script>if (window.matchMedia) { document.documentElement.setAttribute('data-bs-theme', (window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'dark': 'light'); }</script>
+    {% endif %}
 </head>
 <body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }} {% block body_class %}{% endblock %}">
 {% block after_body_start %}{% endblock %}
@@ -31,7 +34,7 @@ Enjoy your theme!
 
     {# *** Layout type changes *** #}
     {% block navbar %}
-        <aside id="{% block sidebar_id %}{% endblock %}" class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="{{ tabler_bundle.isNavbarDark() or tabler_bundle.isDarkMode() ? 'dark' : 'light' }}">
+        <aside id="{% block sidebar_id %}{% endblock %}" class="navbar navbar-vertical navbar-expand-lg"{% if tabler_bundle.isNavbarDark() %} data-bs-theme="dark"{% endif %}>
             <div class="{{ ''|tabler_container }}">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                     <span class="navbar-toggler-icon"></span>
