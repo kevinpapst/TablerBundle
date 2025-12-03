@@ -9,17 +9,27 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                php: ['8.1', '8.2', '8.3', '8.4']
+                php: ['8.1', '8.2', '8.3', '8.4', '8.5']
 
         name: Linting - PHP ${{ matrix.php }}
         steps:
-            -   uses: actions/checkout@v4
-            -   uses: shivammathur/setup-php@v2
-                with:
-                    php-version: ${{ matrix.php }}
-                    coverage: none
-                    extensions: intl
-            -   run: composer install --no-progress
-            -   run: PHP_CS_FIXER_IGNORE_ENV=1 composer codestyle
-            -   run: composer phpstan
-            -   run: composer tests
+            - name: "Checkout"
+              uses: actions/checkout@v5
+            - name: "Setup PHP"
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php }}
+                  coverage: none
+                  extensions: intl
+            # until Symfony 8 is released
+            - name: Configure Composer minimum stability
+              if: matrix.php-version == '8.5'
+              run: composer config minimum-stability dev
+            - name: "Install composer dependencies"
+              run: composer install --no-progress
+            - name: "Check Codestyle"
+              run: PHP_CS_FIXER_IGNORE_ENV=1 composer codestyle
+            - name: "Run PHPStan"
+              run: composer phpstan
+            - name: "Run Unit-Tests"
+              run: composer tests
