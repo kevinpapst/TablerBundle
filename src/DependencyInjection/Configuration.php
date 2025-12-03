@@ -10,6 +10,7 @@
 namespace KevinPapst\TablerBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -20,13 +21,13 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
+    /**
+     * @return TreeBuilder<'array'>
+     */
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('tabler');
-        /** @var ArrayNodeDefinition $rootNode */
-        $rootNode = $treeBuilder->getRootNode();
-
-        $rootNode
+        $treeBuilder->getRootNode()
             ->children()
                 ->append($this->getOptionsConfig())
                 ->append($this->getKnpMenuConfig())
@@ -41,10 +42,12 @@ class Configuration implements ConfigurationInterface
         return $treeBuilder;
     }
 
+    /**
+     * @return ArrayNodeDefinition<null>
+     */
     private function getRouteAliasesConfig(): ArrayNodeDefinition
     {
         $treeBuilder = new TreeBuilder('routes');
-        /** @var ArrayNodeDefinition $rootNode */
         $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
@@ -89,10 +92,12 @@ class Configuration implements ConfigurationInterface
         return $rootNode;
     }
 
+    /**
+     * @return ArrayNodeDefinition<null>
+     */
     private function getKnpMenuConfig(): ArrayNodeDefinition
     {
         $treeBuilder = new TreeBuilder('knp_menu');
-        /** @var ArrayNodeDefinition $rootNode */
         $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
@@ -115,11 +120,12 @@ class Configuration implements ConfigurationInterface
 
         return $rootNode;
     }
-
+    /**
+     * @return ArrayNodeDefinition<null>
+     */
     private function getOptionsConfig(): ArrayNodeDefinition
     {
         $treeBuilder = new TreeBuilder('options');
-        /** @var ArrayNodeDefinition $rootNode */
         $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
