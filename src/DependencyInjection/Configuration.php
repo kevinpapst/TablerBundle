@@ -42,7 +42,7 @@ class Configuration implements ConfigurationInterface
         return $treeBuilder;
     }
 
-    private function getRouteAliasesConfig(): NodeDefinition
+    private function getRouteAliasesConfig(): ArrayNodeDefinition
     {
         $treeBuilder = new TreeBuilder('routes');
         /** @var ArrayNodeDefinition $rootNode */
@@ -90,7 +90,7 @@ class Configuration implements ConfigurationInterface
         return $rootNode;
     }
 
-    private function getKnpMenuConfig(): NodeDefinition
+    private function getKnpMenuConfig(): ArrayNodeDefinition
     {
         $treeBuilder = new TreeBuilder('knp_menu');
         /** @var ArrayNodeDefinition $rootNode */
@@ -117,7 +117,7 @@ class Configuration implements ConfigurationInterface
         return $rootNode;
     }
 
-    private function getOptionsConfig(): NodeDefinition
+    private function getOptionsConfig(): ArrayNodeDefinition
     {
         $treeBuilder = new TreeBuilder('options');
         /** @var ArrayNodeDefinition $rootNode */
