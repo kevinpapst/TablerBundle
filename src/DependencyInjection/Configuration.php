@@ -10,7 +10,6 @@
 namespace KevinPapst\TablerBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
-use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -120,6 +119,7 @@ class Configuration implements ConfigurationInterface
 
         return $rootNode;
     }
+
     /**
      * @return ArrayNodeDefinition<null>
      */
