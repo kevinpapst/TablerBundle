@@ -65,7 +65,8 @@ class ConfigurationTest extends TestCase
                     'asset_version' => '1234',
                     'theme_base' => 'slate',
                     'theme_radius' => '0.5',
-                    'theme_primary' => 'blue'
+                    'theme_primary' => 'blue',
+                    'theme_auto' => false
                 ],
                 'knp_menu' => [
                     'enable' => false,
