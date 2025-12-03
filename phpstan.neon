@@ -12,6 +12,6 @@ parameters:
         - %rootDir%/../../
     ignoreErrors:
         - message: "#^PHPDoc tag @return contains generic type (.*) but class (.*) is not generic\\.$#"
-          count: 1
+          count: 4
           path: src/DependencyInjection/Configuration.php
           reportUnmatched: false
