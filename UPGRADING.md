@@ -6,7 +6,7 @@
 
 - Removed twig function `tabler_asset_version()` 
 - Removed `ContextHelper::setAssetVersion()`/`ContextHelper::getAssetVersion()` 
-- Removed the configuration `tabler.options.asset_version`
+- Removed the options `tabler.options.asset_version`
 
 ### Changed HTML structure 
 
@@ -26,4 +26,19 @@ If you relied on it, you can add this simple workaround:
 {% block page_content_after %}
     </section>
 {% endblock %}
+```
+
+## New theme options
+
+New config options available (also available as getter/setter in ContextHelper):
+
+```yaml
+tabler:
+    options:
+        # slate, gray, zinc, neutral, stone
+        theme_base: "slate"
+        # possible values: 0, 0.5, 1, 1.5, 2 | radius in pixels * 4
+        theme_radius: "0.5"
+        # blue, azure, indigo, purple, pink, red, orange, yellow, lime, green, teal, cyan
+        theme_primary: "blue"
 ```
