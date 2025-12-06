@@ -120,17 +120,11 @@ Enjoy your theme!
             {% block page_body %}
                 <div class="page-body">
                     <div class="{{ ''|tabler_container }}">
-                        <div class="row row-cards">
-                            {% block page_content_before %}{% endblock %}
-
-                            <section id="{% block page_content_id %}{% endblock %}" class="{% block page_content_class %}content{% endblock %}">
-                                {% block page_content_start %}{{ include('@Tabler/includes/flash_messages.html.twig') }}{% endblock %}
-                                {% block page_content %}{% endblock %}
-                                {% block page_content_end %}{% endblock %}
-                            </section>
-
-                            {% block page_content_after %}{% endblock %}
-                        </div>
+                        {% block page_content_before %}{% endblock %}
+                        {% block page_content_start %}{{ include('@Tabler/includes/flash_messages.html.twig') }}{% endblock %}
+                        {% block page_content %}{% endblock %}
+                        {% block page_content_end %}{% endblock %}
+                        {% block page_content_after %}{% endblock %}
                     </div>
                 </div>
             {% endblock %}
