@@ -41,8 +41,15 @@
     {%- endif -%}
 
     <{{ buttonType|raw }} class="{{ class | trim }}"
-    {%- if buttonType is not same as ("button") %} href="{{ url }}"{% endif -%}
-    {%- if disabled is same as (true) %} disabled="disabled"{% endif -%}
+    {%- if buttonType is same as ("a") -%}
+        {%- if disabled is same as (true) %}
+            aria-disabled="true"
+        {%- else %}
+            href="{{ url }}"
+        {% endif -%}
+    {%- else -%}
+        {%- if disabled is same as (true) %} disabled="disabled"{% endif -%}
+    {%- endif -%}
     {%- if id is not empty %} id="{{ id }}"{% endif -%}
     {%- if toggle is not empty %} data-bs-toggle="{{ toggle }}"{% endif -%}
     {%- if modal is not empty %} data-bs-toggle="modal" data-bs-target="{{ modal }}"{% endif -%}
