@@ -10,8 +10,6 @@ tabler:
         theme_auto: false
         # true = dark mode (light colors on dark background), false = normal mode (dark colors on light background)
         dark_mode: false
-        # for cache busting, can be dynamically changed woth the ContextHelper
-        asset_version: "1.4"
         # condensed = one nav-bar, false = two nav-bars
         navbar_condensed: true
         # true = dark mode, false = light mode (on header)

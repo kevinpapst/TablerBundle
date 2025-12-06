@@ -52,13 +52,6 @@ final class RuntimeExtension implements RuntimeExtensionInterface
         return 'light';
     }
 
-    public function assetVersion(): string
-    {
-        trigger_deprecation('kevinpapst/tabler-bundle', '1.10.0', 'Using the "tabler_asset_version()" twig helper is deprecated.');
-
-        return $this->helper->getAssetVersion();
-    }
-
     public function containerClass(string $class = ''): string
     {
         $classList = explode(' ', $class);
