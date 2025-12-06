@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="de" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
@@ -118,25 +118,25 @@
         <source>http_error.description</source>
         <target>Etwas läuft falsch</target>
       </trans-unit>
-      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion" xml:space="preserve">
         <source>http_error.suggestion</source>
-        <target>Ein kritischer Fehler ist aufgetreten. Möglicherweise haben Sie einen Fehler gefunden, kontaktieren Sie bitte ihren Administrator, falls der Fehler bestehen bleibt.</target>
+        <target state="translated">Ein kritischer Fehler ist aufgetreten. Möglicherweise haben Sie einen Fehler gefunden, kontaktieren Sie bitte Ihren Administrator, falls der Fehler bestehen bleibt.</target>
       </trans-unit>
       <trans-unit id="_W1eNz2" resname="http_error_404.description">
         <source>http_error_404.description</source>
         <target>Seite wurde nicht gefunden</target>
       </trans-unit>
-      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
+      <trans-unit id="MWNS5dg" resname="http_error_404.suggestion" xml:space="preserve">
         <source>http_error_404.suggestion</source>
-        <target>Wir konnten die angeforderte Seite leider nicht finden. Bitte wechseln Sie zu ihrem Dashboard und starten von vorne.</target>
+        <target state="translated">Wir konnten die angeforderte Seite leider nicht finden. Bitte wechseln Sie zu Ihrem Dashboard und starten von vorne.</target>
       </trans-unit>
       <trans-unit id="Qn5rwdU" resname="http_error_403.description">
         <source>http_error_403.description</source>
         <target>Seite ist geschützt</target>
       </trans-unit>
-      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
+      <trans-unit id="zDeeh7L" resname="http_error_403.suggestion" xml:space="preserve">
         <source>http_error_403.suggestion</source>
-        <target>Entschuldigung, Sie haben nicht genügend Berechtigungen, um diese Seite zu sehen. Bitte sprechen Sie mit ihrem Administrator wenn Sie dies für einen Fehler halten.</target>
+        <target state="translated">Entschuldigung, Sie haben nicht genügend Berechtigungen, um diese Seite zu sehen. Bitte sprechen Sie mit Ihrem Administrator wenn Sie dies für einen Fehler halten.</target>
       </trans-unit>
       <trans-unit id="F35zef" resname="Previous">
         <source>Previous</source>
@@ -158,13 +158,13 @@
         <source>And %count% more…</source>
         <target>Und %count% weitere…</target>
       </trans-unit>
-      <trans-unit id=".4BZ3Gd" resname="Actions">
+      <trans-unit id=".4BZ3Gd" resname="Actions" xml:space="preserve">
         <source>Actions</source>
-        <target>Actions</target>
+        <target state="translated">Aktionen</target>
       </trans-unit>
-      <trans-unit id="QD4LaO1" resname="Open personal menu">
+      <trans-unit id="QD4LaO1" resname="Open personal menu" xml:space="preserve">
         <source>Open personal menu</source>
-        <target>Open personal menu</target>
+        <target state="translated">Persönliches Menü öffnen</target>
       </trans-unit>
       <trans-unit id="auqmpT0" resname="Show password">
         <source>Show password</source>

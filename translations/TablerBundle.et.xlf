@@ -2,6 +2,18 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="et" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
-      </body>
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation" xml:space="preserve">
+        <source>Toggle navigation</source>
+        <target state="translated">Lülita navigatsiooni</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve">
+        <source>Toggle visibility</source>
+        <target state="translated">Lülita nähtavust</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me" xml:space="preserve">
+        <source>Remember Me</source>
+        <target state="translated">Mäleta mind</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>

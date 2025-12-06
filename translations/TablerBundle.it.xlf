@@ -166,6 +166,14 @@
         <source>Open personal menu</source>
         <target state="final">Apri menu personale</target>
       </trans-unit>
+      <trans-unit id="auqmpT0" resname="Show password" xml:space="preserve" approved="yes">
+        <source>Show password</source>
+        <target state="final">Mostra password</target>
+      </trans-unit>
+      <trans-unit id="pgpWxYS" resname="Hide password" xml:space="preserve" approved="yes">
+        <source>Hide password</source>
+        <target state="final">Nascondi password</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
