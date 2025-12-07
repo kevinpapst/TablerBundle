@@ -24,8 +24,7 @@ class ConfigurationTest extends TestCase
         $processor = new Processor();
         $node = $configuration->getConfigTreeBuilder()->buildTree();
 
-        $config = ['tabler' => ['options' => ['asset_version' => '1234']]];
-        $processedConfig = $processor->process($node, $config);
+        $processedConfig = $processor->process($node, []);
 
         $expected = $this->getDefaultConfig()['tabler'];
 
@@ -62,7 +61,10 @@ class ConfigurationTest extends TestCase
                     'logo_url' => null,
                     'navbar_overlap' => false,
                     'security_cover_url' => 'https://placehold.co/1000',
-                    'asset_version' => '1234',
+                    'theme_base' => 'slate',
+                    'theme_radius' => '0.5',
+                    'theme_primary' => 'blue',
+                    'theme_auto' => false
                 ],
                 'knp_menu' => [
                     'enable' => false,

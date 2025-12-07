@@ -41,5 +41,18 @@ class ContextHelperTest extends TestCase
         $this->assertEquals('https://placehold.co/1000', $context->getOption('security_cover_url'));
         $context->setSecurityCoverUrl('https://placehold.co/1234');
         $this->assertEquals('https://placehold.co/1234', $context->getSecurityCoverUrl());
+
+        self::assertEquals('slate', $context->getThemeBase());
+        self::assertEquals('blue', $context->getThemePrimary());
+        self::assertEquals('0.5', $context->getThemeRadius());
+
+        $context->setThemeBase('zinc');
+        self::assertEquals('zinc', $context->getThemeBase());
+
+        $context->setThemePrimary('lime');
+        self::assertEquals('lime', $context->getThemePrimary());
+
+        $context->setThemeRadius('2');
+        self::assertEquals('2', $context->getThemeRadius());
     }
 }

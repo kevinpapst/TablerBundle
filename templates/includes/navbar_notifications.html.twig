@@ -7,7 +7,7 @@
         <a class="{{ notificationEvent.buttonClass }}" href="#" data-bs-toggle="dropdown" tabindex="-1" title="{{ 'Show notifications'|trans({}, 'TablerBundle') }}">
             <i class="{{ notificationEvent.icon|tabler_icon }} {{ notificationEvent.iconClass }}"></i>
             {% if notificationEvent.showBadge and notificationEvent.total > 0 -%}
-                <span class="badge bg-{{ notificationEvent.badgeColor }}">
+                <span class="badge bg-{{ notificationEvent.badgeColor }} text-{{ notificationEvent.badgeColor }}-fg">
                 {%- if notificationEvent.showBadgeTotal -%}
                     {{ notificationEvent.total }}
                 {%- endif -%}

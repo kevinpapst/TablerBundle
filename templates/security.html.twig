@@ -1,5 +1,5 @@
 <!doctype html{% block html_start %}{% endblock %}>
-<html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %}>
+<html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %} data-bs-theme="{{ tabler_theme() }}" data-bs-theme-base="{{ tabler_bundle.getThemeBase() }}" data-bs-theme-radius="{{ tabler_bundle.getThemeRadius() }}" data-bs-theme-primary="{{ tabler_bundle.getThemePrimary() }}">
 <head>
     {% block head %}
         {% include '@Tabler/includes/html_head.html.twig' %}
@@ -7,9 +7,9 @@
     <title>{% block title %}Log in{% endblock %}</title>
     {% block stylesheets %}
         {% if tabler_bundle.isRightToLeft() %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}?{{ tabler_asset_version() }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}">
         {% else %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}?{{ tabler_asset_version() }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
         {% endif %}
     {% endblock %}
 </head>
@@ -173,7 +173,7 @@
 </div>
 
 {% block javascripts %}
-    <script src="{{ asset('bundles/tabler/tabler.js') }}?{{ tabler_asset_version() }}"></script>
+    <script src="{{ asset('bundles/tabler/tabler.js') }}"></script>
 {% endblock %}
 </body>
 </html>

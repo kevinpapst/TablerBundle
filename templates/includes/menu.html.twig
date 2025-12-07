@@ -81,6 +81,6 @@
 
 {% macro item_badge(item) %}
     {% if item.badge is not null or item.badgeColor is not null %}
-        <span class="badge badge-sm bg-{{ item.badgeColor|default('blue') }} text-uppercase ms-2">{{ item.badge }}</span>
+        <span class="badge badge-sm bg-{{ item.badgeColor|default('blue') }} text-{{ item.badgeColor|default('blue') }}-fg text-uppercase ms-2">{{ item.badge }}</span>
     {% endif %}
 {% endmacro %}

@@ -12,7 +12,7 @@
             {% if _header %}
                 <div {% block modal_header_attributes %}{% endblock %} class="modal-header {% block modal_header_class %}{% endblock %}">
                     <h5 class="modal-title {% block modal_title_class %}{% endblock %}" id="{{ _id }}_label">{% block modal_title %}{% endblock %}</h5>
-                    {% if _close %}<button type="button" class="btn-close{% if tabler_bundle.isDarkMode() %} btn-close-white{% endif %}" data-bs-dismiss="modal" aria-label="{{ 'Close'|trans({}, 'TablerBundle') }}"></button>{% endif %}
+                    {% if _close %}<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ 'Close'|trans({}, 'TablerBundle') }}"></button>{% endif %}
                 </div>
             {% endif %}
             <div {% block modal_body_attributes %}{% endblock %} class="modal-body {% block modal_body_class %}{% endblock %}">

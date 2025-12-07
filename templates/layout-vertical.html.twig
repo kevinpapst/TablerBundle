@@ -7,7 +7,7 @@ by adding this code to your own base template:
 Enjoy your theme!
 #}
 <!doctype html{% block html_start %}{% endblock %}>
-<html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %}>
+<html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %} data-bs-theme="{{ tabler_theme() }}" data-bs-theme-base="{{ tabler_bundle.getThemeBase() }}" data-bs-theme-radius="{{ tabler_bundle.getThemeRadius() }}" data-bs-theme-primary="{{ tabler_bundle.getThemePrimary() }}">
 <head>
     {% block head %}
         {% include '@Tabler/includes/html_head.html.twig' %}
@@ -15,13 +15,16 @@ Enjoy your theme!
     <title>{% block title %}{{ block('page_title') }}{% endblock %}</title>
     {% block stylesheets %}
         {% if tabler_bundle.isRightToLeft() %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}?{{ tabler_asset_version() }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}">
         {% else %}
-            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}?{{ tabler_asset_version() }}">
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
         {% endif %}
     {% endblock %}
+    {% if tabler_bundle.isThemeAuto() %}
+        <script>if (window.matchMedia) { document.documentElement.setAttribute('data-bs-theme', (window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'dark': 'light'); }</script>
+    {% endif %}
 </head>
-<body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }} {% block body_class %}{% endblock %}" data-bs-theme="{{ tabler_theme() }}">
+<body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }} {% block body_class %}{% endblock %}">
 {% block after_body_start %}{% endblock %}
 <div class="page">
     {% set navbarStartContent = block('navbar_start') %}
@@ -31,7 +34,7 @@ Enjoy your theme!
 
     {# *** Layout type changes *** #}
     {% block navbar %}
-        <aside id="{% block sidebar_id %}{% endblock %}" class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="{{ tabler_bundle.isNavbarDark() or tabler_bundle.isDarkMode() ? 'dark' : 'light' }}">
+        <aside id="{% block sidebar_id %}{% endblock %}" class="navbar navbar-vertical navbar-expand-lg"{% if tabler_bundle.isNavbarDark() %} data-bs-theme="dark"{% endif %}>
             <div class="{{ ''|tabler_container }}">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                     <span class="navbar-toggler-icon"></span>
@@ -79,9 +82,8 @@ Enjoy your theme!
     {% block page_wrapper %}
         <div id="{% block page_wrapper_id %}{% endblock %}" class="page-wrapper {% block page_wrapper_class %}{% endblock %}">
             {% block page_header %}
-                <div class="{{ ''|tabler_container }}">
-                    {# Page title #}
-                    <div id="{% block page_header_id %}{% endblock %}" class="page-header d-print-none {% block page_header_class %}{% endblock %}">
+                <div id="{% block page_header_id %}{% endblock %}" class="page-header d-print-none {% block page_header_class %}{% endblock %}">
+                    <div class="{{ ''|tabler_container }}">
                         <div class="row align-items-center">
                             <div class="col">
                             {% block page_intro %}
@@ -141,7 +143,7 @@ Enjoy your theme!
 </div>
 
 {% block javascripts %}
-    <script src="{{ asset('bundles/tabler/tabler.js') }}?{{ tabler_asset_version() }}"></script>
+    <script src="{{ asset('bundles/tabler/tabler.js') }}"></script>
 {% endblock %}
 </body>
 </html>

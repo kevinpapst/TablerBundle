@@ -31,7 +31,7 @@ class ContextHelper extends \ArrayObject
 
     public function isCondensedNavbar(): bool
     {
-        return (bool) $this->getOption('navbar_condensed');
+        return (bool) $this->getOption('navbar_condensed', true);
     }
 
     public function setIsCondensedNavbar(bool $condensed): void
@@ -41,7 +41,7 @@ class ContextHelper extends \ArrayObject
 
     public function isCondensedUserMenu(): bool
     {
-        return (bool) $this->getOption('user_menu_condensed');
+        return (bool) $this->getOption('user_menu_condensed', true);
     }
 
     public function setIsCondensedUserMenu(bool $condensed): void
@@ -51,7 +51,7 @@ class ContextHelper extends \ArrayObject
 
     public function isNavbarOverlapping(): bool
     {
-        return (bool) $this->getOption('navbar_overlap');
+        return (bool) $this->getOption('navbar_overlap', false);
     }
 
     public function setIsNavbarOverlapping(bool $overlapping): void
@@ -59,9 +59,54 @@ class ContextHelper extends \ArrayObject
         $this->setOption('navbar_overlap', $overlapping);
     }
 
+    public function getThemeBase(): string
+    {
+        $base = $this->getOption('theme_base', 'slate');
+
+        return \is_string($base) ? $base : 'slate';
+    }
+
+    public function setThemeBase(string $base): void
+    {
+        if (!\in_array($base, ['slate', 'gray', 'zinc', 'neutral', 'stone'], true)) {
+            throw new \InvalidArgumentException('Not supported value for "theme_base" option.');
+        }
+        $this->setOption('theme_base', $base);
+    }
+
+    public function getThemePrimary(): string
+    {
+        $primary = $this->getOption('theme_primary', 'blue');
+
+        return \is_string($primary) ? $primary : 'blue';
+    }
+
+    public function setThemePrimary(string $primary): void
+    {
+        if (!\in_array($primary, ['blue', 'azure', 'indigo', 'purple', 'pink', 'red', 'orange', 'yellow', 'lime', 'green', 'teal', 'cyan'], true)) {
+            throw new \InvalidArgumentException('Not supported value for "theme_primary" option.');
+        }
+        $this->setOption('theme_primary', $primary);
+    }
+
+    public function getThemeRadius(): string
+    {
+        $radius = $this->getOption('theme_radius', '0.5');
+
+        return \is_string($radius) ? $radius : '0.5';
+    }
+
+    public function setThemeRadius(string $radius): void
+    {
+        if (!is_numeric($radius)) {
+            throw new \InvalidArgumentException('The "theme_radius" option must be a numeric value.');
+        }
+        $this->setOption('theme_radius', $radius);
+    }
+
     public function isRightToLeft(): bool
     {
-        return (bool) $this->getOption('rtl_mode');
+        return (bool) $this->getOption('rtl_mode', false);
     }
 
     public function setIsRightToLeft(bool $rtl): void
@@ -69,9 +114,19 @@ class ContextHelper extends \ArrayObject
         $this->setOption('rtl_mode', $rtl);
     }
 
+    public function isThemeAuto(): bool
+    {
+        return (bool) $this->getOption('theme_auto', false);
+    }
+
+    public function setThemeAuto(bool $themeAuto): void
+    {
+        $this->setOption('theme_auto', $themeAuto);
+    }
+
     public function isDarkMode(): bool
     {
-        return (bool) $this->getOption('dark_mode');
+        return (bool) $this->getOption('dark_mode', false);
     }
 
     public function setIsDarkMode(bool $isDarkMode): void
@@ -79,24 +134,9 @@ class ContextHelper extends \ArrayObject
         $this->setOption('dark_mode', $isDarkMode);
     }
 
-    public function getAssetVersion(): string
-    {
-        $version = $this->getOption('asset_version');
-        if (\is_string($version)) {
-            return $version;
-        }
-
-        return '1.0';
-    }
-
-    public function setAssetVersion(string $assetVersion): void
-    {
-        $this->setOption('asset_version', $assetVersion);
-    }
-
     public function isHeaderDark(): bool
     {
-        return (bool) $this->getOption('header_dark');
+        return (bool) $this->getOption('header_dark', false);
     }
 
     public function setIsHeaderDark(bool $isHeaderDark): void
@@ -106,7 +146,7 @@ class ContextHelper extends \ArrayObject
 
     public function isNavbarDark(): bool
     {
-        return (bool) $this->getOption('navbar_dark');
+        return (bool) $this->getOption('navbar_dark', false);
     }
 
     public function setIsNavbarDark(bool $isNavbarDark): void
@@ -116,7 +156,7 @@ class ContextHelper extends \ArrayObject
 
     public function isBoxedLayout(): bool
     {
-        return (bool) $this->getOption('boxed_layout');
+        return (bool) $this->getOption('boxed_layout', false);
     }
 
     public function setIsBoxedLayout(bool $boxed): void
