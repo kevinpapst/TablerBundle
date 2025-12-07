@@ -6,9 +6,9 @@
 #
 tabler:
     options:
-        # if "true" uses javascript to detect the OS mode and uses that, if "false" uses the "dark_mode" setting
+        # if "true" uses javascript to detect the OS mode and ignores dark_mode
         theme_auto: false
-        # true = dark mode (light colors on dark background), false = normal mode (dark colors on light background)
+        # true = dark mode, false = light mode
         dark_mode: false
         # condensed = one nav-bar, false = two nav-bars
         navbar_condensed: true
@@ -24,11 +24,11 @@ tabler:
         rtl_mode: false
         # true = only avatar, false = show username and title as well
         user_menu_condensed: true
-        # url to your company logo (if not with a protocol, the asset() helper will be used to create the url
+        # url to your company logo. without protocol the asset() helper will be used
         logo_url: ~
         # slate, gray, zinc, neutral, stone
         theme_base: "slate"
-        # possible values: 0, 0.5, 1, 1.5, 2 | radius in pixels * 4
+        # 0, 0.5, 1, 1.5, 2 | radius in pixels * 4
         theme_radius: "0.5"
         # blue, azure, indigo, purple, pink, red, orange, yellow, lime, green, teal, cyan
         theme_primary: "blue"
