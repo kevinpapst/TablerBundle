@@ -21,8 +21,8 @@ Card nav has been implemented.
 #### Item
 
 > Note:   
-> If `url` parameter is not specified, Boostrap tab navigation will be used to navigate trough elements.   
-> If `url` is specified, click on tab will simply redirect to the URL.   
+> If `href` parameter is not specified, Boostrap tab navigation will be used to navigate trough elements.   
+> If `href` is specified, click on tab will simply redirect to the URL.   
 
 | Parameter | Description                              |   Type    |             Default             |
 |:---------:|------------------------------------------|:---------:|:-------------------------------:|
@@ -31,7 +31,7 @@ Card nav has been implemented.
 |  content  | Content of the item                      | `string`  |         _empty string_          |
 |  active   | Set the item as currently active         | `boolean` |             `false`             |
 | disabled  | Set the item as disabled                 | `boolean` |             `false`             |
-|    url    | Href of the `a` link in the menu         | `string`  | `#tabs-` + `tabler_unique_id()` |
+|    href    | Href of the `a` link in the menu         | `string`  | `#tabs-` + `tabler_unique_id()` |
 |    raw    | Render item name AND content as RAW HTML | `boolean` |             `false`             |
 
 ### Content
@@ -80,7 +80,7 @@ All content tab must be rendered
     },
     {
         name : 'Url',
-        url : 'https://www.w3schools.com/',
+        href : 'https://www.w3schools.com/',
     },
 ] %}
 
@@ -88,7 +88,7 @@ All content tab must be rendered
 ```
 
 
-#### Url single content
+#### Href single content
 
 Only one tab content is completed, rest is only for navigation between urls
 
@@ -96,11 +96,11 @@ Only one tab content is completed, rest is only for navigation between urls
 {% set items = [
     {
         name: 'Account',
-        url: '/account'
+        href: '/account'
     },
     {
         name: 'Notifications',
-        url: '/notifications',
+        href: '/notifications',
         active: true,
     },
     {
