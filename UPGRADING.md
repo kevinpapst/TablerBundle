@@ -8,8 +8,10 @@
 - Removed `ContextHelper::setAssetVersion()`/`ContextHelper::getAssetVersion()` 
 - Removed the options `tabler.options.asset_version`
 
-### Added new `href` option to later remove the current `url` option
-Both options will work today
+### Replaced `url` option with `href` for a unified API
+
+For now this is a "soft deprecation". In the next major release, the `url` will be removed.
+
 - Added in [templates/components/button.html.twig](templates/components/button.html.twig)
 - Added in [templates/components/buttons.html.twig](templates/components/buttons.html.twig)
 - Added in [templates/embeds/card_nav_header.html.twig](templates/embeds/card_nav_header.html.twig)
