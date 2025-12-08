@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 {% set _items = [] %}
 {% for key, item in items ?? [] %}
@@ -38,10 +37,10 @@
                             <h4 class="subheader {% block nav_header_class %}mx-4 mt-3{% endblock %}">{{ _name }}</h4>
                         {% else %}
                             <a
-                                    href="{{ _href }}"
-                                    class="list-group-item list-group-item-action d-flex align-items-center {% if _active %}active{% endif %}"
-                                    {# TODO : Remove `url` option condition in the next major release #}
-                                    {% if (item.href is not defined and item.url is not defined) and not block('content') is defined %}data-bs-toggle="tab"{% endif %}
+                                href="{{ _href }}"
+                                class="list-group-item list-group-item-action d-flex align-items-center {% if _active %}active{% endif %}"
+                                {# TODO : Remove `url` option condition in the next major release #}
+                                {% if (item.href is not defined and item.url is not defined) and not block('content') is defined %}data-bs-toggle="tab"{% endif %}
                             >
                                 {% if _raw %}
                                     {{ _name | raw }}
@@ -90,7 +89,3 @@
     </div>
 </div>
 {% block card_after %}{% endblock %}
-=======
-{% deprecated "Use 'card_vertical_navigation.html.twig' instead!" %}
-{% extends '@Tabler/embeds/card_vertical_navigation.html.twig' %}
->>>>>>> 9dc37a3 ([kebab-snake-case] Rename files + docs)

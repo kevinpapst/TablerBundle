@@ -42,7 +42,7 @@ Then, import it in the first position into your `app.scss` file:
 Finally, do not forget to add your `app` entry link in your `base.html.twig`:
 ```twig
 {# templates/base.html.twig #}
-{% extends '@Tabler/layout-vertical.html.twig' %}
+{% extends '@Tabler/layout_vertical.html.twig' %}
 
 {% block stylesheets %}
     {{ encore_entry_link_tags('app') }}
