@@ -44,11 +44,11 @@
                 <div class="col">
                     <div class="btn-list justify-content-end">
                         {% block wizard_previous_button %}
-                            {{ button(false, { title : 'Previous'|trans({}, 'TablerBundle'), combined: true, url : '#' }, 'link') }}
+                            {{ button(false, { title : 'Previous'|trans({}, 'TablerBundle'), combined : true }, 'link') }}
                         {% endblock %}
 
                         {% block wizard_next_button %}
-                            {{ submit_button(false, { title : 'Next'|trans({}, 'TablerBundle'), combined: true }, 'primary') }}
+                            {{ submit_button(false, { title : 'Next'|trans({}, 'TablerBundle'), combined : true }, 'primary') }}
                         {% endblock %}
                     </div>
                 </div>

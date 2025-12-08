@@ -54,7 +54,8 @@
                     {% if item.content is defined %}
                         <div class="{% if _tabs %}card{% endif %} tab-pane {% if _active %}active show{% endif %}"
                              id="tabs-{{ _id }}"
-                             {% if item.url is not defined %}role="tabpanel"{% endif %}
+                             {# TODO : Remove `url` option condition in the next major release #}
+                             {% if (item.href is not defined or item.url is not defined) %}role="tabpanel"{% endif %}
                         >
                             {% if not _raw %}
                                 <div class="card-body">

@@ -12,7 +12,12 @@
 
     {%- set icon = values.icon ?? icon -%}
     {%- set disabled = values.disabled ?? false -%}
-    {%- set url = values.url ?? '#' -%}
+    {%- if values.url is defined -%}
+        {% deprecated "the option 'url' is deprecated use 'href' instead" %}
+        {%- set href = values.url -%}
+    {%- else -%}
+        {% set href = values.href ?? '#' %}
+    {%- endif -%}
     {%- set onclick = values.onclick ?? null -%}
     {%- set collapse = values.collapse ?? null -%}
     {%- set modal = values.modal ?? null -%}
@@ -45,7 +50,7 @@
         {%- if disabled is same as (true) %}
             aria-disabled="true"
         {%- else %}
-            href="{{ url }}"
+            href="{{ href }}"
         {% endif -%}
     {%- else -%}
         {%- if disabled is same as (true) %} disabled="disabled"{% endif -%}
