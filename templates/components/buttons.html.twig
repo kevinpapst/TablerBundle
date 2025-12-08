@@ -1,13 +1,13 @@
-{% macro action_cardtoolbutton(icon, attrs) %}
+{% macro action_cardtoolbutton(icon, attrs) -%}
     {% import '@Tabler/components/button.html.twig' as macro %}
     {{ macro.button(icon, attrs) }}
-{% endmacro %}
+{%- endmacro %}
 
-{% macro action_collapsebutton(label, target) %}
+{% macro action_collapsebutton(label, target) -%}
     {{ _self.action_cardtoolbutton('collapse', {collapse: target, title: label|default('')}) }}
-{% endmacro %}
+{%- endmacro %}
 
-{% macro link_button(label, href, icon, type, size) %}
+{% macro link_button(label, href, icon, type, size) -%}
     {% import '@Tabler/components/button.html.twig' as macro %}
 
     {% set _href = href ?? '#' %}
@@ -21,9 +21,9 @@
         href: _href,
         class: _size ? 'btn-' ~ _size : ''
     }, _type) }}
-{% endmacro %}
+{%- endmacro %}
 
-{% macro action_button(label, action, icon, type, size) %}
+{% macro action_button(label, action, icon, type, size) -%}
     {% import '@Tabler/components/button.html.twig' as macro %}
 
     {% set _icon = icon ?? false %}
@@ -36,9 +36,9 @@
         buttonType: 'button',
         attr: {'data-action': action}
     }, _type) }}
-{% endmacro %}
+{%- endmacro %}
 
-{% macro submit_button(icon, user_values, type) %}
+{% macro submit_button(icon, user_values, type) -%}
     {% import '@Tabler/components/button.html.twig' as macro %}
 
     {% set default_values = {
@@ -53,9 +53,9 @@
     {% set values = values | merge({'attr' : values_attr}) %}
 
     {{ macro.button(icon, values, type) }}
-{% endmacro %}
+{%- endmacro %}
 
-{% macro dropdown_button(button, actions, options) %}
+{% macro dropdown_button(button, actions, options) -%}
     {% import '@Tabler/components/button.html.twig' as macro %}
     {% import '@Tabler/includes/utils.html.twig' as utils %}
 
@@ -107,4 +107,4 @@
             </div>
         {% endif %}
     </div>
-{% endmacro %}
+{%- endmacro %}
