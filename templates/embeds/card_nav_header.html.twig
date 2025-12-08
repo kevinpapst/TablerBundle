@@ -22,9 +22,9 @@
             {% set _disabled = item.disabled ?? false %}
             {% if item.url is defined %}
                 {% deprecated "the option 'url' is deprecated use 'href' instead" %}
-                {% set href = item.url %}
+                {% set _href = item.url %}
             {% else %}
-                {% set href = item.href ?? ("#tabs-" ~ item.id) %}
+                {% set _href = item.href ?? ("#tabs-" ~ item.id) %}
             {% endif %}
             {% set _raw = item.raw ?? false %}
 
