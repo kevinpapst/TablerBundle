@@ -13,7 +13,8 @@
     {%- set icon = values.icon ?? icon -%}
     {%- set disabled = values.disabled ?? false -%}
     {%- if values.url is defined -%}
-        {% deprecated "the option 'url' is deprecated use 'href' instead" %}
+        {# TODO : Uncomment the next line in the next major release #}
+        {#{% deprecated "the option 'url' is deprecated use 'href' instead" %}#}
         {%- set href = values.url -%}
     {%- else -%}
         {% set href = values.href ?? '#' %}

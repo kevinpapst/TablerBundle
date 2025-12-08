@@ -25,7 +25,8 @@
                         {% set _active = item.active ?? false %}
                         {% set _name = item.name ?? '' %}
                         {% if item.url is defined %}
-                            {% deprecated "the option 'url' is deprecated use 'href' instead" %}
+                            {# TODO : Uncomment the next line in the next major release #}
+                            {#{% deprecated "the option 'url' is deprecated use 'href' instead" %}#}
                             {% set _href = item.url %}
                         {% else %}
                             {% set _href = item.href ?? ("#tabs-" ~ item.id) %}
