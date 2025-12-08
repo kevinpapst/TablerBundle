@@ -8,6 +8,13 @@
 - Removed `ContextHelper::setAssetVersion()`/`ContextHelper::getAssetVersion()` 
 - Removed the options `tabler.options.asset_version`
 
+### Added new `href` option to later remove the current `url` option
+Both options will work today
+- Added in [templates/components/button.html.twig](templates/components/button.html.twig)
+- Added in [templates/components/buttons.html.twig](templates/components/buttons.html.twig)
+- Added in [templates/embeds/card_nav_header.html.twig](templates/embeds/card_nav_header.html.twig)
+- Added in [templates/embeds/card_vertical_navigation.html.twig](templates/embeds/card_vertical_navigation.html.twig)
+
 ### Changed HTML structure 
 
 See https://github.com/kevinpapst/TablerBundle/pull/214
