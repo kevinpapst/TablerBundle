@@ -29,7 +29,7 @@ Search and replace
 ```
 with
 ```
-{% extends '@Tabler/layout-horizontal.html.twig' %}
+{% extends '@Tabler/layout_horizontal.html.twig' %}
 ```
 
 Search and replace:
@@ -86,7 +86,7 @@ Replace
 ```
 with
 ```
-{% extends '@Tabler/layout-horizontal.html.twig' %}
+{% extends '@Tabler/layout_horizontal.html.twig' %}
 ```
 
 The file:
@@ -100,11 +100,11 @@ was split into many small components, eg.
 
 Replace
 ```
-{% form_theme form '@AdminLTE/layout/form-theme-horizontal.html.twig' %}
+{% form_theme form '@AdminLTE/layout/form_theme_horizontal.html.twig' %}
 ```
 with
 ```
-{% form_theme form '@Tabler/layout/form-theme-horizontal.html.twig' %}
+{% form_theme form '@Tabler/layout/form_theme_horizontal.html.twig' %}
 ```
 
 Replace

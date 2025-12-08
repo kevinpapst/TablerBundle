@@ -3,13 +3,13 @@
 In order to use the layout, your views should extend from the provided `layouts`
 
 ```twig
-{% extends '@Tabler/layout-horizontal.html.twig' %}
+{% extends '@Tabler/layout_horizontal.html.twig' %}
 ```
 
 OR
 
 ```twig
-{% extends '@Tabler/layout-vertical.html.twig' %}
+{% extends '@Tabler/layout_vertical.html.twig' %}
 ```
 
 ## Layout files
@@ -18,9 +18,9 @@ This bundle ships with two main template files which you can extend in your them
 
 **For all your admin pages**
 
-The default `layout-horizontal.html.twig` can be used with:
+The default `layout_horizontal.html.twig` can be used with:
 ```
-{% extends '@Tabler/layout-horizontal.html.twig' %}
+{% extends '@Tabler/layout_horizontal.html.twig' %}
 ```
 
 **For your security screens**
@@ -34,9 +34,9 @@ See example at [https://preview.tabler.io/sign-in.html](https://preview.tabler.i
 
 **For your security screens (with huge cover image)**
 
-The `security-cover.html.twig` file (for login, register, ...) can be used with:   
+The `security_cover.html.twig` file (for login, register, ...) can be used with:   
 ```
-{% extends '@Tabler/security-cover.html.twig' %}
+{% extends '@Tabler/security_cover.html.twig' %}
 ```
 
 The cover image is configurable at `tabler.options.security_cover_url` or via `ConextHelper::setSecurityCoverUrl()`.
