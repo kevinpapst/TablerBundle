@@ -31,7 +31,7 @@ Card nav has been implemented.
 |  content  | Content of the item                      | `string`  |         _empty string_          |
 |  active   | Set the item as currently active         | `boolean` |             `false`             |
 | disabled  | Set the item as disabled                 | `boolean` |             `false`             |
-|    href    | Href of the `a` link in the menu         | `string`  | `#tabs-` + `tabler_unique_id()` |
+|   href    | Href of the `a` link in the menu         | `string`  | `#tabs-` + `tabler_unique_id()` |
 |    raw    | Render item name AND content as RAW HTML | `boolean` |             `false`             |
 
 ### Content
