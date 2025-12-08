@@ -8,6 +8,16 @@
 - Removed `ContextHelper::setAssetVersion()`/`ContextHelper::getAssetVersion()` 
 - Removed the options `tabler.options.asset_version`
 
+### File name convention
+Removes all legacy **kebab-case** Twig template names and only ships **snake_case** equivalents:
+- Layout horizontal: `layout-horizontal.html.twig` → `layout_horizontal.html.twig`
+- Layout vertical: `layout-vertical.html.twig` → `layout_vertical.html.twig`
+- Security cover: `security-cover.html.twig` → `security_cover.html.twig`
+- Form theme: `form-theme.html.twig` → `form_theme.html.twig`
+- Form theme vertical: `form-theme-vertical.html.twig` → `form_theme_vertical.html.twig`
+- Form theme horizontal: `form-theme-horizontal.html.twig` → `form_theme_horizontal.html.twig`
+- Card vertical navigation : `card-vertical-navigation.html.twig` → `card_vertical_navigation.html.twig`
+
 ### Changed HTML structure 
 
 See https://github.com/kevinpapst/TablerBundle/pull/214
