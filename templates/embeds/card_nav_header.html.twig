@@ -42,7 +42,7 @@
                             role="tab"
                         {% endif %}
                         {# TODO : Remove `url` option condition in the next major release #}
-                        {% if (item.href is not defined or item.url is not defined) and not _manualContent %}data-bs-toggle="tab"{% endif %}
+                        {% if (item.href is not defined and item.url is not defined) and not _manualContent %}data-bs-toggle="tab"{% endif %}
                 >
                     {% if _raw %}
                         {{ _name | raw }}
