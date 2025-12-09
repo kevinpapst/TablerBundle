@@ -8,6 +8,15 @@
 - Removed `ContextHelper::setAssetVersion()`/`ContextHelper::getAssetVersion()` 
 - Removed the options `tabler.options.asset_version`
 
+### Replaced `url` option with `href` for a unified API
+
+For now this is a "soft deprecation". In the next major release, the `url` will be removed.
+
+- Added in [templates/components/button.html.twig](templates/components/button.html.twig)
+- Added in [templates/components/buttons.html.twig](templates/components/buttons.html.twig)
+- Added in [templates/embeds/card_nav_header.html.twig](templates/embeds/card_nav_header.html.twig)
+- Added in [templates/embeds/card_vertical_navigation.html.twig](templates/embeds/card_vertical_navigation.html.twig)
+
 ### Changed HTML structure 
 
 See https://github.com/kevinpapst/TablerBundle/pull/214

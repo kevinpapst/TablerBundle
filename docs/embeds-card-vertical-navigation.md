@@ -15,8 +15,8 @@ Card vertical navigation has been implemented to use the [Tabler Card vertical n
 
 #### Item
 
-Note: If `url` parameter is not specified, Boostrap tab navigation will be used to navigate trough elements.
-If `url` is specified, click on menu item will simply redirect to the URL.
+Note: If `href` parameter is not specified, Boostrap tab navigation will be used to navigate trough elements.
+If `href` is specified, click on menu item will simply redirect to the URL.
 
 | Parameter | Description                         |   Type    |         Default         |
 |:---------:|-------------------------------------|:---------:|:-----------------------:|
@@ -26,7 +26,7 @@ If `url` is specified, click on menu item will simply redirect to the URL.
 |    raw    | Render item name as RAW HTML        | `boolean` |         `false`         |
 |  content  | Content of the item                 | `string`  |     _empty string_      |
 |  active   | Set the item as currently active    | `boolean` |         `false`         |
-|    url    | Href of the `a` link in the menu    | `string`  | `#tabs-` + `uniqueId()` |
+|   href    | Href of the `a` link in the menu    | `string`  | `#tabs-` + `uniqueId()` |
 
 ### Content
 `Card vertical navigation` embed, has 1 common block:
@@ -77,7 +77,7 @@ All content tab must be rendered
 ![card nav](https://user-images.githubusercontent.com/25293190/193552217-791b1294-811d-4cd8-8222-2cef684ef17c.gif)
 
 
-#### Url single content navigation
+#### Href single content navigation
 
 Only one tab content is completed, rest is only for navigation between urls
 
@@ -85,11 +85,11 @@ Only one tab content is completed, rest is only for navigation between urls
 {% set items = [
     {
         name: 'Account',
-        url: '/account'
+        href: '/account'
     },
     {
         name: 'Notifications',
-        url: '/notifications',
+        href: '/notifications',
         active: true,
     },
     {
@@ -118,11 +118,11 @@ Only one tab content is completed, rest is only for navigation between urls
 {% set items = [
     {
         name: 'Account',
-        url: '/account'
+        href: '/account'
     },
     {
         name: 'Notifications',
-        url: '/notifications',
+        href: '/notifications',
         active: true,
     },
     {
