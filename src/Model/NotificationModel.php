@@ -9,8 +9,6 @@
 
 namespace KevinPapst\TablerBundle\Model;
 
-use KevinPapst\TablerBundle\Helper\Constants;
-
 class NotificationModel implements NotificationInterface
 {
     private ?string $url = null;
