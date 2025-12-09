@@ -11,7 +11,7 @@ namespace KevinPapst\TablerBundle\Model;
 
 use KevinPapst\TablerBundle\Helper\Constants;
 
-class NotificationModel implements NotificationV2Interface // @phpstan-ignore class.implementsDeprecatedInterface
+class NotificationModel implements NotificationInterface
 {
     private ?string $url = null;
     private bool $active = false;
