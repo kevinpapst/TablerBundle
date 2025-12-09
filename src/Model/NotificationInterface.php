@@ -15,7 +15,17 @@ interface NotificationInterface
 
     public function getMessage(): string;
 
-    public function getType(): string;
+    public function getType(): ?string;
 
     public function getUrl(): ?string;
+
+    public function isActive(): bool;
+
+    public function isDisabled(): bool;
+
+    public function isWithBadge(): bool;
+
+    public function isBadgeAnimated(): bool;
+
+    public function isHtml(): bool;
 }
