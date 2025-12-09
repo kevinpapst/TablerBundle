@@ -24,7 +24,7 @@ class NotificationModel implements NotificationInterface
     public function __construct(
         private readonly string $id,
         private string $message,
-        private string $type = Constants::TYPE_INFO
+        private ?string $type = null,
     ) {
     }
 
@@ -103,7 +103,7 @@ class NotificationModel implements NotificationInterface
         $this->message = $message;
     }
 
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->type;
     }

@@ -15,7 +15,7 @@ interface NotificationInterface
 
     public function getMessage(): string;
 
-    public function getType(): string;
+    public function getType(): ?string;
 
     public function getUrl(): ?string;
 
