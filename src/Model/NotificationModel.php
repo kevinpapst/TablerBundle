@@ -106,7 +106,7 @@ class NotificationModel implements NotificationInterface
         return $this->type;
     }
 
-    public function setType(string $type): void
+    public function setType(?string $type): void
     {
         $this->type = $type;
     }
