@@ -44,7 +44,7 @@ class ContextHelperTest extends TestCase
 
         self::assertEquals('slate', $context->getThemeBase());
         self::assertEquals('blue', $context->getThemePrimary());
-        self::assertEquals('0.5', $context->getThemeRadius());
+        self::assertEquals(1, $context->getThemeRadius());
 
         $context->setThemeBase('zinc');
         self::assertEquals('zinc', $context->getThemeBase());
@@ -52,7 +52,7 @@ class ContextHelperTest extends TestCase
         $context->setThemePrimary('lime');
         self::assertEquals('lime', $context->getThemePrimary());
 
-        $context->setThemeRadius('2');
-        self::assertEquals('2', $context->getThemeRadius());
+        $context->setThemeRadius(2);
+        self::assertEquals(2, $context->getThemeRadius());
     }
 }
