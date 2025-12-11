@@ -96,7 +96,7 @@ class ContextHelper extends \ArrayObject
             throw new \InvalidArgumentException('Value must be numeric');
         }
 
-        return $radius;
+        return (float) $radius;
     }
 
     public function setThemeRadius(float $radius): void
