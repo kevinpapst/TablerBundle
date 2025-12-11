@@ -20,9 +20,13 @@
     {% set _color = options.color ?? '' %}
     {% set _size = options.size ?? '' %}
     {% set _badge = options.badge ?? {} %}
+    {% set _brand = options.brand|default(false) is same as true %}
+    {% set _upload = options.upload|default(false) is same as true %}
     {# @var _rounded bool|int #}
     {% set _rounded = options.rounded|default(false) %}
     {% set _circle = options.circle|default(false) is same as true %}
+    {% set _link = options.link|default(options.href is defined) is same as true %}
+    {% set _href = options.href ?? '' %}
     {% set _extraClass = options.extraClass ?? '' %}
     {% set _attr = options.attr ?? {} %}
 
@@ -38,8 +42,18 @@
         {% set classes = classes|merge(['avatar-' ~ _size]) %}
     {% endif %}
 
+    {# brand #}
+    {% if _brand is same as true %}
+        {% set classes = classes|merge(['avatar-brand']) %}
+    {% endif %}
+
+    {# upload #}
+    {% if _upload is same as true %}
+        {% set classes = classes|merge(['avatar-upload']) %}
+    {% endif %}
+
     {# rounded #}
-    {% if _rounded %}
+    {% if _rounded is not same as false %}
         {% if _rounded is same as true %}
             {% set classes = classes|merge(['rounded']) %}
         {% else %}
@@ -58,9 +72,16 @@
 
     {% set classesStr = classes|join(' ') %}
 
-    <span
+    {% if _link %}
+        {% set type = 'a' %}
+    {% else %}
+        {% set type = 'span' %}
+    {% endif %}
+
+    <{{ type|raw }}
         class="{{ classesStr }}"
         {% if _imageUrl %}style="background-image: url({{ _imageUrl }})"{% endif %}
+        {% if _href %}href="{{ _href }}"{% endif %}
         {{ utils.attr_to_html(_attr) }}
     >
         {{ _content|raw }}
@@ -69,5 +90,5 @@
             {% from '@Tabler/components/badge.html.twig' import badge %}
             {{ badge(_badge) }}
         {%- endif %}
-    </span>
+    </{{ type|raw }}>
 {%- endmacro %}
