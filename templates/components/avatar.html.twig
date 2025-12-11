@@ -1,6 +1,73 @@
-{% macro avatar(user, size) %}
-    {% import "@Tabler/components/avatar_image.html.twig" as macro %}
-    <span class="avatar avatar-{{ size }}">
-        {{ macro.avatar_image(user) }}
+{% macro avatar(options_or_user, size) -%}
+    {# TODO : Replace the macro signature with this one when 2.0 #}
+    {# {% macro avatar(options = {}) %} #}
+    {% import '@Tabler/includes/utils.html.twig' as utils %}
+
+    {# Backward compatibility: detect old signature #}
+    {% if options_or_user is iterable %}
+        {% set options = options_or_user %}
+    {% else %}
+        {% deprecated "Passing multiple parameters to 'avatar()' Tabler macro is deprecated, use options object syntax." %}
+        {% import "@Tabler/components/avatar_image.html.twig" as macro %}
+        {% set options = {
+            content: macro.avatar_image(options_or_user),
+            size: size,
+        } %}
+    {% endif %}
+
+    {% set _content = options.content ?? '' %}
+    {% set _imageUrl = options.imageUrl ?? '' %}
+    {% set _color = options.color ?? '' %}
+    {% set _size = options.size ?? '' %}
+    {% set _badge = options.badge ?? {} %}
+    {# @var _rounded bool|int #}
+    {% set _rounded = options.rounded|default(false) %}
+    {% set _circle = options.circle|default(false) is same as true %}
+    {% set _extraClass = options.extraClass ?? '' %}
+    {% set _attr = options.attr ?? {} %}
+
+    {% set classes = ['avatar'] %}
+
+    {# size #}
+    {% if _color is not empty %}
+        {% set classes = classes|merge(['bg-' ~ _color]) %}
+    {% endif %}
+
+    {# size #}
+    {% if _size is not empty %}
+        {% set classes = classes|merge(['avatar-' ~ _size]) %}
+    {% endif %}
+
+    {# rounded #}
+    {% if _rounded %}
+        {% if _rounded is same as true %}
+            {% set classes = classes|merge(['rounded']) %}
+        {% else %}
+            {% set classes = classes|merge(['rounded-' ~ _rounded]) %}
+        {% endif %}
+    {% endif %}
+
+    {# circle #}
+    {% if _circle is not empty %}
+        {% set classes = classes|merge(['rounded-circle']) %}
+    {% endif %}
+
+    {% if _extraClass is not empty %}
+        {% set classes = classes|merge([_extraClass]) %}
+    {% endif %}
+
+    {% set classesStr = classes|join(' ') %}
+
+    <span
+        class="{{ classesStr }}"
+        {% if _imageUrl %}style="background-image: url({{ _imageUrl }})"{% endif %}
+        {{ utils.attr_to_html(_attr) }}
+    >
+        {{ _content|raw }}
+
+        {% if _badge is not empty -%}
+            {% from '@Tabler/components/badge.html.twig' import badge %}
+            {{ badge(_badge) }}
+        {%- endif %}
     </span>
-{% endmacro %}
+{%- endmacro %}
