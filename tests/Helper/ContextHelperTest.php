@@ -42,7 +42,7 @@ class ContextHelperTest extends TestCase
         $context->setSecurityCoverUrl('https://placehold.co/1234');
         $this->assertEquals('https://placehold.co/1234', $context->getSecurityCoverUrl());
 
-        self::assertEquals('slate', $context->getThemeBase());
+        self::assertEquals('gray', $context->getThemeBase());
         self::assertEquals('blue', $context->getThemePrimary());
         self::assertEquals(1, $context->getThemeRadius());
 

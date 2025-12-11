@@ -61,9 +61,9 @@ class ContextHelper extends \ArrayObject
 
     public function getThemeBase(): string
     {
-        $base = $this->getOption('theme_base', 'slate');
+        $base = $this->getOption('theme_base', 'gray');
 
-        return \is_string($base) ? $base : 'slate';
+        return \is_string($base) ? $base : 'gray';
     }
 
     public function setThemeBase(string $base): void

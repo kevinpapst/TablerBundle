@@ -166,7 +166,7 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->enumNode('theme_base')
                     ->values(['slate', 'gray', 'zinc', 'neutral', 'stone'])
-                    ->defaultValue('slate')
+                    ->defaultValue('gray')
                 ->end()
                 ->floatNode('theme_radius')
                     ->min(0)

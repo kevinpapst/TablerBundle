@@ -38,7 +38,7 @@ tabler:
         # if "true" uses javascript to detect the OS mode and ignores dark_mode
         theme_auto: false
         # slate, gray, zinc, neutral, stone
-        theme_base: "slate"
+        theme_base: "gray"
         # 0, 0.5, 1, 1.5, 2 | radius in pixels * 4
         theme_radius: 1
         # blue, azure, indigo, purple, pink, red, orange, yellow, lime, green, teal, cyan

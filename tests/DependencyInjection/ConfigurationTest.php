@@ -61,7 +61,7 @@ class ConfigurationTest extends TestCase
                     'logo_url' => null,
                     'navbar_overlap' => false,
                     'security_cover_url' => 'https://placehold.co/1000',
-                    'theme_base' => 'slate',
+                    'theme_base' => 'gray',
                     'theme_radius' => 1,
                     'theme_primary' => 'blue',
                     'theme_auto' => false
