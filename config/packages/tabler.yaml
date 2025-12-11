@@ -29,7 +29,7 @@ tabler:
         # slate, gray, zinc, neutral, stone
         theme_base: "slate"
         # 0, 0.5, 1, 1.5, 2 | radius in pixels * 4
-        theme_radius: "0.5"
+        theme_radius: 1
         # blue, azure, indigo, purple, pink, red, orange, yellow, lime, green, teal, cyan
         theme_primary: "blue"
 

@@ -171,7 +171,7 @@ class Configuration implements ConfigurationInterface
                 ->floatNode('theme_radius')
                     ->min(0)
                     ->max(2)
-                    ->defaultValue(0.5)
+                    ->defaultValue(1)
                 ->end()
                 ->enumNode('theme_primary')
                     ->values(['blue', 'azure', 'indigo', 'purple', 'pink', 'red', 'orange', 'yellow', 'lime', 'green', 'teal', 'cyan'])

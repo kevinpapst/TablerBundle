@@ -89,18 +89,18 @@ class ContextHelper extends \ArrayObject
         $this->setOption('theme_primary', $primary);
     }
 
-    public function getThemeRadius(): string
+    public function getThemeRadius(): float
     {
-        $radius = $this->getOption('theme_radius', '0.5');
+        $radius = $this->getOption('theme_radius', 1);
+        if (!is_float($radius)) {
+            throw new \InvalidArgumentException('Value must be float');
+        }
 
-        return \is_string($radius) ? $radius : '0.5';
+        return $radius;
     }
 
-    public function setThemeRadius(string $radius): void
+    public function setThemeRadius(float $radius): void
     {
-        if (!is_numeric($radius)) {
-            throw new \InvalidArgumentException('The "theme_radius" option must be a numeric value.');
-        }
         $this->setOption('theme_radius', $radius);
     }
 
