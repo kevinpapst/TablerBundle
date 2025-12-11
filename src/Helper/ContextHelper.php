@@ -92,8 +92,8 @@ class ContextHelper extends \ArrayObject
     public function getThemeRadius(): float
     {
         $radius = $this->getOption('theme_radius', 1);
-        if (!\is_float($radius)) {
-            throw new \InvalidArgumentException('Value must be float');
+        if (!\is_int($radius) && !\is_float($radius) && !\is_numeric($radius)) {
+            throw new \InvalidArgumentException('Value must be numeric');
         }
 
         return $radius;
