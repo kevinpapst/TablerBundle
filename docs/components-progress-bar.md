@@ -56,7 +56,7 @@ Progress Bar has been implemented to simplify the use of the Tabler Progress Bar
 
 {{ progress_bar({current : 66, max : 100, color : 'success'}, {extraClass : 'bg-danger'}) }}
 
-{{ progress_bar({current : 66, max : 100, color : 'bg-orange'}, {height: '4px'}) }}
+{{ progress_bar({current : 66, max : 100, color : 'orange'}, {height: '4px'}) }}
 
 {{ progress_bar({current : 66, max : 100, autoLabel : true}) }}
 
