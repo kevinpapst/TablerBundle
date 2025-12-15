@@ -17,6 +17,17 @@ For now this is a "soft deprecation". In the next major release, the `url` will 
 - Added in [templates/embeds/card_nav_header.html.twig](templates/embeds/card_nav_header.html.twig)
 - Added in [templates/embeds/card_vertical_navigation.html.twig](templates/embeds/card_vertical_navigation.html.twig)
 
+### Progress bar
+
+- Item value `current` deprecated, replaced by `value`
+- Item value `color` should not be "bootstrap classes" value, but it's color directly. eg: `red`, `blue`, ...
+- Removed the options `backgroundColor`
+- Removed the options `progressSize`
+
+### Progress bars
+
+- Removed the options `backgroundColor`
+
 ### Changed HTML structure 
 
 See https://github.com/kevinpapst/TablerBundle/pull/214
