@@ -18,7 +18,7 @@ For now this is a "soft deprecation". In the next major release, the `url` will 
 - Added in [templates/embeds/card_vertical_navigation.html.twig](templates/embeds/card_vertical_navigation.html.twig)
 
 ### File name convention
-Removes all legacy **kebab-case** Twig template names and only ships **snake_case** equivalents:
+Deprecates all legacy **kebab-case** Twig template names. Please use their **snake_case** equivalents:
 - Layout horizontal: `layout-horizontal.html.twig` → `layout_horizontal.html.twig`
 - Layout vertical: `layout-vertical.html.twig` → `layout_vertical.html.twig`
 - Security cover: `security-cover.html.twig` → `security_cover.html.twig`
