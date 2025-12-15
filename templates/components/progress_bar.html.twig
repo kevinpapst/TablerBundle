@@ -163,3 +163,34 @@
         </div>
     </div>
 {%- endmacro %}
+
+{% macro progress_background(options = {}) -%}
+    {% from '@Tabler/includes/utils.html.twig' import attr_to_html %}
+
+    {% set _color = options.color ?? 'primary-lt' %}
+    {% set _width = options.width ?? 0 %}
+    {% set _text = options.text ?? '' %}
+    {% set _value = options.value|default(_width ~ '%') %}
+    {% set _attr = options.attr ?? {} %}
+
+    {% set progressBarClasses = ['progress-bar'] %}
+
+    {% if _color is not empty %}
+        {% set progressBarClasses = progressBarClasses|merge(['bg-' ~ _color]) %}
+    {% endif %}
+
+    <div
+        class="progressbg"
+        {{ attr_to_html(_attr) }}
+    >
+        <div class="progress progressbg-progress">
+            <div class="{{ progressBarClasses|join(' ') }}" style="width: {{ _width }}%"></div>
+        </div>
+        {% if _text is not empty %}
+            <div class="progressbg-text">{{ _text }}</div>
+        {% endif %}
+        {% if _value is not empty %}
+            <div class="progressbg-value">{{ _value }}</div>
+        {% endif %}
+    </div>
+{%- endmacro %}

@@ -117,6 +117,37 @@ Progress Bars has been implemented to simplify the use of the Progress Bar, with
 ], {height: '20px'}) }}
 ```
 
+## Progress Background
+
+### Parameters
+`progress_background()` macro, waits for 1 parameter:
+
+| Parameter | Description                   |   Type   | Default |
+|:---------:|:------------------------------|:--------:|:-------:|
+|  options  | [Options](#Option) object     | `object` |  `{}`   |
+
+#### Option
+| Parameter | Description                                               |   Type   |    Default     |
+|:---------:|-----------------------------------------------------------|:--------:|:--------------:|
+|   color   | Color of the progress (red, blue, ...)                    | `string` |  `primary-lt`  |                                  
+|   width   | Width in percent of the progress (10, 15, 55)             | `number` |      `0`       |                                        
+|   text    | Text of the progress                                      | `string` | *empty string* |                                        
+|   value   | Value text displayed                                      | `string` | *empty string* |                                
+|   attr    | Additional raw HTML attributes (`data-*`, `aria-*`, etc.) |  object  |      `{}`      |
+
+
+### Usage
+
+```twig
+{% from '@Tabler/components/progress_bar.html.twig' import progress_background %}
+
+{{ progress_background({width : 65, text: 'Poland'}) }}
+{{ progress_background({width : 35, text: 'Germany'}) }}
+{{ progress_background({width : 28, text: 'United Stated'}) }}
+{{ progress_background({width : 20, text: 'United Kingdom'}) }}
+{{ progress_background({width : 15, text: 'France'}) }}
+```
+
 ## Next steps
 
 Please go back to the [Tabler bundle documentation](index.md) to find out more about using the theme.
