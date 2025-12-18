@@ -20,7 +20,13 @@
             {# Item Options #}
             {% set _active = item.active ?? false %}
             {% set _disabled = item.disabled ?? false %}
-            {% set _url = item.url ?? ("#tabs-" ~ item.id) %}
+            {% if item.url is defined %}
+                {# TODO : Uncomment the next line in the next major release #}
+                {#{% deprecated "the option 'url' is deprecated use 'href' instead" %}#}
+                {% set _href = item.url %}
+            {% else %}
+                {% set _href = item.href ?? ("#tabs-" ~ item.id) %}
+            {% endif %}
             {% set _raw = item.raw ?? false %}
 
             <li
@@ -29,13 +35,14 @@
             >
                 <a
                         class="nav-link {% if _active %}active{% endif %} {% if _disabled %}disabled{% endif %}"
-                        href="{{ _url }}"
+                        href="{{ _href }}"
                         {% if _disabled %}tabindex="-1" aria-disabled="true"{% endif %}
                         {% if _tabs %}
                             {% if _active %}aria-selected="true"{% endif %}
                             role="tab"
                         {% endif %}
-                        {% if item.url is not defined and not _manualContent %}data-bs-toggle="tab"{% endif %}
+                        {# TODO : Remove `url` option condition in the next major release #}
+                        {% if (item.href is not defined and item.url is not defined) and not _manualContent %}data-bs-toggle="tab"{% endif %}
                 >
                     {% if _raw %}
                         {{ _name | raw }}

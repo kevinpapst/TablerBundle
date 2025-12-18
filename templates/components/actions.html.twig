@@ -28,7 +28,7 @@
                                 {%- set values = values|merge({'title': icon|trans({}, translationDomain)}) -%}
                             {%- endif -%}
                         {%- else -%}
-                            {%- set values = {'url': values, 'title': icon|trans({}, translationDomain)} -%}
+                            {%- set values = {'href': values, 'title': icon|trans({}, translationDomain)} -%}
                         {%- endif -%}
                         {%- if icon == 'trash' -%}
                             {%- set trash = values -%}

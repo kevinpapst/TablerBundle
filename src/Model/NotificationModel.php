@@ -9,9 +9,7 @@
 
 namespace KevinPapst\TablerBundle\Model;
 
-use KevinPapst\TablerBundle\Helper\Constants;
-
-class NotificationModel implements NotificationV2Interface // @phpstan-ignore class.implementsDeprecatedInterface
+class NotificationModel implements NotificationInterface
 {
     private ?string $url = null;
     private bool $active = false;
@@ -24,7 +22,7 @@ class NotificationModel implements NotificationV2Interface // @phpstan-ignore cl
     public function __construct(
         private readonly string $id,
         private string $message,
-        private string $type = Constants::TYPE_INFO
+        private ?string $type = null,
     ) {
     }
 
@@ -103,12 +101,12 @@ class NotificationModel implements NotificationV2Interface // @phpstan-ignore cl
         $this->message = $message;
     }
 
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->type;
     }
 
-    public function setType(string $type): void
+    public function setType(?string $type): void
     {
         $this->type = $type;
     }
