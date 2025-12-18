@@ -1,51 +1,196 @@
-{% macro progress_bars(items, options) %}
+{% macro progress_bars(items = [], options = {}) -%}
+    {% from '@Tabler/includes/utils.html.twig' import attr_to_html %}
 
-    {% set _progressSize = options.progressSize ?? '' %}
-    {% set _backgroundColor = options.backgroundColor ?? '' %}
+    {% set _height = options.height ?? '' %}
+    {% set _separated = options.separated|default(false) is same as true %}
     {% set _style = options.style ?? '' %}
+    {% set _extraClass  = options.extraClass ?? '' %}
+    {% set _attr = options.attr ?? {} %}
 
-    {% set _items = items ?? [] %}
+    {% set progressBarClasses = ['progress-stacked'] %}
 
-    <div class="progress {{ _backgroundColor }} {{ _progressSize }}" style="{{ _style }}">
-        {% for item in _items %}
+    {% if _separated %}
+        {# separated #}
+        {% set progressBarClasses = progressBarClasses|merge(['progress-separated']) %}
+    {% endif %}
 
-            {% set _value = item.current ?? 0 %}
-            {% set _max = item.max ?? 0 %}
-            {% set _min = item.min ?? 0 %}
-            {% set _indeterminate = item.indeterminate ?? (_value == _max and _min == _max) %}
-            {% set percent = _indeterminate or (_max - _min) == 0 ? 0 : ((_value - _min) * 100) / (_max - _min) %}
+    {# TODO : Remove when 2.0 #}
+    {% if options.backgroundColor is defined %}
+        {% deprecated "Option 'backgroundColor' is deprecated, no replacement allowed. Use `extraClass` option instead!" %}
+        {% set _extraClass = _extraClass ~ ' ' ~ options.backgroundColor %}
+    {% endif %}
 
-            {% set _striped = item.striped ?? false %}
-            {% set _animated = item.animated ?? false %}
+    {% if _extraClass is not empty %}
+        {% set progressBarClasses = progressBarClasses|merge([_extraClass]) %}
+    {% endif %}
 
-            {% set _autoLabel = item.autoLabel ?? false %}
-            {% set _label = item.label ?? (_autoLabel and not _indeterminate ? percent ~ '%' : '') %}
-            {% set _labelVisible = _label != '' and (item.labelVisible ?? true) %}
+    {% set heightStyle = _height is not empty ? "height: " ~ _height ~ ";" : '' %}
 
-            {% set _color = item.color ?? '' %}
-            {% set _style = item.style ?? '' %}
-
-            <div class="progress-bar {% if not _indeterminate and _striped %}progress-bar-striped{% endif %} {% if _animated %}progress-bar-animated{% endif %} {{ _color }} {% if _indeterminate %}progress-bar-indeterminate{% endif %}"
-                 role="progressbar"
-                 style="{% if not _indeterminate %}width: {{ percent }}%;{% endif %} {{ _style }}"
-
-                    {% if not _indeterminate %}
-                        aria-valuenow="{{ _value }}"
-                        aria-valuemin="{{ _min }}"
-                        aria-valuemax="{{ _max }}"
-                    {% endif %}
-
-                    {% if _label != '' %}
-                        aria-label="{{ _label }}"
-                    {% endif %}
-            >
-                <span class="{% if not _labelVisible %}visually-hidden{% endif %}">{{ _label }}</span>
-            </div>
+    <div
+        class="{{ progressBarClasses|join(' ') }}"
+        style="{{ heightStyle }} {{ _style }}"
+        {{ attr_to_html(_attr) }}
+    >
+        {% for item in items %}
+            {{ _self.progress_bar(item, {
+                multiple : true,
+                height : _height,
+            }) }}
         {% endfor %}
     </div>
-{% endmacro %}
+{%- endmacro %}
 
+{% macro progress_bar(item = {}, options = {}) -%}
+    {% from '@Tabler/includes/utils.html.twig' import attr_to_html %}
 
-{% macro progress_bar(item, options) %}
-    {{ _self.progress_bars([item], options ?? {}) }}
-{% endmacro %}
+    {# TODO : Remove when 3.0 #}
+    {% if item.current is defined %}
+        {% deprecated "Item 'current' value is deprecated. Use `value` instead!" %}
+        {% set _value = item.current %}
+    {% else %}
+        {% set _value = item.value ?? 0 %}
+    {% endif %}
+
+    {% set _max = item.max ?? 0 %}
+    {% set _min = item.min ?? 0 %}
+    {% set _indeterminate = (item.indeterminate ?? (_value == _max and _min == _max)) is same as true %}
+    {% set percent = _indeterminate or ((_max - _min) == 0) ? 0 : (((_value - _min) * 100) / (_max - _min)) %}
+    {% set _autoLabel = item.autoLabel|default(false) is same as true %}
+    {% set _label = item.label ?? (_autoLabel and not _indeterminate ? percent ~ '%' : '') %}
+    {% set _multiple  = options.multiple|default(false) is same as true %}
+    {% set _itemStyle = item.style ?? '' %}
+
+    {% set _height = options.height ?? '' %}
+    {% set _style = options.style ?? '' %}
+    {% set _extraClass  = options.extraClass ?? '' %}
+    {% set _attr = options.attr ?? {} %}
+
+    {# TODO : Remove when 3.0 #}
+    {% if options.backgroundColor is defined %}
+        {% deprecated "Option 'backgroundColor' is deprecated, no replacement allowed. Use `extraClass` option instead!" %}
+        {% set _extraClass = _extraClass ~ ' ' ~ options.backgroundColor %}
+    {% endif %}
+
+    {# TODO : Remove when 3.0 #}
+    {% if options.progressSize is defined %}
+        {% deprecated "Option 'progressSize' is deprecated, no replacement allowed. Use `attr.style` option instead!" %}
+        {% set _extraClass = _extraClass ~ ' ' ~ options.progressSize %}
+    {% endif %}
+
+    {% set heightStyle = _height is not empty ? "height: " ~ _height ~ ";" : '' %}
+    {% set widthStyle = "width: " ~ percent ~ "%;" %}
+    {% set progressClasses = ['progress'] %}
+
+    {% if _extraClass is not empty %}
+        {% set progressClasses = progressClasses|merge([_extraClass]) %}
+    {% endif %}
+
+    {# Progress #}
+    <div
+        class="{{ progressClasses|join(' ') }}"
+        role="progressbar"
+        {% if not _indeterminate %}
+            aria-valuenow="{{ _value }}"
+            aria-valuemin="{{ _min }}"
+            aria-valuemax="{{ _max }}"
+        {% endif %}
+        {% if _label != '' %}
+            aria-label="{{ _label }}"
+        {% endif %}
+        style="{% if _multiple %}{{ widthStyle }}{% endif %} {{ heightStyle }} {{ _style }}"
+        {{ attr_to_html(_attr) }}
+    >
+        {# Progress bar #}
+        {% set _striped = item.striped|default(false) is same as true %}
+        {% set _animated = item.animated|default(false) is same as true %}
+        {% set _labelVisible = item.labelVisible|default(true) is same as true %}
+        {% set _color = item.color ?? '' %}
+        {% set _itemStyle = item.style ?? '' %}
+        {% set _extraClass  = item.extraClass ?? '' %}
+        {% set _attr = item.attr ?? {} %}
+
+        {% set heightStyle = _height ? "height: " ~ _height ~ ";" : '' %}
+        {% set progressBarClasses = ['progress-bar'] %}
+
+        {% if _color is not empty %}
+            {# TODO : Remove when 2.0 #}
+            {% if _color starts with 'bg-' or _color starts with 'text-' %}
+                {% deprecated "Defining 'color' class directly is deprecated. Use only the color value instead!" %}
+                {% set progressBarClasses = progressBarClasses|merge([_color]) %}
+            {% else %}
+                {% set progressBarClasses = progressBarClasses|merge(['bg-' ~ _color]) %}
+            {% endif %}
+        {% endif %}
+
+        {% if _indeterminate %}
+            {% set progressBarClasses = progressBarClasses|merge(['progress-bar-indeterminate']) %}
+        {% else %}
+            {% if _striped %}
+                {% set progressBarClasses = progressBarClasses|merge(['progress-bar-striped']) %}
+            {% endif %}
+        {% endif %}
+
+        {% if _animated and not _indeterminate %}
+            {% set progressBarClasses = progressBarClasses|merge(['progress-bar-animated']) %}
+        {% endif %}
+
+        {% if _extraClass is not empty %}
+            {% set progressBarClasses = progressBarClasses|merge([_extraClass]) %}
+        {% endif %}
+
+        <div
+            class="{{ progressBarClasses|join(' ') }}"
+            style="{% if not _multiple %}{{ widthStyle }}{% endif %} {{ heightStyle }} {{ _itemStyle }}"
+            {{ attr_to_html(_attr) }}
+        >
+            {%- if _label is not empty -%}
+                {% set labelClasses = [] %}
+
+                {% if not _labelVisible %}
+                    {% set labelClasses = labelClasses|merge(['visually-hidden']) %}
+                {% endif %}
+
+                {% if _color is not empty %}
+                    {% set labelClasses = labelClasses|merge(['text-bg-' ~ _color]) %}
+                {% endif %}
+
+                <span
+                    {% if labelClasses|length > 0 -%}
+                        class="{{ labelClasses|join(' ') }}"
+                    {%- endif %}
+                >{{ _label }}</span>
+            {%- endif -%}
+        </div>
+    </div>
+{%- endmacro %}
+
+{% macro progress_background(options = {}) -%}
+    {% from '@Tabler/includes/utils.html.twig' import attr_to_html %}
+
+    {% set _color = options.color ?? 'primary-lt' %}
+    {% set _width = options.width ?? 0 %}
+    {% set _text = options.text ?? '' %}
+    {% set _value = options.value|default(_width ~ '%') %}
+    {% set _attr = options.attr ?? {} %}
+
+    {% set progressBarClasses = ['progress-bar'] %}
+
+    {% if _color is not empty %}
+        {% set progressBarClasses = progressBarClasses|merge(['bg-' ~ _color]) %}
+    {% endif %}
+
+    <div
+        class="progressbg"
+        {{ attr_to_html(_attr) }}
+    >
+        <div class="progress progressbg-progress">
+            <div class="{{ progressBarClasses|join(' ') }}" style="width: {{ _width }}%"></div>
+        </div>
+        {% if _text is not empty %}
+            <div class="progressbg-text">{{ _text }}</div>
+        {% endif %}
+        {% if _value is not empty %}
+            <div class="progressbg-value">{{ _value }}</div>
+        {% endif %}
+    </div>
+{%- endmacro %}
