@@ -48,27 +48,27 @@ Progress Bar has been implemented to simplify the use of the Tabler Progress Bar
 
 {{ progress_bar() }}
 
-{{ progress_bar({current : 10}) }}
+{{ progress_bar({value : 10}) }}
 
-{{ progress_bar({current : 66, max : 100}) }}
+{{ progress_bar({value : 66, max : 100}) }}
 
-{{ progress_bar({current : 40, max : 50, min : -50}) }}
+{{ progress_bar({value : 40, max : 50, min : -50}) }}
 
-{{ progress_bar({current : 66, max : 100, color : 'success'}, {extraClass : 'bg-danger'}) }}
+{{ progress_bar({value : 66, max : 100, color : 'success'}, {extraClass : 'bg-danger'}) }}
 
-{{ progress_bar({current : 66, max : 100, color : 'orange'}, {height: '4px'}) }}
+{{ progress_bar({value : 66, max : 100, color : 'orange'}, {height: '4px'}) }}
 
-{{ progress_bar({current : 66, max : 100, autoLabel : true}) }}
+{{ progress_bar({value : 66, max : 100, autoLabel : true}) }}
 
-{{ progress_bar({current : 66, max : 100, label : 'Partially done'}, {height: '20px'}) }}
+{{ progress_bar({value : 66, max : 100, label : 'Partially done'}, {height: '20px'}) }}
 
-{{ progress_bar({current : 66, max : 100, label : 'Error while processing', color : 'danger'}, {height: '20px'}) }}
+{{ progress_bar({value : 66, max : 100, label : 'Error while processing', color : 'danger'}, {height: '20px'}) }}
 
 {{ progress_bar({color : 'green'}, {extraClass : 'bg-green-lt'}) }}
 
-{{ progress_bar({current :2, max: 5, color : 'red', striped : true}) }}
+{{ progress_bar({value :2, max: 5, color : 'red', striped : true}) }}
 
-{{ progress_bar({current :4, max: 5, striped : true, animated: true}) }}
+{{ progress_bar({value :4, max: 5, striped : true, animated: true}) }}
 ```
 
 ## Progress Bars (multiple)
@@ -99,21 +99,21 @@ Progress Bars has been implemented to simplify the use of the Progress Bar, with
 {% from '@Tabler/components/progress_bar.html.twig' import progress_bars %}
 
 {{ progress_bars([
-    {current :15, max: 100},
-    {current :30, max: 100, color: 'success'},
-    {current :20, max: 100, color: 'danger'},
+    {value :15, max: 100},
+    {value :30, max: 100, color: 'success'},
+    {value :20, max: 100, color: 'danger'},
 ]) }}
 
 {{ progress_bars([
-    {current :15, max: 100},
-    {current :30, max: 100, color: 'success'},
-    {current :20, max: 100, color: 'danger'},
+    {value :15, max: 100},
+    {value :30, max: 100, color: 'success'},
+    {value :20, max: 100, color: 'danger'},
 ], {separated : true}) }}
 
 {{ progress_bars([
-    {current :15, max: 100},
-    {current :30, max: 100, color: 'success'},
-    {current :20, max: 100, color: 'danger'},
+    {value :15, max: 100},
+    {value :30, max: 100, color: 'success'},
+    {value :20, max: 100, color: 'danger'},
 ], {height: '20px'}) }}
 ```
 
