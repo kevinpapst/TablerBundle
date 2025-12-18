@@ -65,7 +65,7 @@
     {% set _extraClass  = options.extraClass ?? '' %}
     {% set _attr = options.attr ?? {} %}
 
-    {# TODO : Remove when 2.0 #}
+    {# TODO : Remove when 3.0 #}
     {% if options.backgroundColor is defined %}
         {% deprecated "Option 'backgroundColor' is deprecated, no replacement allowed. Use `extraClass` option instead!" %}
         {% set _extraClass = _extraClass ~ ' ' ~ options.backgroundColor %}
