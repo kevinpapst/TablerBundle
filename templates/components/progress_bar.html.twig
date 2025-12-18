@@ -43,7 +43,7 @@
 {% macro progress_bar(item = {}, options = {}) -%}
     {% from '@Tabler/includes/utils.html.twig' import attr_to_html %}
 
-    {# TODO : Remove when 2.0 #}
+    {# TODO : Remove when 3.0 #}
     {% if item.current is defined %}
         {% deprecated "Item 'current' value is deprecated. Use `value` instead!" %}
         {% set _value = item.current %}
