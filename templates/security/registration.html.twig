@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block login_form %}
-    {% form_theme form '@Tabler/layout/form-theme-security.html.twig' %}
+    {% form_theme form '@Tabler/layout/form_theme_security.html.twig' %}
     {{ form_start(form, {'method': 'post', 'action': path('tabler_registration_register'|tabler_route), 'attr': {'class': 'security-registration'}}) }}
     {{ form_widget(form) }}
     <div class="form-footer">

@@ -23,12 +23,16 @@ class NotificationModelTest extends TestCase
         $sut = new NotificationModel('foo', 'bar');
         $this->assertEquals('foo', $sut->getIdentifier());
         $this->assertEquals('bar', $sut->getMessage());
-        $this->assertEquals(Constants::TYPE_INFO, $sut->getType());
+
+        $this->assertNull($sut->getType());
+        $sut->setType(Constants::TYPE_SUCCESS);
+        $this->assertEquals(Constants::TYPE_SUCCESS, $sut->getType());
+        $sut->setType(null);
+        $this->assertNull($sut->getType());
 
         $this->assertNull($sut->getUrl());
         $sut->setUrl('https://tabler.io');
         $this->assertEquals('https://tabler.io', $sut->getUrl());
-
         $sut->setUrl(null);
         $this->assertNull($sut->getUrl());
 

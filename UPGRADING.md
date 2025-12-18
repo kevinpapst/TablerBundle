@@ -17,6 +17,17 @@ For now this is a "soft deprecation". In the next major release, the `url` will 
 - Added in [templates/embeds/card_nav_header.html.twig](templates/embeds/card_nav_header.html.twig)
 - Added in [templates/embeds/card_vertical_navigation.html.twig](templates/embeds/card_vertical_navigation.html.twig)
 
+### File name convention
+
+Deprecates all legacy **kebab-case** Twig template names. Please use their **snake_case** equivalents:
+- Layout horizontal: `layout-horizontal.html.twig` → `layout_horizontal.html.twig`
+- Layout vertical: `layout-vertical.html.twig` → `layout_vertical.html.twig`
+- Security cover: `security-cover.html.twig` → `security_cover.html.twig`
+- Form theme: `layout/form-theme.html.twig` → `layout/form_theme.html.twig`
+- Form theme vertical: `layout/form-theme-vertical.html.twig` → `layout/form_theme_vertical.html.twig`
+- Form theme horizontal: `layout/form-theme-horizontal.html.twig` → `layout/form_theme_horizontal.html.twig`
+- Card vertical navigation : `embeds/card-vertical-navigation.html.twig` → `embeds/card_vertical_navigation.html.twig`
+
 ### Progress bar
 
 - Item value `current` deprecated, replaced by `value`
