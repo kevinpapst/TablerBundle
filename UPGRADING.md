@@ -20,6 +20,7 @@ For now this is a "soft deprecation". In the next major release, the `url` will 
 ### File name convention
 
 Deprecates all legacy **kebab-case** Twig template names. Please use their **snake_case** equivalents:
+
 - Layout horizontal: `layout-horizontal.html.twig` → `layout_horizontal.html.twig`
 - Layout vertical: `layout-vertical.html.twig` → `layout_vertical.html.twig`
 - Security cover: `security-cover.html.twig` → `security_cover.html.twig`
@@ -38,6 +39,10 @@ Deprecates all legacy **kebab-case** Twig template names. Please use their **sna
 ### Progress bars
 
 - Deprecated the options `backgroundColor` (will be used as extraClass if still defined)
+
+### Avatar
+
+- Deprecated the old macro signature `{% macro avatar(user, size) %}` in favor of `{% macro avatar(options) %}`
 
 ### Changed HTML structure 
 
