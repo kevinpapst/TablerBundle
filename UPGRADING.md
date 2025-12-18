@@ -22,10 +22,10 @@ Deprecates all legacy **kebab-case** Twig template names. Please use their **sna
 - Layout horizontal: `layout-horizontal.html.twig` → `layout_horizontal.html.twig`
 - Layout vertical: `layout-vertical.html.twig` → `layout_vertical.html.twig`
 - Security cover: `security-cover.html.twig` → `security_cover.html.twig`
-- Form theme: `form-theme.html.twig` → `form_theme.html.twig`
-- Form theme vertical: `form-theme-vertical.html.twig` → `form_theme_vertical.html.twig`
-- Form theme horizontal: `form-theme-horizontal.html.twig` → `form_theme_horizontal.html.twig`
-- Card vertical navigation : `card-vertical-navigation.html.twig` → `card_vertical_navigation.html.twig`
+- Form theme: `layout/form-theme.html.twig` → `layout/form_theme.html.twig`
+- Form theme vertical: `layout/form-theme-vertical.html.twig` → `layout/form_theme_vertical.html.twig`
+- Form theme horizontal: `layout/form-theme-horizontal.html.twig` → `layout/form_theme_horizontal.html.twig`
+- Card vertical navigation : `embeds/card-vertical-navigation.html.twig` → `embeds/card_vertical_navigation.html.twig`
 
 ### Changed HTML structure 
 
