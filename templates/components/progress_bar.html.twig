@@ -71,7 +71,7 @@
         {% set _extraClass = _extraClass ~ ' ' ~ options.backgroundColor %}
     {% endif %}
 
-    {# TODO : Remove when 2.0 #}
+    {# TODO : Remove when 3.0 #}
     {% if options.progressSize is defined %}
         {% deprecated "Option 'progressSize' is deprecated, no replacement allowed. Use `attr.style` option instead!" %}
         {% set _extraClass = _extraClass ~ ' ' ~ options.progressSize %}
