@@ -26,7 +26,7 @@ For now this is a "soft deprecation". In the next major release, the `url` will 
 
 ### Progress bars
 
-- Removed the options `backgroundColor`
+- Deprecated the options `backgroundColor` (will be used as extraClass if still defined)
 
 ### Changed HTML structure 
 
