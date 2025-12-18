@@ -21,8 +21,8 @@ For now this is a "soft deprecation". In the next major release, the `url` will 
 
 - Item value `current` deprecated, replaced by `value`
 - Item value `color` should not be "bootstrap classes" value, but it's color directly. eg: `red`, `blue`, ...
-- Removed the options `backgroundColor`
-- Removed the options `progressSize`
+- Deprecated the options `backgroundColor` (will be used as extraClass if still defined)
+- Deprecated the options `progressSize` (will be used as extraClass if still defined)
 
 ### Progress bars
 
