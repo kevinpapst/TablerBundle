@@ -20,9 +20,6 @@ Enjoy your theme!
             <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
         {% endif %}
     {% endblock %}
-    {% if tabler_bundle.isThemeAuto() %}
-        <script>if (window.matchMedia) { document.documentElement.setAttribute('data-bs-theme', (window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'dark': 'light'); }</script>
-    {% endif %}
 </head>
 <body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }} {% block body_class %}{% endblock %}">
 {% block after_body_start %}{% endblock %}

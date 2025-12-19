@@ -1,3 +1,6 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
 <meta name="robots" content="noindex,nofollow">
+{% if tabler_bundle.isThemeAuto() %}
+    <script>if (window.matchMedia) { document.documentElement.setAttribute('data-bs-theme', (window.matchMedia("(prefers-color-scheme: dark)").matches) ? 'dark': 'light'); }</script>
+{% endif %}
