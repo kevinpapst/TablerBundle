@@ -20,12 +20,12 @@
     {% set _color = options.color ?? '' %}
     {% set _size = options.size ?? '' %}
     {% set _badge = options.badge ?? {} %}
-    {% set _brand = options.brand|default(false) is same as true %}
-    {% set _upload = options.upload|default(false) is same as true %}
+    {% set _brand = (options.brand ?? false) is same as true %}
+    {% set _upload = (options.upload ?? false) is same as true %}
     {# @var _rounded bool|int #}
-    {% set _rounded = options.rounded|default(false) %}
-    {% set _circle = options.circle|default(false) is same as true %}
-    {% set _link = options.link|default(options.href is defined) is same as true %}
+    {% set _rounded = (options.rounded ?? false) %}
+    {% set _circle = (options.circle ?? false) is same as true %}
+    {% set _link = (options.link ?? options.href is defined) is same as true %}
     {% set _href = options.href ?? '' %}
     {% set _extraClass = options.extraClass ?? '' %}
     {% set _attr = options.attr ?? {} %}

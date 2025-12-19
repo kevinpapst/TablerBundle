@@ -14,21 +14,21 @@ See avatar documentation at https://preview.tabler.io/avatars.html
 
 ### Options
 
-| Parameter  | Description                                                                                         |   Type   |    Default     |
-|:----------:|:----------------------------------------------------------------------------------------------------|:--------:|:--------------:|
-|  content   | Inner HTML content of the avatar (SVG, initials, icon, etc.), rendered raw                          |  string  | _empty string_ |
-|  imageUrl  | Image URL for background avatar                                                                     |  string  | _empty string_ |
-|   color    | Background color using Tabler color classes (`blue`, `red`, `primary`, `yellow-lt`, etc.)           |  string  | _empty string_ |
-|    size    | Avatar size (`xs`, `sm`, `md`, `lg`, `xl`, etc.)                                                    |  string  | _empty string_ |
-|  rounded   | Enables rounded corners — `true` = `rounded`, or a number for `rounded-*` classes                   | bool/int |    `false`     |
-|   circle   | Shortcut for `rounded-circle`                                                                       |   bool   |    `false`     |
-|   brand    | Shortcut for `avatar-brand`                                                                         |   bool   |    `false`     |
-|   upload   | Shortcut for `avatar-upload`                                                                        |   bool   |    `false`     |
-|    link    | Set the avatar element to an `<a>`                                                                  |   bool   |    `false`     |
-|    href    | Add `href` tag                                                                                      |  string  | _empty string_ |
-|   badge    | A nested badge options object to render a [components badge](components-badge.md) inside the avatar |  object  |      `{}`      |
-| extraClass | Additional CSS classes                                                                              |  string  | _empty string_ |
-|    attr    | Raw HTML attributes (`data-*`, `aria-*`, etc.)                                                      |  object  |      `{}`      |
+| Parameter  | Description                                                                                         |   Type   |           Default            |
+|:----------:|:----------------------------------------------------------------------------------------------------|:--------:|:----------------------------:|
+|  content   | Inner HTML content of the avatar (SVG, initials, icon, etc.), rendered raw                          |  string  |        _empty string_        |
+|  imageUrl  | Image URL for background avatar                                                                     |  string  |        _empty string_        |
+|   color    | Background color using Tabler color classes (`blue`, `red`, `primary`, `yellow-lt`, etc.)           |  string  |        _empty string_        |
+|    size    | Avatar size (`xs`, `sm`, `md`, `lg`, `xl`, etc.)                                                    |  string  |        _empty string_        |
+|  rounded   | Enables rounded corners — `true` = `rounded`, or a number for `rounded-*` classes                   | bool/int |           `false`            |
+|   circle   | Shortcut for `rounded-circle`                                                                       |   bool   |           `false`            |
+|   brand    | Shortcut for `avatar-brand`                                                                         |   bool   |           `false`            |
+|   upload   | Shortcut for `avatar-upload`                                                                        |   bool   |           `false`            |
+|    link    | Set the avatar element to an `<a>`                                                                  |   bool   | `false` if `href` is not set |
+|    href    | Add `href` tag                                                                                      |  string  |        _empty string_        |
+|   badge    | A nested badge options object to render a [components badge](components-badge.md) inside the avatar |  object  |             `{}`             |
+| extraClass | Additional CSS classes                                                                              |  string  |        _empty string_        |
+|    attr    | Raw HTML attributes (`data-*`, `aria-*`, etc.)                                                      |  object  |             `{}`             |
 
 ### Usage
 

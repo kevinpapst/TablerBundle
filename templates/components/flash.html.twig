@@ -6,9 +6,9 @@
     {{ alert({
         type: type,
         title: message|trans({}, domain|default('TablerBundle')),
-        dismissible: close|default(false),
+        dismissible: close ?? false,
         important: true,
-        raw: use_raw|default(false),
+        raw: use_raw ?? false,
         class: class|default('')
     }) }}
 {% endmacro %}
