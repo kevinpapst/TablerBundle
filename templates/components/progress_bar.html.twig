@@ -2,7 +2,7 @@
     {% from '@Tabler/includes/utils.html.twig' import attr_to_html %}
 
     {% set _height = options.height ?? '' %}
-    {% set _separated = options.separated|default(false) is same as true %}
+    {% set _separated = (options.separated ?? false) is same as true %}
     {% set _style = options.style ?? '' %}
     {% set _extraClass  = options.extraClass ?? '' %}
     {% set _attr = options.attr ?? {} %}
@@ -55,9 +55,9 @@
     {% set _min = item.min ?? 0 %}
     {% set _indeterminate = (item.indeterminate ?? (_value == _max and _min == _max)) is same as true %}
     {% set percent = _indeterminate or ((_max - _min) == 0) ? 0 : (((_value - _min) * 100) / (_max - _min)) %}
-    {% set _autoLabel = item.autoLabel|default(false) is same as true %}
+    {% set _autoLabel = (item.autoLabel ?? false) is same as true %}
     {% set _label = item.label ?? (_autoLabel and not _indeterminate ? percent ~ '%' : '') %}
-    {% set _multiple  = options.multiple|default(false) is same as true %}
+    {% set _multiple  = (options.multiple ?? false) is same as true %}
     {% set _itemStyle = item.style ?? '' %}
 
     {% set _height = options.height ?? '' %}
@@ -101,9 +101,9 @@
         {{ attr_to_html(_attr) }}
     >
         {# Progress bar #}
-        {% set _striped = item.striped|default(false) is same as true %}
-        {% set _animated = item.animated|default(false) is same as true %}
-        {% set _labelVisible = item.labelVisible|default(true) is same as true %}
+        {% set _striped = (item.striped ?? false) is same as true %}
+        {% set _animated = (item.animated ?? false) is same as true %}
+        {% set _labelVisible = (item.labelVisible ?? true) is same as true %}
         {% set _color = item.color ?? '' %}
         {% set _itemStyle = item.style ?? '' %}
         {% set _extraClass  = item.extraClass ?? '' %}

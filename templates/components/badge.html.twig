@@ -17,16 +17,16 @@
     {# Options #}
     {% set _content = options.content ?? '' %}
     {% set _color = options.color ?? '' %}
-    {% set _outline = options.outline|default(false) is same as true %}
-    {% set _pill = options.pill|default(false) is same as true %}
-    {% set _dot = options.dot|default(false) is same as true %}
-    {% set _notification = options.notification|default(false) is same as true %}
-    {% set _blink = options.blink|default(false) is same as true %}
+    {% set _outline = (options.outline ?? false) is same as true %}
+    {% set _pill = (options.pill ?? false) is same as true %}
+    {% set _dot = (options.dot ?? false) is same as true %}
+    {% set _notification = (options.notification ?? false) is same as true %}
+    {% set _blink = (options.blink ?? false) is same as true %}
     {% set _size = options.size ?? '' %}
     {% set _href = options.href ?? '' %}
-    {% set _iconOnly = options.iconOnly|default(false) is same as true %}
+    {% set _iconOnly = (options.iconOnly ?? false) is same as true %}
     {% set _extraClass = options.extraClass ?? '' %}
-    {% set _raw = options.raw|default(false) is same as true %}
+    {% set _raw = (options.raw ?? false) is same as true %}
     {% set _attr = options.attr ?? {} %}
 
     {% set classes = ['badge'] %}
