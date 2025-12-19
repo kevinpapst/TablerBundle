@@ -69,9 +69,9 @@ If you relied on it, you can add this simple workaround:
 {% endblock %}
 ```
 
-## New theme options
+### New theme options
 
-New config options available (also available as getter/setter in ContextHelper):
+New config options available, also as getter/setter in ContextHelper:
 
 ```yaml
 tabler:
