@@ -1,6 +1,94 @@
-{% macro avatar(user, size) %}
-    {% import "@Tabler/components/avatar_image.html.twig" as macro %}
-    <span class="avatar avatar-{{ size }}">
-        {{ macro.avatar_image(user) }}
-    </span>
-{% endmacro %}
+{% macro avatar(options_or_user, size) -%}
+    {# TODO : Replace the macro signature with this one when 2.0 #}
+    {# {% macro avatar(options = {}) %} #}
+    {% import '@Tabler/includes/utils.html.twig' as utils %}
+
+    {# Backward compatibility: detect old signature #}
+    {% if options_or_user is iterable %}
+        {% set options = options_or_user %}
+    {% else %}
+        {% deprecated "Passing multiple parameters to 'avatar()' Tabler macro is deprecated, use options object syntax." %}
+        {% import "@Tabler/components/avatar_image.html.twig" as macro %}
+        {% set options = {
+            content: macro.avatar_image(options_or_user),
+            size: size,
+        } %}
+    {% endif %}
+
+    {% set _content = options.content ?? '' %}
+    {% set _imageUrl = options.imageUrl ?? '' %}
+    {% set _color = options.color ?? '' %}
+    {% set _size = options.size ?? '' %}
+    {% set _badge = options.badge ?? {} %}
+    {% set _brand = options.brand|default(false) is same as true %}
+    {% set _upload = options.upload|default(false) is same as true %}
+    {# @var _rounded bool|int #}
+    {% set _rounded = options.rounded|default(false) %}
+    {% set _circle = options.circle|default(false) is same as true %}
+    {% set _link = options.link|default(options.href is defined) is same as true %}
+    {% set _href = options.href ?? '' %}
+    {% set _extraClass = options.extraClass ?? '' %}
+    {% set _attr = options.attr ?? {} %}
+
+    {% set classes = ['avatar'] %}
+
+    {# color #}
+    {% if _color is not empty %}
+        {% set classes = classes|merge(['bg-' ~ _color]) %}
+    {% endif %}
+
+    {# size #}
+    {% if _size is not empty %}
+        {% set classes = classes|merge(['avatar-' ~ _size]) %}
+    {% endif %}
+
+    {# brand #}
+    {% if _brand is same as true %}
+        {% set classes = classes|merge(['avatar-brand']) %}
+    {% endif %}
+
+    {# upload #}
+    {% if _upload is same as true %}
+        {% set classes = classes|merge(['avatar-upload']) %}
+    {% endif %}
+
+    {# rounded #}
+    {% if _rounded is not same as false %}
+        {% if _rounded is same as true %}
+            {% set classes = classes|merge(['rounded']) %}
+        {% else %}
+            {% set classes = classes|merge(['rounded-' ~ _rounded]) %}
+        {% endif %}
+    {% endif %}
+
+    {# circle #}
+    {% if _circle is not empty %}
+        {% set classes = classes|merge(['rounded-circle']) %}
+    {% endif %}
+
+    {% if _extraClass is not empty %}
+        {% set classes = classes|merge([_extraClass]) %}
+    {% endif %}
+
+    {% set classesStr = classes|join(' ') %}
+
+    {% if _link %}
+        {% set type = 'a' %}
+    {% else %}
+        {% set type = 'span' %}
+    {% endif %}
+
+    <{{ type|raw }}
+        class="{{ classesStr }}"
+        {% if _imageUrl %}style="background-image: url({{ _imageUrl }})"{% endif %}
+        {% if _href %}href="{{ _href }}"{% endif %}
+        {{ utils.attr_to_html(_attr) }}
+    >
+        {{ _content|raw }}
+
+        {% if _badge is not empty -%}
+            {% from '@Tabler/components/badge.html.twig' import badge %}
+            {{ badge(_badge) }}
+        {%- endif %}
+    </{{ type|raw }}>
+{%- endmacro %}

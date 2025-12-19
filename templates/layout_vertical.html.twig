@@ -1,0 +1,165 @@
+{#
+Use this as your new starter template page, use it to start your new project,
+by adding this code to your own base template:
+
+{% extends '@Tabler/layout_vertical.html.twig' %}
+
+Enjoy your theme!
+#}
+<!doctype html{% block html_start %}{% endblock %}>
+<html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %} data-bs-theme="{{ tabler_theme() }}" data-bs-theme-base="{{ tabler_bundle.getThemeBase() }}" data-bs-theme-radius="{{ tabler_bundle.getThemeRadius() }}" data-bs-theme-primary="{{ tabler_bundle.getThemePrimary() }}">
+<head>
+    {% block head %}
+        {% include '@Tabler/includes/html_head.html.twig' %}
+    {% endblock %}
+    <title>{% block title %}{{ block('page_title') }}{% endblock %}</title>
+    {% block stylesheets %}
+        {% if tabler_bundle.isRightToLeft() %}
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}">
+        {% else %}
+            <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler.css') }}">
+        {% endif %}
+    {% endblock %}
+</head>
+<body{% block body_start %}{% endblock %} class="{{ 'antialiased'|tabler_body }} {% block body_class %}{% endblock %}">
+{% block after_body_start %}{% endblock %}
+<div class="page">
+    {% set navbarStartContent = block('navbar_start') %}
+    {% set navbarNotificationsContent = block('navbar_notifications') %}
+    {% set navbarUserContent = block('navbar_user') %}
+    {% set navbarEndContent = block('navbar_end') %}
+
+    {# *** Layout type changes *** #}
+    {% block navbar %}
+        <aside id="{% block sidebar_id %}{% endblock %}" class="navbar navbar-vertical navbar-expand-lg"{% if tabler_bundle.isNavbarDark() %} data-bs-theme="dark"{% endif %}>
+            <div class="{{ ''|tabler_container }}">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% block app_logo %}
+                    <h1 class="{% block navbar_brand_classes %}navbar-brand {% block navbar_brand_class %}navbar-brand-autodark{% endblock %}{% endblock %}">
+                        {% include '@Tabler/includes/logo.html.twig' %}
+                    </h1>
+                {% endblock %}
+                <div class="navbar-nav flex-row d-lg-none">
+                    {{ _self.navbar(navbarStartContent, navbarNotificationsContent, navbarUserContent, navbarEndContent) }}
+                </div>
+                <div id="navbar-menu" class="collapse navbar-collapse">
+                    {% block navbar_menu_start %}{% endblock %}
+                    {% include '@Tabler/includes/menu.html.twig' with {layout_type: 'vertical', navbar_class : 'pt-lg-3'} %}
+                    {% block navbar_menu_end %}{% endblock %}
+                </div>
+            </div>
+        </aside>
+    {% endblock %}
+
+    {% block header %}
+        {% if not tabler_bundle.isCondensedNavbar() %}
+            <header id="{% block header_id %}{% endblock %}" class="navbar navbar-expand-md d-none d-lg-flex d-print-none">
+                <div class="{{ ''|tabler_container }}">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="navbar-nav flex-row order-md-last">
+                        {{ _self.navbar(navbarStartContent, navbarNotificationsContent, navbarUserContent, navbarEndContent) }}
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navbar-menu">
+                        {% block navbar_search %}
+                            {% include '@Tabler/includes/navbar_search.html.twig' %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </header>
+        {% endif %}
+    {% endblock %}
+    {# *************************** #}
+
+    {% block page_wrapper %}
+        <div id="{% block page_wrapper_id %}{% endblock %}" class="page-wrapper {% block page_wrapper_class %}{% endblock %}">
+            {% block page_header %}
+                <div id="{% block page_header_id %}{% endblock %}" class="page-header d-print-none {% block page_header_class %}{% endblock %}">
+                    <div class="{{ ''|tabler_container }}">
+                        <div class="row align-items-center">
+                            <div class="col">
+                            {% block page_intro %}
+                                {% block breadcrumb %}
+                                    <div class="page-pretitle">
+                                        {% block page_pretitle %}Overview{% endblock %}
+                                    </div>
+                                {% endblock %}
+                                <h2 class="page-title">
+                                    {% block page_title %}Dashboard{% endblock %}
+                                </h2>
+                                {% block page_subtitle %}
+                                    <div class="text-body-secondary mt-1">
+                                        1-10 of 100
+                                    </div>
+                                {% endblock %}
+                            {% endblock %}
+                            </div>
+                            <div class="{% block page_actions_class %}col-auto ms-auto d-print-none{% endblock %}">
+                                {% block page_actions %}
+                                    <div class="btn-list">
+                                        <a href="#" class="btn btn-white">
+                                            New view
+                                        </a>
+                                        <a href="#" class="btn btn-primary d-none d-sm-inline-block">
+                                            Create new report
+                                        </a>
+                                    </div>
+                                {% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+
+            {% block page_body %}
+                <div class="page-body">
+                    <div class="{{ ''|tabler_container }}">
+                        {% block page_content_before %}{% endblock %}
+                        {% block page_content_start %}{{ include('@Tabler/includes/flash_messages.html.twig') }}{% endblock %}
+                        {% block page_content %}{% endblock %}
+                        {% block page_content_end %}{% endblock %}
+                        {% block page_content_after %}{% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+
+            {% block footer %}
+                <footer id="{% block footer_id %}{% endblock %}" class="footer footer-transparent d-print-none {% block footer_class %}{% endblock %}">
+                    <div class="{{ ''|tabler_container }}">
+                        {% include '@Tabler/includes/footer.html.twig' %}
+                    </div>
+                </footer>
+            {% endblock %}
+        </div>
+    {% endblock %}
+</div>
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/tabler/tabler.js') }}"></script>
+{% endblock %}
+</body>
+</html>
+
+{% macro navbar(navbar_start, navbar_notifications, navbar_user, navbar_end) %}
+    {% block navbar_start %}{{ (navbar_start ?? '') | raw }}{% endblock %}
+    {% block navbar_notifications %}
+        {% if navbar_notifications is defined %}
+            {{ navbar_notifications|raw }}
+        {% else %}
+            {% include '@Tabler/includes/navbar_notifications.html.twig' %}
+        {% endif %}
+    {% endblock %}
+    {% block navbar_user %}
+        {% if navbar_user is defined %}
+            {{ navbar_user|raw }}
+        {% else %}
+            {% include '@Tabler/includes/navbar_user.html.twig' %}
+        {% endif %}
+    {% endblock %}
+    {% block navbar_end %}{{ (navbar_end ?? '') | raw }}{% endblock %}
+{% endmacro %}

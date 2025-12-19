@@ -1,9 +1,9 @@
 # Form theme
 
 This bundle does ship three form-themes:
-- [templates/layout/form-theme.html.twig](/templates/layout/form-theme.html.twig)
-- [templates/layout/form-theme-horizontal.html.twig](/templates/layout/form-theme-horizontal.html.twig)
-- [templates/layout/form-theme-security.html.twig](/templates/layout/form-theme-security.html.twig)
+- [templates/layout/form_theme.html.twig](/templates/layout/form_theme.html.twig)
+- [templates/layout/form_theme_horizontal.html.twig](/templates/layout/form_theme_horizontal.html.twig)
+- [templates/layout/form_theme_security.html.twig](/templates/layout/form_theme_security.html.twig)
 
 None of these themes is automatically loaded, you have to use it manually.
 
@@ -14,13 +14,13 @@ To use the horizontal theme everywhere in your application edit `config/packages
 ```yaml
 twig:
     form_themes:
-        - '@Tabler/layout/form-theme.html.twig'
+        - '@Tabler/layout/form_theme.html.twig'
 ```
 
 To use it only for one form, change your twig file:
 
 ```twig
-    {% form_theme form '@Tabler/layout/form-theme.html.twig' %}
+    {% form_theme form '@Tabler/layout/form_theme.html.twig' %}
     {{ form_start(form) }}
 ```
 
@@ -34,13 +34,13 @@ To use the horizontal theme everywhere in your application edit `config/packages
 ```yaml
 twig:
     form_themes:
-        - '@Tabler/layout/form-theme-horizontal.html.twig'
+        - '@Tabler/layout/form_theme_horizontal.html.twig'
 ```
 
 To use it only for one form, change your twig file:
 
 ```twig
-    {% form_theme form '@Tabler/layout/form-theme-horizontal.html.twig' %}
+    {% form_theme form '@Tabler/layout/form_theme_horizontal.html.twig' %}
     {{ form_start(form) }}
 ```
 
@@ -53,7 +53,7 @@ The security theme is ONLY meant for the registration/login pages.
 Please set it manually if you customize these pages:
 
 ```twig
-    {% form_theme form '@Tabler/layout/form-theme-security.html.twig' %}
+    {% form_theme form '@Tabler/layout/form_theme_security.html.twig' %}
 ```
 
 ## Icons in input-groups

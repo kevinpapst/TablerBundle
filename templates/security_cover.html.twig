@@ -1,0 +1,20 @@
+{% extends '@Tabler/security.html.twig' %}
+
+{% block body_login_border %}{% endblock %}
+{% block page_classes %}row g-0 flex-fill{% endblock %}
+{% block container_before %}
+<div class="col-12 col-lg-6 col-xl-4 {% block login_border %}border-top-wide border-primary{% endblock %} d-flex flex-column justify-content-center">
+    {% endblock %}
+
+    {% block container_classes %}container container-tight my-5 px-lg-5{% endblock %}
+    {% block card_classes %}{% endblock %}
+
+    {% block container_after %}
+</div>
+
+<div class="col-12 col-lg-6 col-xl-8 d-none d-lg-block">
+    {% block before_cover %}{% endblock %}
+    <div class="{% block cover_classes %}bg-cover h-100 min-vh-100{% endblock %}" style="{% block cover_style %}background-image: url({% block cover_url %}{{ tabler_bundle.getSecurityCoverUrl() }}{% endblock %}){% endblock %}"></div>
+    {% block after_cover %}{% endblock %}
+</div>
+{% endblock %}
