@@ -85,8 +85,6 @@
                 {% for action in actions %}
                     {% set _title   = action.title ?? null %}
                     {% if action.url is defined %}
-                        {# TODO : Uncomment the next line in the next major release #}
-                        {#{% deprecated "the option 'url' is deprecated use 'href' instead" %}#}
                         {% set _href = action.url %}
                     {% else %}
                         {% set _href = action.href ?? '#' %}

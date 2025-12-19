@@ -8,9 +8,10 @@
 - Removed `ContextHelper::setAssetVersion()`/`ContextHelper::getAssetVersion()` 
 - Removed the options `tabler.options.asset_version`
 
-### Replaced `url` option with `href` for a unified API
+### Added `url` as `href` replacement for a unified API
 
-For now this is a "soft deprecation". In the next major release, the `url` will be removed.
+The old parameter name 'url' is not deprecated; the recommended parameter name is now 'href'.
+Due to the potential scale of usage, we have made this an opt-in feature.
 
 - Added in [templates/components/button.html.twig](templates/components/button.html.twig)
 - Added in [templates/components/buttons.html.twig](templates/components/buttons.html.twig)
@@ -31,12 +32,16 @@ Deprecates all legacy **kebab-case** Twig template names. Please use their **sna
 
 ### Progress bar
 
+In macro `progress_bar()`:
+
 - Item value `current` deprecated, replaced by `value`
-- Item value `color` should not be "bootstrap classes" value, but it's color directly. eg: `red`, `blue`, ...
+- Item value `color` should not be "bootstrap classes" value, but it's color directly like `red`, `blue`, ...
 - Deprecated the options `backgroundColor` (will be used as extraClass if still defined)
-- Deprecated the options `progressSize` (will be used as extraClass if still defined)
+- Deprecated the options `progressSize`  (will be used as extraClass if still defined)
 
 ### Progress bars
+
+In macro `progress_bars()`:
 
 - Deprecated the options `backgroundColor` (will be used as extraClass if still defined)
 
