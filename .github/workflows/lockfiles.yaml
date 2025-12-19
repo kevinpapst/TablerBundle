@@ -1,0 +1,19 @@
+name: Verify supply-chain files
+on:
+    pull_request_target: null
+    push:
+        branches:
+            - main
+permissions:
+    pull-requests: read
+jobs:
+    lockfiles:
+        runs-on: ubuntu-latest
+        name: Verify supply-chain integrity
+        steps:
+            - name: Prevent file change
+              uses: xalvarez/prevent-file-change-action@v3
+              with:
+                  githubToken: ${{ secrets.GITHUB_TOKEN }}
+                  pattern: ^package.json$|^composer.json$|.*\.lock$|^\.github\/.*$
+                  trustedAuthors: kevinpapst, dependabot, cavasinf
