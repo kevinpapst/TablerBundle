@@ -4,7 +4,7 @@
     {% block head %}
         {% include '@Tabler/includes/html_head.html.twig' %}
     {% endblock %}
-    <title>{% block title %}Log in{% endblock %}</title>
+    <title>{% block title %}{{ 'Sign In'|trans({}, 'TablerBundle') }}{% endblock %}</title>
     {% block stylesheets %}
         {% if tabler_bundle.isRightToLeft() %}
             <link rel="stylesheet" href="{{ asset('bundles/tabler/tabler-rtl.css') }}">
