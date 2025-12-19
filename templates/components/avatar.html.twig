@@ -25,7 +25,7 @@
     {# @var _rounded bool|int #}
     {% set _rounded = (options.rounded ?? false) %}
     {% set _circle = (options.circle ?? false) is same as true %}
-    {% set _link = (options.link ?? options.href is defined) is same as true %}
+    {% set _link = (options.link ?? (options.href is defined)) is same as true %}
     {% set _href = options.href ?? '' %}
     {% set _extraClass = options.extraClass ?? '' %}
     {% set _attr = options.attr ?? {} %}
