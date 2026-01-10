@@ -166,6 +166,14 @@
         <source>Actions</source>
         <target state="translated">Akcje</target>
       </trans-unit>
+      <trans-unit id="auqmpT0" resname="Show password" xml:space="preserve">
+        <source>Show password</source>
+        <target state="translated">Pokaż hasło</target>
+      </trans-unit>
+      <trans-unit id="pgpWxYS" resname="Hide password" xml:space="preserve">
+        <source>Hide password</source>
+        <target state="translated">Ukryj hasło</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
