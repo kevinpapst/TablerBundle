@@ -1,14 +1,16 @@
 {# Options #}
-{% set _id                  = id|default(null) %}
-{% set _boxtype             = boxtype ?? null %}
-{% set _status_position     = status_position ?? 'top' %}
-{% set _fullsize            = fullsize ?? false %}
-{% set _margin_bottom       = margin_bottom ?? 3 %}
-{% set _collapsed           = collapsed ?? false %}
-{% set _collapsible         = collapsible ?? _collapsed %}
-{% set _footer_collapsible  = footer_collapsible ?? true %}
-{% set _use_footer          = use_footer ?? false %}
-{% set _use_body            = use_body ?? true %}
+{% set _id                   = id|default(null) %}
+{% set _boxtype              = boxtype ?? null %}
+{% set _status_position      = status_position ?? 'top' %}
+{% set _fullsize             = fullsize ?? false %}
+{% set _margin_bottom        = margin_bottom ?? 3 %}
+{% set _collapsed            = collapsed ?? false %}
+{% set _collapsible          = collapsible ?? _collapsed %}
+{% set _bodyScrollable       = bodyScrollable ?? false %}
+{% set _bodyScrollableShadow = bodyScrollableShadow ?? false %}
+{% set _footer_collapsible   = footer_collapsible ?? true %}
+{% set _use_footer           = use_footer ?? false %}
+{% set _use_body             = use_body ?? true %}
 
 {# Common blocks : Declared this way to use `is not empty` and prevent the `has already been rendered` form field twig error #}
 {% set header %}{% block box_header %}{% endblock %}{% endset %}
@@ -61,7 +63,26 @@
     {# Body #}
     {% block box_body_before %}{% endblock %}
     {% if _hasBody %}
-        <div class="{% block box_body_classes %}card-body {% block box_body_class %}{% endblock %}{% endblock %} {% if _fullsize %}p-0{% endif %} {% if _collapsible %} {{ _collapsible_class ~ (_collapsed ? ' collapse' : ' show') }} {% endif %}">
+
+        {% set bodyClasses = ['card-body'] %}
+        {# fullsize #}
+        {% if _fullsize %}
+            {% set bodyClasses = bodyClasses|merge(['p-0']) %}
+        {% endif %}
+        {# collapsible #}
+        {% if _collapsible %}
+            {% set bodyClasses = bodyClasses|merge([_collapsible_class ~ (_collapsed ? ' collapse' : ' show')]) %}
+        {% endif %}
+        {# bodyScrollable #}
+        {% if _bodyScrollable %}
+            {% set bodyClasses = bodyClasses|merge(['card-body-scrollable']) %}
+        {% endif %}
+        {# bodyScrollableShadow #}
+        {% if _bodyScrollableShadow %}
+            {% set bodyClasses = bodyClasses|merge(['card-body-scrollable-shadow']) %}
+        {% endif %}
+
+        <div class="{% block box_body_classes %}{{ bodyClasses|join(' ')}} {% block box_body_class %}{% endblock %}{% endblock %}">
             {{ body|raw }}
         </div>
     {% endif %}
