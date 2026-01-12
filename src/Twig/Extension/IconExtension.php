@@ -13,7 +13,6 @@ class IconExtension extends AbstractExtension
     {
         return [
             new TwigFilter('tabler_icon', [IconRuntime::class, 'icon']),
-            new TwigFilter('tabler_icon_new', [IconRuntime::class, 'icon']),
         ];
     }
 
@@ -21,7 +20,6 @@ class IconExtension extends AbstractExtension
     {
         return [
             new TwigFunction('tabler_icon', [IconRuntime::class, 'createIcon'], ['is_safe' => ['html']]),
-            new TwigFunction('tabler_icon_new', [IconRuntime::class, 'createIconNew'], ['is_safe' => ['html']]),
         ];
     }
 }
