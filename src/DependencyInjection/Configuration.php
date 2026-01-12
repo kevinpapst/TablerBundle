@@ -32,6 +32,7 @@ class Configuration implements ConfigurationInterface
                 ->append($this->getKnpMenuConfig())
                 ->append($this->getRouteAliasesConfig())
                 ->arrayNode('icons')
+                    ->setDeprecated('kevinpapst/TablerBundle', '3.0.0')
                     ->defaultValue([])
                     ->scalarPrototype()
                 ->end()
