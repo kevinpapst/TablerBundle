@@ -6,15 +6,15 @@
     {# TODO : Remove when 3.0 #}
     {% if options.menuArrowEnd is defined %}
         {% deprecated "Using `menuArrowEnd` option option is deprecated, set option to true instead." %}
-        {% set _menuAlignementEnd = options.menuArrowEnd %}
+        {% set _menuAlignmentEnd = options.menuArrowEnd is same as true %}
     {% else %}
-        {% set _menuAlignementEnd = options.menuAlignementEnd ?? false %}
+        {% set _menuAlignmentEnd = (options.menuAlignmentEnd ?? false) is same as true %}
     {% endif %}
 
     {% set _menuArrow = options.menuArrow ?? false %}
     {% set _extraClass = options.extraClass ?? '' %}
 
-    <div class="dropdown-menu {% if _menuArrow %}dropdown-menu-arrow{% endif %} {% if _menuAlignementEnd %}dropdown-menu-end{% endif %} {{ _extraClass }}">
+    <div class="dropdown-menu {% if _menuArrow %}dropdown-menu-arrow{% endif %} {% if _menuAlignmentEnd %}dropdown-menu-end{% endif %} {{ _extraClass }}">
         {% for item in items %}
 
             {# Item #}
