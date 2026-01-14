@@ -70,7 +70,6 @@
         {% if _collapsible %}
             {% set bodyClasses = bodyClasses|merge([_collapsible_class ~ (_collapsed ? ' collapse' : ' show')]) %}
         {% endif %}
-        {# bodyScrollable #}
         {% if _bodyScrollable %}
             {% set bodyClasses = bodyClasses|merge(['card-body-scrollable']) %}
         {% endif %}
