@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="ko" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
       <trans-unit id="rtYKRSj" resname="http_error.title">
         <source>http_error.title</source>
-        <target state="translated">오류 </target>
+        <target state="translated">오류</target>
       </trans-unit>
       <trans-unit id="e3w.2Rf" resname="http_error.description">
         <source>http_error.description</source>
@@ -12,11 +12,7 @@
       </trans-unit>
       <trans-unit id="ru5FEGk" resname="http_error.suggestion">
         <source>http_error.suggestion</source>
-        <target state="translated">
-                    예상치 못했던 오류 발생했습니다, 다시 시도하십시오.
-                    아마도 버그가 발견되었을 수 있습니다, 다시 시도한 이후에도 문제가 발생한다면,
-                    관리자에게 연락을 취하십시오.
-                </target>
+        <target state="translated">예상치 못했던 오류 발생했습니다, 다시 시도하십시오. 아마도 버그가 발견되었을 수 있습니다, 다시 시도한 이후에도 문제가 발생한다면, 관리자에게 연락을 취하십시오.</target>
       </trans-unit>
       <trans-unit id="_W1eNz2" resname="http_error_404.description">
         <source>http_error_404.description</source>
@@ -24,10 +20,7 @@
       </trans-unit>
       <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
         <source>http_error_404.suggestion</source>
-        <target state="translated">
-                    찾고 계신 페이지를 찾을 수 없습니다.
-                    그러나 대시 보드로 돌아가서 다시 시작할 수 있습니다.
-                </target>
+        <target state="translated">찾고 계신 페이지를 찾을 수 없습니다. 그러나 대시 보드로 돌아가서 다시 시작할 수 있습니다.</target>
       </trans-unit>
       <trans-unit id="Qn5rwdU" resname="http_error_403.description">
         <source>http_error_403.description</source>
@@ -35,10 +28,31 @@
       </trans-unit>
       <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
         <source>http_error_403.suggestion</source>
-        <target state="translated">
-                    죄송하지만, 이 페이지를 볼 수 있는 권한이 없습니다.
-                    이것이 오류라고 생각되면 관리자에게 문의하십시오.
-                </target>
+        <target state="translated">죄송하지만, 이 페이지를 볼 수 있는 권한이 없습니다. 이것이 오류라고 생각되면 관리자에게 문의하십시오.</target>
+      </trans-unit>
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation" xml:space="preserve">
+        <source>Toggle navigation</source>
+        <target state="translated">내비게이션 활성/비활성화</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve">
+        <source>Toggle visibility</source>
+        <target state="translated">가시성 활성/비활성화</target>
+      </trans-unit>
+      <trans-unit id="KpL2_.m" resname="Remember Me" xml:space="preserve">
+        <source>Remember Me</source>
+        <target state="translated">로그인 정보 기억하기</target>
+      </trans-unit>
+      <trans-unit id="8FGIkAR" resname="Sign in to start your session" xml:space="preserve" approved="no">
+        <source>Login</source>
+        <target state="translated">로그인</target>
+      </trans-unit>
+      <trans-unit id="vMC8yRQ" resname="Sign In" xml:space="preserve" approved="no">
+        <source>Log in</source>
+        <target state="translated">로그인하기</target>
+      </trans-unit>
+      <trans-unit id="SPDT05f" resname="Sign out" xml:space="preserve" approved="no">
+        <source>Log out</source>
+        <target state="translated">로그아웃</target>
       </trans-unit>
     </body>
   </file>
