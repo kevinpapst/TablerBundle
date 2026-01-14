@@ -36,11 +36,11 @@ See Tabler documentation at https://preview.tabler.io/dropdowns.html
 | bodyExtraClass  | Add extra class to the body      | `string`  | _empty string_ |
 
 #### Options
-|  Parameter   | Description                                |   Type    |    Default     |
-|:------------:|--------------------------------------------|:---------:|:--------------:|
-|  menuArrow   | Add the Arrow to the dropdown              | `boolean` |    `false`     |                                        
-| menuArrowEnd | Place the arrow to the end of the dropdown | `boolean` |    `false`     |     
-|  extraClass  | Add extra classes on dropdown container    | `string`  | _empty string_ |      
+|    Parameter     | Description                             |   Type    |    Default     |
+|:----------------:|-----------------------------------------|:---------:|:--------------:|
+| menuAlignmentEnd | Align to end the dropdown menu          | `boolean` |    `false`     |     
+|    menuArrow     | Add the Arrow to the dropdown           | `boolean` |    `false`     |                                        
+|    extraClass    | Add extra classes on dropdown container | `string`  | _empty string_ |      
 
 ### Usage
 
@@ -136,7 +136,7 @@ See Tabler documentation at https://preview.tabler.io/dropdowns.html
         title: 'Logout',
         icon: 'back',
     },
-], {extraClass : 'bg-dark text-white', menuArrow: true, menuArrowEnd: true}) }}
+], {extraClass : 'bg-dark text-white', menuArrow: true, menuAlignmentEnd: true}) }}
 ```
 
 ## Next steps

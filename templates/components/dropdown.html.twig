@@ -3,11 +3,18 @@
     {% from '@Tabler/components/badge.html.twig' import badge as badgeMacro %}
 
     {# Options #}
+    {# TODO : Remove when 3.0 #}
+    {% if options.menuArrowEnd is defined %}
+        {% deprecated "Using `menuArrowEnd` option is deprecated, use `menuAlignmentEnd` instead." %}
+        {% set _menuAlignmentEnd = options.menuArrowEnd is same as true %}
+    {% else %}
+        {% set _menuAlignmentEnd = (options.menuAlignmentEnd ?? false) is same as true %}
+    {% endif %}
+
     {% set _menuArrow = options.menuArrow ?? false %}
-    {% set _menuArrowEnd = options.menuArrowEnd ?? false %}
     {% set _extraClass = options.extraClass ?? '' %}
 
-    <div class="dropdown-menu {% if _menuArrow %}dropdown-menu-arrow {% if _menuArrowEnd %}dropdown-menu-end{% endif %}{% endif %} {{ _extraClass }}">
+    <div class="dropdown-menu {% if _menuArrow %}dropdown-menu-arrow{% endif %} {% if _menuAlignmentEnd %}dropdown-menu-end{% endif %} {{ _extraClass }}">
         {% for item in items %}
 
             {# Item #}
