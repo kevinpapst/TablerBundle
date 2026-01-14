@@ -64,7 +64,6 @@
     {% block box_body_before %}{% endblock %}
     {% if _hasBody %}
         {% set bodyClasses = ['card-body'] %}
-        {# fullsize #}
         {% if _fullsize %}
             {% set bodyClasses = bodyClasses|merge(['p-0']) %}
         {% endif %}
