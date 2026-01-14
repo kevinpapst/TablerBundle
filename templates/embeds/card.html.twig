@@ -67,7 +67,6 @@
         {% if _fullsize %}
             {% set bodyClasses = bodyClasses|merge(['p-0']) %}
         {% endif %}
-        {# collapsible #}
         {% if _collapsible %}
             {% set bodyClasses = bodyClasses|merge([_collapsible_class ~ (_collapsed ? ' collapse' : ' show')]) %}
         {% endif %}
