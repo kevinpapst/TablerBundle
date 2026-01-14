@@ -40,7 +40,6 @@
     {% block box_header_before %}{% endblock %}
     {% if _hasTitle or _collapsible or _hasTools or _hasHeader %}
         {% set headerClasses = ['card-header'] %}
-        {# headerBorderNone #}
         {% if _headerBorderNone %}
             {% set headerClasses = headerClasses|merge(['border-0']) %}
         {% endif %}
