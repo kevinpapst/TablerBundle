@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.1
+
+### Dropdown
+
+In macro `dropdown()`:
+- Deprecated the options `menuArrowEnd`, replaced by `menuAlignmentEnd`
+
 ## 2.0
 
 ### Removed "tabler_asset_version"
