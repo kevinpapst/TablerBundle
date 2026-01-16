@@ -1,5 +1,5 @@
 {% if menu is not defined %}
-    {% set menu = tabler_menu(app.request) %}
+    {% set menu = tabler_menu() %}
 {% endif %}
 
 {% if menu is defined and menu is not null %}

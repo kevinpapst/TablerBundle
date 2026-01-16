@@ -7,7 +7,7 @@ by adding this code to your own base template:
 Enjoy your theme!
 #}
 <!doctype html{% block html_start %}{% endblock %}>
-<html lang="{{ app.request.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %} data-bs-theme="{{ tabler_theme() }}" data-bs-theme-base="{{ tabler_bundle.getThemeBase() }}" data-bs-theme-radius="{{ tabler_bundle.getThemeRadius() }}" data-bs-theme-primary="{{ tabler_bundle.getThemePrimary() }}">
+<html lang="{{ app.locale }}"{% if tabler_bundle.isRightToLeft() %} dir="rtl"{% endif %} data-bs-theme="{{ tabler_theme() }}" data-bs-theme-base="{{ tabler_bundle.getThemeBase() }}" data-bs-theme-radius="{{ tabler_bundle.getThemeRadius() }}" data-bs-theme-primary="{{ tabler_bundle.getThemePrimary() }}">
 <head>
     {% block head %}
         {% include '@Tabler/includes/html_head.html.twig' %}
