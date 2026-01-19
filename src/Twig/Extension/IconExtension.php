@@ -12,14 +12,14 @@ class IconExtension extends AbstractExtension
     public function getFilters(): array
     {
         return [
-            new TwigFilter('tabler_icon', [IconRuntime::class, 'icon']),
+            new TwigFilter('tabler_icon', [IconRuntime::class, 'htmlClassAttributeValue']),
         ];
     }
 
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('tabler_icon', [IconRuntime::class, 'createIcon'], ['is_safe' => ['html']]),
+            new TwigFunction('tabler_icon', [IconRuntime::class, 'renderIcon'], ['is_safe' => ['html']]),
         ];
     }
 }

@@ -10,8 +10,6 @@ use Twig\Extension\RuntimeExtensionInterface;
  */
 class IconRuntime implements RuntimeExtensionInterface
 {
-    private readonly array $fa5brands;
-
     /**
      * @param array<string, string> $icons
      */
@@ -19,16 +17,12 @@ class IconRuntime implements RuntimeExtensionInterface
         private readonly IconRendererInterface $iconRenderer,
         private readonly array $icons,
     ) {
-        $this->fa5brands = json_decode(
-            file_get_contents(__DIR__ . '/../../Ressources/FontAwesome5/brand-icon-names.json'),
-            true
-        );
     }
 
     /**
      * @deprecated Use Symfony UX instead
      */
-    public function createIcon(string $name, bool $withIconClass = false, ?string $default = null): string
+    public function renderIcon(string $name, bool $withIconClass = false, ?string $default = null): string
     {
         $safeName = str_replace('-', '_', $name);
         if (isset($this->icons[$safeName])) {
@@ -43,20 +37,16 @@ class IconRuntime implements RuntimeExtensionInterface
                 'class' => $withIconClass ? 'icon' : '',
             ]);
         } else {
-            return $this->icon($name, $withIconClass, $default);
+            return $this->htmlClassAttributeValue($name, $withIconClass, $default);
         }
 
         [$typeNameAbbreviation, $iconFullName] = explode(' ', $fontawesomeFullName);
         $iconName = preg_replace('/^fa-/', '', $iconFullName);
-        if ($typeNameAbbreviation === 'fas') {
-            $sets = 'fa-solid';
-        } elseif ($typeNameAbbreviation === 'far') {
-            $sets = 'fa-regular';
-        } elseif ($this->isFa5brands($iconName)) {
-            $sets = 'fa-brands';
-        } else {
-            $sets = 'fa-solid';
-        }
+        $sets     = match ($typeNameAbbreviation) {
+            'far'   => 'fa-regular',
+            'fab'   => 'fa-brands',
+            default => 'fa-solid',
+        };
 
         return $this->iconRenderer->renderIcon("$sets:$iconName", [
             'class' => $withIconClass ? 'icon' : '',
@@ -66,13 +56,8 @@ class IconRuntime implements RuntimeExtensionInterface
     /**
      * @deprecated Use Symfony UX instead
      */
-    public function icon(string $name, bool $withIconClass = false, ?string $default = null): string
+    public function htmlClassAttributeValue(string $name, bool $withIconClass = false, ?string $default = null): string
     {
         return ($withIconClass ? 'icon ' : '') . ($this->icons[str_replace('-', '_', $name)] ?? ($default ?? $name));
-    }
-
-    private function isFa5brands(string $name): bool
-    {
-        return in_array($name, $this->fa5brands);
     }
 }
