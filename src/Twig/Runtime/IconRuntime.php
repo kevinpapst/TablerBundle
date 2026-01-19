@@ -31,6 +31,8 @@ class IconRuntime implements RuntimeExtensionInterface
      */
     public function renderIcon(string $name, bool $withIconClass = false, ?string $default = null): string
     {
+        @trigger_error('Support for webfonts is deprecated. Switch to UX icons.', \E_USER_DEPRECATED);
+
         $safeName = str_replace('-', '_', $name);
         if (isset($this->icons[$safeName])) {
             // Tabler icon shortcut
@@ -65,6 +67,8 @@ class IconRuntime implements RuntimeExtensionInterface
      */
     public function htmlClassAttributeValue(string $name, bool $withIconClass = false, ?string $default = null): string
     {
+        @trigger_error('Support for webfonts is deprecated. Switch to UX icons.', \E_USER_DEPRECATED);
+
         return ($withIconClass ? 'icon ' : '') . ($this->icons[str_replace('-', '_', $name)] ?? ($default ?? $name));
     }
 }
