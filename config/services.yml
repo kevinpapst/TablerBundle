@@ -3,6 +3,7 @@ services:
     KevinPapst\TablerBundle\Twig\RuntimeExtension:
         class: KevinPapst\TablerBundle\Twig\RuntimeExtension
         arguments:
+            - '@request_stack'
             - '@event_dispatcher'
             - '@tabler_bundle.context_helper'
             - '%tabler_bundle.routes%'

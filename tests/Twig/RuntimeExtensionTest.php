@@ -13,6 +13,7 @@ use KevinPapst\TablerBundle\Helper\ContextHelper;
 use KevinPapst\TablerBundle\Twig\RuntimeExtension;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * @covers \KevinPapst\TablerBundle\Twig\RuntimeExtension
@@ -41,8 +42,9 @@ class RuntimeExtensionTest extends TestCase
         ];
 
         $dispatcher = new EventDispatcher();
+        $requestStack = new RequestStack();
 
-        return new RuntimeExtension($dispatcher, $contextHelper, $routes, $icons);
+        return new RuntimeExtension($requestStack, $dispatcher, $contextHelper, $routes, $icons);
     }
 
     public function testGetRouteByAlias(): void

@@ -14,11 +14,13 @@
 {% endmacro %}
 
 {% macro session_flash(close, use_raw, class, domain) %}
-    {% if app.session.flashbag.peekAll|length > 0 %}
-        {% for type, messages in app.session.flashbag.all %}
-            {% for message in messages %}
-                {{ _self.flash(type, message, close, use_raw, class, domain) }}
-            {% endfor %}
+    {{ _self.flashes(app.flashes, close, use_raw, class, domain) }}
+{% endmacro %}
+
+{% macro flashes(flashes, close, use_raw, class, domain) %}
+    {% for type, messages in flashes %}
+        {% for message in messages %}
+            {{ _self.flash(type, message, close, use_raw, class, domain) }}
         {% endfor %}
-    {% endif %}
+    {% endfor %}
 {% endmacro %}

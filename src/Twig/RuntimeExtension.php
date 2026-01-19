@@ -15,7 +15,7 @@ use KevinPapst\TablerBundle\Event\UserDetailsEvent;
 use KevinPapst\TablerBundle\Helper\ContextHelper;
 use KevinPapst\TablerBundle\Model\MenuItemInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Twig\Extension\RuntimeExtensionInterface;
 
 final class RuntimeExtension implements RuntimeExtensionInterface
@@ -25,6 +25,7 @@ final class RuntimeExtension implements RuntimeExtensionInterface
      * @param array<string, string> $icons
      */
     public function __construct(
+        private readonly RequestStack $requestStack,
         private readonly EventDispatcherInterface $eventDispatcher,
         private readonly ContextHelper $helper,
         private readonly array $routes,
@@ -66,13 +67,16 @@ final class RuntimeExtension implements RuntimeExtensionInterface
     }
 
     /**
-     * @param Request $request
-     *
      * @return MenuItemInterface[]|null
      */
-    public function getMenu(Request $request): ?array
+    public function getMenu(): ?array
     {
         if (!$this->eventDispatcher->hasListeners(MenuEvent::class)) {
+            return null;
+        }
+
+        $request = $this->requestStack->getCurrentRequest();
+        if ($request === null) {
             return null;
         }
 
