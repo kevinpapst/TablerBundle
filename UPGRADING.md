@@ -2,6 +2,66 @@
 
 ## 2.1
 
+### tabler_icon
+
+The `tabler_icon` feature is deprecated and should no longer be used.
+
+#### What changed
+
+Historically, TablerBundle provided its own icon rendering and aliasing layer:
+
+- Icons were configured in `tabler.yaml` under `tabler.icons`
+- Icons were rendered through the `tabler_icon` Twig extension
+
+This approach is being phased out in favor of Symfony UX Icons, which is now the recommended and supported way to render icons and manage aliases.
+
+#### What to use instead
+
+Use the Symfony UX icon system:
+
+- Render icons with `ux_icon(...)`
+- Configure aliases in `ux_icons.yaml` using the [`aliases` section](https://symfony.com/bundles/ux-icons/current/index.html#icon-aliases)
+
+This fully replaces the previous `tabler.yaml.icons` configuration.
+
+#### Migration steps
+
+1. Move icon aliases from `tabler.yaml` to `ux_icons.yaml` under `ux_icons.aliases`.
+2. Go to [Ux icon search page](https://ux.symfony.com/icons?set=tabler) and find related icon to yours before   
+    1. Previous configuration (`tabler.yaml`):
+    ```yaml
+    tabler:
+        icons:
+            user: fas fa-user
+            settings: fas fa-cogs
+            thumb_up: thumbs-up
+    ```
+    
+    2. New configuration (`ux_icons.yaml`):
+    ```yaml
+    ux_icons:
+        aliases:
+            user: tabler:user
+            settings: tabler:settings
+            thumb_up: tabler:thumb-up
+    ```
+3. Rename all usages of `tabler_icon` in Twig templates to `ux_icon`.   
+    1. Before:
+    ```twig
+    {{ tabler_icon('user') }}
+    ```
+   
+    2. After:
+    ```twig
+    {{ ux_icon('user') }}
+    ```
+
+#### Notes
+
+- Direct icon identifiers such as `tabler:user` can still be used directly with `ux_icon(...)`.
+- Aliases are optional and only required if you want to keep short logical icon names.
+- Support for `tabler_icon` will be removed in a future major version `3.0`.
+
 ### Dropdown
 
 In macro `dropdown()`:

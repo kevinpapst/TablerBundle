@@ -1,7 +1,7 @@
 {
     "name": "kevinpapst/tabler-bundle",
     "type": "symfony-bundle",
-    "description": "Admin/Backend theme bundle for Symfony based on Tabler.io",
+    "description": "Theme bundle for Symfony based on Tabler.io",
     "license": "MIT",
     "authors": [
         {
