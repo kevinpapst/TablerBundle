@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * This file is part of the Tabler bundle, created by Kevin Papst (www.kevinpapst.de).
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace KevinPapst\TablerBundle\Twig\Runtime;
 
 use Symfony\UX\Icons\IconRendererInterface;
@@ -42,9 +49,9 @@ class IconRuntime implements RuntimeExtensionInterface
 
         [$typeNameAbbreviation, $iconFullName] = explode(' ', $fontawesomeFullName);
         $iconName = preg_replace('/^fa-/', '', $iconFullName);
-        $sets     = match ($typeNameAbbreviation) {
-            'far'   => 'fa-regular',
-            'fab'   => 'fa-brands',
+        $sets = match ($typeNameAbbreviation) {
+            'far' => 'fa-regular',
+            'fab' => 'fa-brands',
             default => 'fa-solid',
         };
 
