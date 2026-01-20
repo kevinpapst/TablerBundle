@@ -22,7 +22,7 @@ Use the Symfony UX icon system:
 - Render icons with `ux_icon(...)`
 - Configure aliases in `ux_icons.yaml` using the [`aliases` section](https://symfony.com/bundles/ux-icons/current/index.html#icon-aliases)
 
-This fully replaces the previous `tabler.yaml.icons` configuration.
+This fully replaces the previous `tabler.yaml` -> `icons` configuration.
 
 #### Migration steps
 
