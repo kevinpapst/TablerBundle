@@ -32,7 +32,7 @@ class IconExtension extends AbstractExtension
         return [
             /* @phpstan-ignore-next-line */
             new TwigFunction('tabler_icon', [IconRuntime::class, 'renderIcon'], [
-                'is_safe'          => ['html'],
+                'is_safe' => ['html'],
                 'deprecation_info' => new DeprecatedCallableInfo('kevinpapst/tabler-bundle', '3.0'),
             ]),
         ];
