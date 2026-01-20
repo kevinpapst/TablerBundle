@@ -41,9 +41,9 @@ This fully replaces the previous `tabler.yaml` -> `icons` configuration.
     ```yaml
     ux_icons:
         aliases:
-            user: tabler:user
-            settings: tabler:settings
-            thumb_up: tabler:thumb-up
+            user: "tabler:user"
+            settings: "tabler:settings"
+            thumb_up: "tabler:thumb-up"
     ```
 3. Rename all usages of `tabler_icon` in Twig templates to `ux_icon`.   
     1. Before:
