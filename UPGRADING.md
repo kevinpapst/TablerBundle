@@ -26,7 +26,7 @@ This fully replaces the previous `tabler.yaml` -> `icons` configuration.
 
 #### Migration steps
 
-1. Move icon aliases from `tabler.yaml` to `ux_icons.yaml` under `ux_icons.aliases`.
+1. Move icon aliases from `tabler.yaml` under `tabler.icons` to `ux_icons.yaml` under `ux_icons.aliases`.
 2. Go to [Ux icon search page](https://ux.symfony.com/icons?set=tabler) and find related icon to yours before   
     1. Previous configuration (`tabler.yaml`):
     ```yaml
