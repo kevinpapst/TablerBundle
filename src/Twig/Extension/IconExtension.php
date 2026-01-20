@@ -10,6 +10,7 @@
 namespace KevinPapst\TablerBundle\Twig\Extension;
 
 use KevinPapst\TablerBundle\Twig\Runtime\IconRuntime;
+use Twig\DeprecatedCallableInfo;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -19,16 +20,21 @@ class IconExtension extends AbstractExtension
     public function getFilters(): array
     {
         return [
-            /* @phpstan-ignore-next-line  */
-            new TwigFilter('tabler_icon', [IconRuntime::class, 'htmlClassAttributeValue']),
+            /* @phpstan-ignore-next-line */
+            new TwigFilter('tabler_icon', [IconRuntime::class, 'htmlClassAttributeValue'], [
+                'deprecation_info' => new DeprecatedCallableInfo('kevinpapst/tabler-bundle', '3.0'),
+            ]),
         ];
     }
 
     public function getFunctions(): array
     {
         return [
-            /* @phpstan-ignore-next-line  */
-            new TwigFunction('tabler_icon', [IconRuntime::class, 'renderIcon'], ['is_safe' => ['html']]),
+            /* @phpstan-ignore-next-line */
+            new TwigFunction('tabler_icon', [IconRuntime::class, 'renderIcon'], [
+                'is_safe'          => ['html'],
+                'deprecation_info' => new DeprecatedCallableInfo('kevinpapst/tabler-bundle', '3.0'),
+            ]),
         ];
     }
 }
