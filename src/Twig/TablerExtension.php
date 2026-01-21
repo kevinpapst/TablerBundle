@@ -9,6 +9,8 @@
 
 namespace KevinPapst\TablerBundle\Twig;
 
+use KevinPapst\TablerBundle\Twig\Runtime\IconRuntime;
+use Twig\DeprecatedCallableInfo;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -24,6 +26,10 @@ class TablerExtension extends AbstractExtension
             new TwigFilter('tabler_container', [RuntimeExtension::class, 'containerClass']),
             new TwigFilter('tabler_body', [RuntimeExtension::class, 'bodyClass']),
             new TwigFilter('tabler_route', [RuntimeExtension::class, 'getRouteByAlias']),
+            /* @phpstan-ignore-next-line */
+            new TwigFilter('tabler_icon', [IconRuntime::class, 'htmlClassAttributeValue'], [
+                'deprecation_info' => new DeprecatedCallableInfo('kevinpapst/tabler-bundle', '3.0'),
+            ]),
         ];
     }
 
@@ -38,6 +44,11 @@ class TablerExtension extends AbstractExtension
             new TwigFunction('tabler_theme', [RuntimeExtension::class, 'theme']),
             new TwigFunction('tabler_unique_id', [RuntimeExtension::class, 'uniqueId']),
             new TwigFunction('tabler_user', [RuntimeExtension::class, 'getUserDetails']),
+            /* @phpstan-ignore-next-line */
+            new TwigFunction('tabler_icon', [IconRuntime::class, 'renderIcon'], [
+                'is_safe' => ['html'],
+                'deprecation_info' => new DeprecatedCallableInfo('kevinpapst/tabler-bundle', '3.0'),
+            ]),
         ];
     }
 }
