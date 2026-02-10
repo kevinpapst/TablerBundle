@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="el" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
@@ -68,7 +68,7 @@
       </trans-unit>
       <trans-unit id="MKZCFur" resname="View all">
         <source>View all</source>
-        <target>Προβολή  όλων</target>
+        <target>Προβολή όλων</target>
       </trans-unit>
       <trans-unit id="hSzABam" resname="You have %count% notifications">
         <source>You have %count% notifications</source>
@@ -121,6 +121,10 @@
       <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
         <source>http_error_403.suggestion</source>
         <target>Λυπούμαστε αλλά δεν έχετε, επαρκή δικαιώματα για να δείτε αυτήν τη σελίδα. Επικοινωνήστε με τον διαχειριστή σας εάν πιστεύετε ότι πρόκειται για σφάλμα.</target>
+      </trans-unit>
+      <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve">
+        <source>Toggle visibility</source>
+        <target state="translated">Εναλλαγή ορατότητας</target>
       </trans-unit>
     </body>
   </file>
