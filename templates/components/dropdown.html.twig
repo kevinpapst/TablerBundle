@@ -50,6 +50,15 @@
                         {{ _html | raw }}
                     </div>
                 {% endif %}
+            {% elseif _type is same as 'parent' %}
+                {% set _children = item.children ?? [] %}
+                {% set _autoClose = item.autoClose ?? 'outside' %}
+                <div class="dropend">
+                    <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="{{ _autoClose }}" role="button">
+                        {{ _title }}
+                    </a>
+                    {{ _self.dropdown(_children) }}
+                </div>
             {% else %}
                 {% set classes = 'dropdown-item ' ~ (_disabled ? 'disabled ' : '') ~ (_active ? 'active ' : '') ~ _extraClass %}
                 {% if _type is same as 'link' %}

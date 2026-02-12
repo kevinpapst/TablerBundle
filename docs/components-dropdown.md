@@ -28,6 +28,13 @@ See Tabler documentation at https://preview.tabler.io/dropdowns.html
 | extraClass | Add custom class to the item                                                       |      `string`      | _empty string_ |
 |    attr    | Custom HTML attributes to add to the item                                          |      `Object`      |      `{}`      |
 
+##### Item type `parent`
+| Parameter | Description                                                                             |        Type        |  Default  |
+|:---------:|-----------------------------------------------------------------------------------------|:------------------:|:---------:|
+|   type    | `parent`                                                                                |      `string`      | `parent`  |
+| autoClose | See [autoClose option](https://getbootstrap.com/docs/5.2/components/dropdowns/#options) | `boolean / string` | `outside` |
+| children  | Array of the nested [items](#Item)                                                      |      `array`       |   `[]`    |
+
 ##### Item Options
 |    Parameter    | Description                      |   Type    |    Default     |
 |:---------------:|----------------------------------|:---------:|:--------------:|
@@ -128,6 +135,24 @@ See Tabler documentation at https://preview.tabler.io/dropdowns.html
     {
         title: 'Firstname Lastname',
         html: '<span class="avatar avatar-xs rounded me-2">FL</span>'
+    },
+    {
+        type: 'divider',
+    },
+    {
+        type: 'parent',
+        title: 'Parent',
+        children : [
+            {
+                title: 'Child 1',
+            },
+            {
+                title: 'Child 2',
+            },
+            {
+                title: 'Child 3',
+            },
+        ],
     },
     {
         type: 'divider',
