@@ -52,7 +52,15 @@
                 {% endif %}
             {% elseif _type is same as 'parent' %}
                 {% set _children = item.children ?? [] %}
-                {% set _autoClose = item.autoClose ?? 'outside' %}
+                {% if item.autoClose is not defined %}
+                    {% set _autoClose = 'outside' %}
+                {% elseif item.autoClose is same as true %}
+                    {% set _autoClose = 'true' %}
+                {% elseif item.autoClose is same as false %}
+                    {% set _autoClose = 'false' %}
+                {% else %}
+                    {% set _autoClose = item.autoClose %}
+                {% endif %}
                 <div class="dropend">
                     <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="{{ _autoClose }}" role="button">
                         {{ _title }}
