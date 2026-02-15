@@ -68,7 +68,7 @@
       </trans-unit>
       <trans-unit id="MKZCFur" resname="View all" xml:space="preserve" approved="yes">
         <source>View all</source>
-        <target state="final">Vedi tutto</target>
+        <target state="final">Visualizza tutto</target>
       </trans-unit>
       <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve" approved="yes">
         <source>You have %count% notifications</source>
