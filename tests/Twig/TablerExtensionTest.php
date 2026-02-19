@@ -30,7 +30,7 @@ class TablerExtensionTest extends TestCase
 
     public function testGetFunctions(): void
     {
-        $expected = ['tabler_icon', 'tabler_menu', 'tabler_notifications', 'tabler_theme', 'tabler_unique_id', 'tabler_user'];
+        $expected = ['tabler_menu', 'tabler_notifications', 'tabler_theme', 'tabler_unique_id', 'tabler_user', 'tabler_icon'];
         $sut = new TablerExtension();
         $this->assertCount(\count($expected), $sut->getFunctions());
         $result = array_map(function ($function) {
