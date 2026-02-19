@@ -2,9 +2,9 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" target-language="es" datatype="plaintext" original="TablerBundle.en.xlf">
     <body>
-      <trans-unit id="38Hm0Wu" resname="Toggle navigation">
+      <trans-unit id="38Hm0Wu" resname="Toggle navigation" xml:space="preserve">
         <source>Toggle navigation</source>
-        <target>Activar la navegación</target>
+        <target state="translated">Alternar navegación</target>
       </trans-unit>
       <trans-unit id="KpL2_.m" resname="Remember Me">
         <source>Remember Me</source>
@@ -34,13 +34,13 @@
         <source>Member since %date%</source>
         <target>Miembro desde %date%</target>
       </trans-unit>
-      <trans-unit id="47ienTP" resname="Username">
+      <trans-unit id="47ienTP" resname="Username" xml:space="preserve">
         <source>Username</source>
-        <target>Nombre de usuario</target>
+        <target state="translated">Apodo</target>
       </trans-unit>
-      <trans-unit id="6.zSWXT" resname="Username or email address">
+      <trans-unit id="6.zSWXT" resname="Username or email address" xml:space="preserve">
         <source>Username or email address</source>
-        <target>Nombre de usuario o correo electrónico</target>
+        <target state="translated">Apodo o correo electrónico</target>
       </trans-unit>
       <trans-unit id="588_9PF" resname="Password">
         <source>Password</source>
@@ -50,65 +50,65 @@
         <source>Show homepage</source>
         <target>Mostrar página de inicio</target>
       </trans-unit>
-      <trans-unit id="PjgG.xc" resname="Back to login">
+      <trans-unit id="PjgG.xc" resname="Back to login" xml:space="preserve">
         <source>Back to login</source>
-        <target>Atrás para iniciar sesión</target>
+        <target state="translated">Volver a iniciar sesión</target>
       </trans-unit>
-      <trans-unit id="WfpDeb4" resname="Reset your password">
+      <trans-unit id="WfpDeb4" resname="Reset your password" xml:space="preserve">
         <source>Reset your password</source>
-        <target>Restablecer su contraseña</target>
+        <target state="translated">Restablece tu contraseña</target>
       </trans-unit>
-      <trans-unit id="YOlNDxu" resname="I forgot my password">
+      <trans-unit id="YOlNDxu" resname="I forgot my password" xml:space="preserve">
         <source>I forgot my password</source>
-        <target>Olvidé mi contraseña</target>
+        <target state="translated">He olvidado mi contraseña</target>
       </trans-unit>
-      <trans-unit id="D3_ygfb" resname="Register a new account">
+      <trans-unit id="D3_ygfb" resname="Register a new account" xml:space="preserve">
         <source>Register a new account</source>
-        <target>Registre una nueva cuenta</target>
+        <target state="translated">Registre una cuenta nueva</target>
       </trans-unit>
       <trans-unit id="MKZCFur" resname="View all">
         <source>View all</source>
         <target>Ver todo</target>
       </trans-unit>
-      <trans-unit id="hSzABam" resname="You have %count% notifications">
-        <source>You have %count% notifications</source>
-        <target>Tiene 1 notificación|Tiene %count% notificaciones</target>
+      <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve">
+        <source>You have 1 notification|You have %count% notifications</source>
+        <target state="translated">Tienes una notificación|Tienes %count% notificaciones</target>
       </trans-unit>
-      <trans-unit id="WNPKqNj" resname="You have %count% messages">
+      <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve">
         <source>You have %count% messages</source>
-        <target>Tiene un mensaje|Tiene %count% mensajes</target>
+        <target state="translated">Tienes un mensaje|Tienes %count% mensajes</target>
       </trans-unit>
-      <trans-unit id="ZnUEpF." resname="You have %count% tasks">
-        <source>You have %count% tasks</source>
-        <target>Tiene 1 tarea|Tiene %count% tareas</target>
+      <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve">
+        <source>You have 1 task|You have %count% tasks</source>
+        <target state="translated">Tienes una tarea|Tienes %count% tareas</target>
       </trans-unit>
-      <trans-unit id="1bPaXpN" resname="%progress%% Complete">
+      <trans-unit id="1bPaXpN" resname="%progress%% Complete" xml:space="preserve">
         <source>%progress%% Complete</source>
-        <target>%progress%% realizado</target>
+        <target state="translated">%progress%% completado</target>
       </trans-unit>
       <trans-unit id="KLIuHvt" resname="This is a mandatory field">
         <source>This is a mandatory field</source>
         <target>Este es un campo obligatorio</target>
       </trans-unit>
-      <trans-unit id="B.ZozIs" resname="registration.confirmed">
+      <trans-unit id="B.ZozIs" resname="registration.confirmed" xml:space="preserve">
         <source>registration.confirmed</source>
-        <target>Felicidades %username%, tu cuenta está ahora confirmada.</target>
+        <target state="translated">Felicidades %username%, tu cuenta ahora está activada.</target>
       </trans-unit>
       <trans-unit id="rtYKRSj" resname="http_error.title">
         <source>http_error.title</source>
         <target>Error</target>
       </trans-unit>
-      <trans-unit id="e3w.2Rf" resname="http_error.description">
+      <trans-unit id="e3w.2Rf" resname="http_error.description" xml:space="preserve">
         <source>http_error.description</source>
-        <target>Se produjo un error</target>
+        <target state="translated">Algo es incorrecto</target>
       </trans-unit>
-      <trans-unit id="ru5FEGk" resname="http_error.suggestion">
+      <trans-unit id="ru5FEGk" resname="http_error.suggestion" xml:space="preserve">
         <source>http_error.suggestion</source>
-        <target>Ocurrió un error inesperado; intente de nuevo lo que estaba haciendo. Es posible que haya encontrado un problema de software; contacte al personal administrativo si el problema persiste.</target>
+        <target state="translated">Ocurrió un error crítico, inténtelo de nuevo. Puede que haya encontrado un problema de software; contacte al personal administrativo si el problema persiste.</target>
       </trans-unit>
-      <trans-unit id="_W1eNz2" resname="http_error_404.description">
+      <trans-unit id="_W1eNz2" resname="http_error_404.description" xml:space="preserve">
         <source>http_error_404.description</source>
-        <target>No se encontró la página</target>
+        <target state="translated">Página no encontrada</target>
       </trans-unit>
       <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
         <source>http_error_404.suggestion</source>
@@ -124,7 +124,7 @@
       </trans-unit>
       <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
         <source>Toggle visibility</source>
-        <target state="translated">Alternar la visibilidad</target>
+        <target state="translated">Alternar visibilidad</target>
       </trans-unit>
       <trans-unit id="cXVRejc" resname="or" xml:space="preserve" approved="no">
         <source>or</source>
