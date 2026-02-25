@@ -76,7 +76,7 @@
       </trans-unit>
       <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve">
         <source>You have %count% messages</source>
-        <target state="translated">Imaš 1 poruku|Imaš %count% poruke</target>
+        <target state="translated">Imaš 1 poruku|Imaš %count% poruke(a)</target>
       </trans-unit>
       <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve">
         <source>You have 1 task|You have %count% tasks</source>
