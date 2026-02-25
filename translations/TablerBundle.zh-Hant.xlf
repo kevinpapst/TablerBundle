@@ -166,6 +166,14 @@
         <source>Open personal menu</source>
         <target state="final">開啟個人選單</target>
       </trans-unit>
+      <trans-unit id="auqmpT0" resname="Show password" xml:space="preserve">
+        <source>Show password</source>
+        <target state="translated">顯示密碼</target>
+      </trans-unit>
+      <trans-unit id="pgpWxYS" resname="Hide password" xml:space="preserve">
+        <source>Hide password</source>
+        <target state="translated">隱藏密碼</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
