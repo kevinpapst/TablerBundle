@@ -79,7 +79,7 @@
         <target state="needs-translation">У Вас 1 сообщение|У Вас %count% сообщения|У Вас %count% сообщений</target>
       </trans-unit>
       <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve" approved="no">
-        <source>You have %count% tasks</source>
+        <source>You have 1 task|You have %count% tasks</source>
         <target state="needs-translation">У Вас 1 задание|У Вас %count% задания|У Вас %count% заданий</target>
       </trans-unit>
       <trans-unit id="1bPaXpN" resname="%progress%% Complete" xml:space="preserve" approved="no">
