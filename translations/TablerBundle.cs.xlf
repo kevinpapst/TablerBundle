@@ -170,6 +170,10 @@
         <source>Hide password</source>
         <target state="translated">Skryj heslo</target>
       </trans-unit>
+      <trans-unit id="auqmpT0" resname="Show password" xml:space="preserve">
+        <source>Show password</source>
+        <target state="translated">Zobrazit heslo</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
