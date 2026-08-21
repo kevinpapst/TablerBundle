@@ -21,6 +21,8 @@ Encore
 
     .addEntry('tabler', './assets/tabler.js')
     .addEntry('tabler-rtl', './assets/tabler-rtl.js')
+    .addEntry('tabler-flags', './assets/tabler-flags.js')
+    .addEntry('tabler-payments', './assets/tabler-payments.js')
 
     // disabled as ""webpack-notifier": "^1.13"" id currently not compatible with ARM systems
     //.enableBuildNotifications()
