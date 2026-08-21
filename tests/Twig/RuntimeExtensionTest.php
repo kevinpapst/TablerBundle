@@ -36,15 +36,10 @@ class RuntimeExtensionTest extends TestCase
             'hello' => null,
         ];
 
-        $icons = [
-            'foo' => 'fas fa-times',
-            'mail' => 'fas fa-envelope',
-        ];
-
         $dispatcher = new EventDispatcher();
         $requestStack = new RequestStack();
 
-        return new RuntimeExtension($requestStack, $dispatcher, $contextHelper, $routes, $icons);
+        return new RuntimeExtension($requestStack, $dispatcher, $contextHelper, $routes);
     }
 
     public function testGetRouteByAlias(): void
