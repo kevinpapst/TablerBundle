@@ -26,9 +26,9 @@
         <source>Register</source>
         <target>Registreer</target>
       </trans-unit>
-      <trans-unit id="1pajW90" resname="Profile">
+      <trans-unit id="1pajW90" resname="Profile" xml:space="preserve">
         <source>Profile</source>
-        <target state="translated">Profiel</target>
+        <target state="translated">Uw Profiel</target>
       </trans-unit>
       <trans-unit id="DX2c6C2" resname="Member since %date%">
         <source>Member since %date%</source>
@@ -104,10 +104,7 @@
       </trans-unit>
       <trans-unit id="ru5FEGk" resname="http_error.suggestion">
         <source>http_error.suggestion</source>
-        <target>
-                    Een kritieke fout trad op. Probeer alstublieft opnieuw.
-                    Mogelijk vond u een software probleem. Neem contact op met uw administrator wanneer het probleem zich blijft voortdoen.
-                </target>
+        <target>Een kritieke fout trad op. Probeer alstublieft opnieuw. Mogelijk vond u een software probleem. Neem contact op met uw administrator wanneer het probleem zich blijft voortdoen.</target>
       </trans-unit>
       <trans-unit id="_W1eNz2" resname="http_error_404.description" xml:space="preserve" approved="no">
         <source>http_error_404.description</source>
@@ -115,10 +112,7 @@
       </trans-unit>
       <trans-unit id="MWNS5dg" resname="http_error_404.suggestion">
         <source>http_error_404.suggestion</source>
-        <target>
-                    We konden de pagina die u zocht niet vinden.
-                    Keer alstublieft terug naar het overzicht en begin opnieuw.
-                </target>
+        <target>We konden de pagina die u zocht niet vinden. Keer alstublieft terug naar het overzicht en begin opnieuw.</target>
       </trans-unit>
       <trans-unit id="Qn5rwdU" resname="http_error_403.description">
         <source>http_error_403.description</source>
@@ -126,10 +120,7 @@
       </trans-unit>
       <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
         <source>http_error_403.suggestion</source>
-        <target>
-                    Het spijt ons maar u heeft onvoldoende rechten om deze pagina te zien.
-                    Spreek met uw beheerder als u denkt dat dit een vergissing is.
-                </target>
+        <target>Het spijt ons maar u heeft onvoldoende rechten om deze pagina te zien. Spreek met uw beheerder als u denkt dat dit een vergissing is.</target>
       </trans-unit>
       <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve" approved="no">
         <source>Show notifications</source>
@@ -174,6 +165,14 @@
       <trans-unit id="68zefF" resname="Next" xml:space="preserve" approved="no">
         <source>Next</source>
         <target state="translated">Volgende</target>
+      </trans-unit>
+      <trans-unit id="auqmpT0" resname="Show password" xml:space="preserve">
+        <source>Show password</source>
+        <target state="translated">Toon wachtwoord</target>
+      </trans-unit>
+      <trans-unit id="pgpWxYS" resname="Hide password" xml:space="preserve">
+        <source>Hide password</source>
+        <target state="translated">Verberg wachtwoord</target>
       </trans-unit>
     </body>
   </file>
