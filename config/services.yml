@@ -7,7 +7,19 @@ services:
             - '@event_dispatcher'
             - '@tabler_bundle.context_helper'
             - '%tabler_bundle.routes%'
-            - '%tabler_bundle.icons%'
+        tags:
+            - { name: twig.runtime }
+
+    KevinPapst\TablerBundle\Twig\Extension\IconExtension:
+        class: KevinPapst\TablerBundle\Twig\Extension\IconExtension
+        tags:
+            - { name: twig.extension }
+
+    KevinPapst\TablerBundle\Twig\Runtime\IconRuntime:
+        class: KevinPapst\TablerBundle\Twig\Runtime\IconRuntime
+        arguments:
+            $iconRenderer: '@.ux_icons.icon_renderer'
+            $icons: '%tabler_bundle.icons%'
         tags:
             - { name: twig.runtime }
 

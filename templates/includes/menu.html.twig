@@ -75,7 +75,7 @@
 
 {% macro item_icon(item) %}
     {% if item.icon %}
-        <span class="nav-link-icon d-md-none d-lg-inline-block text-center">{{ tabler_icon(item.icon, false, item.icon) }}</span>
+        <span class="nav-link-icon d-md-none d-lg-inline-block text-center">{{ tabler_icon(item.icon, true, item.icon) }}</span>
     {% endif %}
 {% endmacro %}
 
