@@ -2,7 +2,7 @@
   "entrypoints": {
     "tabler": {
       "js": [
-        "/bundles/tabler/tabler.js?4ebf63b98296f7a8a434"
+        "/bundles/tabler/tabler.js?b9d7010fb308c9b83662"
       ],
       "css": [
         "/bundles/tabler/tabler.css?84afc488308bc6a3a8d3"
@@ -10,10 +10,26 @@
     },
     "tabler-rtl": {
       "js": [
-        "/bundles/tabler/tabler-rtl.js?ec9cef4e87746c7cca78"
+        "/bundles/tabler/tabler-rtl.js?6cc2cf8ebafcd80b0b6b"
       ],
       "css": [
         "/bundles/tabler/tabler-rtl.css?53472eea5fae80bc6987"
+      ]
+    },
+    "tabler-flags": {
+      "js": [
+        "/bundles/tabler/tabler-flags.js?1ce743ceefad6dc892d7"
+      ],
+      "css": [
+        "/bundles/tabler/tabler-flags.css?5cdc7befab060b97ab65"
+      ]
+    },
+    "tabler-payments": {
+      "js": [
+        "/bundles/tabler/tabler-payments.js?8a11640c591a79cf3478"
+      ],
+      "css": [
+        "/bundles/tabler/tabler-payments.css?b41531f6e44feb4f2de2"
       ]
     }
   }
