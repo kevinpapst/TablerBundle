@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\Translation\LocaleSwitcher;
+use Symfony\Contracts\Translation\LocaleAwareInterface;
 
 /**
  * @covers \KevinPapst\TablerBundle\Twig\RuntimeExtension
@@ -91,7 +91,9 @@ class RuntimeExtensionTest extends TestCase
         $this->assertEquals('de', $sut->locale());
 
         // the locale switcher wins when there is one, as it does for "app.locale"
-        $sut = new RuntimeExtension($requestStack, new EventDispatcher(), new ContextHelper(), [], [], new LocaleSwitcher('it', []), 'fr');
+        $localeSwitcher = $this->createStub(LocaleAwareInterface::class);
+        $localeSwitcher->method('getLocale')->willReturn('it');
+        $sut = new RuntimeExtension($requestStack, new EventDispatcher(), new ContextHelper(), [], [], $localeSwitcher, 'fr');
         $this->assertEquals('it', $sut->locale());
     }
 }
