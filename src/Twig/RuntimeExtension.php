@@ -16,6 +16,7 @@ use KevinPapst\TablerBundle\Helper\ContextHelper;
 use KevinPapst\TablerBundle\Model\MenuItemInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Contracts\Translation\LocaleAwareInterface;
 use Twig\Extension\RuntimeExtensionInterface;
 
 final class RuntimeExtension implements RuntimeExtensionInterface
@@ -29,7 +30,9 @@ final class RuntimeExtension implements RuntimeExtensionInterface
         private readonly EventDispatcherInterface $eventDispatcher,
         private readonly ContextHelper $helper,
         private readonly array $routes,
-        private readonly array $icons
+        private readonly array $icons,
+        private readonly ?LocaleAwareInterface $localeSwitcher = null,
+        private readonly string $defaultLocale = 'en'
     ) {
     }
 
@@ -51,6 +54,12 @@ final class RuntimeExtension implements RuntimeExtensionInterface
         }
 
         return 'light';
+    }
+
+    public function locale(): string
+    {
+        // the locale switcher only exists when the translator is enabled, and "app.locale" throws without it
+        return $this->localeSwitcher?->getLocale() ?? $this->requestStack->getCurrentRequest()?->getLocale() ?? $this->defaultLocale;
     }
 
     public function containerClass(string $class = ''): string
