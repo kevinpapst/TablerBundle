@@ -35,6 +35,7 @@ class TablerExtension extends AbstractExtension
     {
         return [
             new TwigFunction('tabler_icon', [RuntimeExtension::class, 'createIcon'], ['is_safe' => ['html']]),
+            new TwigFunction('tabler_locale', [RuntimeExtension::class, 'locale']),
             new TwigFunction('tabler_menu', [RuntimeExtension::class, 'getMenu']),
             new TwigFunction('tabler_notifications', [RuntimeExtension::class, 'getNotifications']),
             new TwigFunction('tabler_theme', [RuntimeExtension::class, 'theme']),

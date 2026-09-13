@@ -13,7 +13,9 @@ use KevinPapst\TablerBundle\Helper\ContextHelper;
 use KevinPapst\TablerBundle\Twig\RuntimeExtension;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Contracts\Translation\LocaleAwareInterface;
 
 /**
  * @covers \KevinPapst\TablerBundle\Twig\RuntimeExtension
@@ -72,5 +74,26 @@ class RuntimeExtensionTest extends TestCase
 
         $sut = $this->getSut(['dark_mode' => true]);
         $this->assertEquals('dark', $sut->theme());
+    }
+
+    public function testLocale(): void
+    {
+        $requestStack = new RequestStack();
+        // no locale switcher, as with "framework.translator.enabled: false"
+        $sut = new RuntimeExtension($requestStack, new EventDispatcher(), new ContextHelper(), [], [], null, 'fr');
+
+        // no request either, e.g. when rendering an email from a command
+        $this->assertEquals('fr', $sut->locale());
+
+        $request = new Request();
+        $request->setLocale('de');
+        $requestStack->push($request);
+        $this->assertEquals('de', $sut->locale());
+
+        // the locale switcher wins when there is one, as it does for "app.locale"
+        $localeSwitcher = $this->createStub(LocaleAwareInterface::class);
+        $localeSwitcher->method('getLocale')->willReturn('it');
+        $sut = new RuntimeExtension($requestStack, new EventDispatcher(), new ContextHelper(), [], [], $localeSwitcher, 'fr');
+        $this->assertEquals('it', $sut->locale());
     }
 }
