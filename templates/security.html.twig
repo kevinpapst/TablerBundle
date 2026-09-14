@@ -35,10 +35,13 @@
                 {% block login_form %}
                     <form action="{{ path('tabler_login_check'|tabler_route) }}" method="post" autocomplete="off" class="login-box-body security-login">
                     {% block login_form_start %}{% endblock %}
+                        {% block login_username %}
                         <div class="mb-3">
                             <label for="username" class="form-label">{{ 'Username'|trans({}, 'TablerBundle') }}</label>
                             <input autocomplete="username" type="text" id="username" name="_username" tabindex="10" class="form-control" placeholder="{{ 'Username'|trans({}, 'TablerBundle') }}" value="{{ last_username|default('') }}" required="required">
                         </div>
+                        {% endblock %}
+                        {% block login_password %}
                         <div class="mb-3">
                             <label for="password" class="form-label">
                                 {{ 'Password'|trans({}, 'TablerBundle') }}
@@ -118,6 +121,7 @@
                                 {% endblock %}
                             </div>
                         </div>
+                        {% endblock %}
                         {% block remember_me %}
                         <div class="mb-3">
                             <label class="form-check">
