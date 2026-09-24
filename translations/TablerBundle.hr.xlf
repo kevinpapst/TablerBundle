@@ -46,9 +46,9 @@
         <source>Password</source>
         <target>Lozinka</target>
       </trans-unit>
-      <trans-unit id="nQDUTyy" resname="Show homepage">
+      <trans-unit id="nQDUTyy" resname="Show homepage" xml:space="preserve">
         <source>Show homepage</source>
-        <target>Pokaži web-stranicu</target>
+        <target state="translated">Pokaži početnu stranicu</target>
       </trans-unit>
       <trans-unit id="PjgG.xc" resname="Back to login">
         <source>Back to login</source>
