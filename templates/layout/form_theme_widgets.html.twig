@@ -1,0 +1,32 @@
+{# Tabler widgets shared by the form themes, each one is opt-in through the "block_prefix" option of a form type #}
+
+{#
+    Image check, see https://tabler.io/docs/forms/form-image-check
+    Use it on an expanded ChoiceType (or EntityType) with "block_prefix: 'tabler_imagecheck'",
+    and give the image of each choice with "choice_attr: fn ($choice) => ['data-image' => $url]".
+#}
+{%- block tabler_imagecheck_widget -%}
+    {%- set attr = attr|merge({class: ('row g-2 ' ~ attr.class|default(''))|trim}) -%}
+    <div {{ block('widget_container_attributes') }}>
+        {%- for child in form %}
+            {%- set child_label = child.vars.label -%}
+            {%- if child_label is not same as(false) and child.vars.translation_domain is not same as(false) -%}
+                {%- set child_label = child_label|trans(child.vars.label_translation_parameters, child.vars.translation_domain) -%}
+            {%- endif -%}
+            {%- with child.vars|merge({attr: child.vars.attr|merge({class: ('form-imagecheck-input ' ~ child.vars.attr.class|default(''))|trim})}) -%}
+                <div class="{{ imagecheck_column_class|default('col-6 col-sm-4') }}">
+                    <label class="form-imagecheck mb-2">
+                        <input type="{{ multiple ? 'checkbox' : 'radio' }}" {{ block('widget_attributes') }} value="{{ value }}"{% if checked %} checked="checked"{% endif %} />
+                        <span class="form-imagecheck-figure">
+                            {%- if attr['data-image'] is defined -%}
+                                <img src="{{ attr['data-image'] }}" alt="{{ child_label is same as(false) ? '' : child_label }}" class="form-imagecheck-image">
+                            {%- else -%}
+                                <span class="form-imagecheck-caption">{{ child_label }}</span>
+                            {%- endif -%}
+                        </span>
+                    </label>
+                </div>
+            {%- endwith -%}
+        {% endfor -%}
+    </div>
+{%- endblock tabler_imagecheck_widget %}
