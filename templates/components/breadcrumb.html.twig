@@ -1,5 +1,5 @@
 {# @see https://preview.tabler.io/docs/breadcrumb.html #}
-{% macro breadcrumb(breadcrumbs, type) %}
+{% macro breadcrumb(breadcrumbs, type = 'bullets') %}
     {% set type = type|default('bullets') %}
     <ol class="breadcrumb breadcrumb-{{ type }}" aria-label="breadcrumbs">
         {% for name, href in breadcrumbs %}

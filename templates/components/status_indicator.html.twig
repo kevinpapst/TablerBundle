@@ -1,4 +1,4 @@
-{% macro status_indicator(options) %}
+{% macro status_indicator(options = {}) %}
     {% import '@Tabler/includes/utils.html.twig' as utils %}
 
     {% set _color = options.color ?? 'green' %}

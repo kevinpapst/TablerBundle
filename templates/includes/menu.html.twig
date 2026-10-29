@@ -31,7 +31,7 @@
     </ul>
 {% endif %}
 
-{% macro item_childs(item, layout_type) %}
+{% macro item_childs(item, layout_type = 'horizontal') %}
     {% if item.hasChildren %}
         <div class="dropdown-menu {{ layout_type is same as "vertical" and (item.isActive or item.isExpanded) ? 'show':'' }}" data-bs-popper="none">
             <div class="dropdown-menu-columns">
@@ -58,7 +58,7 @@
     {% endif %}
 {% endmacro %}
 
-{% macro child_item(child, isLast) %}
+{% macro child_item(child, isLast = false) %}
     {% if child.divider %}
         {% if not isLast -%}
             <hr class="dropdown-divider">

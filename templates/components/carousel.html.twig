@@ -1,4 +1,4 @@
-{% macro carousel(items, options) %}
+{% macro carousel(items, options = {}) %}
     {% set _id = options.id ?? ('carousel-' ~ random(0, 999)) %}
     {% set _extraClass = options.extraClass ?? '' %}
 
@@ -61,7 +61,7 @@
     </div>
 {% endmacro %}
 
-{% macro carousel_indicators(items, id, type, orientation, ratio) %}
+{% macro carousel_indicators(items, id, type = '', orientation = 'horizontal', ratio = '') %}
     {% set _typeClass = '' %}
     {% if type == 'dots' %}{% set _typeClass = 'carousel-indicators-dot' %}{% endif %}
     {% if type == 'thumbs' %}{% set _typeClass = 'carousel-indicators-thumb' %}{% endif %}
