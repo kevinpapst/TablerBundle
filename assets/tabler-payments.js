@@ -1,0 +1,1 @@
+require('./tabler-payments.scss');
