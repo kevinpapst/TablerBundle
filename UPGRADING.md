@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.5
+
+### Updated @tabler/core from 1.4 to 1.7
+
+- Minimum supported browsers are now Chrome/Edge 123, Firefox 128, Safari 17.5.
+- If your own JavaScript references `window.bootstrap` directly, update it to `window.tabler`.
+
 ## 2.1
 
 ### Dropdown
