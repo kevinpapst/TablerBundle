@@ -32,7 +32,8 @@
         "phpstan/phpstan-phpunit": "^2.0",
         "phpstan/phpstan-strict-rules": "^2.0",
         "phpstan/phpstan-symfony": "^2.0",
-        "knplabs/knp-menu-bundle": "^3.0"
+        "knplabs/knp-menu-bundle": "^3.0",
+        "symfony/form": "^6.0 || ^7.0 || ^8.0"
     },
     "suggest" : {
         "knplabs/knp-menu-bundle" : "Allows easy menu integration"
