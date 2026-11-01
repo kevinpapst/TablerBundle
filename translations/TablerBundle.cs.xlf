@@ -72,15 +72,15 @@
       </trans-unit>
       <trans-unit id="hSzABam" resname="You have %count% notifications" xml:space="preserve">
         <source>You have 1 notification|You have %count% notifications</source>
-        <target state="needs-translation">{1} Máte 1 notifikaci|[2,4] Máte %count% notifikace|[5,Inf[ Máte %count% notifikací</target>
+        <target state="translated">Počet vašich upozornění: %count%</target>
       </trans-unit>
       <trans-unit id="WNPKqNj" resname="You have %count% messages" xml:space="preserve">
         <source>You have %count% messages</source>
-        <target state="needs-translation">{1} Máte 1 zprávu|[2,4] Máte %count% zprávy|[5,Inf[ Máte %count% zpráv</target>
+        <target state="translated">Počet vašich zpráv: %count%</target>
       </trans-unit>
       <trans-unit id="ZnUEpF." resname="You have %count% tasks" xml:space="preserve">
-        <source>You have %count% tasks</source>
-        <target state="needs-translation">{1} Máte 1 úkol|[2,4] Máte %count% úkoly|[5,Inf[ Máte %count% úkolů</target>
+        <source>You have 1 task|You have %count% tasks</source>
+        <target state="translated">Počet vašich úkolů: %count%</target>
       </trans-unit>
       <trans-unit id="1bPaXpN" resname="%progress%% Complete">
         <source>%progress%% Complete</source>
@@ -104,7 +104,7 @@
       </trans-unit>
       <trans-unit id="ru5FEGk" resname="http_error.suggestion">
         <source>http_error.suggestion</source>
-        <target>Došlo k neočekávané chybě, zkuste to znovu. Pokud se chyba vyskytuje opakovaně, kontaktujte svého správce.</target>
+        <target state="translated">Došlo ke kritické chybě, zkuste to prosím znovu. Možná jste narazili na chybu softwaru; pokud problém přetrvává, kontaktujte svého správce.</target>
       </trans-unit>
       <trans-unit id="_W1eNz2" resname="http_error_404.description">
         <source>http_error_404.description</source>
@@ -120,7 +120,7 @@
       </trans-unit>
       <trans-unit id="zDeeh7L" resname="http_error_403.suggestion">
         <source>http_error_403.suggestion</source>
-        <target>Litujeme, nemáte dostatečná oprávnění k zobrazení této stránky. Pokud se jedná o chybu, kontaktujte svého správce.</target>
+        <target state="translated">Litujeme, nemáte dostatečná oprávnění k zobrazení této stránky. Pokud si myslíte, že jde o chybu, kontaktujte svého správce.</target>
       </trans-unit>
       <trans-unit id="PboiWu0" resname="Toggle visibility" xml:space="preserve" approved="no">
         <source>Toggle visibility</source>
@@ -148,11 +148,11 @@
       </trans-unit>
       <trans-unit id="465zeJ" resname="Show notifications" xml:space="preserve" approved="no">
         <source>Show notifications</source>
-        <target state="translated">Zobrazit notifikace</target>
+        <target state="translated">Zobrazit upozornění</target>
       </trans-unit>
       <trans-unit id="F5Dfzd" resname="You have no notification" xml:space="preserve" approved="no">
         <source>You have no notification</source>
-        <target state="translated">Nemáte žádné notifikace</target>
+        <target state="translated">Nemáte žádná upozornění</target>
       </trans-unit>
       <trans-unit id="Pf48Zd" resname="And %count% more…" xml:space="preserve" approved="no">
         <source>And %count% more…</source>
