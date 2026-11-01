@@ -1,4 +1,4 @@
-{% macro actions(actions, options) -%}
+{% macro actions(actions, options = {}) -%}
     {%- import '@Tabler/components/button.html.twig' as macro -%}
     {%- if actions|length >= 1 -%}
         {%- set class = 'btn-sm' -%}

@@ -1,4 +1,4 @@
-{% macro button(icon, values, type) %}
+{% macro button(icon, values = {}, type = null) %}
     {% import '@Tabler/includes/utils.html.twig' as macros %}
 
     {%- if type is same as (false) -%}

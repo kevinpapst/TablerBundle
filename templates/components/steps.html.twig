@@ -1,5 +1,5 @@
 
-{% macro steps(steps, options) %}
+{% macro steps(steps, options = {}) %}
     {% import '@Tabler/includes/utils.html.twig' as macros %}
 
     {% set _tooltip = options.tooltip ?? false %}

@@ -1,4 +1,4 @@
-{% macro flash(type, message, close, use_raw, class, domain) %}
+{% macro flash(type, message, close = false, use_raw = false, class = null, domain = null) %}
     {% from "@Tabler/components/alert.html.twig" import alert %}
     {% if type == 'error' %}
         {% set type = 'danger' %}
@@ -13,11 +13,11 @@
     }) }}
 {% endmacro %}
 
-{% macro session_flash(close, use_raw, class, domain) %}
+{% macro session_flash(close = false, use_raw = false, class = null, domain = null) %}
     {{ _self.flashes(app.flashes, close, use_raw, class, domain) }}
 {% endmacro %}
 
-{% macro flashes(flashes, close, use_raw, class, domain) %}
+{% macro flashes(flashes, close = false, use_raw = false, class = null, domain = null) %}
     {% for type, messages in flashes %}
         {% for message in messages %}
             {{ _self.flash(type, message, close, use_raw, class, domain) }}

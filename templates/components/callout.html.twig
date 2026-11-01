@@ -1,4 +1,4 @@
-{% macro callout(type, description, title, icon) %}
+{% macro callout(type, description = null, title = null, icon = null) %}
     {% from '@Tabler/components/alert.html.twig' import alert %}
     {% if type is iterable %}
         {% set type = {dismissible: false, important: true}|merge(type) %}

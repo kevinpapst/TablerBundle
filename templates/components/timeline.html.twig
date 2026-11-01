@@ -1,4 +1,4 @@
-{% macro timeline(items, values) %}
+{% macro timeline(items, values = {}) %}
     {% set _isSimple = values.simple ?? false %}
 
     <ul class="timeline {% if _isSimple %}timeline-simple{% endif %}">

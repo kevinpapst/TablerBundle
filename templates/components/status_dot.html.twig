@@ -1,4 +1,4 @@
-{% macro status_dot(options) %}
+{% macro status_dot(options = {}) %}
     {% import '@Tabler/includes/utils.html.twig' as utils %}
 
     {% set _color = options.color ?? 'green' %}
