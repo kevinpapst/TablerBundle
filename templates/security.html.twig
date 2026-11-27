@@ -33,7 +33,7 @@
                     {% endif %}
                 {% endblock %}
                 {% block login_form %}
-                    <form action="{{ path('tabler_login_check'|tabler_route) }}" method="post" autocomplete="off" class="login-box-body security-login">
+                    <form action="{{ path('tabler_login_check'|tabler_route) }}" method="post" class="login-box-body security-login">
                     {% block login_form_start %}{% endblock %}
                         {% block login_username %}
                         <div class="mb-3">
@@ -54,7 +54,7 @@
                                 {% endblock %}
                             </label>
                             <div class="input-group input-group-flat">
-                                <input autocomplete="new-password" id="password" name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}" required="required">
+                                <input autocomplete="current-password" id="password" name="_password" type="password" tabindex="20" class="form-control" placeholder="{{ 'Password'|trans({}, 'TablerBundle') }}" required="required">
                                 {% block password_show %}
                                 <span class="input-group-text">
                                     <a

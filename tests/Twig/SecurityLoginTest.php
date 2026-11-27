@@ -36,6 +36,16 @@ class SecurityLoginTest extends TestCase
         self::assertStringContainsString('type="text"', $html);
     }
 
+    public function testPasswordAllowsSavedCredentials(): void
+    {
+        $html = $this->renderLoginForm('@Tabler/security.html.twig');
+
+        // "new-password" makes browsers offer a generated password instead of filling the saved one
+        self::assertStringContainsString('autocomplete="current-password" id="password" name="_password"', $html);
+        self::assertStringNotContainsString('new-password', $html);
+        self::assertStringNotContainsString('autocomplete="off"', $html);
+    }
+
     public function testUsernameBlockCanBeOverridden(): void
     {
         $html = $this->renderLoginForm('username.html.twig');

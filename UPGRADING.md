@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.5
+
+### Security forms allow saved credentials
+
+Browsers and password managers can now fill in saved credentials on the login and password-reset pages:
+
+- Removed `autocomplete="off"` from the forms in [templates/security.html.twig](templates/security.html.twig) and [templates/security/password_reset.html.twig](templates/security/password_reset.html.twig)
+- Changed the login password field from `autocomplete="new-password"` to `autocomplete="current-password"`
+
+If your application needs to keep browsers from saving or filling credentials, override the blocks `login_form` or `login_password` and set the attributes yourself.
+
 ## 2.1
 
 ### Dropdown
