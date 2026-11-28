@@ -56,6 +56,28 @@ Please set it manually if you customize these pages:
     {% form_theme form '@Tabler/layout/form_theme_security.html.twig' %}
 ```
 
+## Image check
+
+The vertical and horizontal themes can render an expanded `ChoiceType` (or `EntityType`) as
+[Tabler image checks](https://tabler.io/docs/forms/form-image-check): radios, or checkboxes with `multiple`.
+Set the `block_prefix` option to `tabler_imagecheck` and give the image of each choice in a `data-image` attribute:
+
+```php
+$builder->add('restaurant', EntityType::class, [
+    'class' => Restaurant::class,
+    'expanded' => true,
+    'block_prefix' => 'tabler_imagecheck',
+    'choice_attr' => fn (Restaurant $restaurant) => ['data-image' => $restaurant->getLogoUrl()],
+]);
+```
+
+The choice label is used as the `alt` text of the image, and is shown instead of the image if a choice has no `data-image`.
+Each choice takes the columns `col-6 col-sm-4` by default, which you can change when rendering the field:
+
+```twig
+{{ form_row(form.restaurant, {imagecheck_column_class: 'col-4 col-sm-2'}) }}
+```
+
 ## Icons in input-groups
 
 If you want to show icons in your forms inputs, you could add this code to your own form theme:
